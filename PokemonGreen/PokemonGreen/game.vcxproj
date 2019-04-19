@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="UnitTest|Win32">
+      <Configuration>UnitTest</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DDD280D7-4B85-4B03-BBC4-C46CA9BECCCB}</ProjectGuid>
+    <RootNamespace>game</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">.\UnitTest\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">.\UnitTest\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">true</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'" />
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files\Microsoft DirectX SDK %28February 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Program Files\Microsoft DirectX SDK %28February 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/game.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Debug/game.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0404</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>ddraw.lib;dxguid.lib;winmm.lib;dsound.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Debug/game.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/game.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug/game.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/game.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Release/game.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0404</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;ddraw.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Release/game.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ProgramDatabaseFile>.\Release/game.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release/game.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\UnitTest/game.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_UNITTEST;_CRT_SECURE_NO_DEPRECATE;WINVER=0x400;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\UnitTest/game.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\UnitTest/</AssemblerListingLocation>
+      <ObjectFileName>.\UnitTest/</ObjectFileName>
+      <ProgramDataBaseFileName>.\UnitTest/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0404</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>ddraw.lib;dxguid.lib;winmm.lib;dsound.lib;cppunitd.lib;testrunnerd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\UnitTest/game.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\UnitTest/game.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\UnitTest/game.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="Res\ball.bmp" />
+    <None Include="RES\bmp0.bmp" />
+    <None Include="RES\bmp1.bmp" />
+    <None Include="RES\bmp10.bmp" />
+    <None Include="RES\bmp2.bmp" />
+    <None Include="RES\bmp3.bmp" />
+    <None Include="RES\bmp4.bmp" />
+    <None Include="RES\bmp5.bmp" />
+    <None Include="RES\bmp6.bmp" />
+    <None Include="RES\bmp7.bmp" />
+    <None Include="RES\bmp8.bmp" />
+    <None Include="RES\bmp9.bmp" />
+    <None Include="RES\center.bmp" />
+    <None Include="RES\continue.bmp" />
+    <None Include="Res\corner.bmp" />
+    <None Include="RES\eraser1.bmp" />
+    <None Include="RES\eraser2.bmp" />
+    <None Include="RES\eraser3.bmp" />
+    <None Include="res\game.ico" />
+    <None Include="res\game.rc2" />
+    <None Include="RES\gamecurs.cur" />
+    <None Include="res\gameDoc.ico" />
+    <None Include="RES\help.bmp" />
+    <None Include="RES\loading.bmp" />
+    <None Include="RES\ntutcsie.bmp" />
+    <None Include="res\Toolbar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\AtkBar.cpp" />
+    <ClCompile Include="Source\AtkInterface.cpp" />
+    <ClCompile Include="Source\audio.cpp" />
+    <ClCompile Include="Source\CCharacter.cpp" />
+    <ClCompile Include="Source\CDialog.cpp" />
+    <ClCompile Include="Source\CHero.cpp" />
+    <ClCompile Include="Source\CMap.cpp" />
+    <ClCompile Include="Source\CMom.cpp" />
+    <ClCompile Include="Source\game.cpp">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="Source\gameDoc.cpp">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="Source\gameView.cpp">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="Source\MainFrm.cpp">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="Source\PmTreecko.cpp" />
+    <ClCompile Include="Source\Pokemon.cpp" />
+    <ClCompile Include="Source\PokemonFactory.cpp" />
+    <ClCompile Include="Source\Skill.cpp" />
+    <ClCompile Include="Source\SkillFactory.cpp" />
+    <ClCompile Include="Source\SkillImpact.cpp" />
+    <ClCompile Include="Source\SkillNormal.cpp" />
+    <ClCompile Include="Source\StdAfx.cpp">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\gamelib.cpp">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">UnitTest/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">UnitTest/</ProgramDataBaseFileName>
+    </ClCompile>
+    <ClCompile Include="Source\mygame.cpp">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="Source\WeiBaiHouse1_1F_Map.cpp" />
+    <ClCompile Include="Source\WeiBaiHouse1_2F_Map.cpp" />
+    <ClCompile Include="Source\WeiBaiHouse2_1F_Map.cpp" />
+    <ClCompile Include="Source\WeiBaiHouse2_2F_Map.cpp" />
+    <ClCompile Include="Source\WeiBaiMap.cpp" />
+    <ClCompile Include="Source\WeiBaiProHouse_Map.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\AtkBar.h" />
+    <ClInclude Include="Source\AtkInterface.h" />
+    <ClInclude Include="Source\audio.h" />
+    <ClInclude Include="Source\CCharacter.h" />
+    <ClInclude Include="Source\CDialog.h" />
+    <ClInclude Include="Source\CHero.h" />
+    <ClInclude Include="Source\CMap.h" />
+    <ClInclude Include="Source\CMom.h" />
+    <ClInclude Include="Source\game.h" />
+    <ClInclude Include="Source\gameDoc.h" />
+    <ClInclude Include="Source\gameView.h" />
+    <ClInclude Include="Source\PmTreecko.h" />
+    <ClInclude Include="Source\MainFrm.h" />
+    <ClInclude Include="Source\Pokemon.h" />
+    <ClInclude Include="Source\PokemonFactory.h" />
+    <ClInclude Include="Source\Resource.h" />
+    <ClInclude Include="Source\Skill.h" />
+    <ClInclude Include="Source\SkillFactory.h" />
+    <ClInclude Include="Source\SkillImpact.h" />
+    <ClInclude Include="Source\SkillNormal.h" />
+    <ClInclude Include="Source\StdAfx.h" />
+    <ClInclude Include="Source\gamelib.h" />
+    <ClInclude Include="Source\mygame.h" />
+    <ClInclude Include="Source\WeiBaiHouse1_1F_Map.h" />
+    <ClInclude Include="Source\WeiBaiHouse1_2F_Map.h" />
+    <ClInclude Include="Source\WeiBaiHouse2_1F_Map.h" />
+    <ClInclude Include="Source\WeiBaiHouse2_2F_Map.h" />
+    <ClInclude Include="Source\WeiBaiMap.h" />
+    <ClInclude Include="Source\WeiBaiProHouse_Map.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Source\game.rc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\WeiBaiTown.bmp" />
+    <Image Include="..\WeiBaiTown.png" />
+    <Image Include="RES\atk_cursor.bmp" />
+    <Image Include="RES\battle_background.bmp" />
+    <Image Include="RES\battle_dialog.bmp" />
+    <Image Include="RES\battle_ground.bmp" />
+    <Image Include="RES\battle_hero.bmp" />
+    <Image Include="RES\battle_option.bmp" />
+    <Image Include="RES\billboard.bmp" />
+    <Image Include="res\bitmap3.bmp" />
+    <Image Include="RES\bitmap4.bmp" />
+    <Image Include="RES\Black.bmp" />
+    <Image Include="RES\bmp00001.bmp" />
+    <Image Include="RES\bmp00002.bmp" />
+    <Image Include="RES\DIAG.bmp" />
+    <Image Include="RES\enemy_bar.bmp" />
+    <Image Include="RES\grass_land.bmp" />
+    <Image Include="RES\GREEN_DIAG.bmp" />
+    <Image Include="RES\green_flower.bmp" />
+    <Image Include="RES\green_grass.bmp" />
+    <Image Include="RES\GREEN_TREE.bmp" />
+    <Image Include="RES\HERO_BACK.bmp" />
+    <Image Include="RES\HERO_BACK_ONE.bmp" />
+    <Image Include="RES\HERO_BACK_TWO.bmp" />
+    <Image Include="RES\HERO_FRONT.bmp" />
+    <Image Include="RES\HERO_FRONT_ONE.bmp" />
+    <Image Include="RES\HERO_FRONT_TWO.bmp" />
+    <Image Include="RES\HERO_LEFT.bmp" />
+    <Image Include="RES\HERO_LEFT_ONE.bmp" />
+    <Image Include="RES\HERO_LEFT_TWO.bmp" />
+    <Image Include="RES\HERO_RIGHT.bmp" />
+    <Image Include="RES\HERO_RIGHT_ONE.bmp" />
+    <Image Include="RES\HERO_RIGHT_TWO.bmp" />
+    <Image Include="RES\HOME.bmp" />
+    <Image Include="RES\HOME_LOG.bmp" />
+    <Image Include="RES\hp_green.bmp" />
+    <Image Include="RES\hp_red.bmp" />
+    <Image Include="RES\hp_yellow.bmp" />
+    <Image Include="RES\jump_land.bmp" />
+    <Image Include="RES\MOM_DOWN.bmp" />
+    <Image Include="RES\MOM_UP.bmp" />
+    <Image Include="RES\MON_LEFT.bmp" />
+    <Image Include="RES\MON_RIGHT.bmp" />
+    <Image Include="RES\my_bar.bmp" />
+    <Image Include="RES\m_green_grass.bmp" />
+    <Image Include="RES\skill_impact.bmp" />
+    <Image Include="RES\skill_impact1.bmp" />
+    <Image Include="RES\skill_impact2.bmp" />
+    <Image Include="RES\skill_option.bmp" />
+    <Image Include="RES\treecko_back.bmp" />
+    <Image Include="RES\treecko_front.bmp" />
+    <Image Include="RES\WeiBaiTown.bmp" />
+    <Image Include="RES\weibaitown_house1.bmp" />
+    <Image Include="RES\weibaitown_house1_1f.bmp" />
+    <Image Include="RES\weibaitown_house1_2f.bmp" />
+    <Image Include="RES\weibaitown_house2.bmp" />
+    <Image Include="RES\weibaitown_house2_1f.bmp" />
+    <Image Include="RES\weibaitown_house2_2f.bmp" />
+    <Image Include="RES\weibaitown_pro_house.bmp" />
+    <Image Include="RES\weibaitown_pro_house_inside.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="RES\weibaitown.txt" />
+    <Text Include="RES\weibaitown_scene.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Source\game.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

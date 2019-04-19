@@ -1,0 +1,601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{1a913106-0be0-4476-b0ce-2aa855072614}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="MFC">
+      <UniqueIdentifier>{da904ee8-7f59-4a6c-b3ff-b91b6fb6d0ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameLibrary">
+      <UniqueIdentifier>{df7aa532-3fdf-46a0-b3fc-8f5922e8d9e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MyGame">
+      <UniqueIdentifier>{0c798913-b7d2-4e26-8241-0f83266cd626}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Res\ball.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\bmp0.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\bmp1.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\bmp10.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\bmp2.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\bmp3.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\bmp4.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\bmp5.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\bmp6.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\bmp7.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\bmp8.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\bmp9.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\center.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\continue.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Res\corner.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\eraser1.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\eraser2.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\eraser3.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\game.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\game.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\gamecurs.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\gameDoc.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\help.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\loading.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="RES\ntutcsie.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Source\game.aps" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\audio.cpp">
+      <Filter>GameLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\game.cpp">
+      <Filter>MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\gameDoc.cpp">
+      <Filter>MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\gamelib.cpp">
+      <Filter>GameLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\gameView.cpp">
+      <Filter>MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MainFrm.cpp">
+      <Filter>MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\StdAfx.cpp">
+      <Filter>MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\mygame.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CMap.cpp" />
+    <ClCompile Include="Source\CHero.cpp" />
+    <ClCompile Include="Source\WeiBaiMap.cpp" />
+    <ClCompile Include="Source\WeiBaiHouse2_1F_Map.cpp" />
+    <ClCompile Include="Source\WeiBaiHouse1_1F_Map.cpp" />
+    <ClCompile Include="Source\WeiBaiProHouse_Map.cpp" />
+    <ClCompile Include="Source\WeiBaiHouse1_2F_Map.cpp" />
+    <ClCompile Include="Source\WeiBaiHouse2_2F_Map.cpp" />
+    <ClCompile Include="Source\CCharacter.cpp" />
+    <ClCompile Include="Source\CDialog.cpp" />
+    <ClCompile Include="Source\CMom.cpp" />
+    <ClCompile Include="Source\CObject.cpp" />
+    <ClCompile Include="Source\CAlphabet.cpp" />
+    <ClCompile Include="Source\AtkBar.cpp" />
+    <ClCompile Include="Source\AtkInterface.cpp" />
+    <ClCompile Include="Source\PmTreecko.cpp" />
+    <ClCompile Include="Source\Pokemon.cpp" />
+    <ClCompile Include="Source\PokemonFactory.cpp" />
+    <ClCompile Include="Source\Skill.cpp" />
+    <ClCompile Include="Source\SkillFactory.cpp" />
+    <ClCompile Include="Source\SkillImpact.cpp" />
+    <ClCompile Include="Source\SkillNormal.cpp" />
+    <ClCompile Include="Source\CText.cpp" />
+    <ClCompile Include="Source\CBag.cpp" />
+    <ClCompile Include="Source\CEvent.cpp" />
+    <ClCompile Include="Source\CSelf.cpp" />
+    <ClCompile Include="Source\CPickableObject.cpp" />
+    <ClCompile Include="Source\CItem.cpp" />
+    <ClCompile Include="Source\CProp.cpp" />
+    <ClCompile Include="Source\ActionObject.cpp" />
+    <ClCompile Include="Source\Menu.cpp" />
+    <ClCompile Include="Source\Illustration.cpp" />
+    <ClCompile Include="Source\MainMenu.cpp" />
+    <ClCompile Include="Source\PmOprtPanel.cpp" />
+    <ClCompile Include="Source\PmOprtView.cpp" />
+    <ClCompile Include="Source\PokemonBar.cpp" />
+    <ClCompile Include="Source\PokemonMenu.cpp" />
+    <ClCompile Include="Source\Record.cpp" />
+    <ClCompile Include="Source\Self.cpp" />
+    <ClCompile Include="Source\Bag.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\audio.h">
+      <Filter>GameLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\game.h">
+      <Filter>MFC</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\gameDoc.h">
+      <Filter>MFC</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\gamelib.h">
+      <Filter>GameLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\gameView.h">
+      <Filter>MFC</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MainFrm.h">
+      <Filter>MFC</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Resource.h">
+      <Filter>MFC</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\StdAfx.h">
+      <Filter>MFC</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\mygame.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CMap.h" />
+    <ClInclude Include="Source\CHero.h" />
+    <ClInclude Include="Source\WeiBaiMap.h" />
+    <ClInclude Include="Source\WeiBaiHouse2_1F_Map.h" />
+    <ClInclude Include="Source\WeiBaiHouse1_1F_Map.h" />
+    <ClInclude Include="Source\WeiBaiProHouse_Map.h" />
+    <ClInclude Include="Source\WeiBaiHouse1_2F_Map.h" />
+    <ClInclude Include="Source\WeiBaiHouse2_2F_Map.h" />
+    <ClInclude Include="Source\CCharacter.h" />
+    <ClInclude Include="Source\CDialog.h" />
+    <ClInclude Include="Source\CMom.h" />
+    <ClInclude Include="Source\CObject.h" />
+    <ClInclude Include="Source\CAlphabet.h" />
+    <ClInclude Include="Source\AtkBar.h" />
+    <ClInclude Include="Source\AtkInterface.h" />
+    <ClInclude Include="Source\PmTreecko.h" />
+    <ClInclude Include="Source\Pokemon.h" />
+    <ClInclude Include="Source\PokemonFactory.h" />
+    <ClInclude Include="Source\Skill.h" />
+    <ClInclude Include="Source\SkillFactory.h" />
+    <ClInclude Include="Source\SkillImpact.h" />
+    <ClInclude Include="Source\SkillNormal.h" />
+    <ClInclude Include="Source\CText.h" />
+    <ClInclude Include="Source\CBag.h" />
+    <ClInclude Include="Source\CEvent.h" />
+    <ClInclude Include="Source\CSelf.h" />
+    <ClInclude Include="Source\CPickableObject.h" />
+    <ClInclude Include="Source\CItem.h" />
+    <ClInclude Include="Source\CProp.h" />
+    <ClInclude Include="Source\Menu.h" />
+    <ClInclude Include="Source\ActionObject.h" />
+    <ClInclude Include="Source\Illustration.h" />
+    <ClInclude Include="Source\MainMenu.h" />
+    <ClInclude Include="Source\PmOprtPanel.h" />
+    <ClInclude Include="Source\PmOprtView.h" />
+    <ClInclude Include="Source\PokemonBar.h" />
+    <ClInclude Include="Source\PokemonMenu.h" />
+    <ClInclude Include="Source\Record.h" />
+    <ClInclude Include="Source\Self.h" />
+    <ClInclude Include="Source\Bag.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Source\game.rc">
+      <Filter>MFC</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\WeiBaiTown.png" />
+    <Image Include="..\WeiBaiTown.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\WeiBaiTown.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\billboard.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\grass_land.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\green_flower.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\green_grass.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_house1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_house2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_pro_house.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GREEN_TREE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HERO_BACK.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HERO_BACK_ONE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HERO_BACK_TWO.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HERO_FRONT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HERO_FRONT_ONE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HERO_FRONT_TWO.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HERO_LEFT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HERO_LEFT_ONE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HERO_LEFT_TWO.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HERO_RIGHT_TWO.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HERO_RIGHT_ONE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HERO_RIGHT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_house1_1f.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_house2_1f.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_pro_house_inside.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_house1_2f.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_house2_2f.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\MOM_UP.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\MON_LEFT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\MON_RIGHT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HOME.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HOME_LOG.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\MOM_DOWN.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GREEN_DIAG.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\bitmap4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\bmp00002.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\DIAG.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00003.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00004.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00005.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00006.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00007.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00008.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00009.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00010.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00011.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00012.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\alphabet.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00013.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00014.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00015.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00016.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00017.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00018.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00019.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00020.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00021.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00022.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00023.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00024.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00025.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00026.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00027.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\jump_land.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\hero_lef.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\FATGUY_LEFT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\FATGUY_RIGHT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GIRL_FRONT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\FATGUY_BACK.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\FATGUY_FRONT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\battle_background.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\battle_ground.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\battle_hero.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\battle_option.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Black.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_bar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\hp_green.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\hp_red.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\hp_yellow.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\my_bar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_impact1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_impact2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_option.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\treecko_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\treecko_front.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\atk_cursor.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\battle_dialog.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\m_green_grass.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00028.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\bg_backpack.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pickable_object.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00029.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\self.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00030.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00031.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\antidote.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\backtoworld.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\MenuBottom.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\MenuMiddle.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\MenuTop.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\OPERATION_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\POKEMON_BAR.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\POKEMON_BAR_FIRST_SELECT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\POKEMON_BAR_FIRST_UNSELECTED.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\POKEMON_BAR_SELECTED.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\SELECT_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\expBar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\PM_ABILITY.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\PM_SKILL_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\POKEMON_BAR_FIRST_SELECTED.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon_pm_treecko.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="RES\weibaitown_scene.txt" />
+    <Text Include="RES\weibaitown.txt" />
+    <Text Include="RES\weibaitown_house2_2f.txt" />
+  </ItemGroup>
+</Project>
