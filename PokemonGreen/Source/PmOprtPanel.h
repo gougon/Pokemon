@@ -18,7 +18,6 @@ namespace game_framework {
 		virtual void OnMove();
 		virtual void LoadBitmap();
 		virtual void KeyDownListener(UINT nChar);
-		void ReceiveData(Pokemon *pm);
 		void End();
 	private:
 		const int PANEL_LEFT = 430;

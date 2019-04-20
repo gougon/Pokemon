@@ -586,10 +586,13 @@
     <Image Include="RES\PM_SKILL_PANEL.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="RES\POKEMON_BAR_FIRST_SELECTED.bmp">
+    <Image Include="RES\BG_YESNO.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="RES\icon_pm_treecko.bmp">
+    <Image Include="RES\BG_ITEMAMOUNT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\BAG_PANEL.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

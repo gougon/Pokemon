@@ -20,7 +20,6 @@ Menu::Menu():
     items.push_back(new Self());
     items.push_back(new Record());
 }
-
 void Menu::Init()
 {
     menuTop.SetTopLeft(MENU_LEFT, MENU_TOP);
@@ -55,11 +54,11 @@ void Menu::OnShow()
             switch (i)
             {
                 case itemIllustration:
-                    showingText.SetText("illus");
+                    showingText.SetText("illu.");
                     break;
 
                 case itemPokemonMenu:
-                    showingText.SetText("pm");
+                    showingText.SetText("pokemon");
                     break;
 
                 case itemBag:
@@ -75,7 +74,7 @@ void Menu::OnShow()
                     break;
 
                 case itemRecord:
-                    showingText.SetText("rc");
+                    showingText.SetText("record");
                     break;
 
                 case itemClose:
@@ -128,6 +127,7 @@ void Menu::LoadBitmap()
     menuMiddle.LoadBitmap(IDB_MENU_MIDDLE);
     menuBottom.LoadBitmap(IDB_MENU_BOTTOM);
     showingText.LoadBitmap();
+    showingText.SetFontSize(16);
 
     for (int i = 0; i < (int)items.size(); ++i)
     {
@@ -168,7 +168,9 @@ void Menu::KeyDownListener(UINT nChar)
 
             case KEY_Z:
                 isItem = true;
-                items[order]->Start();
+
+                if (order != itemClose) items[order]->Start();
+                else End();
 
                 if (order == itemPokemonMenu)
                 {

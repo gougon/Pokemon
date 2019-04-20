@@ -300,21 +300,27 @@ IDB_POKEMON_OPERATION_PANEL BITMAP                  "..\\RES\\OPERATION_PANEL.bm
 
 IDB_POKEMON_BAR_UNSELECTED BITMAP                  "..\\RES\\POKEMON_BAR.bmp"
 
+IDB_POKEMON_BAR_FIRST_SELECT BITMAP                  "..\\RES\\POKEMON_BAR_FIRST_SELECT.bmp"
+
 IDB_POKEMON_BAR_FIRST_UNSELECTED BITMAP                  "..\\RES\\POKEMON_BAR_FIRST_UNSELECTED.bmp"
+
+IDB_POKEMON_BAR_SELECTED BITMAP                  "..\\RES\\POKEMON_BAR_SELECTED.bmp"
 
 IDB_POKEMON_SELECT_PANEL BITMAP                  "..\\RES\\SELECT_PANEL.bmp"
 
 IDB_EXPBAR              BITMAP                  "..\\RES\\expBar.bmp"
 
-IDB_PM_ABILITY          BITMAP                  "E:\\GitHub\\PokemonGreen\\RES\\PM_ABILITY.bmp"
+IDB_PM_ABILITY          BITMAP                  "..\\RES\\PM_ABILITY.bmp"
 
-IDB_PM_SKILL_PANEL      BITMAP                  "E:\\GitHub\\PokemonGreen\\RES\\PM_SKILL_PANEL.bmp"
+IDB_PM_SKILL_PANEL      BITMAP                  "..\\RES\\PM_SKILL_PANEL.bmp"
 
-IDB_POKEMON_BAR_FIRST_SELECT BITMAP                  "E:\\GitHub\\PokemonGreen\\RES\\POKEMON_BAR_FIRST_SELECTED.bmp"
+BG_YESNO                BITMAP                  "D:\\GitPokemon\\PokemonGreen\\RES\\BG_YESNO.bmp"
 
-IDB_POKEMON_BAR_SELECT  BITMAP                  "E:\\GitHub\\PokemonGreen\\RES\\POKEMON_BAR_SELECTED.bmp"
+BG_ITEMAMOUNT           BITMAP                  "D:\\GitPokemon\\PokemonGreen\\RES\\BG_ITEMAMOUNT.bmp"
 
-IDB_ICON_PM_TREECKO     BITMAP                  "E:\\GitHub\\PokemonGreen\\RES\\icon_pm_treecko.bmp"
+BG_PANEL                BITMAP                  "D:\\GitPokemon\\PokemonGreen\\RES\\BAG_PANEL.bmp"
+
+IDB_ALPHABET_DIVISION   BITMAP                  "..\\res\\bmp00031.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

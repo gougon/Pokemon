@@ -7,7 +7,6 @@
 #include "gamelib.h"
 #include <stdlib.h>
 #include "PmOprtView.h"
-#include <typeinfo>
 
 namespace game_framework {
 	PmOprtView::PmOprtView() :
@@ -18,12 +17,29 @@ namespace game_framework {
 
 	PmOprtView::~PmOprtView()
 	{
-		delete pm;
+		delete pokemon;
 	}
 
 	void PmOprtView::Init()
 	{
-		// empty body
+		/*REMAIN_HP_RIGHT = 380;
+		REMAIN_HP_TOP = 175;
+		ALL_HP_RIGHT = 460;
+		ALL_HP_TOP = 175;
+		SATK_RIGHT = 615;
+		SATK_TOP = 175;
+		ATK_RIGHT = 460;
+		ATK_TOP = 225;
+		SDEF_RIGHT = 615;
+		SDEF_TOP = 225;
+		DEF_RIGHT = 460;
+		DEF_TOP = 275;
+		SPD_RIGHT = 615;
+		SPD_TOP = 275;
+		NOW_EXP_RIGHT = 610;
+		NOW_EXP_TOP = 345;
+		NEED_EXP_RIGHT = 610;
+		NEED_EXP_TOP = 390;			®M¥Î¦r*/
 	}
 
 	void PmOprtView::OnShow()
@@ -31,21 +47,13 @@ namespace game_framework {
 		switch (page) {
 		case pagePmAbility:
 			pmAbility.ShowBitmap();
-			for (auto i : info) {
-				i.OnShow();
-			}
 			break;
 		case pagePmSkillPanel:
 			pmSkillPanel.ShowBitmap();
-			for (auto i : skillText) {
-				i.OnShow();
-			}
 			break;
 		default:
 			break;
 		}
-		nameText.OnShow();
-		lvText.OnShow();
 	}
 
 	void PmOprtView::OnMove()
@@ -59,8 +67,6 @@ namespace game_framework {
 	{
 		pmAbility.LoadBitmap(IDB_PM_ABILITY);
 		pmSkillPanel.LoadBitmap(IDB_PM_SKILL_PANEL);
-		nameText.LoadBitmap();
-		lvText.LoadBitmap();
 	}
 
 	void PmOprtView::KeyDownListener(UINT nChar)
@@ -113,65 +119,15 @@ namespace game_framework {
 
 	void PmOprtView::ReceiveData(Pokemon *pm)
 	{
-		this->pm = pm;
+		pokemon = pm;
 		for (int i = 0; i < pm->GetSkillNum(); ++i) {
 			skills.push_back(pm->GetSkill(i));
 		}
-		SetCommon();
-		SetInfo();
-		SetSkillText();
 	}
 
 	void PmOprtView::End()
 	{
 		isWork = false;
 		page = pagePmAbility;
-	}
-
-	// private function
-
-	void PmOprtView::SetCommon()
-	{
-		lvText.SetText(to_string(pm->GetLevel()));
-		nameText.SetText(pm->GetName());
-		lvText.SetTopLeft(LV_LEFT, LV_TOP);
-		nameText.SetTopLeft(NAME_LEFT, NAME_TOP);
-	}
-
-	void PmOprtView::SetInfo()
-	{
-		PushText(info, to_string(pm->GetRemainHP()));
-		PushText(info, to_string(pm->GetHP()));
-		PushText(info, to_string(pm->GetSatk()));
-		PushText(info, to_string(pm->GetAtk()));
-		PushText(info, to_string(pm->GetSdef()));
-		PushText(info, to_string(pm->GetDef()));
-		PushText(info, to_string(pm->GetSpeed()));
-		PushText(info, to_string(pm->GetNowExp()));
-		PushText(info, to_string(pm->GetNeedExp()));
-		for (int i = 0; i < (int)info.size(); ++i) {
-			info[i].SetTopLeft(POSITION[2 * i] - info[i].GetLength() * info[i].GetFontSize(), 
-				POSITION[2 * i + 1]);
-		}
-	}
-
-	void PmOprtView::SetSkillText()
-	{
-		for (int i = 0; i < (int)skills.size(); ++i) {
-			PushText(skillText, skills[i]->GetAttributeText()); 
-			PushText(skillText, skills[i]->GetName());
-			PushText(skillText, to_string(skills[i]->GetRemainPP()) + "/" + to_string(skills[i]->GetAllPP()));
-			skillText[i].SetTopLeft(SK_ATTR_LEFT, SK_TOP + (i * SK_INTERVAL));
-			skillText[i + 1].SetTopLeft(SK_NAME_LEFT, SK_TOP + (i * SK_INTERVAL));
-			skillText[i + 2].SetTopLeft(SK_PP_LEFT, SK_TOP + (i * SK_INTERVAL));
-		}
-	}
-
-	void PmOprtView::PushText(vector<CText> &v, string text)
-	{
-		CText tempText;
-		tempText.SetText(text);
-		v.push_back(tempText);
-		v.back().LoadBitmap();
 	}
 }

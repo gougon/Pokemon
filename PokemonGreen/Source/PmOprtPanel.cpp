@@ -97,7 +97,6 @@ namespace game_framework {
 				isItem = true;
 				if (order == pmOprtPanelSltView) {
 					pmOprtView.Start();
-					pmOprtView.ReceiveData(pm);
 				}
 				break;
 			case KEY_X:
@@ -122,11 +121,6 @@ namespace game_framework {
 				break;
 			}
 		}
-	}
-
-	void PmOprtPanel::ReceiveData(Pokemon *pm)
-	{
-		this->pm = pm;
 	}
 
 	void PmOprtPanel::End()

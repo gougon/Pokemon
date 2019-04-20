@@ -56,7 +56,7 @@ void CDialog::OnShow()
             length -= 21;
         }
 
-        showAlphabet.GetAlphabet(showString[i + (brFlag) * 21])->SetTopLeft(55 + 24 * i, 360 + (brFlag * 55));
+        showAlphabet.GetAlphabet(showString[i + (brFlag) * 21])->SetTopLeft(55 + 16 * i, 360 + (brFlag * 55));
         showAlphabet.GetAlphabet(showString[i + (brFlag) * 21])->ShowBitmap();
     }
 }

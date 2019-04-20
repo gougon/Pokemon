@@ -14,6 +14,7 @@
 #define IDB_BALL4                       137
 #define IDB_0                           138
 #define IDB_1                           139
+#define IDB_100                         139
 #define IDB_2                           140
 #define IDB_3                           141
 #define IDB_4                           142
@@ -142,16 +143,20 @@
 #define IDB_MENU_TOP                    277
 #define IDB_POKEMON_OPERATION_PANEL     278
 #define IDB_POKEMON_BAR_UNSELECTED      279
+#define IDB_POKEMON_BAR_FIRST_SELECT    280
 #define IDB_BITMAP16                    281
 #define IDB_POKEMON_BAR_FIRST_UNSELECTED 281
+#define IDB_POKEMON_BAR_SELECTED        282
 #define IDB_POKEMON_SELECT_PANEL        283
 #define IDB_EXPBAR                      284
 #define IDB_PM_ABILITY                  285
+#define IDB_BITMAP8                     286
 #define IDB_PM_SKILL_PANEL              286
-#define IDB_POKEMON_BAR_FIRST_SELECT    287
-#define IDB_POKEMON_BAR_SELECT          288
-#define IDB_BITMAP7                     289
-#define IDB_ICON_PM_TREECKO             289
+#define BG_YESNO                        288
+#define BG_ITEMAMOUNT                   289
+#define BAG_PANEL                       290
+#define BG_PANEL                        290
+#define IDB_ALPHABET_DIVISION           291
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -164,7 +169,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        290
+#define _APS_NEXT_RESOURCE_VALUE        292
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

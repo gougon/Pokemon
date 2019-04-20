@@ -406,12 +406,15 @@
     <Image Include="RES\antidote.bmp" />
     <Image Include="RES\atk_cursor.bmp" />
     <Image Include="RES\backtoworld.bmp" />
+    <Image Include="RES\BAG_PANEL.bmp" />
     <Image Include="RES\battle_background.bmp" />
     <Image Include="RES\battle_dialog.bmp" />
     <Image Include="RES\battle_ground.bmp" />
     <Image Include="RES\battle_hero.bmp" />
     <Image Include="RES\battle_option.bmp" />
     <Image Include="RES\bg_backpack.bmp" />
+    <Image Include="RES\BG_ITEMAMOUNT.bmp" />
+    <Image Include="RES\BG_YESNO.bmp" />
     <Image Include="RES\billboard.bmp" />
     <Image Include="res\bitmap12.bmp" />
     <Image Include="res\bitmap3.bmp" />
@@ -483,7 +486,6 @@
     <Image Include="RES\hp_green.bmp" />
     <Image Include="RES\hp_red.bmp" />
     <Image Include="RES\hp_yellow.bmp" />
-    <Image Include="RES\icon_pm_treecko.bmp" />
     <Image Include="RES\jump_land.bmp" />
     <Image Include="RES\MenuBottom.bmp" />
     <Image Include="RES\MenuMiddle.bmp" />
@@ -500,7 +502,6 @@
     <Image Include="RES\PM_SKILL_PANEL.bmp" />
     <Image Include="RES\POKEMON_BAR.bmp" />
     <Image Include="RES\POKEMON_BAR_FIRST_SELECT.bmp" />
-    <Image Include="RES\POKEMON_BAR_FIRST_SELECTED.bmp" />
     <Image Include="RES\POKEMON_BAR_FIRST_UNSELECTED.bmp" />
     <Image Include="RES\POKEMON_BAR_SELECTED.bmp" />
     <Image Include="RES\SELECT_PANEL.bmp" />

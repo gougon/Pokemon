@@ -22,7 +22,6 @@ namespace game_framework {
 	class Pokemon {
 	public:
 		Pokemon();
-		Pokemon(string name);
 		virtual void Init(string Name) = 0;
 		void OnShow();
 		void OnShow(string);
@@ -49,7 +48,6 @@ namespace game_framework {
 		Skill *GetSkill(int order);
 		int GetSkillNum();
 		int GetHeight();
-		CMovingBitmap *GetIcon();
 		int Left();
 		int Top();
 		void SetHP(int hp);
@@ -83,6 +81,6 @@ namespace game_framework {
 		float hitRate, evasionRate;
 		int nowExp, needExp, basicExp;
 		vector<Skill*> skills;
-		CMovingBitmap image, icon;
+		CMovingBitmap image;
 	};
 }

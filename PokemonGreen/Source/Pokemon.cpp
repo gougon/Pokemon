@@ -40,12 +40,6 @@ namespace game_framework {
 		/* empty body */
 	}
 
-	Pokemon::Pokemon(string name) :
-		name(name)
-	{
-		// empty body
-	}
-
 	void Pokemon::OnShow()
 	{
 		image.ShowBitmap();
@@ -109,7 +103,7 @@ namespace game_framework {
 
 	string Pokemon::GetName()
 	{
-		return this->name;
+		return name;
 	}
 
 	int Pokemon::GetLevel()
@@ -195,11 +189,6 @@ namespace game_framework {
 	int Pokemon::GetHeight()
 	{
 		return image.RectHeight();
-	}
-
-	CMovingBitmap *Pokemon::GetIcon()
-	{
-		return &icon;
 	}
 
 	int Pokemon::Left()

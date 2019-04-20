@@ -142,8 +142,8 @@ int WeiBaiHouse1_1F_Map::CheckID(int x, int y, int herodirection)
         mom.Talk(herodirection);
         inEvent = true;
 
-        if (mom.GetVer() == 1)dialogBox.SetText("today is a good day; play outside");
-        else if (mom.GetVer() == 2)dialogBox.SetText("but first...");
+        if (mom.GetVer() == 1)dialogBox.SetText("take this 100 dollars");
+        else if (mom.GetVer() == 2)dialogBox.SetText("012345/6789");
         else if (mom.GetVer() == 3)dialogBox.SetText("manipulate your clock");
 
         if (mom.GetVer() == 4) inEvent = false;

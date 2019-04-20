@@ -28,9 +28,7 @@ namespace game_framework {
 		const int POKEMON_BAR_FIRST_TOP = 60;
 		const int POKEMON_BAR_INTERVAL = 70;
 
-		void SetPmBar();
-		void SetPmBarLeftTop(int order);
-		CMovingBitmap selectPanel;
+		CMovingBitmap selectPanel, pokemonBar_Unselect, pokemonBar_Select, pokemonFirstBar_Unselect, pokemonFirstBar_Select;
 		vector<Pokemon*> pokemons;
 		PokemonBar *pokemonBar;
 		PmOprtPanel pmOprtPanel;

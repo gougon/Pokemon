@@ -13,13 +13,13 @@
 namespace game_framework {
 	PmTreecko::PmTreecko()
 	{
-		Init("treecko");
+		Init("Treecko");
 	}
 
 	PmTreecko::PmTreecko(PmType pmtype)
 	{
 		this->pmtype = pmtype;
-		Init("treecko");
+		Init(name);
 	}
 
 	PmTreecko::PmTreecko(string name)
@@ -52,6 +52,5 @@ namespace game_framework {
 			image.LoadBitmap(IDB_PM_TREECKO_BACK, RGB(255, 0, 0));
 		else
 			image.LoadBitmap(IDB_PM_TREECKO_FRONT, RGB(255, 0, 0));
-		icon.LoadBitmap(IDB_ICON_PM_TREECKO, RGB(255, 0, 0));
 	}
 }
