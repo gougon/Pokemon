@@ -161,6 +161,10 @@
     <ClCompile Include="Source\Record.cpp" />
     <ClCompile Include="Source\Self.cpp" />
     <ClCompile Include="Source\Bag.cpp" />
+    <ClCompile Include="Source\CScrolls.cpp" />
+    <ClCompile Include="Source\CFruit.cpp" />
+    <ClCompile Include="Source\CGoods.cpp" />
+    <ClCompile Include="Source\CBall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -230,6 +234,10 @@
     <ClInclude Include="Source\Record.h" />
     <ClInclude Include="Source\Self.h" />
     <ClInclude Include="Source\Bag.h" />
+    <ClInclude Include="Source\CScrolls.h" />
+    <ClInclude Include="Source\CFruit.h" />
+    <ClInclude Include="Source\CGoods.h" />
+    <ClInclude Include="Source\CBall.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -593,6 +601,18 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\BAG_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00032.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="D:\GitPokemon\PokemonGreen\RES\BG_YESNO.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="D:\GitPokemon\PokemonGreen\RES\BG_ITEMAMOUNT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="D:\GitPokemon\PokemonGreen\RES\BAG_PANEL.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

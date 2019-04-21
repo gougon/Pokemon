@@ -9,6 +9,6 @@ class CAlphabet
         void LoadBitmap();
         CMovingBitmap* GetAlphabet(char alphaID);
     private:
-        CMovingBitmap alphabet_list[40];
+        CMovingBitmap alphabet_list[41];
 };
 }

@@ -266,9 +266,12 @@
     <ClCompile Include="Source\Bag.cpp" />
     <ClCompile Include="Source\CAlphabet.cpp" />
     <ClCompile Include="Source\CBag.cpp" />
+    <ClCompile Include="Source\CBall.cpp" />
     <ClCompile Include="Source\CCharacter.cpp" />
     <ClCompile Include="Source\CDialog.cpp" />
     <ClCompile Include="Source\CEvent.cpp" />
+    <ClCompile Include="Source\CFruit.cpp" />
+    <ClCompile Include="Source\CGoods.cpp" />
     <ClCompile Include="Source\CHero.cpp" />
     <ClCompile Include="Source\CItem.cpp" />
     <ClCompile Include="Source\CMap.cpp" />
@@ -276,6 +279,7 @@
     <ClCompile Include="Source\CObject.cpp" />
     <ClCompile Include="Source\CPickableObject.cpp" />
     <ClCompile Include="Source\CProp.cpp" />
+    <ClCompile Include="Source\CScrolls.cpp" />
     <ClCompile Include="Source\CSelf.cpp" />
     <ClCompile Include="Source\CText.cpp" />
     <ClCompile Include="Source\game.cpp">
@@ -348,10 +352,13 @@
     <ClInclude Include="Source\audio.h" />
     <ClInclude Include="Source\Bag.h" />
     <ClInclude Include="Source\CBag.h" />
+    <ClInclude Include="Source\CBall.h" />
     <ClInclude Include="Source\CCharacter.h" />
     <ClInclude Include="Source\CDialog.h" />
     <ClInclude Include="Source\CAlphabet.h" />
     <ClInclude Include="Source\CEvent.h" />
+    <ClInclude Include="Source\CFruit.h" />
+    <ClInclude Include="Source\CGoods.h" />
     <ClInclude Include="Source\CHero.h" />
     <ClInclude Include="Source\CItem.h" />
     <ClInclude Include="Source\CMap.h" />
@@ -359,6 +366,7 @@
     <ClInclude Include="Source\CObject.h" />
     <ClInclude Include="Source\CPickableObject.h" />
     <ClInclude Include="Source\CProp.h" />
+    <ClInclude Include="Source\CScrolls.h" />
     <ClInclude Include="Source\CSelf.h" />
     <ClInclude Include="Source\CText.h" />
     <ClInclude Include="Source\game.h" />
@@ -402,6 +410,9 @@
   <ItemGroup>
     <Image Include="..\WeiBaiTown.bmp" />
     <Image Include="..\WeiBaiTown.png" />
+    <Image Include="D:\GitPokemon\PokemonGreen\RES\BAG_PANEL.bmp" />
+    <Image Include="D:\GitPokemon\PokemonGreen\RES\BG_ITEMAMOUNT.bmp" />
+    <Image Include="D:\GitPokemon\PokemonGreen\RES\BG_YESNO.bmp" />
     <Image Include="res\alphabet.bmp" />
     <Image Include="RES\antidote.bmp" />
     <Image Include="RES\atk_cursor.bmp" />
@@ -455,6 +466,7 @@
     <Image Include="res\bmp00029.bmp" />
     <Image Include="res\bmp00030.bmp" />
     <Image Include="res\bmp00031.bmp" />
+    <Image Include="res\bmp00032.bmp" />
     <Image Include="RES\DIAG.bmp" />
     <Image Include="RES\enemy_bar.bmp" />
     <Image Include="RES\expBar.bmp" />

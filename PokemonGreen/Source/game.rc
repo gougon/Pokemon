@@ -322,6 +322,8 @@ BG_PANEL                BITMAP                  "D:\\GitPokemon\\PokemonGreen\\R
 
 IDB_ALPHABET_DIVISION   BITMAP                  "..\\res\\bmp00031.bmp"
 
+IDB_QUESTION_MARK       BITMAP                  "..\\res\\bmp00032.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

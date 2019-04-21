@@ -72,21 +72,68 @@ void Bag::OnShow()
                 item_name.SetText((*item_itr)->GetName());
                 item_name.SetTopLeft(340, 50 + 24 * item_counter);
                 item_name.OnShow();
+                item_left_amount.SetText("x" + to_string(item_amount[(*item_itr)->GetID()]));
+                item_left_amount.SetTopLeft(560, 50 + 24 * item_counter);
+                item_left_amount.OnShow();
                 item_counter++;
             }
 
             break;
 
         case 2:
+            for (vector<CBall*>::iterator item_itr = item_Balls.begin(); item_itr != item_Balls.end(); ++item_itr)
+            {
+                item_name.SetText((*item_itr)->GetName());
+                item_name.SetTopLeft(340, 50 + 24 * item_counter);
+                item_name.OnShow();
+                item_left_amount.SetText("x" + to_string(item_amount[(*item_itr)->GetID()]));
+                item_left_amount.SetTopLeft(560, 50 + 24 * item_counter);
+                item_left_amount.OnShow();
+                item_counter++;
+            }
+
             break;
 
         case 3:
+            for (vector<CScrolls*>::iterator item_itr = item_Scrolls.begin(); item_itr != item_Scrolls.end(); ++item_itr)
+            {
+                item_name.SetText((*item_itr)->GetName());
+                item_name.SetTopLeft(340, 50 + 24 * item_counter);
+                item_name.OnShow();
+                item_left_amount.SetText("x" + to_string(item_amount[(*item_itr)->GetID()]));
+                item_left_amount.SetTopLeft(560, 50 + 24 * item_counter);
+                item_left_amount.OnShow();
+                item_counter++;
+            }
+
             break;
 
         case 4:
+            for (vector<CFruit*>::iterator item_itr = item_Fruit.begin(); item_itr != item_Fruit.end(); ++item_itr)
+            {
+                item_name.SetText((*item_itr)->GetName());
+                item_name.SetTopLeft(340, 50 + 24 * item_counter);
+                item_name.OnShow();
+                item_left_amount.SetText("x" + to_string(item_amount[(*item_itr)->GetID()]));
+                item_left_amount.SetTopLeft(560, 50 + 24 * item_counter);
+                item_left_amount.OnShow();
+                item_counter++;
+            }
+
             break;
 
         case 5:
+            for (vector<CGoods*>::iterator item_itr = item_Goods.begin(); item_itr != item_Goods.end(); ++item_itr)
+            {
+                item_name.SetText((*item_itr)->GetName());
+                item_name.SetTopLeft(340, 50 + 24 * item_counter);
+                item_name.OnShow();
+                item_left_amount.SetText("x" + to_string(item_amount[(*item_itr)->GetID()]));
+                item_left_amount.SetTopLeft(560, 50 + 24 * item_counter);
+                item_left_amount.OnShow();
+                item_counter++;
+            }
+
             break;
     }
 
@@ -95,11 +142,63 @@ void Bag::OnShow()
 
     if (categorie_flagIndex == 1 && chooser != int(item_Prop.size()))
     {
-        description.SetText(item_Prop[chooser]->GetDescription());
-        description.SetTopLeft(15, 300);
-        description.OnShow();
+        if (!inItemamount && !inYesno)
+        {
+            description.SetText(item_Prop[chooser]->GetDescription());
+            description.SetTopLeft(15, 300);
+            description.OnShow();
+        }
+
         item_Prop[chooser]->GetImage()->SetTopLeft(13, 217);
         item_Prop[chooser]->GetImage()->ShowBitmap();
+    }
+    else if (categorie_flagIndex == 2 && chooser != int(item_Balls.size()))
+    {
+        if (!inItemamount && !inYesno)
+        {
+            description.SetText(item_Balls[chooser]->GetDescription());
+            description.SetTopLeft(15, 300);
+            description.OnShow();
+        }
+
+        item_Balls[chooser]->GetImage()->SetTopLeft(13, 217);
+        item_Balls[chooser]->GetImage()->ShowBitmap();
+    }
+    else if (categorie_flagIndex == 3 && chooser != int(item_Scrolls.size()))
+    {
+        if (!inItemamount && !inYesno)
+        {
+            description.SetText(item_Scrolls[chooser]->GetDescription());
+            description.SetTopLeft(15, 300);
+            description.OnShow();
+        }
+
+        item_Scrolls[chooser]->GetImage()->SetTopLeft(13, 217);
+        item_Scrolls[chooser]->GetImage()->ShowBitmap();
+    }
+    else if (categorie_flagIndex == 4 && chooser != int(item_Fruit.size()))
+    {
+        if (!inItemamount && !inYesno)
+        {
+            description.SetText(item_Fruit[chooser]->GetDescription());
+            description.SetTopLeft(15, 300);
+            description.OnShow();
+        }
+
+        item_Fruit[chooser]->GetImage()->SetTopLeft(13, 217);
+        item_Fruit[chooser]->GetImage()->ShowBitmap();
+    }
+    else if (categorie_flagIndex == 5 && chooser != int(item_Goods.size()))
+    {
+        if (!inItemamount && !inYesno)
+        {
+            description.SetText(item_Goods[chooser]->GetDescription());
+            description.SetTopLeft(15, 300);
+            description.OnShow();
+        }
+
+        item_Goods[chooser]->GetImage()->SetTopLeft(13, 217);
+        item_Goods[chooser]->GetImage()->ShowBitmap();
     }
     else
     {
@@ -147,11 +246,22 @@ void Bag::OnShow()
     if (inItemamount)
     {
         amountSelect_panel.ShowBitmap();
+        //show the amount you want to drop
+        text.SetText(to_string(dropAmount));
+        text.SetTopLeft(565, 410);
+        text.OnShow();
+        //show the desription what amount want drop
+        description.SetText("choose the amount");
+        description.SetTopLeft(15, 300);
+        description.OnShow();
     }
 
     if (inYesno)
     {
         yesno_panel.ShowBitmap();
+        description.SetText("you sure ?");
+        description.SetTopLeft(15, 300);
+        description.OnShow();
 
         if (yesnoChooser)
         {
@@ -192,6 +302,7 @@ void Bag::LoadBitmap()
     ///////////////////////
     text.LoadBitmap();
     item_name.LoadBitmap();
+    item_left_amount.LoadBitmap();
     description.LoadBitmap();
     item_image.LoadBitmap(BG_BACKPACK_BACK);
 }
@@ -307,10 +418,24 @@ void Bag::KeyDownListener(UINT nChar)
 
     if (nChar == KEY_Z)
     {
-        TRACE("now chooser is = %d %d\n", chooser, int(item_Prop.size()));
-
         //Prop function
         if (!inPanel && categorie_flagIndex == 1 && chooser == int(item_Prop.size()))
+        {
+            End();
+        }
+        else if (!inPanel && categorie_flagIndex == 2 && chooser == int(item_Balls.size()))
+        {
+            End();
+        }
+        else if (!inPanel && categorie_flagIndex == 3 && chooser == int(item_Scrolls.size()))
+        {
+            End();
+        }
+        else if (!inPanel && categorie_flagIndex == 4 && chooser == int(item_Fruit.size()))
+        {
+            End();
+        }
+        else if (!inPanel && categorie_flagIndex == 5 && chooser == int(item_Goods.size()))
         {
             End();
         }
@@ -322,7 +447,16 @@ void Bag::KeyDownListener(UINT nChar)
                 inItemamount = true;
             else
             {
-                DropItem(item_Prop[chooser]->GetID(), dropAmount);
+                if (categorie_flagIndex == 1) DropItem(item_Prop[chooser]->GetID(), dropAmount);
+
+                if (categorie_flagIndex == 2) DropItem(item_Balls[chooser]->GetID(), dropAmount);
+
+                if (categorie_flagIndex == 3) DropItem(item_Scrolls[chooser]->GetID(), dropAmount);
+
+                if (categorie_flagIndex == 4) DropItem(item_Fruit[chooser]->GetID(), dropAmount);
+
+                if (categorie_flagIndex == 5) DropItem(item_Goods[chooser]->GetID(), dropAmount);
+
                 dropAmount = 1;
             }
 
@@ -334,9 +468,18 @@ void Bag::KeyDownListener(UINT nChar)
             inYesno = true;
             inItemamount = false;
         }
+        else if (inPanel && panel_flagIndex == 1)
+        {
+            inItemamount = true;
+            inPanel = false;
+        }
         else if (inPanel && panel_flagIndex == 2)
         {
             inItemamount = true;
+            inPanel = false;
+        }
+        else if (inPanel && panel_flagIndex == 3)
+        {
             inPanel = false;
         }
         else
@@ -370,11 +513,86 @@ void Bag::DropItem(int itemId, int amount)
                 else
                 {
                     item_amount[(*item_itr)->GetID()] -= amount;
-                    End();
                 }
             }
 
             if (item_Prop.empty()) break;
+        }
+    }
+    else if (categorie_flagIndex == 2)
+    {
+        for (vector<CBall*>::iterator item_itr = item_Balls.begin(); item_itr != item_Balls.end(); ++item_itr)
+        {
+            if ((*item_itr)->GetID() == itemId)
+            {
+                if (item_amount[(*item_itr)->GetID()] == amount)
+                {
+                    item_itr = item_Balls.erase(item_itr);
+                }
+                else
+                {
+                    item_amount[(*item_itr)->GetID()] -= amount;
+                }
+            }
+
+            if (item_Balls.empty()) break;
+        }
+    }
+    else if (categorie_flagIndex == 3)
+    {
+        for (vector<CScrolls*>::iterator item_itr = item_Scrolls.begin(); item_itr != item_Scrolls.end(); ++item_itr)
+        {
+            if ((*item_itr)->GetID() == itemId)
+            {
+                if (item_amount[(*item_itr)->GetID()] == amount)
+                {
+                    item_itr = item_Scrolls.erase(item_itr);
+                }
+                else
+                {
+                    item_amount[(*item_itr)->GetID()] -= amount;
+                }
+            }
+
+            if (item_Scrolls.empty()) break;
+        }
+    }
+    else if (categorie_flagIndex == 4)
+    {
+        for (vector<CFruit*>::iterator item_itr = item_Fruit.begin(); item_itr != item_Fruit.end(); ++item_itr)
+        {
+            if ((*item_itr)->GetID() == itemId)
+            {
+                if (item_amount[(*item_itr)->GetID()] == amount)
+                {
+                    item_itr = item_Fruit.erase(item_itr);
+                }
+                else
+                {
+                    item_amount[(*item_itr)->GetID()] -= amount;
+                }
+            }
+
+            if (item_Fruit.empty()) break;
+        }
+    }
+    else
+    {
+        for (vector<CGoods*>::iterator item_itr = item_Goods.begin(); item_itr != item_Goods.end(); ++item_itr)
+        {
+            if ((*item_itr)->GetID() == itemId)
+            {
+                if (item_amount[(*item_itr)->GetID()] == amount)
+                {
+                    item_itr = item_Goods.erase(item_itr);
+                }
+                else
+                {
+                    item_amount[(*item_itr)->GetID()] -= amount;
+                }
+            }
+
+            if (item_Goods.empty()) break;
         }
     }
 }
