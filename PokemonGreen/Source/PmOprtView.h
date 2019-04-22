@@ -37,9 +37,9 @@ namespace game_framework {
 		const int IMG_LEFT = 35;
 		const int IMG_TOP = 120;
 		const int LV_LEFT = 50;
-		const int LV_TOP = 305;
+		const int LV_TOP = 285;
 		const int NAME_LEFT = 95;
-		const int NAME_TOP = 305;
+		const int NAME_TOP = 285;
 		const int SK_LIST_LEFT = 216;
 		const int SK_LIST_TOP = 64;
 		const int SK_TOP = 103;
@@ -51,9 +51,9 @@ namespace game_framework {
 		const int SK_SB_LEFT = 22;
 		const int SK_SB_RIGHT = 219;
 		const int SK_SB_TOP = 328;
-		const int SK_SB_CONTENT_LEFT = 265;
-		const int SK_SB_CONTENT_TOP = 490;
-		const int SK_DESC_TOP = 490;
+		const int SK_SB_CONTENT_LEFT = 160;
+		const int SK_SB_CONTENT_TOP = 365;
+		const int SK_DESC_TOP = 365;
 
 		void SetCommon();
 		void SetInfo();

@@ -283,12 +283,6 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
     }
     else if (nChar == KEY_ENTER)
     {
-        /*vector<Pokemon*> pms;
-
-        for (int i = 0; i < hero.GetPmNum(); ++i)
-        {
-            pms.push_back(hero.GetPokemon(i));
-        }*/
         myMenu.Start();
         myMenu.SetPokemons(hero.GetPokemons());
     }

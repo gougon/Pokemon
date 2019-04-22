@@ -161,13 +161,14 @@
 #define IDB_ICON_PM_TREECKO             294
 #define BAG_PANEL                       295
 #define BG_PANEL                        295
-#define IDB_ALPHABET_DIVISION           296
 #define IDB_QU                          297
 #define IDB_QUESTION_MARK               297
 #define IDB_BITMAP12                    298
 #define IDB_BITMAP13                    299
 #define BG_ITEMAMOUNT                   299
 #define IDB_BITMAP14                    300
+#define IDB_BITMAP15                    301
+#define IDB_ALPHABET_DIVISION           303
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -180,7 +181,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        301
+#define _APS_NEXT_RESOURCE_VALUE        302
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

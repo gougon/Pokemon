@@ -63,6 +63,11 @@ namespace game_framework {
 		return name;
 	}
 
+	string Skill::GetDescription()
+	{
+		return description;
+	}
+
 	int Skill::GetRemainPP()
 	{
 		return remainpp;
@@ -71,5 +76,15 @@ namespace game_framework {
 	int Skill::GetAllPP()
 	{
 		return allpp;
+	}
+
+	int Skill::GetPower()
+	{
+		return power;
+	}
+
+	int Skill::GetHitRate()
+	{
+		return (int)(hitRate * 100);
 	}
 }

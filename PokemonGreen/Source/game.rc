@@ -326,13 +326,13 @@ BG_YESNO                BITMAP                  "..\\RES\\BG_YESNO.bmp"
 
 BG_PANEL                BITMAP                  "..\\RES\\BAG_PANEL.bmp"
 
-IDB_ALPHABET_DIVISION   BITMAP                  "..\\res\\bmp00031.bmp"
-
 IDB_QUESTION_MARK       BITMAP                  "..\\res\\bmp00032.bmp"
 
-BG_ITEMAMOUNT           BITMAP                  "..\RES\\BG_ITEMAMOUNT.bmp"
+BG_ITEMAMOUNT           BITMAP                  "..\\RES\\BG_ITEMAMOUNT.bmp"
 
-IDB_ICON_PM_TREECKO     BITMAP                  "..\RES\\icon_pm_treecko.bmp"
+IDB_ICON_PM_TREECKO     BITMAP                  "..\\RES\\icon_pm_treecko.bmp"
+
+IDB_ALPHABET_DIVISION   BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\bmp00031.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

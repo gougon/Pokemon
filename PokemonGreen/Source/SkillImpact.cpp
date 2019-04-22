@@ -18,7 +18,8 @@ namespace game_framework {
 
 	void SkillImpact::Init()
 	{
-		name = "Impact";
+		name = "impact";
+		description = "use whole body to attack enemy";
 		category = physical;
 		power = 35;
 		allpp = 35;

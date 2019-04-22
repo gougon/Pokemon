@@ -24,19 +24,18 @@ namespace game_framework {
 		virtual void AtkAnimeOnShow() = 0;
 		string GetAttributeText();
 		string GetName();
+		string GetDescription();
 		int GetRemainPP();
 		int GetAllPP();
+		int GetPower();
+		int GetHitRate();
 		//virtual void Use(Pokemon *self, Pokemon *enemy1, Pokemon *enemy2) = 0;
 	protected:
 		pmStyle pmstyle;
 		CAnimation atkAnime;
-		int attribute;
-		string name;
-		int animeCount;
 		CSkill category;
-		int power;
-		int allpp;
-		int remainpp;
+		string name, description;
+		int attribute, power, allpp, remainpp, animeCount;
 		float hitRate;
 	};
 }

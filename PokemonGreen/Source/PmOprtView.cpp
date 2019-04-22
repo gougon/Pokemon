@@ -28,8 +28,8 @@ namespace game_framework {
 		skillList.SetTopLeft(SK_LIST_LEFT, SK_LIST_TOP);
 		skillSidebar.SetTopLeft(SK_LIST_LEFT, SK_SB_TOP);
 		skillDesc.SetTopLeft(SK_ATTR_LEFT, SK_DESC_TOP);
-		skillPower.SetTopLeft(SK_SB_CONTENT_LEFT, SK_SB_CONTENT_TOP);
-		skillHitRate.SetTopLeft(SK_SB_CONTENT_LEFT, SK_SB_CONTENT_TOP + SK_INTERVAL);
+		skillPower.SetTopLeft(160, SK_SB_CONTENT_TOP);
+		skillHitRate.SetTopLeft(160, SK_SB_CONTENT_TOP + SK_INTERVAL);
 	}
 
 	void PmOprtView::OnShow()
@@ -67,6 +67,9 @@ namespace game_framework {
 	{
 		if (isSelectSkill) {
 			skillSelect.SetTopLeft(SK_ATTR_LEFT, SK_TOP + (skillOrder * SK_INTERVAL));
+			skillDesc.SetText(skills[skillOrder]->GetDescription());
+			skillPower.SetText(to_string(skills[skillOrder]->GetPower()));
+			skillHitRate.SetText(to_string(skills[skillOrder]->GetHitRate()));
 			if (skillSidebar.Left() > SK_SB_LEFT) {
 				OpenSkillSidebar();
 			}
@@ -195,7 +198,7 @@ namespace game_framework {
 		for (int i = 0; i < (int)skills.size(); ++i) {
 			PushText(skillText, skills[i]->GetAttributeText());
 			PushText(skillText, skills[i]->GetName());
-			PushText(skillText, to_string(skills[i]->GetRemainPP()) + to_string(skills[i]->GetAllPP()));
+			PushText(skillText, to_string(skills[i]->GetRemainPP()) + " / " + to_string(skills[i]->GetAllPP()));
 			skillText[i].SetTopLeft(SK_ATTR_LEFT, SK_TOP + (i * SK_INTERVAL));
 			skillText[i + 1].SetTopLeft(SK_NAME_LEFT, SK_TOP + (i * SK_INTERVAL));
 			skillText[i + 2].SetTopLeft(SK_PP_LEFT, SK_TOP + (i * SK_INTERVAL));
