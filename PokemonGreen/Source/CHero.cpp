@@ -77,7 +77,11 @@ void CHero::Initialize()
     Pokemon* pm = pmfactory.CreatePokemon(treecko);
     pm->SetLevel(6);
     pm->AddSkill(skfactory.CreateSkill(impact, styleSelf));
+	Pokemon* pm2 = pmfactory.CreatePokemon(treecko, "second");
+	pm2->SetLevel(20);
+	pm2->AddSkill(skfactory.CreateSkill(impact, styleSelf));
     AddPokemon(pm);
+	AddPokemon(pm2);
 }
 void CHero::LoadBitmap()
 {
@@ -486,6 +490,11 @@ int CHero::GetAtkProb()
 Pokemon* CHero::GetPokemon(int order)
 {
     return pokemons[order];
+}
+
+vector<Pokemon*>* CHero::GetPokemons()
+{
+	return &pokemons;
 }
 
 int CHero::GetPmNum()

@@ -11,14 +11,14 @@
 
 namespace game_framework {
 	PokemonMenu::PokemonMenu() :
-		ActionObject(), order(0)
+		ActionObject(), order(0), sltPm(0), swapPm(0), isOprtPanel(false), isOprtSlt(false), isItem(false)
 	{
 		// empty body
 	}
 
 	PokemonMenu::~PokemonMenu()
 	{
-		for (auto i : pokemons) {
+		for (auto i : *pokemons) {
 			delete i;
 		}
 		delete[] pokemonBar;
@@ -27,43 +27,87 @@ namespace game_framework {
 	void PokemonMenu::Init()
 	{
 		order = 0;
+		sltPm = 0;
+		swapPm = 0;
 		selectPanel.SetTopLeft(0, 0);
 
-		pmOprtPanel.Init();
+		operationPanel.SetTopLeft(PANEL_LEFT, PANEL_TOP);
+		cursor.SetTopLeft(CURSOR_LEFT, CURSOR_TOP);
+		pmOprtView.Init();
 	}
 
 	void PokemonMenu::OnShow()
 	{
 		selectPanel.ShowBitmap();		// 顯示背景
 
-		for (int i = 0; i < (int)pokemons.size(); ++i) {		// 顯示血條
+		for (int i = 0; i < (int)pokemons->size(); ++i) {		// 顯示血條
 			pokemonBar[i].OnShow();
 		}
 
-		if (pmOprtPanel.IsWork()) {
-			pmOprtPanel.OnShow();
+		if (isOprtPanel) {
+			if (!isOprtSlt) {
+				operationPanel.ShowBitmap();
+				cursor.ShowBitmap();
+			}
+			else {
+				if (order == pmOprtPanelSltView) {
+					pmOprtView.OnShow();
+				}
+			}
 		}
 	}
 
 	void PokemonMenu::OnMove()
 	{
-		for (int i = 0; i < (int)pokemons.size(); ++i) {
-			if (i == order) {
-				pokemonBar->SetIsSelect(true);
+		for (int i = 0; i < (int)pokemons->size(); ++i) {
+			if (isItem && order == pmOprtPanelSltChange) {
+				if (i == swapPm) {
+					pokemonBar[i].SetIsSelect(true);
+				}
+				else if(i != sltPm) {
+					pokemonBar[i].SetIsSelect(false);
+				}
 			}
 			else {
-				pokemonBar->SetIsSelect(false);
+				if (i == sltPm) {
+					pokemonBar[i].SetIsSelect(true);
+				}
+				else {
+					pokemonBar[i].SetIsSelect(false);
+				}
 			}
 		}
-		if (pmOprtPanel.IsWork()) {
-			pmOprtPanel.OnMove();
+		if (isOprtPanel) {
+			if (!isOprtSlt) {
+				cursor.SetTopLeft(CURSOR_LEFT, CURSOR_TOP + CURSOR_INTERVAL * order);
+			}
+			else {
+				switch (order) {
+				case pmOprtPanelSltView:
+					pmOprtView.OnMove();
+					if (!pmOprtView.IsWork()) {
+						isOprtSlt = false;
+					}
+					break;
+				case pmOprtPanelSltChange:
+					break;
+				case pmOprtPanelSltItem:
+					break;
+				case pmOprtPanelSltClose:
+					End();
+					break;
+				}
+			}
 		}
 	}
 
 	void PokemonMenu::LoadBitmap()
 	{
 		selectPanel.LoadBitmap(IDB_POKEMON_SELECT_PANEL, RGB(255, 0, 0));
-		pmOprtPanel.LoadBitmap();
+		operationPanel.LoadBitmap(IDB_POKEMON_OPERATION_PANEL);
+		cursor.LoadBitmap(IDB_ATK_CURSOR, RGB(255, 0, 0));
+
+		pmOprtView.LoadBitmap();
 	}
 
 	void PokemonMenu::KeyDownListener(UINT nChar)
@@ -75,37 +119,105 @@ namespace game_framework {
 		const char KEY_Z = 0x5a;
 		const char KEY_X = 0x58;
 
-		if (pmOprtPanel.IsWork()) {
-			pmOprtPanel.KeyDownListener(nChar);
+		if (pmOprtView.IsWork()) {
+			pmOprtView.KeyDownListener(nChar);
 		}
 		else {
 			switch (nChar) {
 			case KEY_LEFT:
-				if (order != 0) {
-					order = 0;
+				if (!isOprtPanel) {
+					if (sltPm != 0) {
+						sltPm = 0;
+					}
+				}
+				else {
+					if (isItem && order == pmOprtPanelSltChange &&
+						swapPm != 0) {
+						swapPm = 0;
+					}
 				}
 				break;
 			case KEY_RIGHT:
-				if (order == 0 && (int)pokemons.size() > 1) {
-					order = 1;
+				if (!isOprtPanel) {
+					if (sltPm == 0 && (int)pokemons->size() > 1) {
+						sltPm = 1;
+					}
+				}
+				else {
+					if (isItem && order == pmOprtPanelSltChange &&
+						swapPm == 0 && (int)pokemons->size() > 1) {
+						swapPm = 1;
+					}
 				}
 				break;
 			case KEY_UP:
-				if (order != 0 && order != 1) {
-					order -= 1;
+				if (isOprtPanel) {
+					if (!isItem && order > 0) {
+						order -= 1;
+					}
+					else if (isItem && order == pmOprtPanelSltChange &&
+						swapPm != 0 && swapPm != 1) {
+						swapPm -= 1;
+					}
+				}
+				else {
+					if (sltPm != 0 && sltPm != 1) {
+						sltPm -= 1;
+					}
 				}
 				break;
 			case KEY_DOWN:
-				if (order != 0 && order < (int)pokemons.size()) {
-					order += 1;
+				if (isOprtPanel) {
+					if (!isItem && order < 3) {
+						order += 1;
+					}
+					else if (isItem && order == pmOprtPanelSltChange &&
+						swapPm != 0 && swapPm < (int)pokemons->size()) {
+						swapPm += 1;
+					}
+				}
+				else {
+					if (sltPm != 0 && sltPm < (int)pokemons->size()) {
+						sltPm += 1;
+					}
 				}
 				break;
 			case KEY_Z:
-				pmOprtPanel.Start();
-				pmOprtPanel.ReceiveData(pokemons[order]);
+				if (!isOprtPanel) {
+					isOprtPanel = true;
+					order = 0;
+				}
+				else {
+					isOprtSlt = true;
+					if (!isItem) {
+						if (order == pmOprtPanelSltView) {
+							pmOprtView.Start();
+							pmOprtView.ReceiveData((*pokemons)[order]);
+						}
+						else if (order == pmOprtPanelSltChange) {
+							swapPm = sltPm;
+							isItem = true;
+						}
+					}
+					else {
+						if (order == pmOprtPanelSltChange) {
+							Swap(sltPm, swapPm);
+							delete[] pokemonBar;
+							ReceiveData(pokemons);
+							isOprtPanel = false;
+							isItem = false;
+							order = 0;
+						}
+					}
+				}
 				break;
 			case KEY_X:
-				End();
+				if (!isOprtPanel) {
+					End();
+				}
+				else {
+					isOprtPanel = false;
+				}
 				break;
 			default:
 				break;
@@ -113,11 +225,17 @@ namespace game_framework {
 		}
 	}
 
-	void PokemonMenu::ReceiveData(vector<Pokemon*> &pms)
+	void PokemonMenu::End()
+	{
+		isWork = false;
+		order = sltPm = swapPm = 0;
+		isOprtPanel = isOprtSlt = false;
+	}
+
+	void PokemonMenu::ReceiveData(vector<Pokemon*>* pms)
 	{
 		pokemons = pms;
-		pokemonBar = new PokemonBar[pokemons.size()];
-
+		pokemonBar = new PokemonBar[pokemons->size()];
 		SetPmBar();
 	}
 
@@ -125,9 +243,9 @@ namespace game_framework {
 
 	void PokemonMenu::SetPmBar()
 	{
-		for (int i = 0; i < (int)pokemons.size(); ++i) {
+		for (int i = 0; i < (int)pokemons->size(); ++i) {
 			pokemonBar[i].LoadBitmap();
-			pokemonBar[i].GetPokemon(pokemons[i]);
+			pokemonBar[i].GetPokemon((*pokemons)[i]);
 			pokemonBar[i].SetOrder(i);
 			SetPmBarLeftTop(i);
 		}
@@ -143,5 +261,12 @@ namespace game_framework {
 			pokemonBar[order].SetTopLeft(POKEMON_BAR_LEFT, 
 				POKEMON_BAR_TOP + (order - 1) * POKEMON_BAR_INTERVAL);
 		}
+	}
+
+	void PokemonMenu::Swap(int order1, int order2)
+	{
+		Pokemon *temp = (*pokemons)[order1];
+		(*pokemons)[order1] = (*pokemons)[order2];
+		(*pokemons)[order2] = temp;
 	}
 }

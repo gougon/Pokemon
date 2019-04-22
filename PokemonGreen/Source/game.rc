@@ -306,15 +306,21 @@ IDB_POKEMON_SELECT_PANEL BITMAP                  "..\\RES\\SELECT_PANEL.bmp"
 
 IDB_EXPBAR              BITMAP                  "..\\RES\\expBar.bmp"
 
-IDB_PM_ABILITY          BITMAP                  "E:\\GitHub\\PokemonGreen\\RES\\PM_ABILITY.bmp"
+IDB_PM_ABILITY          BITMAP                  "..\\RES\\PM_ABILITY.bmp"
 
-IDB_PM_SKILL_PANEL      BITMAP                  "E:\\GitHub\\PokemonGreen\\RES\\PM_SKILL_PANEL.bmp"
+IDB_PM_SKILL_PANEL      BITMAP                  "..\\RES\\PM_SKILL_PANEL.bmp"
 
-IDB_POKEMON_BAR_FIRST_SELECT BITMAP                  "E:\\GitHub\\PokemonGreen\\RES\\POKEMON_BAR_FIRST_SELECTED.bmp"
+IDB_POKEMON_BAR_FIRST_SELECT BITMAP                  "..\\RES\\POKEMON_BAR_FIRST_SELECTED.bmp"
 
-IDB_POKEMON_BAR_SELECT  BITMAP                  "E:\\GitHub\\PokemonGreen\\RES\\POKEMON_BAR_SELECTED.bmp"
+IDB_POKEMON_BAR_SELECT  BITMAP                  "..\\RES\\POKEMON_BAR_SELECTED.bmp"
 
-IDB_ICON_PM_TREECKO     BITMAP                  "E:\\GitHub\\PokemonGreen\\RES\\icon_pm_treecko.bmp"
+IDB_ICON_PM_TREECKO     BITMAP                  "..\\RES\\icon_pm_treecko.bmp"
+
+IDB_SKILL_SELECT        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\SKILL_SELECT.bmp"
+
+IDB_SKILL_SIDEBAR       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_sidebar.bmp"
+
+IDB_SKILL_LIST          BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_list.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

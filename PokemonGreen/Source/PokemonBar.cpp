@@ -16,6 +16,11 @@ namespace game_framework {
 		// empty body
 	}
 
+	PokemonBar::~PokemonBar()
+	{
+		pm = nullptr;
+	}
+
 	void PokemonBar::OnShow()
 	{
 		IconAnime();
@@ -24,7 +29,7 @@ namespace game_framework {
 		if (isSelect) {
 			barSelect.ShowBitmap();
 		}
-		pmIcon->ShowBitmap();
+		pmIcon.ShowBitmap();
 		nameText.OnShow();
 		levelText.OnShow();
 		remainHpText.OnShow();
@@ -52,7 +57,7 @@ namespace game_framework {
 		barSelect.SetTopLeft(left, top);
 		if (order == 0) {
 			targetHp->SetTopLeft(left + BLD_BAR_FIRST_LEFT, top + BLD_BAR_FIRST_TOP);
-			pmIcon->SetTopLeft(left + PM1_ICON_LEFT, top + PM1_ICON_TOP);
+			pmIcon.SetTopLeft(left + PM1_ICON_LEFT, top + PM1_ICON_TOP);
 			nameText.SetTopLeft(left + PM1_NAME_LEFT, top + PM1_NAME_TOP);
 			levelText.SetTopLeft(left + PM1_LEVEL_LEFT, top + PM1_LEVEL_TOP);
 			remainHpText.SetTopLeft(left + PM1_RH_LEFT, top + PM1_HP_TOP);
@@ -60,7 +65,7 @@ namespace game_framework {
 		}
 		else {
 			targetHp->SetTopLeft(left + BLD_BAR_LEFT, top + BLD_BAR_TOP);
-			pmIcon->SetTopLeft(left + PM2_ICON_LEFT, top + PM2_ICON_TOP);
+			pmIcon.SetTopLeft(left + PM2_ICON_LEFT, top + PM2_ICON_TOP);
 			nameText.SetTopLeft(left + PM2_NAME_LEFT, top + PM2_NAME_TOP);
 			levelText.SetTopLeft(left + PM2_LEVEL_LEFT, top + PM2_LEVEL_TOP);
 			remainHpText.SetTopLeft(left + PM2_RH_LEFT, top + PM2_HP_TOP);
@@ -124,10 +129,10 @@ namespace game_framework {
 	{
 		if (delay++ < 10) {
 			if (delay == 5) {
-				pmIcon->SetTopLeft(pmIcon->Left(), pmIcon->Top() - 10);
+				pmIcon.SetTopLeft(pmIcon.Left(), pmIcon.Top() - 10);
 			}
 			else if (delay == 9) {
-				pmIcon->SetTopLeft(pmIcon->Left(), pmIcon->Top() + 10);
+				pmIcon.SetTopLeft(pmIcon.Left(), pmIcon.Top() + 10);
 			}
 		}
 		else {

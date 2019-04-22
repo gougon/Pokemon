@@ -55,6 +55,7 @@ class CHero
         void KeyIn(UINT nChar);
         int GetAtkProb();
         Pokemon* GetPokemon(int order);
+		vector<Pokemon*>* GetPokemons();
         int GetPmNum();
         void AddPokemon(Pokemon* newPm);
     protected:

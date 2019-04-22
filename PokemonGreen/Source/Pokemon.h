@@ -49,7 +49,8 @@ namespace game_framework {
 		Skill *GetSkill(int order);
 		int GetSkillNum();
 		int GetHeight();
-		CMovingBitmap *GetIcon();
+		CMovingBitmap GetIcon();
+		CMovingBitmap GetFrontImage();
 		int Left();
 		int Top();
 		void SetHP(int hp);
@@ -83,6 +84,6 @@ namespace game_framework {
 		float hitRate, evasionRate;
 		int nowExp, needExp, basicExp;
 		vector<Skill*> skills;
-		CMovingBitmap image, icon;
+		CMovingBitmap frontImg, backImg, icon;
 	};
 }

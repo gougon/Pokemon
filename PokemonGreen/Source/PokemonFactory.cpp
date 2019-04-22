@@ -22,6 +22,17 @@ namespace game_framework {
 		}
 	}
 
+	Pokemon* PokemonFactory::CreatePokemon(pokemonName pokemonName, string name)
+	{
+		//Skill *skill;
+		if (pokemonName == treecko) {
+			return new PmTreecko(my, name);
+		}
+		else {			 // else if skill......
+			return new PmTreecko(my, name);
+		}
+	}
+
 	Pokemon* PokemonFactory::CreateEnemy(pokemonName pokemonName)
 	{
 		//Skill *skill;

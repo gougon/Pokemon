@@ -48,12 +48,22 @@ namespace game_framework {
 
 	void Pokemon::OnShow()
 	{
-		image.ShowBitmap();
+		if (pmtype == my) {
+			backImg.ShowBitmap();
+		}
+		else {
+			frontImg.ShowBitmap();
+		}
 	}
 
 	void Pokemon::OnShow(string msg)
 	{
-		image.ShowBitmap("atk");
+		if (pmtype == my) {
+			backImg.ShowBitmap("atk");
+		}
+		else {
+			frontImg.ShowBitmap("atk");
+		}
 	}
 
 	// Getter
@@ -194,22 +204,27 @@ namespace game_framework {
 
 	int Pokemon::GetHeight()
 	{
-		return image.RectHeight();
+		return (pmtype == my) ? backImg.RectHeight() : frontImg.RectHeight();
 	}
 
-	CMovingBitmap *Pokemon::GetIcon()
+	CMovingBitmap Pokemon::GetIcon()
 	{
-		return &icon;
+		return icon;
+	}
+
+	CMovingBitmap Pokemon::GetFrontImage()
+	{
+		return frontImg;
 	}
 
 	int Pokemon::Left()
 	{
-		return image.Left();
+		return (pmtype == my) ? backImg.Left() : frontImg.Left();
 	}
 
 	int Pokemon::Top()
 	{
-		return image.Top();
+		return (pmtype == my) ? backImg.Top() : frontImg.Top();
 	}
 
 	// Setter
@@ -244,11 +259,22 @@ namespace game_framework {
 
 	void Pokemon::SetTopLeft(int left, int top)
 	{
-		image.SetTopLeft(left, top);
+		if (pmtype == my) {
+			backImg.SetTopLeft(left, top);
+		}
+		else {
+			frontImg.SetTopLeft(left, top);
+		}
+		
 	}
 
 	void Pokemon::SetHeight(int height)
 	{
-		image.SetHeight(height);
+		if (pmtype == my) {
+			backImg.SetHeight(height);
+		}
+		else {
+			frontImg.SetHeight(height);
+		}
 	}
 }

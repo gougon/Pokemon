@@ -28,7 +28,7 @@ class Menu : public ActionObject
         virtual void KeyDownListener(UINT nChar);
         void End();
         void RecieveData(int itemID, int amount);
-        void SetPokemons(vector<Pokemon*> &pms);
+        void SetPokemons(vector<Pokemon*>* pms);
     private:
         const int MENU_LEFT = 474;
         const int MENU_TOP = 1;
@@ -52,7 +52,7 @@ class Menu : public ActionObject
         int itemCount;
         CHero* hero;
         vector<ActionObject*> items;
-        vector<Pokemon*> pokemons;
+        vector<Pokemon*>* pokemons;
         CMovingBitmap cursor, menuTop, menuMiddle, menuBottom;
 };
 }

@@ -152,6 +152,10 @@
 #define IDB_POKEMON_BAR_SELECT          288
 #define IDB_BITMAP7                     289
 #define IDB_ICON_PM_TREECKO             289
+#define IDB_SKILL_SELECT                290
+#define IDB_SKILL_SIDEBAR               291
+#define IDB_BITMAP8                     292
+#define IDB_SKILL_LIST                  292
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -164,7 +168,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        290
+#define _APS_NEXT_RESOURCE_VALUE        293
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

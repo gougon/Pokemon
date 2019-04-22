@@ -154,7 +154,6 @@
     <ClCompile Include="Source\Menu.cpp" />
     <ClCompile Include="Source\Illustration.cpp" />
     <ClCompile Include="Source\MainMenu.cpp" />
-    <ClCompile Include="Source\PmOprtPanel.cpp" />
     <ClCompile Include="Source\PmOprtView.cpp" />
     <ClCompile Include="Source\PokemonBar.cpp" />
     <ClCompile Include="Source\PokemonMenu.cpp" />
@@ -223,7 +222,6 @@
     <ClInclude Include="Source\ActionObject.h" />
     <ClInclude Include="Source\Illustration.h" />
     <ClInclude Include="Source\MainMenu.h" />
-    <ClInclude Include="Source\PmOprtPanel.h" />
     <ClInclude Include="Source\PmOprtView.h" />
     <ClInclude Include="Source\PokemonBar.h" />
     <ClInclude Include="Source\PokemonMenu.h" />
@@ -590,6 +588,15 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\icon_pm_treecko.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\SKILL_SELECT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_sidebar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_list.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

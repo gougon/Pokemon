@@ -13,7 +13,7 @@ namespace game_framework {
 	public:
 		PmTreecko();
 		PmTreecko(PmType pmtype);
-		PmTreecko(string name);
+		PmTreecko(PmType pmtype, string name);
 		virtual void Init(string name);
 		virtual void LoadBitmap();
 	};

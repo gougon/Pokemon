@@ -1,0 +1,9 @@
+diff a/PokemonGreen/Source/PmOprtView.cpp b/PokemonGreen/Source/PmOprtView.cpp	(rejected hunks)
+@@ -7,7 +7,6 @@
+ #include "gamelib.h"
+ #include <stdlib.h>
+ #include "PmOprtView.h"
+-#include <typeinfo>
+ 
+ namespace game_framework {
+ 	PmOprtView::PmOprtView() :

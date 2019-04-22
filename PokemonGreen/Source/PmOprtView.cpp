@@ -11,7 +11,7 @@
 
 namespace game_framework {
 	PmOprtView::PmOprtView() :
-		page(pagePmAbility), skillOrder(0), isSelectSkill(false)
+		page(pagePmAbility), skillOrder(0), isSelectSkill(false), delay(0)
 	{
 		// empty body
 	}
@@ -19,11 +19,18 @@ namespace game_framework {
 	PmOprtView::~PmOprtView()
 	{
 		delete pm;
+		for (auto i : skills) {
+			delete i;
+		}
 	}
 
 	void PmOprtView::Init()
 	{
-		// empty body
+		skillList.SetTopLeft(SK_LIST_LEFT, SK_LIST_TOP);
+		skillSidebar.SetTopLeft(SK_LIST_LEFT, SK_SB_TOP);
+		skillDesc.SetTopLeft(SK_ATTR_LEFT, SK_DESC_TOP);
+		skillPower.SetTopLeft(SK_SB_CONTENT_LEFT, SK_SB_CONTENT_TOP);
+		skillHitRate.SetTopLeft(SK_SB_CONTENT_LEFT, SK_SB_CONTENT_TOP + SK_INTERVAL);
 	}
 
 	void PmOprtView::OnShow()
@@ -37,6 +44,14 @@ namespace game_framework {
 			break;
 		case pagePmSkillPanel:
 			pmSkillPanel.ShowBitmap();
+			skillSidebar.ShowBitmap();
+			skillList.ShowBitmap();
+			if (isSelectSkill) {
+				SelectSkillAnime();
+				skillDesc.OnShow();
+				skillPower.OnShow();
+				skillHitRate.OnShow();
+			}
 			for (auto i : skillText) {
 				i.OnShow();
 			}
@@ -46,12 +61,21 @@ namespace game_framework {
 		}
 		nameText.OnShow();
 		lvText.OnShow();
+		pmImage.ShowBitmap();
 	}
 
 	void PmOprtView::OnMove()
 	{
 		if (isSelectSkill) {
-
+			skillSelect.SetTopLeft(SK_ATTR_LEFT, SK_TOP + (skillOrder * SK_INTERVAL));
+			if (skillSidebar.Left() > SK_SB_LEFT) {
+				OpenSkillSidebar();
+			}
+		}
+		else {
+			if (skillSidebar.Left() < SK_LIST_LEFT) {
+				CloseSkillSidebar();
+			}
 		}
 	}
 
@@ -59,8 +83,14 @@ namespace game_framework {
 	{
 		pmAbility.LoadBitmap(IDB_PM_ABILITY);
 		pmSkillPanel.LoadBitmap(IDB_PM_SKILL_PANEL);
+		skillList.LoadBitmap(IDB_SKILL_LIST);
+		skillSelect.LoadBitmap(IDB_SKILL_SELECT, RGB(255, 0, 0));
+		skillSidebar.LoadBitmap(IDB_SKILL_SIDEBAR);
 		nameText.LoadBitmap();
 		lvText.LoadBitmap();
+		skillDesc.LoadBitmap();
+		skillPower.LoadBitmap();
+		skillHitRate.LoadBitmap();
 	}
 
 	void PmOprtView::KeyDownListener(UINT nChar)
@@ -114,6 +144,8 @@ namespace game_framework {
 	void PmOprtView::ReceiveData(Pokemon *pm)
 	{
 		this->pm = pm;
+		pmImage = pm->GetFrontImage();
+		pmImage.SetTopLeft(IMG_LEFT, IMG_TOP);
 		for (int i = 0; i < pm->GetSkillNum(); ++i) {
 			skills.push_back(pm->GetSkill(i));
 		}
@@ -125,6 +157,10 @@ namespace game_framework {
 	void PmOprtView::End()
 	{
 		isWork = false;
+		pm = nullptr;
+		info.clear();
+		skillText.clear();
+		skills.clear();
 		page = pagePmAbility;
 	}
 
@@ -173,5 +209,37 @@ namespace game_framework {
 		tempText.SetText(text);
 		v.push_back(tempText);
 		v.back().LoadBitmap();
+	}
+
+	void PmOprtView::SelectSkillAnime()
+	{
+		if (delay++ < 20) {
+			if (delay <= 10) {
+				skillSelect.ShowBitmap();
+			}
+		}
+		else {
+			delay = 0;
+		}
+	}
+
+	void PmOprtView::OpenSkillSidebar()
+	{
+		if (skillSidebar.Left() - 60 < SK_SB_LEFT) {
+			skillSidebar.SetTopLeft(SK_SB_LEFT, SK_SB_TOP);
+		}
+		else {
+			skillSidebar.SetTopLeft(skillSidebar.Left() - 60, SK_SB_TOP);
+		}
+	}
+
+	void PmOprtView::CloseSkillSidebar()
+	{
+		if (skillSidebar.Left() + 30 > SK_LIST_LEFT) {
+			skillSidebar.SetTopLeft(SK_LIST_LEFT, SK_SB_TOP);
+		}
+		else {
+			skillSidebar.SetTopLeft(skillSidebar.Left() + 30, SK_SB_TOP);
+		}
 	}
 }

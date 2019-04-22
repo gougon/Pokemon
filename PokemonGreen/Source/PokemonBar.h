@@ -9,6 +9,7 @@ namespace game_framework {
 	class PokemonBar {
 	public:
 		PokemonBar();
+		~PokemonBar();
 		void OnShow();
 		void LoadBitmap();
 		void SetTopLeft(int left, int top);
@@ -18,8 +19,8 @@ namespace game_framework {
 	private:
 		const int BLD_BAR_FIRST_LEFT = 80;
 		const int BLD_BAR_FIRST_TOP = 117;
-		const int BLD_BAR_LEFT = 35;
-		const int BLD_BAR_TOP = 100;
+		const int BLD_BAR_LEFT = 256;
+		const int BLD_BAR_TOP = 24;
 
 		const int PM1_NAME_LEFT = 100;
 		const int PM1_NAME_TOP = 50;
@@ -46,7 +47,7 @@ namespace game_framework {
 		void IconAnime();
 		CText nameText, levelText, remainHpText, allHpText;
 		CMovingBitmap bar, barSelect;
-		CMovingBitmap *pmIcon;
+		CMovingBitmap pmIcon;
 		CMovingBitmap *targetHp;
 		CMovingBitmap greenHp, yellowHp, redHp;
 		// CMovingBitmap pmImg;

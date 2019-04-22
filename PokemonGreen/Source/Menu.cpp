@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "stdafx.h"
 #include "Resource.h"
 #include <string>
 #include <mmsystem.h>
@@ -155,7 +156,6 @@ void Menu::KeyDownListener(UINT nChar)
                 {
                     order -= 1;
                 }
-
                 break;
 
             case KEY_DOWN:
@@ -169,12 +169,6 @@ void Menu::KeyDownListener(UINT nChar)
             case KEY_Z:
                 isItem = true;
                 items[order]->Start();
-
-                if (order == itemPokemonMenu)
-                {
-                    dynamic_cast<PokemonMenu*>(items[order])->ReceiveData(pokemons);
-                }
-
                 break;
 
             case KEY_X:
@@ -199,8 +193,10 @@ void Menu::RecieveData(int itemID, int amount)
     dynamic_cast<Bag*>(items[itemBag])->AddItem(itemID, amount);
 }
 
-void Menu::SetPokemons(vector<Pokemon*> &pms)
-{
-    pokemons = pms;
+void Menu::SetPokemons(vector<Pokemon*>* pms)
+{    
+	pokemons = pms;
+	TRACE("\n\nmenu pokemons address = %d\n\n", pokemons);
+	dynamic_cast<PokemonMenu*>(items[itemPokemonMenu])->ReceiveData(pokemons);
 }
 }
