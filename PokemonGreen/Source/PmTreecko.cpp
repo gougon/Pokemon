@@ -51,6 +51,6 @@ namespace game_framework {
 	{
 		backImg.LoadBitmap(IDB_PM_TREECKO_BACK, RGB(255, 0, 0));
 		frontImg.LoadBitmap(IDB_PM_TREECKO_FRONT, RGB(255, 0, 0));
-		icon.LoadBitmap(IDB_ICON_PM_TREECKO, RGB(255, 0, 0));
+		icon.LoadBitmap(IDB_ICON_PM_TREECKO, RGB(255, 255, 255));
 	}
 }

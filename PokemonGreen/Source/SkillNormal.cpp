@@ -9,6 +9,11 @@
 #include "SkillNormal.h"
 
 namespace game_framework {
+	SkillNormal::SkillNormal()
+	{
+		attribute = normal;
+	}
+
 	int SkillNormal::Damage(Pokemon *self, Pokemon *enemy)
 	{
 		double damage = ((2 * (double)self->GetLevel() + 10) / 250);

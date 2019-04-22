@@ -12,6 +12,7 @@ class CText
         void SetDelayTime(int);
         void SetFontSize(double);
         int GetLength();
+		double GetFontSize();
         void SetText(string inputstr);
         void SetTopLeft(int x, int y);
         void OnShow();

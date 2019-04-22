@@ -622,6 +622,12 @@
     <Image Include="RES\skill_list.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\POKEMON_BAR_FIRST_SELECTED.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon_pm_treecko.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="RES\weibaitown_scene.txt" />

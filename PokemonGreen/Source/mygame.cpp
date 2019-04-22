@@ -289,7 +289,6 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
         {
             pms.push_back(hero.GetPokemon(i));
         }*/
-		TRACE("\n\noutside pokemons address = %d\n\n", hero.GetPokemons());
         myMenu.Start();
         myMenu.SetPokemons(hero.GetPokemons());
     }

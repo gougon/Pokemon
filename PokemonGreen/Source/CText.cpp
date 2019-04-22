@@ -28,7 +28,11 @@ void CText::SetFontSize(double newFontSize)
 }
 int CText::GetLength()
 {
-    return showString.length();
+	return showString.length();
+}
+double CText::GetFontSize()
+{
+	return fontsize;
 }
 void CText::SetText(string inputstr)
 {

@@ -185,7 +185,7 @@ namespace game_framework {
 		PushText(info, to_string(pm->GetNowExp()));
 		PushText(info, to_string(pm->GetNeedExp()));
 		for (int i = 0; i < (int)info.size(); ++i) {
-			info[i].SetTopLeft(POSITION[2 * i] - info[i].GetLength() * info[i].GetFontSize(),
+			info[i].SetTopLeft((int)(POSITION[2 * i] - info[i].GetLength() * info[i].GetFontSize()),
 				POSITION[2 * i + 1]);
 		}
 	}
@@ -195,7 +195,7 @@ namespace game_framework {
 		for (int i = 0; i < (int)skills.size(); ++i) {
 			PushText(skillText, skills[i]->GetAttributeText());
 			PushText(skillText, skills[i]->GetName());
-			PushText(skillText, to_string(skills[i]->GetRemainPP()) + "/" + to_string(skills[i]->GetAllPP()));
+			PushText(skillText, to_string(skills[i]->GetRemainPP()) + to_string(skills[i]->GetAllPP()));
 			skillText[i].SetTopLeft(SK_ATTR_LEFT, SK_TOP + (i * SK_INTERVAL));
 			skillText[i + 1].SetTopLeft(SK_NAME_LEFT, SK_TOP + (i * SK_INTERVAL));
 			skillText[i + 2].SetTopLeft(SK_PP_LEFT, SK_TOP + (i * SK_INTERVAL));

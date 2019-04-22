@@ -82,7 +82,7 @@ namespace game_framework {
 		}
 		else {
 			bar.LoadBitmap(IDB_POKEMON_BAR_UNSELECTED, RGB(255, 0, 0));
-			barSelect.LoadBitmap(IDB_POKEMON_BAR_SELECT, RGB(255, 0, 0));
+			barSelect.LoadBitmap(IDB_POKEMON_BAR_SELECTED, RGB(255, 0, 0));
 		}
 		SetPmInformation();
 		LoadHpLen();
@@ -107,6 +107,10 @@ namespace game_framework {
 		levelText.SetText(to_string(pm->GetLevel()));
 		remainHpText.SetText(to_string(pm->GetRemainHP()));
 		allHpText.SetText(to_string(pm->GetHP()));
+		/*nameText.SetFontSize(12);
+		levelText.SetFontSize(12);
+		allHpText.SetFontSize(12);
+		remainHpText.SetFontSize(12);*/
 	}
 
 	void PokemonBar::LoadHpLen()

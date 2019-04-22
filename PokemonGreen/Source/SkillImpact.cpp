@@ -18,6 +18,7 @@ namespace game_framework {
 
 	void SkillImpact::Init()
 	{
+		name = "Impact";
 		category = physical;
 		power = 35;
 		allpp = 35;
@@ -70,7 +71,7 @@ namespace game_framework {
 		}
 		return (animeCount == 0 && atkAnime.GetCurrentBitmapNumber() == 1);
 	}
-	
+
 	void SkillImpact::AtkAnimeOnShow()
 	{
 		atkAnime.OnShow();

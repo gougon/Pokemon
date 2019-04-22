@@ -16,4 +16,3 @@ namespace game_framework {
 		virtual void AtkAnimeOnShow();
 	};
 }
-

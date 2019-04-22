@@ -105,7 +105,7 @@ namespace game_framework {
 	{
 		selectPanel.LoadBitmap(IDB_POKEMON_SELECT_PANEL, RGB(255, 0, 0));
 		operationPanel.LoadBitmap(IDB_POKEMON_OPERATION_PANEL);
-		cursor.LoadBitmap(IDB_ATK_CURSOR, RGB(255, 0, 0));
+		cursor.LoadBitmap(BG_BACKPACK_ITEMCURSOR);
 
 		pmOprtView.LoadBitmap();
 	}
@@ -192,7 +192,7 @@ namespace game_framework {
 					if (!isItem) {
 						if (order == pmOprtPanelSltView) {
 							pmOprtView.Start();
-							pmOprtView.ReceiveData((*pokemons)[order]);
+							pmOprtView.ReceiveData((*pokemons)[sltPm]);
 						}
 						else if (order == pmOprtPanelSltChange) {
 							swapPm = sltPm;

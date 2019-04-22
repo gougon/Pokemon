@@ -496,6 +496,7 @@
     <Image Include="RES\hp_green.bmp" />
     <Image Include="RES\hp_red.bmp" />
     <Image Include="RES\hp_yellow.bmp" />
+    <Image Include="RES\icon_pm_treecko.bmp" />
     <Image Include="RES\jump_land.bmp" />
     <Image Include="RES\MenuBottom.bmp" />
     <Image Include="RES\MenuMiddle.bmp" />
@@ -512,6 +513,7 @@
     <Image Include="RES\PM_SKILL_PANEL.bmp" />
     <Image Include="RES\POKEMON_BAR.bmp" />
     <Image Include="RES\POKEMON_BAR_FIRST_SELECT.bmp" />
+    <Image Include="RES\POKEMON_BAR_FIRST_SELECTED.bmp" />
     <Image Include="RES\POKEMON_BAR_FIRST_UNSELECTED.bmp" />
     <Image Include="RES\POKEMON_BAR_SELECTED.bmp" />
     <Image Include="RES\SELECT_PANEL.bmp" />
