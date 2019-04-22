@@ -14,6 +14,7 @@
 #define IDB_BALL4                       137
 #define IDB_0                           138
 #define IDB_1                           139
+#define IDB_100                         139
 #define IDB_2                           140
 #define IDB_3                           141
 #define IDB_4                           142
@@ -142,11 +143,14 @@
 #define IDB_MENU_TOP                    277
 #define IDB_POKEMON_OPERATION_PANEL     278
 #define IDB_POKEMON_BAR_UNSELECTED      279
+#define IDB_POKEMON_BAR_FIRST_SELECT    280
 #define IDB_BITMAP16                    281
 #define IDB_POKEMON_BAR_FIRST_UNSELECTED 281
+#define IDB_POKEMON_BAR_SELECTED        282
 #define IDB_POKEMON_SELECT_PANEL        283
 #define IDB_EXPBAR                      284
 #define IDB_PM_ABILITY                  285
+#define IDB_BITMAP8                     286
 #define IDB_PM_SKILL_PANEL              286
 #define IDB_POKEMON_BAR_FIRST_SELECT    287
 #define IDB_POKEMON_BAR_SELECT          288
@@ -156,6 +160,13 @@
 #define IDB_SKILL_SIDEBAR               291
 #define IDB_BITMAP8                     292
 #define IDB_SKILL_LIST                  292
+#define BG_YESNO                        288
+#define BG_ITEMAMOUNT                   289
+#define BAG_PANEL                       290
+#define BG_PANEL                        290
+#define IDB_ALPHABET_DIVISION           291
+#define IDB_QU                          292
+#define IDB_QUESTION_MARK               292
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772

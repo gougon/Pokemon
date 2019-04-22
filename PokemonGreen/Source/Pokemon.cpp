@@ -40,12 +40,6 @@ namespace game_framework {
 		/* empty body */
 	}
 
-	Pokemon::Pokemon(string name) :
-		name(name)
-	{
-		// empty body
-	}
-
 	void Pokemon::OnShow()
 	{
 		if (pmtype == my) {
@@ -119,7 +113,7 @@ namespace game_framework {
 
 	string Pokemon::GetName()
 	{
-		return this->name;
+		return name;
 	}
 
 	int Pokemon::GetLevel()

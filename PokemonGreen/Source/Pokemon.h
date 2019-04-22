@@ -22,7 +22,6 @@ namespace game_framework {
 	class Pokemon {
 	public:
 		Pokemon();
-		Pokemon(string name);
 		virtual void Init(string Name) = 0;
 		void OnShow();
 		void OnShow(string);

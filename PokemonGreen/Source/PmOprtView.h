@@ -1,6 +1,3 @@
-#pragma once
-#include <string>
-#include <vector>
 #include "ActionObject.h"
 #include "Pokemon.h"
 #include "Skill.h"
@@ -10,7 +7,7 @@ using namespace std;
 namespace game_framework {
 	class Pokemon;
 
-	
+
 	class PmOprtView : public ActionObject {
 	public:
 		PmOprtView();
@@ -34,9 +31,9 @@ namespace game_framework {
 
 		// RIGHT TOP
 		// REMAIN_HP ALL_HP SATK ATK SDEF DEF SPD NOW_EXP NEED_EXP
-		const int POSITION[18] = {380, 175, 460, 175, 615, 175, 460, 225, 
-								615, 225, 460, 275, 615, 275, 610, 345, 
-								610, 390};
+		const int POSITION[18] = { 380, 175, 460, 175, 615, 175, 460, 225,
+								615, 225, 460, 275, 615, 275, 610, 345,
+								610, 390 };
 		const int IMG_LEFT = 35;
 		const int IMG_TOP = 120;
 		const int LV_LEFT = 50;
@@ -75,5 +72,4 @@ namespace game_framework {
 		int delay;
 	};
 }
-
 

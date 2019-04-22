@@ -64,7 +64,7 @@ namespace game_framework {
 				if (i == swapPm) {
 					pokemonBar[i].SetIsSelect(true);
 				}
-				else if(i != sltPm) {
+				else if (i != sltPm) {
 					pokemonBar[i].SetIsSelect(false);
 				}
 			}
@@ -254,11 +254,11 @@ namespace game_framework {
 	void PokemonMenu::SetPmBarLeftTop(int order)
 	{
 		if (order == 0) {
-			pokemonBar[order].SetTopLeft(POKEMON_BAR_FIRST_LEFT, 
+			pokemonBar[order].SetTopLeft(POKEMON_BAR_FIRST_LEFT,
 				POKEMON_BAR_FIRST_TOP);
 		}
 		else {
-			pokemonBar[order].SetTopLeft(POKEMON_BAR_LEFT, 
+			pokemonBar[order].SetTopLeft(POKEMON_BAR_LEFT,
 				POKEMON_BAR_TOP + (order - 1) * POKEMON_BAR_INTERVAL);
 		}
 	}

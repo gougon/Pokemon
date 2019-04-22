@@ -47,6 +47,18 @@ void CAlphabet::LoadBitmap()
     alphabet_list[26].LoadBitmap(IDB_ALPHABET_SPACE, RGB(255, 0, 0));
     alphabet_list[27].LoadBitmap(IDB_ALPHABET_DOT, RGB(255, 0, 0));
     alphabet_list[28].LoadBitmap(IDB_ALPHABET_END, RGB(255, 0, 0));
+    alphabet_list[29].LoadBitmap(IDB_ALPHABET_DIVISION, RGB(255, 0, 0));
+    alphabet_list[30].LoadBitmap(IDB_QUESTION_MARK, RGB(255, 0, 0));
+    alphabet_list[31].LoadBitmap(IDB_0, RGB(255, 0, 0));
+    alphabet_list[32].LoadBitmap(IDB_1, RGB(255, 0, 0));
+    alphabet_list[33].LoadBitmap(IDB_2, RGB(255, 0, 0));
+    alphabet_list[34].LoadBitmap(IDB_3, RGB(255, 0, 0));
+    alphabet_list[35].LoadBitmap(IDB_4, RGB(255, 0, 0));
+    alphabet_list[36].LoadBitmap(IDB_5, RGB(255, 0, 0));
+    alphabet_list[37].LoadBitmap(IDB_6, RGB(255, 0, 0));
+    alphabet_list[38].LoadBitmap(IDB_7, RGB(255, 0, 0));
+    alphabet_list[39].LoadBitmap(IDB_8, RGB(255, 0, 0));
+    alphabet_list[40].LoadBitmap(IDB_9, RGB(255, 0, 0));
 }
 
 CMovingBitmap* CAlphabet::GetAlphabet(char alphaID)
@@ -79,6 +91,18 @@ CMovingBitmap* CAlphabet::GetAlphabet(char alphaID)
     else if (alphaID == 'z') return &alphabet_list[25];
     else if (alphaID == ',') return &alphabet_list[27];
     else if (alphaID == '.') return &alphabet_list[28];
-    else return &alphabet_list[26];
+    else if (alphaID == '/') return &alphabet_list[29];
+    else if (alphaID == '?') return &alphabet_list[30];
+    else if (alphaID == '0') return &alphabet_list[31];
+    else if (alphaID == '1') return &alphabet_list[32];
+    else if (alphaID == '2') return &alphabet_list[33];
+    else if (alphaID == '3') return &alphabet_list[34];
+    else if (alphaID == '4') return &alphabet_list[35];
+    else if (alphaID == '5') return &alphabet_list[36];
+    else if (alphaID == '6') return &alphabet_list[37];
+    else if (alphaID == '7') return &alphabet_list[38];
+    else if (alphaID == '8') return &alphabet_list[39];
+    else if (alphaID == '9') return &alphabet_list[40];
+    else return &alphabet_list[26];	//¹w³]¦r' '
 }
 }

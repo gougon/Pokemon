@@ -300,13 +300,18 @@ IDB_POKEMON_OPERATION_PANEL BITMAP                  "..\\RES\\OPERATION_PANEL.bm
 
 IDB_POKEMON_BAR_UNSELECTED BITMAP                  "..\\RES\\POKEMON_BAR.bmp"
 
+IDB_POKEMON_BAR_FIRST_SELECT BITMAP                  "..\\RES\\POKEMON_BAR_FIRST_SELECT.bmp"
+
 IDB_POKEMON_BAR_FIRST_UNSELECTED BITMAP                  "..\\RES\\POKEMON_BAR_FIRST_UNSELECTED.bmp"
+
+IDB_POKEMON_BAR_SELECTED BITMAP                  "..\\RES\\POKEMON_BAR_SELECTED.bmp"
 
 IDB_POKEMON_SELECT_PANEL BITMAP                  "..\\RES\\SELECT_PANEL.bmp"
 
 IDB_EXPBAR              BITMAP                  "..\\RES\\expBar.bmp"
 
 IDB_PM_ABILITY          BITMAP                  "..\\RES\\PM_ABILITY.bmp"
+<<<<<<< HEAD
 
 IDB_PM_SKILL_PANEL      BITMAP                  "..\\RES\\PM_SKILL_PANEL.bmp"
 
@@ -316,11 +321,23 @@ IDB_POKEMON_BAR_SELECT  BITMAP                  "..\\RES\\POKEMON_BAR_SELECTED.b
 
 IDB_ICON_PM_TREECKO     BITMAP                  "..\\RES\\icon_pm_treecko.bmp"
 
-IDB_SKILL_SELECT        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\SKILL_SELECT.bmp"
+IDB_SKILL_SELECT        BITMAP                  "..\\RES\\SKILL_SELECT.bmp"
 
-IDB_SKILL_SIDEBAR       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_sidebar.bmp"
+IDB_SKILL_SIDEBAR       BITMAP                  "..\\RES\\skill_sidebar.bmp"
 
-IDB_SKILL_LIST          BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_list.bmp"
+IDB_SKILL_LIST          BITMAP                  "..\\RES\\skill_list.bmp"
+
+IDB_PM_SKILL_PANEL      BITMAP                  "..\\RES\\PM_SKILL_PANEL.bmp"
+
+BG_YESNO                BITMAP                  "..\\RES\\BG_YESNO.bmp"
+
+BG_ITEMAMOUNT           BITMAP                  "..\\RES\\BG_ITEMAMOUNT.bmp"
+
+BG_PANEL                BITMAP                  "..\\RES\\BAG_PANEL.bmp"
+
+IDB_ALPHABET_DIVISION   BITMAP                  "..\\res\\bmp00031.bmp"
+
+IDB_QUESTION_MARK       BITMAP                  "..\\res\\bmp00032.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

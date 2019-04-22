@@ -8,7 +8,6 @@ using namespace std;
 namespace game_framework {
 	class SkillNormal : public Skill {
 	public:
-		SkillNormal();
 		int Damage(Pokemon *self, Pokemon *enemy);
 	};
 }

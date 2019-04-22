@@ -5,8 +5,8 @@
 #include <ddraw.h>
 #include "audio.h"
 #include "gamelib.h"
-#include "CHero.h"
 #include "AtkInterface.h"
+#include "CHero.h"
 #include "Pokemon.h"
 #include "PokemonFactory.h"
 #include "PmTreecko.h"

@@ -60,3 +60,4 @@ namespace game_framework {
 		bool isSelect;
 	};
 }
+
