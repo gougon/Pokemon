@@ -2,6 +2,7 @@
 
 #include <string>
 #include "Pokemon.h"
+#include "CText.h"
 
 using namespace std;
 namespace game_framework {
@@ -29,12 +30,23 @@ namespace game_framework {
 		void Init(barType type);
 		void OnMove(Pokemon *pm);
 		void OnShow();
+		void ReceivePm(Pokemon *pm);
 		bool IsAddExp();
 	private:
+		const int MY_FIRST_ROW = 225;
+		const int ENE_FIRST_ROW = 45;
+		const int MY_SECOND_ROW = 275;
+		const int MY_NAME_RIGHT = 505;
+		const int ENE_NAME_RIGHT = 175;
+		const int MY_LV_LEFT = 550;
+		const int ENE_LV_LEFT = 220;
+		const int MY_RHP_RIGHT = 505;
+		const int MY_HP_LEFT = 530;
 		int x; // right
 		float rate;
 		bool isAddExp;
 		barType type;
+		CText nameText, lvText, remainHpText, allHpText;
 		CMovingBitmap myBar, enemyBar, greenHP, yellowHP, redHP, expBar;
 	};
 }

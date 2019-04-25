@@ -5,7 +5,6 @@
 #include "ActionObject.h"
 #include "Pokemon.h"
 #include "PmOprtView.h"
-// #include "PmOprtPanel.h"
 #include "PokemonBar.h"
 #include "CText.h"
 
@@ -14,6 +13,7 @@ namespace game_framework
 {
 class Pokemon;
 
+<<<<<<< HEAD
 class PokemonMenu : public ActionObject
 {
     public:
@@ -35,6 +35,24 @@ class PokemonMenu : public ActionObject
         {
             pmOprtPanelSltView, pmOprtPanelSltChange, pmOprtPanelSltItem, pmOprtPanelSltClose
         };
+=======
+	class PokemonMenu : public ActionObject {
+	public:
+		PokemonMenu();
+		~PokemonMenu();
+		virtual void Init();
+		virtual void OnShow();
+		virtual void OnMove();
+		virtual void LoadBitmap();
+		virtual void KeyDownListener(UINT nChar);
+		virtual void End();
+		void ReceiveData(vector<Pokemon*>* pms);
+		void ChangeOnAtk();
+	private:
+		enum pmOprtPanelSlt {
+			pmOprtPanelSltView, pmOprtPanelSltChange, pmOprtPanelSltItem, pmOprtPanelSltClose
+		};
+>>>>>>> 9c1c6bf5c624e9a0e003821a8ec7d41fcb3499b7
 
         const int POKEMON_BAR_LEFT = 235;
         const int POKEMON_BAR_TOP = 30;
@@ -50,6 +68,7 @@ class PokemonMenu : public ActionObject
         const int DESCRIPTIONPANEL_TOP = 385;
         const int CURSOR_INTERVAL = 50;
 
+<<<<<<< HEAD
         void SetPmBar();
         void SetPmBarLeftTop(int order);
         void Swap(int order1, int order2);
@@ -68,4 +87,16 @@ class PokemonMenu : public ActionObject
         int currentItemID;
         int itemTransferCommend;
 };
+=======
+		void SetPmBar();
+		void SetPmBarLeftTop(int order);
+		void Swap(int order1, int order2);
+		CMovingBitmap selectPanel, operationPanel, cursor;
+		vector<Pokemon*>* pokemons;
+		PokemonBar *pokemonBar;
+		PmOprtView pmOprtView;
+		int order, sltPm, swapPm;
+		bool isOprtPanel, isOprtSlt, isItem, isAtkChange;
+	};
+>>>>>>> 9c1c6bf5c624e9a0e003821a8ec7d41fcb3499b7
 }

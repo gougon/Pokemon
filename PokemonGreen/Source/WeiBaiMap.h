@@ -16,6 +16,7 @@ constexpr auto WEIBAITOWN_HOUSE2 = 8;
 constexpr auto WEIBAITOWN_PRO_HOUSE = 9;
 constexpr auto M_GREEN_GRASS = 10;
 constexpr auto JUMP_LAND = 11;
+constexpr auto NORMAL_HOUSE1 = 12;
 
 namespace game_framework
 {

@@ -21,7 +21,7 @@
 
 namespace game_framework
 {
-WeiBaiMap::WeiBaiMap(CEvent* gameEvent) : CMap(12) // sceneNum
+WeiBaiMap::WeiBaiMap(CEvent* gameEvent) : CMap(15) // sceneNum
 {
     mapGameEvent = gameEvent;
 
@@ -35,8 +35,8 @@ WeiBaiMap::WeiBaiMap(CEvent* gameEvent) : CMap(12) // sceneNum
 
 void WeiBaiMap::InitMap()
 {
-    SetMXY(48, 62);
-    SetXY(18 * SM, 33 * SM);
+    SetMXY(48, 87);			// 設定地圖總長寬格數
+    SetXY(18 * SM, 27 * SM);		// 設定初始位置
     SetMap("area1");
     dialogBox.InitDialog('n');
 
@@ -54,9 +54,12 @@ void WeiBaiMap::LoadBitmap()
     scene[BILLBOARD].LoadBitmap(IDB_BILLBOARD);
     scene[WEIBAITOWN_HOUSE1].LoadBitmap(IDB_WEIBAITOWN_HOUSE1);
     scene[WEIBAITOWN_HOUSE2].LoadBitmap(IDB_WEIBAITOWN_HOUSE2);
-    scene[WEIBAITOWN_PRO_HOUSE].LoadBitmap(IDB_WEIBAITOWN_PRO_HOUSE);
-    scene[M_GREEN_GRASS].LoadBitmap(IDB_M_GREEN_GRASS);
-    scene[JUMP_LAND].LoadBitmap(IDB_JUMP_LAND);
+	scene[WEIBAITOWN_PRO_HOUSE].LoadBitmap(IDB_WEIBAITOWN_PRO_HOUSE);
+	scene[M_GREEN_GRASS].LoadBitmap(IDB_M_GREEN_GRASS);
+	scene[JUMP_LAND].LoadBitmap(IDB_JUMP_LAND);
+	scene[HOSPITAL].LoadBitmap(IDB_HOSPITAL, RGB(255, 0, 0));
+	scene[STORE].LoadBitmap(IDB_STORE, RGB(255, 0, 0));
+	scene[NORMAL_HOUSE1].LoadBitmap(IDB_NORMAL_HOUSE1, RGB(255, 0, 0));
 
     /////////////////////////////
     if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
@@ -68,6 +71,14 @@ void WeiBaiMap::OnShow()
     int sx = GetSX();
     int sy = GetSY();
 
+	for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount)
+	{
+		for (int i = sx - EXPEND * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount)
+		{
+			SetTopLeft(GREEN_GRASS, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+		}
+	}
+
     for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount)
     {
         for (int i = sx - EXPEND * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount)
@@ -76,63 +87,49 @@ void WeiBaiMap::OnShow()
             {
                 case NONE_HIT:
                     break;
-
                 case NONE_EMPTY:
                     break;
-
                 case ENTRANCE:
                     break;
-
+				case HOSPITAL:
+					SetTopLeft(HOSPITAL, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+					break;
+				case STORE:
+					SetTopLeft(STORE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+					break;
                 case GREEN_GRASS:
-                    scene[GREEN_GRASS].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-                    scene[GREEN_GRASS].ShowBitmap();
+					SetTopLeft(GREEN_GRASS, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
                     break;
-
                 case GREEN_TREE:
-                    scene[GREEN_TREE].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM - 15);
-                    scene[GREEN_TREE].ShowBitmap();
+					SetTopLeft(GREEN_TREE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM - 15);
                     break;
-
                 case GREEN_FLOWER:
-                    scene[GREEN_FLOWER].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-                    scene[GREEN_FLOWER].ShowBitmap();
+					SetTopLeft(GREEN_FLOWER, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
                     break;
-
                 case GRASS_LAND:
-                    scene[GRASS_LAND].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-                    scene[GRASS_LAND].ShowBitmap();
+					SetTopLeft(GRASS_LAND, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
                     break;
-
                 case BILLBOARD:
-                    scene[BILLBOARD].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-                    scene[BILLBOARD].ShowBitmap();
+					SetTopLeft(BILLBOARD, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
                     break;
-
                 case WEIBAITOWN_HOUSE1:
-                    scene[WEIBAITOWN_HOUSE1].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-                    scene[WEIBAITOWN_HOUSE1].ShowBitmap();
+					SetTopLeft(WEIBAITOWN_HOUSE1, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
                     break;
-
                 case WEIBAITOWN_HOUSE2:
-                    scene[WEIBAITOWN_HOUSE2].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-                    scene[WEIBAITOWN_HOUSE2].ShowBitmap();
+					SetTopLeft(WEIBAITOWN_HOUSE2, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
                     break;
-
                 case WEIBAITOWN_PRO_HOUSE:
-                    scene[WEIBAITOWN_PRO_HOUSE].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-                    scene[WEIBAITOWN_PRO_HOUSE].ShowBitmap();
+					SetTopLeft(WEIBAITOWN_PRO_HOUSE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
                     break;
-
                 case M_GREEN_GRASS:
-                    scene[M_GREEN_GRASS].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-                    scene[M_GREEN_GRASS].ShowBitmap();
+					SetTopLeft(M_GREEN_GRASS, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
                     break;
-
-                case JUMP_LAND:
-                    scene[JUMP_LAND].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-                    scene[JUMP_LAND].ShowBitmap();
-                    break;
-
+				case JUMP_LAND:
+					SetTopLeft(JUMP_LAND, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+					break;
+				case NORMAL_HOUSE1:
+					SetTopLeft(NORMAL_HOUSE1, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+					break;
                 default:
                     ASSERT(0);
                     break;
@@ -151,11 +148,13 @@ bool WeiBaiMap::IsCollision(int x, int y)
     x /= SM;
     y /= SM;
 
+	TRACE("\nx = %d, y = %d\n", x, y);
+
     for (auto i : hitImg)
     {
-        //TRACE("hitimg[i] = %d\nmap[y][x] = %d\n", i, map[y][x]);
-        if (map[y][x] == i)
-            return true;
+		if (map[y][x] == i) {
+			return true;
+		}
     }
 
     return false;
@@ -200,15 +199,15 @@ CMap* WeiBaiMap::ChangeMap(int x, int y, CHero* hero)
     y /= SM;
     CMap* newMap;
 
-    if (x == 19 && y == 36)
+    if (x == 19 && y == 60)
     {
         newMap = new WeiBaiHouse1_1F_Map(mapGameEvent);
     }
-    else if (x == 28 && y == 36)
+    else if (x == 28 && y == 60)
     {
         newMap = new WeiBaiHouse2_1F_Map(mapGameEvent);
     }
-    else if (x == 21 && y == 44)
+    else if (x == 21 && y == 68)
     {
         newMap = new WeiBaiProHouse_Map(mapGameEvent);
     }
@@ -219,7 +218,7 @@ CMap* WeiBaiMap::ChangeMap(int x, int y, CHero* hero)
 
 void WeiBaiMap::StartAtk(CHero* self, Pokemon* enemy, AtkInterface &atkInterface)
 {
-    atkInterface.Init(self, enemy);
+    atkInterface.ReceiveData(self, enemy);
     atkInterface.Start();
 }
 int WeiBaiMap::CheckID(int x, int y, int herodirection)

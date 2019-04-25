@@ -85,12 +85,12 @@ CMap* WeiBaiProHouse_Map::ChangeMap(int x, int y, CHero* hero)
     if (x == 20 && y == 27)
     {
         newMap = new WeiBaiMap(mapGameEvent);
-        newMap->SetXY(16 * SM, 41 * SM);
+        newMap->SetXY(16 * SM, 65 * SM);
     }
     else if (x == 21 && y == 27)
     {
         newMap = new WeiBaiMap(mapGameEvent);
-        newMap->SetXY(16 * SM, 41 * SM);
+        newMap->SetXY(16 * SM, 65 * SM);
     }
 
     newMap->LoadBitmap();

@@ -191,8 +191,9 @@ void CGameStateRun::OnBeginState()
     CAudio::Instance()->Stop(AUDIO_HOME);
     CAudio::Instance()->Play(AUDIO_WEIBAI);
     hero.Initialize();
-    hero.SetXY(18 * SM + HERO_X, 33 * SM + HERO_Y + 20);
+    hero.SetXY(18 * SM + HERO_X, 27 * SM + HERO_Y + 20);
     myMenu.Init();
+	atkInterface.Init(myMenu.GetPokemonMenu());
 }
 
 void CGameStateRun::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À

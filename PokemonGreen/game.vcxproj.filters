@@ -164,6 +164,7 @@
     <ClCompile Include="Source\CFruit.cpp" />
     <ClCompile Include="Source\CGoods.cpp" />
     <ClCompile Include="Source\CBall.cpp" />
+    <ClCompile Include="Source\PmValue.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -236,6 +237,7 @@
     <ClInclude Include="Source\CFruit.h" />
     <ClInclude Include="Source\CGoods.h" />
     <ClInclude Include="Source\CBall.h" />
+    <ClInclude Include="Source\PmValue.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -628,6 +630,7 @@
     <Image Include="RES\icon_pm_treecko.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+<<<<<<< HEAD
     <Image Include="res\bitmap17.bmp">
       <Filter>Resource Files</Filter>
     </Image>
@@ -665,6 +668,21 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\TRADEMODE_SELECT_PANEL.bmp">
+=======
+    <Image Include="RES\HOSPITAL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NORMAL_HOUSE1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\STORE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\LV_UP_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\LV_UP_FPANEL.bmp">
+>>>>>>> 9c1c6bf5c624e9a0e003821a8ec7d41fcb3499b7
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

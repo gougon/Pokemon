@@ -2,8 +2,11 @@
 
 #include <string>
 #include <vector>
+#include <set>
 #include "CHero.h"
+#include "PokemonMenu.h"
 #include "Pokemon.h"
+#include "PmValue.h"
 #include "AtkBar.h"
 
 using namespace std;
@@ -14,15 +17,18 @@ namespace game_framework {
 	constexpr auto ENEMYPM_Y = 35;
 
 	enum Cursor {
-		fight, 
-		bag, 
-		pokemon, 
-		escape, 
+		fight,
+		bag,
+		pokemon,
+		escape,
 
 		skill1 = 0, // 左上
 		skill2 = 1, // 右上
 		skill3 = 2, // 左下
 		skill4 = 3, // 右下
+
+		yes = 0,
+		no = 1
 	};
 
 	enum State {
@@ -31,11 +37,13 @@ namespace game_framework {
 		heroLeave, 
 		pokemonAppear,
 		action, 
-		chooseSkill, 
+		chooseSkill,
+		choosePokemon, 
 		chooseItem,
 		onSkill, 
 		onEnemySkill, 
 		endAnime, 
+		endDialog, 
 		end
 	};
 
@@ -46,20 +54,50 @@ namespace game_framework {
 		void OnMove();
 		void OnShow();
 		void LoadBitmap();
-		void Init(CHero *self, Pokemon *enemy);
+		void Init(PokemonMenu *pmMenu);
+		void ReceiveData(CHero *self, Pokemon *enemy);
 		void KeyDownListener(UINT nChar);
+		void End();
 		bool IsAtk();
-		void Dead(CHero *self);
 	private:
-		int openCount = 0;
-		bool isAtk;
-		bool isAnime;
+		const int LVUP_PANEL_LEFT = 385;
+		const int LVUP_PANEL_TOP = 170;
+		const int LVUP_VALUE_TOP = 190;
+		const int LVUP_VALUE_LEFT = 590;
+		const int LVUP_VALUE_RIGHT = 615;
+		const int LVUP_VALUE_INTERVAL = 45;
+
+		const int SKILL_LEFT = 50;
+		const int SKILL_TOP = 365;
+		const int SKILL_RIGHT = 220;
+		const int SKILL_DOWN = 415;
+
+		const int REMAINPP_RIGHT = 555;
+		const int ALLPP_LEFT = 575;
+		const int SKTYPE_LEFT = 495;
+
+		void SetAtkPm();
+		void SetSkillText();
+		int GetAddExp(Pokemon *enemy);
+		void AddExp(int order);
+		void SetValue(int order);
+		void SltPm();
+		Pokemon *FindSetFromOrder(set<Pokemon*>& lhs, int order);
+
+		int openCount = 0, cursor, enemySkill, textCount, lvupCount;
+		bool isAtk, isAnime;
+		set<Pokemon*> joinAtkPm, lvupPm;
 		AtkBar myBar, enemyBar;
 		State state;
-		Cursor cursor;
-		CMovingBitmap black, battleBackground, battleOption, battleDialog, skillOption, battleHero, battleGround[2], atkCursor;
+		CMovingBitmap black, battleBackground, battleOption, battleDialog, skillOption, battleHero, battleGround[2];
+		CMovingBitmap  atkCursor, ynPanel, lvupPanel, lvupFpanel;
+		CText outcomeText;
+		CText valueUpText[6], valueFinalText[6];
+		CText remainPPText, allPPText, skTypeText;
+		vector<CText> skillText;
 		CHero *self;
-		Pokemon *enemy;
-		int enemySkill;
+		Pokemon *enemy, *myPm;
+		PokemonMenu *pmMenu;
+		PmValue value;
 	};
 }

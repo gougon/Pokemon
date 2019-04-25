@@ -17,6 +17,8 @@ constexpr auto SM = 60;
 constexpr auto NONE_HIT = 0;
 constexpr auto NONE_EMPTY = 1;
 constexpr auto ENTRANCE = -1;
+constexpr auto HOSPITAL = 13;
+constexpr auto STORE = 14;
 
 enum mapID
 {
@@ -71,6 +73,7 @@ class CMap
         virtual void StartAtk(CHero* self, Pokemon* enemy, AtkInterface &atkInterface) { /* empty body */ }
         virtual void StartAtk(CHero* self, CCharacter* enemy, AtkInterface &atkInterface) { /* empty body */ }
     protected:
+		void SetTopLeft(int order, int x, int y);
         CEvent* mapGameEvent;
         CMovingBitmap* scene;
         vector<vector<int> > map;

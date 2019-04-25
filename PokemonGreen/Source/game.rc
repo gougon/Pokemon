@@ -358,6 +358,16 @@ TRADEMODE_SELECT        BITMAP                  "E:\\GitPokemon\\PokemonGreen\\R
 
 SHOP_BLANK_PANEL        BITMAP                  "..\\res\\bmp00033.bmp"
 
+IDB_HOSPITAL            BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\HOSPITAL.bmp"
+
+IDB_NORMAL_HOUSE1       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\NORMAL_HOUSE1.bmp"
+
+IDB_STORE               BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\STORE.bmp"
+
+IDB_LV_UP_PANEL         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\LV_UP_PANEL.bmp"
+
+IDB_LV_UP_FPANEL        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\LV_UP_FPANEL.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

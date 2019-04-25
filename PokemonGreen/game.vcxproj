@@ -307,6 +307,7 @@
     <ClCompile Include="Source\Menu.cpp" />
     <ClCompile Include="Source\PmOprtView.cpp" />
     <ClCompile Include="Source\PmTreecko.cpp" />
+    <ClCompile Include="Source\PmValue.cpp" />
     <ClCompile Include="Source\Pokemon.cpp" />
     <ClCompile Include="Source\PokemonBar.cpp" />
     <ClCompile Include="Source\PokemonFactory.cpp" />
@@ -377,6 +378,7 @@
     <ClInclude Include="Source\Menu.h" />
     <ClInclude Include="Source\PmOprtView.h" />
     <ClInclude Include="Source\PmTreecko.h" />
+    <ClInclude Include="Source\PmValue.h" />
     <ClInclude Include="Source\Pokemon.h" />
     <ClInclude Include="Source\PokemonBar.h" />
     <ClInclude Include="Source\PokemonFactory.h" />
@@ -499,12 +501,15 @@
     <Image Include="RES\HERO_RIGHT_TWO.bmp" />
     <Image Include="RES\HOME.bmp" />
     <Image Include="RES\HOME_LOG.bmp" />
+    <Image Include="RES\HOSPITAL.bmp" />
     <Image Include="RES\hp_green.bmp" />
     <Image Include="RES\hp_red.bmp" />
     <Image Include="RES\hp_yellow.bmp" />
     <Image Include="RES\icon_pm_treecko.bmp" />
     <Image Include="RES\IDB_FIGHTERGLOVE.bmp" />
     <Image Include="RES\jump_land.bmp" />
+    <Image Include="RES\LV_UP_FPANEL.bmp" />
+    <Image Include="RES\LV_UP_PANEL.bmp" />
     <Image Include="RES\MenuBottom.bmp" />
     <Image Include="RES\MenuMiddle.bmp" />
     <Image Include="RES\MenuTop.bmp" />
@@ -514,6 +519,7 @@
     <Image Include="RES\MON_RIGHT.bmp" />
     <Image Include="RES\my_bar.bmp" />
     <Image Include="RES\m_green_grass.bmp" />
+    <Image Include="RES\NORMAL_HOUSE1.bmp" />
     <Image Include="RES\OPERATION_PANEL.bmp" />
     <Image Include="RES\pickable_object.bmp" />
     <Image Include="RES\PM_ABILITY.bmp" />
@@ -535,7 +541,11 @@
     <Image Include="RES\skill_option.bmp" />
     <Image Include="RES\SKILL_SELECT.bmp" />
     <Image Include="RES\skill_sidebar.bmp" />
+<<<<<<< HEAD
     <Image Include="RES\TRADEMODE_SELECT_PANEL.bmp" />
+=======
+    <Image Include="RES\STORE.bmp" />
+>>>>>>> 9c1c6bf5c624e9a0e003821a8ec7d41fcb3499b7
     <Image Include="RES\treecko_back.bmp" />
     <Image Include="RES\treecko_front.bmp" />
     <Image Include="RES\USEITEM_PANEL.bmp" />
