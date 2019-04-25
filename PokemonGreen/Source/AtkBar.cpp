@@ -9,6 +9,11 @@
 namespace game_framework {
 	void AtkBar::LoadBitmap()
 	{
+		nameText.LoadBitmap();
+		lvText.LoadBitmap();
+		remainHpText.LoadBitmap();
+		allHpText.LoadBitmap();
+
 		myBar.LoadBitmap(IDB_MY_BAR, RGB(255, 0, 0));
 		enemyBar.LoadBitmap(IDB_ENEMY_BAR, RGB(255, 0, 0));
 		greenHP.LoadBitmap(IDB_HP_GREEN);
@@ -79,7 +84,8 @@ namespace game_framework {
 			}
 			x = (int)widthhp;
 		}
-		if (type == barTypeMy) {	// 顯示exp條
+		if (type == barTypeMy) {	// 顯示exp條和血量
+			remainHpText.SetText(to_string(pm->GetRemainHP()));
 			double expRate = (double)pm->GetNowExp() / (double)pm->GetNeedExp();
 			double widthexp = expRate * EXP_LEN;
 			if (widthexp > expBar.RectWidth()) {		// 正常經驗值依照V上升
@@ -124,6 +130,7 @@ namespace game_framework {
 		case barTypeMy:
 			myBar.ShowBitmap();
 			expBar.ShowBitmap("atkBar");
+			
 			break;
 		case barTypeEnemy:
 			enemyBar.ShowBitmap();
@@ -132,6 +139,13 @@ namespace game_framework {
 			ASSERT(0);
 			break;
 		}
+
+		nameText.OnShow();
+		lvText.OnShow();
+		if (type == barTypeMy) {
+			remainHpText.OnShow();
+			allHpText.OnShow();
+		}
 	}
 
 	void AtkBar::ReceivePm(Pokemon *pm)
@@ -139,6 +153,26 @@ namespace game_framework {
 		double expRate = (double)pm->GetNowExp() / (double)pm->GetNeedExp();
 		double widthexp = expRate * EXP_LEN;
 		expBar.SetWidth((int)(widthexp + 0.5));
+
+		nameText.SetText(pm->GetName());
+		lvText.SetText(to_string(pm->GetLevel()));
+		switch (type) {
+		case barTypeMy:
+			remainHpText.SetText(to_string(pm->GetRemainHP()));
+			allHpText.SetText(to_string(pm->GetHP()));
+			nameText.SetTopLeft(MY_NAME_RIGHT - nameText.GetLength() * (int)nameText.GetFontSize(), 
+				MY_FIRST_ROW);
+			lvText.SetTopLeft(MY_LV_LEFT, MY_FIRST_ROW);
+			remainHpText.SetTopLeft(MY_RHP_RIGHT - remainHpText.GetLength() * (int)remainHpText.GetFontSize(), 
+				MY_SECOND_ROW);
+			allHpText.SetTopLeft(MY_HP_LEFT, MY_SECOND_ROW);
+			break;
+		case barTypeEnemy:
+			nameText.SetTopLeft(ENE_NAME_RIGHT - nameText.GetLength() * (int)nameText.GetFontSize(),
+				ENE_FIRST_ROW);
+			lvText.SetTopLeft(ENE_LV_LEFT, ENE_FIRST_ROW);
+			break;
+		}
 	}
 
 	bool AtkBar::IsAddExp()

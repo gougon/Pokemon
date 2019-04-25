@@ -60,6 +60,12 @@ namespace game_framework {
 			atkCursor.ShowBitmap();
 			myBar.OnShow();
 			enemyBar.OnShow();
+			remainPPText.OnShow();
+			allPPText.OnShow();
+			skTypeText.OnShow();
+			for (auto i : skillText) {
+				i.OnShow();
+			}
 			break;
 		case choosePokemon:
 			pmMenu->OnShow();
@@ -124,8 +130,8 @@ namespace game_framework {
 			myBar.OnShow();
 			int order = textCount - 2;
 			if (myPm->GetRemainHP() > 0 && 
-				joinAtkPm[order] ==
-				((lvupPm.empty()) ? nullptr : lvupPm.back())) {
+				FindSetFromOrder(joinAtkPm, order) ==
+				((lvupPm.empty()) ? nullptr : *(lvupPm.rbegin()))) {
 				switch (lvupCount) {
 				case 2:
 					lvupPanel.ShowBitmap();
@@ -200,6 +206,11 @@ namespace game_framework {
 			}
 			break;
 		case chooseSkill:
+			remainPPText.SetText(to_string(myPm->GetSkill(cursor)->GetRemainPP()));
+			allPPText.SetText(to_string(myPm->GetSkill(cursor)->GetAllPP()));
+			skTypeText.SetText(myPm->GetSkill(cursor)->GetAttributeText());
+			remainPPText.SetTopLeft(REMAINPP_RIGHT - remainPPText.GetLength() * (int)remainPPText.GetFontSize(), 
+				SKILL_TOP);
 			switch (cursor)
 			{
 			case skill1:
@@ -226,6 +237,7 @@ namespace game_framework {
 			}
 			else {
 				SetAtkPm();
+				myBar.ReceivePm(myPm);
 				state = action;
 			}
 			break;
@@ -310,7 +322,7 @@ namespace game_framework {
 					outcomeText.SetText(enemy->GetName() + " was defeated");
 				}
 				else {
-					outcomeText.SetText(joinAtkPm[textCount - 1]->GetName() + " get " +
+					outcomeText.SetText(FindSetFromOrder(joinAtkPm, textCount - 1)->GetName() + " get " +
 						to_string(GetAddExp(enemy) / joinAtkPm.size()) + " exp");
 				}
 			}
@@ -323,8 +335,8 @@ namespace game_framework {
 				case 0:
 					AddExp(order);
 					if (!myBar.IsAddExp()) {		// 經驗值動畫結束
-						if (joinAtkPm[order] !=			// 不需要升等
-							((lvupPm.empty()) ? nullptr : lvupPm.back())) {
+						if (FindSetFromOrder(joinAtkPm, order) !=			// 不需要升等
+							((lvupPm.empty()) ? nullptr : *(lvupPm.rbegin()))) {
 							if ((int)joinAtkPm.size() == order + 1) {		// 最後一隻
 								End();
 							}
@@ -338,8 +350,8 @@ namespace game_framework {
 					}
 					break;
 				case 1:			// 已確定要升等，顯示升等文字
-					outcomeText.SetText(joinAtkPm[order]->GetName() + ";" +
-						"level up to " + to_string(joinAtkPm[order]->GetLevel()));
+					outcomeText.SetText(FindSetFromOrder(joinAtkPm, order)->GetName() + ";" +
+						"level up to " + to_string(FindSetFromOrder(joinAtkPm, order)->GetLevel()));
 					break;
 				case 2:			// 設定升等屬性提升面板
 					SetValue(order);
@@ -372,13 +384,16 @@ namespace game_framework {
 		battleOption.LoadBitmap(IDB_BATTLE_OPTION);
 		battleDialog.LoadBitmap(IDB_BATTLE_DIALOG);
 		skillOption.LoadBitmap(IDB_SKILL_OPTION);
-		atkCursor.LoadBitmap(IDB_ATK_CURSOR);
+		atkCursor.LoadBitmap(BG_BACKPACK_ITEMCURSOR);
 		ynPanel.LoadBitmap(BG_YESNO);
 		lvupPanel.LoadBitmap(IDB_LV_UP_PANEL);
 		lvupFpanel.LoadBitmap(IDB_LV_UP_FPANEL);
 		myBar.LoadBitmap();
 		enemyBar.LoadBitmap();
 		outcomeText.LoadBitmap();
+		remainPPText.LoadBitmap();
+		allPPText.LoadBitmap();
+		skTypeText.LoadBitmap();
 		for (int i = 0; i < 6; ++i) {
 			valueUpText[i].LoadBitmap();
 			valueFinalText[i].LoadBitmap();
@@ -395,6 +410,8 @@ namespace game_framework {
 		lvupPanel.SetTopLeft(LVUP_PANEL_LEFT, LVUP_PANEL_TOP);
 		lvupFpanel.SetTopLeft(LVUP_PANEL_LEFT, LVUP_PANEL_TOP);
 		outcomeText.SetTopLeft(45, 360);
+		allPPText.SetTopLeft(ALLPP_LEFT, SKILL_TOP);
+		skTypeText.SetTopLeft(SKTYPE_LEFT, SKILL_DOWN);
 		for (int i = 0; i < 6; ++i) {
 			valueUpText[i].SetTopLeft(LVUP_VALUE_LEFT,
 				LVUP_VALUE_TOP + i * LVUP_VALUE_INTERVAL);
@@ -419,6 +436,8 @@ namespace game_framework {
 		enemy->SetTopLeft(660, ENEMYPM_Y);
 		myBar.Init(barTypeMy);
 		enemyBar.Init(barTypeEnemy);
+		myBar.ReceivePm(myPm);
+		enemyBar.ReceivePm(enemy);
 	}
 
 	void AtkInterface::KeyDownListener(UINT nChar)
@@ -479,10 +498,6 @@ namespace game_framework {
 				}
 				cursor = skill1;
 				break;
-			case KEY_X:
-				if (state == chooseSkill || state == chooseItem || state == choosePokemon) {
-					state = action;
-				}
 			default:
 				break;
 			}
@@ -497,7 +512,8 @@ namespace game_framework {
 				break;
 			case KEY_RIGHT:
 				if (cursor == skill1 || cursor == skill3) {
-					cursor = (myPm->GetSkillNum() < (cursor + 1)) ? cursor : (cursor + 1);
+					TRACE("\nskillnum = %d\n", myPm->GetSkillNum());
+					cursor = (myPm->GetSkillNum() <= (cursor + 1)) ? cursor : (cursor + 1);
 				}
 				break;
 			case KEY_UP:
@@ -507,11 +523,14 @@ namespace game_framework {
 				break;
 			case KEY_DOWN:
 				if (cursor == skill1 || cursor == skill2) {
-					cursor = (myPm->GetSkillNum() < (cursor + 2)) ? cursor : (cursor + 2);
+					cursor = (myPm->GetSkillNum() <= (cursor + 2)) ? cursor : (cursor + 2);
 				}
 				break;
 			case KEY_Z:
 				state = onSkill;
+				break;
+			case KEY_X:
+				state = action;
 				break;
 			default:
 				break;
@@ -568,6 +587,8 @@ namespace game_framework {
 		textCount = 0;
 		lvupCount = 0;
 		joinAtkPm.clear();
+		lvupPm.clear();
+		skillText.clear();
 	}
 
 	bool AtkInterface::IsAtk()
@@ -578,10 +599,11 @@ namespace game_framework {
 	void AtkInterface::SetAtkPm()
 	{
 		myPm = nullptr;
+		skillText.clear();
 		for (int i = 0; i < self->GetPmNum(); ++i) {
 			if (self->GetPokemon(i)->GetRemainHP() > 0) {
 				myPm = self->GetPokemon(i);
-				myBar.ReceivePm(myPm);
+				SetSkillText();
 				break;
 			}
 		}
@@ -589,7 +611,21 @@ namespace game_framework {
 			End();
 		}
 		myPm->SetTopLeft(110, SELFPM_Y);
-		joinAtkPm.push_back(myPm);
+		joinAtkPm.insert(myPm);
+	}
+
+	void AtkInterface::SetSkillText()
+	{
+		for (int i = 0; i < myPm->GetSkillNum(); ++i) {
+			CText tmpText;
+			tmpText.SetText(myPm->GetSkill(i)->GetName());
+			skillText.push_back(tmpText);
+			(skillText.back()).LoadBitmap();
+			(skillText.back()).SetTopLeft(
+				(i == skill1 || i == skill3) ? SKILL_LEFT : SKILL_RIGHT,
+				(i == skill1 || i == skill2) ? SKILL_TOP : SKILL_DOWN
+			);
+		}
 	}
 
 	int AtkInterface::GetAddExp(Pokemon *enemy)
@@ -600,10 +636,10 @@ namespace game_framework {
 	void AtkInterface::AddExp(int order)
 	{
 		if (!isAnime) {
-			value.SetAll(joinAtkPm[order]);
+			value.SetAll(FindSetFromOrder(joinAtkPm, order));
 			int addExp = GetAddExp(enemy) / joinAtkPm.size();
-			if (joinAtkPm[order]->AddExp(addExp)) {
-				lvupPm.push_back(joinAtkPm[order]);
+			if (FindSetFromOrder(joinAtkPm, order)->AddExp(addExp)) {
+				lvupPm.insert(FindSetFromOrder(joinAtkPm, order));
 			}
 			isAnime = true;
 		}
@@ -612,7 +648,7 @@ namespace game_framework {
 
 	void AtkInterface::SetValue(int order)
 	{
-		PmValue lvupValue(joinAtkPm[order]), difValue;
+		PmValue lvupValue(FindSetFromOrder(joinAtkPm, order)), difValue;
 		difValue = lvupValue - value;
 
 		valueUpText[0].SetText(to_string(difValue.hp));
@@ -636,12 +672,23 @@ namespace game_framework {
 		}
 	}
 
-
 	void AtkInterface::SltPm()
 	{
 		state = choosePokemon;
 		pmMenu->Start();
 		pmMenu->ChangeOnAtk();
 		pmMenu->ReceiveData(self->GetPokemons());
+	}
+
+	Pokemon *AtkInterface::FindSetFromOrder(set<Pokemon*>& lhs, int order)
+	{
+		int i = 0;
+		for (auto it : lhs) {
+			if (i == order) {
+				return it;
+			}
+			++i;
+		}
+		return NULL;
 	}
 }

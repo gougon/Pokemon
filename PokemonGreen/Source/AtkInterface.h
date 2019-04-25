@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <set>
 #include "CHero.h"
 #include "PokemonMenu.h"
 #include "Pokemon.h"
@@ -61,26 +62,39 @@ namespace game_framework {
 	private:
 		const int LVUP_PANEL_LEFT = 385;
 		const int LVUP_PANEL_TOP = 170;
-		const int LVUP_VALUE_TOP = 195;
+		const int LVUP_VALUE_TOP = 190;
 		const int LVUP_VALUE_LEFT = 590;
 		const int LVUP_VALUE_RIGHT = 615;
 		const int LVUP_VALUE_INTERVAL = 45;
 
+		const int SKILL_LEFT = 50;
+		const int SKILL_TOP = 365;
+		const int SKILL_RIGHT = 220;
+		const int SKILL_DOWN = 415;
+
+		const int REMAINPP_RIGHT = 555;
+		const int ALLPP_LEFT = 575;
+		const int SKTYPE_LEFT = 495;
+
 		void SetAtkPm();
+		void SetSkillText();
 		int GetAddExp(Pokemon *enemy);
 		void AddExp(int order);
 		void SetValue(int order);
 		void SltPm();
+		Pokemon *FindSetFromOrder(set<Pokemon*>& lhs, int order);
 
 		int openCount = 0, cursor, enemySkill, textCount, lvupCount;
 		bool isAtk, isAnime;
-		vector<Pokemon*> joinAtkPm, lvupPm;
+		set<Pokemon*> joinAtkPm, lvupPm;
 		AtkBar myBar, enemyBar;
 		State state;
 		CMovingBitmap black, battleBackground, battleOption, battleDialog, skillOption, battleHero, battleGround[2];
 		CMovingBitmap  atkCursor, ynPanel, lvupPanel, lvupFpanel;
 		CText outcomeText;
 		CText valueUpText[6], valueFinalText[6];
+		CText remainPPText, allPPText, skTypeText;
+		vector<CText> skillText;
 		CHero *self;
 		Pokemon *enemy, *myPm;
 		PokemonMenu *pmMenu;
