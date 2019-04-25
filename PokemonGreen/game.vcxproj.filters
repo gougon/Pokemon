@@ -164,6 +164,7 @@
     <ClCompile Include="Source\CFruit.cpp" />
     <ClCompile Include="Source\CGoods.cpp" />
     <ClCompile Include="Source\CBall.cpp" />
+    <ClCompile Include="Source\PmValue.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -236,6 +237,7 @@
     <ClInclude Include="Source\CFruit.h" />
     <ClInclude Include="Source\CGoods.h" />
     <ClInclude Include="Source\CBall.h" />
+    <ClInclude Include="Source\PmValue.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -626,6 +628,21 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\icon_pm_treecko.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HOSPITAL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NORMAL_HOUSE1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\STORE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\LV_UP_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\LV_UP_FPANEL.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

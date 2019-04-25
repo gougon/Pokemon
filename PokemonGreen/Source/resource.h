@@ -168,7 +168,13 @@
 #define BG_ITEMAMOUNT                   299
 #define IDB_BITMAP14                    300
 #define IDB_BITMAP15                    301
+#define IDB_HOSPITAL                    302
 #define IDB_ALPHABET_DIVISION           303
+#define IDB_NORMAL_HOUSE1               304
+#define IDB_STORE                       305
+#define IDB_LV_UP_PANEL                 306
+#define IDB_BITMAP17                    307
+#define IDB_LV_UP_FPANEL                307
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -181,7 +187,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        302
+#define _APS_NEXT_RESOURCE_VALUE        308
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

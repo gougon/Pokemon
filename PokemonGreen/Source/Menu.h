@@ -29,7 +29,8 @@ class Menu : public ActionObject
         void End();
         void RecieveData(int itemID, int amount);
         void SetPokemons(vector<Pokemon*>* pms);
-    private:
+		PokemonMenu *GetPokemonMenu();
+	private:
         const int MENU_LEFT = 474;
         const int MENU_TOP = 1;
         const int CURSOR_LEFT = 490;		// ª›ßÔ≈‹

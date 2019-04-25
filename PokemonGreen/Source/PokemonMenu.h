@@ -5,7 +5,6 @@
 #include "ActionObject.h"
 #include "Pokemon.h"
 #include "PmOprtView.h"
-// #include "PmOprtPanel.h"
 #include "PokemonBar.h"
 
 using namespace std;
@@ -23,6 +22,7 @@ namespace game_framework {
 		virtual void KeyDownListener(UINT nChar);
 		virtual void End();
 		void ReceiveData(vector<Pokemon*>* pms);
+		void ChangeOnAtk();
 	private:
 		enum pmOprtPanelSlt {
 			pmOprtPanelSltView, pmOprtPanelSltChange, pmOprtPanelSltItem, pmOprtPanelSltClose
@@ -47,8 +47,7 @@ namespace game_framework {
 		vector<Pokemon*>* pokemons;
 		PokemonBar *pokemonBar;
 		PmOprtView pmOprtView;
-		// PmOprtPanel pmOprtPanel;
 		int order, sltPm, swapPm;
-		bool isOprtPanel, isOprtSlt, isItem;
+		bool isOprtPanel, isOprtSlt, isItem, isAtkChange;
 	};
 }

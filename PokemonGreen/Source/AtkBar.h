@@ -29,6 +29,7 @@ namespace game_framework {
 		void Init(barType type);
 		void OnMove(Pokemon *pm);
 		void OnShow();
+		void ReceivePm(Pokemon *pm);
 		bool IsAddExp();
 	private:
 		int x; // right

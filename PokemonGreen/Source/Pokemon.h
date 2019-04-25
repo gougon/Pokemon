@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 #include "Skill.h"
+#include "PmValue.h"
+#include "CPickableObject.h"
 
 using namespace std;
 namespace game_framework {
@@ -29,7 +31,7 @@ namespace game_framework {
 		virtual void LoadBitmap() = 0;
 		void LoadValue();
 		void AddSkill(Skill *skill);
-		void AddExp(Pokemon *enemy);
+		bool AddExp(int addExp);
 		void HpAnime();
 		string GetName();
 		int GetLevel();
@@ -59,6 +61,8 @@ namespace game_framework {
 		void SetNeedExp(int exp);
 		void SetTopLeft(int left, int top);
 		void SetHeight(int height);
+		void SetItem(CPickableObject *item);
+		void UseItem(CPickableObject *item);
 
 		int exp[30] = {														// 設定經驗值道30等
 			6, 15, 30, 49, 72, 102, 135, 174, 217, 264,
@@ -66,14 +70,6 @@ namespace game_framework {
 			1110, 1215, 1326, 1441, 1560, 1686, 1815, 1950, 2089, 2232
 		};
 	protected:
-		class PmValue {
-		public:
-			PmValue();
-			PmValue(int hp, int atk, int def, int sa, int sd, int sp);
-			void SetAll(int hp, int sp, int atk, int def, int sa, int sd);
-			int hp;
-			int speed, atk, def, satk, sdef;
-		};
 		PmType pmtype;
 		int remainhp;
 		string name;
@@ -84,5 +80,6 @@ namespace game_framework {
 		int nowExp, needExp, basicExp;
 		vector<Skill*> skills;
 		CMovingBitmap frontImg, backImg, icon;
+		CPickableObject *item;
 	};
 }

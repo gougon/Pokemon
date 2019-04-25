@@ -186,7 +186,7 @@ namespace game_framework {
 		PushText(info, to_string(pm->GetDef()));
 		PushText(info, to_string(pm->GetSpeed()));
 		PushText(info, to_string(pm->GetNowExp()));
-		PushText(info, to_string(pm->GetNeedExp()));
+		PushText(info, to_string(pm->GetNeedExp() - pm->GetNowExp()));
 		for (int i = 0; i < (int)info.size(); ++i) {
 			info[i].SetTopLeft((int)(POSITION[2 * i] - info[i].GetLength() * info[i].GetFontSize()),
 				POSITION[2 * i + 1]);

@@ -11,7 +11,7 @@
 
 namespace game_framework {
 	PokemonMenu::PokemonMenu() :
-		ActionObject(), order(0), sltPm(0), swapPm(0), isOprtPanel(false), isOprtSlt(false), isItem(false)
+		ActionObject(), order(0), sltPm(0), swapPm(0), isOprtPanel(false), isOprtSlt(false), isItem(false), isAtkChange(false)
 	{
 		// empty body
 	}
@@ -195,8 +195,16 @@ namespace game_framework {
 							pmOprtView.ReceiveData((*pokemons)[sltPm]);
 						}
 						else if (order == pmOprtPanelSltChange) {
-							swapPm = sltPm;
-							isItem = true;
+							if (isAtkChange) {
+								Swap(0, sltPm);
+								delete[] pokemonBar;
+								ReceiveData(pokemons);
+								End();
+							}
+							else {
+								swapPm = sltPm;
+								isItem = true;
+							}
 						}
 					}
 					else {
@@ -207,6 +215,9 @@ namespace game_framework {
 							isOprtPanel = false;
 							isItem = false;
 							order = 0;
+							if (isAtkChange) {
+								End();
+							}
 						}
 					}
 				}
@@ -229,7 +240,7 @@ namespace game_framework {
 	{
 		isWork = false;
 		order = sltPm = swapPm = 0;
-		isOprtPanel = isOprtSlt = false;
+		isOprtPanel = isOprtSlt = isAtkChange = isItem = false;
 	}
 
 	void PokemonMenu::ReceiveData(vector<Pokemon*>* pms)
@@ -237,6 +248,11 @@ namespace game_framework {
 		pokemons = pms;
 		pokemonBar = new PokemonBar[pokemons->size()];
 		SetPmBar();
+	}
+
+	void PokemonMenu::ChangeOnAtk()
+	{
+		isAtkChange = true;
 	}
 
 	// private

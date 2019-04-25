@@ -57,6 +57,7 @@ class CHero
         Pokemon* GetPokemon(int order);
 		vector<Pokemon*>* GetPokemons();
         int GetPmNum();
+		int GetAliveNum();
         void AddPokemon(Pokemon* newPm);
     protected:
         void ChangeMap(CMap** m);

@@ -9,32 +9,6 @@
 #include "Pokemon.h"
 
 namespace game_framework {
-	// Pmvalue
-
-	Pokemon::PmValue::PmValue()
-		: hp(0), speed(0), atk(0), def(0), satk(0), sdef(0)
-	{
-		/* empty body */
-	}
-
-	Pokemon::PmValue::PmValue(int hp, int sp, int atk, int def, int sa, int sd)
-		: hp(hp), speed(sp), atk(atk), def(def), satk(sa), sdef(sd)
-	{
-		/* empty body */
-	}
-
-	void Pokemon::PmValue::SetAll(int hp, int atk, int def, int sa, int sd, int sp)
-	{
-		this->hp = hp;
-		this->atk = atk;
-		this->def = def;
-		this->satk = sa;
-		this->sdef = sd;
-		this->speed = sp;
-	}
-
-	// Pokemon
-
 	Pokemon::Pokemon()
 	{
 		/* empty body */
@@ -95,15 +69,20 @@ namespace game_framework {
 		}
 	}
 
-	void Pokemon::AddExp(Pokemon *enemy)
+	bool Pokemon::AddExp(int addExp)
 	{
-		nowExp += enemy->GetBasicExp() * enemy->GetLevel() / 7;
-		/* if (nowExp > needExp) {
+		int tempHp = remainhp;
+		nowExp += addExp;
+		if (nowExp > needExp) {
 			nowExp -= needExp;
 			level += 1;
 			needExp = exp[level];
 			LoadValue();
-		} */
+			remainhp = ((int)(1.1 * tempHp) > mixValue.hp) ? 
+				mixValue.hp : (int)(1.1 * tempHp);
+			return true;
+		}
+		return false;
 	}
 
 	void Pokemon::HpAnime()
@@ -270,5 +249,15 @@ namespace game_framework {
 		else {
 			frontImg.SetHeight(height);
 		}
+	}
+
+	void Pokemon::SetItem(CPickableObject *item)
+	{
+		this->item = item;
+	}
+
+	void Pokemon::UseItem(CPickableObject *item)
+	{
+		// item->Use(...);
 	}
 }

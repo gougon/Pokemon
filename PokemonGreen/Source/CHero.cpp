@@ -59,7 +59,7 @@ void CHero::Initialize()
     x = X_POS;
     y = Y_POS;
     count = 0;
-    atkProb = 2;
+    atkProb = 1;
     money = 0;
     canMove = false;
     isDialog = false;
@@ -76,6 +76,7 @@ void CHero::Initialize()
     SkillFactory skfactory;
     Pokemon* pm = pmfactory.CreatePokemon(treecko);
     pm->SetLevel(6);
+	pm->SetNowExp(120);
     pm->AddSkill(skfactory.CreateSkill(impact, styleSelf));
 	Pokemon* pm2 = pmfactory.CreatePokemon(treecko, "second");
 	pm2->SetLevel(20);
@@ -500,6 +501,17 @@ vector<Pokemon*>* CHero::GetPokemons()
 int CHero::GetPmNum()
 {
     return pokemons.size();
+}
+
+int CHero::GetAliveNum()
+{
+	int aliveNum = 0;
+	for (auto i : pokemons) {
+		if (i->GetRemainHP() > 0) {
+			aliveNum++;
+		}
+	}
+	return aliveNum;
 }
 
 void CHero::AddPokemon(Pokemon* newPm)

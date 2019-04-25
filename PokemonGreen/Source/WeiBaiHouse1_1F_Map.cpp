@@ -59,18 +59,14 @@ void WeiBaiHouse1_1F_Map::OnShow()
             {
                 case NONE_HIT:
                     break;
-
                 case NONE_EMPTY:
                     break;
-
                 case ENTRANCE:
                     break;
-
                 case WEIBAITOWN_HOUSE1_1F:
                     scene[WEIBAITOWN_HOUSE1_1F].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
                     scene[WEIBAITOWN_HOUSE1_1F].ShowBitmap();
                     break;
-
                 default:
                     ASSERT(0);
                     break;
@@ -111,12 +107,12 @@ CMap* WeiBaiHouse1_1F_Map::ChangeMap(int x, int y, CHero* hero)
     if (x == 22 && y == 23)
     {
         newMap = new WeiBaiMap(mapGameEvent);
-        newMap->SetXY(14 * SM, 33 * SM);
+        newMap->SetXY(14 * SM, 57 * SM);
     }
     else if (x == 23 && y == 23)
     {
         newMap = new WeiBaiMap(mapGameEvent);
-        newMap->SetXY(14 * SM, 33 * SM);
+        newMap->SetXY(14 * SM, 57 * SM);
     }
     else if (x == 22 && y == 16)
     {

@@ -334,6 +334,16 @@ IDB_ICON_PM_TREECKO     BITMAP                  "..\\RES\\icon_pm_treecko.bmp"
 
 IDB_ALPHABET_DIVISION   BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\bmp00031.bmp"
 
+IDB_HOSPITAL            BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\HOSPITAL.bmp"
+
+IDB_NORMAL_HOUSE1       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\NORMAL_HOUSE1.bmp"
+
+IDB_STORE               BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\STORE.bmp"
+
+IDB_LV_UP_PANEL         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\LV_UP_PANEL.bmp"
+
+IDB_LV_UP_FPANEL        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\LV_UP_FPANEL.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

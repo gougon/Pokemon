@@ -82,7 +82,7 @@ namespace game_framework {
 		if (type == barTypeMy) {	// 顯示exp條
 			double expRate = (double)pm->GetNowExp() / (double)pm->GetNeedExp();
 			double widthexp = expRate * EXP_LEN;
-			if ((int)widthexp < EXP_LEN) {		// 正常經驗值依照V上升
+			if (widthexp > expBar.RectWidth()) {		// 正常經驗值依照V上升
 				if ((int)widthexp - expBar.RectWidth() > V) {
 					expBar.SetWidth(expBar.RectWidth() + V);
 					isAddExp = true;
@@ -92,7 +92,7 @@ namespace game_framework {
 					isAddExp = false;
 				}
 			}
-			else if ((int)widthexp > EXP_LEN){		// 升等經驗值上升
+			else if ((int)(widthexp + 0.5) < expBar.RectWidth()){		// 升等經驗值上升
 				isAddExp = true;
 				if (expBar.RectWidth() < HP_LEN - V) {
 					expBar.SetWidth(expBar.RectWidth() + V);
@@ -101,8 +101,8 @@ namespace game_framework {
 					expBar.SetWidth((int)HP_LEN);
 				}
 				else {
-					pm->SetNowExp(pm->GetNowExp() - pm->GetNeedExp());
-					pm->SetLevel(pm->GetLevel() + 1);
+					/*pm->SetNowExp(pm->GetNowExp() - pm->GetNeedExp());
+					pm->SetLevel(pm->GetLevel() + 1);*/
 					
 					expBar.SetWidth(0);
 				}
@@ -132,6 +132,13 @@ namespace game_framework {
 			ASSERT(0);
 			break;
 		}
+	}
+
+	void AtkBar::ReceivePm(Pokemon *pm)
+	{
+		double expRate = (double)pm->GetNowExp() / (double)pm->GetNeedExp();
+		double widthexp = expRate * EXP_LEN;
+		expBar.SetWidth((int)(widthexp + 0.5));
 	}
 
 	bool AtkBar::IsAddExp()
