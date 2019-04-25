@@ -408,6 +408,7 @@
   <ItemGroup>
     <Image Include="..\WeiBaiTown.bmp" />
     <Image Include="..\WeiBaiTown.png" />
+    <Image Include="C:\Users\mdvv8\Desktop\IDB_Vulnerary.bmp" />
     <Image Include="D:\GitPokemon\PokemonGreen\RES\BAG_PANEL.bmp" />
     <Image Include="D:\GitPokemon\PokemonGreen\RES\BG_ITEMAMOUNT.bmp" />
     <Image Include="D:\GitPokemon\PokemonGreen\RES\BG_YESNO.bmp" />
@@ -426,6 +427,8 @@
     <Image Include="RES\BG_YESNO.bmp" />
     <Image Include="RES\billboard.bmp" />
     <Image Include="res\bitmap12.bmp" />
+    <Image Include="res\bitmap17.bmp" />
+    <Image Include="res\bitmap18.bmp" />
     <Image Include="res\bitmap3.bmp" />
     <Image Include="RES\bitmap4.bmp" />
     <Image Include="res\bitmap5.bmp" />
@@ -465,6 +468,7 @@
     <Image Include="res\bmp00030.bmp" />
     <Image Include="res\bmp00031.bmp" />
     <Image Include="res\bmp00032.bmp" />
+    <Image Include="res\bmp00033.bmp" />
     <Image Include="RES\DIAG.bmp" />
     <Image Include="RES\enemy_bar.bmp" />
     <Image Include="RES\expBar.bmp" />
@@ -473,6 +477,8 @@
     <Image Include="RES\FATGUY_LEFT.bmp" />
     <Image Include="RES\FATGUY_RIGHT.bmp" />
     <Image Include="RES\GIRL_FRONT.bmp" />
+    <Image Include="RES\GIVEITEM_TAG.bmp" />
+    <Image Include="RES\GIVETEM_PANEL.bmp" />
     <Image Include="RES\grass_land.bmp" />
     <Image Include="RES\GREEN_DIAG.bmp" />
     <Image Include="RES\green_flower.bmp" />
@@ -497,6 +503,7 @@
     <Image Include="RES\hp_red.bmp" />
     <Image Include="RES\hp_yellow.bmp" />
     <Image Include="RES\icon_pm_treecko.bmp" />
+    <Image Include="RES\IDB_FIGHTERGLOVE.bmp" />
     <Image Include="RES\jump_land.bmp" />
     <Image Include="RES\MenuBottom.bmp" />
     <Image Include="RES\MenuMiddle.bmp" />
@@ -518,14 +525,20 @@
     <Image Include="RES\POKEMON_BAR_SELECTED.bmp" />
     <Image Include="RES\SELECT_PANEL.bmp" />
     <Image Include="RES\self.bmp" />
+    <Image Include="RES\SHOP_DESCRIPTION_PANEL.bmp" />
+    <Image Include="RES\SHOP_IMAGE_PANEL.bmp" />
+    <Image Include="RES\SHOP_ITEMLIST_PANEL.bmp" />
+    <Image Include="RES\SHOP_MONEY_PANEL.bmp" />
     <Image Include="RES\skill_impact1.bmp" />
     <Image Include="RES\skill_impact2.bmp" />
     <Image Include="RES\skill_list.bmp" />
     <Image Include="RES\skill_option.bmp" />
     <Image Include="RES\SKILL_SELECT.bmp" />
     <Image Include="RES\skill_sidebar.bmp" />
+    <Image Include="RES\TRADEMODE_SELECT_PANEL.bmp" />
     <Image Include="RES\treecko_back.bmp" />
     <Image Include="RES\treecko_front.bmp" />
+    <Image Include="RES\USEITEM_PANEL.bmp" />
     <Image Include="RES\WeiBaiTown.bmp" />
     <Image Include="RES\weibaitown_house1.bmp" />
     <Image Include="RES\weibaitown_house1_1f.bmp" />

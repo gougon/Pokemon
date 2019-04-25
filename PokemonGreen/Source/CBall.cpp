@@ -22,6 +22,10 @@ int CBall::GetID()
 {
     return this->itemID;
 }
+int CBall::GetCost()
+{
+    return cost;
+}
 string CBall::GetName()
 {
     return this->name;

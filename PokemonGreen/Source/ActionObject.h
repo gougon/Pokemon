@@ -19,7 +19,9 @@ class ActionObject
         void End();
         bool IsWork();
     protected:
-        bool isWork = false;
+        int transfer_index = 0;
+        int currentID;
+        bool isWork;
 };
 }
 

@@ -14,8 +14,29 @@ CProp::CProp(int propID)
         this->itemID = propID;
         this->name = "antidote";
         this->description = "poison recover";
-        this->prop_image.LoadBitmap(IDB_ANTIDOTE);
+        this->prop_image.LoadBitmap(IDB_PROP_ANTIDOTE);
+        this->cost = 5;
     }
+    else if (propID == Item_SmallVulnerary)
+    {
+        this->itemID = propID;
+        this->name = "s.vulnerary";
+        this->description = "recover 20 hp";
+        this->prop_image.LoadBitmap(IDB_PROP_VULNERARY);
+        this->cost = 10;
+    }
+    else if (propID == Item_MediumVulnerary)
+    {
+        this->itemID = propID;
+        this->name = "m.vulnerary";
+        this->description = "recover 30 hp";
+        this->prop_image.LoadBitmap(IDB_PROP_VULNERARY);
+        this->cost = 15;
+    }
+}
+int CProp::GetCost()
+{
+    return cost;
 }
 int CProp::GetID()
 {

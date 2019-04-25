@@ -156,6 +156,7 @@ void Menu::KeyDownListener(UINT nChar)
                 {
                     order -= 1;
                 }
+
                 break;
 
             case KEY_DOWN:
@@ -168,16 +169,35 @@ void Menu::KeyDownListener(UINT nChar)
 
             case KEY_Z:
                 isItem = true;
-				if (order != itemClose) {
-					items[order]->Start();
-					if (order == itemPokemonMenu)
-					{
-						dynamic_cast<PokemonMenu*>(items[order])->ReceiveData(pokemons);
-					}
-				}
-				else {
-					End();
-				}
+
+                if (order != itemClose)
+                {
+                    items[order]->Start();
+
+                    if (order == itemBag)
+                    {
+                        TRACE("on\n");
+                        dynamic_cast<PokemonMenu*>(items[itemPokemonMenu])->ReceiveData(pokemons);
+                        dynamic_cast<Bag*>(items[itemBag])->RecievePokemonMenu(items[itemPokemonMenu]);
+                    }
+
+                    if (order == itemMainMenu)
+                    {
+                        dynamic_cast<PokemonMenu*>(items[itemPokemonMenu])->ReceiveData(pokemons);
+                        dynamic_cast<Bag*>(items[itemBag])->RecievePokemonMenu(items[itemPokemonMenu]);
+                        dynamic_cast<MainMenu*>(items[itemMainMenu])->RecieveBag(items[itemBag]);
+                    }
+
+                    if (order == itemPokemonMenu)
+                    {
+                        dynamic_cast<PokemonMenu*>(items[order])->ReceiveData(pokemons);
+                    }
+                }
+                else
+                {
+                    End();
+                }
+
                 break;
 
             case KEY_X:
@@ -197,15 +217,20 @@ void Menu::End()
     isItem = false;
 }
 
+void Menu::RecieveMoney(int* money)
+{
+    dynamic_cast<MainMenu*>(items[itemMainMenu])->SetMoney(money);
+}
+
 void Menu::RecieveData(int itemID, int amount)
 {
     dynamic_cast<Bag*>(items[itemBag])->AddItem(itemID, amount);
 }
 
 void Menu::SetPokemons(vector<Pokemon*>* pms)
-{    
-	pokemons = pms;
-	TRACE("\n\nmenu pokemons address = %d\n\n", pokemons);
-	dynamic_cast<PokemonMenu*>(items[itemPokemonMenu])->ReceiveData(pokemons);
+{
+    pokemons = pms;
+    TRACE("\n\nmenu pokemons address = %d\n\n", pokemons);
+    dynamic_cast<PokemonMenu*>(items[itemPokemonMenu])->ReceiveData(pokemons);
 }
 }

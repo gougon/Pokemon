@@ -7,6 +7,7 @@ class CScrolls : public CItem
 {
     public:
         CScrolls(int);
+        int GetCost();
         int GetID();
         string GetName();
         string GetDescription();
@@ -17,5 +18,6 @@ class CScrolls : public CItem
         string name;
         string description;
         int itemID;
+        int cost;
 };
 }

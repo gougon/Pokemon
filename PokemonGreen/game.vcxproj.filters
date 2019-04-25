@@ -628,6 +628,45 @@
     <Image Include="RES\icon_pm_treecko.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\bitmap17.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap18.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\mdvv8\Desktop\IDB_Vulnerary.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GIVETEM_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\USEITEM_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00033.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GIVEITEM_TAG.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\IDB_FIGHTERGLOVE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\SHOP_DESCRIPTION_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\SHOP_IMAGE_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\SHOP_ITEMLIST_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\SHOP_MONEY_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\TRADEMODE_SELECT_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="RES\weibaitown_scene.txt" />
