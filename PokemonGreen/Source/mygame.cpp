@@ -285,7 +285,6 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
     else if (nChar == KEY_ENTER)
     {
         myMenu.Start();
-        myMenu.RecieveMoney(hero.GetMoney());
         myMenu.SetPokemons(hero.GetPokemons());
     }
     else if (myMenu.IsWork())

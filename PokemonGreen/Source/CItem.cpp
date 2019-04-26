@@ -10,4 +10,8 @@ namespace game_framework
 CItem::CItem()
 {
 }
+void CItem::Use()
+{
+    //
+}
 }
