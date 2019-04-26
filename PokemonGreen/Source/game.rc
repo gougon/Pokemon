@@ -344,6 +344,8 @@ IDB_LV_UP_PANEL         BITMAP                  "E:\\Github\\Pokemon\\PokemonGre
 
 IDB_LV_UP_FPANEL        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\LV_UP_FPANEL.bmp"
 
+IDB_HOSPITAL_INSIDE     BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\hospital_inside.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

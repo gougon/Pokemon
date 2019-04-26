@@ -297,6 +297,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="Source\Hospital_Map.cpp" />
     <ClCompile Include="Source\Illustration.cpp" />
     <ClCompile Include="Source\MainFrm.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -372,6 +373,7 @@
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
     <ClInclude Include="Source\gameView.h" />
+    <ClInclude Include="Source\Hospital_Map.h" />
     <ClInclude Include="Source\Illustration.h" />
     <ClInclude Include="Source\MainFrm.h" />
     <ClInclude Include="Source\MainMenu.h" />
@@ -496,6 +498,7 @@
     <Image Include="RES\HOME.bmp" />
     <Image Include="RES\HOME_LOG.bmp" />
     <Image Include="RES\HOSPITAL.bmp" />
+    <Image Include="RES\hospital_inside.bmp" />
     <Image Include="RES\hp_green.bmp" />
     <Image Include="RES\hp_red.bmp" />
     <Image Include="RES\hp_yellow.bmp" />
