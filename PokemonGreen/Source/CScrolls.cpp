@@ -18,6 +18,10 @@ CScrolls::CScrolls(int scrollID)
     	this->scrolls_image.LoadBitmap(IDB_ANTIDOTE);
     }*/
 }
+int CScrolls::GetCost()
+{
+    return cost;
+}
 int CScrolls::GetID()
 {
     return this->itemID;

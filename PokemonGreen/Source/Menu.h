@@ -27,6 +27,7 @@ class Menu : public ActionObject
         virtual void LoadBitmap();
         virtual void KeyDownListener(UINT nChar);
         void End();
+        void RecieveMoney(int* money);
         void RecieveData(int itemID, int amount);
         void SetPokemons(vector<Pokemon*>* pms);
 		PokemonMenu *GetPokemonMenu();
@@ -51,6 +52,7 @@ class Menu : public ActionObject
         bool isItem;
         int order;
         int itemCount;
+        int money;
         CHero* hero;
         vector<ActionObject*> items;
         vector<Pokemon*>* pokemons;

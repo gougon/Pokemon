@@ -239,7 +239,7 @@ int WeiBaiMap::CheckID(int x, int y, int herodirection)
             if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
             {
                 mapGameEvent->Occur(WeibaiTown_pick_Pokemomball);
-                dialogBox.SetText("pick the antidote");
+                dialogBox.SetText("pick the smallvulnerary");
                 inEvent = true;
             }
             else

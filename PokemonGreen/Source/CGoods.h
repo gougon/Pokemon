@@ -7,6 +7,7 @@ class CGoods : public CItem
     public:
         CGoods(int);
         int GetID();
+        int GetCost();
         string GetName();
         string GetDescription();
         CMovingBitmap* GetImage();
@@ -16,5 +17,6 @@ class CGoods : public CItem
         string name;
         string description;
         int itemID;
+        int cost;
 };
 }

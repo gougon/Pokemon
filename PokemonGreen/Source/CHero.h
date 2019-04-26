@@ -49,13 +49,14 @@ class CHero
         void CloseBag();
         void BackpackCursorMove();
         void GetItem(int, int);
+        int* GetMoney();
         //
         bool IsInBag();
         void SetXY(int nx, int ny);		// ³]©w®y¼Ð
         void KeyIn(UINT nChar);
         int GetAtkProb();
         Pokemon* GetPokemon(int order);
-		vector<Pokemon*>* GetPokemons();
+        vector<Pokemon*>* GetPokemons();
         int GetPmNum();
 		int GetAliveNum();
         void AddPokemon(Pokemon* newPm);
@@ -89,7 +90,7 @@ class CHero
         //int menuFlag = 0;
         CMap* gameMap;
         ActionObject* gameMenu;
-        Bag heroBackPack;
+        //Bag heroBackPack;
         int money;
         int bag_flag;
         bool CheckForward(CMap** m);

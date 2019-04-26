@@ -632,6 +632,45 @@
     <Image Include="RES\icon_pm_treecko.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+<<<<<<< HEAD
+    <Image Include="res\bitmap17.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap18.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\mdvv8\Desktop\IDB_Vulnerary.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GIVETEM_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\USEITEM_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00033.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GIVEITEM_TAG.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\IDB_FIGHTERGLOVE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\SHOP_DESCRIPTION_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\SHOP_IMAGE_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\SHOP_ITEMLIST_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\SHOP_MONEY_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\TRADEMODE_SELECT_PANEL.bmp">
+=======
     <Image Include="RES\HOSPITAL.bmp">
       <Filter>Resource Files</Filter>
     </Image>
@@ -645,6 +684,7 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\LV_UP_FPANEL.bmp">
+>>>>>>> 9c1c6bf5c624e9a0e003821a8ec7d41fcb3499b7
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\hospital_inside.bmp">
