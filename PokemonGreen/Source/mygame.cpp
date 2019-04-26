@@ -193,7 +193,7 @@ void CGameStateRun::OnBeginState()
     hero.Initialize();
     hero.SetXY(18 * SM + HERO_X, 27 * SM + HERO_Y + 20);
     myMenu.Init();
-    atkInterface.Init(myMenu.GetPokemonMenu());
+	atkInterface.Init(myMenu.GetPokemonMenu());
 }
 
 void CGameStateRun::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
@@ -285,7 +285,6 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
     else if (nChar == KEY_ENTER)
     {
         myMenu.Start();
-        myMenu.RecieveMoney(hero.GetMoney());
         myMenu.SetPokemons(hero.GetPokemons());
     }
     else if (myMenu.IsWork())

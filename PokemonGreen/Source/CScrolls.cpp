@@ -22,10 +22,6 @@ int CScrolls::GetID()
 {
     return this->itemID;
 }
-int CScrolls::GetCost()
-{
-    return cost;
-}
 string CScrolls::GetName()
 {
     return this->name;

@@ -7,7 +7,6 @@ class CBall : public CItem
     public:
         CBall(int);
         int GetID();
-        int GetCost();
         string GetName();
         string GetDescription();
         CMovingBitmap* GetImage();
@@ -17,6 +16,5 @@ class CBall : public CItem
         string name;
         string description;
         int itemID;
-        int cost;
 };
 }

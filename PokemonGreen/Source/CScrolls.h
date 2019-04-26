@@ -8,7 +8,6 @@ class CScrolls : public CItem
     public:
         CScrolls(int);
         int GetID();
-        int GetCost();
         string GetName();
         string GetDescription();
         CMovingBitmap* GetImage();
@@ -18,6 +17,5 @@ class CScrolls : public CItem
         string name;
         string description;
         int itemID;
-        int cost;
 };
 }
