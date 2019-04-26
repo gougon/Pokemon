@@ -9,22 +9,18 @@ namespace game_framework
 {
 CGoods::CGoods(int goodsID)
 {
-    if (goodsID == Item_FighterGlove)
+    /*
+    if (goodsID == Item_Antidote)
     {
         this->itemID = goodsID;
-        this->name = "glove";
-        this->description = "add 15 atk";
-        this->goods_image.LoadBitmap(IDB_GOODS_FIGHTERGLOVE);
-        this->cost = 100;
-    }
+        this->name = "antidote";
+        this->description = "poison recover";
+        this->goods_image.LoadBitmap(IDB_ANTIDOTE);
+    }*/
 }
 int CGoods::GetID()
 {
     return this->itemID;
-}
-int CGoods::GetCost()
-{
-    return cost;
 }
 string CGoods::GetName()
 {

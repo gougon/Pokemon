@@ -165,6 +165,8 @@
     <ClCompile Include="Source\CGoods.cpp" />
     <ClCompile Include="Source\CBall.cpp" />
     <ClCompile Include="Source\PmValue.cpp" />
+    <ClCompile Include="Source\Hospital_Map.cpp" />
+    <ClCompile Include="Source\Nurse.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -238,6 +240,8 @@
     <ClInclude Include="Source\CGoods.h" />
     <ClInclude Include="Source\CBall.h" />
     <ClInclude Include="Source\PmValue.h" />
+    <ClInclude Include="Source\Hospital_Map.h" />
+    <ClInclude Include="Source\Nurse.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -645,37 +649,7 @@
     <Image Include="RES\LV_UP_FPANEL.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="RES\USEITEM_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\BLANK_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\GIVETEM_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\IDB_FIGHTERGLOVE.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\IDB_VULNERARY.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\SHOP_BLANK_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\SHOP_DESCRIPTION_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\SHOP_IMAGE_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\SHOP_ITEMLIST_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\SHOP_MONEY_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\TRADEMODE_SELECT_PANEL.bmp">
+    <Image Include="RES\hospital_inside.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

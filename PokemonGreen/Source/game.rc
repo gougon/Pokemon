@@ -284,7 +284,7 @@ BG_BACKPACK_CURSOR3     BITMAP                  "..\\res\\bitmap12.bmp"
 
 BG_BACKPACK_FLAG        BITMAP                  "..\\res\\bmp00030.bmp"
 
-IDB_PROP_ANTIDOTE       BITMAP                  "..\\RES\\antidote.bmp"
+IDB_ANTIDOTE            BITMAP                  "..\\RES\\antidote.bmp"
 
 BG_BACKPACK_ITEMCURSOR  BITMAP                  "..\\RES\\atk_cursor.bmp"
 
@@ -344,27 +344,7 @@ IDB_LV_UP_PANEL         BITMAP                  "..\\RES\\LV_UP_PANEL.bmp"
 
 IDB_LV_UP_FPANEL        BITMAP                  "..\\RES\\LV_UP_FPANEL.bmp"
 
-USEITEM_PANEL           BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\USEITEM_PANEL.bmp"
-
-BLANK_PANEL             BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\BLANK_PANEL.bmp"
-
-GIVEITEM_PANEL          BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\GIVETEM_PANEL.bmp"
-
-IDB_GOODS_FIGHTERGLOVE  BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\IDB_FIGHTERGLOVE.bmp"
-
-IDB_PROP_VULNERARY      BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\IDB_VULNERARY.bmp"
-
-SHOP_BLANK_PANEL        BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\SHOP_BLANK_PANEL.bmp"
-
-SHOP_DESCRIPTION_PANEL  BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\SHOP_DESCRIPTION_PANEL.bmp"
-
-SHOP_IMAGE_PANEL        BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\SHOP_IMAGE_PANEL.bmp"
-
-SHOP_ITEMLIST_PANEL     BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\SHOP_ITEMLIST_PANEL.bmp"
-
-SHOP_MONEY_PANEL        BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\SHOP_MONEY_PANEL.bmp"
-
-TRADEMODE_SELECT        BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\TRADEMODE_SELECT_PANEL.bmp"
+IDB_HOSPITAL_INSIDE     BITMAP                  "..\\RES\\hospital_inside.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

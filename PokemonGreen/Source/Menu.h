@@ -28,10 +28,9 @@ class Menu : public ActionObject
         virtual void KeyDownListener(UINT nChar);
         void End();
         void RecieveData(int itemID, int amount);
-        void RecieveMoney(int* money);
         void SetPokemons(vector<Pokemon*>* pms);
-        PokemonMenu* GetPokemonMenu();
-    private:
+		PokemonMenu *GetPokemonMenu();
+	private:
         const int MENU_LEFT = 474;
         const int MENU_TOP = 1;
         const int CURSOR_LEFT = 490;		// ª›ßÔ≈‹
@@ -51,7 +50,6 @@ class Menu : public ActionObject
         CText showingText;
         bool isItem;
         int order;
-        int money;
         int itemCount;
         CHero* hero;
         vector<ActionObject*> items;
