@@ -136,6 +136,7 @@
 #define BG_BACKPACK_CURSOR3             269
 #define BG_BACKPACK_FLAG                270
 #define IDB_ANTIDOTE                    272
+#define IDB_PROP_ANTIDOTE               272
 #define BG_BACKPACK_ITEMCURSOR          273
 #define BG_BACKPACK_BACK                274
 #define IDB_MENU_BOTTOM                 275
@@ -173,9 +174,20 @@
 #define IDB_NORMAL_HOUSE1               304
 #define IDB_STORE                       305
 #define IDB_LV_UP_PANEL                 306
+#define IDB_BITMAP17                    307
 #define IDB_LV_UP_FPANEL                307
-#define IDB_BITMAP17                    308
-#define IDB_HOSPITAL_INSIDE             308
+#define TRADEMODE_                      308
+#define USEITEM_PANEL                   308
+#define BLANK_PANEL                     309
+#define GIVEITEM_PANEL                  310
+#define IDB_GOODS_FIGHTERGLOVE          311
+#define IDB_PROP_VULNERARY              312
+#define SHOP_BLANK_PANEL                313
+#define SHOP_DESCRIPTION_PANEL          314
+#define SHOP_IMAGE_PANEL                315
+#define SHOP_ITEMLIST_PANEL             316
+#define SHOP_MONEY_PANEL                317
+#define TRADEMODE_SELECT                318
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -188,7 +200,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        309
+#define _APS_NEXT_RESOURCE_VALUE        319
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

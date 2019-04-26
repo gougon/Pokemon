@@ -7,6 +7,7 @@ class CProp : public CItem
     public:
         CProp(int);
         int GetID();
+        int GetCost();
         string GetName();
         string GetDescription();
         CMovingBitmap* GetImage();
@@ -16,5 +17,6 @@ class CProp : public CItem
         string name;
         string description;
         int itemID;
+        int cost;
 };
 }

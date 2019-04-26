@@ -23,6 +23,7 @@
     <RootNamespace>game</RootNamespace>
     <Keyword>MFCProj</Keyword>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>game</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'" Label="Configuration">
@@ -297,7 +298,6 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="Source\Hospital_Map.cpp" />
     <ClCompile Include="Source\Illustration.cpp" />
     <ClCompile Include="Source\MainFrm.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -373,7 +373,6 @@
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
     <ClInclude Include="Source\gameView.h" />
-    <ClInclude Include="Source\Hospital_Map.h" />
     <ClInclude Include="Source\Illustration.h" />
     <ClInclude Include="Source\MainFrm.h" />
     <ClInclude Include="Source\MainMenu.h" />
@@ -437,6 +436,7 @@
     <Image Include="res\bitmap7.bmp" />
     <Image Include="res\bitmap8.bmp" />
     <Image Include="RES\Black.bmp" />
+    <Image Include="RES\BLANK_PANEL.bmp" />
     <Image Include="RES\bmp00001.bmp" />
     <Image Include="RES\bmp00002.bmp" />
     <Image Include="res\bmp00003.bmp" />
@@ -477,6 +477,7 @@
     <Image Include="RES\FATGUY_LEFT.bmp" />
     <Image Include="RES\FATGUY_RIGHT.bmp" />
     <Image Include="RES\GIRL_FRONT.bmp" />
+    <Image Include="RES\GIVETEM_PANEL.bmp" />
     <Image Include="RES\grass_land.bmp" />
     <Image Include="RES\GREEN_DIAG.bmp" />
     <Image Include="RES\green_flower.bmp" />
@@ -498,11 +499,12 @@
     <Image Include="RES\HOME.bmp" />
     <Image Include="RES\HOME_LOG.bmp" />
     <Image Include="RES\HOSPITAL.bmp" />
-    <Image Include="RES\hospital_inside.bmp" />
     <Image Include="RES\hp_green.bmp" />
     <Image Include="RES\hp_red.bmp" />
     <Image Include="RES\hp_yellow.bmp" />
     <Image Include="RES\icon_pm_treecko.bmp" />
+    <Image Include="RES\IDB_FIGHTERGLOVE.bmp" />
+    <Image Include="RES\IDB_VULNERARY.bmp" />
     <Image Include="RES\jump_land.bmp" />
     <Image Include="RES\LV_UP_FPANEL.bmp" />
     <Image Include="RES\LV_UP_PANEL.bmp" />
@@ -527,6 +529,11 @@
     <Image Include="RES\POKEMON_BAR_SELECTED.bmp" />
     <Image Include="RES\SELECT_PANEL.bmp" />
     <Image Include="RES\self.bmp" />
+    <Image Include="RES\SHOP_BLANK_PANEL.bmp" />
+    <Image Include="RES\SHOP_DESCRIPTION_PANEL.bmp" />
+    <Image Include="RES\SHOP_IMAGE_PANEL.bmp" />
+    <Image Include="RES\SHOP_ITEMLIST_PANEL.bmp" />
+    <Image Include="RES\SHOP_MONEY_PANEL.bmp" />
     <Image Include="RES\skill_impact1.bmp" />
     <Image Include="RES\skill_impact2.bmp" />
     <Image Include="RES\skill_list.bmp" />
@@ -534,8 +541,10 @@
     <Image Include="RES\SKILL_SELECT.bmp" />
     <Image Include="RES\skill_sidebar.bmp" />
     <Image Include="RES\STORE.bmp" />
+    <Image Include="RES\TRADEMODE_SELECT_PANEL.bmp" />
     <Image Include="RES\treecko_back.bmp" />
     <Image Include="RES\treecko_front.bmp" />
+    <Image Include="RES\USEITEM_PANEL.bmp" />
     <Image Include="RES\WeiBaiTown.bmp" />
     <Image Include="RES\weibaitown_house1.bmp" />
     <Image Include="RES\weibaitown_house1_1f.bmp" />

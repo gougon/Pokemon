@@ -11,7 +11,6 @@
 #include "WeiBaiHouse1_1F_Map.h"
 #include "WeiBaiHouse2_1F_Map.h"
 #include "WeiBaiProHouse_Map.h"
-#include "Hospital_Map.h"
 #include "AtkInterface.h"
 #include "Pokemon.h"
 #include "PokemonFactory.h"
@@ -199,19 +198,19 @@ CMap* WeiBaiMap::ChangeMap(int x, int y, CHero* hero)
     x /= SM;
     y /= SM;
     CMap* newMap;
-	
-    if (x == 19 && y == 60) {
+
+    if (x == 19 && y == 60)
+    {
         newMap = new WeiBaiHouse1_1F_Map(mapGameEvent);
     }
-    else if (x == 28 && y == 60) {
+    else if (x == 28 && y == 60)
+    {
         newMap = new WeiBaiHouse2_1F_Map(mapGameEvent);
     }
-    else if (x == 21 && y == 68) {
+    else if (x == 21 && y == 68)
+    {
         newMap = new WeiBaiProHouse_Map(mapGameEvent);
     }
-	else if (x == 20 && y == 28) {
-		newMap = new Hospital_Map(mapGameEvent);
-	}
 
     newMap->LoadBitmap();
     return newMap;

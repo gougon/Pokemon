@@ -59,8 +59,8 @@ void CHero::Initialize()
     x = X_POS;
     y = Y_POS;
     count = 0;
-    atkProb = 20;
-    money = 0;
+    atkProb = 1;
+    money = 1000;
     canMove = false;
     isDialog = false;
     isForwardDown = true;
@@ -76,13 +76,14 @@ void CHero::Initialize()
     SkillFactory skfactory;
     Pokemon* pm = pmfactory.CreatePokemon(treecko);
     pm->SetLevel(6);
-	pm->SetNowExp(120);
+    pm->SetNowExp(120);
+    pm->SetRemainHP(15);
     pm->AddSkill(skfactory.CreateSkill(impact, styleSelf));
-	Pokemon* pm2 = pmfactory.CreatePokemon(treecko, "second");
-	pm2->SetLevel(20);
-	pm2->AddSkill(skfactory.CreateSkill(impact, styleSelf));
+    Pokemon* pm2 = pmfactory.CreatePokemon(treecko, "second");
+    pm2->SetLevel(20);
+    pm2->AddSkill(skfactory.CreateSkill(impact, styleSelf));
     AddPokemon(pm);
-	AddPokemon(pm2);
+    AddPokemon(pm2);
 }
 void CHero::LoadBitmap()
 {
@@ -108,7 +109,7 @@ void CHero::LoadBitmap()
     HeroMovingLeft.AddBitmap(HERO_LEFT_TWO, RGB(255, 0, 0));
     HeroMovingLeft.AddBitmap(HERO_LEFT, RGB(255, 0, 0));
     //////////////////////////////////////////////
-    heroBackPack.LoadBitmap();
+    //heroBackPack.LoadBitmap();
 }
 void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
 {
@@ -345,9 +346,18 @@ bool CHero::CheckForward(CMap** m)
         eventCheckIndex = (*m)->CheckID(x, y + SM, GetDirection());
     }
 
-    if (eventCheckIndex == WeibaiTown_pick_Pokemomball) gameMenu->RecieveData(0, 1);
+    if (eventCheckIndex == WeibaiTown_pick_Pokemomball)
+    {
+        gameMenu->RecieveData(0, 1);
+        gameMenu->RecieveData(1, 2);
+        gameMenu->RecieveData(3, 2);
+    }
 
     return eventCheckIndex;
+}
+int* CHero::GetMoney()
+{
+    return &money;
 }
 int CHero::GetDirection()
 {
@@ -381,7 +391,7 @@ void CHero::BackpackCursorMove()
 }
 void CHero::GetItem(int itemID, int amount)
 {
-    heroBackPack.AddItem(itemID, amount);
+    //heroBackPack.AddItem(itemID, amount);
 }
 bool CHero::IsInBag()
 {
@@ -495,7 +505,7 @@ Pokemon* CHero::GetPokemon(int order)
 
 vector<Pokemon*>* CHero::GetPokemons()
 {
-	return &pokemons;
+    return &pokemons;
 }
 
 int CHero::GetPmNum()
@@ -505,13 +515,17 @@ int CHero::GetPmNum()
 
 int CHero::GetAliveNum()
 {
-	int aliveNum = 0;
-	for (auto i : pokemons) {
-		if (i->GetRemainHP() > 0) {
-			aliveNum++;
-		}
-	}
-	return aliveNum;
+    int aliveNum = 0;
+
+    for (auto i : pokemons)
+    {
+        if (i->GetRemainHP() > 0)
+        {
+            aliveNum++;
+        }
+    }
+
+    return aliveNum;
 }
 
 void CHero::AddPokemon(Pokemon* newPm)
