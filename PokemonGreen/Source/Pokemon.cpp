@@ -308,9 +308,16 @@ bool Pokemon::TakeItem(int itemID)
             mixValue.atk = GetAtk() + 15;
             return true;
         }
-        else return false;
+
+        return false;
     }
 
     return false;
+}
+int Pokemon::GetTakeItem()
+{
+    if (!haveItem || takeItem == -1) return -1;
+
+    return takeItemID;
 }
 }

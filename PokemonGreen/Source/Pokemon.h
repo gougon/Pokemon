@@ -68,7 +68,7 @@ class Pokemon
         void SetHeight(int height);
         bool UseItem(int itemID);
         bool TakeItem(int itemID);
-
+        int GetTakeItem();
         int exp[30] =  														// 設定經驗值道30等
         {
             6, 15, 30, 49, 72, 102, 135, 174, 217, 264,
