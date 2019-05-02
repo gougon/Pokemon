@@ -18,9 +18,9 @@ namespace game_framework {
 	};
 
 	enum Attribute {
-		normal, fighting, flying, poison, 
-		ground, rock, bug, ghost, steel, 
-		fire, water, grass, electric, 
+		normal, fighting, flying, poison,
+		ground, rock, bug, ghost, steel,
+		fire, water, grass, electric,
 		psychic, ice, dragon, dark
 	};
 
@@ -79,8 +79,9 @@ namespace game_framework {
 		void SetNeedExp(int exp);
 		void SetTopLeft(int left, int top);
 		void SetHeight(int height);
-		void SetItem(CPickableObject *item);
-		void UseItem(CPickableObject *item);
+		bool UseItem(int itemID);
+        bool TakeItem(int itemID);
+        int GetTakeItem();
 
 		int exp[30] = {														// 設定經驗值道30等
 			6, 15, 30, 49, 72, 102, 135, 174, 217, 264,
@@ -97,7 +98,8 @@ namespace game_framework {
 		int nowExp, needExp, basicExp;
 		vector<Skill*> skills;
 		CMovingBitmap frontImg, backImg, icon;
-		CPickableObject *item;
+		bool haveItem;
+        int takeItemID;
 	private:
 		void SetValueLevel(int &rvalue, int mvalue, int level);
 		int GetValueLevel(int rvalue, int mvalue);

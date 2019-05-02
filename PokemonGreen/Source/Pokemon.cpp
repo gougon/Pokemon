@@ -78,7 +78,7 @@ namespace game_framework {
 			level += 1;
 			needExp = exp[level];
 			LoadValue();
-			remainValue.hp = ((int)(1.1 * tempHp) > mixValue.hp) ? 
+			remainValue.hp = ((int)(1.1 * tempHp) > mixValue.hp) ?
 				mixValue.hp : (int)(1.1 * tempHp);
 			return true;
 		}
@@ -313,7 +313,7 @@ namespace game_framework {
 		else {
 			frontImg.SetTopLeft(left, top);
 		}
-		
+
 	}
 
 	void Pokemon::SetHeight(int height)
@@ -326,15 +326,61 @@ namespace game_framework {
 		}
 	}
 
-	void Pokemon::SetItem(CPickableObject *item)
-	{
-		this->item = item;
-	}
+	bool Pokemon::UseItem(int itemID)
+    {
+        if (itemID == Item_SmallVulnerary)
+        {
+            TRACE("use s.vulnerary\n");
 
-	void Pokemon::UseItem(CPickableObject *item)
-	{
-		// item->Use(...);
-	}
+            if (GetRemainHP() < GetHP())
+            {
+                SetRemainHP(GetRemainHP() + 20);
+                return true;
+            }
+
+            return false;
+        }
+
+        if (itemID == Item_MediumVulnerary)
+        {
+            TRACE("use m.vulnerary\n");
+
+            if (GetRemainHP() < GetHP())
+            {
+                SetRemainHP(GetRemainHP() + 30);
+                return true;
+            }
+
+            return false;
+        }
+
+        return false;
+    }
+
+    bool Pokemon::TakeItem(int itemID)
+    {
+        if (itemID == Item_FighterGlove)
+        {
+            TRACE("take glove\n");
+
+            if (!haveItem)
+            {
+                takeItemID = itemID;
+                haveItem = true;
+                mixValue.atk = GetAtk() + 15;
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    int Pokemon::GetTakeItem()
+    {
+        if (!haveItem || takeItem == -1) return -1;
+
+        return takeItemID;
+    }
 
 	// private
 
