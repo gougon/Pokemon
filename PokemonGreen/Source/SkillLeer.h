@@ -7,14 +7,12 @@
 
 using namespace std;
 namespace game_framework {
-	class SkillImpact : public SkillNormal {
+	class SkillLeer : public SkillNormal {
 	public:
-		SkillImpact(pmStyle pmstyle);
+		SkillLeer(pmStyle pmstyle);
 		virtual void Init();
 		virtual string Use(Pokemon *self, Pokemon *enemy);
 		virtual bool AtkAnimeOnMove();
 		virtual void AtkAnimeOnShow();
-	private:
-		string EffectText(Pokemon *enemy);
 	};
 }

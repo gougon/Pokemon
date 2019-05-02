@@ -8,6 +8,9 @@
 
 using namespace std;
 namespace game_framework {
+	constexpr auto ALL_PM_NUM = 2;
+	constexpr auto V = 32;
+
 	class Skill;
 
 	enum PmType {
@@ -41,9 +44,19 @@ namespace game_framework {
 		int GetDef();
 		int GetSatk();
 		int GetSdef();
+		int GetRemainHP();
+		int GetRemainSpeed();
+		int GetRemainAtk();
+		int GetRemainDef();
+		int GetRemainSatk();
+		int GetRemainSdef();
+		int GetSpeedLevel();
+		int GetAtkLevel();
+		int GetDefLevel();
+		int GetSatkLevel();
+		int GetSdefLevel();
 		float GetHitRate();
 		float GetEvasionRate();
-		int GetRemainHP();
 		int GetNowExp();
 		int GetNeedExp();
 		int GetBasicExp();
@@ -57,6 +70,11 @@ namespace game_framework {
 		void SetHP(int hp);
 		void SetLevel(int lv);
 		void SetRemainHP(int hp);
+		void SetRemainSpeed(int lv);
+		void SetRemainAtk(int lv);
+		void SetRemainDef(int lv);
+		void SetRemainSatk(int lv);
+		void SetRemainSdef(int lv);
 		void SetNowExp(int exp);
 		void SetNeedExp(int exp);
 		void SetTopLeft(int left, int top);
@@ -71,15 +89,17 @@ namespace game_framework {
 		};
 	protected:
 		PmType pmtype;
-		int remainhp;
 		string name;
 		Attribute attribute;
 		int level;
-		PmValue speciesStrength, individualValue, effortValue, mixValue;
+		PmValue speciesStrength, individualValue, effortValue, mixValue, remainValue;
 		float hitRate, evasionRate;
 		int nowExp, needExp, basicExp;
 		vector<Skill*> skills;
 		CMovingBitmap frontImg, backImg, icon;
 		CPickableObject *item;
+	private:
+		void SetValueLevel(int &rvalue, int mvalue, int level);
+		int GetValueLevel(int rvalue, int mvalue);
 	};
 }

@@ -59,7 +59,7 @@ void CHero::Initialize()
     x = X_POS;
     y = Y_POS;
     count = 0;
-    atkProb = 20;
+    atkProb = 1;
     money = 0;
     canMove = false;
     isDialog = false;
@@ -78,9 +78,10 @@ void CHero::Initialize()
     pm->SetLevel(6);
 	pm->SetNowExp(120);
     pm->AddSkill(skfactory.CreateSkill(impact, styleSelf));
-	Pokemon* pm2 = pmfactory.CreatePokemon(treecko, "second");
+	Pokemon* pm2 = pmfactory.CreatePokemon(jirachi);
 	pm2->SetLevel(20);
 	pm2->AddSkill(skfactory.CreateSkill(impact, styleSelf));
+	pm2->AddSkill(skfactory.CreateSkill(leer, styleSelf));
     AddPokemon(pm);
 	AddPokemon(pm2);
 }
@@ -323,7 +324,7 @@ void CHero::SetDirection(int flag)
 }
 bool CHero::CheckForward(CMap** m)
 {
-    int eventCheckIndex = 0;
+    int eventCheckIndex = 1;
 
     if (isForwardLeft)
     {
@@ -461,8 +462,8 @@ void CHero::KeyIn(UINT nChar)
 
     if (nChar == KEY_Z)
     {
-        SetCanMove(false);
-        trigger(gameMap);
+        // SetCanMove(false);
+        // trigger(gameMap);
     }
 
     /*if (inMenu)

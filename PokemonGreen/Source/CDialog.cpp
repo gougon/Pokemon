@@ -16,7 +16,6 @@ CDialog::CDialog()
 void CDialog::SetText(string inputstr)
 {
     showString = inputstr;
-    TRACE("showString length = %d\n", showString.size());
 }
 
 void CDialog::InitDialog(char type)

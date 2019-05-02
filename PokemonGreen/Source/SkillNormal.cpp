@@ -20,10 +20,10 @@ namespace game_framework {
 		switch (category)
 		{
 		case physical:
-			damage *= ((double)self->GetAtk() / (double)enemy->GetDef());
+			damage *= ((double)self->GetRemainAtk() / (double)enemy->GetRemainDef());
 			break;
 		case special:
-			damage *= ((double)self->GetSatk() / (double)enemy->GetSdef());
+			damage *= ((double)self->GetRemainSatk() / (double)enemy->GetRemainSdef());
 			break;
 		case status:
 			damage = (double)power;
@@ -93,5 +93,19 @@ namespace game_framework {
 		}
 		TRACE("\ndamege = %d\n", (int)damage);
 		return ((int)damage <= 0) ? 1 : (int)damage;
+	}
+
+	AttrDamage SkillNormal::DamageEffect(Pokemon *enemy)
+	{
+		if (enemy->GetAttribute() == rock ||
+			enemy->GetAttribute() == steel) {
+			return lowEffe;
+		}
+		else if (enemy->GetAttribute() == ghost) {
+			return notEffe;
+		}
+		else {
+			return normalEffe;
+		}
 	}
 }

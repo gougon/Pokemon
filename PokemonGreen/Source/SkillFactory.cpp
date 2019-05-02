@@ -9,6 +9,7 @@
 #include "SkillFactory.h"
 #include "SkillNormal.h"
 #include "SkillImpact.h"
+#include "SkillLeer.h"
 
 namespace game_framework {
 	Skill* SkillFactory::CreateSkill(skillName name, pmStyle pmstyle)
@@ -18,6 +19,9 @@ namespace game_framework {
 		{
 		case impact:
 			return new SkillImpact(pmstyle);
+			break;
+		case leer:
+			return new SkillLeer(pmstyle);
 			break;
 		default:
 			return new SkillImpact(pmstyle);

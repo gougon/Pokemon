@@ -9,38 +9,57 @@
 #include "PokemonFactory.h"
 #include "Pokemon.h"
 #include "PmTreecko.h"
+#include "PmJirachi.h"
 
 namespace game_framework {
 	Pokemon* PokemonFactory::CreatePokemon(pokemonName pokemonName)
 	{
-		//Skill *skill;
-		if (pokemonName == treecko) {
+		switch (pokemonName) {
+		case treecko:
 			return new PmTreecko(my);
-		}
-		else {			 // else if skill......
+			break;
+		case jirachi:
+			return new PmJirachi(my);
+			break;
+		default:
 			return new PmTreecko(my);
+			break;
 		}
 	}
 
 	Pokemon* PokemonFactory::CreatePokemon(pokemonName pokemonName, string name)
 	{
-		//Skill *skill;
-		if (pokemonName == treecko) {
+		switch (pokemonName) {
+		case treecko:
 			return new PmTreecko(my, name);
-		}
-		else {			 // else if skill......
+			break;
+		case jirachi:
+			return new PmJirachi(my, name);
+			break;
+		default:
 			return new PmTreecko(my, name);
+			break;
 		}
 	}
 
 	Pokemon* PokemonFactory::CreateEnemy(pokemonName pokemonName)
 	{
-		//Skill *skill;
-		if (pokemonName == treecko) {
+		switch (pokemonName) {
+		case treecko:
 			return new PmTreecko(enemy);
-		}
-		else {			 // else if skill......
+			break;
+		case jirachi:
+			return new PmJirachi(enemy);
+			break;
+		default:
 			return new PmTreecko(enemy);
+			break;
 		}
+	}
+
+	Pokemon* PokemonFactory::CreateEnemyRandom()
+	{
+		int name = rand() % ALL_PM_NUM;
+		return CreateEnemy((pokemonName)name);
 	}
 }

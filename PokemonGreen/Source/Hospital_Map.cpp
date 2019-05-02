@@ -27,19 +27,19 @@ namespace game_framework
 	void Hospital_Map::LoadBitmap()
 	{
 		scene[HOSPITAL_INSIDE].LoadBitmap(IDB_HOSPITAL_INSIDE);
+		nurse.LoadBitmap();
+		nurse.Init();
 	}
 
 	void Hospital_Map::OnShow()
 	{
 		int sx = GetSX();
 		int sy = GetSY();
-		TRACE("\nsx = %d, sy = %d\n", sx, sy);
 
 		for (int i = sx - EXPEND * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount)
 		{
 			for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount)
 			{
-				TRACE("\ni = %d, j = %d\n", i / SM, j / SM);
 				switch (map[j / SM][i / SM])
 				{
 				case NONE_HIT:
@@ -59,6 +59,36 @@ namespace game_framework
 					ASSERT(0);
 					break;
 				}
+			}
+		}
+
+		if (nurse.IsWork()) {
+			nurse.OnShow();
+		}
+	}
+
+	void Hospital_Map::OnMove()
+	{
+		if (nurse.IsWork()) {
+			nurse.OnMove();
+		}
+	}
+
+	void Hospital_Map::KeyDownListener(UINT nChar, CHero &hero)
+	{
+		const char KEY_Z = 0x5a;
+
+		if (nurse.IsWork()) {
+			nurse.KeyDownListener(nChar);
+		}
+		else {
+			switch (nChar) {
+			case KEY_Z:
+				if (IsItemBeChecked(NURSE_X, NURSE_Y, hero)) {
+					nurse.ReceiveData(hero);
+					nurse.Start();
+				}
+				break;
 			}
 		}
 	}
@@ -83,7 +113,6 @@ namespace game_framework
 		y /= SM;
 		CMap* newMap;
 
-		TRACE("\nX = %d, Y = %d\n", x, y);
 		if (x == 20 && y == 23 || x == 21 && y == 23)
 		{
 			newMap = new WeiBaiMap(mapGameEvent);
@@ -92,5 +121,30 @@ namespace game_framework
 
 		newMap->LoadBitmap();
 		return newMap;
+	}
+
+	bool Hospital_Map::IsItemBeChecked(int x, int y, CHero &hero)
+	{
+		int herox = hero.GetX1() / SM;
+		int heroy = hero.GetY1() / SM;
+		if (hero.GetDirection() == 0 &&
+			x == herox && y == heroy - 1) {
+			return true;
+		}
+		else if (hero.GetDirection() == 1 &&
+			x == herox - 1 && y == heroy) {
+			return true;
+		}
+		else if (hero.GetDirection() == 2 &&
+			x == herox && y == heroy + 1) {
+			return true;
+		}
+		else if (hero.GetDirection() == 3 &&
+			x == herox + 1 && y == heroy) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 }

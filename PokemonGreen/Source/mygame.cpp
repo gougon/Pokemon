@@ -214,6 +214,7 @@ void CGameStateRun::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
     else
     {
         testDialog.OnMove();
+		gameMap->OnMove();
         int count = hero.GetCount();
 
         //TRACE("x = %d\ny = %d\n", hero.GetX1(), hero.GetY1());
@@ -297,12 +298,10 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 
         if (!hero.IsMoving() && hero.GetCount() == 0)
         {
-            if (nChar == KEY_UP || nChar == KEY_LEFT || nChar == KEY_DOWN || nChar == KEY_RIGHT || nChar == KEY_Z)
-            {
-                hero.ReceiveData(gameMap, &myMenu);
-                hero.KeyIn(nChar);
-            }
+            hero.ReceiveData(gameMap, &myMenu);
+            hero.KeyIn(nChar);
         }
+		gameMap->KeyDownListener(nChar, hero);
     }
 }
 

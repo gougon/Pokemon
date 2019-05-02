@@ -44,7 +44,7 @@ namespace game_framework {
 		}
 	}
 
-	void SkillImpact::Use(Pokemon *self, Pokemon *enemy)
+	string SkillImpact::Use(Pokemon *self, Pokemon *enemy)
 	{
 		if (remainpp > 0) { // 技能還有剩餘
 			--remainpp;
@@ -54,10 +54,14 @@ namespace game_framework {
 				int enehp = enemy->GetRemainHP();
 				enehp = (enehp - Damage(self, enemy) < 0) ? 0 : enehp - Damage(self, enemy);
 				enemy->SetRemainHP(enehp);
+				return EffectText(enemy);
+			}
+			else {
+				return self->GetName() + "'s attack is miss";
 			}
 		}
 		else { // 跑對話說已經沒pp了並重新選擇技能
-
+			return self->GetName() + "have no pp";
 		}
 	}
 
@@ -76,5 +80,28 @@ namespace game_framework {
 	void SkillImpact::AtkAnimeOnShow()
 	{
 		atkAnime.OnShow();
+	}
+
+	// private
+
+	string SkillImpact::EffectText(Pokemon *enemy)
+	{
+		switch (DamageEffect(enemy))
+		{
+		case superEffe:
+			return "super effective";
+			break;
+		case normalEffe:
+			return "";
+			break;
+		case lowEffe:
+			return "not very effective";
+			break;
+		case notEffe:
+			return "not effective";
+			break;
+		default:
+			return "";
+		}
 	}
 }

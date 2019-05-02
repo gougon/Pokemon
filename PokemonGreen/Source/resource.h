@@ -176,6 +176,27 @@
 #define IDB_LV_UP_FPANEL                307
 #define IDB_BITMAP17                    308
 #define IDB_HOSPITAL_INSIDE             308
+#define HEAL_BALL1                      309
+#define HEAL_BALL2                      310
+#define HEAL_BALL3                      311
+#define HEAL_BALL4                      312
+#define HEAL_BALL5                      313
+#define HEAL_BALL6                      314
+#define HEAL_BALL7                      315
+#define HEAL_BALL8                      316
+#define HEAL_BALL9                      317
+#define HEAL_BALL10                     318
+#define HEAL_BALL11                     319
+#define HEAL_BALL12                     320
+#define IDB_ICON_PM_JIRACHI             321
+#define IDB_PM_JIRACHI_BACK             322
+#define IDB_PM_JIRACHI_FRONT            323
+#define IDB_SKILL_LEER1                 324
+#define IDB_SKILL_LEER2                 325
+#define IDB_SKILL_LEER3                 326
+#define IDB_SKILL_LEER4                 327
+#define IDB_BITMAP22                    328
+#define IDB_SKILL_LEER5                 328
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -188,7 +209,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        309
+#define _APS_NEXT_RESOURCE_VALUE        329
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

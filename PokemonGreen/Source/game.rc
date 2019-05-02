@@ -346,6 +346,46 @@ IDB_LV_UP_FPANEL        BITMAP                  "..\\RES\\LV_UP_FPANEL.bmp"
 
 IDB_HOSPITAL_INSIDE     BITMAP                  "..\\RES\\hospital_inside.bmp"
 
+HEAL_BALL1              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball1.bmp"
+
+HEAL_BALL2              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball2.bmp"
+
+HEAL_BALL3              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball3.bmp"
+
+HEAL_BALL4              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball4.bmp"
+
+HEAL_BALL5              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball5.bmp"
+
+HEAL_BALL6              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball6.bmp"
+
+HEAL_BALL7              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball7.bmp"
+
+HEAL_BALL8              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball8.bmp"
+
+HEAL_BALL9              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball9.bmp"
+
+HEAL_BALL10             BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball10.bmp"
+
+HEAL_BALL11             BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball11.bmp"
+
+HEAL_BALL12             BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball12.bmp"
+
+IDB_ICON_PM_JIRACHI     BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\icon_pm_jirachi.bmp"
+
+IDB_PM_JIRACHI_BACK     BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\jirachi_back.bmp"
+
+IDB_PM_JIRACHI_FRONT    BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\jirachi_front.bmp"
+
+IDB_SKILL_LEER1         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_leer1.bmp"
+
+IDB_SKILL_LEER2         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_leer2.bmp"
+
+IDB_SKILL_LEER3         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_leer3.bmp"
+
+IDB_SKILL_LEER4         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_leer4.bmp"
+
+IDB_SKILL_LEER5         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_leer5.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

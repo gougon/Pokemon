@@ -167,6 +167,8 @@
     <ClCompile Include="Source\PmValue.cpp" />
     <ClCompile Include="Source\Hospital_Map.cpp" />
     <ClCompile Include="Source\Nurse.cpp" />
+    <ClCompile Include="Source\PmJirachi.cpp" />
+    <ClCompile Include="Source\SkillLeer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -242,6 +244,8 @@
     <ClInclude Include="Source\PmValue.h" />
     <ClInclude Include="Source\Hospital_Map.h" />
     <ClInclude Include="Source\Nurse.h" />
+    <ClInclude Include="Source\PmJirachi.h" />
+    <ClInclude Include="Source\SkillLeer.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -650,6 +654,66 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\hospital_inside.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\heal_ball1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\heal_ball2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\heal_ball3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\heal_ball4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\heal_ball5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\heal_ball6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\heal_ball7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\heal_ball8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\heal_ball9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\heal_ball10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\heal_ball11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\heal_ball12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon_pm_jirachi.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\jirachi_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\jirachi_front.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_leer1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_leer2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_leer3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_leer4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_leer5.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

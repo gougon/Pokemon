@@ -23,6 +23,7 @@
     <RootNamespace>game</RootNamespace>
     <Keyword>MFCProj</Keyword>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>HEAL_BALL</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'" Label="Configuration">
@@ -61,7 +62,6 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
@@ -119,7 +119,6 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>ddraw.lib;dxguid.lib;winmm.lib;dsound.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>.\Debug/game.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>.\Debug/game.pdb</ProgramDatabaseFile>
@@ -307,6 +306,7 @@
     <ClCompile Include="Source\MainMenu.cpp" />
     <ClCompile Include="Source\Menu.cpp" />
     <ClCompile Include="Source\Nurse.cpp" />
+    <ClCompile Include="Source\PmJirachi.cpp" />
     <ClCompile Include="Source\PmOprtView.cpp" />
     <ClCompile Include="Source\PmTreecko.cpp" />
     <ClCompile Include="Source\PmValue.cpp" />
@@ -319,6 +319,7 @@
     <ClCompile Include="Source\Skill.cpp" />
     <ClCompile Include="Source\SkillFactory.cpp" />
     <ClCompile Include="Source\SkillImpact.cpp" />
+    <ClCompile Include="Source\SkillLeer.cpp" />
     <ClCompile Include="Source\SkillNormal.cpp" />
     <ClCompile Include="Source\StdAfx.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -380,6 +381,7 @@
     <ClInclude Include="Source\MainMenu.h" />
     <ClInclude Include="Source\Menu.h" />
     <ClInclude Include="Source\Nurse.h" />
+    <ClInclude Include="Source\PmJirachi.h" />
     <ClInclude Include="Source\PmOprtView.h" />
     <ClInclude Include="Source\PmTreecko.h" />
     <ClInclude Include="Source\PmValue.h" />
@@ -393,6 +395,7 @@
     <ClInclude Include="Source\Skill.h" />
     <ClInclude Include="Source\SkillFactory.h" />
     <ClInclude Include="Source\SkillImpact.h" />
+    <ClInclude Include="Source\SkillLeer.h" />
     <ClInclude Include="Source\SkillNormal.h" />
     <ClInclude Include="Source\StdAfx.h" />
     <ClInclude Include="Source\gamelib.h" />
@@ -484,6 +487,18 @@
     <Image Include="RES\green_flower.bmp" />
     <Image Include="RES\green_grass.bmp" />
     <Image Include="RES\GREEN_TREE.bmp" />
+    <Image Include="RES\heal_ball1.bmp" />
+    <Image Include="RES\heal_ball10.bmp" />
+    <Image Include="RES\heal_ball11.bmp" />
+    <Image Include="RES\heal_ball12.bmp" />
+    <Image Include="RES\heal_ball2.bmp" />
+    <Image Include="RES\heal_ball3.bmp" />
+    <Image Include="RES\heal_ball4.bmp" />
+    <Image Include="RES\heal_ball5.bmp" />
+    <Image Include="RES\heal_ball6.bmp" />
+    <Image Include="RES\heal_ball7.bmp" />
+    <Image Include="RES\heal_ball8.bmp" />
+    <Image Include="RES\heal_ball9.bmp" />
     <Image Include="RES\HERO_BACK.bmp" />
     <Image Include="RES\HERO_BACK_ONE.bmp" />
     <Image Include="RES\HERO_BACK_TWO.bmp" />
@@ -504,7 +519,10 @@
     <Image Include="RES\hp_green.bmp" />
     <Image Include="RES\hp_red.bmp" />
     <Image Include="RES\hp_yellow.bmp" />
+    <Image Include="RES\icon_pm_jirachi.bmp" />
     <Image Include="RES\icon_pm_treecko.bmp" />
+    <Image Include="RES\jirachi_back.bmp" />
+    <Image Include="RES\jirachi_front.bmp" />
     <Image Include="RES\jump_land.bmp" />
     <Image Include="RES\LV_UP_FPANEL.bmp" />
     <Image Include="RES\LV_UP_PANEL.bmp" />
@@ -531,6 +549,11 @@
     <Image Include="RES\self.bmp" />
     <Image Include="RES\skill_impact1.bmp" />
     <Image Include="RES\skill_impact2.bmp" />
+    <Image Include="RES\skill_leer1.bmp" />
+    <Image Include="RES\skill_leer2.bmp" />
+    <Image Include="RES\skill_leer3.bmp" />
+    <Image Include="RES\skill_leer4.bmp" />
+    <Image Include="RES\skill_leer5.bmp" />
     <Image Include="RES\skill_list.bmp" />
     <Image Include="RES\skill_option.bmp" />
     <Image Include="RES\SKILL_SELECT.bmp" />

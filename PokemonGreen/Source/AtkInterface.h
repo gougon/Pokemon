@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <stack>
 #include <set>
 #include "CHero.h"
 #include "PokemonMenu.h"
@@ -42,6 +43,7 @@ namespace game_framework {
 		chooseItem,
 		onSkill, 
 		onEnemySkill, 
+		atkStatu, 
 		endAnime, 
 		endDialog, 
 		end
@@ -82,16 +84,20 @@ namespace game_framework {
 		void AddExp(int order);
 		void SetValue(int order);
 		void SltPm();
+		void SetCursorPosition(int cursor, State state);
 		Pokemon *FindSetFromOrder(set<Pokemon*>& lhs, int order);
 
 		int openCount = 0, cursor, enemySkill, textCount, lvupCount;
 		bool isAtk, isAnime;
+		stack<State> states;
+		string atkStatuTemp;
 		set<Pokemon*> joinAtkPm, lvupPm;
 		AtkBar myBar, enemyBar;
 		State state;
 		CMovingBitmap black, battleBackground, battleOption, battleDialog, skillOption, battleHero, battleGround[2];
 		CMovingBitmap  atkCursor, ynPanel, lvupPanel, lvupFpanel;
 		CText outcomeText;
+		CText atkText, atkStatuText;
 		CText valueUpText[6], valueFinalText[6];
 		CText remainPPText, allPPText, skTypeText;
 		vector<CText> skillText;

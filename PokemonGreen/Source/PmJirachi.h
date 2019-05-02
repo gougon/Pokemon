@@ -7,11 +7,11 @@
 
 using namespace std;
 namespace game_framework {
-	class PmTreecko : public Pokemon {
+	class PmJirachi : public Pokemon {
 	public:
-		PmTreecko();
-		PmTreecko(PmType pmtype);
-		PmTreecko(PmType pmtype, string name);
+		PmJirachi();
+		PmJirachi(PmType pmtype);
+		PmJirachi(PmType pmtype, string name);
 		virtual void Init(string name);
 		virtual void LoadBitmap();
 	};

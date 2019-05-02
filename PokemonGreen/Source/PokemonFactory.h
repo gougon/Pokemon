@@ -6,7 +6,7 @@
 using namespace std;
 namespace game_framework {
 	enum pokemonName {
-		treecko
+		treecko, jirachi
 	};
 
 	class PokemonFactory {
@@ -14,6 +14,7 @@ namespace game_framework {
 		Pokemon* CreatePokemon(pokemonName pokemonName);
 		Pokemon* CreatePokemon(pokemonName pokemonName, string name);
 		Pokemon* CreateEnemy(pokemonName pokemonName);
+		Pokemon* CreateEnemyRandom();
 	};
 }
 

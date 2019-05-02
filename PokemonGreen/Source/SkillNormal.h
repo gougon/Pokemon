@@ -10,6 +10,7 @@ namespace game_framework {
 	public:
 		SkillNormal();
 		int Damage(Pokemon *self, Pokemon *enemy);
+		AttrDamage DamageEffect(Pokemon *enemy);
 	};
 }
 

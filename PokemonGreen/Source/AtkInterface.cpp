@@ -43,7 +43,7 @@ namespace game_framework {
 			myPm->OnShow();
 			enemy->OnShow();
 			battleDialog.ShowBitmap();
-			// atk option appear
+			atkText.OnShow();
 			break;
 		case action:
 			myPm->OnShow();
@@ -77,24 +77,35 @@ namespace game_framework {
 			myPm->OnShow();
 			enemy->OnShow();
 			(myPm->GetSkill(cursor))->AtkAnimeOnShow();
-			skillOption.ShowBitmap(); // 應該要跑對話
 			enemyBar.OnShow();
 			myBar.OnShow();
+			battleDialog.ShowBitmap();
+			atkText.OnShow();
 			break;
 		case onEnemySkill:
 			myPm->OnShow();
 			enemy->OnShow();
 			(enemy->GetSkill(enemySkill))->AtkAnimeOnShow();
-			skillOption.ShowBitmap(); // 應該要跑對話
 			myBar.OnShow();
 			enemyBar.OnShow();
+			battleDialog.ShowBitmap();
+			atkText.OnShow();
+			break;
+		case atkStatu:
+			myPm->OnShow();
+			enemy->OnShow();
+			myBar.OnShow();
+			enemyBar.OnShow();
+			battleDialog.ShowBitmap();
+			atkStatuText.OnShow();
 			break;
 		case endAnime:
 			myPm->OnShow("atk");
 			enemy->OnShow("atk");
-			battleDialog.ShowBitmap();
 			myBar.OnShow();
 			enemyBar.OnShow();
+			battleDialog.ShowBitmap();
+			atkText.OnShow();
 			break;
 		case endDialog:
 			if (pmMenu->IsWork()) {
@@ -176,34 +187,18 @@ namespace game_framework {
 				state = pokemonAppear;
 			break;
 		case pokemonAppear:
-			myPm->SetTopLeft(myPm->Left() + V, SELFPM_Y);
-			enemy->SetTopLeft(enemy->Left() - V, ENEMYPM_Y);
+			if (myPm->Left() != 110) {
+				myPm->SetTopLeft(myPm->Left() + V, SELFPM_Y);
+				enemy->SetTopLeft(enemy->Left() - V, ENEMYPM_Y);
+			}
 			enemyBar.OnMove(enemy);
 			myBar.OnMove(myPm);
-			if (myPm->Left() == 110)
-				state = action;
+			atkText.SetText(enemy->GetName() + " appeared");
 			break;
 		case action:
 			enemyBar.OnMove(enemy);
 			myBar.OnMove(myPm);
-			switch (cursor)
-			{
-			case fight:
-				atkCursor.SetTopLeft(380, 375);
-				break;
-			case bag:
-				atkCursor.SetTopLeft(505, 375);
-				break;
-			case pokemon:
-				atkCursor.SetTopLeft(380, 425);
-				break;
-			case escape:
-				atkCursor.SetTopLeft(505, 425);
-				break;
-			default:
-				ASSERT(0);
-				break;
-			}
+			SetCursorPosition(cursor, state);
 			break;
 		case chooseSkill:
 			remainPPText.SetText(to_string(myPm->GetSkill(cursor)->GetRemainPP()));
@@ -211,25 +206,7 @@ namespace game_framework {
 			skTypeText.SetText(myPm->GetSkill(cursor)->GetAttributeText());
 			remainPPText.SetTopLeft(REMAINPP_RIGHT - remainPPText.GetLength() * (int)remainPPText.GetFontSize(), 
 				SKILL_TOP);
-			switch (cursor)
-			{
-			case skill1:
-				atkCursor.SetTopLeft(20, 375);
-				break;
-			case skill2:
-				atkCursor.SetTopLeft(190, 375);
-				break;
-			case skill3:
-				atkCursor.SetTopLeft(20, 425);
-				break;
-			case skill4:
-				atkCursor.SetTopLeft(190, 425);
-				break;
-			default:
-				TRACE("assert! AtkInterface onMove's function chooseskill");
-				ASSERT(0);
-				break;
-			}
+			SetCursorPosition(cursor, state);
 			break;
 		case choosePokemon:
 			if (pmMenu->IsWork()) {
@@ -245,30 +222,48 @@ namespace game_framework {
 			// pmBag->OnMove();
 			break;
 		case onSkill:
+			atkText.SetText(myPm->GetName() + " use " + myPm->GetSkill(cursor)->GetName());
 			if (!isAnime) {
-				(myPm->GetSkill(cursor))->Use(myPm, enemy);
+				atkStatuTemp = (myPm->GetSkill(cursor))->Use(myPm, enemy);
+				atkStatuText.SetText(atkStatuTemp);
 				isAnime = true;
 			}
 			enemyBar.OnMove(enemy);
 			myBar.OnMove(myPm);
 			if ((myPm->GetSkill(cursor))->AtkAnimeOnMove()) {
-				state = (enemy->GetRemainHP() == 0 || myPm->GetRemainHP() == 0) ? endAnime : onEnemySkill;
+				if (atkStatuTemp == "") {
+					state = (enemy->GetRemainHP() == 0 || myPm->GetRemainHP() == 0) ? endAnime : onEnemySkill;
+				}
+				else {
+					states.push(state);
+					state = atkStatu;
+				}
 				enemySkill = 0; // rand % 4
 				isAnime = false;
 			}
+			SetCursorPosition(cursor, state);
 			break;
 		case onEnemySkill:
+			atkText.SetText(enemy->GetName() + " use " + enemy->GetSkill(enemySkill)->GetName());
 			if (!isAnime) {
-				(enemy->GetSkill(enemySkill))->Use(enemy, myPm);
+				atkStatuTemp = (enemy->GetSkill(enemySkill))->Use(enemy, myPm);
+				atkStatuText.SetText(atkStatuTemp);
 				isAnime = true;
 			}
 			myBar.OnMove(myPm);
 			enemyBar.OnMove(enemy);
 			if ((enemy->GetSkill(enemySkill))->AtkAnimeOnMove()) {
-				state = (enemy->GetRemainHP() <= 0 || myPm->GetRemainHP() <= 0) ? endAnime : action;
+				if (atkStatuTemp == "") {
+					state = (enemy->GetRemainHP() <= 0 || myPm->GetRemainHP() <= 0) ? endAnime : action;
+				}
+				else {
+					states.push(state);
+					state = atkStatu;
+				}
 				cursor = fight;
 				isAnime = false;
 			}
+			SetCursorPosition(cursor, state);
 			break;
 		case endAnime:
 			if (enemy->GetRemainHP() <= 0) {
@@ -391,6 +386,8 @@ namespace game_framework {
 		myBar.LoadBitmap();
 		enemyBar.LoadBitmap();
 		outcomeText.LoadBitmap();
+		atkText.LoadBitmap();
+		atkStatuText.LoadBitmap();
 		remainPPText.LoadBitmap();
 		allPPText.LoadBitmap();
 		skTypeText.LoadBitmap();
@@ -410,6 +407,8 @@ namespace game_framework {
 		lvupPanel.SetTopLeft(LVUP_PANEL_LEFT, LVUP_PANEL_TOP);
 		lvupFpanel.SetTopLeft(LVUP_PANEL_LEFT, LVUP_PANEL_TOP);
 		outcomeText.SetTopLeft(45, 360);
+		atkText.SetTopLeft(45, 360);
+		atkStatuText.SetTopLeft(45, 360);
 		allPPText.SetTopLeft(ALLPP_LEFT, SKILL_TOP);
 		skTypeText.SetTopLeft(SKTYPE_LEFT, SKILL_DOWN);
 		for (int i = 0; i < 6; ++i) {
@@ -454,6 +453,11 @@ namespace game_framework {
 		}
 		switch (state)
 		{
+		case pokemonAppear:
+			if (myPm->Left() == 110 && nChar == KEY_Z) {
+				state = action;
+			}
+			break;
 		case action:
 			switch (nChar)
 			{
@@ -512,7 +516,7 @@ namespace game_framework {
 				break;
 			case KEY_RIGHT:
 				if (cursor == skill1 || cursor == skill3) {
-					TRACE("\nskillnum = %d\n", myPm->GetSkillNum());
+					// TRACE("\nskillnum = %d\n", myPm->GetSkillNum());
 					cursor = (myPm->GetSkillNum() <= (cursor + 1)) ? cursor : (cursor + 1);
 				}
 				break;
@@ -533,6 +537,18 @@ namespace game_framework {
 				state = action;
 				break;
 			default:
+				break;
+			}
+			break;
+		case atkStatu:
+			switch (nChar) {
+			case KEY_Z:
+				if (states.top() == onSkill) {
+					state = (enemy->GetRemainHP() == 0 || myPm->GetRemainHP() == 0) ? endAnime : onEnemySkill;
+				}
+				else {
+					state = (enemy->GetRemainHP() <= 0 || myPm->GetRemainHP() <= 0) ? endAnime : action;
+				}
 				break;
 			}
 			break;
@@ -582,6 +598,9 @@ namespace game_framework {
 
 	void AtkInterface::End()
 	{
+		while (!states.empty()) {
+			states.pop();
+		}
 		isAtk = false;
 		isAnime = false;
 		textCount = 0;
@@ -678,6 +697,44 @@ namespace game_framework {
 		pmMenu->Start();
 		pmMenu->ChangeOnAtk();
 		pmMenu->ReceiveData(self->GetPokemons());
+	}
+
+	void AtkInterface::SetCursorPosition(int cursor, State state)
+	{
+		switch (cursor) {
+		case 0:
+			if (state == action || state == onSkill || state == onEnemySkill) {
+				atkCursor.SetTopLeft(380, 375);
+			}
+			else {
+				atkCursor.SetTopLeft(20, 375);
+			}
+			break;
+		case 1:
+			if (state == action || state == onSkill || state == onEnemySkill) {
+				atkCursor.SetTopLeft(505, 375);
+			}
+			else {
+				atkCursor.SetTopLeft(190, 375);
+			}
+			break;
+		case 2:
+			if (state == action || state == onSkill || state == onEnemySkill) {
+				atkCursor.SetTopLeft(380, 425);
+			}
+			else {
+				atkCursor.SetTopLeft(20, 425);
+			}
+			break;
+		case 3:
+			if (state == action || state == onSkill || state == onEnemySkill) {
+				atkCursor.SetTopLeft(505, 425);
+			}
+			else {
+				atkCursor.SetTopLeft(190, 425);
+			}
+			break;
+		}
 	}
 
 	Pokemon *AtkInterface::FindSetFromOrder(set<Pokemon*>& lhs, int order)

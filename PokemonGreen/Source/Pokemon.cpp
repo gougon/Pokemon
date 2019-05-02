@@ -55,7 +55,7 @@ namespace game_framework {
 			((level * effortValue.satk / 100)) + 5;
 		mixValue.sdef = (level * (speciesStrength.sdef + individualValue.sdef) / 50) +
 			((level * effortValue.sdef / 100)) + 5;
-		remainhp = mixValue.hp;
+		remainValue = mixValue;
 	}
 
 	void Pokemon::AddSkill(Skill *skill)
@@ -71,14 +71,14 @@ namespace game_framework {
 
 	bool Pokemon::AddExp(int addExp)
 	{
-		int tempHp = remainhp;
+		int tempHp = remainValue.hp;
 		nowExp += addExp;
 		if (nowExp > needExp) {
 			nowExp -= needExp;
 			level += 1;
 			needExp = exp[level];
 			LoadValue();
-			remainhp = ((int)(1.1 * tempHp) > mixValue.hp) ? 
+			remainValue.hp = ((int)(1.1 * tempHp) > mixValue.hp) ? 
 				mixValue.hp : (int)(1.1 * tempHp);
 			return true;
 		}
@@ -130,6 +130,61 @@ namespace game_framework {
 		return mixValue.sdef;
 	}
 
+	int Pokemon::GetRemainHP()
+	{
+		return remainValue.hp;
+	}
+
+	int Pokemon::GetRemainSpeed()
+	{
+		return remainValue.speed;
+	}
+
+	int Pokemon::GetRemainAtk()
+	{
+		return remainValue.atk;
+	}
+
+	int Pokemon::GetRemainDef()
+	{
+		return remainValue.def;
+	}
+
+	int Pokemon::GetRemainSatk()
+	{
+		return remainValue.satk;
+	}
+
+	int Pokemon::GetRemainSdef()
+	{
+		return remainValue.sdef;
+	}
+
+	int Pokemon::GetSpeedLevel()
+	{
+		return GetValueLevel(remainValue.speed, mixValue.speed);
+	}
+
+	int Pokemon::GetAtkLevel()
+	{
+		return GetValueLevel(remainValue.atk, mixValue.atk);
+	}
+
+	int Pokemon::GetDefLevel()
+	{
+		return GetValueLevel(remainValue.def, mixValue.def);
+	}
+
+	int Pokemon::GetSatkLevel()
+	{
+		return GetValueLevel(remainValue.satk, mixValue.satk);
+	}
+
+	int Pokemon::GetSdefLevel()
+	{
+		return GetValueLevel(remainValue.sdef, mixValue.sdef);
+	}
+
 	float Pokemon::GetHitRate()
 	{
 		return hitRate;
@@ -138,11 +193,6 @@ namespace game_framework {
 	float Pokemon::GetEvasionRate()
 	{
 		return evasionRate;
-	}
-
-	int Pokemon::GetRemainHP()
-	{
-		return remainhp;
 	}
 
 	int Pokemon::GetNowExp()
@@ -217,7 +267,32 @@ namespace game_framework {
 
 	void Pokemon::SetRemainHP(int hp)
 	{
-		remainhp = hp;
+		remainValue.hp = hp;
+	}
+
+	void Pokemon::SetRemainSpeed(int lv)
+	{
+		SetValueLevel(remainValue.speed, mixValue.speed, lv);
+	}
+
+	void Pokemon::SetRemainAtk(int lv)
+	{
+		SetValueLevel(remainValue.atk, mixValue.atk, lv);
+	}
+
+	void Pokemon::SetRemainDef(int lv)
+	{
+		SetValueLevel(remainValue.def, mixValue.def, lv);
+	}
+
+	void Pokemon::SetRemainSatk(int lv)
+	{
+		SetValueLevel(remainValue.satk, mixValue.satk, lv);
+	}
+
+	void Pokemon::SetRemainSdef(int lv)
+	{
+		SetValueLevel(remainValue.sdef, mixValue.sdef, lv);
 	}
 
 	void Pokemon::SetNowExp(int exp)
@@ -259,5 +334,96 @@ namespace game_framework {
 	void Pokemon::UseItem(CPickableObject *item)
 	{
 		// item->Use(...);
+	}
+
+	// private
+
+	void Pokemon::SetValueLevel(int &rvalue, int mvalue, int level)
+	{
+		switch (level) {
+		case -6:
+			rvalue = (int)(mvalue * 0.33);
+			break;
+		case -5:
+			rvalue = (int)(mvalue * 0.38);
+			break;
+		case -4:
+			rvalue = (int)(mvalue * 0.43);
+			break;
+		case -3:
+			rvalue = (int)(mvalue * 0.50);
+			break;
+		case -2:
+			rvalue = (int)(mvalue * 0.60);
+			break;
+		case -1:
+			rvalue = (int)(mvalue * 0.75);
+			break;
+		case 0:
+			rvalue = (int)(mvalue * 1.00);
+			break;
+		case 1:
+			rvalue = (int)(mvalue * 1.33);
+			break;
+		case 2:
+			rvalue = (int)(mvalue * 1.67);
+			break;
+		case 3:
+			rvalue = (int)(mvalue * 2.00);
+			break;
+		case 4:
+			rvalue = (int)(mvalue * 2.33);
+			break;
+		case 5:
+			rvalue = (int)(mvalue * 2.67);
+			break;
+		case 6:
+			rvalue = (int)(mvalue * 3.00);
+			break;
+		}
+	}
+
+	int Pokemon::GetValueLevel(int rvalue, int mvalue)
+	{
+		float rate = rvalue / (float)mvalue;
+		if (rate <= 0.33) {
+			return -6;
+		}
+		else if (rate <= 0.38) {
+			return -5;
+		}
+		else if (rate <= 0.43) {
+			return -4;
+		}
+		else if (rate <= 0.50) {
+			return -3;
+		}
+		else if (rate <= 0.60) {
+			return -2;
+		}
+		else if (rate <= 0.75) {
+			return -1;
+		}
+		else if (rate <= 1.00) {
+			return 0;
+		}
+		else if (rate <= 1.33) {
+			return 1;
+		}
+		else if (rate <= 1.67) {
+			return 2;
+		}
+		else if (rate <= 2.00) {
+			return 3;
+		}
+		else if (rate <= 2.33) {
+			return 4;
+		}
+		else if (rate <= 2.67) {
+			return 5;
+		}
+		else {
+			return 6;
+		}
 	}
 }
