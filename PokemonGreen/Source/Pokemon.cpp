@@ -328,7 +328,7 @@ namespace game_framework {
 
 	bool Pokemon::UseItem(int itemID)
     {
-        if (itemID == Item_SmallVulnerary)
+        /*if (itemID == Item_SmallVulnerary)
         {
             TRACE("use s.vulnerary\n");
 
@@ -352,14 +352,14 @@ namespace game_framework {
             }
 
             return false;
-        }
+        }*/
 
         return false;
     }
 
     bool Pokemon::TakeItem(int itemID)
     {
-        if (itemID == Item_FighterGlove)
+        /*if (itemID == Item_FighterGlove)
         {
             TRACE("take glove\n");
 
@@ -371,13 +371,13 @@ namespace game_framework {
                 return true;
             }
             return false;
-        }
+        }*/
         return false;
     }
 
     int Pokemon::GetTakeItem()
     {
-        if (!haveItem || takeItem == -1) return -1;
+        // if (!haveItem || takeItem == -1) return -1;
 
         return takeItemID;
     }
