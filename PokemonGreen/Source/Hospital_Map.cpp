@@ -51,8 +51,7 @@ namespace game_framework
 				case ENTRANCE:
 					break;
 				case HOSPITAL_INSIDE:
-					scene[HOSPITAL_INSIDE].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-					scene[HOSPITAL_INSIDE].ShowBitmap();
+					SetTopLeft(HOSPITAL, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
 					break;
 				default:
 					TRACE("\nHospital error!\n");

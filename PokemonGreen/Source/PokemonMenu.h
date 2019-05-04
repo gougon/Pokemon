@@ -19,6 +19,7 @@ namespace game_framework {
 		virtual void OnShow();
 		virtual void OnMove();
 		virtual void LoadBitmap();
+		virtual void SetTopLeft() {}
 		virtual void KeyDownListener(UINT nChar);
 		virtual void End();
 		void ReceiveData(vector<Pokemon*>* pms);

@@ -386,6 +386,10 @@ IDB_SKILL_LEER4         BITMAP                  "E:\\Github\\Pokemon\\PokemonGre
 
 IDB_SKILL_LEER5         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_leer5.bmp"
 
+IDB_GREEN_FLOWER2       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\green_flower2.bmp"
+
+IDB_GREEN_FLOWER3       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\green_flower3.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

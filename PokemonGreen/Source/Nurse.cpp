@@ -51,7 +51,7 @@ namespace game_framework {
 	{
 		switch (count) {
 		case 0:
-			dialogBox.SetText("good effort! this is pokemon hospital!;it can get your pokemons strength back!;");
+			dialogBox.SetText("good effort. this is pm hospital;it can get your pm strength back");
 			break;
 		case 1:
 			dialogBox.SetText("do you want to take your pokemons rest?");

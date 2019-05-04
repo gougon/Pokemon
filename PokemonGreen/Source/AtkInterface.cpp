@@ -191,13 +191,13 @@ namespace game_framework {
 				myPm->SetTopLeft(myPm->Left() + V, SELFPM_Y);
 				enemy->SetTopLeft(enemy->Left() - V, ENEMYPM_Y);
 			}
-			enemyBar.OnMove(enemy);
-			myBar.OnMove(myPm);
+			enemyBar.OnMove();
+			myBar.OnMove();
 			atkText.SetText(enemy->GetName() + " appeared");
 			break;
 		case action:
-			enemyBar.OnMove(enemy);
-			myBar.OnMove(myPm);
+			enemyBar.OnMove();
+			myBar.OnMove();
 			SetCursorPosition(cursor, state);
 			break;
 		case chooseSkill:
@@ -214,7 +214,7 @@ namespace game_framework {
 			}
 			else {
 				SetAtkPm();
-				myBar.ReceivePm(myPm);
+				myBar.ReceiveData(myPm);
 				state = action;
 			}
 			break;
@@ -228,8 +228,8 @@ namespace game_framework {
 				atkStatuText.SetText(atkStatuTemp);
 				isAnime = true;
 			}
-			enemyBar.OnMove(enemy);
-			myBar.OnMove(myPm);
+			enemyBar.OnMove();
+			myBar.OnMove();
 			if ((myPm->GetSkill(cursor))->AtkAnimeOnMove()) {
 				if (atkStatuTemp == "") {
 					state = (enemy->GetRemainHP() == 0 || myPm->GetRemainHP() == 0) ? endAnime : onEnemySkill;
@@ -250,8 +250,8 @@ namespace game_framework {
 				atkStatuText.SetText(atkStatuTemp);
 				isAnime = true;
 			}
-			myBar.OnMove(myPm);
-			enemyBar.OnMove(enemy);
+			myBar.OnMove();
+			enemyBar.OnMove();
 			if ((enemy->GetSkill(enemySkill))->AtkAnimeOnMove()) {
 				if (atkStatuTemp == "") {
 					state = (enemy->GetRemainHP() <= 0 || myPm->GetRemainHP() <= 0) ? endAnime : action;
@@ -399,6 +399,10 @@ namespace game_framework {
 
 	void AtkInterface::Init(PokemonMenu *pmMenu)
 	{
+		myBar.ReceiveType(barTypeMy);
+		myBar.Init();
+		enemyBar.ReceiveType(barTypeEnemy);
+		enemyBar.Init();
 		battleBackground.SetTopLeft(0, 0);
 		battleOption.SetTopLeft(0, 340);
 		battleDialog.SetTopLeft(0, 340);
@@ -415,8 +419,12 @@ namespace game_framework {
 			valueUpText[i].SetTopLeft(LVUP_VALUE_LEFT,
 				LVUP_VALUE_TOP + i * LVUP_VALUE_INTERVAL);
 		}
-
 		this->pmMenu = pmMenu;
+		CAudio::Instance()->Load(AUDIO_BATTLE_START, "sounds\\battlestart.wav");
+		CAudio::Instance()->Load(AUDIO_BATTLE_PROCESS, "sounds\\battleprocess.wav");
+		CAudio::Instance()->Load(AUDIO_BATTLE_END, "sounds\\battleend.wav");
+		// CAudio::Instance()->Play(AUDIO_BATTLE_START);
+		// CAudio::Instance()->Play(AUDIO_BATTLE_PROCESS);
 	}
 
 	void AtkInterface::ReceiveData(CHero *self, Pokemon *enemy)
@@ -433,10 +441,8 @@ namespace game_framework {
 		SetAtkPm();
 		myPm->SetTopLeft(-130, SELFPM_Y);
 		enemy->SetTopLeft(660, ENEMYPM_Y);
-		myBar.Init(barTypeMy);
-		enemyBar.Init(barTypeEnemy);
-		myBar.ReceivePm(myPm);
-		enemyBar.ReceivePm(enemy);
+		myBar.ReceiveData(myPm);
+		enemyBar.ReceiveData(enemy);
 	}
 
 	void AtkInterface::KeyDownListener(UINT nChar)
@@ -662,7 +668,7 @@ namespace game_framework {
 			}
 			isAnime = true;
 		}
-		myBar.OnMove(myPm);
+		myBar.OnMove();
 	}
 
 	void AtkInterface::SetValue(int order)

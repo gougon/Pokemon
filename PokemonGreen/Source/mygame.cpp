@@ -89,9 +89,9 @@ void CGameStateInit::OnInit()
     //
     // 此OnInit動作會接到CGameStaterRun::OnInit()，所以進度還沒到100%
     //
-    CAudio::Instance()->Load(AUDIO_HOME, "sounds\\home.mp3");
-    CAudio::Instance()->Load(AUDIO_WEIBAI, "sounds\\weibaitown.mp3");
-    CAudio::Instance()->Play(AUDIO_HOME, true);
+    CAudio::Instance()->Load(AUDIO_HOME, "sounds\\home.wav");
+    CAudio::Instance()->Load(AUDIO_WEIBAITOWN, "sounds\\weibaitown.wav");
+	CAudio::Instance()->Play(AUDIO_HOME);
 }
 
 void CGameStateInit::OnBeginState()
@@ -189,7 +189,7 @@ CGameStateRun::CGameStateRun(CGame* g)
 void CGameStateRun::OnBeginState()
 {
     CAudio::Instance()->Stop(AUDIO_HOME);
-    CAudio::Instance()->Play(AUDIO_WEIBAI);
+    CAudio::Instance()->Play(AUDIO_WEIBAITOWN);
     hero.Initialize();
     hero.SetXY(18 * SM + HERO_X, 27 * SM + HERO_Y + 20);
     myMenu.Init();
@@ -259,6 +259,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
     testDialog.InitDialog('s');
     atkInterface.LoadBitmap();
     myMenu.LoadBitmap();
+
     //
     // 完成部分Loading動作，提高進度
     //

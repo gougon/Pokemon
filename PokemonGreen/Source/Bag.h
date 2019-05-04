@@ -21,6 +21,7 @@ class Bag : public ActionObject
         void OnMove();
         void LoadBitmap();
         void KeyDownListener(UINT nChar);
+		virtual void SetTopLeft() {}
         void AddItem(int, int);
         void DropItem(int, int);
     private:

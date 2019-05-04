@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include "GameObject.h"
 #include "Pokemon.h"
 #include "CText.h"
 
@@ -23,16 +24,19 @@ namespace game_framework {
 		barTypeMy, barTypeEnemy
 	};
 
-	class AtkBar {
+	class AtkBar : public GameObject {
 	public:
-		AtkBar() { /* empty body */ }
-		void LoadBitmap();
-		void Init(barType type);
-		void OnMove(Pokemon *pm);
-		void OnShow();
-		void ReceivePm(Pokemon *pm);
+		AtkBar(barType rtype = barTypeMy);
+		virtual void LoadBitmap();
+		virtual void Init();
+		virtual void OnMove();
+		virtual void OnShow();
+		virtual void SetTopLeft();
+		void ReceiveType(barType rtype);
+		void ReceiveData(Pokemon *rpm);
 		bool IsAddExp();
 	private:
+		const int V = 5;
 		const int MY_FIRST_ROW = 225;
 		const int ENE_FIRST_ROW = 45;
 		const int MY_SECOND_ROW = 275;
@@ -42,11 +46,15 @@ namespace game_framework {
 		const int ENE_LV_LEFT = 220;
 		const int MY_RHP_RIGHT = 505;
 		const int MY_HP_LEFT = 530;
+		void InitBarByType();
+		void InitHp();
+		void SetHpBarWidth(int width);
 		int x; // right
-		float rate;
+		double hpWidthRate;
 		bool isAddExp;
+		Pokemon *pm;
 		barType type;
 		CText nameText, lvText, remainHpText, allHpText;
-		CMovingBitmap myBar, enemyBar, greenHP, yellowHP, redHP, expBar;
+		CMovingBitmap myBar, enemyBar, greenHP, yellowHP, redHP, *targetHpBar, expBar;
 	};
 }

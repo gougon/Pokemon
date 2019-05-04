@@ -50,7 +50,7 @@ namespace game_framework
 	{
 		scene[GREEN_GRASS].LoadBitmap(IDB_GREEN_GRASS);
 		scene[GREEN_TREE].LoadBitmap(IDB_GREEN_TREE, RGB(255, 0, 0));
-		scene[GREEN_FLOWER].LoadBitmap(IDB_GREEN_FLOWER);
+		// scene[GREEN_FLOWER].LoadBitmap(IDB_GREEN_FLOWER);
 		scene[GRASS_LAND].LoadBitmap(IDB_GRASS_LAND);
 		scene[BILLBOARD].LoadBitmap(IDB_BILLBOARD);
 		scene[WEIBAITOWN_HOUSE1].LoadBitmap(IDB_WEIBAITOWN_HOUSE1);
@@ -61,6 +61,10 @@ namespace game_framework
 		scene[HOSPITAL].LoadBitmap(IDB_HOSPITAL, RGB(255, 0, 0));
 		scene[STORE].LoadBitmap(IDB_STORE, RGB(255, 0, 0));
 		scene[NORMAL_HOUSE1].LoadBitmap(IDB_NORMAL_HOUSE1, RGB(255, 0, 0));
+
+		flower.AddBitmap(IDB_GREEN_FLOWER);
+		flower.AddBitmap(IDB_GREEN_FLOWER2);
+		flower.AddBitmap(IDB_GREEN_FLOWER3);
 
 		/////////////////////////////
 		if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
@@ -105,7 +109,9 @@ namespace game_framework
 						SetTopLeft(GREEN_TREE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM - 15);
 						break;
 					case GREEN_FLOWER:
-						SetTopLeft(GREEN_FLOWER, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						// SetTopLeft(GREEN_FLOWER, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						flower.SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						flower.OnShow();
 						break;
 					case GRASS_LAND:
 						SetTopLeft(GRASS_LAND, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
@@ -142,6 +148,11 @@ namespace game_framework
 		}
 
 		if (inEvent) dialogBox.OnShow();
+	}
+
+	void WeiBaiMap::OnMove()
+	{
+		flower.OnMove();
 	}
 
 	bool WeiBaiMap::IsCollision(int x, int y)

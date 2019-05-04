@@ -23,7 +23,7 @@
     <RootNamespace>game</RootNamespace>
     <Keyword>MFCProj</Keyword>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-    <ProjectName>HEAL_BALL</ProjectName>
+    <ProjectName>game</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'" Label="Configuration">
@@ -291,6 +291,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="Source\GameObject.cpp" />
     <ClCompile Include="Source\gameView.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -374,6 +375,7 @@
     <ClInclude Include="Source\CText.h" />
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
+    <ClInclude Include="Source\GameObject.h" />
     <ClInclude Include="Source\gameView.h" />
     <ClInclude Include="Source\Hospital_Map.h" />
     <ClInclude Include="Source\Illustration.h" />
@@ -485,6 +487,8 @@
     <Image Include="RES\grass_land.bmp" />
     <Image Include="RES\GREEN_DIAG.bmp" />
     <Image Include="RES\green_flower.bmp" />
+    <Image Include="RES\green_flower2.bmp" />
+    <Image Include="RES\green_flower3.bmp" />
     <Image Include="RES\green_grass.bmp" />
     <Image Include="RES\GREEN_TREE.bmp" />
     <Image Include="RES\heal_ball1.bmp" />

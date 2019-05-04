@@ -59,7 +59,7 @@ void CHero::Initialize()
     x = X_POS;
     y = Y_POS;
     count = 0;
-    atkProb = 1;
+    atkProb = 2;
     money = 0;
     canMove = false;
     isDialog = false;

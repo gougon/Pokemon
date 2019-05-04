@@ -12,6 +12,7 @@ namespace game_framework {
 		void OnMove();
 		void LoadBitmap();
 		void KeyDownListener(UINT nChar);
+		virtual void SetTopLeft() {}
 	private:
 	};
 }

@@ -169,6 +169,7 @@
     <ClCompile Include="Source\Nurse.cpp" />
     <ClCompile Include="Source\PmJirachi.cpp" />
     <ClCompile Include="Source\SkillLeer.cpp" />
+    <ClCompile Include="Source\GameObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -246,6 +247,7 @@
     <ClInclude Include="Source\Nurse.h" />
     <ClInclude Include="Source\PmJirachi.h" />
     <ClInclude Include="Source\SkillLeer.h" />
+    <ClInclude Include="Source\GameObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -714,6 +716,12 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\skill_leer5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\green_flower2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\green_flower3.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
