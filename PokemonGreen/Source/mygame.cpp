@@ -193,7 +193,8 @@ void CGameStateRun::OnBeginState()
     hero.Initialize();
     hero.SetXY(18 * SM + HERO_X, 27 * SM + HERO_Y + 20);
     myMenu.Init();
-	atkInterface.Init(myMenu.GetPokemonMenu());
+	atkInterface.ReceivePmMenu(myMenu.GetPokemonMenu());
+	atkInterface.Init();
 }
 
 void CGameStateRun::OnMove()							// 移動遊戲元素
@@ -203,7 +204,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
     //
     // SetCursor(AfxGetApp()->LoadCursor(IDC_GAMECURSOR));
     //
-    if (atkInterface.IsAtk())
+    if (atkInterface.IsWork())
     {
         atkInterface.OnMove();
     }
@@ -280,7 +281,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
     const char KEY_ENTER = 0x0d;
     const char KEY_Z = 0x5a;
 
-    if (atkInterface.IsAtk())
+    if (atkInterface.IsWork())
     {
         atkInterface.KeyDownListener(nChar);
     }
@@ -357,7 +358,7 @@ void CGameStateRun::OnShow()
     //
     //
     //  貼上背景圖、撞擊數、球、擦子、彈跳的球
-    if (atkInterface.IsAtk())
+    if (atkInterface.IsWork())
         atkInterface.OnShow();
     //
     else

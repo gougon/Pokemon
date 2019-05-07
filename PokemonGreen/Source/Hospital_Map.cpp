@@ -51,7 +51,7 @@ namespace game_framework
 				case ENTRANCE:
 					break;
 				case HOSPITAL_INSIDE:
-					SetTopLeft(HOSPITAL, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+					SetTopLeft(HOSPITAL_INSIDE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
 					break;
 				default:
 					TRACE("\nHospital error!\n");

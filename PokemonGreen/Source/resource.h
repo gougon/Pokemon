@@ -174,7 +174,6 @@
 #define IDB_STORE                       305
 #define IDB_LV_UP_PANEL                 306
 #define IDB_LV_UP_FPANEL                307
-#define IDB_BITMAP17                    308
 #define IDB_HOSPITAL_INSIDE             308
 #define HEAL_BALL1                      309
 #define HEAL_BALL2                      310
@@ -197,8 +196,30 @@
 #define IDB_SKILL_LEER4                 327
 #define IDB_SKILL_LEER5                 328
 #define IDB_GREEN_FLOWER2               329
-#define IDB__GREEN_GRASS3               330
 #define IDB_GREEN_FLOWER3               330
+#define IDB_PM_HOOH_BACK                331
+#define IDB_PM_HOOH_FRONT               332
+#define IDB_ICON_PM_HOOH                333
+#define IDB_SKILL_EMBER1                334
+#define IDB_SKILL_EMBER2                335
+#define IDB_SKILL_EMBER3                336
+#define IDB_SKILL_EMBER4                337
+#define IDB_SKILL_EMBER5                338
+#define IDB_SKILL_EMBER6                339
+#define IDB_SKILL_EMBER7                340
+#define IDB_SKILL_EMBER8                341
+#define IDB_SKILL_EMBER9                342
+#define IDB_SKILL_EMBER10               343
+#define IDB_SKILL_EMBER11               344
+#define IDB_SKILL_EMBER12               345
+#define IDB_SKILL_EMBER13               346
+#define IDB_SKILL_EMBER14               347
+#define IDB_SKILL_EMBER15               348
+#define IDB_SKILL_EMBER16               349
+#define IDB_SKILL_EMBER17               350
+#define IDB_SKILL_EMBER18               351
+#define IDB_BITMAP17                    352
+#define IDB_BURN_ICON                   352
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -211,7 +232,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        331
+#define _APS_NEXT_RESOURCE_VALUE        353
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

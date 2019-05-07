@@ -4,15 +4,14 @@
 #include <vector>
 #include "Skill.h"
 #include "PmValue.h"
+#include "Status.h"
 #include "CPickableObject.h"
 
 using namespace std;
 namespace game_framework {
-	constexpr auto ALL_PM_NUM = 2;
+	constexpr auto ALL_PM_NUM = 3;
 	constexpr auto V = 32;
-
-	class Skill;
-
+	
 	enum PmType {
 		my, enemy
 	};
@@ -24,9 +23,12 @@ namespace game_framework {
 		psychic, ice, dragon, dark
 	};
 
+	class Skill;
+	class Status;
 	class Pokemon {
 	public:
 		Pokemon();
+		~Pokemon();
 		virtual void Init(string Name) = 0;
 		void OnShow();
 		void OnShow(string);
@@ -63,8 +65,11 @@ namespace game_framework {
 		Skill *GetSkill(int order);
 		int GetSkillNum();
 		int GetHeight();
+		Status *GetStatus();
+		PmType GetPmType();
 		CMovingBitmap GetIcon();
 		CMovingBitmap GetFrontImage();
+		bool IsCanMove();
 		int Left();
 		int Top();
 		void SetHP(int hp);
@@ -79,9 +84,14 @@ namespace game_framework {
 		void SetNeedExp(int exp);
 		void SetTopLeft(int left, int top);
 		void SetHeight(int height);
+		void SetStatus(int rstatu);
+		void SetCanMove(bool flag);
 		bool UseItem(int itemID);
         bool TakeItem(int itemID);
         int GetTakeItem();
+		void RoundStartStatuEffect();
+		string RoundProgressStatuEffect();
+		void RoundEndStatuEffect();
 
 		int exp[30] = {														// 設定經驗值道30等
 			6, 15, 30, 49, 72, 102, 135, 174, 217, 264,
@@ -92,13 +102,14 @@ namespace game_framework {
 		PmType pmtype;
 		string name;
 		Attribute attribute;
+		Status *statu;
 		int level;
 		PmValue speciesStrength, individualValue, effortValue, mixValue, remainValue;
 		float hitRate, evasionRate;
 		int nowExp, needExp, basicExp;
 		vector<Skill*> skills;
 		CMovingBitmap frontImg, backImg, icon;
-		bool haveItem;
+		bool haveItem, canMove;
         int takeItemID;
 	private:
 		void SetValueLevel(int &rvalue, int mvalue, int level);

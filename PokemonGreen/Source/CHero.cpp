@@ -82,8 +82,13 @@ void CHero::Initialize()
 	pm2->SetLevel(20);
 	pm2->AddSkill(skfactory.CreateSkill(impact, styleSelf));
 	pm2->AddSkill(skfactory.CreateSkill(leer, styleSelf));
+	Pokemon* pm3 = pmfactory.CreatePokemon(hooh);
+	pm3->SetLevel(5);
+	pm3->AddSkill(skfactory.CreateSkill(impact, styleSelf));
+	pm3->AddSkill(skfactory.CreateSkill(ember, styleSelf));
     AddPokemon(pm);
 	AddPokemon(pm2);
+	AddPokemon(pm3);
 }
 void CHero::LoadBitmap()
 {

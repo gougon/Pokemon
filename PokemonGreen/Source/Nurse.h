@@ -9,8 +9,7 @@
 using namespace std;
 namespace game_framework
 {
-	class Nurse : public ActionObject
-	{
+	class Nurse : public ActionObject {
 	public:
 		Nurse();
 		~Nurse();
@@ -23,7 +22,6 @@ namespace game_framework
 		void ReceiveData(CHero &hero);
 		void End();
 		void Start();
-		// bool IsWork();
 	protected:
 		enum yn {
 			yes, no
@@ -41,7 +39,7 @@ namespace game_framework
 		const int HEAL_BALL_DELAY = 20;
 
 		bool IsHealing();
-		void SetBall(CAnimation &ball, int row, int col);
+		void SetBall(CAnimation *ball, int row, int col);
 		void Heal();
 
 		bool isAnime;

@@ -9,9 +9,15 @@
 #include "Pokemon.h"
 
 namespace game_framework {
-	Pokemon::Pokemon()
+	Pokemon::Pokemon() :
+		statu(new Status()), canMove(true)
 	{
 		/* empty body */
+	}
+
+	Pokemon::~Pokemon()
+	{
+		delete statu;
 	}
 
 	void Pokemon::OnShow()
@@ -230,6 +236,16 @@ namespace game_framework {
 		return (pmtype == my) ? backImg.RectHeight() : frontImg.RectHeight();
 	}
 
+	Status *Pokemon::GetStatus()
+	{
+		return statu;
+	}
+
+	PmType Pokemon::GetPmType()
+	{
+		return pmtype;
+	}
+
 	CMovingBitmap Pokemon::GetIcon()
 	{
 		return icon;
@@ -238,6 +254,11 @@ namespace game_framework {
 	CMovingBitmap Pokemon::GetFrontImage()
 	{
 		return frontImg;
+	}
+
+	bool Pokemon::IsCanMove()
+	{
+		return canMove;
 	}
 
 	int Pokemon::Left()
@@ -326,6 +347,16 @@ namespace game_framework {
 		}
 	}
 
+	void Pokemon::SetStatus(int rstatu)
+	{
+		statu->SetStatu(rstatu);
+	}
+
+	void Pokemon::SetCanMove(bool flag)
+	{
+		canMove = flag;
+	}
+
 	bool Pokemon::UseItem(int itemID)
     {
         /*if (itemID == Item_SmallVulnerary)
@@ -381,6 +412,21 @@ namespace game_framework {
 
         return takeItemID;
     }
+
+	void Pokemon::RoundStartStatuEffect()
+	{
+		statu->RoundStartStatuEffect(*this);
+	}
+
+	string Pokemon::RoundProgressStatuEffect()
+	{
+		return statu->RoundProgressStatuEffect(*this);
+	}
+
+	void Pokemon::RoundEndStatuEffect()
+	{
+		statu->RoundEndStatuEffect(*this);
+	}
 
 	// private
 

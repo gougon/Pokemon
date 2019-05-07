@@ -54,10 +54,9 @@ void CDialog::OnShow()
 			brFlag = 1;
 			i = 0;
 			length -= firstSentenceLength;
-			TRACE("\nfirstsentance length = %d\n", firstSentenceLength);
 		}
-		TRACE("\ni = %d, showstring[i] = %c\n", i + brFlag * firstSentenceLength, showString[i + brFlag * firstSentenceLength]);
-		showAlphabet.GetAlphabet(showString[i + (brFlag) * firstSentenceLength])->SetTopLeft(55 + 16 * i, 360 + (brFlag * 55));
+		showAlphabet.GetAlphabet(showString[i + (brFlag) * firstSentenceLength])->SetTopLeft(
+			(brFlag == 0) ? 55 + 16 * i : 55 + 16 * (i - 1), 360 + (brFlag * 55));
 		showAlphabet.GetAlphabet(showString[i + (brFlag) * firstSentenceLength])->ShowBitmap();
 	}
 }

@@ -25,6 +25,7 @@ namespace game_framework {
 		yellowHP.LoadBitmap(IDB_HP_YELLOW);
 		redHP.LoadBitmap(IDB_HP_RED);
 		expBar.LoadBitmap(IDB_EXPBAR);
+		burnIcon.LoadBitmap(IDB_BURN_ICON, RGB(255, 0, 0));
 	}
 
 	void AtkBar::Init()
@@ -38,10 +39,10 @@ namespace game_framework {
 	void AtkBar::OnMove()
 	{
 		// setting hp bar and exp bar
-		double hpWidth = pm->GetRemainHP() / (double)pm->GetHP() * HP_LEN;
-		hpWidthRate = hpWidth / HP_LEN;
-		int nextHpPos = (x - V >= (int)hpWidth) ? x - V : (int)hpWidth;
-		
+		hpWidthRate = pm->GetRemainHP() / (double)pm->GetHP();
+		int hpWidth = (int)(hpWidthRate * HP_LEN);
+		int nextHpPos = (x - V >= hpWidth) ? x - V : hpWidth;
+
 		SetHpBarWidth(nextHpPos);
 
 		// set exp bar and hp text
@@ -50,20 +51,23 @@ namespace game_framework {
 			double widthexp = pm->GetNowExp() / (double)pm->GetNeedExp() * EXP_LEN;
 			if (widthexp > expBar.RectWidth()) {		// 正常經驗值依照V上升
 				int nextExp = (int)widthexp - expBar.RectWidth();
-				if (nextExp > V) 
+				if (nextExp > V)
 					expBar.SetWidth(expBar.RectWidth() + V);
 				else
 					expBar.SetWidth((int)widthexp);
 				isAddExp = (nextExp > V) ? true : false;
 			}
-			else if ((int)(widthexp + 0.5) < expBar.RectWidth()){		// 升等經驗值上升
+			else if ((int)(widthexp + 0.5) < expBar.RectWidth()) {		// 升等經驗值上升
 				isAddExp = true;
-				if (expBar.RectWidth() < HP_LEN - V) 
+				if (expBar.RectWidth() < HP_LEN - V)
 					expBar.SetWidth(expBar.RectWidth() + V);
-				else if(expBar.RectWidth() < HP_LEN && expBar.RectWidth() >= HP_LEN - V)
+				else if (expBar.RectWidth() < HP_LEN && expBar.RectWidth() >= HP_LEN - V)
 					expBar.SetWidth((int)HP_LEN);
-				else 
+				else
 					expBar.SetWidth(0);
+			}
+			else {
+				// 
 			}
 		}
 	}
@@ -92,6 +96,10 @@ namespace game_framework {
 			remainHpText.OnShow();
 			allHpText.OnShow();
 		}
+
+		if (pm->GetStatus()->GetStatu() != none) {
+			statuIcon->ShowBitmap();
+		}
 	}
 
 	void AtkBar::SetTopLeft()
@@ -119,6 +127,22 @@ namespace game_framework {
 		type = rtype;
 	}
 
+	void AtkBar::ReceiveStatu(int statu)
+	{
+		// set statu icon
+		if (pm->GetStatus()->GetStatu() != none) {
+			statuIcon = &burnIcon;
+			switch (type) {
+			case barTypeMy:
+				statuIcon->SetTopLeft(420, 260);
+				break;
+			case barTypeEnemy:
+				statuIcon->SetTopLeft(50, 85);
+				break;
+			}
+		}
+	}
+
 	void AtkBar::ReceiveData(Pokemon *rpm)
 	{
 		pm = rpm;
@@ -140,6 +164,11 @@ namespace game_framework {
 	bool AtkBar::IsAddExp()
 	{
 		return isAddExp;
+	}
+
+	bool AtkBar::IsAnime()
+	{
+		return (x != (int)(hpWidthRate * HP_LEN) && x != 1);
 	}
 
 	// private

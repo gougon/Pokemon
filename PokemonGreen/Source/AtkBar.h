@@ -19,6 +19,10 @@ namespace game_framework {
 	constexpr auto EXP_X = 424;
 	constexpr auto EXP_Y = 318;
 	constexpr auto EXP_LEN = 173.0;
+	constexpr auto MY_STATU_ICON_X = 100;
+	constexpr auto MY_STATU_ICON_Y = 100;
+	constexpr auto ENE_STATU_ICON_X = 100;
+	constexpr auto ENE_STATU_ICON_Y = 100;
 
 	enum barType {
 		barTypeMy, barTypeEnemy
@@ -33,8 +37,10 @@ namespace game_framework {
 		virtual void OnShow();
 		virtual void SetTopLeft();
 		void ReceiveType(barType rtype);
+		void ReceiveStatu(int statu);
 		void ReceiveData(Pokemon *rpm);
 		bool IsAddExp();
+		bool IsAnime();
 	private:
 		const int V = 5;
 		const int MY_FIRST_ROW = 225;
@@ -56,5 +62,6 @@ namespace game_framework {
 		barType type;
 		CText nameText, lvText, remainHpText, allHpText;
 		CMovingBitmap myBar, enemyBar, greenHP, yellowHP, redHP, *targetHpBar, expBar;
+		CMovingBitmap burnIcon, *statuIcon;
 	};
 }

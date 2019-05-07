@@ -170,6 +170,10 @@
     <ClCompile Include="Source\PmJirachi.cpp" />
     <ClCompile Include="Source\SkillLeer.cpp" />
     <ClCompile Include="Source\GameObject.cpp" />
+    <ClCompile Include="Source\PmHooh.cpp" />
+    <ClCompile Include="Source\SkillEmber.cpp" />
+    <ClCompile Include="Source\SkillFire.cpp" />
+    <ClCompile Include="Source\Status.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -248,6 +252,10 @@
     <ClInclude Include="Source\PmJirachi.h" />
     <ClInclude Include="Source\SkillLeer.h" />
     <ClInclude Include="Source\GameObject.h" />
+    <ClInclude Include="Source\PmHooh.h" />
+    <ClInclude Include="Source\SkillEmber.h" />
+    <ClInclude Include="Source\SkillFire.h" />
+    <ClInclude Include="Source\Status.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -722,6 +730,72 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\green_flower3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\hooh_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\hooh_front.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon_pm_hooh.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember15.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember17.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember18.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\BURN_ICON.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

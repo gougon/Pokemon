@@ -390,6 +390,50 @@ IDB_GREEN_FLOWER2       BITMAP                  "E:\\Github\\Pokemon\\PokemonGre
 
 IDB_GREEN_FLOWER3       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\green_flower3.bmp"
 
+IDB_PM_HOOH_BACK        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\hooh_back.bmp"
+
+IDB_PM_HOOH_FRONT       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\hooh_front.bmp"
+
+IDB_ICON_PM_HOOH        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\icon_pm_hooh.bmp"
+
+IDB_SKILL_EMBER1        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember1.bmp"
+
+IDB_SKILL_EMBER2        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember2.bmp"
+
+IDB_SKILL_EMBER3        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember3.bmp"
+
+IDB_SKILL_EMBER4        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember4.bmp"
+
+IDB_SKILL_EMBER5        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember5.bmp"
+
+IDB_SKILL_EMBER6        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember6.bmp"
+
+IDB_SKILL_EMBER7        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember7.bmp"
+
+IDB_SKILL_EMBER8        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember8.bmp"
+
+IDB_SKILL_EMBER9        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember9.bmp"
+
+IDB_SKILL_EMBER10       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember10.bmp"
+
+IDB_SKILL_EMBER11       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember11.bmp"
+
+IDB_SKILL_EMBER12       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember12.bmp"
+
+IDB_SKILL_EMBER13       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember13.bmp"
+
+IDB_SKILL_EMBER14       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember14.bmp"
+
+IDB_SKILL_EMBER15       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember15.bmp"
+
+IDB_SKILL_EMBER16       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember16.bmp"
+
+IDB_SKILL_EMBER17       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember17.bmp"
+
+IDB_SKILL_EMBER18       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember18.bmp"
+
+IDB_BURN_ICON           BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\BURN_ICON.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
