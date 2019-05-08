@@ -24,14 +24,12 @@ void CMap::SetMXY(int mx, int my)
 {
     this->mx = mx;
     this->my = my;
-	TRACE("\nmx = %d, my = %d\n", mx, my);
 }
 
 void CMap::SetXY(int sx, int sy)
 {
     this->sx = sx;
     this->sy = sy;
-	TRACE("\nsx = %d, sy = %d\n", sx, sy);
 }
 
 void CMap::SetMap(string mapName)

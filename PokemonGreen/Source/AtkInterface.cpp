@@ -379,7 +379,7 @@ namespace game_framework {
 		battleOption.LoadBitmap(IDB_BATTLE_OPTION);
 		battleDialog.LoadBitmap(IDB_BATTLE_DIALOG);
 		skillOption.LoadBitmap(IDB_SKILL_OPTION);
-		atkCursor.LoadBitmap(BG_BACKPACK_ITEMCURSOR);
+		atkCursor.LoadBitmap(IDB_CURSOR , RGB(255,0,0));
 		ynPanel.LoadBitmap(BG_YESNO);
 		lvupPanel.LoadBitmap(IDB_LV_UP_PANEL);
 		lvupFpanel.LoadBitmap(IDB_LV_UP_FPANEL);

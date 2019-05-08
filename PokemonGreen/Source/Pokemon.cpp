@@ -7,6 +7,7 @@
 #include "gamelib.h"
 #include <stdlib.h>
 #include "Pokemon.h"
+#include "CItem.h"
 
 namespace game_framework {
 	Pokemon::Pokemon()
@@ -328,38 +329,39 @@ namespace game_framework {
 
 	bool Pokemon::UseItem(int itemID)
     {
-        /*if (itemID == Item_SmallVulnerary)
+        if (itemID == Item_SmallVulnerary)
         {
             TRACE("use s.vulnerary\n");
 
             if (GetRemainHP() < GetHP())
             {
                 SetRemainHP(GetRemainHP() + 20);
+				if(GetRemainHP() > GetHP()) SetRemainHP(GetHP());
                 return true;
             }
 
             return false;
         }
 
-        if (itemID == Item_MediumVulnerary)
+        if (itemID == Item_BigVulnerary)
         {
             TRACE("use m.vulnerary\n");
 
             if (GetRemainHP() < GetHP())
             {
                 SetRemainHP(GetRemainHP() + 30);
+				if (GetRemainHP() > GetHP()) SetRemainHP(GetHP());
                 return true;
             }
-
             return false;
-        }*/
+        }
 
         return false;
     }
 
     bool Pokemon::TakeItem(int itemID)
     {
-        /*if (itemID == Item_FighterGlove)
+        if (itemID == Item_FighterGlove)
         {
             TRACE("take glove\n");
 
@@ -371,7 +373,7 @@ namespace game_framework {
                 return true;
             }
             return false;
-        }*/
+        }
         return false;
     }
 

@@ -219,10 +219,6 @@ void CGameStateRun::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 
         //TRACE("x = %d\ny = %d\n", hero.GetX1(), hero.GetY1());
         //TRACE("sx = %d\nsy = %d\n", gameMap->GetSX(), gameMap->GetSY());
-        if (hero.IsInBag())
-        {
-            hero.BackpackCursorMove();
-        }
 
         if (hero.IsCanMove())
         {
@@ -287,6 +283,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
     {
         myMenu.Start();
         myMenu.SetPokemons(hero.GetPokemons());
+		myMenu.RecieveMoney(hero.GetMoney());
     }
     else if (myMenu.IsWork())
     {
@@ -301,7 +298,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
             hero.ReceiveData(gameMap, &myMenu);
             hero.KeyIn(nChar);
         }
-		gameMap->KeyDownListener(nChar, hero);
+		//gameMap->KeyDownListener(nChar, &hero);
     }
 }
 

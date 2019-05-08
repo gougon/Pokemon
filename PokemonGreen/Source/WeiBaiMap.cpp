@@ -12,6 +12,7 @@
 #include "WeiBaiHouse2_1F_Map.h"
 #include "WeiBaiProHouse_Map.h"
 #include "Hospital_Map.h"
+#include "Shop_map.h"
 #include "AtkInterface.h"
 #include "Pokemon.h"
 #include "PokemonFactory.h"
@@ -149,7 +150,6 @@ namespace game_framework
 		x /= SM;
 		y /= SM;
 
-		TRACE("\nx = %d, y = %d\n", x, y);
 
 		for (auto i : hitImg)
 		{
@@ -212,6 +212,9 @@ namespace game_framework
 		else if (x == 20 && y == 28) {
 			newMap = new Hospital_Map(mapGameEvent);
 		}
+		else if (x == 28 && y == 18) {
+			newMap = new Shop_Map(mapGameEvent);
+		}
 
 		newMap->LoadBitmap();
 		return newMap;
@@ -223,43 +226,43 @@ namespace game_framework
 		atkInterface.Start();
 	}
 
-	void WeiBaiMap::KeyDownListener(UINT nChar, CHero &hero)
+	void WeiBaiMap::KeyDownListener(UINT nChar, CHero* hero)
 	{
 		const char KEY_Z = 0x5a;
 
-		int x = hero.GetX1();
-		int y = hero.GetY1();
-		int direction = hero.GetDirection(); // 上左下右
+		int x = hero->GetX1();
+		int y = hero->GetY1();
+		int direction = hero->GetDirection(); // 上左下右
 
-		if (direction == 1) {
-			y -= STEP_SIZE;
+		if (direction == 0) {
+			y -= SM;
 		}
-		else if (direction == 2) {
-			x -= STEP_SIZE;
-		}
-		else if (direction == 3) {
+		else if (direction == 1) {
 			y += SM;
 		}
-		else if (direction == 4) {
+		else if (direction == 2) {
+			x -= SM;
+		}
+		else if (direction == 3) {
 			x += SM;
 		}
-
+		x /= SM;
+		y /= SM;
 		if (nChar == KEY_Z) {
-			if (pickable_Antidote.GetX() / SM == x && pickable_Antidote.GetY() / SM == y)
-			{
-				if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
+			if (inEvent) inEvent = false;
+			else {
+				if (pickable_Antidote.GetX() / SM == x && pickable_Antidote.GetY() / SM == y)
 				{
-					mapGameEvent->Occur(WeibaiTown_pick_Pokemomball);
-					dialogBox.SetText("pick the antidote");
-					// inEvent = true;
-				}
-				if (inEvent)
-				{
-					// inEvent = false;
-				}
-				else
-				{
-
+					if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
+					{
+						mapGameEvent->Occur(WeibaiTown_pick_Pokemomball);
+						dialogBox.SetText("pick the antidote");
+						inEvent = true;
+					}
+					else
+					{
+						//
+					}
 				}
 			}
 		}

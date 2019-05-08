@@ -31,7 +31,7 @@ class WeiBaiMap : public CMap
         virtual bool IsWarZone(int x, int y);
         virtual void ProduceEnemy(CHero* hero, AtkInterface &atkInterface);
         virtual CMap* ChangeMap(int x, int y, CHero* hero);
-		virtual void KeyDownListener(UINT nChar, CHero &hero);
+		virtual void KeyDownListener(UINT nChar, CHero* hero);
         virtual void StartAtk(CHero* self, Pokemon* enemy, AtkInterface &atkInterface);
 		void KeyDownListener(UINT nchar) { /*empty body*/ }
     private:

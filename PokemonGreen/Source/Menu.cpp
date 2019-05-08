@@ -123,7 +123,7 @@ namespace game_framework
 
 	void Menu::LoadBitmap()
 	{
-		cursor.LoadBitmap(BG_BACKPACK_ITEMCURSOR, RGB(255, 0, 0));
+		cursor.LoadBitmap(IDB_CURSOR, RGB(255, 0, 0));
 		menuTop.LoadBitmap(IDB_MENU_TOP);
 		menuMiddle.LoadBitmap(IDB_MENU_MIDDLE);
 		menuBottom.LoadBitmap(IDB_MENU_BOTTOM);
@@ -170,6 +170,12 @@ namespace game_framework
 					isItem = true;
 					if (order != itemClose) {
 						items[order]->Start();
+						if (order == itemBag)
+						{
+							dynamic_cast<PokemonMenu*>(items[itemPokemonMenu])->ReceiveData(pokemons);
+							dynamic_cast<Bag*>(items[itemBag])->RecievePokemonMenu(items[itemPokemonMenu]);
+						}
+
 						if (order == itemPokemonMenu)
 						{
 							dynamic_cast<PokemonMenu*>(items[order])->ReceiveData(pokemons);
@@ -212,5 +218,12 @@ namespace game_framework
 	PokemonMenu *Menu::GetPokemonMenu()
 	{
 		return dynamic_cast<PokemonMenu*>(items[itemPokemonMenu]);
+	}
+	Bag *Menu::GetBag()
+	{
+		return dynamic_cast<Bag*>(items[itemBag]);
+	}
+	void Menu::RecieveMoney(int* money)
+	{
 	}
 }

@@ -25,6 +25,7 @@ class CHero
         int  GetX2();					// 擦子右下角 x 座標
         int  GetY2();					// 擦子右下角 y 座標
         int  GetCount();
+		int* GetMoney();
         void SetCount(int count);
         void Initialize();				// 設定小智為初始值
         void LoadBitmap();				// 載入圖形
@@ -33,6 +34,7 @@ class CHero
         bool IsMoving();
         bool IsCanMove();
         void StartDialog();
+		void IsInvisiable(bool inv);
         void EndDialog();
         bool InDialog();
         void SetCanMove(bool flag);
@@ -42,20 +44,13 @@ class CHero
         void SetMovingUp(bool flag);	// 設定是否正在往上移動
         void SetDirection(int flag);    // 設定目前朝向哪裡
         int GetDirection();
-        void trigger(CMap* m);
         void ReceiveData(CMap* m, ActionObject* i);
-        //void OpenMenu();
-        void OpenBag();					//Bag
-        void CloseBag();
-        void BackpackCursorMove();
-        void GetItem(int, int);
-        //
-        bool IsInBag();
         void SetXY(int nx, int ny);		// 設定座標
         void KeyIn(UINT nChar);
         int GetAtkProb();
         Pokemon* GetPokemon(int order);
 		vector<Pokemon*>* GetPokemons();
+		ActionObject* GetBag();
         int GetPmNum();
 		int GetAliveNum();
         void AddPokemon(Pokemon* newPm);
@@ -78,21 +73,17 @@ class CHero
         bool isForwardLeft;			// 是否面朝左
         bool isForwardRight;		// 是否面朝右
         bool isForwardUp;			// 是否面朝上
-        bool isDialog;
-        //bool inMenu;
-        bool inBag;
+		bool isDialog;
         bool canMove;
         int count;
         int atkProb;		//遇怪機率
+		bool invisible;
         vector<Pokemon*> pokemons;
     private:
-        //int menuFlag = 0;
         CMap* gameMap;
         ActionObject* gameMenu;
-        Bag heroBackPack;
         int money;
-        int bag_flag;
-        bool CheckForward(CMap** m);
+        bool CheckForward(UINT nChar , CMap* m);
         CDialog* heroDialog;
 };
 }

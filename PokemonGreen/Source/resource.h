@@ -119,13 +119,11 @@
 #define IDB_SKILL_OPTION                254
 #define IDB_PM_TREECKO_BACK             255
 #define IDB_PM_TREECKO_FRONT            256
-#define IDB_ATK_CURSOR                  257
+#define IDB_CURSOR                      257
 #define IDB_BATTLE_DIALOG               258
-#define IDB_BITMAP5                     259
 #define IDB_M_GREEN_GRASS               259
 #define IDB_ALPHABET_SPACE              260
 #define IDB_ALPHABET_DOT                261
-#define IDB                             261
 #define IDB_ALPHABET_END                262
 #define IDB_BITMAP6                     263
 #define BG_BACKPACK                     263
@@ -136,6 +134,7 @@
 #define BG_BACKPACK_CURSOR3             269
 #define BG_BACKPACK_FLAG                270
 #define IDB_ANTIDOTE                    272
+#define ITEM_ANTIDOTE                   272
 #define BG_BACKPACK_ITEMCURSOR          273
 #define BG_BACKPACK_BACK                274
 #define IDB_MENU_BOTTOM                 275
@@ -161,7 +160,6 @@
 #define IDB_ICON_PM_TREECKO             294
 #define BAG_PANEL                       295
 #define BG_PANEL                        295
-#define IDB_QU                          297
 #define IDB_QUESTION_MARK               297
 #define IDB_BITMAP12                    298
 #define IDB_BITMAP13                    299
@@ -197,6 +195,20 @@
 #define IDB_SKILL_LEER4                 327
 #define IDB_BITMAP22                    328
 #define IDB_SKILL_LEER5                 328
+#define IDB_SHOP_MAP                    329
+#define ITEM_FIGHTERGLOVE               330
+#define ITEM_VULNERARY                  331
+#define TRADEMODE_SELECT                332
+#define SHOP_BLANK_PANEL                333
+#define SHOP_DESCRIPTION_PANEL          334
+#define SHOP_IMAGE_PANEL                335
+#define SHOP_ITEMLIST_PANEL             336
+#define SHOP_MONEY_PANEL                337
+#define IDB_BITMAP18                    339
+#define IDB_USEITEM_PANEL               340
+#define IDB_GIVEITEM_PANEL              341
+#define IDB_BITMAP19                    343
+#define IDB_BLANK_PANEL                 343
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -209,7 +221,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        329
+#define _APS_NEXT_RESOURCE_VALUE        344
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

@@ -30,9 +30,20 @@ namespace game_framework {
 		sltPm = 0;
 		swapPm = 0;
 		selectPanel.SetTopLeft(0, 0);
-
+		//
+		getItem = false;
+		isUseItem = false;
+		isTakeItem = false;
+		inShowText = false;
+		itemCommend = 0;
+		currentItemID = 0;
+		//
 		operationPanel.SetTopLeft(PANEL_LEFT, PANEL_TOP);
 		cursor.SetTopLeft(CURSOR_LEFT, CURSOR_TOP);
+		useItemPanel.SetTopLeft(DESCRIPTIONPANEL_LEFT , DESCRIPTIONPANEL_TOP);
+		giveItemPanel.SetTopLeft(DESCRIPTIONPANEL_LEFT, DESCRIPTIONPANEL_TOP);
+		blankPanel.SetTopLeft(DESCRIPTIONPANEL_LEFT, DESCRIPTIONPANEL_TOP);
+		description.SetTopLeft(DESCRIPTIONPANEL_LEFT + 20, DESCRIPTIONPANEL_TOP + 20);
 		pmOprtView.Init();
 	}
 
@@ -54,6 +65,21 @@ namespace game_framework {
 					pmOprtView.OnShow();
 				}
 			}
+		}
+		if (itemCommend == 1)
+		{
+			useItemPanel.ShowBitmap();
+		}
+
+		if (itemCommend == 2)
+		{
+			giveItemPanel.ShowBitmap();
+		}
+
+		if (inShowText)
+		{
+			blankPanel.ShowBitmap();
+			description.OnShow();
 		}
 	}
 
@@ -105,7 +131,12 @@ namespace game_framework {
 	{
 		selectPanel.LoadBitmap(IDB_POKEMON_SELECT_PANEL, RGB(255, 0, 0));
 		operationPanel.LoadBitmap(IDB_POKEMON_OPERATION_PANEL);
-		cursor.LoadBitmap(BG_BACKPACK_ITEMCURSOR);
+		cursor.LoadBitmap(IDB_CURSOR, RGB(255, 0, 0));
+
+		useItemPanel.LoadBitmap(IDB_USEITEM_PANEL);
+		giveItemPanel.LoadBitmap(IDB_GIVEITEM_PANEL);
+		blankPanel.LoadBitmapA(IDB_BLANK_PANEL);
+		description.LoadBitmap();
 
 		pmOprtView.LoadBitmap();
 	}
@@ -183,40 +214,63 @@ namespace game_framework {
 				}
 				break;
 			case KEY_Z:
-				if (!isOprtPanel) {
-					isOprtPanel = true;
-					order = 0;
+				if (itemCommend != 0) {
+					if (inShowText) {
+						itemCommend = 0;
+						inShowText = false;
+						End();
+					}
+					if (itemCommend == 1) {
+						TRACE("USE ITEM: %d\n", currentItemID);
+						isUseItem = (*pokemons)[sltPm]->UseItem(currentItemID);
+						if (isUseItem) description.SetText("success to use item");
+						else description.SetText("fail to use item");
+						inShowText = true;
+					}
+					else if (itemCommend == 2) {
+						TRACE("TAKE ITEM: %d\n", currentItemID);
+						isTakeItem = (*pokemons)[sltPm]->TakeItem(currentItemID);
+						if (isTakeItem) description.SetText("success to take item");
+						else description.SetText("fail to take item");
+						inShowText = true;
+					}
 				}
 				else {
-					isOprtSlt = true;
-					if (!isItem) {
-						if (order == pmOprtPanelSltView) {
-							pmOprtView.Start();
-							pmOprtView.ReceiveData((*pokemons)[sltPm]);
-						}
-						else if (order == pmOprtPanelSltChange) {
-							if (isAtkChange) {
-								Swap(0, sltPm);
-								delete[] pokemonBar;
-								ReceiveData(pokemons);
-								End();
-							}
-							else {
-								swapPm = sltPm;
-								isItem = true;
-							}
-						}
+					if (!isOprtPanel) {
+						isOprtPanel = true;
+						order = 0;
 					}
 					else {
-						if (order == pmOprtPanelSltChange) {
-							Swap(sltPm, swapPm);
-							delete[] pokemonBar;
-							ReceiveData(pokemons);
-							isOprtPanel = false;
-							isItem = false;
-							order = 0;
-							if (isAtkChange) {
-								End();
+						isOprtSlt = true;
+						if (!isItem) {
+							if (order == pmOprtPanelSltView) {
+								pmOprtView.Start();
+								pmOprtView.ReceiveData((*pokemons)[sltPm]);
+							}
+							else if (order == pmOprtPanelSltChange) {
+								if (isAtkChange) {
+									Swap(0, sltPm);
+									delete[] pokemonBar;
+									ReceiveData(pokemons);
+									End();
+								}
+								else {
+									swapPm = sltPm;
+									isItem = true;
+								}
+							}
+						}
+						else {
+							if (order == pmOprtPanelSltChange) {
+								Swap(sltPm, swapPm);
+								delete[] pokemonBar;
+								ReceiveData(pokemons);
+								isOprtPanel = false;
+								isItem = false;
+								order = 0;
+								if (isAtkChange) {
+									End();
+								}
 							}
 						}
 					}
@@ -253,6 +307,38 @@ namespace game_framework {
 	void PokemonMenu::ChangeOnAtk()
 	{
 		isAtkChange = true;
+	}
+
+	void PokemonMenu::GetCurrentItemCommend(int commend, int itemID)
+	{
+		this->itemCommend = commend;
+		this->currentItemID = itemID;
+	}
+
+	bool PokemonMenu::SuccessToUseItem()
+	{
+		bool tempSuccessIndex = isUseItem;
+
+		if (tempSuccessIndex)
+		{
+			isUseItem = false;
+			return tempSuccessIndex;
+		}
+
+		return false;
+	}
+
+	bool PokemonMenu::SuccessToTakeItem()
+	{
+		bool tempSuccessIndex = isTakeItem;
+
+		if (tempSuccessIndex)
+		{
+			isTakeItem = false;
+			return tempSuccessIndex;
+		}
+
+		return false;
 	}
 
 	// private
