@@ -6,7 +6,7 @@
 using namespace std;
 namespace game_framework {
 	enum skillName {
-		impact, leer
+		impact, leer, ember
 	};
 
 	class SkillFactory {

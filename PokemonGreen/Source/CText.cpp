@@ -46,12 +46,21 @@ void CText::SetTopLeft(int input_x, int input_y)
 
 void CText::OnShow()
 {
-    int length = showString.length();
+	int length = showString.length();
+	int firstSentenceLength = showString.substr(0, showString.find(';')).length();
+	int brFlag = 0;
 
-    for (int i = 0; i <= length; i++)
-    {
-        alphabet.GetAlphabet(showString[i])->SetTopLeft(tx + int(16 * i * fontsize / 16), ty);
-        alphabet.GetAlphabet(showString[i])->ShowBitmap(fontsize / 16);
-    }
+	for (int i = 0; i <= length; i++)
+	{
+		if (i > 0 && showString[i - 1] == ';')
+		{
+			brFlag = 1;
+			i = 0;
+			length -= firstSentenceLength;
+		}
+		alphabet.GetAlphabet(showString[i + (brFlag)* firstSentenceLength])->SetTopLeft(
+			(brFlag == 0) ? tx + int(16 * i * fontsize / 16) : tx + int(16 * (i - 1) * fontsize / 16), ty + (brFlag * 35));
+		alphabet.GetAlphabet(showString[i + (brFlag)* firstSentenceLength])->ShowBitmap(fontsize / 16);
+	}
 }
 }

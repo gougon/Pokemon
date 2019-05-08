@@ -17,9 +17,9 @@ namespace game_framework {
 		virtual void OnMove();
 		virtual void LoadBitmap();
 		virtual void KeyDownListener(UINT nChar);
+		virtual void SetTopLeft() {}
 		void ReceiveData(Pokemon *pm);
 		void End();
-		void Clear();
 	private:
 		enum pmOprtViewPage {
 			pagePmAbility, pagePmSkillPanel

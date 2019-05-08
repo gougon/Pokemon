@@ -10,6 +10,7 @@
 #include "Pokemon.h"
 #include "PmTreecko.h"
 #include "PmJirachi.h"
+#include "PmHooh.h"
 
 namespace game_framework {
 	Pokemon* PokemonFactory::CreatePokemon(pokemonName pokemonName)
@@ -20,6 +21,9 @@ namespace game_framework {
 			break;
 		case jirachi:
 			return new PmJirachi(my);
+			break;
+		case hooh:
+			return new PmHooh(my);
 			break;
 		default:
 			return new PmTreecko(my);
@@ -36,6 +40,9 @@ namespace game_framework {
 		case jirachi:
 			return new PmJirachi(my, name);
 			break;
+		case hooh:
+			return new PmHooh(my, name);
+			break;
 		default:
 			return new PmTreecko(my, name);
 			break;
@@ -50,6 +57,9 @@ namespace game_framework {
 			break;
 		case jirachi:
 			return new PmJirachi(enemy);
+			break;
+		case hooh:
+			return new PmHooh(enemy);
 			break;
 		default:
 			return new PmTreecko(enemy);
