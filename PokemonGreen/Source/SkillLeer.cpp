@@ -19,18 +19,19 @@ namespace game_framework {
 	void SkillLeer::Init()
 	{
 		name = "leer";
-		description = "frighten the enemy and;make its def fall";
+		description = "Frighten the enemy and make its def fall";
 		category = status;
-		power = 0;
+		power = 1;
 		allpp = 30;
 		remainpp = 30;
 		hitRate = 1.0f;
 
 		animeCount = 0;
 		atkAnime.AddBitmap(IDB_SKILL_LEER1, RGB(255, 0, 0));
-		atkAnime.AddBitmap(IDB_SKILL_LEER2, RGB(255, 0, 0));
-		atkAnime.AddBitmap(IDB_SKILL_LEER3, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_LEER1, RGB(255, 0, 0));
 		atkAnime.AddBitmap(IDB_SKILL_LEER4, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_LEER3, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_LEER2, RGB(255, 0, 0));
 		atkAnime.AddBitmap(IDB_SKILL_LEER5, RGB(255, 0, 0));
 		atkAnime.SetDelayCount(2);
 
@@ -56,6 +57,7 @@ namespace game_framework {
 			int rnd = rand() % 100 + 1;
 			if ((int)(realHitRate * 100) > rnd) { // ©R¤¤
 				int enedeflv = enemy->GetDefLevel();
+				TRACE("\nenemy def = %d\n", enemy->GetRemainDef());
 				if (enedeflv > -6) {
 					enemy->SetRemainDef(enedeflv - 1);
 					return enemy->GetName() + "'s def be decreased";

@@ -1,7 +1,6 @@
 #pragma once
 
 #include <string>
-#include "GameObject.h"
 #include "Pokemon.h"
 #include "CText.h"
 
@@ -19,30 +18,21 @@ namespace game_framework {
 	constexpr auto EXP_X = 424;
 	constexpr auto EXP_Y = 318;
 	constexpr auto EXP_LEN = 173.0;
-	constexpr auto MY_STATU_ICON_X = 100;
-	constexpr auto MY_STATU_ICON_Y = 100;
-	constexpr auto ENE_STATU_ICON_X = 100;
-	constexpr auto ENE_STATU_ICON_Y = 100;
 
 	enum barType {
 		barTypeMy, barTypeEnemy
 	};
 
-	class AtkBar : public GameObject {
+	class AtkBar {
 	public:
-		AtkBar(barType rtype = barTypeMy);
-		virtual void LoadBitmap();
-		virtual void Init();
-		virtual void OnMove();
-		virtual void OnShow();
-		virtual void SetTopLeft();
-		void ReceiveType(barType rtype);
-		void ReceiveStatu(int statu);
-		void ReceiveData(Pokemon *rpm);
+		AtkBar() { /* empty body */ }
+		void LoadBitmap();
+		void Init(barType type);
+		void OnMove(Pokemon *pm);
+		void OnShow();
+		void ReceivePm(Pokemon *pm);
 		bool IsAddExp();
-		bool IsAnime();
 	private:
-		const int V = 5;
 		const int MY_FIRST_ROW = 225;
 		const int ENE_FIRST_ROW = 45;
 		const int MY_SECOND_ROW = 275;
@@ -52,16 +42,11 @@ namespace game_framework {
 		const int ENE_LV_LEFT = 220;
 		const int MY_RHP_RIGHT = 505;
 		const int MY_HP_LEFT = 530;
-		void InitBarByType();
-		void InitHp();
-		void SetHpBarWidth(int width);
 		int x; // right
-		double hpWidthRate;
+		float rate;
 		bool isAddExp;
-		Pokemon *pm;
 		barType type;
 		CText nameText, lvText, remainHpText, allHpText;
-		CMovingBitmap myBar, enemyBar, greenHP, yellowHP, redHP, *targetHpBar, expBar;
-		CMovingBitmap burnIcon, *statuIcon;
+		CMovingBitmap myBar, enemyBar, greenHP, yellowHP, redHP, expBar;
 	};
 }

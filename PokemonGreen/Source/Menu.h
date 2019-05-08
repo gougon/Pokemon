@@ -26,7 +26,6 @@ class Menu : public ActionObject
         virtual void OnMove();
         virtual void LoadBitmap();
         virtual void KeyDownListener(UINT nChar);
-		virtual void SetTopLeft() {}
         void End();
         void RecieveData(int itemID, int amount);
 		void RecieveMoney(int* money);

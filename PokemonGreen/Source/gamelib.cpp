@@ -211,7 +211,7 @@ void CAnimation::Reset()
 void CAnimation::SetDelayCount(int dc)
 {
     GAME_ASSERT(dc > 0, "CAnimation: Delay count must be >= 1");
-	delay_count = dc;
+    delay_count = dc;
 }
 
 void CAnimation::SetTopLeft(int nx, int ny)

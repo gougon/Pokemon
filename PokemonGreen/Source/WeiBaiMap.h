@@ -27,7 +27,6 @@ class WeiBaiMap : public CMap
         virtual void InitMap();
         virtual void LoadBitmap();
         virtual void OnShow();
-		virtual void OnMove();
         virtual bool IsCollision(int x, int y);
         virtual bool IsWarZone(int x, int y);
         virtual void ProduceEnemy(CHero* hero, AtkInterface &atkInterface);
@@ -38,7 +37,6 @@ class WeiBaiMap : public CMap
     private:
         bool inEvent;
         CDialog dialogBox;
-		CAnimation flower;
         CPickableObject pickable_Antidote;
         vector<int> hitImg = { 0, 3, 6, 11 };
         vector<int> warZone = { 10 };

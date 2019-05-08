@@ -77,11 +77,6 @@ using namespace std;
 /////////////////////////////////////////////////////////////////////////////
 
 namespace game_framework {
-	constexpr int AUDIO_HOME = 0;
-	constexpr int AUDIO_WEIBAITOWN = 1;
-	constexpr int AUDIO_BATTLE_START = 2;
-	constexpr int AUDIO_BATTLE_PROCESS = 3;
-	constexpr int AUDIO_BATTLE_END = 4;
 
 class CAudio {
 public:

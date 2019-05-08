@@ -41,23 +41,22 @@ void CDialog::OnMove()
 
 void CDialog::OnShow()
 {
-	screen.SetTopLeft(5, 340);
-	screen.ShowBitmap();
-	int length = showString.length();
-	int firstSentenceLength = showString.substr(0, showString.find(';')).length();
-	int brFlag = 0;
+    screen.SetTopLeft(5, 340);
+    screen.ShowBitmap();
+    int length = showString.length();
+    int brFlag = 0;
 
-	for (int i = 0; i <= length; i++)
-	{
-		if (i > 0 && showString[i-1] == ';')
-		{
-			brFlag = 1;
-			i = 0;
-			length -= firstSentenceLength;
-		}
-		showAlphabet.GetAlphabet(showString[i + (brFlag) * firstSentenceLength])->SetTopLeft(
-			(brFlag == 0) ? 55 + 16 * i : 55 + 16 * (i - 1), 360 + (brFlag * 55));
-		showAlphabet.GetAlphabet(showString[i + (brFlag) * firstSentenceLength])->ShowBitmap();
-	}
+    for (int i = 0; i <= length; i++)
+    {
+        if (showString[i] == ';')
+        {
+            brFlag = 1;
+            i = 0;
+            length -= 21;
+        }
+
+        showAlphabet.GetAlphabet(showString[i + (brFlag) * 21])->SetTopLeft(55 + 16 * i, 360 + (brFlag * 55));
+        showAlphabet.GetAlphabet(showString[i + (brFlag) * 21])->ShowBitmap();
+    }
 }
 }

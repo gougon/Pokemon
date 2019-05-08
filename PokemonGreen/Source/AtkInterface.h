@@ -9,7 +9,6 @@
 #include "Pokemon.h"
 #include "PmValue.h"
 #include "AtkBar.h"
-#include "ActionObject.h"
 
 using namespace std;
 namespace game_framework {
@@ -38,37 +37,30 @@ namespace game_framework {
 		heroAppear, 
 		heroLeave, 
 		pokemonAppear,
-		loadStartStatu, 
 		action, 
 		chooseSkill,
 		choosePokemon, 
 		chooseItem,
 		onSkill, 
-		loadProgressStatu,
-		loadEndStatu,
-		enemyLoadStartStatu, 
 		onEnemySkill, 
-		enemyLoadProgressStatu,
-		enemyLoadEndStatu,
 		atkStatu, 
-		hpAnime, 
 		endAnime, 
 		endDialog, 
 		end
 	};
 
-	class AtkInterface : public ActionObject {
+	class AtkInterface {
 	public:
 		AtkInterface();
-		virtual void Init();
-		virtual void OnMove();
-		virtual void OnShow();
-		virtual void LoadBitmap();
-		virtual void SetTopLeft() {}
-		void ReceivePmMenu(PokemonMenu *pmMenu);
+		void Start();
+		void OnMove();
+		void OnShow();
+		void LoadBitmap();
+		void Init(PokemonMenu *pmMenu);
 		void ReceiveData(CHero *self, Pokemon *enemy);
 		void KeyDownListener(UINT nChar);
 		void End();
+		bool IsAtk();
 	private:
 		const int LVUP_PANEL_LEFT = 385;
 		const int LVUP_PANEL_TOP = 170;
@@ -96,13 +88,12 @@ namespace game_framework {
 		Pokemon *FindSetFromOrder(set<Pokemon*>& lhs, int order);
 
 		int openCount = 0, cursor, enemySkill, textCount, lvupCount;
-		bool isAnime;
+		bool isAtk, isAnime;
 		stack<State> states;
 		string atkStatuTemp;
 		set<Pokemon*> joinAtkPm, lvupPm;
 		AtkBar myBar, enemyBar;
 		State state;
-		CAnimation *statuAnime;
 		CMovingBitmap black, battleBackground, battleOption, battleDialog, skillOption, battleHero, battleGround[2];
 		CMovingBitmap  atkCursor, ynPanel, lvupPanel, lvupFpanel;
 		CText outcomeText;

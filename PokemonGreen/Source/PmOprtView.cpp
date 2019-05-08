@@ -164,7 +164,6 @@ namespace game_framework {
 		skillText.clear();
 		skills.clear();
 		page = pagePmAbility;
-		skillOrder = 0;
 	}
 
 	// private function
@@ -196,13 +195,13 @@ namespace game_framework {
 
 	void PmOprtView::SetSkillText()
 	{
-		for (int i = 0; i / 3 < (int)skills.size(); i += 3) {
-			PushText(skillText, skills[i / 3]->GetAttributeText());
-			PushText(skillText, skills[i / 3]->GetName());
-			PushText(skillText, to_string(skills[i / 3]->GetRemainPP()) + " / " + to_string(skills[i / 3]->GetAllPP()));
-			skillText[i].SetTopLeft(SK_ATTR_LEFT, SK_TOP + (i / 3 * SK_INTERVAL));
-			skillText[i + 1].SetTopLeft(SK_NAME_LEFT, SK_TOP + (i / 3 * SK_INTERVAL));
-			skillText[i + 2].SetTopLeft(SK_PP_LEFT, SK_TOP + (i / 3 * SK_INTERVAL));
+		for (int i = 0; i < (int)skills.size(); ++i) {
+			PushText(skillText, skills[i]->GetAttributeText());
+			PushText(skillText, skills[i]->GetName());
+			PushText(skillText, to_string(skills[i]->GetRemainPP()) + " / " + to_string(skills[i]->GetAllPP()));
+			skillText[i].SetTopLeft(SK_ATTR_LEFT, SK_TOP + (i * SK_INTERVAL));
+			skillText[i + 1].SetTopLeft(SK_NAME_LEFT, SK_TOP + (i * SK_INTERVAL));
+			skillText[i + 2].SetTopLeft(SK_PP_LEFT, SK_TOP + (i * SK_INTERVAL));
 		}
 	}
 
