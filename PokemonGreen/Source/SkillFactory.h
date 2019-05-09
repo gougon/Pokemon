@@ -11,7 +11,7 @@ namespace game_framework {
 
 	class SkillFactory {
 	public:
-		Skill* CreateSkill(skillName skillName, pmStyle pmstyle);
+		Skill* CreateSkill(skillName skillName, int pmstyle);
 	};
 }
 

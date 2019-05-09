@@ -7,10 +7,6 @@ using namespace std;
 namespace game_framework {
 	class Pokemon;
 
-	enum pmStyle {
-		styleSelf, styleEnemy
-	};
-
 	enum CSkill {
 		physical, status, special
 	};
@@ -36,7 +32,7 @@ namespace game_framework {
 		int GetHitRate();
 		//virtual void Use(Pokemon *self, Pokemon *enemy1, Pokemon *enemy2) = 0;
 	protected:
-		pmStyle pmstyle;
+		int pmstyle;
 		CAnimation atkAnime;
 		CAnimation atkEnemyAnime;
 		CSkill category;

@@ -13,7 +13,7 @@
 #include "SkillEmber.h"
 
 namespace game_framework {
-	Skill* SkillFactory::CreateSkill(skillName name, pmStyle pmstyle)
+	Skill* SkillFactory::CreateSkill(skillName name, int pmstyle)
 	{
 		//Skill *skill;
 		switch (name) 

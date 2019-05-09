@@ -6,6 +6,8 @@
 #include "audio.h"
 #include "gamelib.h"
 #include <stdlib.h>
+#include "Black.h"
+#include "Functions.cpp"
 #include "AtkInterface.h"
 
 namespace game_framework {
@@ -190,6 +192,7 @@ namespace game_framework {
 			// enemyBar.OnShow();
 			break;
 		}
+
 	}
 
 	void AtkInterface::OnMove()
@@ -310,7 +313,7 @@ namespace game_framework {
 			}
 			break;
 		case enemyLoadStartStatu:
-			enemySkill = 0;
+			enemySkill = rand() % enemy->GetSkillNum();
 			enemy->RoundStartStatuEffect();
 			state = onEnemySkill;
 			break;
@@ -893,16 +896,5 @@ namespace game_framework {
 				atkCursor.SetTopLeft(190, 425);
 			break;
 		}
-	}
-
-	Pokemon *AtkInterface::FindSetFromOrder(set<Pokemon*>& lhs, int order)
-	{
-		int i = 0;
-		for (auto it : lhs) {
-			if (i == order) 
-				return it;
-			++i;
-		}
-		return NULL;
 	}
 }

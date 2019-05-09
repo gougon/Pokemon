@@ -9,7 +9,7 @@ using namespace std;
 namespace game_framework {
 	class SkillEmber : public SkillFire {
 	public:
-		SkillEmber(pmStyle pmstyle);
+		SkillEmber(int pmstyle);
 		virtual void Init();
 		virtual string Use(Pokemon *self, Pokemon *enemy);
 	private:

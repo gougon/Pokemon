@@ -10,7 +10,7 @@
 #include "SkillImpact.h"
 
 namespace game_framework {
-	SkillImpact::SkillImpact(pmStyle pmstyle)
+	SkillImpact::SkillImpact(int pmstyle)
 	{
 		this->pmstyle = pmstyle;
 		Init();
@@ -31,14 +31,18 @@ namespace game_framework {
 		atkAnime.AddBitmap(IDB_SKILL_IMPACT2, RGB(255, 0, 0));
 		atkAnime.AddBitmap(IDB_SKILL_IMPACT1, RGB(255, 0, 0));
 		atkAnime.AddBitmap(IDB_SKILL_IMPACT2, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_IMPACT1, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_IMPACT2, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_IMPACT1, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_IMPACT2, RGB(255, 0, 0));
 
 		switch (pmstyle)
 		{
-		case styleSelf:
+		case my:
 			atkAnime.SetTopLeft(410, 70);
 			break;
-		case styleEnemy:
-			atkAnime.SetTopLeft(200, 260);
+		case enemy:
+			atkEnemyAnime.SetTopLeft(410, 260);
 			break;
 		default:
 			ASSERT(0);
@@ -61,7 +65,7 @@ namespace game_framework {
 				return EffectText(enemy);
 			}
 			else {
-				isSuccess = true;
+				isSuccess = isSuccess;
 				return self->GetName() + "'s attack is miss";
 			}
 		}

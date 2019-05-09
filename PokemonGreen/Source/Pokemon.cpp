@@ -6,6 +6,7 @@
 #include "audio.h"
 #include "gamelib.h"
 #include <stdlib.h>
+#include "Functions.cpp"
 #include "Pokemon.h"
 #include "CItem.h"
 
@@ -68,7 +69,7 @@ namespace game_framework {
 	void Pokemon::AddSkill(Skill *skill)
 	{
 		if(skills.size() < 4){
-			skills.push_back(skill);
+			skills.insert(skill);
 			// 跑對話說學習技能
 		}
 		else {
@@ -83,6 +84,7 @@ namespace game_framework {
 		if (nowExp > needExp) {
 			nowExp -= needExp;
 			level += 1;
+			LearnSkill();
 			needExp = exp[level];
 			LoadValue();
 			remainValue.hp = ((int)(1.1 * tempHp) > mixValue.hp) ?
@@ -90,11 +92,6 @@ namespace game_framework {
 			return true;
 		}
 		return false;
-	}
-
-	void Pokemon::HpAnime()
-	{
-
 	}
 
 	string Pokemon::GetName()
@@ -225,7 +222,7 @@ namespace game_framework {
 	Skill *Pokemon::GetSkill(int order)
 	{
 		if (order < (int)skills.size())
-			return skills[order];
+			return FindSetFromOrder(skills, order);
 		else {
 			ASSERT(0);
 			return nullptr;
@@ -289,6 +286,7 @@ namespace game_framework {
 	{
 		level = lv;
 		needExp = exp[level];
+		LearnSkill();
 		LoadValue();
 	}
 
@@ -437,6 +435,16 @@ namespace game_framework {
 	void Pokemon::RoundEndStatuEffect()
 	{
 		statu->RoundEndStatuEffect(*this);
+	}
+
+	// protected
+
+	void Pokemon::LearnSkill()
+	{
+		for (auto i : skillTree) {
+			if (i.first <= level)
+				skills.insert(i.second);
+		}
 	}
 
 	// private

@@ -173,6 +173,7 @@
     <ClCompile Include="Source\Pokeball.cpp" />
     <ClCompile Include="Source\Black.cpp" />
     <ClCompile Include="Source\CFatguy.cpp" />
+    <ClCompile Include="Source\Functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">

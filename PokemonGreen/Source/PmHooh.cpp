@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "PmHooh.h"
+#include "SkillFactory.h"
 #include "SkillImpact.h"
 
 namespace game_framework {
@@ -19,6 +20,9 @@ namespace game_framework {
 	PmHooh::PmHooh(PmType pmtype)
 	{
 		this->pmtype = pmtype;
+		SkillFactory skFactory;
+		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(impact, pmtype)));
+		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(ember, pmtype)));
 		Init("hooh");
 	}
 
@@ -45,6 +49,7 @@ namespace game_framework {
 		needExp = 20;
 		nowExp = 5;
 		basicExp = 220;
+		LearnSkill();
 	}
 
 	void PmHooh::LoadBitmap()

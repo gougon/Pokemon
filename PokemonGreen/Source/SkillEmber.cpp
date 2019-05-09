@@ -10,7 +10,7 @@
 #include "SkillEmber.h"
 
 namespace game_framework {
-	SkillEmber::SkillEmber(pmStyle pmstyle)
+	SkillEmber::SkillEmber(int pmstyle)
 	{
 		this->pmstyle = pmstyle;
 		Init();
@@ -65,13 +65,14 @@ namespace game_framework {
 		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER16, RGB(255, 0, 0));
 		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER17, RGB(255, 0, 0));
 		atkEnemyAnime.SetDelayCount(1);
+
 		switch (pmstyle)
 		{
-		case styleSelf:
+		case my:
 			atkAnime.SetTopLeft(180, 140);
 			break;
-		case styleEnemy:
-			atkEnemyAnime.SetTopLeft(180, 140);
+		case enemy:
+			atkEnemyAnime.SetTopLeft(200, 140);
 			break;
 		default:
 			ASSERT(0);
@@ -101,7 +102,7 @@ namespace game_framework {
 				return EffectText(enemy);
 			}
 			else {
-				isSuccess = true;
+				isSuccess = false;
 				return self->GetName() + "'s attack is miss";
 			}
 		}

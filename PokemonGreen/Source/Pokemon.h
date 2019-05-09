@@ -2,6 +2,8 @@
 
 #include <string>
 #include <vector>
+#include <set>
+#include <map>
 #include "Skill.h"
 #include "PmValue.h"
 #include "Status.h"
@@ -37,7 +39,6 @@ namespace game_framework {
 		void LoadValue();
 		void AddSkill(Skill *skill);
 		bool AddExp(int addExp);
-		void HpAnime();
 		string GetName();
 		int GetLevel();
 		int GetCatchRate();
@@ -100,6 +101,7 @@ namespace game_framework {
 			1110, 1215, 1326, 1441, 1560, 1686, 1815, 1950, 2089, 2232
 		};
 	protected:
+		void LearnSkill();
 		PmType pmtype;
 		string name;
 		Attribute attribute;
@@ -108,7 +110,8 @@ namespace game_framework {
 		PmValue speciesStrength, individualValue, effortValue, mixValue, remainValue;
 		float hitRate, evasionRate;
 		int nowExp, needExp, basicExp;
-		vector<Skill*> skills;
+		multimap<int, Skill*> skillTree;
+		set<Skill*> skills;
 		CMovingBitmap frontImg, backImg, icon;
 		bool haveItem, canMove;
         int takeItemID;

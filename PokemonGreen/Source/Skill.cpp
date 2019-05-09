@@ -17,10 +17,20 @@ namespace game_framework {
 
 	bool Skill::AtkAnimeOnMove()
 	{
-		if (isSuccess)
-			atkAnime.OnMove();
-		if (atkAnime.IsFinalBitmap() || !isSuccess) {
+		if (isSuccess) {
+			if (pmstyle == PmType::my)
+				atkAnime.OnMove();
+			else
+				atkEnemyAnime.OnMove();
+		}
+		if (pmstyle == PmType::my &&
+			atkAnime.IsFinalBitmap() || !isSuccess) {
 			atkAnime.Reset();
+			return true;
+		}
+		else if (pmstyle == PmType::enemy &&
+			atkEnemyAnime.IsFinalBitmap() || !isSuccess) {
+			atkEnemyAnime.Reset();
 			return true;
 		}
 		return false;
@@ -28,8 +38,12 @@ namespace game_framework {
 
 	void Skill::AtkAnimeOnShow()
 	{
-		if (isSuccess)
-			atkAnime.OnShow();
+		if (isSuccess) {
+			if (pmstyle == PmType::my)
+				atkAnime.OnShow();
+			else
+				atkEnemyAnime.OnShow();
+		}
 	}
 
 	string Skill::GetAttributeText()

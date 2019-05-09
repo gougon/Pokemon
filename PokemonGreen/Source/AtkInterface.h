@@ -97,7 +97,7 @@ namespace game_framework {
 		void UseItem();
 		void SltPm();
 		void SetCursorPosition(int cursor, State state);
-		Pokemon *FindSetFromOrder(set<Pokemon*>& lhs, int order);
+		
 
 		int delayCount = 0, audioCounter = 0;
 		int openCount = 0, cursor, enemySkill, textCount, lvupCount;

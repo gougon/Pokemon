@@ -149,7 +149,7 @@ namespace game_framework {
 			statuIcon = &burnIcon;
 			switch (type) {
 			case barTypeMy:
-				statuIcon->SetTopLeft(420, 260);
+				statuIcon->SetTopLeft(380, 280);
 				break;
 			case barTypeEnemy:
 				statuIcon->SetTopLeft(50, 85);

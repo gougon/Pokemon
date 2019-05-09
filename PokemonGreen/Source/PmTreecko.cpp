@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "PmTreecko.h"
-#include "SkillImpact.h"
+#include "SkillFactory.h"
 
 namespace game_framework
 {
@@ -20,8 +20,11 @@ namespace game_framework
     PmTreecko::PmTreecko(PmType pmtype)
     {
         this->pmtype = pmtype;
-        Init("treecko");
-    }
+		SkillFactory skFactory;
+		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(impact, pmtype)));
+		skillTree.insert(pair<int, Skill*>(7, skFactory.CreateSkill(leer, pmtype)));
+		Init("treecko");
+	}
 
     PmTreecko::PmTreecko(PmType pmtype, string name)
     {
@@ -47,6 +50,7 @@ namespace game_framework
         needExp = 20;
         nowExp = 5;
         basicExp = 62;
+		LearnSkill();
     }
 
     void PmTreecko::LoadBitmap()
