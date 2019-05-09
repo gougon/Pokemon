@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Resource.h"
 #include <string>
 #include <mmsystem.h>
@@ -60,7 +60,7 @@ void CHero::Initialize()
     y = Y_POS;
     count = 0;
     atkProb = 2;
-    money = 0;
+    money = 1000;
     canMove = false;
     isDialog = false;
     isForwardDown = true;
@@ -70,8 +70,7 @@ void CHero::Initialize()
     HeroMovingFront.SetDelayCount(5);
     HeroMovingLeft.SetDelayCount(5);
     HeroMovingRight.SetDelayCount(5);
-    inBag = false;
-    bag_flag = 3;
+	invisible = false;
     PokemonFactory pmfactory;
     SkillFactory skfactory;
     Pokemon* pm = pmfactory.CreatePokemon(treecko);
@@ -84,6 +83,7 @@ void CHero::Initialize()
 	pm2->AddSkill(skfactory.CreateSkill(leer, styleSelf));
 	Pokemon* pm3 = pmfactory.CreatePokemon(hooh);
 	pm3->SetLevel(5);
+	pm3->SetRemainHP(15);
 	pm3->AddSkill(skfactory.CreateSkill(impact, styleSelf));
 	pm3->AddSkill(skfactory.CreateSkill(ember, styleSelf));
     AddPokemon(pm);
@@ -114,7 +114,6 @@ void CHero::LoadBitmap()
     HeroMovingLeft.AddBitmap(HERO_LEFT_TWO, RGB(255, 0, 0));
     HeroMovingLeft.AddBitmap(HERO_LEFT, RGB(255, 0, 0));
     //////////////////////////////////////////////
-    heroBackPack.LoadBitmap();
 }
 void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
 {
@@ -233,62 +232,59 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
 }
 void CHero::OnShow()
 {
-    //©¹¤W¨«
-    if (isMovingUp)
-    {
-        HeroMovingBack.SetTopLeft(HERO_X, HERO_Y);
-        HeroMovingBack.OnShow();
-    }
+	if (!invisible) {
+		//ï¿½ï¿½ï¿½Wï¿½ï¿½
+		if (isMovingUp)
+		{
+			HeroMovingBack.SetTopLeft(HERO_X, HERO_Y);
+			HeroMovingBack.OnShow();
+		}
 
-    if (isForwardUp && !isMovingUp)
-    {
-        HeroBack.SetTopLeft(HERO_X, HERO_Y);
-        HeroBack.ShowBitmap();
-    }
+		if (isForwardUp && !isMovingUp)
+		{
+			HeroBack.SetTopLeft(HERO_X, HERO_Y);
+			HeroBack.ShowBitmap();
+		}
 
-    //©¹¤U¨«
-    if (isMovingDown)
-    {
-        HeroMovingFront.SetTopLeft(HERO_X, HERO_Y);
-        HeroMovingFront.OnShow();
-    }
+		//ï¿½ï¿½ï¿½Uï¿½ï¿½
+		if (isMovingDown)
+		{
+			HeroMovingFront.SetTopLeft(HERO_X, HERO_Y);
+			HeroMovingFront.OnShow();
+		}
 
-    if (isForwardDown && !isMovingDown)
-    {
-        HeroFront.SetTopLeft(HERO_X, HERO_Y);
-        HeroFront.ShowBitmap();
-    }
+		if (isForwardDown && !isMovingDown)
+		{
+			HeroFront.SetTopLeft(HERO_X, HERO_Y);
+			HeroFront.ShowBitmap();
+		}
 
-    //©¹¥ª¨«
-    if (isMovingLeft)
-    {
-        HeroMovingLeft.SetTopLeft(HERO_X, HERO_Y);
-        HeroMovingLeft.OnShow();
-    }
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		if (isMovingLeft)
+		{
+			HeroMovingLeft.SetTopLeft(HERO_X, HERO_Y);
+			HeroMovingLeft.OnShow();
+		}
 
-    if (isForwardLeft && !isMovingLeft)
-    {
-        HeroLeft.SetTopLeft(HERO_X, HERO_Y);
-        HeroLeft.ShowBitmap();
-    }
+		if (isForwardLeft && !isMovingLeft)
+		{
+			HeroLeft.SetTopLeft(HERO_X, HERO_Y);
+			HeroLeft.ShowBitmap();
+		}
 
-    //©¹¤S¨«
-    if (isMovingRight)
-    {
-        HeroMovingRight.SetTopLeft(HERO_X, HERO_Y);
-        HeroMovingRight.OnShow();
-    }
+		//ï¿½ï¿½ï¿½Sï¿½ï¿½
+		if (isMovingRight)
+		{
+			HeroMovingRight.SetTopLeft(HERO_X, HERO_Y);
+			HeroMovingRight.OnShow();
+		}
 
-    if (isForwardRight && !isMovingRight)
-    {
-        HeroRight.SetTopLeft(HERO_X, HERO_Y);
-        HeroRight.ShowBitmap();
-    }
-
-    if (inBag)
-    {
-        //heroBackPack.Open();
-    }
+		if (isForwardRight && !isMovingRight)
+		{
+			HeroRight.SetTopLeft(HERO_X, HERO_Y);
+			HeroRight.ShowBitmap();
+		}
+	}
 }
 
 bool CHero::IsMoving()
@@ -305,7 +301,10 @@ void CHero::StartDialog()
 {
     isDialog = true;
 }
-
+void CHero::IsInvisiable(bool inv)
+{
+	this->invisible = inv;
+}
 void CHero::EndDialog()
 {
     isDialog = false;
@@ -388,55 +387,18 @@ void CHero::ReceiveData(CMap* m, ActionObject* i)
     gameMap = m;
     gameMenu = i;
 }
-void CHero::OpenBag()
-{
-    canMove = false;
-    inBag = true;
-}
-void CHero::CloseBag()
-{
-    inBag = false;
-    canMove = true;
-}
-void CHero::BackpackCursorMove()
-{
-    //heroBackPack.CursorMove();
-}
 void CHero::GetItem(int itemID, int amount)
 {
-    heroBackPack.AddItem(itemID, amount);
+	gameMenu->RecieveData(itemID, amount);
 }
-bool CHero::IsInBag()
+int * CHero::GetMoney()
 {
-    return inBag;
+	return &money;
 }
-/*void CHero::OpenMenu()
+ActionObject * CHero::GetBag()
 {
-    inMenu = true;
-
-    switch (menuFlag)
-    {
-        case 0:
-            //menuflag.setPosition
-            break;
-
-        case 1:
-            //menuflag.setPosition
-            break;
-
-        case 2:
-            //menuflag.setPosition
-            break;
-
-        case 3:
-            //menuflag.setPosition
-            break;
-
-        case 4:
-            //menuflag.setPosition
-            break;
-    }
-}*/
+	return dynamic_cast<Menu*>(gameMenu)->GetBag();
+}
 void CHero::SetXY(int nx, int ny)
 {
     x = nx;
@@ -445,10 +407,10 @@ void CHero::SetXY(int nx, int ny)
 
 void CHero::KeyIn(UINT nChar)
 {
-    const char KEY_LEFT = 0x25; // keyboard¥ª½bÀY
-    const char KEY_UP = 0x26; // keyboard¤W½bÀY
-    const char KEY_RIGHT = 0x27; // keyboard¥k½bÀY
-    const char KEY_DOWN = 0x28; // keyboard¤U½bÀY
+    const char KEY_LEFT = 0x25; // keyboardå·¦ç®­é ­
+    const char KEY_UP = 0x26; // keyboardä¸Šç®­é ­
+    const char KEY_RIGHT = 0x27; // keyboardå³ç®­é ­
+    const char KEY_DOWN = 0x28; // keyboardä¸‹ç®­é ­
     const char KEY_Z = 0x5a;
 
     if (InDialog())
@@ -484,18 +446,9 @@ void CHero::KeyIn(UINT nChar)
 
     if (nChar == KEY_Z)
     {
-        // SetCanMove(false);
+        SetCanMove(false);
         // trigger(gameMap);
     }
-
-    /*if (inMenu)
-    {
-        if (nChar == KEY_UP && menuFlag > 0)
-            menuFlag--;
-
-        if (nChar == KEY_DOWN && menuFlag < 5)
-            menuFlag++;
-    }*/
 }
 
 void CHero::ChangeMap(CMap** m)

@@ -24,6 +24,9 @@ namespace game_framework {
 		virtual void End();
 		void ReceiveData(vector<Pokemon*>* pms);
 		void ChangeOnAtk();
+		void GetCurrentItemCommand(int command, int itemID);
+		bool SuccessToUseItem();
+		bool SuccessToTakeItem();
 	private:
 		enum pmOprtPanelSlt {
 			pmOprtPanelSltView, pmOprtPanelSltChange, pmOprtPanelSltItem, pmOprtPanelSltClose
@@ -40,6 +43,8 @@ namespace game_framework {
 		const int CURSOR_LEFT = 445;
 		const int CURSOR_TOP = 275;
 		const int CURSOR_INTERVAL = 50;
+		const int DESCRIPTIONPANEL_LEFT = 4;
+		const int DESCRIPTIONPANEL_TOP = 385;
 
 		void SetPmBar();
 		void SetPmBarLeftTop(int order);
@@ -50,5 +55,10 @@ namespace game_framework {
 		PmOprtView pmOprtView;
 		int order, sltPm, swapPm;
 		bool isOprtPanel, isOprtSlt, isItem, isAtkChange;
+		//item
+		CText description;
+		CMovingBitmap useItemPanel, giveItemPanel, blankPanel;
+		int itemCommand, currentItemID;
+		bool getItem, isUseItem, isTakeItem, inShowText;
 	};
 }

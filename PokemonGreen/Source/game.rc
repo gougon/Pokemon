@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// ¤¤¤å (ÁcÅé¡A¥xÆW) resources
+// ï¿½ï¿½ï¿½ï¿½ (ï¿½cï¿½ï¿½Aï¿½xï¿½W) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
@@ -130,7 +130,7 @@ IDB_WEIBAITOWN_HOUSE1_1F BITMAP                  "..\\RES\\weibaitown_house1_1f.
 
 IDB_WEIBAITOWN_HOUSE2_1F BITMAP                  "..\\RES\\weibaitown_house2_1f.bmp"
 
-IDB_WEIBAITOWN_PRO_HOUSE_INSIDE BITMAP                  "..\\RES\\weibaitown_pro_house_inside.bmp"
+IDB_WEIBAITOWN_PRO_HOUSE_INSIDE BITMAP           "..\\RES\\weibaitown_pro_house_inside.bmp"
 
 IDB_WEIBAITOWN_HOUSE1_2F BITMAP                  "..\\RES\\weibaitown_house1_2f.bmp"
 
@@ -258,8 +258,6 @@ IDB_PM_TREECKO_BACK     BITMAP                  "..\\RES\\treecko_back.bmp"
 
 IDB_PM_TREECKO_FRONT    BITMAP                  "..\\RES\\treecko_front.bmp"
 
-IDB_ATK_CURSOR          BITMAP                  "..\\RES\\atk_cursor.bmp"
-
 IDB_BATTLE_DIALOG       BITMAP                  "..\\RES\\battle_dialog.bmp"
 
 IDB_M_GREEN_GRASS       BITMAP                  "..\\RES\\m_green_grass.bmp"
@@ -284,9 +282,7 @@ BG_BACKPACK_CURSOR3     BITMAP                  "..\\res\\bitmap12.bmp"
 
 BG_BACKPACK_FLAG        BITMAP                  "..\\res\\bmp00030.bmp"
 
-IDB_ANTIDOTE            BITMAP                  "..\\RES\\antidote.bmp"
-
-BG_BACKPACK_ITEMCURSOR  BITMAP                  "..\\RES\\atk_cursor.bmp"
+ITEM_ANTIDOTE           BITMAP                  "..\\RES\\antidote.bmp"
 
 BG_BACKPACK_BACK        BITMAP                  "..\\RES\\backtoworld.bmp"
 
@@ -346,93 +342,123 @@ IDB_LV_UP_FPANEL        BITMAP                  "..\\RES\\LV_UP_FPANEL.bmp"
 
 IDB_HOSPITAL_INSIDE     BITMAP                  "..\\RES\\hospital_inside.bmp"
 
-HEAL_BALL1              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball1.bmp"
+HEAL_BALL1              BITMAP                  "..\\RES\\heal_ball1.bmp"
 
-HEAL_BALL2              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball2.bmp"
+HEAL_BALL2              BITMAP                  "..\\RES\\heal_ball2.bmp"
 
-HEAL_BALL3              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball3.bmp"
+HEAL_BALL3              BITMAP                  "..\\RES\\heal_ball3.bmp"
 
-HEAL_BALL4              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball4.bmp"
+HEAL_BALL4              BITMAP                  "..\\RES\\heal_ball4.bmp"
 
-HEAL_BALL5              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball5.bmp"
+HEAL_BALL5              BITMAP                  "..\\RES\\heal_ball5.bmp"
 
-HEAL_BALL6              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball6.bmp"
+HEAL_BALL6              BITMAP                  "..\\RES\\heal_ball6.bmp"
 
-HEAL_BALL7              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball7.bmp"
+HEAL_BALL7              BITMAP                  "..\\RES\\heal_ball7.bmp"
 
-HEAL_BALL8              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball8.bmp"
+HEAL_BALL8              BITMAP                  "..\\RES\\heal_ball8.bmp"
 
-HEAL_BALL9              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball9.bmp"
+HEAL_BALL9              BITMAP                  "..\\RES\\heal_ball9.bmp"
 
-HEAL_BALL10             BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball10.bmp"
+HEAL_BALL10             BITMAP                  "..\\RES\\heal_ball10.bmp"
 
-HEAL_BALL11             BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball11.bmp"
+HEAL_BALL11             BITMAP                  "..\\RES\\heal_ball11.bmp"
 
-HEAL_BALL12             BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\heal_ball12.bmp"
+HEAL_BALL12             BITMAP                  "..\\RES\\heal_ball12.bmp"
 
-IDB_ICON_PM_JIRACHI     BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\icon_pm_jirachi.bmp"
+IDB_ICON_PM_JIRACHI     BITMAP                  "..\\RES\\icon_pm_jirachi.bmp"
 
-IDB_PM_JIRACHI_BACK     BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\jirachi_back.bmp"
+IDB_PM_JIRACHI_BACK     BITMAP                  "..\\RES\\jirachi_back.bmp"
 
-IDB_PM_JIRACHI_FRONT    BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\jirachi_front.bmp"
+IDB_PM_JIRACHI_FRONT    BITMAP                  "..\\RES\\jirachi_front.bmp"
 
-IDB_SKILL_LEER1         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_leer1.bmp"
+IDB_SKILL_LEER1         BITMAP                  "..\\RES\\skill_leer1.bmp"
 
-IDB_SKILL_LEER2         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_leer2.bmp"
+IDB_SKILL_LEER2         BITMAP                  "..\\RES\\skill_leer2.bmp"
 
-IDB_SKILL_LEER3         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_leer3.bmp"
+IDB_SKILL_LEER3         BITMAP                  "..\\RES\\skill_leer3.bmp"
 
-IDB_SKILL_LEER4         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_leer4.bmp"
+IDB_SKILL_LEER4         BITMAP                  "..\\RES\\skill_leer4.bmp"
 
-IDB_SKILL_LEER5         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_leer5.bmp"
+IDB_SKILL_LEER5         BITMAP                  "..\\RES\\skill_leer5.bmp"
 
-IDB_GREEN_FLOWER2       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\green_flower2.bmp"
+IDB_GREEN_FLOWER2       BITMAP                  "..\\RES\\green_flower2.bmp"
 
-IDB_GREEN_FLOWER3       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\green_flower3.bmp"
+IDB_GREEN_FLOWER3       BITMAP                  "..\\RES\\green_flower3.bmp"
 
-IDB_PM_HOOH_BACK        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\hooh_back.bmp"
+IDB_PM_HOOH_BACK        BITMAP                  "..\\RES\\hooh_back.bmp"
 
-IDB_PM_HOOH_FRONT       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\hooh_front.bmp"
+IDB_PM_HOOH_FRONT       BITMAP                  "..\\RES\\hooh_front.bmp"
 
-IDB_ICON_PM_HOOH        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\icon_pm_hooh.bmp"
+IDB_ICON_PM_HOOH        BITMAP                  "..\\RES\\icon_pm_hooh.bmp"
 
-IDB_SKILL_EMBER1        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember1.bmp"
+IDB_SKILL_EMBER1        BITMAP                  "..\\RES\\skill_ember1.bmp"
 
-IDB_SKILL_EMBER2        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember2.bmp"
+IDB_SKILL_EMBER2        BITMAP                  "..\\RES\\skill_ember2.bmp"
 
-IDB_SKILL_EMBER3        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember3.bmp"
+IDB_SKILL_EMBER3        BITMAP                  "..\\RES\\skill_ember3.bmp"
 
-IDB_SKILL_EMBER4        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember4.bmp"
+IDB_SKILL_EMBER4        BITMAP                  "..\\RES\\skill_ember4.bmp"
 
-IDB_SKILL_EMBER5        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember5.bmp"
+IDB_SKILL_EMBER5        BITMAP                  "..\\RES\\skill_ember5.bmp"
 
-IDB_SKILL_EMBER6        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember6.bmp"
+IDB_SKILL_EMBER6        BITMAP                  "..\\RES\\skill_ember6.bmp"
 
-IDB_SKILL_EMBER7        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember7.bmp"
+IDB_SKILL_EMBER7        BITMAP                  "..\\RES\\skill_ember7.bmp"
 
-IDB_SKILL_EMBER8        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember8.bmp"
+IDB_SKILL_EMBER8        BITMAP                  "..\\RES\\skill_ember8.bmp"
 
-IDB_SKILL_EMBER9        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember9.bmp"
+IDB_SKILL_EMBER9        BITMAP                  "..\\RES\\skill_ember9.bmp"
 
-IDB_SKILL_EMBER10       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember10.bmp"
+IDB_SKILL_EMBER10       BITMAP                  "..\\RES\\skill_ember10.bmp"
 
-IDB_SKILL_EMBER11       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember11.bmp"
+IDB_SKILL_EMBER11       BITMAP                  "..\\RES\\skill_ember11.bmp"
 
-IDB_SKILL_EMBER12       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember12.bmp"
+IDB_SKILL_EMBER12       BITMAP                  "..\\RES\\skill_ember12.bmp"
 
-IDB_SKILL_EMBER13       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember13.bmp"
+IDB_SKILL_EMBER13       BITMAP                  "..\\RES\\skill_ember13.bmp"
 
-IDB_SKILL_EMBER14       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember14.bmp"
+IDB_SKILL_EMBER14       BITMAP                  "..\\RES\\skill_ember14.bmp"
 
-IDB_SKILL_EMBER15       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember15.bmp"
+IDB_SKILL_EMBER15       BITMAP                  "..\\RES\\skill_ember15.bmp"
 
-IDB_SKILL_EMBER16       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember16.bmp"
+IDB_SKILL_EMBER16       BITMAP                  "..\\RES\\skill_ember16.bmp"
 
-IDB_SKILL_EMBER17       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember17.bmp"
+IDB_SKILL_EMBER17       BITMAP                  "..\\RES\\skill_ember17.bmp"
 
-IDB_SKILL_EMBER18       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\skill_ember18.bmp"
+IDB_SKILL_EMBER18       BITMAP                  "..\\RES\\skill_ember18.bmp"
 
-IDB_BURN_ICON           BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\BURN_ICON.bmp"
+IDB_BURN_ICON           BITMAP                  "..\\RES\\BURN_ICON.bmp"
+
+IDB_CURSOR              BITMAP                  "..\\RES\\item_cursor.bmp"
+
+IDB_SHOP_MAP            BITMAP                  "..\\RES\\SHOP.bmp"
+
+SHOP_BLANK_PANEL        BITMAP                  "..\\RES\\SHOP_BLANK_PANEL.bmp"
+
+SHOP_DESCRIPTION_PANEL  BITMAP                  "..\\RES\\SHOP_DESCRIPTION_PANEL.bmp"
+
+SHOP_IMAGE_PANEL        BITMAP                  "..\\RES\\SHOP_IMAGE_PANEL.bmp"
+
+SHOP_ITEMLIST_PANEL     BITMAP                  "..\\RES\\SHOP_ITEMLIST_PANEL.bmp"
+
+SHOP_MONEY_PANEL        BITMAP                  "..\\RES\\SHOP_MONEY_PANEL.bmp"
+
+TRADEMODE_SELECT        BITMAP                  "..\\RES\\TRADEMODE_SELECT_PANEL.bmp"
+
+IDB_USEITEM_PANEL       BITMAP                  "..\\RES\\USEITEM_PANEL.bmp"
+
+IDB_BLANK_PANEL         BITMAP                  "..\\RES\\BLANK_PANEL.bmp"
+
+IDB_GIVEITEM_PANEL      BITMAP                  "..\\RES\\GIVETEM_PANEL.bmp"
+
+ITEM_FIGHTERGLOVE       BITMAP                  "..\\RES\\IDB_FIGHTERGLOVE.bmp"
+
+ITEM_VULNERARY          BITMAP                  "..\\RES\\IDB_VULNERARY.bmp"
+
+IDB_USEONATK_PANEL      BITMAP                  "..\\RES\\IDB_USEONATK_PANEL.bmp"
+
+ITEM_POKEBALL           BITMAP                  "..\\RES\\ITEM_POKEBALL.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -442,12 +468,12 @@ IDB_BURN_ICON           BITMAP                  "E:\\Github\\Pokemon\\PokemonGre
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
 
-#endif    // ¤¤¤å (ÁcÅé¡A¥xÆW) resources
+#endif    // ï¿½ï¿½ï¿½ï¿½ (ï¿½cï¿½ï¿½Aï¿½xï¿½W) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// ­^¤å (¬ü°ê) resources
+// ï¿½^ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -745,7 +771,7 @@ BEGIN
     ID_BUTTON_UNITTEST      "Perform Unit Test"
 END
 
-#endif    // ­^¤å (¬ü°ê) resources
+#endif    // ï¿½^ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

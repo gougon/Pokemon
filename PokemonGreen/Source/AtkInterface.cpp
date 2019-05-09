@@ -21,6 +21,7 @@ namespace game_framework {
 		battleBackground.ShowBitmap();
 		battleGround[0].ShowBitmap();
 		battleGround[1].ShowBitmap();
+
 		switch (state)
 		{
 		case heroAppear:
@@ -70,7 +71,7 @@ namespace game_framework {
 			pmMenu->OnShow();
 			break;
 		case chooseItem:
-			// pmBag->OnShow();
+			bag->OnShow();
 			break;
 		case onSkill:
 			myPm->OnShow();
@@ -253,7 +254,23 @@ namespace game_framework {
 			}
 			break;
 		case chooseItem:
-			// pmBag->OnMove();
+			if (bag->IsWork()) {
+				bag->OnMove();
+			}
+			else {
+				if (bag->SelectPokeball() != 0) {
+					// bag->SelectPokeball() return the ball id
+					// state = useItem;
+
+					/*¼È©w*/
+					myBar.ReceiveData(myPm);
+					state = action;
+				}
+				else {
+					myBar.ReceiveData(myPm);
+					state = action;
+				}
+			}
 			break;
 		case onSkill:
 			if (!myPm->IsCanMove()) {
@@ -479,7 +496,7 @@ namespace game_framework {
 		battleOption.LoadBitmap(IDB_BATTLE_OPTION);
 		battleDialog.LoadBitmap(IDB_BATTLE_DIALOG);
 		skillOption.LoadBitmap(IDB_SKILL_OPTION);
-		atkCursor.LoadBitmap(BG_BACKPACK_ITEMCURSOR);
+		atkCursor.LoadBitmap(IDB_CURSOR , RGB(255,0,0));
 		ynPanel.LoadBitmap(BG_YESNO);
 		lvupPanel.LoadBitmap(IDB_LV_UP_PANEL);
 		lvupFpanel.LoadBitmap(IDB_LV_UP_FPANEL);
@@ -526,6 +543,11 @@ namespace game_framework {
 		this->pmMenu = pmMenu;
 	}
 
+	void AtkInterface::ReceiveBag(Bag * bag)
+	{
+		this->bag = bag;
+	}
+
 	void AtkInterface::ReceiveData(CHero *self, Pokemon *enemy)
 	{
 		battleGround[0].SetTopLeft(290, 290);
@@ -556,6 +578,9 @@ namespace game_framework {
 		if (pmMenu->IsWork()) {
 			pmMenu->KeyDownListener(nChar);
 		}
+		else if (bag->IsWork()) {
+			bag->KeyDownListener(nChar);
+		}
 		switch (state)
 		{
 		case pokemonAppear:
@@ -572,7 +597,7 @@ namespace game_framework {
 			switch (nChar)
 			{
 			case KEY_LEFT:
-				if (cursor == bag || cursor == escape) {
+				if (cursor == openbag || cursor == escape) {
 					CAudio::Instance()->Play(AUDIO_SELECT);
 					cursor -= 1;
 				}
@@ -590,7 +615,7 @@ namespace game_framework {
 				}
 				break;
 			case KEY_DOWN:
-				if (cursor == fight || cursor == bag) {
+				if (cursor == fight || cursor == openbag) {
 					CAudio::Instance()->Play(AUDIO_SELECT);
 					cursor += 2;
 				}
@@ -601,10 +626,9 @@ namespace game_framework {
 					CAudio::Instance()->Play(AUDIO_SELECT);
 					state = chooseSkill;
 					break;
-				case bag:
+				case openbag:
 					CAudio::Instance()->Play(AUDIO_SELECT);
-					state = chooseItem;
-					// pmBag->UseOnAtk();
+					UseItem();
 					break;
 				case pokemon:
 					CAudio::Instance()->Play(AUDIO_SELECT);
@@ -823,6 +847,15 @@ namespace game_framework {
 				valueFinalText[i].GetLength() * (int)valueFinalText[i].GetFontSize(), 
 				LVUP_VALUE_TOP + i * LVUP_VALUE_INTERVAL);
 		}
+	}
+
+	void AtkInterface::UseItem()
+	{
+		state = chooseItem;
+		bag->Start();
+		pmMenu->ReceiveData(self->GetPokemons());
+		bag->RecievePokemonMenu(pmMenu);
+		bag->SetBattleMode();
 	}
 
 	void AtkInterface::SltPm()

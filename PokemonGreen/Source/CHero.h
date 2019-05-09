@@ -32,6 +32,7 @@ class CHero
         void OnShow();					// 將圖形貼到畫面
         bool IsMoving();
         bool IsCanMove();
+		void IsInvisiable(bool inv);
         void StartDialog();
         void EndDialog();
         bool InDialog();
@@ -43,14 +44,10 @@ class CHero
         void SetDirection(int flag);    // 設定目前朝向哪裡
         int GetDirection();
         void trigger(CMap* m);
-        void ReceiveData(CMap* m, ActionObject* i);
-        //void OpenMenu();
-        void OpenBag();					//Bag
-        void CloseBag();
-        void BackpackCursorMove();
-        void GetItem(int, int);
-        //
-        bool IsInBag();
+		void ReceiveData(CMap* m, ActionObject* i);
+		void GetItem(int itemID, int amount);
+		int* GetMoney();
+		ActionObject* GetBag();
         void SetXY(int nx, int ny);		// 設定座標
         void KeyIn(UINT nChar);
         int GetAtkProb();
@@ -79,6 +76,7 @@ class CHero
         bool isForwardRight;		// 是否面朝右
         bool isForwardUp;			// 是否面朝上
         bool isDialog;
+		bool invisible;
         //bool inMenu;
         bool inBag;
         bool canMove;
@@ -89,9 +87,7 @@ class CHero
         //int menuFlag = 0;
         CMap* gameMap;
         ActionObject* gameMenu;
-        Bag heroBackPack;
         int money;
-        int bag_flag;
         bool CheckForward(CMap** m);
         CDialog* heroDialog;
 };

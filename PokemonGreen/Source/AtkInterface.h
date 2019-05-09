@@ -6,6 +6,7 @@
 #include <set>
 #include "CHero.h"
 #include "PokemonMenu.h"
+#include "Bag.h"
 #include "Pokemon.h"
 #include "PmValue.h"
 #include "AtkBar.h"
@@ -20,7 +21,7 @@ namespace game_framework {
 
 	enum Cursor {
 		fight,
-		bag,
+		openbag,
 		pokemon,
 		escape,
 
@@ -66,6 +67,7 @@ namespace game_framework {
 		virtual void LoadBitmap();
 		virtual void SetTopLeft() {}
 		void ReceivePmMenu(PokemonMenu *pmMenu);
+		void ReceiveBag(Bag *bag);
 		void ReceiveData(CHero *self, Pokemon *enemy);
 		void KeyDownListener(UINT nChar);
 		void Start();
@@ -92,6 +94,7 @@ namespace game_framework {
 		int GetAddExp(Pokemon *enemy);
 		void AddExp(int order);
 		void SetValue(int order);
+		void UseItem();
 		void SltPm();
 		void SetCursorPosition(int cursor, State state);
 		Pokemon *FindSetFromOrder(set<Pokemon*>& lhs, int order);
@@ -115,6 +118,7 @@ namespace game_framework {
 		CHero *self;
 		Pokemon *enemy, *myPm;
 		PokemonMenu *pmMenu;
+		Bag *bag;
 		PmValue value;
 	};
 }

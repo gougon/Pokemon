@@ -25,7 +25,8 @@ void CDialog::InitDialog(char type)
     else screen.LoadBitmap(NORMAL_DIALOG_SCREEN, RGB(255, 0, 0));
 
     //¥[¸ü´å¼Ð
-    cursor.AddBitmap(TEXT_CURSOR1, RGB(255, 0, 0));
+    
+	cursor.AddBitmap(TEXT_CURSOR1, RGB(255, 0, 0));
     cursor.AddBitmap(TEXT_CURSOR2, RGB(255, 0, 0));
     cursor.AddBitmap(TEXT_CURSOR3, RGB(255, 0, 0));
     cursor.SetDelayCount(5);

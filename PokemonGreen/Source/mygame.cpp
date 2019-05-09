@@ -213,6 +213,7 @@ void CGameStateRun::OnBeginState()
     hero.SetXY(18 * SM + HERO_X, 27 * SM + HERO_Y + 20);
     myMenu.Init();
 	atkInterface.ReceivePmMenu(myMenu.GetPokemonMenu());
+	atkInterface.ReceiveBag(myMenu.GetBag());
 	atkInterface.Init();
 }
 
@@ -239,10 +240,6 @@ void CGameStateRun::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 
         //TRACE("x = %d\ny = %d\n", hero.GetX1(), hero.GetY1());
         //TRACE("sx = %d\nsy = %d\n", gameMap->GetSX(), gameMap->GetSY());
-        if (hero.IsInBag())
-        {
-            hero.BackpackCursorMove();
-        }
 
         if (hero.IsCanMove())
         {

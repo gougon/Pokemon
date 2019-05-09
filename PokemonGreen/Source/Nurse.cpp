@@ -108,7 +108,7 @@ namespace game_framework {
 	void Nurse::LoadBitmap()
 	{
 		ynPanel.LoadBitmap(BG_YESNO);
-		cursor.LoadBitmap(BG_BACKPACK_ITEMCURSOR);
+		cursor.LoadBitmap(IDB_CURSOR);
 	}
 
 	void Nurse::KeyDownListener(UINT nChar)
