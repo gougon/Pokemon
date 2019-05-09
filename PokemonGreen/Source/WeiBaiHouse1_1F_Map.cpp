@@ -34,7 +34,7 @@ void WeiBaiHouse1_1F_Map::InitMap()
     SetXY(17 * SM, 18 * SM);
     SetMap("weibaitown_house1_1f");
     mom.Initialize();
-    mom.SetXY(12 * SM, 1060);
+    mom.SetXY(1320, 1060);
     book.SetXY(1020, 960);
     dialogBox.InitDialog('n');
     inEvent = false;
