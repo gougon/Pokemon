@@ -7,10 +7,8 @@ namespace game_framework {
 	class Black {
 	public:
 		Black();
-		static Black* Instance();
 		void Draw();
 	private:
-		static Black delay;
 		CMovingBitmap black;
 	};
 }

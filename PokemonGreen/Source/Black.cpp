@@ -15,13 +15,8 @@ namespace game_framework {
 		black.SetTopLeft(0, 0);
 	}
 
-	Black* Black::Instance()
-	{
-		return &delay;
-	}
-
 	void Black::Draw()
 	{
-
+		black.ShowBitmap();
 	}
 }
