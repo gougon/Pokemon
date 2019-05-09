@@ -48,7 +48,6 @@ namespace game_framework {
 
 		void SetPmBar();
 		void SetPmBarLeftTop(int order);
-		void Swap(int order1, int order2);
 		CMovingBitmap selectPanel, operationPanel, cursor;
 		vector<Pokemon*>* pokemons;
 		PokemonBar *pokemonBar;

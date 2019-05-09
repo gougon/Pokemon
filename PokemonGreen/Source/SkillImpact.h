@@ -9,7 +9,7 @@ using namespace std;
 namespace game_framework {
 	class SkillImpact : public SkillNormal {
 	public:
-		SkillImpact(pmStyle pmstyle);
+		SkillImpact(int pmstyle);
 		virtual void Init();
 		virtual string Use(Pokemon *self, Pokemon *enemy);
 	private:

@@ -20,6 +20,7 @@
 #include "Skill.h"
 #include "SkillFactory.h"
 #include "SkillImpact.h"
+#include "Black.h"
 
 namespace game_framework
 {
@@ -205,9 +206,9 @@ namespace game_framework
 			CAudio::Instance()->Play(AUDIO_GOTOBATTLE);
 
 			PokemonFactory pmfactory;
-			SkillFactory skfactory;
+			// SkillFactory skfactory;
 			Pokemon* enemy = pmfactory.CreateEnemyRandom();
-			enemy->AddSkill(skfactory.CreateSkill(impact, styleEnemy));
+			// enemy->AddSkill(skfactory.CreateSkill(ember, styleEnemy));
 			StartAtk(hero, enemy, atkInterface);
 		}
 	}

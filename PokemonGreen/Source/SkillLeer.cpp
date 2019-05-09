@@ -10,7 +10,7 @@
 #include "SkillLeer.h"
 
 namespace game_framework {
-	SkillLeer::SkillLeer(pmStyle pmstyle)
+	SkillLeer::SkillLeer(int pmstyle)
 	{
 		this->pmstyle = pmstyle;
 		Init();
@@ -33,14 +33,20 @@ namespace game_framework {
 		atkAnime.AddBitmap(IDB_SKILL_LEER4, RGB(255, 0, 0));
 		atkAnime.AddBitmap(IDB_SKILL_LEER5, RGB(255, 0, 0));
 		atkAnime.SetDelayCount(2);
+		atkEnemyAnime.AddBitmap(IDB_SKILL_LEER1, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_LEER2, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_LEER3, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_LEER4, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_LEER5, RGB(255, 0, 0));
+		atkEnemyAnime.SetDelayCount(2);
 
 		switch (pmstyle)
 		{
-		case styleSelf:
+		case my:
 			atkAnime.SetTopLeft(205, 195);
 			break;
-		case styleEnemy:
-			atkAnime.SetTopLeft(405, 120);
+		case enemy:
+			atkEnemyAnime.SetTopLeft(405, 120);
 			break;
 		default:
 			ASSERT(0);

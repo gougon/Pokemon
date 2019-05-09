@@ -278,6 +278,7 @@
     <ClCompile Include="Source\CSelf.cpp" />
     <ClCompile Include="Source\CText.cpp" />
     <ClCompile Include="Source\Black.cpp" />
+    <ClCompile Include="Source\Functions.cpp" />
     <ClCompile Include="Source\game.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>

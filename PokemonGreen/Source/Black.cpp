@@ -15,8 +15,22 @@ namespace game_framework {
 		black.SetTopLeft(0, 0);
 	}
 
+	void Black::SetDelay(int millisecond)
+	{
+		this->millisecond = millisecond;
+	}
+
 	void Black::Draw()
 	{
-		black.ShowBitmap();
+		static int counter = 0;
+		TRACE("\ncounter = %d\n", counter);
+		int finalCounter = (millisecond / 33);
+		if (counter < finalCounter) {
+			counter++;
+			black.ShowBitmap();
+		}
+		else {
+			counter = 0;
+		}
 	}
 }

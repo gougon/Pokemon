@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "PmJirachi.h"
-#include "SkillImpact.h"
+#include "SkillFactory.h"
 
 namespace game_framework {
 	PmJirachi::PmJirachi()
@@ -19,6 +19,9 @@ namespace game_framework {
 	PmJirachi::PmJirachi(PmType pmtype)
 	{
 		this->pmtype = pmtype;
+		SkillFactory skFactory;
+		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(impact, pmtype)));
+		skillTree.insert(pair<int, Skill*>(7, skFactory.CreateSkill(leer, pmtype)));
 		Init("jirachi");
 	}
 
@@ -45,6 +48,7 @@ namespace game_framework {
 		needExp = 20;
 		nowExp = 5;
 		basicExp = 215;
+		LearnSkill();
 	}
 
 	void PmJirachi::LoadBitmap()
