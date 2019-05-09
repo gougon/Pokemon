@@ -358,7 +358,7 @@ void Bag::KeyDownListener(UINT nChar)
 								End();
 							}
 							else {
-								dynamic_cast<PokemonMenu*>(pk_Menu)->GetCurrentItemCommend(1, SelectItem()->GetID());
+								dynamic_cast<PokemonMenu*>(pk_Menu)->GetCurrentItemCommand(1, SelectItem()->GetID());
 								pk_Menu->Start();
 							}
 						}
@@ -460,11 +460,11 @@ void Bag::KeyDownListener(UINT nChar)
 						switch (panel_flagIndex)
 						{
 							case 0:
-								dynamic_cast<PokemonMenu*>(pk_Menu)->GetCurrentItemCommend(1, SelectItem()->GetID());
+								dynamic_cast<PokemonMenu*>(pk_Menu)->GetCurrentItemCommand(1, SelectItem()->GetID());
 								pk_Menu->Start();
 								break;
 							case 1:
-								dynamic_cast<PokemonMenu*>(pk_Menu)->GetCurrentItemCommend(2, SelectItem()->GetID());
+								dynamic_cast<PokemonMenu*>(pk_Menu)->GetCurrentItemCommand(2, SelectItem()->GetID());
 								pk_Menu->Start();
 								break;
 							case 2:
