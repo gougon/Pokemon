@@ -237,6 +237,10 @@
 #define IDB_USEONATK_PANEL              366
 #define IDB_BITMAP19                    367
 #define ITEM_POKEBALL                   367
+#define IDB_CATCH_BALL1                 368
+#define IDB_CATCH_BALL2                 369
+#define IDB_BITMAP21                    370
+#define IDB_CATCH_BALL3                 370
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -249,7 +253,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        368
+#define _APS_NEXT_RESOURCE_VALUE        371
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

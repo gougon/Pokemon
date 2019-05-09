@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// ï¿½ï¿½ï¿½ï¿½ (ï¿½cï¿½ï¿½Aï¿½xï¿½W) resources
+// ¤¤¤å (ÁcÅé¡A¥xÆW) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
@@ -130,7 +130,7 @@ IDB_WEIBAITOWN_HOUSE1_1F BITMAP                  "..\\RES\\weibaitown_house1_1f.
 
 IDB_WEIBAITOWN_HOUSE2_1F BITMAP                  "..\\RES\\weibaitown_house2_1f.bmp"
 
-IDB_WEIBAITOWN_PRO_HOUSE_INSIDE BITMAP           "..\\RES\\weibaitown_pro_house_inside.bmp"
+IDB_WEIBAITOWN_PRO_HOUSE_INSIDE BITMAP                  "..\\RES\\weibaitown_pro_house_inside.bmp"
 
 IDB_WEIBAITOWN_HOUSE1_2F BITMAP                  "..\\RES\\weibaitown_house1_2f.bmp"
 
@@ -460,6 +460,12 @@ IDB_USEONATK_PANEL      BITMAP                  "..\\RES\\IDB_USEONATK_PANEL.bmp
 
 ITEM_POKEBALL           BITMAP                  "..\\RES\\ITEM_POKEBALL.bmp"
 
+IDB_CATCH_BALL1         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\catch_ball.bmp"
+
+IDB_CATCH_BALL2         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\catch_ball2.bmp"
+
+IDB_CATCH_BALL3         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\catch_ball3.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -468,12 +474,12 @@ ITEM_POKEBALL           BITMAP                  "..\\RES\\ITEM_POKEBALL.bmp"
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
 
-#endif    // ï¿½ï¿½ï¿½ï¿½ (ï¿½cï¿½ï¿½Aï¿½xï¿½W) resources
+#endif    // ¤¤¤å (ÁcÅé¡A¥xÆW) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// ï¿½^ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½) resources
+// ­^¤å (¬ü°ê) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -771,7 +777,7 @@ BEGIN
     ID_BUTTON_UNITTEST      "Perform Unit Test"
 END
 
-#endif    // ï¿½^ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½) resources
+#endif    // ­^¤å (¬ü°ê) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

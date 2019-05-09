@@ -276,6 +276,7 @@
     <ClCompile Include="Source\CPickableObject.cpp" />
     <ClCompile Include="Source\CSelf.cpp" />
     <ClCompile Include="Source\CText.cpp" />
+    <ClCompile Include="Source\Black.cpp" />
     <ClCompile Include="Source\game.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -307,6 +308,7 @@
     <ClCompile Include="Source\PmOprtView.cpp" />
     <ClCompile Include="Source\PmTreecko.cpp" />
     <ClCompile Include="Source\PmValue.cpp" />
+    <ClCompile Include="Source\Pokeball.cpp" />
     <ClCompile Include="Source\Pokemon.cpp" />
     <ClCompile Include="Source\PokemonBar.cpp" />
     <ClCompile Include="Source\PokemonFactory.cpp" />
@@ -368,6 +370,7 @@
     <ClInclude Include="Source\CPickableObject.h" />
     <ClInclude Include="Source\CSelf.h" />
     <ClInclude Include="Source\CText.h" />
+    <ClInclude Include="Source\Black.h" />
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
     <ClInclude Include="Source\GameObject.h" />
@@ -383,6 +386,7 @@
     <ClInclude Include="Source\PmOprtView.h" />
     <ClInclude Include="Source\PmTreecko.h" />
     <ClInclude Include="Source\PmValue.h" />
+    <ClInclude Include="Source\Pokeball.h" />
     <ClInclude Include="Source\Pokemon.h" />
     <ClInclude Include="Source\PokemonBar.h" />
     <ClInclude Include="Source\PokemonFactory.h" />
@@ -478,6 +482,9 @@
     <Image Include="res\bmp00031.bmp" />
     <Image Include="res\bmp00032.bmp" />
     <Image Include="RES\BURN_ICON.bmp" />
+    <Image Include="RES\catch_ball.bmp" />
+    <Image Include="RES\catch_ball2.bmp" />
+    <Image Include="RES\catch_ball3.bmp" />
     <Image Include="RES\DIAG.bmp" />
     <Image Include="RES\enemy_bar.bmp" />
     <Image Include="RES\expBar.bmp" />

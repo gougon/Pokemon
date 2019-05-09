@@ -13,7 +13,7 @@ namespace game_framework
 		virtual void OnMove() = 0;
 		virtual void OnShow() = 0;
 		virtual void LoadBitmap() = 0;
-		virtual void SetTopLeft() = 0;
+		// virtual void SetTopLeft() = 0;
 		void SetLayer(int layer);
 		int GetLayer();
 	protected:

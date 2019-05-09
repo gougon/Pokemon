@@ -226,14 +226,12 @@ namespace game_framework {
 						End();
 					}
 					if (itemCommand == 1) {
-						TRACE("USE ITEM: %d\n", currentItemID);
 						isUseItem = (*pokemons)[sltPm]->UseItem(currentItemID);
 						if (isUseItem) description.SetText("success to use item");
 						else description.SetText("fail to use item");
 						inShowText = true;
 					}
 					else if (itemCommand == 2) {
-						TRACE("TAKE ITEM: %d\n", currentItemID);
 						isTakeItem = (*pokemons)[sltPm]->TakeItem(currentItemID);
 						if (isTakeItem) description.SetText("success to take item");
 						else description.SetText("fail to take item");

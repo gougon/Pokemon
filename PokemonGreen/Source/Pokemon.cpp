@@ -107,6 +107,11 @@ namespace game_framework {
 		return level;
 	}
 
+	int Pokemon::GetCatchRate()
+	{
+		return catchRate;
+	}
+
 	int Pokemon::GetHP()
 	{
 		return mixValue.hp;
@@ -362,8 +367,6 @@ namespace game_framework {
     {
         if (itemID == Item_SmallVulnerary)
         {
-            TRACE("use s.vulnerary\n");
-
             if (GetRemainHP() < GetHP())
             {
 				if (GetRemainHP() + 20 > GetHP()) SetRemainHP(GetHP());
@@ -376,8 +379,6 @@ namespace game_framework {
 
         if (itemID == Item_BigVulnerary)
         {
-            TRACE("use m.vulnerary\n");
-
             if (GetRemainHP() < GetHP())
             {
 				if (GetRemainHP() + 30 > GetHP()) SetRemainHP(GetHP());

@@ -6,7 +6,6 @@
 #include "audio.h"
 #include "gamelib.h"
 #include <stdlib.h>
-#include <windows.h>
 #include "AtkInterface.h"
 
 namespace game_framework {

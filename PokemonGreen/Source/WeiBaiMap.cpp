@@ -163,8 +163,6 @@ namespace game_framework
 		x /= SM;
 		y /= SM;
 
-		TRACE("\nx = %d, y = %d\n", x, y);
-
 		for (auto i : hitImg)
 		{
 			if (map[y][x] == i)
@@ -196,7 +194,6 @@ namespace game_framework
 		// 利用atkProb判斷有沒有遇到怪
 		int rnd = rand() % hero->GetAtkProb() + 1;
 
-		TRACE("\nprob = %d, rnd = %d\n", hero->GetAtkProb(), rnd);
 		if (rnd == hero->GetAtkProb())  	// 遇到怪
 		{
 			CAudio::Instance()->Stop(AUDIO_WEIBAITOWN);
@@ -251,20 +248,17 @@ namespace game_framework
 		int y = hero.GetY1();
 		int direction = hero.GetDirection(); // 上左下右
 
-		if (direction == 0) {
+		if (direction == 0) 
 			y -= SM;
-		}
-		else if (direction == 1) {
+		else if (direction == 1) 
 			y += SM;
-		}
-		else if (direction == 2) {
+		else if (direction == 2) 
 			x -= SM;
-		}
-		else if (direction == 3) {
+		else if (direction == 3) 
 			x += SM;
-		}
 		x /= SM;
 		y /= SM;
+
 		if (nChar == KEY_Z) {
 			if (inEvent)
 			{

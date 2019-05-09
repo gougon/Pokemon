@@ -7,6 +7,7 @@
 #include "gamelib.h"
 #include <stdlib.h>
 #include "Bag.h"
+#include "Pokeball.h"
 
 namespace game_framework
 {
@@ -21,7 +22,6 @@ void Bag::Init()
         item_amount[i] = 0;
     }
 
-    TRACE("bag init\n");
     categorie_flagIndex = 3;
     panel_flagIndex = 0;
     chooser = 0;
@@ -516,8 +516,13 @@ void Bag::RecievePokemonMenu(ActionObject* inPk_Menu)
 void Bag::AddItem(int itemId, int amount)
 {
 	if (item_amount[itemId] == 0) {
-		TRACE("INSEFT ITEM: %d\n", itemId);
-		CItem* new_Item = new CItem(itemId);
+		CItem* new_Item;
+		if (itemId == 4) {
+			new_Item = new Pokeball();
+		}
+		else {
+			new_Item = new CItem(itemId);
+		}
 		items.push_back(new_Item);
 		item_amount[itemId] += amount;
 	}

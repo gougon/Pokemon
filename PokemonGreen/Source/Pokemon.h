@@ -40,6 +40,7 @@ namespace game_framework {
 		void HpAnime();
 		string GetName();
 		int GetLevel();
+		int GetCatchRate();
 		int GetHP();
 		int GetSpeed();
 		int GetAtk();
@@ -103,7 +104,7 @@ namespace game_framework {
 		string name;
 		Attribute attribute;
 		Status *statu;
-		int level;
+		int level, catchRate;
 		PmValue speciesStrength, individualValue, effortValue, mixValue, remainValue;
 		float hitRate, evasionRate;
 		int nowExp, needExp, basicExp;

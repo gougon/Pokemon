@@ -170,6 +170,8 @@
     <ClCompile Include="Source\Status.cpp" />
     <ClCompile Include="Source\Clerk.cpp" />
     <ClCompile Include="Source\Shop_map.cpp" />
+    <ClCompile Include="Source\Pokeball.cpp" />
+    <ClCompile Include="Source\Black.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -248,6 +250,8 @@
     <ClInclude Include="Source\Status.h" />
     <ClInclude Include="Source\Clerk.h" />
     <ClInclude Include="Source\Shop_map.h" />
+    <ClInclude Include="Source\Pokeball.h" />
+    <ClInclude Include="Source\Black.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -833,6 +837,15 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\ITEM_POKEBALL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\catch_ball.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\catch_ball2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\catch_ball3.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
