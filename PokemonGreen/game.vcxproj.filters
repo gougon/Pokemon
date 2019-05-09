@@ -151,20 +151,25 @@
     <ClCompile Include="Source\ActionObject.cpp" />
     <ClCompile Include="Source\Menu.cpp" />
     <ClCompile Include="Source\Illustration.cpp" />
+    <ClCompile Include="Source\MainMenu.cpp" />
     <ClCompile Include="Source\PmOprtView.cpp" />
     <ClCompile Include="Source\PokemonBar.cpp" />
     <ClCompile Include="Source\PokemonMenu.cpp" />
     <ClCompile Include="Source\Record.cpp" />
     <ClCompile Include="Source\Self.cpp" />
+    <ClCompile Include="Source\Bag.cpp" />
     <ClCompile Include="Source\PmValue.cpp" />
     <ClCompile Include="Source\Hospital_Map.cpp" />
     <ClCompile Include="Source\Nurse.cpp" />
     <ClCompile Include="Source\PmJirachi.cpp" />
     <ClCompile Include="Source\SkillLeer.cpp" />
-    <ClCompile Include="Source\Shop_map.cpp" />
-    <ClCompile Include="Source\Bag.cpp" />
+    <ClCompile Include="Source\GameObject.cpp" />
+    <ClCompile Include="Source\PmHooh.cpp" />
+    <ClCompile Include="Source\SkillEmber.cpp" />
+    <ClCompile Include="Source\SkillFire.cpp" />
+    <ClCompile Include="Source\Status.cpp" />
     <ClCompile Include="Source\Clerk.cpp" />
-    <ClCompile Include="Source\MainMenu.cpp" />
+    <ClCompile Include="Source\Shop_map.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -224,20 +229,25 @@
     <ClInclude Include="Source\Menu.h" />
     <ClInclude Include="Source\ActionObject.h" />
     <ClInclude Include="Source\Illustration.h" />
+    <ClInclude Include="Source\MainMenu.h" />
     <ClInclude Include="Source\PmOprtView.h" />
     <ClInclude Include="Source\PokemonBar.h" />
     <ClInclude Include="Source\PokemonMenu.h" />
     <ClInclude Include="Source\Record.h" />
     <ClInclude Include="Source\Self.h" />
+    <ClInclude Include="Source\Bag.h" />
     <ClInclude Include="Source\PmValue.h" />
     <ClInclude Include="Source\Hospital_Map.h" />
     <ClInclude Include="Source\Nurse.h" />
     <ClInclude Include="Source\PmJirachi.h" />
     <ClInclude Include="Source\SkillLeer.h" />
-    <ClInclude Include="Source\Shop_map.h" />
-    <ClInclude Include="Source\Bag.h" />
+    <ClInclude Include="Source\GameObject.h" />
+    <ClInclude Include="Source\PmHooh.h" />
+    <ClInclude Include="Source\SkillEmber.h" />
+    <ClInclude Include="Source\SkillFire.h" />
+    <ClInclude Include="Source\Status.h" />
     <ClInclude Include="Source\Clerk.h" />
-    <ClInclude Include="Source\MainMenu.h" />
+    <ClInclude Include="Source\Shop_map.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -708,16 +718,82 @@
     <Image Include="RES\skill_leer5.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\green_flower2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\green_flower3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\hooh_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\hooh_front.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon_pm_hooh.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember15.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember17.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_ember18.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\BURN_ICON.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_cursor.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
     <Image Include="RES\SHOP.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\IDB_VULNERARY.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\IDB_FIGHTERGLOVE.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\TRADEMODE_SELECT_PANEL.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\SHOP_BLANK_PANEL.bmp">
@@ -735,19 +811,28 @@
     <Image Include="RES\SHOP_MONEY_PANEL.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="RES\item_cursor.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bitmap18.bmp">
+    <Image Include="RES\TRADEMODE_SELECT_PANEL.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\USEITEM_PANEL.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\BLANK_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
     <Image Include="RES\GIVETEM_PANEL.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="RES\BLANK_PANEL.bmp">
+    <Image Include="RES\IDB_FIGHTERGLOVE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\IDB_VULNERARY.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\IDB_USEONATK_PANEL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ITEM_POKEBALL.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// ¤¤¤å (ÁcÅé¡A¥xÆW) resources
+// ï¿½ï¿½ï¿½ï¿½ (ï¿½cï¿½ï¿½Aï¿½xï¿½W) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
@@ -214,7 +214,7 @@ IDB_ALPHABET_SMALL_Y    BITMAP                  "..\\res\\bmp00024.bmp"
 
 IDB_ALPHABET_SMALL_Z    BITMAP                  "..\\res\\bmp00025.bmp"
 
-IDB_JUMP_LAND           BITMAP                  "..\\RES\\jump_land.bmp"
+IDB_JUMP_LAND           BITMAP                  "..\\\\RES\\jump_land.bmp"
 
 HERO_LEFT_TWO           BITMAP                  "..\\res\\hero_lef.bmp"
 
@@ -292,11 +292,11 @@ IDB_MENU_MIDDLE         BITMAP                  "..\\RES\\MenuMiddle.bmp"
 
 IDB_MENU_TOP            BITMAP                  "..\\RES\\MenuTop.bmp"
 
-IDB_POKEMON_OPERATION_PANEL BITMAP              "..\\RES\\OPERATION_PANEL.bmp"
+IDB_POKEMON_OPERATION_PANEL BITMAP                  "..\\RES\\OPERATION_PANEL.bmp"
 
-IDB_POKEMON_BAR_UNSELECTED BITMAP               "..\\RES\\POKEMON_BAR.bmp"
+IDB_POKEMON_BAR_UNSELECTED BITMAP                  "..\\RES\\POKEMON_BAR.bmp"
 
-IDB_POKEMON_BAR_FIRST_UNSELECTED BITMAP         "..\\RES\\POKEMON_BAR_FIRST_UNSELECTED.bmp"
+IDB_POKEMON_BAR_FIRST_UNSELECTED BITMAP                  "..\\RES\\POKEMON_BAR_FIRST_UNSELECTED.bmp"
 
 IDB_POKEMON_BAR_SELECTED BITMAP                  "..\\RES\\POKEMON_BAR_SELECTED.bmp"
 
@@ -308,7 +308,7 @@ IDB_PM_ABILITY          BITMAP                  "..\\RES\\PM_ABILITY.bmp"
 
 IDB_PM_SKILL_PANEL      BITMAP                  "..\\RES\\PM_SKILL_PANEL.bmp"
 
-IDB_POKEMON_BAR_FIRST_SELECT BITMAP             "..\\RES\\POKEMON_BAR_FIRST_SELECTED.bmp"
+IDB_POKEMON_BAR_FIRST_SELECT BITMAP                  "..\\RES\\POKEMON_BAR_FIRST_SELECTED.bmp"
 
 IDB_POKEMON_BAR_SELECT  BITMAP                  "..\\RES\\POKEMON_BAR_SELECTED.bmp"
 
@@ -382,13 +382,57 @@ IDB_SKILL_LEER4         BITMAP                  "..\\RES\\skill_leer4.bmp"
 
 IDB_SKILL_LEER5         BITMAP                  "..\\RES\\skill_leer5.bmp"
 
+IDB_GREEN_FLOWER2       BITMAP                  "..\\RES\\green_flower2.bmp"
+
+IDB_GREEN_FLOWER3       BITMAP                  "..\\RES\\green_flower3.bmp"
+
+IDB_PM_HOOH_BACK        BITMAP                  "..\\RES\\hooh_back.bmp"
+
+IDB_PM_HOOH_FRONT       BITMAP                  "..\\RES\\hooh_front.bmp"
+
+IDB_ICON_PM_HOOH        BITMAP                  "..\\RES\\icon_pm_hooh.bmp"
+
+IDB_SKILL_EMBER1        BITMAP                  "..\\RES\\skill_ember1.bmp"
+
+IDB_SKILL_EMBER2        BITMAP                  "..\\RES\\skill_ember2.bmp"
+
+IDB_SKILL_EMBER3        BITMAP                  "..\\RES\\skill_ember3.bmp"
+
+IDB_SKILL_EMBER4        BITMAP                  "..\\RES\\skill_ember4.bmp"
+
+IDB_SKILL_EMBER5        BITMAP                  "..\\RES\\skill_ember5.bmp"
+
+IDB_SKILL_EMBER6        BITMAP                  "..\\RES\\skill_ember6.bmp"
+
+IDB_SKILL_EMBER7        BITMAP                  "..\\RES\\skill_ember7.bmp"
+
+IDB_SKILL_EMBER8        BITMAP                  "..\\RES\\skill_ember8.bmp"
+
+IDB_SKILL_EMBER9        BITMAP                  "..\\RES\\skill_ember9.bmp"
+
+IDB_SKILL_EMBER10       BITMAP                  "..\\RES\\skill_ember10.bmp"
+
+IDB_SKILL_EMBER11       BITMAP                  "..\\RES\\skill_ember11.bmp"
+
+IDB_SKILL_EMBER12       BITMAP                  "..\\RES\\skill_ember12.bmp"
+
+IDB_SKILL_EMBER13       BITMAP                  "..\\RES\\skill_ember13.bmp"
+
+IDB_SKILL_EMBER14       BITMAP                  "..\\RES\\skill_ember14.bmp"
+
+IDB_SKILL_EMBER15       BITMAP                  "..\\RES\\skill_ember15.bmp"
+
+IDB_SKILL_EMBER16       BITMAP                  "..\\RES\\skill_ember16.bmp"
+
+IDB_SKILL_EMBER17       BITMAP                  "..\\RES\\skill_ember17.bmp"
+
+IDB_SKILL_EMBER18       BITMAP                  "..\\RES\\skill_ember18.bmp"
+
+IDB_BURN_ICON           BITMAP                  "..\\RES\\BURN_ICON.bmp"
+
+IDB_CURSOR              BITMAP                  "..\\RES\\item_cursor.bmp"
+
 IDB_SHOP_MAP            BITMAP                  "..\\RES\\SHOP.bmp"
-
-ITEM_FIGHTERGLOVE       BITMAP                  "..\\RES\\IDB_VULNERARY.bmp"
-
-ITEM_VULNERARY          BITMAP                  "..\\RES\\IDB_FIGHTERGLOVE.bmp"
-
-TRADEMODE_SELECT        BITMAP                  "..\\RES\\TRADEMODE_SELECT_PANEL.bmp"
 
 SHOP_BLANK_PANEL        BITMAP                  "..\\RES\\SHOP_BLANK_PANEL.bmp"
 
@@ -400,28 +444,36 @@ SHOP_ITEMLIST_PANEL     BITMAP                  "..\\RES\\SHOP_ITEMLIST_PANEL.bm
 
 SHOP_MONEY_PANEL        BITMAP                  "..\\RES\\SHOP_MONEY_PANEL.bmp"
 
-IDB_CURSOR              BITMAP                  "..\\RES\\ITEM_CURSOR.bmp"
+TRADEMODE_SELECT        BITMAP                  "..\\RES\\TRADEMODE_SELECT_PANEL.bmp"
 
 IDB_USEITEM_PANEL       BITMAP                  "..\\RES\\USEITEM_PANEL.bmp"
 
-IDB_GIVEITEM_PANEL      BITMAP                  "..\\RES\\GIVETEM_PANEL.bmp"
-
 IDB_BLANK_PANEL         BITMAP                  "..\\RES\\BLANK_PANEL.bmp"
 
+IDB_GIVEITEM_PANEL      BITMAP                  "..\\RES\\GIVETEM_PANEL.bmp"
+
+ITEM_FIGHTERGLOVE       BITMAP                  "..\\RES\\IDB_FIGHTERGLOVE.bmp"
+
+ITEM_VULNERARY          BITMAP                  "..\\RES\\IDB_VULNERARY.bmp"
+
+IDB_USEONATK_PANEL      BITMAP                  "..\\RES\\IDB_USEONATK_PANEL.bmp"
+
+ITEM_POKEBALL           BITMAP                  "..\\RES\\ITEM_POKEBALL.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
-// 257
+// Cursor
 //
 
-IDC_GAMECURSOR          257                     "..\\res\\gamecurs.cur"
+IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
 
-#endif    // ¤¤¤å (ÁcÅé¡A¥xÆW) resources
+#endif    // ï¿½ï¿½ï¿½ï¿½ (ï¿½cï¿½ï¿½Aï¿½xï¿½W) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// ­^¤å (¬ü°ê) resources
+// ï¿½^ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -719,7 +771,7 @@ BEGIN
     ID_BUTTON_UNITTEST      "Perform Unit Test"
 END
 
-#endif    // ­^¤å (¬ü°ê) resources
+#endif    // ï¿½^ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

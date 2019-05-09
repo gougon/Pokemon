@@ -50,7 +50,7 @@ class CMap
         virtual void OnShow() {}
         virtual bool IsCollision(int x, int y) { return true; }
         bool IsEntrance(int x, int y);
-		virtual void KeyDownListener(UINT nChar, CHero* hero) {}
+		virtual void KeyDownListener(UINT nChar, CHero &hero) {}
         virtual int ReturnMapID() { return 0; }
         virtual int CheckID(int, int, int) { return 0; }
         virtual bool IsWarZone(int x, int y) { return false; }		// for derive class

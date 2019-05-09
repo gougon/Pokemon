@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Resource.h"
 #include <string>
 #include <mmsystem.h>
@@ -47,11 +47,6 @@ int CHero::GetCount()
     return count;
 }
 
-int * CHero::GetMoney()
-{
-	return &this->money;
-}
-
 void CHero::SetCount(int count)
 {
     this->count = count;
@@ -64,31 +59,36 @@ void CHero::Initialize()
     x = X_POS;
     y = Y_POS;
     count = 0;
-    atkProb = 1;
+    atkProb = 2;
     money = 1000;
     canMove = false;
     isDialog = false;
     isForwardDown = true;
-	invisible = false;
     isForwardLeft = isForwardRight = isForwardUp = false;
     isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
     HeroMovingBack.SetDelayCount(5);
     HeroMovingFront.SetDelayCount(5);
     HeroMovingLeft.SetDelayCount(5);
     HeroMovingRight.SetDelayCount(5);
+	invisible = false;
     PokemonFactory pmfactory;
     SkillFactory skfactory;
     Pokemon* pm = pmfactory.CreatePokemon(treecko);
     pm->SetLevel(6);
 	pm->SetNowExp(120);
-	pm->SetRemainHP(1);
     pm->AddSkill(skfactory.CreateSkill(impact, styleSelf));
 	Pokemon* pm2 = pmfactory.CreatePokemon(jirachi);
 	pm2->SetLevel(20);
 	pm2->AddSkill(skfactory.CreateSkill(impact, styleSelf));
 	pm2->AddSkill(skfactory.CreateSkill(leer, styleSelf));
+	Pokemon* pm3 = pmfactory.CreatePokemon(hooh);
+	pm3->SetLevel(5);
+	pm3->SetRemainHP(15);
+	pm3->AddSkill(skfactory.CreateSkill(impact, styleSelf));
+	pm3->AddSkill(skfactory.CreateSkill(ember, styleSelf));
     AddPokemon(pm);
 	AddPokemon(pm2);
+	AddPokemon(pm3);
 }
 void CHero::LoadBitmap()
 {
@@ -216,7 +216,7 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
 void CHero::OnShow()
 {
 	if (!invisible) {
-		//©¹¤W¨«
+		//ï¿½ï¿½ï¿½Wï¿½ï¿½
 		if (isMovingUp)
 		{
 			HeroMovingBack.SetTopLeft(HERO_X, HERO_Y);
@@ -229,7 +229,7 @@ void CHero::OnShow()
 			HeroBack.ShowBitmap();
 		}
 
-		//©¹¤U¨«
+		//ï¿½ï¿½ï¿½Uï¿½ï¿½
 		if (isMovingDown)
 		{
 			HeroMovingFront.SetTopLeft(HERO_X, HERO_Y);
@@ -242,7 +242,7 @@ void CHero::OnShow()
 			HeroFront.ShowBitmap();
 		}
 
-		//©¹¥ª¨«
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (isMovingLeft)
 		{
 			HeroMovingLeft.SetTopLeft(HERO_X, HERO_Y);
@@ -255,7 +255,7 @@ void CHero::OnShow()
 			HeroLeft.ShowBitmap();
 		}
 
-		//©¹¤S¨«
+		//ï¿½ï¿½ï¿½Sï¿½ï¿½
 		if (isMovingRight)
 		{
 			HeroMovingRight.SetTopLeft(HERO_X, HERO_Y);
@@ -284,15 +284,12 @@ void CHero::StartDialog()
 {
     isDialog = true;
 }
-
 void CHero::IsInvisiable(bool inv)
 {
 	this->invisible = inv;
 }
-
 void CHero::EndDialog()
 {
-	invisible = false;
     isDialog = false;
 }
 
@@ -329,13 +326,33 @@ void CHero::SetDirection(int flag)
     isForwardDown = (flag == 3) ? true : false;
     isForwardRight = (flag == 4) ? true : false;
 }
-bool CHero::CheckForward(UINT nChar , CMap* m)
+bool CHero::CheckForward(CMap** m)
 {
-	int eventoccurindex = 0;
-	m->KeyDownListener(nChar, this);
+    int eventCheckIndex = 1;
 
-	//add event in there 
-    return false;
+    if (isForwardLeft)
+    {
+        eventCheckIndex = (*m)->CheckID(x - STEP_SIZE, y, GetDirection());
+    }
+
+    if (isForwardRight)
+    {
+        eventCheckIndex = (*m)->CheckID(x + SM, y, GetDirection());
+    }
+
+    if (isForwardUp)
+    {
+        eventCheckIndex = (*m)->CheckID(x, y - STEP_SIZE, GetDirection());
+    }
+
+    if (isForwardDown)
+    {
+        eventCheckIndex = (*m)->CheckID(x, y + SM, GetDirection());
+    }
+
+    if (eventCheckIndex == WeibaiTown_pick_Pokemomball) gameMenu->RecieveData(0, 1);
+
+    return eventCheckIndex;
 }
 int CHero::GetDirection()
 {
@@ -344,10 +361,26 @@ int CHero::GetDirection()
     else if (isForwardLeft) return 2;
     else return 3;
 }
-void CHero::ReceiveData(CMap * m, ActionObject * i)
+void CHero::trigger(CMap* m)
 {
-	this->gameMap = m;
-	this->gameMenu = i;
+    isDialog =  CheckForward(&m);
+}
+void CHero::ReceiveData(CMap* m, ActionObject* i)
+{
+    gameMap = m;
+    gameMenu = i;
+}
+void CHero::GetItem(int itemID, int amount)
+{
+	gameMenu->RecieveData(itemID, amount);
+}
+int * CHero::GetMoney()
+{
+	return &money;
+}
+ActionObject * CHero::GetBag()
+{
+	return dynamic_cast<Menu*>(gameMenu)->GetBag();
 }
 void CHero::SetXY(int nx, int ny)
 {
@@ -357,15 +390,16 @@ void CHero::SetXY(int nx, int ny)
 
 void CHero::KeyIn(UINT nChar)
 {
-    const char KEY_LEFT = 0x25; // keyboard¥ª½bÀY
-    const char KEY_UP = 0x26; // keyboard¤W½bÀY
-    const char KEY_RIGHT = 0x27; // keyboard¥k½bÀY
-    const char KEY_DOWN = 0x28; // keyboard¤U½bÀY
+    const char KEY_LEFT = 0x25; // keyboardå·¦ç®­é ­
+    const char KEY_UP = 0x26; // keyboardä¸Šç®­é ­
+    const char KEY_RIGHT = 0x27; // keyboardå³ç®­é ­
+    const char KEY_DOWN = 0x28; // keyboardä¸‹ç®­é ­
     const char KEY_Z = 0x5a;
 
     if (InDialog())
         SetCanMove(false);
     else SetCanMove(true);
+
     if (!IsMoving() && GetCount() == 0 && !InDialog())
     {
         if (nChar == KEY_UP)
@@ -392,14 +426,12 @@ void CHero::KeyIn(UINT nChar)
             SetMovingRight(true);
         }
     }
-	gameMap->KeyDownListener(nChar, this); 
-	/*
+
     if (nChar == KEY_Z)
     {
-         SetCanMove(CheckForward(nChar, gameMap));
-		 TRACE("%d %d\n", GetX1() / SM, GetY1() / SM);
-		 //CheckForward(nChar , gameMap);
-    }*/
+        SetCanMove(false);
+        // trigger(gameMap);
+    }
 }
 
 void CHero::ChangeMap(CMap** m)
@@ -423,11 +455,6 @@ Pokemon* CHero::GetPokemon(int order)
 vector<Pokemon*>* CHero::GetPokemons()
 {
 	return &pokemons;
-}
-
-ActionObject* CHero::GetBag()
-{
-	return dynamic_cast<Menu*>(gameMenu)->GetBag();
 }
 
 int CHero::GetPmNum()

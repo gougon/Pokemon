@@ -40,6 +40,7 @@ namespace game_framework {
 		case 2:
 			if (isAnime) {
 				for (int i = 0; i < pmNum; ++i) {
+					TRACE("\nball[%d] left = %d, top = %d\n", i, ball[i].Left(), ball[i].Top());
 					ball[i].OnShow();
 				}
 			}
@@ -51,10 +52,10 @@ namespace game_framework {
 	{
 		switch (count) {
 		case 0:
-			dialogBox.SetText("good effort! this is pokemon hospital!;it can get your pokemons strength back!;");
+			dialogBox.SetText("good effort. this is pm hospital;it can get your pm strength back");
 			break;
 		case 1:
-			dialogBox.SetText("do you want to take your pokemons rest?");
+			dialogBox.SetText("do you want to take your pokemons;rest?");
 			switch (choice) {
 			case yes:
 				cursor.SetTopLeft(CURSOR_LEFT, CURSOR_TOP);
@@ -94,7 +95,7 @@ namespace game_framework {
 	void Nurse::LoadBitmap()
 	{
 		ynPanel.LoadBitmap(BG_YESNO);
-		cursor.LoadBitmap(IDB_CURSOR, RGB(255,0,0));
+		cursor.LoadBitmap(IDB_CURSOR);
 	}
 
 	void Nurse::KeyDownListener(UINT nChar)
@@ -144,7 +145,9 @@ namespace game_framework {
 		for (int i = 0; i < pmNum; ++i) {
 			int row = i / 2;
 			int col = i % 2;
-			SetBall(ball[i], row, col);
+			TRACE("\nball[%d] address = %d\n", i, &ball[i]);
+			SetBall(&ball[i], row, col);
+			TRACE("\nball top = %d, left = %d\n", ball[i].Top(), ball[i].Left());
 		}
 	}
 
@@ -175,25 +178,27 @@ namespace game_framework {
 		return true;
 	}
 
-	void Nurse::SetBall(CAnimation &ball, int row, int col)
+	void Nurse::SetBall(CAnimation *ball, int row, int col)
 	{
-		ball.AddBitmap(HEAL_BALL1);
-		ball.AddBitmap(HEAL_BALL2);
-		ball.AddBitmap(HEAL_BALL3);
-		ball.AddBitmap(HEAL_BALL4);
-		ball.AddBitmap(HEAL_BALL5);
-		ball.AddBitmap(HEAL_BALL6);
-		ball.AddBitmap(HEAL_BALL7);
-		ball.AddBitmap(HEAL_BALL8);
-		ball.AddBitmap(HEAL_BALL9);
-		ball.AddBitmap(HEAL_BALL10);
-		ball.AddBitmap(HEAL_BALL11);
-		ball.AddBitmap(HEAL_BALL12);
+		TRACE("\nball address = %d\n", &ball);
+		ball->AddBitmap(HEAL_BALL1);
+		ball->AddBitmap(HEAL_BALL2);
+		ball->AddBitmap(HEAL_BALL3);
+		ball->AddBitmap(HEAL_BALL4);
+		ball->AddBitmap(HEAL_BALL5);
+		ball->AddBitmap(HEAL_BALL6);
+		ball->AddBitmap(HEAL_BALL7);
+		ball->AddBitmap(HEAL_BALL8);
+		ball->AddBitmap(HEAL_BALL9);
+		ball->AddBitmap(HEAL_BALL10);
+		ball->AddBitmap(HEAL_BALL11);
+		ball->AddBitmap(HEAL_BALL12);
 
-		int left = (col == 0) ? 225 : 225 + ball.Width();
+		int left = (col == 0) ? 225 : 225 + ball->Width();
 		int top = 90 + HEAL_BALL_INTERVAL * row;
-		ball.SetTopLeft(left, top);
-		ball.SetDelayCount(3);
+		ball->SetTopLeft(left, top);
+		TRACE("\nball top = %d, left = %d\n", ball->Top(), ball->Left());
+		ball->SetDelayCount(3);
 	}
 
 	void Nurse::Heal()

@@ -20,6 +20,7 @@ namespace game_framework
 		virtual void OnMove();
 		virtual void LoadBitmap();
 		virtual void KeyDownListener(UINT nChar);
+		virtual void SetTopLeft(){}
 		void ReceiveData(CHero* hero, ActionObject* bag);
 		void InsertItem(int itemId);
 		void SetMoney(int* money);

@@ -170,12 +170,11 @@ namespace game_framework
 					isItem = true;
 					if (order != itemClose) {
 						items[order]->Start();
-						if (order == itemBag)
-						{
+						if (order == itemBag) {
 							dynamic_cast<PokemonMenu*>(items[itemPokemonMenu])->ReceiveData(pokemons);
 							dynamic_cast<Bag*>(items[itemBag])->RecievePokemonMenu(items[itemPokemonMenu]);
+						
 						}
-
 						if (order == itemPokemonMenu)
 						{
 							dynamic_cast<PokemonMenu*>(items[order])->ReceiveData(pokemons);
@@ -219,11 +218,8 @@ namespace game_framework
 	{
 		return dynamic_cast<PokemonMenu*>(items[itemPokemonMenu]);
 	}
-	Bag *Menu::GetBag()
+	Bag * Menu::GetBag()
 	{
-		return dynamic_cast<Bag*>(items[itemBag]);
-	}
-	void Menu::RecieveMoney(int* money)
-	{
+		return dynamic_cast<Bag*>(items[itemBag]);;
 	}
 }

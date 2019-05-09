@@ -11,7 +11,7 @@
 
 namespace game_framework {
 	PokemonMenu::PokemonMenu() :
-		ActionObject(), order(0), sltPm(0), swapPm(0), isOprtPanel(false), isOprtSlt(false), isItem(false), isAtkChange(false)
+		ActionObject(), order(0), sltPm(0), swapPm(0), isOprtPanel(false), isOprtSlt(false), isItem(false), isAtkChange(false), isUseItem(false), isTakeItem(false) , inShowText(false)
 	{
 		// empty body
 	}
@@ -30,6 +30,7 @@ namespace game_framework {
 		sltPm = 0;
 		swapPm = 0;
 		selectPanel.SetTopLeft(0, 0);
+		TRACE("pmmenu init\n");
 		//
 		getItem = false;
 		isUseItem = false;
@@ -40,7 +41,7 @@ namespace game_framework {
 		//
 		operationPanel.SetTopLeft(PANEL_LEFT, PANEL_TOP);
 		cursor.SetTopLeft(CURSOR_LEFT, CURSOR_TOP);
-		useItemPanel.SetTopLeft(DESCRIPTIONPANEL_LEFT , DESCRIPTIONPANEL_TOP);
+		useItemPanel.SetTopLeft(DESCRIPTIONPANEL_LEFT, DESCRIPTIONPANEL_TOP);
 		giveItemPanel.SetTopLeft(DESCRIPTIONPANEL_LEFT, DESCRIPTIONPANEL_TOP);
 		blankPanel.SetTopLeft(DESCRIPTIONPANEL_LEFT, DESCRIPTIONPANEL_TOP);
 		description.SetTopLeft(DESCRIPTIONPANEL_LEFT + 20, DESCRIPTIONPANEL_TOP + 20);
@@ -125,17 +126,20 @@ namespace game_framework {
 				}
 			}
 		}
+		if (inShowText) {
+			TRACE("inSHOWtext\n");
+		}
 	}
 
 	void PokemonMenu::LoadBitmap()
 	{
 		selectPanel.LoadBitmap(IDB_POKEMON_SELECT_PANEL, RGB(255, 0, 0));
 		operationPanel.LoadBitmap(IDB_POKEMON_OPERATION_PANEL);
-		cursor.LoadBitmap(IDB_CURSOR, RGB(255, 0, 0));
+		cursor.LoadBitmap(IDB_CURSOR);
 
 		useItemPanel.LoadBitmap(IDB_USEITEM_PANEL);
 		giveItemPanel.LoadBitmap(IDB_GIVEITEM_PANEL);
-		blankPanel.LoadBitmapA(IDB_BLANK_PANEL);
+		blankPanel.LoadBitmap(IDB_BLANK_PANEL);
 		description.LoadBitmap();
 
 		pmOprtView.LoadBitmap();
@@ -149,7 +153,7 @@ namespace game_framework {
 		const char KEY_RIGHT = 0x27;
 		const char KEY_Z = 0x5a;
 		const char KEY_X = 0x58;
-
+		
 		if (pmOprtView.IsWork()) {
 			pmOprtView.KeyDownListener(nChar);
 		}
@@ -182,7 +186,12 @@ namespace game_framework {
 				}
 				break;
 			case KEY_UP:
-				if (isOprtPanel) {
+				if (!isOprtPanel) {
+					if (sltPm != 0 && sltPm != 1) {
+						sltPm -= 1;
+					}
+				}
+				else {
 					if (!isItem && order > 0) {
 						order -= 1;
 					}
@@ -191,14 +200,14 @@ namespace game_framework {
 						swapPm -= 1;
 					}
 				}
-				else {
-					if (sltPm != 0 && sltPm != 1) {
-						sltPm -= 1;
-					}
-				}
 				break;
 			case KEY_DOWN:
-				if (isOprtPanel) {
+				if (!isOprtPanel) {
+					if (sltPm != 0 && sltPm < (int)pokemons->size()) {
+						sltPm += 1;
+					}
+				}
+				else {
 					if (!isItem && order < 3) {
 						order += 1;
 					}
@@ -207,13 +216,9 @@ namespace game_framework {
 						swapPm += 1;
 					}
 				}
-				else {
-					if (sltPm != 0 && sltPm < (int)pokemons->size()) {
-						sltPm += 1;
-					}
-				}
 				break;
 			case KEY_Z:
+				TRACE("input Z\n");
 				if (itemCommend != 0) {
 					if (inShowText) {
 						itemCommend = 0;
@@ -294,7 +299,7 @@ namespace game_framework {
 	{
 		isWork = false;
 		order = sltPm = swapPm = 0;
-		isOprtPanel = isOprtSlt = isAtkChange = isItem = false;
+		inShowText = isOprtPanel = isOprtSlt = isAtkChange = isItem = false;
 	}
 
 	void PokemonMenu::ReceiveData(vector<Pokemon*>* pms)
@@ -308,7 +313,6 @@ namespace game_framework {
 	{
 		isAtkChange = true;
 	}
-
 	void PokemonMenu::GetCurrentItemCommend(int commend, int itemID)
 	{
 		this->itemCommend = commend;
@@ -340,7 +344,6 @@ namespace game_framework {
 
 		return false;
 	}
-
 	// private
 
 	void PokemonMenu::SetPmBar()

@@ -18,7 +18,7 @@ class Shop_Map : public CMap
         virtual bool IsCollision(int x, int y);
         virtual CMap* ChangeMap(int x, int y, CHero* hero);
         virtual int checkID(int x, int y, int herodirection);
-		virtual void KeyDownListener(UINT nChar, CHero* hero);
+		virtual void KeyDownListener(UINT nChar, CHero& hero);
     private:
 		Clerk clerk;
         bool inEvent;

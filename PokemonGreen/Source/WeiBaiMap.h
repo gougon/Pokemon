@@ -27,16 +27,18 @@ class WeiBaiMap : public CMap
         virtual void InitMap();
         virtual void LoadBitmap();
         virtual void OnShow();
+		virtual void OnMove();
         virtual bool IsCollision(int x, int y);
         virtual bool IsWarZone(int x, int y);
         virtual void ProduceEnemy(CHero* hero, AtkInterface &atkInterface);
         virtual CMap* ChangeMap(int x, int y, CHero* hero);
-		virtual void KeyDownListener(UINT nChar, CHero* hero);
+		virtual void KeyDownListener(UINT nChar, CHero &hero);
         virtual void StartAtk(CHero* self, Pokemon* enemy, AtkInterface &atkInterface);
 		void KeyDownListener(UINT nchar) { /*empty body*/ }
     private:
         bool inEvent;
         CDialog dialogBox;
+		CAnimation flower;
         CPickableObject pickable_Antidote;
         vector<int> hitImg = { 0, 3, 6, 11 };
         vector<int> warZone = { 10 };

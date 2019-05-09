@@ -33,12 +33,18 @@ CItem::CItem(int itemID)
 		this->itemImage.LoadBitmap(ITEM_VULNERARY);
 		break;
 	case 3:
-		this->categorie = 4;
+		this->categorie = 5;
 		this->name = "glove";
 		this->description = "add 20atk";
 		this->cost = 100;
 		this->itemImage.LoadBitmap(ITEM_FIGHTERGLOVE);
 		break;
+	case 4:
+		this->categorie = 2;
+		this->name = "pokeball";
+		this->description = "catch pokemon";
+		this->cost = 150;
+		this->itemImage.LoadBitmap(ITEM_POKEBALL);
 	}
 }
 int CItem::GetID()

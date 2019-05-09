@@ -41,7 +41,7 @@ namespace game_framework {
 		game_bag = new Bag();
 		clerkTalk.InitDialog('n');
 
-		for (int initialitem = 0; initialitem <= 3; initialitem++)
+		for (int initialitem = 0; initialitem <= 4; initialitem++)
 		{
 			InsertItem(initialitem);
 		}
@@ -193,8 +193,8 @@ namespace game_framework {
 
 					if (selectModeOrder == 2) {
 						inSellMode = true;
-						dynamic_cast<Bag*>(game_bag)->SetSellMode(money);
 						game_bag->Start();
+						dynamic_cast<Bag*>(game_bag)->SetSellMode(money);
 					}
 
 					if (selectModeOrder == 3) End();

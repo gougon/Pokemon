@@ -26,12 +26,12 @@ class Menu : public ActionObject
         virtual void OnMove();
         virtual void LoadBitmap();
         virtual void KeyDownListener(UINT nChar);
+		virtual void SetTopLeft() {}
         void End();
         void RecieveData(int itemID, int amount);
-		void RecieveMoney(int* money);
         void SetPokemons(vector<Pokemon*>* pms);
 		PokemonMenu *GetPokemonMenu();
-		Bag *GetBag();
+		Bag* GetBag();
 	private:
         const int MENU_LEFT = 474;
         const int MENU_TOP = 1;

@@ -2,16 +2,17 @@
 enum Item_ID
 {
 	Item_Antidote, //0
-	Item_SmallVulnerary,	//1
-	Item_BigVulnerary,	//2
-	Item_FighterGlove	//3
+	Item_SmallVulnerary, //1
+	Item_BigVulnerary,	 //2
+	Item_FighterGlove,	 //3
+	Item_PokeBall		//4
 };
 namespace game_framework
 {
-class CItem
-{
-    public:
-        CItem(int itemID);
+	class CItem
+	{
+	public:
+		CItem(int itemID);
 		int GetID();
 		int GetCost();
 		int GetCategorie();
@@ -25,5 +26,5 @@ class CItem
 		string name;
 		string description;
 		CMovingBitmap itemImage;
-};
+	};
 }

@@ -286,6 +286,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="Source\GameObject.cpp" />
     <ClCompile Include="Source\gameView.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -301,6 +302,7 @@
     <ClCompile Include="Source\MainMenu.cpp" />
     <ClCompile Include="Source\Menu.cpp" />
     <ClCompile Include="Source\Nurse.cpp" />
+    <ClCompile Include="Source\PmHooh.cpp" />
     <ClCompile Include="Source\PmJirachi.cpp" />
     <ClCompile Include="Source\PmOprtView.cpp" />
     <ClCompile Include="Source\PmTreecko.cpp" />
@@ -313,10 +315,13 @@
     <ClCompile Include="Source\Self.cpp" />
     <ClCompile Include="Source\Shop_map.cpp" />
     <ClCompile Include="Source\Skill.cpp" />
+    <ClCompile Include="Source\SkillEmber.cpp" />
     <ClCompile Include="Source\SkillFactory.cpp" />
+    <ClCompile Include="Source\SkillFire.cpp" />
     <ClCompile Include="Source\SkillImpact.cpp" />
     <ClCompile Include="Source\SkillLeer.cpp" />
     <ClCompile Include="Source\SkillNormal.cpp" />
+    <ClCompile Include="Source\Status.cpp" />
     <ClCompile Include="Source\StdAfx.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -365,6 +370,7 @@
     <ClInclude Include="Source\CText.h" />
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
+    <ClInclude Include="Source\GameObject.h" />
     <ClInclude Include="Source\gameView.h" />
     <ClInclude Include="Source\Hospital_Map.h" />
     <ClInclude Include="Source\Illustration.h" />
@@ -372,6 +378,7 @@
     <ClInclude Include="Source\MainMenu.h" />
     <ClInclude Include="Source\Menu.h" />
     <ClInclude Include="Source\Nurse.h" />
+    <ClInclude Include="Source\PmHooh.h" />
     <ClInclude Include="Source\PmJirachi.h" />
     <ClInclude Include="Source\PmOprtView.h" />
     <ClInclude Include="Source\PmTreecko.h" />
@@ -385,10 +392,13 @@
     <ClInclude Include="Source\Self.h" />
     <ClInclude Include="Source\Shop_map.h" />
     <ClInclude Include="Source\Skill.h" />
+    <ClInclude Include="Source\SkillEmber.h" />
     <ClInclude Include="Source\SkillFactory.h" />
+    <ClInclude Include="Source\SkillFire.h" />
     <ClInclude Include="Source\SkillImpact.h" />
     <ClInclude Include="Source\SkillLeer.h" />
     <ClInclude Include="Source\SkillNormal.h" />
+    <ClInclude Include="Source\Status.h" />
     <ClInclude Include="Source\StdAfx.h" />
     <ClInclude Include="Source\gamelib.h" />
     <ClInclude Include="Source\mygame.h" />
@@ -427,7 +437,6 @@
     <Image Include="RES\BG_YESNO.bmp" />
     <Image Include="RES\billboard.bmp" />
     <Image Include="res\bitmap12.bmp" />
-    <Image Include="res\bitmap18.bmp" />
     <Image Include="res\bitmap3.bmp" />
     <Image Include="RES\bitmap4.bmp" />
     <Image Include="res\bitmap5.bmp" />
@@ -468,6 +477,7 @@
     <Image Include="res\bmp00030.bmp" />
     <Image Include="res\bmp00031.bmp" />
     <Image Include="res\bmp00032.bmp" />
+    <Image Include="RES\BURN_ICON.bmp" />
     <Image Include="RES\DIAG.bmp" />
     <Image Include="RES\enemy_bar.bmp" />
     <Image Include="RES\expBar.bmp" />
@@ -480,6 +490,8 @@
     <Image Include="RES\grass_land.bmp" />
     <Image Include="RES\GREEN_DIAG.bmp" />
     <Image Include="RES\green_flower.bmp" />
+    <Image Include="RES\green_flower2.bmp" />
+    <Image Include="RES\green_flower3.bmp" />
     <Image Include="RES\green_grass.bmp" />
     <Image Include="RES\GREEN_TREE.bmp" />
     <Image Include="RES\heal_ball1.bmp" />
@@ -509,16 +521,21 @@
     <Image Include="RES\HERO_RIGHT_TWO.bmp" />
     <Image Include="RES\HOME.bmp" />
     <Image Include="RES\HOME_LOG.bmp" />
+    <Image Include="RES\hooh_back.bmp" />
+    <Image Include="RES\hooh_front.bmp" />
     <Image Include="RES\HOSPITAL.bmp" />
     <Image Include="RES\hospital_inside.bmp" />
     <Image Include="RES\hp_green.bmp" />
     <Image Include="RES\hp_red.bmp" />
     <Image Include="RES\hp_yellow.bmp" />
+    <Image Include="RES\icon_pm_hooh.bmp" />
     <Image Include="RES\icon_pm_jirachi.bmp" />
     <Image Include="RES\icon_pm_treecko.bmp" />
     <Image Include="RES\IDB_FIGHTERGLOVE.bmp" />
+    <Image Include="RES\IDB_USEONATK_PANEL.bmp" />
     <Image Include="RES\IDB_VULNERARY.bmp" />
     <Image Include="RES\item_cursor.bmp" />
+    <Image Include="RES\ITEM_POKEBALL.bmp" />
     <Image Include="RES\jirachi_back.bmp" />
     <Image Include="RES\jirachi_front.bmp" />
     <Image Include="RES\jump_land.bmp" />
@@ -551,6 +568,24 @@
     <Image Include="RES\SHOP_IMAGE_PANEL.bmp" />
     <Image Include="RES\SHOP_ITEMLIST_PANEL.bmp" />
     <Image Include="RES\SHOP_MONEY_PANEL.bmp" />
+    <Image Include="RES\skill_ember1.bmp" />
+    <Image Include="RES\skill_ember10.bmp" />
+    <Image Include="RES\skill_ember11.bmp" />
+    <Image Include="RES\skill_ember12.bmp" />
+    <Image Include="RES\skill_ember13.bmp" />
+    <Image Include="RES\skill_ember14.bmp" />
+    <Image Include="RES\skill_ember15.bmp" />
+    <Image Include="RES\skill_ember16.bmp" />
+    <Image Include="RES\skill_ember17.bmp" />
+    <Image Include="RES\skill_ember18.bmp" />
+    <Image Include="RES\skill_ember2.bmp" />
+    <Image Include="RES\skill_ember3.bmp" />
+    <Image Include="RES\skill_ember4.bmp" />
+    <Image Include="RES\skill_ember5.bmp" />
+    <Image Include="RES\skill_ember6.bmp" />
+    <Image Include="RES\skill_ember7.bmp" />
+    <Image Include="RES\skill_ember8.bmp" />
+    <Image Include="RES\skill_ember9.bmp" />
     <Image Include="RES\skill_impact1.bmp" />
     <Image Include="RES\skill_impact2.bmp" />
     <Image Include="RES\skill_leer1.bmp" />

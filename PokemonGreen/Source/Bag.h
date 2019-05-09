@@ -18,11 +18,15 @@ class Bag : public ActionObject
         virtual void OnMove();
         virtual void LoadBitmap();
         virtual void KeyDownListener(UINT nChar);
+		virtual void SetTopLeft() {}
         void RecievePokemonMenu(ActionObject*);
         void AddItem(int, int);
         void DropItem(int, int);
+		void SetBattleMode();
         void SetSellMode(int* money);
         int GetItemAmount(int itemID);
+		int SelectPokeball();
+		void Start();
         void End();
     private:
 		const int CAT_LOC_LEFT = 105;
@@ -70,6 +74,10 @@ class Bag : public ActionObject
 		CText currentMoney;
 		bool inSellMode, inShowText;
 		int *money;
+		/*battle mode*/
+		int ballID;
+		bool inBattle , isSelectball;
+		CMovingBitmap useOnAttack_Panel;
 
         bool inPokemonMenu, inPanel, inItemamount, inYesno, yesnoChooser;
 		vector<CItem*> items;

@@ -14,6 +14,7 @@ class Self : public ActionObject
         void OnMove();
         void LoadBitmap();
         void KeyDownListener(UINT nChar);
+		virtual void SetTopLeft() {}
     private:
         CMovingBitmap self_image;
 };

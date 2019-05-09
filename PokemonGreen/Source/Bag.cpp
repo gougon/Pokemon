@@ -27,7 +27,9 @@ void Bag::Init()
     chooser = 0;
     dropAmount = 1;
 	inShowText = false;
-	inSellMode , inShowText ,inItemamount, inYesno, inPanel, yesnoChooser = false;
+	inSellMode = false;
+	inBattle = false;
+	inItemamount, inYesno, inPanel, yesnoChooser = false;
     items.clear();
 	//POSITON SET
 	background_image.SetTopLeft(0, 0);
@@ -39,6 +41,7 @@ void Bag::Init()
 	item_image.SetTopLeft(ITEM_IMAGE_LEFT, ITEM_IMAGE_TOP);
 	description.SetTopLeft(ITEM_DESCRIPTION_LEFT, ITEM_DESCRIPTION_TOP);
 	money_panel.SetTopLeft(MONEY_PANEL_LEFT, MONEY_PANEL_TOP);
+	useOnAttack_Panel.SetTopLeft(YESNO_PANEL_LEFT, YESNO_PANEL_TOP);
 	currentMoney.SetTopLeft(CURRENTMONEY_LEFT, CURRENTMONEY_TOP);
     //PokemonMENU
     pk_Menu = new PokemonMenu();
@@ -79,13 +82,36 @@ void Bag::OnShow()
 			SelectItem()->GetImage()->ShowBitmap();
 			description.SetText(SelectItem()->GetDescription());
 			description.OnShow();
+			//TRACE("current cat and chooser: %d %d\n", categorie_flagIndex, chooser);
 		}
 		else {
 			item_image.ShowBitmap();
 			description.SetText("back");
 			description.OnShow();
 		}
-		if (!inSellMode) {
+		if (inSellMode) {
+			if (inShowText || inYesno || inItemamount) {
+				clerkDialog.OnShow();
+				money_panel.ShowBitmap();
+				currentMoney.SetText(to_string(*(money)));
+				currentMoney.OnShow();
+			}
+			if (inYesno) {
+				yesno_panel.ShowBitmap();
+				panel_selector.ShowBitmap();
+			}
+			if (inItemamount) {
+				amountSelect_panel.ShowBitmap();
+				drop_amount.OnShow();
+			}
+		}
+		else if (inBattle) {
+			if (inYesno) {
+				useOnAttack_Panel.ShowBitmap();
+				panel_selector.ShowBitmap();
+			}
+		}
+		else {
 			if (inYesno) {
 				yesno_panel.ShowBitmap();
 				panel_selector.ShowBitmap();
@@ -99,21 +125,6 @@ void Bag::OnShow()
 				panel_selector.ShowBitmap();
 			}
 		}
-		else {
-			if (inShowText || inYesno || inItemamount) {
-				clerkDialog.OnShow();
-				money_panel.ShowBitmap();
-				currentMoney.OnShow();
-			}
-			if (inYesno) {
-				yesno_panel.ShowBitmap();
-				panel_selector.ShowBitmap();
-			}
-			if (inItemamount) {
-				amountSelect_panel.ShowBitmap();
-				drop_amount.OnShow();	
-			}
-		}
 	}
 }
 
@@ -125,7 +136,6 @@ void Bag::OnMove()
 		cursor.OnMove();
 		if (inSellMode) {
 			clerkDialog.OnMove();
-			currentMoney.SetText(to_string(*(money)));
 			if (inShowText) {
 				if(yesnoChooser) clerkDialog.SetText("thank you very much.");
 				else clerkDialog.SetText("dont let me see you.");
@@ -140,6 +150,12 @@ void Bag::OnMove()
 				amountSelect_panel.SetTopLeft(ITEMAMOUNT_PANEL_LEFT, ITEMAMOUNT_PANEL_TOP - 150);
 				drop_amount.SetText(to_string(dropAmount));
 				clerkDialog.SetText("i give you " + to_string(int(SelectItem()->GetCost()*dropAmount*0.5)) + " to buy this stuff");
+			}
+		}
+		else if (inBattle) {
+			if (inYesno) {
+				if (yesnoChooser) panel_selector.SetTopLeft(YESNOCHOOSER_LEFT, YESNOCHOOSER_TOP1);
+				else panel_selector.SetTopLeft(YESNOCHOOSER_LEFT, YESNOCHOOSER_TOP2);
 			}
 		}
 		else {
@@ -168,12 +184,12 @@ void Bag::OnMove()
 					break;
 				}
 			}
-			if (dynamic_cast<PokemonMenu*>(pk_Menu)->SuccessToUseItem() || dynamic_cast<PokemonMenu*>(pk_Menu)->SuccessToTakeItem())
-			{
-				TRACE("drop : %d\n", currentID);
-				DropItem(SelectItem()->GetID(), 1);
-				End();
-			}
+		}
+		if (dynamic_cast<PokemonMenu*>(pk_Menu)->SuccessToUseItem() || dynamic_cast<PokemonMenu*>(pk_Menu)->SuccessToTakeItem())
+		{
+			TRACE("drop : %d\n", currentID);
+			DropItem(SelectItem()->GetID(), 1);
+			End();
 		}
 		///// show everytime
 		switch (categorie_flagIndex)
@@ -233,6 +249,7 @@ void Bag::LoadBitmap()
 	clerkDialog.InitDialog('n');
 	money_panel.LoadBitmap(SHOP_MONEY_PANEL);
 	currentMoney.LoadBitmap();
+	useOnAttack_Panel.LoadBitmap(IDB_USEONATK_PANEL);
     //////////////////////
 }
 
@@ -325,6 +342,64 @@ void Bag::KeyDownListener(UINT nChar)
 					End();
 					break;
 				
+				}
+			}
+		}
+		else if (inBattle) {
+			if (inYesno) {
+				switch (nChar) {
+					case KEY_UP: yesnoChooser = true; break;
+					case KEY_DOWN: yesnoChooser = false; break;
+					case KEY_Z:
+						if (yesnoChooser) {
+							if (SelectItem()->GetCategorie() == 2) {
+								isSelectball = true;
+								ballID = SelectItem()->GetID();
+								End();
+							}
+							else {
+								dynamic_cast<PokemonMenu*>(pk_Menu)->GetCurrentItemCommend(1, SelectItem()->GetID());
+								pk_Menu->Start();
+							}
+						}
+						inYesno = false;
+						break;
+					case KEY_X:
+						inYesno = false;
+						break;
+				}
+			}
+			else {
+				switch (nChar) {
+				case KEY_UP:
+					if (chooser > 0) chooser--;
+					break;
+				case KEY_DOWN:
+					if (chooser < Get_CurrentCategorie_Size()) chooser++;
+					break;
+				case KEY_LEFT:
+					if (categorie_flagIndex > 1) {
+						chooser = 0;
+						categorie_flagIndex--;
+					}
+					break;
+				case KEY_RIGHT:
+					if (categorie_flagIndex < 5) {
+						chooser = 0;
+						categorie_flagIndex++;
+					}
+					break;
+				case KEY_Z:
+					if (chooser == Get_CurrentCategorie_Size()) {
+						TRACE("end\n");
+						End();
+					}
+					else inYesno = true;
+					break;
+				case KEY_X:
+					End();
+					break;
+
 				}
 			}
 		}
@@ -468,6 +543,10 @@ void Bag::DropItem(int itemId, int amount)
 		if (items.empty()) break;
 	}
 }
+void Bag::SetBattleMode()
+{
+	inBattle = true;
+}
 void Bag::SetSellMode(int* money)
 {
 	this->money = money;
@@ -477,9 +556,25 @@ int Bag::GetItemAmount(int itemID)
 {
     return item_amount[itemID];
 }
+int Bag::SelectPokeball()
+{
+	if (!isSelectball) return 0;	//no ball is select
+	else {
+		return ballID;
+	}
+}
+void Bag::Start()
+{
+	chooser = 0;
+	inBattle = false;
+	inSellMode = false;
+	isWork = true;
+}
 void Bag::End()
 {
 	chooser = 0;
+	inBattle = false;
+	inSellMode = false;
     isWork = false;
 }
 unsigned int Bag::Get_CurrentCategorie_Size()
@@ -493,11 +588,12 @@ unsigned int Bag::Get_CurrentCategorie_Size()
 }
 CItem* Bag::SelectItem()
 {
-	//chooser
 	int counter = 0;
 	for (vector<CItem*>::iterator item_itr = items.begin(); item_itr != items.end(); ++item_itr) {
-		if (counter == chooser) return (*item_itr);
-		if (categorie_flagIndex == (*item_itr)->GetCategorie()) counter++;
+		if (categorie_flagIndex == (*item_itr)->GetCategorie()) {
+			if (counter == chooser) return (*item_itr);
+			counter++;
+		}
 	}
 	return nullptr;
 }

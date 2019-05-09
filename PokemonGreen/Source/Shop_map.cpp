@@ -18,7 +18,8 @@ namespace game_framework {
 	}
 	void Shop_Map::OnMove()
 	{
-		if (clerk.IsWork()) clerk.OnMove();
+		if (clerk.IsWork()) 
+			clerk.OnMove();
 	}
 
 	void Shop_Map::InitMap()
@@ -98,7 +99,7 @@ namespace game_framework {
 		return 0;
 	}
 
-	void Shop_Map::KeyDownListener(UINT nChar, CHero* hero)
+	void Shop_Map::KeyDownListener(UINT nChar, CHero& hero)
 	{
 		TRACE("in shop\n");
 		const char KEY_Z = 0x5a;
@@ -106,9 +107,9 @@ namespace game_framework {
 			clerk.KeyDownListener(nChar);
 		}
 		else {
-			int x = hero->GetX1();
-			int y = hero->GetY1();
-			int direction = hero->GetDirection(); // 上左下右
+			int x = hero.GetX1();
+			int y = hero.GetY1();
+			int direction = hero.GetDirection(); // 上左下右
 			if (direction == 0) {
 				y -= SM;
 			}
@@ -125,8 +126,8 @@ namespace game_framework {
 			y /= SM;
 			if (nChar == KEY_Z) {
 					if (x == 16 && y == 18) {
-						clerk.ReceiveData(hero, hero->GetBag());
-						clerk.SetMoney(hero->GetMoney());
+						clerk.ReceiveData(&hero, hero.GetBag());
+						clerk.SetMoney(hero.GetMoney());
 						TRACE("receive bag\n");
 						clerk.Start();	
 				}

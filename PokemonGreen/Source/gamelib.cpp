@@ -94,7 +94,8 @@
  *   2012-03-21 V4.7
  *      1. Add SetCapture in CGameView::OnLButtonDown() and RelaseCapture in
  *         CGameView::OnLButtonUp() so that Mouse Events (OnLButtonUp and OnMouseMove)
- *         will be called even if the cursor is outside of the window.
+ *         will be called even if the 
+ is outside of the window.
  *   2012-05-13 V4.8
  *      1. Change release mode WINVER to 0x500 so that release mode can be correctly complied
  *         with VS 2010 (project->Game Properties->C/C++->Preprocessor Definitions->WINVER=0x500).
@@ -211,7 +212,7 @@ void CAnimation::Reset()
 void CAnimation::SetDelayCount(int dc)
 {
     GAME_ASSERT(dc > 0, "CAnimation: Delay count must be >= 1");
-    delay_count = dc;
+	delay_count = dc;
 }
 
 void CAnimation::SetTopLeft(int nx, int ny)
