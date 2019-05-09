@@ -6,6 +6,8 @@
 #include "CObject.h"
 #include "CPickableObject.h"
 #include "CEvent.h"
+#include "CFatguy.h"
+
 constexpr auto GREEN_GRASS = 2;
 constexpr auto GREEN_TREE = 3;
 constexpr auto GREEN_FLOWER = 4;
@@ -37,6 +39,8 @@ class WeiBaiMap : public CMap
 		void KeyDownListener(UINT nchar) { /*empty body*/ }
     private:
         bool inEvent;
+		int dialogState;
+		CFatguy fatguy;
         CDialog dialogBox;
 		CAnimation flower;
         CPickableObject pickable_Antidote;

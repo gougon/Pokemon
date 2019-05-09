@@ -38,6 +38,7 @@ namespace game_framework {
 	protected:
 		pmStyle pmstyle;
 		CAnimation atkAnime;
+		CAnimation atkEnemyAnime;
 		CSkill category;
 		string name, description;
 		int attribute, power, allpp, remainpp, animeCount;

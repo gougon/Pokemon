@@ -102,8 +102,10 @@
 #define FATGUY_RIGHT                    238
 #define LITTLE_GIRL_FRONT               239
 #define FATGUY_BACK                     240
+#define FATGUY_UP                       240
 #define IDB_BITMAP9                     241
 #define FATGUY_FRONT                    241
+#define FATGUY_DOWN                     241
 #define IDB_BATTLE_BACKGROUND           242
 #define IDB_BATTLE_GROUND               243
 #define IDB_BATTLE_HERO                 244
@@ -144,7 +146,6 @@
 #define IDB_MENU_TOP                    277
 #define IDB_POKEMON_OPERATION_PANEL     278
 #define IDB_POKEMON_BAR_UNSELECTED      279
-#define IDB_BITMAP16                    281
 #define IDB_POKEMON_BAR_FIRST_UNSELECTED 281
 #define IDB_POKEMON_BAR_SELECTED        282
 #define IDB_POKEMON_SELECT_PANEL        283
@@ -237,6 +238,24 @@
 #define IDB_USEONATK_PANEL              366
 #define IDB_BITMAP19                    367
 #define ITEM_POKEBALL                   367
+#define IDB_ENEMY_SKILL_EMBER1          368
+#define IDB_ENEMY_SKILL_EMBER2          369
+#define IDB_ENEMY_SKILL_EMBER3          370
+#define IDB_ENEMY_SKILL_EMBER4          371
+#define IDB_ENEMY_SKILL_EMBER5          372
+#define IDB_ENEMY_SKILL_EMBER6          373
+#define IDB_ENEMY_SKILL_EMBER7          374
+#define IDB_ENEMY_SKILL_EMBER8          375
+#define IDB_ENEMY_SKILL_EMBER9          376
+#define IDB_ENEMY_SKILL_EMBER10         377
+#define IDB_ENEMY_SKILL_EMBER11         378
+#define IDB_ENEMY_SKILL_EMBER12         379
+#define IDB_ENEMY_SKILL_EMBER13         380
+#define IDB_ENEMY_SKILL_EMBER14         381
+#define IDB_ENEMY_SKILL_EMBER15         382
+#define IDB_ENEMY_SKILL_EMBER16         383
+#define IDB_ENEMY_SKILL_EMBER17         384
+#define ITEM_BURNMEDICINE               385
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -249,7 +268,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        368
+#define _APS_NEXT_RESOURCE_VALUE        386
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

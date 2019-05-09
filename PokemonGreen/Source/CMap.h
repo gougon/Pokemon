@@ -52,7 +52,6 @@ class CMap
         bool IsEntrance(int x, int y);
 		virtual void KeyDownListener(UINT nChar, CHero &hero) {}
         virtual int ReturnMapID() { return 0; }
-        virtual int CheckID(int, int, int) { return 0; }
         virtual bool IsWarZone(int x, int y) { return false; }		// for derive class
         virtual void ProduceEnemy(CHero* hero, AtkInterface &atkInterface) { /* empty body */ }
         virtual CMap* ChangeMap(int x, int y, CHero* hero) { return new CMap(); }     // for derive class 

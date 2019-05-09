@@ -387,7 +387,14 @@ namespace game_framework {
 
             return false;
         }
-
+		if (itemID == Item_BurnMedicine) {
+			TRACE("use burn medicine\n");
+			if (GetStatus()->GetStatu() == statuBurn) {
+				SetStatus(none);
+				return true;
+			}
+			return false;
+		}
         return false;
     }
 

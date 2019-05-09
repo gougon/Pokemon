@@ -40,13 +40,16 @@ namespace game_framework
 		CAudio::Instance()->Play(AUDIO_WEIBAITOWN);
 
 		SetMXY(48, 87);			// 設定地圖總長寬格數
-		SetXY(18 * SM, 27 * SM);		// 設定初始位置
+		SetXY(18 * SM, 57 * SM);		// 設定初始位置
 		SetMap("area1");
+		fatguy.Initialize();
+		fatguy.SetXY(25 * SM, 62 * SM + 40);
 		dialogBox.InitDialog('n');
 
 		if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball)) pickable_Antidote.SetXY(1380, 1980);
 
 		inEvent = false;
+		dialogState = Start;
 	}
 
 	void WeiBaiMap::LoadBitmap()
@@ -69,6 +72,7 @@ namespace game_framework
 		flower.AddBitmap(IDB_GREEN_FLOWER2);
 		flower.AddBitmap(IDB_GREEN_FLOWER3);
 
+		fatguy.LoadBitmap();
 		/////////////////////////////
 		if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
 			pickable_Antidote.LoadBitmap();
@@ -144,7 +148,7 @@ namespace game_framework
 						ASSERT(0);
 						break;
 				}
-
+				fatguy.OnShow(GetSX(), GetSY());
 				if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
 					pickable_Antidote.OnShow(sx, sy);
 			}
@@ -156,6 +160,7 @@ namespace game_framework
 	void WeiBaiMap::OnMove()
 	{
 		flower.OnMove();
+		fatguy.OnMove();
 	}
 
 	bool WeiBaiMap::IsCollision(int x, int y)
@@ -170,7 +175,7 @@ namespace game_framework
 			if (map[y][x] == i)
 				return true;
 		}
-
+		if (fatguy.GetX() / SM == x && fatguy.GetY() / SM + 1 == y) return true;
 		return false;
 	}
 
@@ -266,7 +271,7 @@ namespace game_framework
 		x /= SM;
 		y /= SM;
 		if (nChar == KEY_Z) {
-			if (inEvent)
+			if (inEvent && dialogState == End)
 			{
 				inEvent = false;
 			}
@@ -280,10 +285,29 @@ namespace game_framework
 					hero.GetItem(Item_PokeBall, 2);
 					inEvent = true;
 				}
-				else
-				{
-					//
+			}
+			else if (fatguy.GetX() / SM == x && fatguy.GetY() / SM + 1 == y)
+			{
+				fatguy.Talk(direction);
+				inEvent = true;
+
+				if (fatguy.GetVer() == 1) {
+					dialogBox.SetText("do you have some;delicious foods");
+					dialogState = Start;
 				}
+				if (fatguy.GetVer() == 2) {
+					dialogState = Continue;
+					dialogBox.SetText("you call me fatguy!!");
+				}
+				if (fatguy.GetVer() == 3) dialogBox.SetText("get out of my way!!");
+				if (fatguy.GetVer() == 4) {
+					dialogState = End;
+					inEvent = false;
+				}
+			}
+			else
+			{
+				//
 			}
 		}
 	}

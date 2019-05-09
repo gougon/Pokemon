@@ -34,10 +34,11 @@ void WeiBaiHouse1_1F_Map::InitMap()
     SetXY(17 * SM, 18 * SM);
     SetMap("weibaitown_house1_1f");
     mom.Initialize();
-    mom.SetXY(1320, 1060);
+    mom.SetXY(12 * SM, 1060);
     book.SetXY(1020, 960);
     dialogBox.InitDialog('n');
     inEvent = false;
+	dialogState = Start;
 }
 
 void WeiBaiHouse1_1F_Map::LoadBitmap()
@@ -127,39 +128,62 @@ int WeiBaiHouse1_1F_Map::ReturnMapID()
 {
     return 1;
 }
-int WeiBaiHouse1_1F_Map::CheckID(int x, int y, int herodirection)
+void WeiBaiHouse1_1F_Map::KeyDownListener(UINT nChar, CHero & hero)
 {
-    x /= SM;
-    y /= SM;
+	const char KEY_Z = 0x5a;
 
-    if (mom.GetX() / SM == x && mom.GetY() / SM + 1 == y) //represent mom
-    {
-        mapGameEvent->Occur(WeibaiHouse1_1F_Talk_To_Mom);
-        mom.Talk(herodirection);
-        inEvent = true;
+	int x = hero.GetX1();
+	int y = hero.GetY1();
+	int direction = hero.GetDirection(); // ¤W¥ª¤U¥k
 
-        if (mom.GetVer() == 1)dialogBox.SetText("take this 100 dollars");
-        else if (mom.GetVer() == 2)dialogBox.SetText("012345/6789");
-        else if (mom.GetVer() == 3)dialogBox.SetText("manipulate your clock");
+	if (direction == 0) {
+		y -= SM;
+	}
+	else if (direction == 1) {
+		y += SM;
+	}
+	else if (direction == 2) {
+		x -= SM;
+	}
+	else if (direction == 3) {
+		x += SM;
+	}
+	x /= SM;
+	y /= SM;
+	if (nChar == KEY_Z) {
+		if (inEvent && dialogState == End)
+		{
+			inEvent = false;
+		}
+		else if (mom.GetX() / SM == x && mom.GetY() / SM + 1 == y) //represent mom
+		{
+			mapGameEvent->Occur(WeibaiHouse1_1F_Talk_To_Mom);
+			mom.Talk(direction);
+			inEvent = true;
 
-        if (mom.GetVer() == 4) inEvent = false;
-
-        TRACE("getvar = %d\n", mom.GetVer());
-        return inEvent;
-    }
-
-    if (book.GetX() / SM == x && book.GetY() / SM == y)
-    {
-        if (inEvent) inEvent = false;
-        else
-        {
-            inEvent = true;
-            dialogBox.SetText("nothing inside");
-        }
-
-        return inEvent;
-    }
-
-    return inEvent;
+			if (mom.GetVer() == 1) {
+				dialogBox.SetText("take this 100 dollars");
+				dialogState = Start;
+			}
+			if (mom.GetVer() == 2) {
+				dialogState = Continue;
+				dialogBox.SetText("012345/6789");
+			}
+			if (mom.GetVer() == 3) dialogBox.SetText("manipulate your clock");
+			if (mom.GetVer() == 4) {
+				dialogState = End;
+				inEvent = false;
+			}
+		}
+		else if (book.GetX() / SM == x && book.GetY() / SM == y)
+		{
+			inEvent = true;
+			dialogState = End; 
+			dialogBox.SetText("nothing inside");
+		}
+		else {
+			//
+		}
+	}
 }
 }

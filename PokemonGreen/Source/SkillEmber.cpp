@@ -47,14 +47,31 @@ namespace game_framework {
 		atkAnime.AddBitmap(IDB_SKILL_EMBER17, RGB(255, 0, 0));
 		atkAnime.AddBitmap(IDB_SKILL_EMBER18, RGB(255, 0, 0));
 		atkAnime.SetDelayCount(1);
-
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER1, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER2, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER3, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER4, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER5, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER6, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER7, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER8, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER9, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER10, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER11, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER12, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER13, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER14, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER15, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER16, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_EMBER17, RGB(255, 0, 0));
+		atkEnemyAnime.SetDelayCount(1);
 		switch (pmstyle)
 		{
 		case styleSelf:
 			atkAnime.SetTopLeft(180, 140);
 			break;
 		case styleEnemy:
-			atkAnime.SetTopLeft(405, 120);
+			atkEnemyAnime.SetTopLeft(180, 140);
 			break;
 		default:
 			ASSERT(0);

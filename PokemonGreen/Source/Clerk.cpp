@@ -41,7 +41,7 @@ namespace game_framework {
 		game_bag = new Bag();
 		clerkTalk.InitDialog('n');
 
-		for (int initialitem = 0; initialitem <= 4; initialitem++)
+		for (int initialitem = 0; initialitem <= 5; initialitem++)
 		{
 			InsertItem(initialitem);
 		}
