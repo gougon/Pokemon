@@ -89,8 +89,8 @@ bool WeiBaiHouse1_1F_Map::IsCollision(int x, int y)
 
     for (auto i : hitImg)
     {
-        if (map[y][x] == i)
-            return true;
+		if (map[y][x] == i)
+			return true;
     }
 
     if (mom.GetX() / SM == x  && mom.GetY() / SM  + 1 ==  y) return true;

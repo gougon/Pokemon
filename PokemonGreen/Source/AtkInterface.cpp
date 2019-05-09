@@ -21,7 +21,6 @@ namespace game_framework {
 		battleBackground.ShowBitmap();
 		battleGround[0].ShowBitmap();
 		battleGround[1].ShowBitmap();
-		TRACE("\natkStatuTemp = %s\n", atkStatuTemp);
 		switch (state)
 		{
 		case heroAppear:
@@ -111,7 +110,6 @@ namespace game_framework {
 			enemyBar.OnShow();
 			myBar.OnShow();
 			battleDialog.ShowBitmap();
-			// atkStatuText.OnShow();
 			enemy->GetStatus()->OnShow();
 			break;
 		case atkStatu:
@@ -197,6 +195,8 @@ namespace game_framework {
 	void AtkInterface::OnMove()
 	{
 		constexpr auto V = 10;
+		if (++audioCounter == 270)
+			CAudio::Instance()->Play(AUDIO_BATTLE_PROCESS, true);
 		switch (state)
 		{
 		/*case openAnime:
@@ -249,7 +249,7 @@ namespace game_framework {
 			else {
 				SetAtkPm();
 				myBar.ReceiveData(myPm);
-				state = action;
+				state = enemyLoadStartStatu;
 			}
 			break;
 		case chooseItem:
@@ -272,7 +272,6 @@ namespace game_framework {
 
 			if ((myPm->GetSkill(cursor))->AtkAnimeOnMove()) {
 				isAnime = false;
-				enemySkill = 0;
 				states.push(state);
 				state = hpAnime;
 			}
@@ -295,6 +294,7 @@ namespace game_framework {
 			}
 			break;
 		case enemyLoadStartStatu:
+			enemySkill = 0;
 			enemy->RoundStartStatuEffect();
 			state = onEnemySkill;
 			break;
@@ -335,6 +335,15 @@ namespace game_framework {
 				isAnime = false;
 				states.push(state);
 				state = hpAnime;
+			}
+			break;
+		case atkStatu:
+			if (++delayCount == 33) {
+				delayCount = 0;
+				if (states.top() == onSkill)
+					state = (enemy->GetRemainHP() == 0 || myPm->GetRemainHP() == 0) ? endAnime : loadEndStatu;
+				else
+					state = (enemy->GetRemainHP() == 0 || myPm->GetRemainHP() == 0) ? endAnime : enemyLoadEndStatu;
 			}
 			break;
 		case hpAnime:
@@ -406,6 +415,12 @@ namespace game_framework {
 				}
 			}
 			else {
+				if (!isBattleEnd) {
+					isBattleEnd = true;
+					CAudio::Instance()->Stop(AUDIO_BATTLE_START);
+					CAudio::Instance()->Stop(AUDIO_BATTLE_PROCESS);
+					CAudio::Instance()->Play(AUDIO_BATTLE_END, true);
+				}
 				if (textCount == 0) 
 					outcomeText.SetText(enemy->GetName() + " was defeated");
 				else {
@@ -504,11 +519,6 @@ namespace game_framework {
 			valueUpText[i].SetTopLeft(LVUP_VALUE_LEFT,
 				LVUP_VALUE_TOP + i * LVUP_VALUE_INTERVAL);
 		}
-		CAudio::Instance()->Load(AUDIO_BATTLE_START, "sounds\\battlestart.wav");
-		CAudio::Instance()->Load(AUDIO_BATTLE_PROCESS, "sounds\\battleprocess.wav");
-		CAudio::Instance()->Load(AUDIO_BATTLE_END, "sounds\\battleend.wav");
-		// CAudio::Instance()->Play(AUDIO_BATTLE_START);
-		// CAudio::Instance()->Play(AUDIO_BATTLE_PROCESS);
 	}
 
 	void AtkInterface::ReceivePmMenu(PokemonMenu *pmMenu)
@@ -551,8 +561,10 @@ namespace game_framework {
 		case pokemonAppear:
 			switch (nChar) {
 			case KEY_Z:
-				if (myPm->Left() == 110 && nChar == KEY_Z)
+				if (myPm->Left() == 110 && nChar == KEY_Z) {
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					state = loadStartStatu;
+				}
 				break;
 			}
 			break;
@@ -560,34 +572,47 @@ namespace game_framework {
 			switch (nChar)
 			{
 			case KEY_LEFT:
-				if (cursor == bag || cursor == escape) 
+				if (cursor == bag || cursor == escape) {
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					cursor -= 1;
+				}
 				break;
 			case KEY_RIGHT:
-				if (cursor == fight || cursor == pokemon) 
+				if (cursor == fight || cursor == pokemon) {
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					cursor += 1;
+				}
 				break;
 			case KEY_UP:
-				if (cursor == pokemon || cursor == escape) 
+				if (cursor == pokemon || cursor == escape) {
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					cursor -= 2;
+				}
 				break;
 			case KEY_DOWN:
-				if (cursor == fight || cursor == bag) 
+				if (cursor == fight || cursor == bag) {
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					cursor += 2;
+				}
 				break;
 			case KEY_Z:
 				switch (cursor) {
 				case fight:
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					state = chooseSkill;
 					break;
 				case bag:
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					state = chooseItem;
 					// pmBag->UseOnAtk();
 					break;
 				case pokemon:
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					SltPm();
 					break;
 				case escape:
+					CAudio::Instance()->Play(AUDIO_SELECT);
+					CAudio::Instance()->Play(AUDIO_ESCAPE);
 					End();
 					break;
 				default:
@@ -604,32 +629,42 @@ namespace game_framework {
 			switch (nChar)
 			{
 			case KEY_LEFT:
-				if (cursor == skill2 || cursor == skill4) 
+				if (cursor == skill2 || cursor == skill4) {
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					cursor -= 1;
+				}
 				break;
 			case KEY_RIGHT:
-				if (cursor == skill1 || cursor == skill3) 
+				if (cursor == skill1 || cursor == skill3) {
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					cursor = (myPm->GetSkillNum() <= (cursor + 1)) ? cursor : (cursor + 1);
+				}
 				break;
 			case KEY_UP:
-				if (cursor == skill3 || cursor == skill4) 
+				if (cursor == skill3 || cursor == skill4) {
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					cursor -= 2;
+				}
 				break;
 			case KEY_DOWN:
-				if (cursor == skill1 || cursor == skill2) 
+				if (cursor == skill1 || cursor == skill2) {
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					cursor = (myPm->GetSkillNum() <= (cursor + 2)) ? cursor : (cursor + 2);
+				}
 				break;
 			case KEY_Z:
+				CAudio::Instance()->Play(AUDIO_SELECT);
 				state = onSkill;
 				break;
 			case KEY_X:
+				CAudio::Instance()->Play(AUDIO_SELECT);
 				state = action;
 				break;
 			default:
 				break;
 			}
 			break;
-		case atkStatu:
+		/*case atkStatu:
 			switch (nChar) {
 			case KEY_Z:
 				if (states.top() == onSkill) 
@@ -638,27 +673,37 @@ namespace game_framework {
 					state = (enemy->GetRemainHP() == 0 || myPm->GetRemainHP() == 0) ? endAnime : enemyLoadEndStatu;
 				break;
 			}
-			break;
+			break;*/
 		case endDialog:
 			switch (nChar) {
 			case KEY_UP:
-				if (myPm->GetRemainHP() <= 0 && textCount == 1) 
+				if (myPm->GetRemainHP() <= 0 && textCount == 1) {
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					cursor = yes;
+				}
 				break;
 			case KEY_DOWN:
-				if (myPm->GetRemainHP() <= 0 && textCount == 1) 
+				if (myPm->GetRemainHP() <= 0 && textCount == 1) {
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					cursor = no;
+				}
 				break;
 			case KEY_Z:
 				if (myPm->GetRemainHP() <= 0) {
-					if (textCount == 1 && cursor == yes) 
+					if (textCount == 1 && cursor == yes) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						SltPm();
-					else if (textCount == 1 && cursor == no) 
+					}
+					else if (textCount == 1 && cursor == no) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						End();
+					}
 				}
 				if (myPm->GetRemainHP() > 0 || textCount != 1) {
-					if (textCount > 0) 
+					if (textCount > 0) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						state = end;
+					}
 					++textCount;
 				}
 				break;
@@ -667,6 +712,7 @@ namespace game_framework {
 		case end:
 			switch (nChar) {
 			case KEY_Z:
+				CAudio::Instance()->Play(AUDIO_SELECT);
 				++lvupCount;
 				if (lvupCount == 3 && textCount < (int)joinAtkPm.size()) {
 					lvupCount = 0;
@@ -676,6 +722,15 @@ namespace game_framework {
 			}
 			break;
 		}
+	}
+
+	void AtkInterface::Start()
+	{
+		isWork = true;
+		isBattleEnd = false;
+		delayCount = audioCounter = 0;
+		CAudio::Instance()->Stop(AUDIO_GOTOBATTLE);
+		CAudio::Instance()->Play(AUDIO_BATTLE_START);
 	}
 
 	void AtkInterface::End()
@@ -689,6 +744,11 @@ namespace game_framework {
 		joinAtkPm.clear();
 		lvupPm.clear();
 		skillText.clear();
+		CAudio::Instance()->Stop(AUDIO_BATTLE_START);
+		CAudio::Instance()->Stop(AUDIO_BATTLE_PROCESS);
+		CAudio::Instance()->Stop(AUDIO_BATTLE_END);
+		CAudio::Instance()->Stop(AUDIO_LOW_HP);
+		CAudio::Instance()->Play(AUDIO_WEIBAITOWN);
 	}
 
 	void AtkInterface::SetAtkPm()

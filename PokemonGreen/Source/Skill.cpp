@@ -10,9 +10,26 @@
 
 namespace game_framework {
 	Skill::Skill()
-		: category(physical), power(0), allpp(0), remainpp(0), hitRate(0)
+		: category(physical), power(0), allpp(0), remainpp(0), hitRate(0), isSuccess(false)
 	{
 		/* empty body */
+	}
+
+	bool Skill::AtkAnimeOnMove()
+	{
+		if (isSuccess)
+			atkAnime.OnMove();
+		if (atkAnime.IsFinalBitmap() || !isSuccess) {
+			atkAnime.Reset();
+			return true;
+		}
+		return false;
+	}
+
+	void Skill::AtkAnimeOnShow()
+	{
+		if (isSuccess)
+			atkAnime.OnShow();
 	}
 
 	string Skill::GetAttributeText()

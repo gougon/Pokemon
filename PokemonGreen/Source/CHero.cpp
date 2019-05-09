@@ -127,6 +127,7 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
     {
         if ((*m)->IsEntrance(x - STEP_SIZE, y) && count == 12)
         {
+			CAudio::Instance()->Play(AUDIO_ESCAPE);
             x -= STEP_SIZE;
             ChangeMap(m);
         }
@@ -134,6 +135,7 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
         {
             if ((*m)->IsWarZone(x - STEP_SIZE, y) && count == 12)
             {
+				x -= STEP_SIZE;
                 (*m)->SetXY((*m)->GetSX() - STEP_SIZE, (*m)->GetSY());
                 (*m)->ProduceEnemy(this, atkInterface);
             }
@@ -143,12 +145,16 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
                 x -= STEP_SIZE;
             }
         }
+		else if (count == 1) {
+			CAudio::Instance()->Play(AUDIO_COLLISION);
+		}
     }
 
     if (isForwardRight)
     {
         if ((*m)->IsEntrance(x + SM, y) && count == 12)
         {
+			CAudio::Instance()->Play(AUDIO_ESCAPE);
             x += STEP_SIZE;
             ChangeMap(m);
         }
@@ -166,12 +172,16 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
                 x += STEP_SIZE;
             }
         }
+		else if (count == 1) {
+			CAudio::Instance()->Play(AUDIO_COLLISION);
+		}
     }
 
     if (isForwardUp)
     {
         if ((*m)->IsEntrance(x, y - STEP_SIZE) && count == 12)
         {
+			CAudio::Instance()->Play(AUDIO_ESCAPE);
             y -= STEP_SIZE;
             ChangeMap(m);
         }
@@ -189,12 +199,16 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
                 y -= STEP_SIZE;
             }
         }
+		else if (count == 1) {
+			CAudio::Instance()->Play(AUDIO_COLLISION);
+		}
     }
 
     if (isForwardDown)
     {
         if ((*m)->IsEntrance(x, y + SM) && count == 12)
         {
+			CAudio::Instance()->Play(AUDIO_ESCAPE);
             y += STEP_SIZE;
             ChangeMap(m);
         }
@@ -212,6 +226,9 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
                 y += STEP_SIZE;
             }
         }
+		else if(count == 1){
+			CAudio::Instance()->Play(AUDIO_COLLISION);
+		}
     }
 }
 void CHero::OnShow()

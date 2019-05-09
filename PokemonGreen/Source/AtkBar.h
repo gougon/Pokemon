@@ -57,7 +57,7 @@ namespace game_framework {
 		void SetHpBarWidth(int width);
 		int x; // right
 		double hpWidthRate;
-		bool isAddExp;
+		bool isAddExp, isSetLowHpAudio;
 		Pokemon *pm;
 		barType type;
 		CText nameText, lvText, remainHpText, allHpText;

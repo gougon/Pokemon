@@ -36,6 +36,8 @@ namespace game_framework
 
 	void WeiBaiMap::InitMap()
 	{
+		CAudio::Instance()->Play(AUDIO_WEIBAITOWN);
+
 		SetMXY(48, 87);			// 設定地圖總長寬格數
 		SetXY(18 * SM, 27 * SM);		// 設定初始位置
 		SetMap("area1");
@@ -164,9 +166,8 @@ namespace game_framework
 
 		for (auto i : hitImg)
 		{
-			if (map[y][x] == i) {
+			if (map[y][x] == i)
 				return true;
-			}
 		}
 
 		return false;
@@ -194,9 +195,12 @@ namespace game_framework
 		// 利用atkProb判斷有沒有遇到怪
 		int rnd = rand() % hero->GetAtkProb() + 1;
 
-		//TRACE("\nprob = %d, rnd = %d\n", hero->GetAtkProb(), rnd);
+		TRACE("\nprob = %d, rnd = %d\n", hero->GetAtkProb(), rnd);
 		if (rnd == hero->GetAtkProb())  	// 遇到怪
 		{
+			CAudio::Instance()->Stop(AUDIO_WEIBAITOWN);
+			CAudio::Instance()->Play(AUDIO_GOTOBATTLE);
+
 			PokemonFactory pmfactory;
 			SkillFactory skfactory;
 			Pokemon* enemy = pmfactory.CreateEnemyRandom();
@@ -224,6 +228,7 @@ namespace game_framework
 			newMap = new Hospital_Map(mapGameEvent);
 		}
 
+		CAudio::Instance()->Stop(AUDIO_WEIBAITOWN);
 		newMap->LoadBitmap();
 		return newMap;
 	}

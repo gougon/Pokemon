@@ -12,7 +12,5 @@ namespace game_framework {
 		SkillLeer(pmStyle pmstyle);
 		virtual void Init();
 		virtual string Use(Pokemon *self, Pokemon *enemy);
-		virtual bool AtkAnimeOnMove();
-		virtual void AtkAnimeOnShow();
 	};
 }

@@ -27,6 +27,7 @@ class Menu : public ActionObject
         virtual void LoadBitmap();
         virtual void KeyDownListener(UINT nChar);
 		virtual void SetTopLeft() {}
+		void Start();
         void End();
         void RecieveData(int itemID, int amount);
         void SetPokemons(vector<Pokemon*>* pms);

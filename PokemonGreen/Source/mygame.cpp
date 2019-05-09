@@ -91,6 +91,24 @@ void CGameStateInit::OnInit()
     //
     CAudio::Instance()->Load(AUDIO_HOME, "sounds\\home.wav");
     CAudio::Instance()->Load(AUDIO_WEIBAITOWN, "sounds\\weibaitown.wav");
+	CAudio::Instance()->Load(AUDIO_BATTLE_START, "sounds\\battlestart.wav");
+	CAudio::Instance()->Load(AUDIO_BATTLE_PROCESS, "sounds\\battleprocess.wav");
+	CAudio::Instance()->Load(AUDIO_BATTLE_END, "sounds\\battleend.wav");
+	CAudio::Instance()->Load(AUDIO_SELECT, "sounds\\select.wav");
+	CAudio::Instance()->Load(AUDIO_START_MENU, "sounds\\startmenu.wav");
+	CAudio::Instance()->Load(AUDIO_EMBER, "sounds\\ember.wav");
+	CAudio::Instance()->Load(AUDIO_IMPACT, "sounds\\impact.wav");
+	CAudio::Instance()->Load(AUDIO_BURN, "sounds\\burn.wav");
+	CAudio::Instance()->Load(AUDIO_LOW_HP, "sounds\\lowhp.wav");
+	CAudio::Instance()->Load(AUDIO_LEER, "sounds\\leer.wav");
+	CAudio::Instance()->Load(AUDIO_LEERNE, "sounds\\leerne.wav");
+	CAudio::Instance()->Load(AUDIO_ESCAPE, "sounds\\escape.wav");
+	CAudio::Instance()->Load(AUDIO_GOTOBATTLE, "sounds\\gotobattle.wav");
+	CAudio::Instance()->Load(AUDIO_HOSPITAL_START, "sounds\\hospitalstart.wav");
+	CAudio::Instance()->Load(AUDIO_HOSPITAL_PROCESS, "sounds\\hospitalprocess.wav");
+	CAudio::Instance()->Load(AUDIO_COLLISION, "sounds\\collision.wav");
+	CAudio::Instance()->Load(AUDIO_PUT_HEALBALL, "sounds\\puthealball.wav");
+	CAudio::Instance()->Load(AUDIO_HEAL, "sounds\\heal.wav");
 	CAudio::Instance()->Play(AUDIO_HOME);
 }
 
@@ -189,7 +207,8 @@ CGameStateRun::CGameStateRun(CGame* g)
 void CGameStateRun::OnBeginState()
 {
     CAudio::Instance()->Stop(AUDIO_HOME);
-    CAudio::Instance()->Play(AUDIO_WEIBAITOWN);
+	gameMap = new WeiBaiMap(&gameEvent);
+	gameMap->LoadBitmap();					// 載入背景的圖形
     hero.Initialize();
     hero.SetXY(18 * SM + HERO_X, 27 * SM + HERO_Y + 20);
     myMenu.Init();
@@ -254,8 +273,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
     ShowInitProgress(33);	// 接個前一個狀態的進度，此處進度視為33%
     //
     // 開始載入資料
-    gameMap = new WeiBaiMap(&gameEvent);
-    gameMap->LoadBitmap();					// 載入背景的圖形
+   
     hero.LoadBitmap();
     testDialog.InitDialog('s');
     atkInterface.LoadBitmap();

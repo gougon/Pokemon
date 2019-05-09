@@ -69,8 +69,8 @@ bool WeiBaiHouse2_1F_Map::IsCollision(int x, int y)
 
     for (auto i : hitImg)
     {
-        if (map[y][x] == i)
-            return true;
+		if (map[y][x] == i)
+			return true;
     }
 
     return false;

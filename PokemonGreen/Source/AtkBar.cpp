@@ -33,6 +33,7 @@ namespace game_framework {
 		InitBarByType();
 		InitHp();
 		isAddExp = true;
+		isSetLowHpAudio = false;
 		hpWidthRate = 1;
 	}
 
@@ -45,9 +46,23 @@ namespace game_framework {
 
 		SetHpBarWidth(nextHpPos);
 
-		// set exp bar and hp text
+		// set exp bar and hp text and low hp sound
 		if (type == barTypeMy) {	// 顯示exp條和血量
+			// set low hp sound
+			if (pm->GetRemainHP() / (double)pm->GetHP() <= 0.2 && !isSetLowHpAudio) {
+				CAudio::Instance()->Play(AUDIO_LOW_HP, true);
+				isSetLowHpAudio = true;
+			}
+			else if (pm->GetRemainHP() / (double)pm->GetHP() > 0.2 ||
+				pm->GetRemainHP() == 0) {
+				CAudio::Instance()->Stop(AUDIO_LOW_HP);
+				isSetLowHpAudio = false;
+			}
+
+			// set remain hp text
 			remainHpText.SetText(to_string(pm->GetRemainHP()));
+
+			// set exp bar
 			double widthexp = pm->GetNowExp() / (double)pm->GetNeedExp() * EXP_LEN;
 			if (widthexp > expBar.RectWidth()) {		// 正常經驗值依照V上升
 				int nextExp = (int)widthexp - expBar.RectWidth();
@@ -149,6 +164,7 @@ namespace game_framework {
 
 		double expRate = (double)pm->GetNowExp() / (double)pm->GetNeedExp();
 		double expWidth = expRate * EXP_LEN;
+		SetHpBarWidth((int)(rpm->GetRemainHP() / (double)rpm->GetHP() * HP_LEN));
 		expBar.SetWidth((int)(expWidth + 0.5));
 
 		nameText.SetText(pm->GetName());

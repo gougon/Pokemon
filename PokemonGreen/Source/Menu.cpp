@@ -152,21 +152,19 @@ namespace game_framework
 			switch (nChar)
 			{
 				case KEY_UP:
-					if (order > itemIllustration)  		// 選項向上移
-					{
+					if (order > itemIllustration) { 		// 選項向上移
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						order -= 1;
 					}
 					break;
-
 				case KEY_DOWN:
-					if (order < itemClose)  		// 選項向下移
-					{
+					if (order < itemClose) {  		// 選項向下移
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						order += 1;
 					}
-
 					break;
-
 				case KEY_Z:
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					isItem = true;
 					if (order != itemClose) {
 						items[order]->Start();
@@ -175,12 +173,12 @@ namespace game_framework
 							dynamic_cast<PokemonMenu*>(items[order])->ReceiveData(pokemons);
 						}
 					}
-					else {
+					else 
 						End();
-					}
 					break;
 
 				case KEY_X:
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					End();		// 結束選單
 					break;
 
@@ -188,6 +186,12 @@ namespace game_framework
 					break;
 			}
 		}
+	}
+
+	void Menu::Start()
+	{
+		isWork = true;
+		CAudio::Instance()->Play(AUDIO_START_MENU);
 	}
 
 	void Menu::End()

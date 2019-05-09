@@ -55,42 +55,25 @@ namespace game_framework {
 			float realHitRate = hitRate * self->GetHitRate() / enemy->GetEvasionRate();
 			int rnd = rand() % 100 + 1;
 			if ((int)(realHitRate * 100) > rnd) { // 命中
+				isSuccess = true;
 				int enedeflv = enemy->GetDefLevel();
 				if (enedeflv > -6) {
+					CAudio::Instance()->Play(AUDIO_LEER);
 					enemy->SetRemainDef(enedeflv - 1);
 					return enemy->GetName() + "'s def be decreased";
 				}
 				else {	// 跑對話說已經降到最低了
+					CAudio::Instance()->Play(AUDIO_LEERNE);
 					return enemy->GetName() + "'s def cannot be decreased";
 				}
 			}
 			else {
+				isSuccess = false;
 				return self->GetName() + "'s attack is miss";
 			}
 		}
 		else { // 跑對話說已經沒pp了並重新選擇技能
 			return self->GetName() + "have no pp";
 		}
-	}
-
-	bool SkillLeer::AtkAnimeOnMove()
-	{
-		atkAnime.OnMove();
-		if (atkAnime.IsFinalBitmap()) {
-			animeCount++;
-		}
-		if (animeCount == 1) {
-			animeCount = 0;
-			atkAnime.Reset();
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-
-	void SkillLeer::AtkAnimeOnShow()
-	{
-		atkAnime.OnShow();
 	}
 }

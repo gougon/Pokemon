@@ -10,12 +10,14 @@
 using namespace std;
 namespace game_framework
 {
-CMap::CMap()
+CMap::CMap() :
+	audioCounter(0)
 {
     /*empty body*/
 }
 
-CMap::CMap(int sceneNum)
+CMap::CMap(int sceneNum) :
+	audioCounter(0)
 {
     scene = new CMovingBitmap[sceneNum];
 }

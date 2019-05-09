@@ -12,8 +12,6 @@ namespace game_framework {
 		SkillEmber(pmStyle pmstyle);
 		virtual void Init();
 		virtual string Use(Pokemon *self, Pokemon *enemy);
-		virtual bool AtkAnimeOnMove();
-		virtual void AtkAnimeOnShow();
 	private:
 		string EffectText(Pokemon *enemy);
 		float burnRate;

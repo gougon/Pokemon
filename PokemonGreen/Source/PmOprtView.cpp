@@ -107,34 +107,41 @@ namespace game_framework {
 		switch (nChar) {
 		case KEY_LEFT:
 			if (page == pagePmSkillPanel) {
+				CAudio::Instance()->Play(AUDIO_SELECT);
 				page -= 1;
 			}
 			break;
 		case KEY_RIGHT:
 			if (page == pagePmAbility) {
+				CAudio::Instance()->Play(AUDIO_SELECT);
 				page += 1;
 			}
 			break;
 		case KEY_UP:
 			if (isSelectSkill && skillOrder > 0) {
+				CAudio::Instance()->Play(AUDIO_SELECT);
 				skillOrder -= 1;
 			}
 			break;
 		case KEY_DOWN:
 			if (isSelectSkill && skillOrder < ((int)skills.size() - 1)) {
+				CAudio::Instance()->Play(AUDIO_SELECT);
 				skillOrder += 1;
 			}
 			break;
 		case KEY_Z:
 			if (page == pagePmSkillPanel) {
+				CAudio::Instance()->Play(AUDIO_SELECT);
 				isSelectSkill = true;
 			}
 			break;
 		case KEY_X:
 			if (isSelectSkill) {
+				CAudio::Instance()->Play(AUDIO_SELECT);
 				isSelectSkill = false;
 			}
 			else {
+				CAudio::Instance()->Play(AUDIO_SELECT);
 				End();
 			}
 			break;

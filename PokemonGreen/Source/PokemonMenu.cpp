@@ -89,8 +89,6 @@ namespace game_framework {
 						isOprtSlt = false;
 					}
 					break;
-				case pmOprtPanelSltChange:
-					break;
 				case pmOprtPanelSltItem:
 					break;
 				case pmOprtPanelSltClose:
@@ -127,12 +125,14 @@ namespace game_framework {
 			case KEY_LEFT:
 				if (!isOprtPanel) {
 					if (sltPm != 0) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						sltPm = 0;
 					}
 				}
 				else {
 					if (isItem && order == pmOprtPanelSltChange &&
 						swapPm != 0) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						swapPm = 0;
 					}
 				}
@@ -140,12 +140,14 @@ namespace game_framework {
 			case KEY_RIGHT:
 				if (!isOprtPanel) {
 					if (sltPm == 0 && (int)pokemons->size() > 1) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						sltPm = 1;
 					}
 				}
 				else {
 					if (isItem && order == pmOprtPanelSltChange &&
 						swapPm == 0 && (int)pokemons->size() > 1) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						swapPm = 1;
 					}
 				}
@@ -153,15 +155,18 @@ namespace game_framework {
 			case KEY_UP:
 				if (isOprtPanel) {
 					if (!isItem && order > 0) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						order -= 1;
 					}
 					else if (isItem && order == pmOprtPanelSltChange &&
 						swapPm != 0 && swapPm != 1) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						swapPm -= 1;
 					}
 				}
 				else {
 					if (sltPm != 0 && sltPm != 1) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						sltPm -= 1;
 					}
 				}
@@ -169,21 +174,25 @@ namespace game_framework {
 			case KEY_DOWN:
 				if (isOprtPanel) {
 					if (!isItem && order < 3) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						order += 1;
 					}
 					else if (isItem && order == pmOprtPanelSltChange &&
 						swapPm != 0 && swapPm < (int)pokemons->size()) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						swapPm += 1;
 					}
 				}
 				else {
 					if (sltPm != 0 && sltPm < (int)pokemons->size()) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						sltPm += 1;
 					}
 				}
 				break;
 			case KEY_Z:
 				if (!isOprtPanel) {
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					isOprtPanel = true;
 					order = 0;
 				}
@@ -191,17 +200,20 @@ namespace game_framework {
 					isOprtSlt = true;
 					if (!isItem) {
 						if (order == pmOprtPanelSltView) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
 							pmOprtView.Start();
 							pmOprtView.ReceiveData((*pokemons)[sltPm]);
 						}
 						else if (order == pmOprtPanelSltChange) {
 							if (isAtkChange) {
+								CAudio::Instance()->Play(AUDIO_SELECT);
 								Swap(0, sltPm);
 								delete[] pokemonBar;
 								ReceiveData(pokemons);
 								End();
 							}
 							else {
+								CAudio::Instance()->Play(AUDIO_SELECT);
 								swapPm = sltPm;
 								isItem = true;
 							}
@@ -209,6 +221,7 @@ namespace game_framework {
 					}
 					else {
 						if (order == pmOprtPanelSltChange) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
 							Swap(sltPm, swapPm);
 							delete[] pokemonBar;
 							ReceiveData(pokemons);
@@ -224,9 +237,13 @@ namespace game_framework {
 				break;
 			case KEY_X:
 				if (!isOprtPanel) {
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					End();
 				}
 				else {
+					if (isItem)
+						isItem = false;
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					isOprtPanel = false;
 				}
 				break;

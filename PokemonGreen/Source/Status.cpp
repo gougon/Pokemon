@@ -49,7 +49,6 @@ namespace game_framework {
 	void Status::OnMove()
 	{
 		burnAnime.OnMove();
-		TRACE("\nburn anime current bitmap = %d\n", burnAnime.GetCurrentBitmapNumber());
 	}
 
 	void Status::RoundStartStatuEffect(Pokemon &pm)
@@ -99,6 +98,7 @@ namespace game_framework {
 			return;
 		switch (statu) {
 		case statuBurn:
+			CAudio::Instance()->Play(AUDIO_BURN);
 			BurnEffect(pm);
 			break;
 		case statuPoison:

@@ -63,6 +63,7 @@ class CMap
         CEvent* mapGameEvent;
         CMovingBitmap* scene;
         vector<vector<int> > map;
+		int audioCounter = 0;
     private:
         int sx, sy;				// pixel
         int mx, my;				// ®æ

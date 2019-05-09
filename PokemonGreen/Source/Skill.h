@@ -24,8 +24,8 @@ namespace game_framework {
 		Skill();
 		virtual void Init() = 0;
 		virtual string Use(Pokemon *self, Pokemon *enemy) = 0;
-		virtual bool AtkAnimeOnMove() = 0;
-		virtual void AtkAnimeOnShow() = 0;
+		bool AtkAnimeOnMove();
+		void AtkAnimeOnShow();
 		virtual AttrDamage DamageEffect(Pokemon *enemy) = 0;
 		string GetAttributeText();
 		string GetName();
@@ -42,5 +42,6 @@ namespace game_framework {
 		string name, description;
 		int attribute, power, allpp, remainpp, animeCount;
 		float hitRate;
+		bool isSuccess;
 	};
 }

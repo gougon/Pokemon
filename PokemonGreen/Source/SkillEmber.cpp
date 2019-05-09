@@ -69,6 +69,8 @@ namespace game_framework {
 			float realHitRate = hitRate * self->GetHitRate() / enemy->GetEvasionRate();
 			int rnd = rand() % 100 + 1;
 			if ((int)(realHitRate * 100) > rnd) { // 命中
+				CAudio::Instance()->Play(AUDIO_EMBER);
+				isSuccess = true;
 				int enehp = enemy->GetRemainHP();
 				enehp = (enehp - Damage(self, enemy) < 0) ? 0 : enehp - Damage(self, enemy);
 				enemy->SetRemainHP(enehp);
@@ -82,33 +84,13 @@ namespace game_framework {
 				return EffectText(enemy);
 			}
 			else {
+				isSuccess = true;
 				return self->GetName() + "'s attack is miss";
 			}
 		}
 		else { // 跑對話說已經沒pp了並重新選擇技能
 			return self->GetName() + "have no pp";
 		}
-	}
-
-	bool SkillEmber::AtkAnimeOnMove()
-	{
-		atkAnime.OnMove();
-		if (atkAnime.IsFinalBitmap()) {
-			animeCount++;
-		}
-		if (animeCount == 1) {
-			animeCount = 0;
-			atkAnime.Reset();
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-
-	void SkillEmber::AtkAnimeOnShow()
-	{
-		atkAnime.OnShow();
 	}
 
 	// private

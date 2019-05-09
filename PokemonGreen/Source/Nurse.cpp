@@ -22,7 +22,7 @@ namespace game_framework {
 	void Nurse::Init()
 	{
 		isAnime = false;
-		count = 0;
+		count = audioCount = 0;
 		choice = yes;
 		dialogBox.InitDialog('n');
 		ynPanel.SetTopLeft(YNPANEL_LEFT, YNPANEL_TOP);
@@ -40,8 +40,8 @@ namespace game_framework {
 		case 2:
 			if (isAnime) {
 				for (int i = 0; i < pmNum; ++i) {
-					TRACE("\nball[%d] left = %d, top = %d\n", i, ball[i].Left(), ball[i].Top());
-					ball[i].OnShow();
+					if(audioCount / 10 >= i)
+						ball[i].OnShow();
 				}
 			}
 			break;
@@ -68,15 +68,28 @@ namespace game_framework {
 		case 2:
 			switch (choice) {
 			case yes:
+				audioCount++;
 				isAnime = IsHealing();
 				Heal();
 				if (isAnime) {
 					dialogBox.SetText("then... heal");
-					for (int i = 0; i < pmNum; ++i) {
-						ball[i].OnMove();
+
+					// set put and heal audio
+					if (audioCount % 10 == 1 && (audioCount+1) / 10 < pmNum)
+						CAudio::Instance()->Play(AUDIO_PUT_HEALBALL);
+					else if(audioCount == (pmNum-1) * 10)
+						CAudio::Instance()->Play(AUDIO_HEAL);
+
+					// heal anime start
+					if (audioCount >= (pmNum - 1) * 10) {
+						CAudio::Instance()->Stop(AUDIO_HOSPITAL_PROCESS);
+						for (int i = 0; i < pmNum; ++i)
+							ball[i].OnMove();
 					}
 				}
 				else {
+					if (audioCount == (pmNum - 1) * 10 + 60)
+						CAudio::Instance()->Play(AUDIO_HOSPITAL_PROCESS);
 					dialogBox.SetText("pokemons are all have strength!");
 				}
 				break;
@@ -110,23 +123,25 @@ namespace game_framework {
 		switch (nChar) {
 		case KEY_UP:
 			if (count == 1) {
+				CAudio::Instance()->Play(AUDIO_SELECT);
 				choice = yes;
 			}
 			break;
 		case KEY_DOWN:
 			if (count == 1) {
+				CAudio::Instance()->Play(AUDIO_SELECT);
 				choice = no;
 			}
 			break;
 		case KEY_Z:
 			if (!isAnime) {
+				CAudio::Instance()->Play(AUDIO_SELECT);
 				++count;
 			}
 			switch (count) {
 			case 2:
-				if (choice == yes) {
+				if (choice == yes) 
 					isAnime = true;
-				}
 				break;
 			case 4:
 				End();			// end­noverride
@@ -156,7 +171,7 @@ namespace game_framework {
 		isWork = false;
 		hero->EndDialog();
 		isAnime = false;
-		count = choice = pmNum = 0;
+		count = audioCount = choice = pmNum = 0;
 		delete[] ball;
 	}
 

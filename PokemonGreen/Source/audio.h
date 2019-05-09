@@ -82,6 +82,21 @@ namespace game_framework {
 	constexpr int AUDIO_BATTLE_START = 2;
 	constexpr int AUDIO_BATTLE_PROCESS = 3;
 	constexpr int AUDIO_BATTLE_END = 4;
+	constexpr int AUDIO_SELECT = 5;
+	constexpr int AUDIO_START_MENU = 6;
+	constexpr int AUDIO_EMBER = 7;
+	constexpr int AUDIO_IMPACT = 8;
+	constexpr int AUDIO_BURN = 9;
+	constexpr int AUDIO_LOW_HP = 10;
+	constexpr int AUDIO_LEER = 11;
+	constexpr int AUDIO_LEERNE = 12;
+	constexpr int AUDIO_ESCAPE = 13;
+	constexpr int AUDIO_GOTOBATTLE = 14;
+	constexpr int AUDIO_HOSPITAL_START = 15;
+	constexpr int AUDIO_HOSPITAL_PROCESS = 16;
+	constexpr int AUDIO_COLLISION = 17;
+	constexpr int AUDIO_PUT_HEALBALL = 18;
+	constexpr int AUDIO_HEAL = 19;
 
 class CAudio {
 public:

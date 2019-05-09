@@ -19,6 +19,8 @@ namespace game_framework
 
 	void Hospital_Map::InitMap()
 	{
+		CAudio::Instance()->Play(AUDIO_HOSPITAL_START);
+
 		SetMXY(42, 37);
 		SetXY(16 * SM, 18 * SM);
 		SetMap("hospital");
@@ -68,6 +70,9 @@ namespace game_framework
 
 	void Hospital_Map::OnMove()
 	{
+		if (++audioCounter == 100) {
+			CAudio::Instance()->Play(AUDIO_HOSPITAL_PROCESS, true);
+		}
 		if (nurse.IsWork()) {
 			nurse.OnMove();
 		}
@@ -99,7 +104,7 @@ namespace game_framework
 
 		for (auto i : hitImg)
 		{
-			if (map[y][x] == i)
+			if (map[y][x] == i) 
 				return true;
 		}
 
@@ -118,6 +123,8 @@ namespace game_framework
 			newMap->SetXY(15 * SM, 25 * SM);
 		}
 
+		CAudio::Instance()->Stop(AUDIO_HOSPITAL_START);
+		CAudio::Instance()->Stop(AUDIO_HOSPITAL_PROCESS);
 		newMap->LoadBitmap();
 		return newMap;
 	}

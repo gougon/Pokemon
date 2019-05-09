@@ -68,6 +68,7 @@ namespace game_framework {
 		void ReceivePmMenu(PokemonMenu *pmMenu);
 		void ReceiveData(CHero *self, Pokemon *enemy);
 		void KeyDownListener(UINT nChar);
+		void Start();
 		void End();
 	private:
 		const int LVUP_PANEL_LEFT = 385;
@@ -95,8 +96,9 @@ namespace game_framework {
 		void SetCursorPosition(int cursor, State state);
 		Pokemon *FindSetFromOrder(set<Pokemon*>& lhs, int order);
 
+		int delayCount = 0, audioCounter = 0;
 		int openCount = 0, cursor, enemySkill, textCount, lvupCount;
-		bool isAnime;
+		bool isAnime, isBattleEnd;
 		stack<State> states;
 		string atkStatuTemp;
 		set<Pokemon*> joinAtkPm, lvupPm;

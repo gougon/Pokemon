@@ -29,6 +29,8 @@ namespace game_framework {
 		animeCount = 0;
 		atkAnime.AddBitmap(IDB_SKILL_IMPACT1, RGB(255, 0, 0));
 		atkAnime.AddBitmap(IDB_SKILL_IMPACT2, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_IMPACT1, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_IMPACT2, RGB(255, 0, 0));
 
 		switch (pmstyle)
 		{
@@ -51,35 +53,21 @@ namespace game_framework {
 			float realHitRate = hitRate * self->GetHitRate() / enemy->GetEvasionRate();
 			int rnd = rand() % 100 + 1;
 			if ((int)(realHitRate * 100) > rnd) { // 命中
+				CAudio::Instance()->Play(AUDIO_IMPACT);
+				isSuccess = true;
 				int enehp = enemy->GetRemainHP();
 				enehp = (enehp - Damage(self, enemy) < 0) ? 0 : enehp - Damage(self, enemy);
 				enemy->SetRemainHP(enehp);
 				return EffectText(enemy);
 			}
 			else {
+				isSuccess = true;
 				return self->GetName() + "'s attack is miss";
 			}
 		}
 		else { // 跑對話說已經沒pp了並重新選擇技能
 			return self->GetName() + "have no pp";
 		}
-	}
-
-	bool SkillImpact::AtkAnimeOnMove()
-	{
-		atkAnime.OnMove();
-		if (atkAnime.GetCurrentBitmapNumber() == 1) {
-			++animeCount;
-		}
-		if (animeCount == 20) {
-			animeCount = 0;
-		}
-		return (animeCount == 0 && atkAnime.GetCurrentBitmapNumber() == 1);
-	}
-
-	void SkillImpact::AtkAnimeOnShow()
-	{
-		atkAnime.OnShow();
 	}
 
 	// private

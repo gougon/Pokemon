@@ -43,7 +43,7 @@ namespace game_framework
 		void Heal();
 
 		bool isAnime;
-		int count, choice, pmNum;
+		int count, choice, pmNum, audioCount;
 		CHero *hero;
 		vector<Pokemon*>* pokemons;
 		CDialog dialogBox;
