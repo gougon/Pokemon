@@ -24,6 +24,7 @@ namespace game_framework {
 
 	void Shop_Map::InitMap()
 	{
+		CAudio::Instance()->Play(AUDIO_MART);
 		SetMXY(39, 36);
 		SetXY(12 * SM, 18 * SM);
 		SetMap("shop");
@@ -90,6 +91,7 @@ namespace game_framework {
 			newMap = new WeiBaiMap(mapGameEvent);
 			newMap->SetXY(23 * SM, 15 * SM);
 		}
+		CAudio::Instance()->Stop(AUDIO_MART);
 		newMap->LoadBitmap();
 		return newMap;
 	}

@@ -91,6 +91,7 @@ void CGameStateInit::OnInit()
     //
     CAudio::Instance()->Load(AUDIO_HOME, "sounds\\home.wav");
     CAudio::Instance()->Load(AUDIO_WEIBAITOWN, "sounds\\weibaitown.wav");
+	CAudio::Instance()->Load(AUDIO_MART, "sounds\\PokeMart.mp3");
 	CAudio::Instance()->Load(AUDIO_BATTLE_START, "sounds\\battlestart.wav");
 	CAudio::Instance()->Load(AUDIO_BATTLE_PROCESS, "sounds\\battleprocess.wav");
 	CAudio::Instance()->Load(AUDIO_BATTLE_END, "sounds\\battleend.wav");
@@ -210,7 +211,7 @@ void CGameStateRun::OnBeginState()
 	gameMap = new WeiBaiMap(&gameEvent);
 	gameMap->LoadBitmap();					// 載入背景的圖形
     hero.Initialize();
-    hero.SetXY(18 * SM + HERO_X, 57 * SM + HERO_Y + 20);
+    hero.SetXY(18 * SM + HERO_X, 24 * SM + HERO_Y + 20);
     myMenu.Init();
 	atkInterface.ReceivePmMenu(myMenu.GetPokemonMenu());
 	atkInterface.ReceiveBag(myMenu.GetBag());

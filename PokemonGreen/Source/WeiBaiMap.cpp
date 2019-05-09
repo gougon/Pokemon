@@ -41,7 +41,7 @@ namespace game_framework
 		CAudio::Instance()->Play(AUDIO_WEIBAITOWN);
 
 		SetMXY(48, 87);			// 設定地圖總長寬格數
-		SetXY(18 * SM, 57 * SM);		// 設定初始位置
+		SetXY(18 * SM, 24 * SM);		// 設定初始位置
 		SetMap("area1");
 		fatguy.Initialize();
 		fatguy.SetXY(25 * SM, 62 * SM + 40);

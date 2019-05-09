@@ -40,6 +40,7 @@ namespace game_framework {
 			for (auto i : info) {
 				i.OnShow();
 			}
+			itemText.OnShow();
 			break;
 		case pagePmSkillPanel:
 			pmSkillPanel.ShowBitmap();
@@ -90,6 +91,7 @@ namespace game_framework {
 		skillSidebar.LoadBitmap(IDB_SKILL_SIDEBAR);
 		nameText.LoadBitmap();
 		lvText.LoadBitmap();
+		itemText.LoadBitmap();
 		skillDesc.LoadBitmap();
 		skillPower.LoadBitmap();
 		skillHitRate.LoadBitmap();
@@ -180,8 +182,10 @@ namespace game_framework {
 	{
 		lvText.SetText(to_string(pm->GetLevel()));
 		nameText.SetText(pm->GetName());
+		itemText.SetText(searchItem.GetNameByID(pm->GetTakeItem()));
 		lvText.SetTopLeft(LV_LEFT, LV_TOP);
 		nameText.SetTopLeft(NAME_LEFT, NAME_TOP);
+		itemText.SetTopLeft(ITEM_LEFT, ITEM_TOP);
 	}
 
 	void PmOprtView::SetInfo()

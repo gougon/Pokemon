@@ -175,16 +175,19 @@ namespace game_framework {
 				switch (nChar)
 				{
 				case KEY_UP:
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					if (selectModeOrder != 1) selectModeOrder--;
 
 					break;
 
 				case KEY_DOWN:
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					if (selectModeOrder != 3) selectModeOrder++;
 
 					break;
 
 				case KEY_Z:
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					if (selectModeOrder == 1)
 					{
 						firsttime = false;
@@ -203,6 +206,7 @@ namespace game_framework {
 					break;
 
 				case KEY_X:
+					CAudio::Instance()->Play(AUDIO_COLLISION);
 					selectModeOrder = 1;
 					End();
 					break;
@@ -218,6 +222,7 @@ namespace game_framework {
 					if (nChar == KEY_Z)
 					{
 						//additem
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						itemAmount = 1;
 						inShowText = false;
 						inItemAmount = false;
@@ -228,18 +233,26 @@ namespace game_framework {
 					switch (nChar)
 					{
 					case KEY_UP:
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						itemAmount++;
 						break;
 
 					case KEY_DOWN:
-						if (itemAmount > 1) itemAmount--;
+						if (itemAmount > 1) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							itemAmount--;
+						}
 
 						break;
 
 					case KEY_Z:
-						if ((*money) - (shopping_list[itemChooser]->GetCost() * itemAmount) < 0) clerkTalk.SetText("you dont have enough money");
+						if ((*money) - (shopping_list[itemChooser]->GetCost() * itemAmount) < 0) {
+							CAudio::Instance()->Play(AUDIO_COLLISION);
+							clerkTalk.SetText("you dont have enough money");
+						}
 						else
 						{
+							CAudio::Instance()->Play(AUDIO_SELECT);
 							(*money) -= (shopping_list[itemChooser]->GetCost() * itemAmount);
 							dynamic_cast<Bag*>(game_bag)->AddItem(currentID, itemAmount);
 							clerkTalk.SetText("thank you very much");
@@ -251,6 +264,7 @@ namespace game_framework {
 						break;
 
 					case KEY_X:
+						CAudio::Instance()->Play(AUDIO_COLLISION);
 						itemAmount = 1;
 						inItemAmount = false;
 						break;
@@ -263,6 +277,7 @@ namespace game_framework {
 					case KEY_UP:
 						if (itemChooser != 0)
 						{
+							CAudio::Instance()->Play(AUDIO_SELECT);
 							itemChooser--;
 						}
 
@@ -271,12 +286,14 @@ namespace game_framework {
 					case KEY_DOWN:
 						if (itemChooser != shopping_list.size() - 1)
 						{
+							CAudio::Instance()->Play(AUDIO_SELECT);
 							itemChooser++;
 						}
 
 						break;
 
 					case KEY_Z:
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						if (firsttime)
 						{
 							currentID = shopping_list[itemChooser]->GetID();
@@ -289,6 +306,7 @@ namespace game_framework {
 						break;
 
 					case KEY_X:
+						CAudio::Instance()->Play(AUDIO_COLLISION);
 						inBuyMode = false;
 						inSelectMode = true;
 						break;

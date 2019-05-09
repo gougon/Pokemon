@@ -2,6 +2,7 @@
 #include "Pokemon.h"
 #include "Skill.h"
 #include "CText.h"
+#include "CItemSystem.h"
 
 using namespace std;
 namespace game_framework {
@@ -40,6 +41,8 @@ namespace game_framework {
 		const int LV_TOP = 285;
 		const int NAME_LEFT = 95;
 		const int NAME_TOP = 285;
+		const int ITEM_LEFT = 240;
+		const int ITEM_TOP = 95;
 		const int SK_LIST_LEFT = 216;
 		const int SK_LIST_TOP = 64;
 		const int SK_TOP = 103;
@@ -64,7 +67,8 @@ namespace game_framework {
 		void CloseSkillSidebar();
 		CMovingBitmap pmAbility, pmSkillPanel, skillList, skillSelect, skillSidebar, pmImage;
 		Pokemon *pm;
-		CText nameText, lvText, skillDesc, skillPower, skillHitRate;
+		CItemSystem searchItem;
+		CText itemText ,nameText, lvText, skillDesc, skillPower, skillHitRate;
 		vector<CText> info, skillText;
 		vector<Skill*> skills;
 		int page, skillOrder;

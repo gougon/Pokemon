@@ -187,7 +187,6 @@ void Bag::OnMove()
 		}
 		if (dynamic_cast<PokemonMenu*>(pk_Menu)->SuccessToUseItem() || dynamic_cast<PokemonMenu*>(pk_Menu)->SuccessToTakeItem())
 		{
-			TRACE("drop : %d\n", currentID);
 			DropItem(SelectItem()->GetID(), 1);
 			End();
 		}
@@ -271,6 +270,7 @@ void Bag::KeyDownListener(UINT nChar)
 		if (inSellMode) {
 			if (inShowText) {
 				if (nChar == KEY_Z) {
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					inShowText = false;
 					inSellMode = false;
 					End();
@@ -278,10 +278,17 @@ void Bag::KeyDownListener(UINT nChar)
 			}
 			else if (inYesno) {
 				switch (nChar) {
-					case KEY_UP: yesnoChooser = true; break;
-					case KEY_DOWN: yesnoChooser = false; break;
+					case KEY_UP: 
+						CAudio::Instance()->Play(AUDIO_SELECT); 
+						yesnoChooser = true; 
+						break;
+					case KEY_DOWN: 
+						CAudio::Instance()->Play(AUDIO_SELECT);
+						yesnoChooser = false; 
+						break;
 					case KEY_Z:
 						if (yesnoChooser) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
 							(*money) += int(SelectItem()->GetCost() * dropAmount * 0.5);
 							DropItem(SelectItem()->GetID(), dropAmount);
 						}
@@ -290,6 +297,7 @@ void Bag::KeyDownListener(UINT nChar)
 						inShowText = true;
 						break;
 					case KEY_X:
+						CAudio::Instance()->Play(AUDIO_COLLISION);
 						inItemamount = true;
 						inYesno = false;
 						break;
@@ -298,16 +306,24 @@ void Bag::KeyDownListener(UINT nChar)
 			else if (inItemamount) {
 				switch (nChar) {
 				case KEY_UP:
-					if (dropAmount < item_amount[SelectItem()->GetID()]) dropAmount++;
+					if (dropAmount < item_amount[SelectItem()->GetID()]) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
+						dropAmount++;
+					}
 					break;
 				case KEY_DOWN:
-					if (dropAmount > 1) dropAmount--;
+					if (dropAmount > 1) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
+						dropAmount--;
+					}
 					break;
 				case KEY_Z:
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					inYesno = true;
 					inItemamount = false;
 					break;
 				case KEY_X:
+					CAudio::Instance()->Play(AUDIO_COLLISION);
 					dropAmount = 1;
 					inItemamount = false;
 					break;
@@ -316,28 +332,38 @@ void Bag::KeyDownListener(UINT nChar)
 			else {
 				switch (nChar) {
 				case KEY_UP:
-					if (chooser > 0) chooser--;
+					if (chooser > 0) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
+						chooser--;
+					}
 					break;
 				case KEY_DOWN:
-					if (chooser < Get_CurrentCategorie_Size()) chooser++;
+					if (chooser < Get_CurrentCategorie_Size()) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
+						chooser++;
+					}
 					break;
 				case KEY_LEFT:
 					if (categorie_flagIndex > 1) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						chooser = 0;
 						categorie_flagIndex--;
 					}
 					break;
 				case KEY_RIGHT:
 					if (categorie_flagIndex < 5) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						chooser = 0;
 						categorie_flagIndex++;
 					}
 					break;
 				case KEY_Z:
+					CAudio::Instance()->Play(AUDIO_SELECT);
 					if (chooser == Get_CurrentCategorie_Size()) End();
 					else inItemamount = true;
 					break;
 				case KEY_X: 
+					CAudio::Instance()->Play(AUDIO_COLLISION);
 					inSellMode = false;
 					End();
 					break;
@@ -348,8 +374,12 @@ void Bag::KeyDownListener(UINT nChar)
 		else if (inBattle) {
 			if (inYesno) {
 				switch (nChar) {
-					case KEY_UP: yesnoChooser = true; break;
-					case KEY_DOWN: yesnoChooser = false; break;
+					case KEY_UP: 
+						yesnoChooser = true;
+						break;
+					case KEY_DOWN: 
+						yesnoChooser = false;
+						break;
 					case KEY_Z:
 						if (yesnoChooser) {
 							if (SelectItem()->GetCategorie() == 2) {
@@ -406,14 +436,21 @@ void Bag::KeyDownListener(UINT nChar)
 		else {
 			if (inYesno) {
 				switch (nChar) {
-					case KEY_UP: yesnoChooser = true; break;
-					case KEY_DOWN: yesnoChooser = false; break;
+					case KEY_UP:
+						CAudio::Instance()->Play(AUDIO_SELECT);
+						yesnoChooser = true; 
+						break;
+					case KEY_DOWN:
+						CAudio::Instance()->Play(AUDIO_SELECT);
+						yesnoChooser = false;
+						break;
 					case KEY_Z: 
 						if(yesnoChooser) DropItem(SelectItem()->GetID(), dropAmount);
 						dropAmount = 1;
 						inYesno = false;
 						break;
 					case KEY_X: 
+						CAudio::Instance()->Play(AUDIO_COLLISION);
 						inItemamount = true;
 						inYesno = false;
 						break;
@@ -422,16 +459,24 @@ void Bag::KeyDownListener(UINT nChar)
 			else if (inItemamount) {
 				switch (nChar) {
 					case KEY_UP: 
-						if (dropAmount < item_amount[SelectItem()->GetID()]) dropAmount++;
+						if (dropAmount < item_amount[SelectItem()->GetID()]) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							dropAmount++;
+						}
 						break;
 					case KEY_DOWN: 
-						if (dropAmount > 1) dropAmount--; 
+						if (dropAmount > 1) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							dropAmount--;
+						}
 						break;
-					case KEY_Z: 
+					case KEY_Z:
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						inYesno = true;
 						inItemamount = false;
 						break;
 					case KEY_X: 
+						CAudio::Instance()->Play(AUDIO_COLLISION);
 						dropAmount = 1;
 						inPanel = true;
 						inItemamount = false;
@@ -440,23 +485,28 @@ void Bag::KeyDownListener(UINT nChar)
 			}
 			else if (inPanel) {
 				switch (nChar) {
-					case KEY_UP: 
+					case KEY_UP:
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						if (panel_flagIndex == 2) panel_flagIndex = 0;
 						if (panel_flagIndex == 3) panel_flagIndex = 1;
 						break;
 					case KEY_DOWN: 
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						if (panel_flagIndex == 0) panel_flagIndex = 2;
 						if (panel_flagIndex == 1) panel_flagIndex = 3;
 						break;
 					case KEY_LEFT: 
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						if (panel_flagIndex == 1) panel_flagIndex = 0;
 						if (panel_flagIndex == 3) panel_flagIndex = 2;
 						break;
 					case KEY_RIGHT: 
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						if (panel_flagIndex == 0) panel_flagIndex = 1;
 						if (panel_flagIndex == 2) panel_flagIndex = 3;
 						break;
 					case KEY_Z: 
+						CAudio::Instance()->Play(AUDIO_SELECT);
 						switch (panel_flagIndex)
 						{
 							case 0:
@@ -474,6 +524,7 @@ void Bag::KeyDownListener(UINT nChar)
 						inPanel = false;
 						break;
 					case KEY_X: 
+						CAudio::Instance()->Play(AUDIO_COLLISION);
 						inPanel = false; 
 						panel_flagIndex = 0;
 						break;
@@ -482,19 +533,27 @@ void Bag::KeyDownListener(UINT nChar)
 			else {
 				switch (nChar) {
 					case KEY_UP: 
-						if (chooser > 0) chooser--;
+						if (chooser > 0) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							chooser--;
+						}
 						break;
 					case KEY_DOWN: 
-						if (chooser < Get_CurrentCategorie_Size()) chooser++;
+						if (chooser < Get_CurrentCategorie_Size()) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							chooser++;
+						}
 						break;
 					case KEY_LEFT: 
 						if (categorie_flagIndex > 1) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
 							chooser = 0;
 							categorie_flagIndex--;
 						}
 						break;
 					case KEY_RIGHT:
 						if (categorie_flagIndex < 5) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
 							chooser = 0;
 							categorie_flagIndex++;
 						}
@@ -537,7 +596,11 @@ void Bag::DropItem(int itemId, int amount)
 			if (item_amount[(*item_itr)->GetID()] == amount)
 			{
 				item_amount[(*item_itr)->GetID()] = 0;
-				item_itr = items.erase(item_itr);
+				if (item_itr == items.end() - 1) {
+					items.end() = items.erase(items.end() - 1);
+					break;
+				}
+				else item_itr = items.erase(item_itr);
 			}
 			else
 			{
