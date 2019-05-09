@@ -343,44 +343,12 @@ void CHero::SetDirection(int flag)
     isForwardDown = (flag == 3) ? true : false;
     isForwardRight = (flag == 4) ? true : false;
 }
-bool CHero::CheckForward(CMap** m)
-{
-    int eventCheckIndex = 1;
-
-    if (isForwardLeft)
-    {
-        eventCheckIndex = (*m)->CheckID(x - STEP_SIZE, y, GetDirection());
-    }
-
-    if (isForwardRight)
-    {
-        eventCheckIndex = (*m)->CheckID(x + SM, y, GetDirection());
-    }
-
-    if (isForwardUp)
-    {
-        eventCheckIndex = (*m)->CheckID(x, y - STEP_SIZE, GetDirection());
-    }
-
-    if (isForwardDown)
-    {
-        eventCheckIndex = (*m)->CheckID(x, y + SM, GetDirection());
-    }
-
-    if (eventCheckIndex == WeibaiTown_pick_Pokemomball) gameMenu->RecieveData(0, 1);
-
-    return eventCheckIndex;
-}
 int CHero::GetDirection()
 {
     if (isForwardUp) return 0;
     else if (isForwardDown) return 1;
     else if (isForwardLeft) return 2;
     else return 3;
-}
-void CHero::trigger(CMap* m)
-{
-    isDialog =  CheckForward(&m);
 }
 void CHero::ReceiveData(CMap* m, ActionObject* i)
 {
@@ -447,7 +415,6 @@ void CHero::KeyIn(UINT nChar)
     if (nChar == KEY_Z)
     {
         SetCanMove(false);
-        // trigger(gameMap);
     }
 }
 

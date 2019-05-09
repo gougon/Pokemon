@@ -25,9 +25,10 @@ class WeiBaiHouse1_1F_Map : public CMap
         virtual bool IsCollision(int x, int y);
         virtual CMap* ChangeMap(int x, int y, CHero* hero);
         virtual int ReturnMapID();
-        virtual int CheckID(int, int, int);
+		virtual void KeyDownListener(UINT nChar, CHero &hero);
     private:
         bool inEvent;
+		int dialogState;
         CDialog dialogBox;
         CMom mom;
         CObject book;

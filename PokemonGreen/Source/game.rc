@@ -224,9 +224,9 @@ FATGUY_RIGHT            BITMAP                  "..\\res\\FATGUY_RIGHT.bmp"
 
 LITTLE_GIRL_FRONT       BITMAP                  "..\\res\\GIRL_FRONT.bmp"
 
-FATGUY_BACK             BITMAP                  "..\\res\\FATGUY_BACK.bmp"
+FATGUY_UP               BITMAP                  "..\\res\\FATGUY_BACK.bmp"
 
-FATGUY_FRONT            BITMAP                  "..\\res\\FATGUY_FRONT.bmp"
+FATGUY_DOWN             BITMAP                  "..\\res\\FATGUY_FRONT.bmp"
 
 IDB_BATTLE_BACKGROUND   BITMAP                  "..\\RES\\battle_background.bmp"
 
@@ -282,7 +282,7 @@ BG_BACKPACK_CURSOR3     BITMAP                  "..\\res\\bitmap12.bmp"
 
 BG_BACKPACK_FLAG        BITMAP                  "..\\res\\bmp00030.bmp"
 
-ITEM_ANTIDOTE           BITMAP                  "..\\RES\\antidote.bmp"
+ITEM_ANTIDOTE           BITMAP                  "..\\RES\\ITEM_ANTIDOTE.bmp"
 
 BG_BACKPACK_BACK        BITMAP                  "..\\RES\\backtoworld.bmp"
 
@@ -452,19 +452,56 @@ IDB_BLANK_PANEL         BITMAP                  "..\\RES\\BLANK_PANEL.bmp"
 
 IDB_GIVEITEM_PANEL      BITMAP                  "..\\RES\\GIVETEM_PANEL.bmp"
 
-ITEM_FIGHTERGLOVE       BITMAP                  "..\\RES\\IDB_FIGHTERGLOVE.bmp"
+ITEM_FIGHTERGLOVE       BITMAP                  "..\\RES\\ITEM_FIGHTERGLOVE.bmp"
 
-ITEM_VULNERARY          BITMAP                  "..\\RES\\IDB_VULNERARY.bmp"
+ITEM_VULNERARY          BITMAP                  "..\\RES\\ITEM_VULNERARY.bmp"
 
 IDB_USEONATK_PANEL      BITMAP                  "..\\RES\\IDB_USEONATK_PANEL.bmp"
 
 ITEM_POKEBALL           BITMAP                  "..\\RES\\ITEM_POKEBALL.bmp"
 
-IDB_CATCH_BALL1         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\catch_ball.bmp"
+IDB_CATCH_BALL1         BITMAP                  "..\RES\\catch_ball.bmp"
 
-IDB_CATCH_BALL2         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\catch_ball2.bmp"
+IDB_CATCH_BALL2         BITMAP                  "..\\RES\\catch_ball2.bmp"
 
-IDB_CATCH_BALL3         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\catch_ball3.bmp"
+IDB_CATCH_BALL3         BITMAP                  "..\\RES\\catch_ball3.bmp"
+
+IDB_ENEMY_SKILL_EMBER1  BITMAP                  "..\\RES\\enemy_skill_ember1.bmp"
+
+IDB_ENEMY_SKILL_EMBER2  BITMAP                  "..\\RES\\enemy_skill_ember2.bmp"
+
+IDB_ENEMY_SKILL_EMBER3  BITMAP                  "..\\RES\\enemy_skill_ember3.bmp"
+
+IDB_ENEMY_SKILL_EMBER4  BITMAP                  "..\\RES\\enemy_skill_ember4.bmp"
+
+IDB_ENEMY_SKILL_EMBER5  BITMAP                  "..\\RES\\enemy_skill_ember5.bmp"
+
+IDB_ENEMY_SKILL_EMBER6  BITMAP                  "..\\RES\\enemy_skill_ember6.bmp"
+
+IDB_ENEMY_SKILL_EMBER7  BITMAP                  "..\\RES\\enemy_skill_ember7.bmp"
+
+IDB_ENEMY_SKILL_EMBER8  BITMAP                  "..\\RES\\enemy_skill_ember8.bmp"
+
+IDB_ENEMY_SKILL_EMBER9  BITMAP                  "..\\RES\\enemy_skill_ember9.bmp"
+
+IDB_ENEMY_SKILL_EMBER10 BITMAP                  "..\\RES\\enemy_skill_ember10.bmp"
+
+IDB_ENEMY_SKILL_EMBER11 BITMAP                  "..\\RES\\enemy_skill_ember11.bmp"
+
+IDB_ENEMY_SKILL_EMBER12 BITMAP                  "..\\RES\\enemy_skill_ember12.bmp"
+
+IDB_ENEMY_SKILL_EMBER13 BITMAP                  "..\\RES\\enemy_skill_ember13.bmp"
+
+IDB_ENEMY_SKILL_EMBER14 BITMAP                  "..\\RES\\enemy_skill_ember14.bmp"
+
+IDB_ENEMY_SKILL_EMBER15 BITMAP                  "..\\RES\\enemy_skill_ember15.bmp"
+
+IDB_ENEMY_SKILL_EMBER16 BITMAP                  "..\\RES\\enemy_skill_ember16.bmp"
+
+IDB_ENEMY_SKILL_EMBER17 BITMAP                  "..\\RES\\enemy_skill_ember17.bmp"
+
+ITEM_BURNMEDICINE       BITMAP                  "..\\RES\\ITEM_BURNMEDICINE.bmp"
+
 
 
 /////////////////////////////////////////////////////////////////////////////

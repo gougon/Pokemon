@@ -5,7 +5,8 @@ enum Item_ID
 	Item_SmallVulnerary, //1
 	Item_BigVulnerary,	 //2
 	Item_FighterGlove,	 //3
-	Item_PokeBall		//4
+	Item_PokeBall,		//4
+	Item_BurnMedicine	//5
 };
 namespace game_framework
 {

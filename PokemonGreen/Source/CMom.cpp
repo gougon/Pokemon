@@ -148,7 +148,6 @@ void CMom::Talk(int herodirection)
     canMoving = false;
     SetDirection(herodirection);
     var++;
-    TRACE("Mom talk\n");
 }
 
 int CMom::GetVer()

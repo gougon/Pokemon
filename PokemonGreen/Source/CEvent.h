@@ -1,5 +1,10 @@
 #pragma once
 #define EVENT_SIZE 10
+enum DialogState {
+	Start,
+	Continue,
+	End
+};
 namespace game_framework
 {
 class CEvent

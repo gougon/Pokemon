@@ -45,6 +45,14 @@ namespace game_framework
 			this->description = "catch pokemon";
 			this->cost = 150;
 			this->itemImage.LoadBitmap(ITEM_POKEBALL);
+			break;
+		case 5:
+			this->categorie = 1;
+			this->name = "burn medicine";
+			this->description = "burn recover";
+			this->cost = 75;
+			this->itemImage.LoadBitmap(ITEM_BURNMEDICINE);
+			break;
 		}
 	}
 	int CItem::GetID()

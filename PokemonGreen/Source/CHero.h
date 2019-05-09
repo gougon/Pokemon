@@ -88,7 +88,6 @@ class CHero
         CMap* gameMap;
         ActionObject* gameMenu;
         int money;
-        bool CheckForward(CMap** m);
         CDialog* heroDialog;
 };
 }

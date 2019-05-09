@@ -172,6 +172,7 @@
     <ClCompile Include="Source\Shop_map.cpp" />
     <ClCompile Include="Source\Pokeball.cpp" />
     <ClCompile Include="Source\Black.cpp" />
+    <ClCompile Include="Source\CFatguy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -252,6 +253,7 @@
     <ClInclude Include="Source\Shop_map.h" />
     <ClInclude Include="Source\Pokeball.h" />
     <ClInclude Include="Source\Black.h" />
+    <ClInclude Include="Source\CFatguy.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -846,6 +848,72 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\catch_ball3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember15.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember17.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember18.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ITEM_BURNMEDICINE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ITEM_ANTIDOTE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ITEM_FIGHTERGLOVE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ITEM_VULNERARY.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemy_skill_ember13.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
