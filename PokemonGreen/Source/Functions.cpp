@@ -11,6 +11,14 @@
 
 namespace game_framework {
 	template<class T>
+	void Swap(T &lhs, T &rhs)
+	{
+		T temp = lhs;
+		lhs = rhs;
+		rhs = temp;
+	}
+
+	template<class T>
 	T *FindSetFromOrder(set<T*>& lhs, int order)
 	{
 		int i = 0;

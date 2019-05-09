@@ -6,6 +6,7 @@
 #include "audio.h"
 #include "gamelib.h"
 #include <stdlib.h>
+#include "Functions.cpp"
 #include "PokemonMenu.h"
 #include "AtkBar.h"
 
@@ -255,7 +256,7 @@ namespace game_framework {
 							else if (order == pmOprtPanelSltChange) {
 								if (isAtkChange) {
 									CAudio::Instance()->Play(AUDIO_SELECT);
-									Swap(0, sltPm);
+									Swap((*pokemons)[0], (*pokemons)[sltPm]);
 									delete[] pokemonBar;
 									ReceiveData(pokemons);
 									End();
@@ -270,7 +271,7 @@ namespace game_framework {
 						else {
 							if (order == pmOprtPanelSltChange) {
 								CAudio::Instance()->Play(AUDIO_SELECT);
-								Swap(sltPm, swapPm);
+								Swap((*pokemons)[sltPm], (*pokemons)[swapPm]);
 								delete[] pokemonBar;
 								ReceiveData(pokemons);
 								isOprtPanel = false;
@@ -372,12 +373,5 @@ namespace game_framework {
 			pokemonBar[order].SetTopLeft(POKEMON_BAR_LEFT,
 				POKEMON_BAR_TOP + (order - 1) * POKEMON_BAR_INTERVAL);
 		}
-	}
-
-	void PokemonMenu::Swap(int order1, int order2)
-	{
-		Pokemon *temp = (*pokemons)[order1];
-		(*pokemons)[order1] = (*pokemons)[order2];
-		(*pokemons)[order2] = temp;
 	}
 }

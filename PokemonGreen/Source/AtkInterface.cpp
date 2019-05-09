@@ -250,9 +250,10 @@ namespace game_framework {
 				pmMenu->OnMove();
 			}
 			else {
+				Pokemon *oldPm = myPm;
 				SetAtkPm();
+				state = (oldPm == myPm) ? action : enemyLoadStartStatu;
 				myBar.ReceiveData(myPm);
-				state = enemyLoadStartStatu;
 			}
 			break;
 		case chooseItem:
