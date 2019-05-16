@@ -271,6 +271,7 @@
     <ClCompile Include="Source\CharMay.cpp" />
     <ClCompile Include="Source\CHero.cpp" />
     <ClCompile Include="Source\CItem.cpp" />
+    <ClCompile Include="Source\CItemSystem.cpp" />
     <ClCompile Include="Source\Clerk.cpp" />
     <ClCompile Include="Source\CMap.cpp" />
     <ClCompile Include="Source\CMom.cpp" />
@@ -370,6 +371,7 @@
     <ClInclude Include="Source\CharMay.h" />
     <ClInclude Include="Source\CHero.h" />
     <ClInclude Include="Source\CItem.h" />
+    <ClInclude Include="Source\CItemSystem.h" />
     <ClInclude Include="Source\Clerk.h" />
     <ClInclude Include="Source\CMap.h" />
     <ClInclude Include="Source\CMom.h" />
@@ -528,6 +530,7 @@
     <Image Include="RES\green_flower3.bmp" />
     <Image Include="RES\green_grass.bmp" />
     <Image Include="RES\GREEN_TREE.bmp" />
+    <Image Include="RES\HAVEITEM_ICON.bmp" />
     <Image Include="RES\heal_ball1.bmp" />
     <Image Include="RES\heal_ball10.bmp" />
     <Image Include="RES\heal_ball11.bmp" />

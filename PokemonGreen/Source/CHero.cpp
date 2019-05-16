@@ -65,7 +65,7 @@ void CHero::Initialize()
     x = X_POS;
     y = Y_POS;
     count = 0;
-    atkProb = 2;
+    atkProb = 5;
 	speed = STEP_SIZE;
     money = 1000;
     canMove = false;

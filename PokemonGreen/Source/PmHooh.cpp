@@ -43,6 +43,8 @@ namespace game_framework {
 		speciesStrength.SetAll(106, 130, 90, 110, 154, 90);
 		individualValue.SetAll(rand() % V, rand() % V, rand() % V, rand() % V, rand() % V, rand() % V);
 		effortValue.SetAll(0, 0, 0, 0, 0, 0);
+		haveItem = false;
+		takeItemID = -1;
 		LoadValue();
 		hitRate = 1;
 		evasionRate = 1;

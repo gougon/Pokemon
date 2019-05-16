@@ -399,25 +399,22 @@ namespace game_framework {
 
     bool Pokemon::TakeItem(int itemID)
     {
-        if (itemID == Item_FighterGlove)
-        {
-            TRACE("take glove\n");
-
-            if (!haveItem)
-            {
-                takeItemID = itemID;
-                haveItem = true;
-                mixValue.atk = GetAtk() + 15;
-                return true;
-            }
-            return false;
-        }
-        return false;
+		if (!haveItem) {
+			if (itemID == Item_FighterGlove)
+			{
+				TRACE("take glove\n");
+				mixValue.atk = GetAtk() + 15;
+			}
+			haveItem = true;
+			takeItemID = itemID;
+			return true;
+		}
+		else  return false;
     }
 
     int Pokemon::GetTakeItem()
     {
-        // if (!haveItem || takeItem == -1) return -1;
+        if (!haveItem || takeItemID == -1) return -1;
 
         return takeItemID;
     }

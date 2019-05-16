@@ -97,6 +97,7 @@ namespace game_framework {
 	constexpr int AUDIO_COLLISION = 17;
 	constexpr int AUDIO_PUT_HEALBALL = 18;
 	constexpr int AUDIO_HEAL = 19;
+	constexpr int AUDIO_MART = 20;
 
 class CAudio {
 public:

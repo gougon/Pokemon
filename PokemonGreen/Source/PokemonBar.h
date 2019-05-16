@@ -31,6 +31,8 @@ namespace game_framework {
 		const int PM1_HP_TOP = 125;
 		const int PM1_ICON_LEFT = 35;
 		const int PM1_ICON_TOP = 45;
+		const int PM1_ITEMICON_TOP = 70;
+		const int PM1_ITEMICON_LEFT = 80;
 
 		const int PM2_NAME_LEFT = 105;
 		const int PM2_NAME_TOP = 0;
@@ -41,6 +43,8 @@ namespace game_framework {
 		const int PM2_HP_TOP = 32;
 		const int PM2_ICON_LEFT = 30;
 		const int PM2_ICON_TOP = -5;
+		const int PM2_ITEMICON_TOP = 65;
+		const int PM2_ITEMICON_LEFT = 30;
 
 		void SetPmInformation();
 		void LoadHpLen();
@@ -50,6 +54,9 @@ namespace game_framework {
 		CMovingBitmap pmIcon;
 		CMovingBitmap *targetHp;
 		CMovingBitmap greenHp, yellowHp, redHp, burnIcon;
+		CMovingBitmap haveItemIcon;
+		bool haveItem;
+		// CMovingBitmap pmImg;
 		Pokemon *pm;
 		int delay;
 		int order;

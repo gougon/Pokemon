@@ -11,7 +11,7 @@
 
 namespace game_framework {
 	PokemonBar::PokemonBar() :
-		isSelect(false), delay(0)
+		isSelect(false), delay(0), haveItem(false)
 	{
 		// empty body
 	}
@@ -39,6 +39,10 @@ namespace game_framework {
 		// set statu icon
 		if (pm->GetStatus()->GetStatu() != none)
 			burnIcon.ShowBitmap();
+
+		// set item icon
+		if (pm->GetTakeItem() != -1)
+			haveItemIcon.ShowBitmap();
 	}
 
 	void PokemonBar::LoadBitmap()
@@ -47,6 +51,7 @@ namespace game_framework {
 		yellowHp.LoadBitmap(IDB_HP_YELLOW);
 		redHp.LoadBitmap(IDB_HP_RED);
 
+		haveItemIcon.LoadBitmap(HAVEITEM_ICON, RGB(255, 0, 0));
 		nameText.LoadBitmap();
 		levelText.LoadBitmap();
 		remainHpText.LoadBitmap();
@@ -70,6 +75,7 @@ namespace game_framework {
 			remainHpText.SetTopLeft(left + PM1_RH_LEFT, top + PM1_HP_TOP);
 			allHpText.SetTopLeft(left + PM1_AH_LEFT, top + PM1_HP_TOP);
 			burnIcon.SetTopLeft(left + 170, top + 90);
+			haveItemIcon.SetTopLeft(left + PM1_ITEMICON_TOP, top + PM1_ITEMICON_LEFT);
 		}
 		else {
 			targetHp->SetTopLeft(left + BLD_BAR_LEFT, top + BLD_BAR_TOP);
@@ -79,6 +85,7 @@ namespace game_framework {
 			remainHpText.SetTopLeft(left + PM2_RH_LEFT, top + PM2_HP_TOP);
 			allHpText.SetTopLeft(left + PM2_AH_LEFT, top + PM2_HP_TOP);
 			burnIcon.SetTopLeft(left + 170, top + 45);
+			haveItemIcon.SetTopLeft(left + PM2_ITEMICON_TOP, top + PM2_ITEMICON_LEFT);
 		}
 	}
 
@@ -116,6 +123,7 @@ namespace game_framework {
 		levelText.SetText(to_string(pm->GetLevel()));
 		remainHpText.SetText(to_string(pm->GetRemainHP()));
 		allHpText.SetText(to_string(pm->GetHP()));
+		if (pm->GetTakeItem() != -1) haveItem = true;
 	}
 
 	void PokemonBar::LoadHpLen()

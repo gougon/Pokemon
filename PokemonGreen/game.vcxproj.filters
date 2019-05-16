@@ -177,6 +177,7 @@
     <ClCompile Include="Source\Trainer.cpp" />
     <ClCompile Include="Source\CharMay.cpp" />
     <ClCompile Include="Source\PmList.cpp" />
+    <ClCompile Include="Source\CItemSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -261,6 +262,7 @@
     <ClInclude Include="Source\Trainer.h" />
     <ClInclude Include="Source\CharMay.h" />
     <ClInclude Include="Source\PmList.h" />
+    <ClInclude Include="Source\CItemSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -921,6 +923,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\enemy_skill_ember13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HAVEITEM_ICON.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\may_atk.bmp">

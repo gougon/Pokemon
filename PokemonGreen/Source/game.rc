@@ -502,25 +502,27 @@ IDB_ENEMY_SKILL_EMBER17 BITMAP                  "..\\RES\\enemy_skill_ember17.bm
 
 ITEM_BURNMEDICINE       BITMAP                  "..\\RES\\ITEM_BURNMEDICINE.bmp"
 
-IDB_MAY_ATK             BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\may_atk.bmp"
+IDB_MAY_ATK             BITMAP                  "..\\RES\\may_atk.bmp"
+												 
+IDB_MAY_BACK            BITMAP                  "..\\RES\\may_back.bmp"
+												 
+IDB_MAY_FRONT           BITMAP                  "..\\RES\\may_front.bmp"
+												 
+IDB_MAY_LEFT            BITMAP                  "..\\RES\\may_left.bmp"
+												 
+IDB_MAY_RIGHT           BITMAP                  "..\\RES\\may_right.bmp"
+												 
+IDB_PMLIST_DEADBALL     BITMAP                  "..\\RES\\pmlist_deadball.bmp"
+												 
+IDB_PMLIST_LEFT         BITMAP                  "..\\RES\\pmlist_left.bmp"
+												 
+IDB_PMLIST_LIVEBALL     BITMAP                  "..\\RES\\pmlist_live.bmp"
+												 
+IDB_PMLIST_RIGHT        BITMAP                  "..\\RES\\pmlist_right.bmp"
+												 
+IDB_PMLIST_NONEBALL     BITMAP                  "..\\RES\\pmlist_noneball.bmp"
 
-IDB_MAY_BACK            BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\may_back.bmp"
-
-IDB_MAY_FRONT           BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\may_front.bmp"
-
-IDB_MAY_LEFT            BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\may_left.bmp"
-
-IDB_MAY_RIGHT           BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\may_right.bmp"
-
-IDB_PMLIST_DEADBALL     BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\pmlist_deadball.bmp"
-
-IDB_PMLIST_LEFT         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\pmlist_left.bmp"
-
-IDB_PMLIST_LIVEBALL     BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\pmlist_live.bmp"
-
-IDB_PMLIST_RIGHT        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\pmlist_right.bmp"
-
-IDB_PMLIST_NONEBALL     BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\pmlist_noneball.bmp"
+HAVEITEM_ICON           BITMAP                  "..\\RES\\HAVEITEM_ICON.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

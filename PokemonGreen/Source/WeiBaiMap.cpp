@@ -41,7 +41,7 @@ namespace game_framework
 		CAudio::Instance()->Play(AUDIO_WEIBAITOWN);
 
 		SetMXY(48, 87);			// 設定地圖總長寬格數
-		SetXY(18 * SM, 57 * SM);		// 設定初始位置
+		SetXY(18 * SM, 24 * SM);		// 設定初始位置
 		SetMap("area1");
 		fatguy.Initialize();
 		fatguy.SetXY(25 * SM, 62 * SM + 40);
@@ -266,43 +266,67 @@ namespace game_framework
 		y /= SM;
 
 		if (nChar == KEY_Z) {
+			TRACE("%d %d\n", x, y);
 			if (inEvent && dialogState == End)
 			{
 				inEvent = false;
+				hero.EndDialog();
 			}
-			if (pickable_Antidote.GetX() / SM == x && pickable_Antidote.GetY() / SM == y)
-			{
-				if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
+			else {
+				if (pickable_Antidote.GetX() / SM == x && pickable_Antidote.GetY() / SM == y)
 				{
-					mapGameEvent->Occur(WeibaiTown_pick_Pokemomball);
-					dialogBox.SetText("pick the smallvulnerary;and the pokeball");
-					hero.GetItem(Item_SmallVulnerary , 2);
-					hero.GetItem(Item_PokeBall, 2);
+					if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
+					{
+						mapGameEvent->Occur(WeibaiTown_pick_Pokemomball);
+						dialogBox.SetText("pick the smallvulnerary;and the pokeball");
+						hero.GetItem(Item_SmallVulnerary, 2);
+						hero.GetItem(Item_PokeBall, 2);
+						dialogState = End;
+						inEvent = true;
+					}
+				}
+				else if (fatguy.GetX() / SM == x && fatguy.GetY() / SM + 1 == y)
+				{
+					fatguy.Talk(direction);
 					inEvent = true;
+					hero.StartDialog();
+					if (fatguy.GetVer() == 1) {
+						dialogBox.SetText("do you have some;delicious foods");
+					}
+					if (fatguy.GetVer() == 2) {
+						dialogState = Continue;
+						dialogBox.SetText("you call me fatguy!!");
+					}
+					if (fatguy.GetVer() == 3) dialogBox.SetText("get out of my way!!");
+					if (fatguy.GetVer() == 4) {
+						dialogState = End;
+					}
 				}
-			}
-			else if (fatguy.GetX() / SM == x && fatguy.GetY() / SM + 1 == y)
-			{
-				fatguy.Talk(direction);
-				inEvent = true;
-
-				if (fatguy.GetVer() == 1) {
-					dialogBox.SetText("do you have some;delicious foods");
-					dialogState = Start;
-				}
-				if (fatguy.GetVer() == 2) {
-					dialogState = Continue;
-					dialogBox.SetText("you call me fatguy!!");
-				}
-				if (fatguy.GetVer() == 3) dialogBox.SetText("get out of my way!!");
-				if (fatguy.GetVer() == 4) {
+				else if (x == 21 && y == 60) {
+					inEvent = true;
 					dialogState = End;
-					inEvent = false;
+					dialogBox.SetText("my sweet home");
 				}
-			}
-			else
-			{
-				//
+				else if (x == 26 && y == 60) {
+					inEvent = true;
+					dialogState = End;
+					dialogBox.SetText("competitor home");
+				}
+				else if (x == 29 && y == 65) {
+					inEvent = true;
+					dialogState = End;
+					dialogBox.SetText("the weibaitown             ;the town without anything");
+				}
+				else if (x == 20 && y == 69) {
+					inEvent = true;
+					dialogState = End;
+					dialogBox.SetText("professor house");
+				}
+				else
+				{
+					//
+				}
+				if (inEvent) hero.StartDialog();
 			}
 		}
 	}
