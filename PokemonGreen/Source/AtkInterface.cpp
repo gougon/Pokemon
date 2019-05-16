@@ -217,7 +217,7 @@ namespace game_framework {
 
 	void AtkInterface::OnMove()
 	{
-		constexpr auto V = 10;
+		constexpr auto V = 20;
 		if (++audioCounter == 270)
 			CAudio::Instance()->Play(AUDIO_BATTLE_PROCESS, true);
 		switch (state)
@@ -233,7 +233,7 @@ namespace game_framework {
 			battleHero.SetTopLeft(battleHero.Left() + V, battleHero.Top());
 			if (trainer != nullptr)
 				battleTrainer->SetTopLeft(battleTrainer->Left() - V, battleTrainer->Top());
-			if (battleGround[0].Left() == 0)
+			if (battleGround[0].Left() <= 0)
 				state = heroStay;
 			break;
 		case heroStay:
@@ -258,7 +258,7 @@ namespace game_framework {
 				battleTrainer->SetTopLeft(battleTrainer->Left() + V, battleTrainer->Top());
 				trainerList.SetTopLeft(trainerList.Left() - V, trainerList.Top());
 			}
-			if (battleHero.Left() == -130)
+			if (battleHero.Left() <= -130)
 				state = pokemonAppear;
 			break;
 		case pokemonAppear:
@@ -687,7 +687,7 @@ namespace game_framework {
 		case pokemonAppear:
 			switch (nChar) {
 			case KEY_Z:
-				if (myPm->Left() == 110 && nChar == KEY_Z) {
+				if (myPm->Left() >= 110 && nChar == KEY_Z) {
 					CAudio::Instance()->Play(AUDIO_SELECT);
 					state = loadStartStatu;
 				}
