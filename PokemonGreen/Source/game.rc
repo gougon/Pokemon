@@ -460,7 +460,7 @@ IDB_USEONATK_PANEL      BITMAP                  "..\\RES\\IDB_USEONATK_PANEL.bmp
 
 ITEM_POKEBALL           BITMAP                  "..\\RES\\ITEM_POKEBALL.bmp"
 
-IDB_CATCH_BALL1         BITMAP                  "..\RES\\catch_ball.bmp"
+IDB_CATCH_BALL1         BITMAP                  "..\\RES\\catch_ball.bmp"
 
 IDB_CATCH_BALL2         BITMAP                  "..\\RES\\catch_ball2.bmp"
 
@@ -502,6 +502,25 @@ IDB_ENEMY_SKILL_EMBER17 BITMAP                  "..\\RES\\enemy_skill_ember17.bm
 
 ITEM_BURNMEDICINE       BITMAP                  "..\\RES\\ITEM_BURNMEDICINE.bmp"
 
+IDB_MAY_ATK             BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\may_atk.bmp"
+
+IDB_MAY_BACK            BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\may_back.bmp"
+
+IDB_MAY_FRONT           BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\may_front.bmp"
+
+IDB_MAY_LEFT            BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\may_left.bmp"
+
+IDB_MAY_RIGHT           BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\may_right.bmp"
+
+IDB_PMLIST_DEADBALL     BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\pmlist_deadball.bmp"
+
+IDB_PMLIST_LEFT         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\pmlist_left.bmp"
+
+IDB_PMLIST_LIVEBALL     BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\pmlist_live.bmp"
+
+IDB_PMLIST_RIGHT        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\pmlist_right.bmp"
+
+IDB_PMLIST_NONEBALL     BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\pmlist_noneball.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

@@ -10,6 +10,7 @@ namespace game_framework
 {
 class AtkInterface;
 class CMap;
+class CharMay;
 
 constexpr int HERO_X = 300;
 constexpr int HERO_Y = 220;
@@ -25,10 +26,11 @@ class CHero
         int  GetX2();					// 擦子右下角 x 座標
         int  GetY2();					// 擦子右下角 y 座標
         int  GetCount();
+		int  GetSpeed();
         void SetCount(int count);
         void Initialize();				// 設定小智為初始值
         void LoadBitmap();				// 載入圖形
-        void OnMove(CMap** m, AtkInterface &atkInterface);			// 移動
+        void OnMove(CMap** m, AtkInterface &atkInterface, CharMay* may);			// 移動
         void OnShow();					// 將圖形貼到畫面
         bool IsMoving();
         bool IsCanMove();
@@ -43,19 +45,19 @@ class CHero
         void SetMovingUp(bool flag);	// 設定是否正在往上移動
         void SetDirection(int flag);    // 設定目前朝向哪裡
         int GetDirection();
-        void trigger(CMap* m);
 		void ReceiveData(CMap* m, ActionObject* i);
 		void GetItem(int itemID, int amount);
 		int* GetMoney();
 		ActionObject* GetBag();
         void SetXY(int nx, int ny);		// 設定座標
-        void KeyIn(UINT nChar);
+        void KeyIn(UINT nChar, CharMay* may);
         int GetAtkProb();
         Pokemon* GetPokemon(int order);
 		vector<Pokemon*>* GetPokemons();
         int GetPmNum();
 		int GetAliveNum();
         void AddPokemon(Pokemon* newPm);
+		void MoveAnime();
     protected:
         void ChangeMap(CMap** m);
         CMovingBitmap HeroFront;		// 小智的動畫
@@ -76,8 +78,10 @@ class CHero
         bool isForwardRight;		// 是否面朝右
         bool isForwardUp;			// 是否面朝上
         bool isDialog;
+		bool isRunning;
 		bool invisible;
         //bool inMenu;
+		int speed;
         bool inBag;
         bool canMove;
         int count;
@@ -88,7 +92,5 @@ class CHero
         CMap* gameMap;
         ActionObject* gameMenu;
         int money;
-        CDialog* heroDialog;
 };
 }
-

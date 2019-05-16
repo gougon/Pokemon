@@ -204,6 +204,11 @@ CGameStateRun::CGameStateRun(CGame* g)
     //ball = new CBall [NUMBALLS];
 }
 
+CGameStateRun::~CGameStateRun()
+{
+	// delete gameMap;
+}
+
 void CGameStateRun::OnBeginState()
 {
     CAudio::Instance()->Stop(AUDIO_HOME);
@@ -215,6 +220,8 @@ void CGameStateRun::OnBeginState()
 	atkInterface.ReceivePmMenu(myMenu.GetPokemonMenu());
 	atkInterface.ReceiveBag(myMenu.GetBag());
 	atkInterface.Init();
+	may = new CharMay(&atkInterface);
+	may->LoadBitmap();
 }
 
 void CGameStateRun::OnMove()							// 移動遊戲元素
@@ -236,26 +243,28 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
     {
         testDialog.OnMove();
 		gameMap->OnMove();
+		may->OnMove();
         int count = hero.GetCount();
 
         //TRACE("x = %d\ny = %d\n", hero.GetX1(), hero.GetY1());
         //TRACE("sx = %d\nsy = %d\n", gameMap->GetSX(), gameMap->GetSY());
-
         if (hero.IsCanMove())
         {
-            if (!hero.IsMoving() && count >= 12)
+			int oneBlockTime = SM / hero.GetSpeed();
+            if (!hero.IsMoving() && count >= oneBlockTime)
             {
                 hero.SetCanMove(false);
                 hero.SetCount(0);
+				// hero.MoveAnime();
             }
-            else if (count >= 12)
+            else if (count >= oneBlockTime)
             {
                 hero.SetCount(0);
             }
             else
             {
                 hero.SetCount(++count);
-                hero.OnMove(&gameMap, atkInterface);
+                hero.OnMove(&gameMap, atkInterface, may);
             }
         }
     }
@@ -309,6 +318,9 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
     {
         myMenu.KeyDownListener(nChar);
     }
+	else if (may->IsTalk()) {
+		may->KeyDownListener(nChar, hero);
+	}
     else
     {
         hero.SetCanMove(true);
@@ -316,7 +328,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
         if (!hero.IsMoving() && hero.GetCount() == 0)
         {
             hero.ReceiveData(gameMap, &myMenu);
-            hero.KeyIn(nChar);
+            hero.KeyIn(nChar, may);
         }
 		gameMap->KeyDownListener(nChar, hero);
     }
@@ -379,6 +391,7 @@ void CGameStateRun::OnShow()
     else
     {
         gameMap->OnShow();
+		may->OnShow(hero);
         hero.OnShow();
 
         if (myMenu.IsWork())

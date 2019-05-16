@@ -42,7 +42,7 @@ namespace game_framework {
 			atkAnime.SetTopLeft(410, 70);
 			break;
 		case enemy:
-			atkEnemyAnime.SetTopLeft(410, 260);
+			atkEnemyAnime.SetTopLeft(220, 260);
 			break;
 		default:
 			ASSERT(0);
@@ -65,7 +65,7 @@ namespace game_framework {
 				return EffectText(enemy);
 			}
 			else {
-				isSuccess = isSuccess;
+				isSuccess = false;
 				return self->GetName() + "'s attack is miss";
 			}
 		}

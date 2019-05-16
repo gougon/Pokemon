@@ -1,0 +1,18 @@
+#pragma once
+
+#include "Trainer.h"
+namespace game_framework
+{
+	class Trainer;
+	class CharMay : public Trainer {
+	public:
+		CharMay(AtkInterface *atkInterface);
+		virtual void KeyDownListener(UINT nChar, CHero &hero);
+		virtual void LoadBitmap();
+		virtual void OnShow(CHero &hero);
+		virtual void OnMove(); // for don't move
+	private:
+		virtual void Talk(CHero &hero);
+		void SetTopLeft(int hx, int hy);
+	};
+}

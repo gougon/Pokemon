@@ -23,7 +23,6 @@ namespace game_framework {
 	void Black::Draw()
 	{
 		static int counter = 0;
-		TRACE("\ncounter = %d\n", counter);
 		int finalCounter = (millisecond / 33);
 		if (counter < finalCounter) {
 			counter++;

@@ -11,12 +11,17 @@
 #include "PmValue.h"
 #include "AtkBar.h"
 #include "ActionObject.h"
+#include "Trainer.h"
+#include "PmList.h"
 
 using namespace std;
 namespace game_framework {
 	class CHero;
+	class Trainer;
 
+	constexpr auto SELFPM_X = 110;
 	constexpr auto SELFPM_Y = 225;
+	constexpr auto ENEMYPM_X = 420;
 	constexpr auto ENEMYPM_Y = 35;
 
 	enum Cursor {
@@ -37,6 +42,7 @@ namespace game_framework {
 	enum State {
 		openAnime, 
 		heroAppear, 
+		heroStay, 
 		heroLeave, 
 		pokemonAppear,
 		loadStartStatu, 
@@ -68,11 +74,18 @@ namespace game_framework {
 		virtual void SetTopLeft() {}
 		void ReceivePmMenu(PokemonMenu *pmMenu);
 		void ReceiveBag(Bag *bag);
-		void ReceiveData(CHero *self, Pokemon *enemy);
+		void ReceiveEnemy(CHero *self, Pokemon *enemy);
+		void ReceiveTrainer(CHero *self, Trainer *trainer);
 		void KeyDownListener(UINT nChar);
 		void Start();
 		void End();
 	private:
+		const int PMLIST_LEFT_LEFT = 0;
+		const int PMLIST_LEFT_TOP = 95;
+		const int PMLIST_RIGHT_LEFT = 360;
+		const int PMLIST_RIGHT_TOP = 263;
+		const int PMLIST_LEN = 278;
+
 		const int LVUP_PANEL_LEFT = 385;
 		const int LVUP_PANEL_TOP = 170;
 		const int LVUP_VALUE_TOP = 190;
@@ -89,7 +102,8 @@ namespace game_framework {
 		const int ALLPP_LEFT = 575;
 		const int SKTYPE_LEFT = 495;
 
-		void SetAtkPm();
+		void SetMyAtkPm();
+		void SetTrainerAtkPm();
 		void SetSkillText();
 		int GetAddExp(Pokemon *enemy);
 		void AddExp(int order);
@@ -97,7 +111,6 @@ namespace game_framework {
 		void UseItem();
 		void SltPm();
 		void SetCursorPosition(int cursor, State state);
-		
 
 		int delayCount = 0, audioCounter = 0;
 		int openCount = 0, cursor, enemySkill, textCount, lvupCount;
@@ -107,15 +120,17 @@ namespace game_framework {
 		set<Pokemon*> joinAtkPm, lvupPm;
 		AtkBar myBar, enemyBar;
 		State state;
-		CAnimation *statuAnime;
-		CMovingBitmap black, battleBackground, battleOption, battleDialog, skillOption, battleHero, battleGround[2];
+		PmList myList, trainerList;
+		CMovingBitmap black, battleBackground, battleOption, battleDialog, skillOption, battleGround[2];
 		CMovingBitmap  atkCursor, ynPanel, lvupPanel, lvupFpanel;
+		CMovingBitmap  *battleTrainer, battleHero;
 		CText outcomeText;
 		CText atkText, atkStatuText;
 		CText valueUpText[6], valueFinalText[6];
 		CText remainPPText, allPPText, skTypeText;
 		vector<CText> skillText;
 		CHero *self;
+		Trainer *trainer;
 		Pokemon *enemy, *myPm;
 		PokemonMenu *pmMenu;
 		Bag *bag;

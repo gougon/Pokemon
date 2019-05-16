@@ -9,13 +9,30 @@
 using namespace std;
 namespace game_framework
 {
-CDialog::CDialog()
+CDialog::CDialog() :
+	textCounter(0), textNum(0)
 {
 }
 
 void CDialog::SetText(string inputstr)
 {
     showString = inputstr;
+}
+
+void CDialog::AddText(string text)
+{
+	texts.push_back(text);
+	textNum++;
+}
+
+void CDialog::Next()
+{
+	textCounter = (textCounter == textNum) ? textCounter : textCounter + 1;
+}
+
+void CDialog::Reset()
+{
+	textCounter = 0;
 }
 
 void CDialog::InitDialog(char type)
@@ -44,6 +61,7 @@ void CDialog::OnShow()
 {
 	screen.SetTopLeft(5, 340);
 	screen.ShowBitmap();
+	showString = (textNum == 0) ? showString : texts[textCounter];
 	int length = showString.length();
 	int firstSentenceLength = showString.substr(0, showString.find(';')).length();
 	int brFlag = 0;
@@ -60,5 +78,15 @@ void CDialog::OnShow()
 			(brFlag == 0) ? 55 + 16 * i : 55 + 16 * (i - 1), 360 + (brFlag * 55));
 		showAlphabet.GetAlphabet(showString[i + (brFlag) * firstSentenceLength])->ShowBitmap();
 	}
+}
+
+bool CDialog::IsEnd()
+{
+	return (textCounter == textNum);
+}
+
+int CDialog::GetCurrentTextNumber()
+{
+	return textCounter;
 }
 }

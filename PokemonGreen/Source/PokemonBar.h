@@ -49,8 +49,7 @@ namespace game_framework {
 		CMovingBitmap bar, barSelect;
 		CMovingBitmap pmIcon;
 		CMovingBitmap *targetHp;
-		CMovingBitmap greenHp, yellowHp, redHp;
-		// CMovingBitmap pmImg;
+		CMovingBitmap greenHp, yellowHp, redHp, burnIcon;
 		Pokemon *pm;
 		int delay;
 		int order;

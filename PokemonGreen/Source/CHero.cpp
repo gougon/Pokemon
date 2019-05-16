@@ -13,6 +13,7 @@
 #include "Skill.h"
 #include "SkillFactory.h"
 #include "SkillImpact.h"
+#include "CharMay.h"
 #include <iostream>
 using namespace std;
 namespace game_framework
@@ -47,6 +48,11 @@ int CHero::GetCount()
     return count;
 }
 
+int CHero::GetSpeed()
+{
+	return speed;
+}
+
 void CHero::SetCount(int count)
 {
     this->count = count;
@@ -60,6 +66,7 @@ void CHero::Initialize()
     y = Y_POS;
     count = 0;
     atkProb = 2;
+	speed = STEP_SIZE;
     money = 1000;
     canMove = false;
     isDialog = false;
@@ -70,6 +77,7 @@ void CHero::Initialize()
     HeroMovingFront.SetDelayCount(5);
     HeroMovingLeft.SetDelayCount(5);
     HeroMovingRight.SetDelayCount(5);
+	isRunning = false;
 	invisible = false;
     PokemonFactory pmfactory;
     // SkillFactory skfactory;
@@ -115,33 +123,30 @@ void CHero::LoadBitmap()
     HeroMovingLeft.AddBitmap(HERO_LEFT, RGB(255, 0, 0));
     //////////////////////////////////////////////
 }
-void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
+void CHero::OnMove(CMap** m, AtkInterface &atkInterface, CharMay* may)
 {
-    HeroMovingBack.OnMove();
-    HeroMovingFront.OnMove();
-    HeroMovingLeft.OnMove();
-    HeroMovingRight.OnMove();
-
+	MoveAnime();
+	int oneBlockTime = SM / speed;
     if (isForwardLeft)
     {
-        if ((*m)->IsEntrance(x - STEP_SIZE, y) && count == 12)
+        if ((*m)->IsEntrance(x - speed, y) && count == oneBlockTime)
         {
 			CAudio::Instance()->Play(AUDIO_ESCAPE);
-            x -= STEP_SIZE;
+            x -= speed;
             ChangeMap(m);
         }
-        else if (!(*m)->IsCollision(x - STEP_SIZE, y))
+        else if (!(*m)->IsCollision(x - speed, y) && !may->IsCollision(x - speed, y))
         {
-            if ((*m)->IsWarZone(x - STEP_SIZE, y) && count == 12)
+            if ((*m)->IsWarZone(x - speed, y) && count == oneBlockTime)
             {
-				x -= STEP_SIZE;
-                (*m)->SetXY((*m)->GetSX() - STEP_SIZE, (*m)->GetSY());
+				x -= speed;
+                (*m)->SetXY((*m)->GetSX() - speed, (*m)->GetSY());
                 (*m)->ProduceEnemy(this, atkInterface);
             }
             else
             {
-                (*m)->SetXY((*m)->GetSX() - STEP_SIZE, (*m)->GetSY());
-                x -= STEP_SIZE;
+                (*m)->SetXY((*m)->GetSX() - speed, (*m)->GetSY());
+                x -= speed;
             }
         }
 		else if (count == 1) {
@@ -151,24 +156,24 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
 
     if (isForwardRight)
     {
-        if ((*m)->IsEntrance(x + SM, y) && count == 12)
+        if ((*m)->IsEntrance(x + SM, y) && count == oneBlockTime)
         {
 			CAudio::Instance()->Play(AUDIO_ESCAPE);
-            x += STEP_SIZE;
+            x += speed;
             ChangeMap(m);
         }
-        else if (!(*m)->IsCollision(x + SM, y))
+        else if (!(*m)->IsCollision(x + SM, y) && !may->IsCollision(x + SM, y))
         {
-            if ((*m)->IsWarZone(x + SM, y) && count == 12)
+            if ((*m)->IsWarZone(x + SM, y) && count == oneBlockTime)
             {
-                x += STEP_SIZE;
-                (*m)->SetXY((*m)->GetSX() + STEP_SIZE, (*m)->GetSY());
+                x += speed;
+                (*m)->SetXY((*m)->GetSX() + speed, (*m)->GetSY());
                 (*m)->ProduceEnemy(this, atkInterface);
             }
             else
             {
-                (*m)->SetXY((*m)->GetSX() + STEP_SIZE, (*m)->GetSY());
-                x += STEP_SIZE;
+                (*m)->SetXY((*m)->GetSX() + speed, (*m)->GetSY());
+                x += speed;
             }
         }
 		else if (count == 1) {
@@ -178,24 +183,24 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
 
     if (isForwardUp)
     {
-        if ((*m)->IsEntrance(x, y - STEP_SIZE) && count == 12)
+        if ((*m)->IsEntrance(x, y - speed) && count == oneBlockTime)
         {
 			CAudio::Instance()->Play(AUDIO_ESCAPE);
-            y -= STEP_SIZE;
+            y -= speed;
             ChangeMap(m);
         }
-        else if (!(*m)->IsCollision(x, y - STEP_SIZE))
+        else if (!(*m)->IsCollision(x, y - speed) && !may->IsCollision(x, y - speed))
         {
-            if ((*m)->IsWarZone(x, y - STEP_SIZE) && count == 12)
+            if ((*m)->IsWarZone(x, y - speed) && count == oneBlockTime)
             {
-                y -= STEP_SIZE;
-                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() - STEP_SIZE);
+                y -= speed;
+                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() - speed);
                 (*m)->ProduceEnemy(this, atkInterface);
             }
             else
             {
-                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() - STEP_SIZE);
-                y -= STEP_SIZE;
+                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() - speed);
+                y -= speed;
             }
         }
 		else if (count == 1) {
@@ -205,24 +210,24 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
 
     if (isForwardDown)
     {
-        if ((*m)->IsEntrance(x, y + SM) && count == 12)
+        if ((*m)->IsEntrance(x, y + SM) && count == oneBlockTime)
         {
 			CAudio::Instance()->Play(AUDIO_ESCAPE);
-            y += STEP_SIZE;
+            y += speed;
             ChangeMap(m);
         }
-        else if (!(*m)->IsCollision(x, y + SM))
+        else if (!(*m)->IsCollision(x, y + SM) && !may->IsCollision(x, y + SM))
         {
-            if ((*m)->IsWarZone(x, y + SM) && count == 12)
+            if ((*m)->IsWarZone(x, y + SM) && count == oneBlockTime)
             {
-                y += STEP_SIZE;
-                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() + STEP_SIZE);
+                y += speed;
+                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() + speed);
                 (*m)->ProduceEnemy(this, atkInterface);
             }
             else
             {
-                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() + STEP_SIZE);
-                y += STEP_SIZE;
+                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() + speed);
+                y += speed;
             }
         }
 		else if(count == 1){
@@ -234,52 +239,48 @@ void CHero::OnShow()
 {
 	if (!invisible) {
 		//���W��
-		if (isMovingUp)
+		if (isMovingUp || count != 0 && isForwardUp)
 		{
 			HeroMovingBack.SetTopLeft(HERO_X, HERO_Y);
 			HeroMovingBack.OnShow();
 		}
-
-		if (isForwardUp && !isMovingUp)
+		else if(isForwardUp)
 		{
 			HeroBack.SetTopLeft(HERO_X, HERO_Y);
 			HeroBack.ShowBitmap();
 		}
 
 		//���U��
-		if (isMovingDown)
+		if (isMovingDown || count != 0 && isForwardDown)
 		{
 			HeroMovingFront.SetTopLeft(HERO_X, HERO_Y);
 			HeroMovingFront.OnShow();
 		}
-
-		if (isForwardDown && !isMovingDown)
+		else if (isForwardDown)
 		{
 			HeroFront.SetTopLeft(HERO_X, HERO_Y);
 			HeroFront.ShowBitmap();
 		}
 
 		//������
-		if (isMovingLeft)
+		if (isMovingLeft || count != 0 && isForwardLeft)
 		{
 			HeroMovingLeft.SetTopLeft(HERO_X, HERO_Y);
 			HeroMovingLeft.OnShow();
 		}
-
-		if (isForwardLeft && !isMovingLeft)
+		else if (isForwardLeft)
 		{
 			HeroLeft.SetTopLeft(HERO_X, HERO_Y);
 			HeroLeft.ShowBitmap();
 		}
 
 		//���S��
-		if (isMovingRight)
+		if (isMovingRight || count != 0 && isForwardRight)
 		{
 			HeroMovingRight.SetTopLeft(HERO_X, HERO_Y);
 			HeroMovingRight.OnShow();
 		}
-
-		if (isForwardRight && !isMovingRight)
+		else if (isForwardRight)
 		{
 			HeroRight.SetTopLeft(HERO_X, HERO_Y);
 			HeroRight.ShowBitmap();
@@ -373,13 +374,14 @@ void CHero::SetXY(int nx, int ny)
     y = ny;
 }
 
-void CHero::KeyIn(UINT nChar)
+void CHero::KeyIn(UINT nChar, CharMay* may)
 {
     const char KEY_LEFT = 0x25; // keyboard左箭頭
     const char KEY_UP = 0x26; // keyboard上箭頭
     const char KEY_RIGHT = 0x27; // keyboard右箭頭
     const char KEY_DOWN = 0x28; // keyboard下箭頭
     const char KEY_Z = 0x5a;
+	const char KEY_X = 0x58;
 
     if (InDialog())
         SetCanMove(false);
@@ -387,6 +389,17 @@ void CHero::KeyIn(UINT nChar)
 
     if (!IsMoving() && GetCount() == 0 && !InDialog())
     {
+		if (nChar == KEY_X) {
+			if (!isRunning) {
+				speed = 2 * STEP_SIZE;
+				isRunning = true;
+			}
+			else {
+				speed = STEP_SIZE;
+				isRunning = false;
+			}
+		}
+
         if (nChar == KEY_UP)
         {
             SetDirection(1);
@@ -414,8 +427,10 @@ void CHero::KeyIn(UINT nChar)
 
     if (nChar == KEY_Z)
     {
+		may->KeyDownListener(nChar, *this);
         SetCanMove(false);
     }
+
 }
 
 void CHero::ChangeMap(CMap** m)
@@ -467,5 +482,13 @@ void CHero::AddPokemon(Pokemon* newPm)
     {
         // ......
     }
+}
+
+void CHero::MoveAnime()
+{
+	HeroMovingBack.OnMove();
+	HeroMovingFront.OnMove();
+	HeroMovingLeft.OnMove();
+	HeroMovingRight.OnMove();
 }
 }

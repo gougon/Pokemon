@@ -155,7 +155,6 @@
     <ClCompile Include="Source\PmOprtView.cpp" />
     <ClCompile Include="Source\PokemonBar.cpp" />
     <ClCompile Include="Source\PokemonMenu.cpp" />
-    <ClCompile Include="Source\Record.cpp" />
     <ClCompile Include="Source\Self.cpp" />
     <ClCompile Include="Source\Bag.cpp" />
     <ClCompile Include="Source\PmValue.cpp" />
@@ -174,6 +173,10 @@
     <ClCompile Include="Source\Black.cpp" />
     <ClCompile Include="Source\CFatguy.cpp" />
     <ClCompile Include="Source\Functions.cpp" />
+    <ClCompile Include="Source\Record.cpp" />
+    <ClCompile Include="Source\Trainer.cpp" />
+    <ClCompile Include="Source\CharMay.cpp" />
+    <ClCompile Include="Source\PmList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -255,6 +258,9 @@
     <ClInclude Include="Source\Pokeball.h" />
     <ClInclude Include="Source\Black.h" />
     <ClInclude Include="Source\CFatguy.h" />
+    <ClInclude Include="Source\Trainer.h" />
+    <ClInclude Include="Source\CharMay.h" />
+    <ClInclude Include="Source\PmList.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -915,6 +921,36 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\enemy_skill_ember13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\may_atk.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\may_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\may_front.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\may_left.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\may_right.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pmlist_deadball.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pmlist_left.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pmlist_live.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pmlist_right.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pmlist_noneball.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

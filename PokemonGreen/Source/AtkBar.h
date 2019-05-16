@@ -31,6 +31,7 @@ namespace game_framework {
 	class AtkBar : public GameObject {
 	public:
 		AtkBar(barType rtype = barTypeMy);
+		~AtkBar();
 		virtual void LoadBitmap();
 		virtual void Init();
 		virtual void OnMove();

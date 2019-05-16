@@ -242,7 +242,7 @@ namespace game_framework
 
 	void WeiBaiMap::StartAtk(CHero* self, Pokemon* enemy, AtkInterface &atkInterface)
 	{
-		atkInterface.ReceiveData(self, enemy);
+		atkInterface.ReceiveEnemy(self, enemy);
 		atkInterface.Start();
 	}
 
