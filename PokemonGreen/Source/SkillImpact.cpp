@@ -42,7 +42,7 @@ namespace game_framework {
 			atkAnime.SetTopLeft(410, 70);
 			break;
 		case enemy:
-			atkEnemyAnime.SetTopLeft(230, 260);
+			atkEnemyAnime.SetTopLeft(220, 260);
 			break;
 		default:
 			ASSERT(0);

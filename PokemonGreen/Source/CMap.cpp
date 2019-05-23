@@ -6,11 +6,9 @@
 #include "gamelib.h"
 #include "CHero.h"
 #include "CMap.h"
-#include "Black.h"
 
 using namespace std;
-namespace game_framework
-{
+namespace game_framework {
 CMap::CMap() :
 	audioCounter(0)
 {
@@ -69,6 +67,11 @@ int CMap::GetSX()
 int CMap::GetSY()
 {
     return sy;
+}
+
+string CMap::GetName()
+{
+	return name;
 }
 
 bool CMap::IsEntrance(int x, int y)

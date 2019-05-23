@@ -20,15 +20,14 @@ constexpr auto M_GREEN_GRASS = 10;
 constexpr auto JUMP_LAND = 11;
 constexpr auto NORMAL_HOUSE1 = 12;
 
-namespace game_framework
-{
-class WeiBaiMap : public CMap
-{
+namespace game_framework {
+	class WeiBaiMap : public CMap {
     public:
         WeiBaiMap(CEvent*);
         virtual void InitMap();
         virtual void LoadBitmap();
         virtual void OnShow();
+		virtual void ReShow(CHero &hero);
 		virtual void OnMove();
         virtual bool IsCollision(int x, int y);
         virtual bool IsWarZone(int x, int y);
@@ -46,5 +45,5 @@ class WeiBaiMap : public CMap
         CPickableObject pickable_Antidote;
         vector<int> hitImg = { 0, 3, 6, 11 };
         vector<int> warZone = { 10 };
-};
+	};
 }

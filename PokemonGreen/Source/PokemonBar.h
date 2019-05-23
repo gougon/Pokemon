@@ -53,7 +53,7 @@ namespace game_framework {
 		CMovingBitmap bar, barSelect;
 		CMovingBitmap pmIcon;
 		CMovingBitmap *targetHp;
-		CMovingBitmap greenHp, yellowHp, redHp;
+		CMovingBitmap greenHp, yellowHp, redHp, burnIcon;
 		CMovingBitmap haveItemIcon;
 		bool haveItem;
 		// CMovingBitmap pmImg;

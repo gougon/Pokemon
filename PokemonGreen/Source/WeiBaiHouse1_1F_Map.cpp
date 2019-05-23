@@ -25,7 +25,7 @@ WeiBaiHouse1_1F_Map::WeiBaiHouse1_1F_Map(CEvent* gameEvent) : CMap(3) // sceneNu
 void WeiBaiHouse1_1F_Map::OnMove()
 {
     dialogBox.OnMove();
-    mom.OnMove();
+    // mom.OnMove();
 }
 
 void WeiBaiHouse1_1F_Map::InitMap()
@@ -33,8 +33,9 @@ void WeiBaiHouse1_1F_Map::InitMap()
     SetMXY(39, 37);
     SetXY(17 * SM, 18 * SM);
     SetMap("weibaitown_house1_1f");
-    mom.Initialize();
-    mom.SetXY(1320, 1060);
+	name = "weibaihouse1_1";
+    /*mom.Initialize();
+    mom.SetXY(1320, 1060);*/
     book.SetXY(1020, 960);
     dialogBox.InitDialog('n');
     inEvent = false;
@@ -44,7 +45,7 @@ void WeiBaiHouse1_1F_Map::InitMap()
 void WeiBaiHouse1_1F_Map::LoadBitmap()
 {
     scene[WEIBAITOWN_HOUSE1_1F].LoadBitmap(IDB_WEIBAITOWN_HOUSE1_1F);
-    mom.LoadBitmap();
+    // mom.LoadBitmap();
 }
 
 void WeiBaiHouse1_1F_Map::OnShow()
@@ -76,7 +77,7 @@ void WeiBaiHouse1_1F_Map::OnShow()
             //y = j/SM
             //x = i/SM
             //TRACE("SX = %d , SY = %d\n", GetSX(), GetSY());
-            mom.OnShow(GetSX(), GetSY());
+            //mom.OnShow(GetSX(), GetSY());
         }
     }
 
@@ -94,7 +95,7 @@ bool WeiBaiHouse1_1F_Map::IsCollision(int x, int y)
 			return true;
     }
 
-    if (mom.GetX() / SM == x  && mom.GetY() / SM  + 1 ==  y) return true;
+    //if (mom.GetX() / SM == x  && mom.GetY() / SM  + 1 ==  y) return true;
 
     return false;
 }
@@ -155,26 +156,26 @@ void WeiBaiHouse1_1F_Map::KeyDownListener(UINT nChar, CHero & hero)
 		{
 			inEvent = false;
 		}
-		else if (mom.GetX() / SM == x && mom.GetY() / SM + 1 == y) //represent mom
-		{
-			mapGameEvent->Occur(WeibaiHouse1_1F_Talk_To_Mom);
-			mom.Talk(direction);
-			inEvent = true;
+		//else if (mom.GetX() / SM == x && mom.GetY() / SM + 1 == y) //represent mom
+		//{
+		//	mapGameEvent->Occur(WeibaiHouse1_1F_Talk_To_Mom);
+		//	mom.Talk(direction);
+		//	inEvent = true;
 
-			if (mom.GetVer() == 1) {
-				dialogBox.SetText("take this 100 dollars");
-				dialogState = Start;
-			}
-			if (mom.GetVer() == 2) {
-				dialogState = Continue;
-				dialogBox.SetText("012345/6789");
-			}
-			if (mom.GetVer() == 3) dialogBox.SetText("manipulate your clock");
-			if (mom.GetVer() == 4) {
-				dialogState = End;
-				inEvent = false;
-			}
-		}
+		//	if (mom.GetVer() == 1) {
+		//		dialogBox.SetText("take this 100 dollars");
+		//		dialogState = Start;
+		//	}
+		//	if (mom.GetVer() == 2) {
+		//		dialogState = Continue;
+		//		dialogBox.SetText("012345/6789");
+		//	}
+		//	if (mom.GetVer() == 3) dialogBox.SetText("manipulate your clock");
+		//	if (mom.GetVer() == 4) {
+		//		dialogState = End;
+		//		inEvent = false;
+		//	}
+		//}
 		else if (book.GetX() / SM == x && book.GetY() / SM == y)
 		{
 			inEvent = true;

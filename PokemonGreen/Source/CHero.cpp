@@ -5,7 +5,6 @@
 #include <ddraw.h>
 #include "audio.h"
 #include "gamelib.h"
-#include "AtkInterface.h"
 #include "CHero.h"
 #include "Pokemon.h"
 #include "PokemonFactory.h"
@@ -13,8 +12,10 @@
 #include "Skill.h"
 #include "SkillFactory.h"
 #include "SkillImpact.h"
+#include "Characters.h"
 #include <iostream>
 using namespace std;
+
 namespace game_framework
 {
 CHero::CHero()
@@ -47,6 +48,11 @@ int CHero::GetCount()
     return count;
 }
 
+int CHero::GetSpeed()
+{
+	return speed;
+}
+
 void CHero::SetCount(int count)
 {
     this->count = count;
@@ -60,6 +66,7 @@ void CHero::Initialize()
     y = Y_POS;
     count = 0;
     atkProb = 10;
+	speed = STEP_SIZE;
     money = 1000;
     canMove = false;
     isDialog = false;
@@ -70,7 +77,9 @@ void CHero::Initialize()
     HeroMovingFront.SetDelayCount(5);
     HeroMovingLeft.SetDelayCount(5);
     HeroMovingRight.SetDelayCount(5);
+	isRunning = false;
 	invisible = false;
+	onGrass = false;
     PokemonFactory pmfactory;
     // SkillFactory skfactory;
     Pokemon* pm = pmfactory.CreatePokemon(treecko);
@@ -114,34 +123,35 @@ void CHero::LoadBitmap()
     HeroMovingLeft.AddBitmap(HERO_LEFT_TWO, RGB(255, 0, 0));
     HeroMovingLeft.AddBitmap(HERO_LEFT, RGB(255, 0, 0));
     //////////////////////////////////////////////
+	shineGrass.AddBitmap(IDB_SHINE_GRASS1, RGB(255, 0, 0));
+	shineGrass.AddBitmap(IDB_SHINE_GRASS2, RGB(255, 0, 0));
+	shineGrass.SetDelayCount(7);
 }
-void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
+void CHero::OnMove(CMap** m, AtkInterface &atkInterface, Characters *characters)
 {
-    HeroMovingBack.OnMove();
-    HeroMovingFront.OnMove();
-    HeroMovingLeft.OnMove();
-    HeroMovingRight.OnMove();
-
+	MoveAnime();
+	int oneBlockTime = SM / speed;
     if (isForwardLeft)
     {
-        if ((*m)->IsEntrance(x - STEP_SIZE, y) && count == 12)
+        if ((*m)->IsEntrance(x - speed, y) && count == oneBlockTime)
         {
 			CAudio::Instance()->Play(AUDIO_ESCAPE);
-            x -= STEP_SIZE;
+            x -= speed;
             ChangeMap(m);
         }
-        else if (!(*m)->IsCollision(x - STEP_SIZE, y))
+        else if (!(*m)->IsCollision(x - speed, y) && !characters->IsCollision(x - speed, y, **m))
         {
-            if ((*m)->IsWarZone(x - STEP_SIZE, y) && count == 12)
+            if ((*m)->IsWarZone(x - speed, y) && count == oneBlockTime)
             {
-				x -= STEP_SIZE;
-                (*m)->SetXY((*m)->GetSX() - STEP_SIZE, (*m)->GetSY());
+				x -= speed;
+				shineGrass.SetTopLeft(x - (*m)->GetSX(), y - (*m)->GetSY());
+                (*m)->SetXY((*m)->GetSX() - speed, (*m)->GetSY());
                 (*m)->ProduceEnemy(this, atkInterface);
             }
             else
             {
-                (*m)->SetXY((*m)->GetSX() - STEP_SIZE, (*m)->GetSY());
-                x -= STEP_SIZE;
+                (*m)->SetXY((*m)->GetSX() - speed, (*m)->GetSY());
+                x -= speed;
             }
         }
 		else if (count == 1) {
@@ -151,24 +161,24 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
 
     if (isForwardRight)
     {
-        if ((*m)->IsEntrance(x + SM, y) && count == 12)
+        if ((*m)->IsEntrance(x + SM, y) && count == oneBlockTime)
         {
 			CAudio::Instance()->Play(AUDIO_ESCAPE);
-            x += STEP_SIZE;
+            x += speed;
             ChangeMap(m);
         }
-        else if (!(*m)->IsCollision(x + SM, y))
+        else if (!(*m)->IsCollision(x + SM, y) && !characters->IsCollision(x + SM, y, **m))
         {
-            if ((*m)->IsWarZone(x + SM, y) && count == 12)
+            if ((*m)->IsWarZone(x + SM, y) && count == oneBlockTime)
             {
-                x += STEP_SIZE;
-                (*m)->SetXY((*m)->GetSX() + STEP_SIZE, (*m)->GetSY());
+                x += speed;
+                (*m)->SetXY((*m)->GetSX() + speed, (*m)->GetSY());
                 (*m)->ProduceEnemy(this, atkInterface);
             }
             else
             {
-                (*m)->SetXY((*m)->GetSX() + STEP_SIZE, (*m)->GetSY());
-                x += STEP_SIZE;
+                (*m)->SetXY((*m)->GetSX() + speed, (*m)->GetSY());
+                x += speed;
             }
         }
 		else if (count == 1) {
@@ -178,24 +188,24 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
 
     if (isForwardUp)
     {
-        if ((*m)->IsEntrance(x, y - STEP_SIZE) && count == 12)
+        if ((*m)->IsEntrance(x, y - speed) && count == oneBlockTime)
         {
 			CAudio::Instance()->Play(AUDIO_ESCAPE);
-            y -= STEP_SIZE;
+            y -= speed;
             ChangeMap(m);
         }
-        else if (!(*m)->IsCollision(x, y - STEP_SIZE))
+        else if (!(*m)->IsCollision(x, y - speed) && !characters->IsCollision(x, y - speed, **m))
         {
-            if ((*m)->IsWarZone(x, y - STEP_SIZE) && count == 12)
+            if ((*m)->IsWarZone(x, y - speed) && count == oneBlockTime)
             {
-                y -= STEP_SIZE;
-                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() - STEP_SIZE);
+                y -= speed;
+                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() - speed);
                 (*m)->ProduceEnemy(this, atkInterface);
             }
             else
             {
-                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() - STEP_SIZE);
-                y -= STEP_SIZE;
+                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() - speed);
+                y -= speed;
             }
         }
 		else if (count == 1) {
@@ -205,30 +215,38 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface)
 
     if (isForwardDown)
     {
-        if ((*m)->IsEntrance(x, y + SM) && count == 12)
+        if ((*m)->IsEntrance(x, y + SM) && count == oneBlockTime)
         {
 			CAudio::Instance()->Play(AUDIO_ESCAPE);
-            y += STEP_SIZE;
+            y += speed;
             ChangeMap(m);
         }
-        else if (!(*m)->IsCollision(x, y + SM))
+        else if (!(*m)->IsCollision(x, y + SM) && !characters->IsCollision(x, y + SM, **m))
         {
-            if ((*m)->IsWarZone(x, y + SM) && count == 12)
+            if ((*m)->IsWarZone(x, y + SM) && count == oneBlockTime)
             {
-                y += STEP_SIZE;
-                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() + STEP_SIZE);
+                y += speed;
+                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() + speed);
                 (*m)->ProduceEnemy(this, atkInterface);
             }
             else
             {
-                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() + STEP_SIZE);
-                y += STEP_SIZE;
+                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() + speed);
+                y += speed;
             }
         }
 		else if(count == 1){
 			CAudio::Instance()->Play(AUDIO_COLLISION);
 		}
     }
+
+	onGrass = (*m)->IsWarZone(x, y);
+	if (onGrass) {
+		shineGrass.SetTopLeft(((x / SM) + 2) * SM - (*m)->GetSX(), ((y / SM) + 1) * SM - ((*m)->GetSY() / SM) * SM);
+		TRACE("\nx = %d\nsgx = %d\n", x, ((x / SM) + 2) * SM - (*m)->GetSX());
+		shineGrass.OnMove();
+	}
+		
 }
 void CHero::OnShow()
 {
@@ -244,8 +262,6 @@ void CHero::OnShow()
 			HeroBack.SetTopLeft(HERO_X, HERO_Y);
 			HeroBack.ShowBitmap();
 		}
-
-		//���U��
 		if (isMovingDown || count != 0 && isForwardDown)
 		{
 			HeroMovingFront.SetTopLeft(HERO_X, HERO_Y);
@@ -256,31 +272,33 @@ void CHero::OnShow()
 			HeroFront.SetTopLeft(HERO_X, HERO_Y);
 			HeroFront.ShowBitmap();
 		}
-
-		//������
 		if (isMovingLeft || count != 0 && isForwardLeft)
 		{
 			HeroMovingLeft.SetTopLeft(HERO_X, HERO_Y);
 			HeroMovingLeft.OnShow();
 		}
-		if (isForwardLeft)
+		else if (isForwardLeft)
 		{
 			HeroLeft.SetTopLeft(HERO_X, HERO_Y);
 			HeroLeft.ShowBitmap();
 		}
 
-		//���S��
 		if (isMovingRight || count != 0 && isForwardRight)
 		{
 			HeroMovingRight.SetTopLeft(HERO_X, HERO_Y);
 			HeroMovingRight.OnShow();
 		}
-
-		if (isForwardRight)
+		else if (isForwardRight)
 		{
 			HeroRight.SetTopLeft(HERO_X, HERO_Y);
 			HeroRight.ShowBitmap();
 		}
+	}
+	if (count == 0) 
+		shineGrass.Reset();
+	if (onGrass && count != 0) {
+		shineGrass.SetTopLeft(HERO_X + (HERO_X / SM) * SM - HERO_X, HERO_Y + 20);
+		shineGrass.OnShow();
 	}
 }
 
@@ -370,13 +388,14 @@ void CHero::SetXY(int nx, int ny)
     y = ny;
 }
 
-void CHero::KeyIn(UINT nChar)
+void CHero::KeyIn(UINT nChar, Characters* characters, CMap &map)
 {
     const char KEY_LEFT = 0x25; // keyboard左箭頭
     const char KEY_UP = 0x26; // keyboard上箭頭
     const char KEY_RIGHT = 0x27; // keyboard右箭頭
     const char KEY_DOWN = 0x28; // keyboard下箭頭
     const char KEY_Z = 0x5a;
+	const char KEY_X = 0x58;
 
     if (InDialog())
         SetCanMove(false);
@@ -384,6 +403,17 @@ void CHero::KeyIn(UINT nChar)
 
     if (!IsMoving() && GetCount() == 0 && !InDialog())
     {
+		if (nChar == KEY_X) {
+			if (!isRunning) {
+				speed = 2 * STEP_SIZE;
+				isRunning = true;
+			}
+			else {
+				speed = STEP_SIZE;
+				isRunning = false;
+			}
+		}
+
         if (nChar == KEY_UP)
         {
             SetDirection(1);
@@ -411,8 +441,10 @@ void CHero::KeyIn(UINT nChar)
 
     if (nChar == KEY_Z)
     {
+		characters->KeyDownListener(nChar, *this, map);
         SetCanMove(false);
     }
+
 }
 
 void CHero::ChangeMap(CMap** m)
@@ -464,5 +496,13 @@ void CHero::AddPokemon(Pokemon* newPm)
     {
         // ......
     }
+}
+
+void CHero::MoveAnime()
+{
+	HeroMovingBack.OnMove();
+	HeroMovingFront.OnMove();
+	HeroMovingLeft.OnMove();
+	HeroMovingRight.OnMove();
 }
 }

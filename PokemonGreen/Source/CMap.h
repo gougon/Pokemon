@@ -46,8 +46,10 @@ class CMap
         void SetMap(string mapName);
         int GetSX();
         int GetSY();
+		string GetName();
         virtual void OnMove() {}
         virtual void OnShow() {}
+		virtual void ReShow(CHero &hero) {}
         virtual bool IsCollision(int x, int y) { return true; }
         bool IsEntrance(int x, int y);
 		virtual void KeyDownListener(UINT nChar, CHero &hero) {}
@@ -59,6 +61,7 @@ class CMap
         virtual void StartAtk(CHero* self, CCharacter* enemy, AtkInterface &atkInterface) { /* empty body */ }
     protected:
 		void SetTopLeft(int order, int x, int y);
+		string name;
         CEvent* mapGameEvent;
         CMovingBitmap* scene;
         vector<vector<int> > map;

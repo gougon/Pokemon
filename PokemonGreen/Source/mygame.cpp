@@ -220,6 +220,11 @@ CGameStateRun::CGameStateRun(CGame* g)
     //ball = new CBall [NUMBALLS];
 }
 
+CGameStateRun::~CGameStateRun()
+{
+	// delete gameMap;
+}
+
 void CGameStateRun::OnBeginState()
 {
     CAudio::Instance()->Stop(AUDIO_HOME);
@@ -231,6 +236,8 @@ void CGameStateRun::OnBeginState()
 	atkInterface.ReceiveBag(myMenu.GetBag());
 	atkInterface.ReceivePmMenu(myMenu.GetPokemonMenu());
 	atkInterface.Init();
+	characters = new Characters(&atkInterface);
+	characters->InitNpcs();
 }
 
 void CGameStateRun::OnMove()							// 移動遊戲元素
@@ -252,26 +259,28 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
     {
         testDialog.OnMove();
 		gameMap->OnMove();
+		characters->OnMove(hero, *gameMap);
         int count = hero.GetCount();
 
         //TRACE("x = %d\ny = %d\n", hero.GetX1(), hero.GetY1());
         //TRACE("sx = %d\nsy = %d\n", gameMap->GetSX(), gameMap->GetSY());
-
         if (hero.IsCanMove())
         {
-            if (!hero.IsMoving() && count >= 12)
+			int oneBlockTime = SM / hero.GetSpeed();
+            if (!hero.IsMoving() && count >= oneBlockTime)
             {
                 hero.SetCanMove(false);
                 hero.SetCount(0);
+				// hero.MoveAnime();
             }
-            else if (count >= 12)
+            else if (count >= oneBlockTime)
             {
                 hero.SetCount(0);
             }
             else
             {
                 hero.SetCount(++count);
-                hero.OnMove(&gameMap, atkInterface);
+                hero.OnMove(&gameMap, atkInterface, characters);
             }
         }
     }
@@ -326,6 +335,9 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
     {
         myMenu.KeyDownListener(nChar);
     }
+	else if (characters->IsTalk()) {
+		characters->KeyDownListener(nChar, hero, *gameMap);
+	}
     else
     {
         hero.SetCanMove(true);
@@ -333,7 +345,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
         if (!hero.IsMoving() && hero.GetCount() == 0)
         {
             hero.ReceiveData(gameMap, &myMenu);
-            hero.KeyIn(nChar);
+            hero.KeyIn(nChar, characters, *gameMap);
         }
 		gameMap->KeyDownListener(nChar, hero);
     }
@@ -392,11 +404,12 @@ void CGameStateRun::OnShow()
     //  貼上背景圖、撞擊數、球、擦子、彈跳的球
     if (atkInterface.IsWork())
         atkInterface.OnShow();
-    //
-    else
-    {
+    else {
         gameMap->OnShow();
+		characters->OnShow(hero, *gameMap);
         hero.OnShow();
+		characters->ReShow(hero, *gameMap);
+		gameMap->ReShow(hero);
 
         if (myMenu.IsWork())
             myMenu.OnShow();

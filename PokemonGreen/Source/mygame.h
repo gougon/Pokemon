@@ -43,6 +43,7 @@
 #include "Menu.h"
 #include "AtkInterface.h"
 #include "CDialog.h"
+#include "Characters.h"
 #include "WeiBaiMap.h"
 #include "WeiBaiHouse1_1F_Map.h"
 #include "WeiBaiHouse2_1F_Map.h"
@@ -50,6 +51,7 @@
 
 namespace game_framework
 {
+	class CharMay;
 /////////////////////////////////////////////////////////////////////////////
 // Constants
 /////////////////////////////////////////////////////////////////////////////
@@ -83,7 +85,7 @@ class CGameStateRun : public CGameState
 {
     public:
         CGameStateRun(CGame* g);
-        //~CGameStateRun();
+        ~CGameStateRun();
         void OnBeginState();							// 設定每次重玩所需的變數
         void OnInit();  								// 遊戲的初值及圖形設定
         void OnKeyDown(UINT, UINT, UINT);
@@ -103,6 +105,7 @@ class CGameStateRun : public CGameState
         CHero           hero;
         CDialog         testDialog;
         AtkInterface	atkInterface;
+		Characters*		characters;
 };
 
 /////////////////////////////////////////////////////////////////////////////

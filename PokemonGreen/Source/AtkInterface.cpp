@@ -10,6 +10,8 @@
 #include "Functions.cpp"
 #include "AtkInterface.h"
 #include "ItemPokeBall.h"
+#include "CHero.h"
+#include "Trainer.h"
 
 namespace game_framework {
 	AtkInterface::AtkInterface()
@@ -28,10 +30,27 @@ namespace game_framework {
 		{
 		case heroAppear:
 			battleHero.ShowBitmap();
+			if(trainer != nullptr)
+				battleTrainer->ShowBitmap();
 			battleDialog.ShowBitmap();
+			break;
+		case heroStay:
+			battleHero.ShowBitmap();
+			if (trainer != nullptr)
+				battleTrainer->ShowBitmap();
+			battleDialog.ShowBitmap();
+			myList.OnShow();
+			if(trainer != nullptr)
+				trainerList.OnShow();
+			outcomeText.OnShow();
 			break;
 		case heroLeave:
 			battleHero.ShowBitmap();
+			myList.OnShow();
+			if (trainer != nullptr) {
+				battleTrainer->ShowBitmap();
+				trainerList.OnShow();
+			}
 			battleDialog.ShowBitmap();
 			break;
 		case pokemonAppear:
@@ -175,10 +194,13 @@ namespace game_framework {
 				battleDialog.ShowBitmap();
 				outcomeText.OnShow();
 			}
+			if (trainer != nullptr)
+				trainerList.OnShow();
 			break;
 		case end:
 			if (myPm->GetRemainHP() > 0) {
 				myPm->OnShow();
+				trainerList.OnShow();
 			}
 			else {
 				enemy->OnShow();
@@ -213,7 +235,7 @@ namespace game_framework {
 
 	void AtkInterface::OnMove()
 	{
-		constexpr auto V = 10;
+		constexpr auto V = 20;
 		if (++audioCounter == 270)
 			CAudio::Instance()->Play(AUDIO_BATTLE_PROCESS, true);
 		switch (state)
@@ -226,18 +248,39 @@ namespace game_framework {
 		case heroAppear:
 			battleGround[0].SetTopLeft(battleGround[0].Left() - V, battleGround[0].Top());
 			battleGround[1].SetTopLeft(battleGround[1].Left() + V, battleGround[1].Top());
-			if (battleGround[0].Left() == 0) 
-				state = heroLeave;
+			battleHero.SetTopLeft(battleHero.Left() + V, battleHero.Top());
+			if (trainer != nullptr)
+				battleTrainer->SetTopLeft(battleTrainer->Left() - V, battleTrainer->Top());
+			if (battleGround[0].Left() <= 0)
+				state = heroStay;
+			break;
+		case heroStay:
+			if (trainer == nullptr)
+				outcomeText.SetText(enemy->GetName() + "is appear");
+			else {
+				outcomeText.SetText(trainer->GetName() + " come to challenge");
+			}
+			if (myList.Left() > PMLIST_RIGHT_LEFT) {
+				if(trainer != nullptr)
+					trainerList.SetTopLeft(trainerList.Left() + V, trainerList.Top());
+				myList.SetTopLeft(myList.Left() - V, myList.Top());
+			}
+				
 			break;
 		case heroLeave:
 			battleGround[0].SetTopLeft(battleGround[0].Left(), battleGround[0].Top());
 			battleGround[1].SetTopLeft(battleGround[1].Left(), battleGround[1].Top());
 			battleHero.SetTopLeft(battleHero.Left() - V, battleHero.Top());
-			if (battleHero.Left() == -130)
+			myList.SetTopLeft(myList.Left() + V, myList.Top());
+			if (trainer != nullptr) {
+				battleTrainer->SetTopLeft(battleTrainer->Left() + V, battleTrainer->Top());
+				trainerList.SetTopLeft(trainerList.Left() - V, trainerList.Top());
+			}
+			if (battleHero.Left() <= -130)
 				state = pokemonAppear;
 			break;
 		case pokemonAppear:
-			if (myPm->Left() != 110) {
+			if (myPm->Left() != SELFPM_X) {
 				myPm->SetTopLeft(myPm->Left() + V, SELFPM_Y);
 				enemy->SetTopLeft(enemy->Left() - V, ENEMYPM_Y);
 			}
@@ -267,7 +310,7 @@ namespace game_framework {
 			}
 			else {
 				Pokemon *oldPm = myPm;
-				SetAtkPm();
+				SetMyAtkPm();
 				state = (oldPm == myPm) ? action : enemyLoadStartStatu;
 				myBar.ReceiveData(myPm);
 			}
@@ -442,6 +485,7 @@ namespace game_framework {
 			textCount = 0;
 			break;
 		case endDialog:
+			isAnime = false;
 			if (myPm->GetRemainHP() <= 0) {
 				if (textCount == 0) {
 					outcomeText.SetText(myPm->GetName() + " was defeated");
@@ -467,22 +511,32 @@ namespace game_framework {
 				}
 			}
 			else {
-				if (!isBattleEnd) {
-					isBattleEnd = true;
-					CAudio::Instance()->Stop(AUDIO_BATTLE_START);
-					CAudio::Instance()->Stop(AUDIO_BATTLE_PROCESS);
-					CAudio::Instance()->Play(AUDIO_BATTLE_END, true);
+				if (trainer != nullptr) {
+					trainerList.LoadPokemonData(PmType::enemy, trainer->GetPokemons());
 				}
-				if (textCount == 0)
+				if (trainer != nullptr && textCount == 0 && trainerList.Left() < PMLIST_LEFT_LEFT)
+					trainerList.SetTopLeft(trainerList.Left() + V, trainerList.Top());
+				if (textCount == 0) 
 					if (dynamic_cast<ItemPokeBall*>(pokeball)->IsCatch()) {
 						outcomeText.SetText("capture " + enemy->GetName());
 					}
 					else {
 						outcomeText.SetText(enemy->GetName() + " was defeated");
 					}
-				else {
+				else if (textCount <= (int)joinAtkPm.size()) {
 					outcomeText.SetText(FindSetFromOrder(joinAtkPm, textCount - 1)->GetName() + " get " +
 						to_string(GetAddExp(enemy) / joinAtkPm.size()) + " exp");
+				}
+				else if (trainer != nullptr && trainer->GetAliveNum() > 0) {
+					SetTrainerAtkPm();
+					joinAtkPm.insert(myPm);
+					outcomeText.SetText(trainer->GetName() + " use " + enemy->GetName());
+				}
+				if ((!isBattleEnd && trainer == nullptr) || (!isBattleEnd && trainer != nullptr && trainer->GetAliveNum() == 0)) {
+					isBattleEnd = true;
+					CAudio::Instance()->Stop(AUDIO_BATTLE_START);
+					CAudio::Instance()->Stop(AUDIO_BATTLE_PROCESS);
+					CAudio::Instance()->Play(AUDIO_BATTLE_END, true);
 				}
 			}
 			break;
@@ -496,10 +550,22 @@ namespace game_framework {
 					if (!myBar.IsAddExp()) {		// 經驗值動畫結束
 						if (FindSetFromOrder(joinAtkPm, order) !=			// 不需要升等
 							((lvupPm.empty()) ? nullptr : *(lvupPm.rbegin()))) {
-							if ((int)joinAtkPm.size() == order + 1) 		// 最後一隻
-								End();
-							else 
-								state = endDialog;
+							if (trainer == nullptr) {
+								if ((int)joinAtkPm.size() == order + 1) 		// 最後一隻
+									End();
+								else
+									state = endDialog;
+							}
+							else {
+								if ((int)joinAtkPm.size() == order + 1 && trainer->GetAliveNum() == 0) {		// 最後一隻
+									if (trainer != nullptr && trainer->GetAliveNum() > 0)
+										state = loadStartStatu;
+									else
+										End();
+								}
+								else
+									state = endDialog;
+							}
 						}
 						else		// 需要升等
 							lvupCount = 1;
@@ -515,13 +581,17 @@ namespace game_framework {
 				case 4:			// 升等面板結束
 					if ((int)joinAtkPm.size() == order + 1) 		// 最後一隻
 						End();
-					else 			// 不是最後一隻要回dialog
+					else {			// 不是最後一隻要回dialog
+						lvupCount = 0;
 						state = endDialog;
+					}
 					break;
 				}
 			}
-			else 
+			else {
 				End();
+			}
+				
 			break;
 		}
 	}
@@ -529,6 +599,8 @@ namespace game_framework {
 	void AtkInterface::LoadBitmap()
 	{
 		black.LoadBitmap(IDB_BLACK);
+		myList.LoadBitmap();
+		trainerList.LoadBitmap();
 		battleBackground.LoadBitmap(IDB_BATTLE_BACKGROUND);
 		battleGround[0].LoadBitmap(IDB_BATTLE_GROUND, RGB(255, 0, 0));
 		battleGround[1].LoadBitmap(IDB_BATTLE_GROUND, RGB(255, 0, 0));
@@ -556,6 +628,7 @@ namespace game_framework {
 
 	void AtkInterface::Init()
 	{
+		trainer = nullptr;
 		myBar.ReceiveType(barTypeMy);
 		myBar.Init();
 		enemyBar.ReceiveType(barTypeEnemy);
@@ -589,18 +662,39 @@ namespace game_framework {
 		this->bag = bag;
 	}
 
-	void AtkInterface::ReceiveData(CHero *self, Pokemon *enemy)
+	void AtkInterface::ReceiveEnemy(CHero *self, Pokemon *enemy)
 	{
 		battleGround[0].SetTopLeft(290, 290);
 		battleGround[1].SetTopLeft(0, 50);
-		battleHero.SetTopLeft(200, 190);
+		battleHero.SetTopLeft(-90, 190);
 
 		isAnime = false;
 		state = heroAppear;
 		cursor = fight;
 		this->self = self;
 		this->enemy = enemy;
-		SetAtkPm();
+		SetMyAtkPm();
+		myPm->SetTopLeft(-130, SELFPM_Y);
+		enemy->SetTopLeft(660, ENEMYPM_Y);
+		myBar.ReceiveData(myPm);
+		enemyBar.ReceiveData(enemy);
+	}
+
+	void AtkInterface::ReceiveTrainer(CHero *self, Trainer *trainer)
+	{
+		battleGround[0].SetTopLeft(290, 290);
+		battleGround[1].SetTopLeft(0, 50);
+		battleHero.SetTopLeft(-90, 190);
+
+		isAnime = false;
+		state = heroAppear;
+		cursor = fight;
+		this->self = self;
+		this->trainer = trainer;
+		battleTrainer = trainer->GetAtkImg();
+		battleTrainer->SetTopLeft(740, 10);
+		SetTrainerAtkPm();
+		SetMyAtkPm();
 		myPm->SetTopLeft(-130, SELFPM_Y);
 		enemy->SetTopLeft(660, ENEMYPM_Y);
 		myBar.ReceiveData(myPm);
@@ -624,10 +718,16 @@ namespace game_framework {
 		}
 		switch (state)
 		{
+		case heroStay:
+			switch (nChar) {
+			case KEY_Z:
+				state = heroLeave;
+			}
+			break;
 		case pokemonAppear:
 			switch (nChar) {
 			case KEY_Z:
-				if (myPm->Left() == 110 && nChar == KEY_Z) {
+				if (myPm->Left() >= 110 && nChar == KEY_Z) {
 					CAudio::Instance()->Play(AUDIO_SELECT);
 					state = loadStartStatu;
 				}
@@ -733,7 +833,7 @@ namespace game_framework {
 			switch (nChar) {
 			case KEY_Z:
 				if (states.top() == onSkill) 
-					state = (enemy->GetRemainHP() == 0 || myPm->GetRemainHP() == 0) ? endAnime : loadEndStatu;
+					smylisttate = (enemy->GetRemainHP() == 0 || myPm->GetRemainHP() == 0) ? endAnime : loadEndStatu;
 				else 
 					state = (enemy->GetRemainHP() == 0 || myPm->GetRemainHP() == 0) ? endAnime : enemyLoadEndStatu;
 				break;
@@ -764,12 +864,37 @@ namespace game_framework {
 						End();
 					}
 				}
-				if (myPm->GetRemainHP() > 0 || textCount != 1) {
-					if (textCount > 0) {
-						CAudio::Instance()->Play(AUDIO_SELECT);
-						state = end;
+				else if (trainer == nullptr) {
+					if (myPm->GetRemainHP() > 0 || textCount != 1) {
+						if (textCount > 0) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							state = end;
+						}
+						++textCount;
 					}
-					++textCount;
+				}
+				else {
+					if (trainer != nullptr && textCount == 0 && trainerList.Left() < PMLIST_LEFT_LEFT)
+						return;
+					if (trainer->GetAliveNum() > 0 && textCount > ((int)joinAtkPm.size()) && trainer->GetAliveNum() > 0) {
+						state = (trainer->GetAliveNum() > 0) ? loadStartStatu : end;
+					}
+					else if (trainer->GetAliveNum() > 0 && textCount >= ((int)joinAtkPm.size()) && trainer->GetAliveNum() == 0) {
+						state = (trainer->GetAliveNum() > 0) ? loadStartStatu : end;
+					}
+					else if (trainer->GetAliveNum() <= 0 && textCount > ((int)joinAtkPm.size())) {
+						state = (trainer->GetAliveNum() > 0) ? loadStartStatu : end;
+					}
+					else if ((enemy->GetRemainHP() <= 0 || textCount != 1) && textCount < (int)joinAtkPm.size()) {
+						if (textCount > 0) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							state = end;
+						}
+						++textCount;
+					}
+					else {
+						textCount++;
+					}
 				}
 				break;
 			}
@@ -779,10 +904,10 @@ namespace game_framework {
 			case KEY_Z:
 				CAudio::Instance()->Play(AUDIO_SELECT);
 				++lvupCount;
-				if (lvupCount == 3 && textCount < (int)joinAtkPm.size()) {
+				/*if (lvupCount == 3 && textCount <= (int)joinAtkPm.size()) {
 					lvupCount = 0;
 					state = endDialog;
-				}
+				}*/
 				break;
 			}
 			break;
@@ -802,6 +927,9 @@ namespace game_framework {
 	{
 		while (!states.empty()) 
 			states.pop();
+		if (trainer != nullptr)
+			trainer->SetIsEvent(true);
+		trainer = nullptr;
 		isWork = false;
 		isAnime = false;
 		textCount = 0;
@@ -816,7 +944,7 @@ namespace game_framework {
 		CAudio::Instance()->Play(AUDIO_WEIBAITOWN);
 	}
 
-	void AtkInterface::SetAtkPm()
+	void AtkInterface::SetMyAtkPm()
 	{
 		myPm = nullptr;
 		skillText.clear();
@@ -827,10 +955,31 @@ namespace game_framework {
 				break;
 			}
 		}
-		if (myPm == nullptr) 
+		if (myPm == nullptr)
 			End();
 		myPm->SetTopLeft(110, SELFPM_Y);
+		myList.LoadPokemonData(PmType::my, self->GetPokemons());
+		myList.SetTopLeft(PMLIST_RIGHT_LEFT + PMLIST_LEN, PMLIST_RIGHT_TOP);
 		joinAtkPm.insert(myPm);
+	}
+
+	void AtkInterface::SetTrainerAtkPm()
+	{
+		enemy = nullptr;
+		for (int i = 0; i < trainer->GetPmNum(); ++i) {
+			if (trainer->GetPokemon(i)->GetRemainHP() > 0) {
+				enemy = trainer->GetPokemon(i);
+				break;
+			}
+		}
+		if (enemy == nullptr)
+			End();
+		enemy->SetTopLeft(ENEMYPM_X, ENEMYPM_Y);
+		enemyBar.ReceiveData(enemy);
+		trainerList.LoadPokemonData(PmType::enemy, trainer->GetPokemons());
+		trainerList.SetTopLeft(PMLIST_LEFT_LEFT - PMLIST_LEN, PMLIST_LEFT_TOP);
+		joinAtkPm.clear();
+		lvupPm.clear();
 	}
 
 	void AtkInterface::SetSkillText()

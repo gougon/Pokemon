@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 #include "CAlphabet.h"
 enum alphaID
 {
@@ -38,13 +39,20 @@ class CDialog
     public:
         CDialog();
         void SetText(string inputstr);
+		void AddText(string text);
+		void Next();
+		void Reset();
         void InitDialog(char);
         void OnMove();
         void OnShow();
+		bool IsEnd();
+		int GetCurrentTextNumber();
     private:
         CMovingBitmap screen;
         CAnimation cursor;
         string showString;
         CAlphabet showAlphabet;
+		vector<string> texts;
+		int textCounter, textNum;
 };
 }

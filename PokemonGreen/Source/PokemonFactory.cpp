@@ -31,6 +31,13 @@ namespace game_framework {
 		}
 	}
 
+	Pokemon* PokemonFactory::CreatePokemon(pokemonName pokemonName, int level)
+	{
+		Pokemon *pm = CreatePokemon(pokemonName);
+		pm->SetLevel(level);
+		return pm;
+	}
+
 	Pokemon* PokemonFactory::CreatePokemon(pokemonName pokemonName, string name)
 	{
 		switch (pokemonName) {
@@ -65,6 +72,13 @@ namespace game_framework {
 			return new PmTreecko(enemy);
 			break;
 		}
+	}
+
+	Pokemon* PokemonFactory::CreateEnemy(pokemonName pokemonName, int level)
+	{
+		Pokemon *pm = CreateEnemy(pokemonName);
+		pm->SetLevel(level);
+		return pm;
 	}
 
 	Pokemon* PokemonFactory::CreateEnemyRandom()

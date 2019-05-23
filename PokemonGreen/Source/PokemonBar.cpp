@@ -19,6 +19,7 @@ namespace game_framework {
 	PokemonBar::~PokemonBar()
 	{
 		pm = nullptr;
+		targetHp = nullptr;
 	}
 
 	void PokemonBar::OnShow()
@@ -34,6 +35,12 @@ namespace game_framework {
 		levelText.OnShow();
 		remainHpText.OnShow();
 		allHpText.OnShow();
+
+		// set statu icon
+		if (pm->GetStatus()->GetStatu() != none)
+			burnIcon.ShowBitmap();
+
+		// set item icon
 		if (pm->GetTakeItem() != -1)
 			haveItemIcon.ShowBitmap();
 	}
@@ -49,6 +56,8 @@ namespace game_framework {
 		levelText.LoadBitmap();
 		remainHpText.LoadBitmap();
 		allHpText.LoadBitmap();
+
+		burnIcon.LoadBitmap(IDB_BURN_ICON);
 	}
 
 	void PokemonBar::SetTopLeft(int left, int top)
@@ -65,6 +74,7 @@ namespace game_framework {
 			levelText.SetTopLeft(left + PM1_LEVEL_LEFT, top + PM1_LEVEL_TOP);
 			remainHpText.SetTopLeft(left + PM1_RH_LEFT, top + PM1_HP_TOP);
 			allHpText.SetTopLeft(left + PM1_AH_LEFT, top + PM1_HP_TOP);
+			burnIcon.SetTopLeft(left + 170, top + 90);
 			haveItemIcon.SetTopLeft(left + PM1_ITEMICON_TOP, top + PM1_ITEMICON_LEFT);
 		}
 		else {
@@ -74,6 +84,7 @@ namespace game_framework {
 			levelText.SetTopLeft(left + PM2_LEVEL_LEFT, top + PM2_LEVEL_TOP);
 			remainHpText.SetTopLeft(left + PM2_RH_LEFT, top + PM2_HP_TOP);
 			allHpText.SetTopLeft(left + PM2_AH_LEFT, top + PM2_HP_TOP);
+			burnIcon.SetTopLeft(left + 170, top + 45);
 			haveItemIcon.SetTopLeft(left + PM2_ITEMICON_TOP, top + PM2_ITEMICON_LEFT);
 		}
 	}
@@ -113,10 +124,6 @@ namespace game_framework {
 		remainHpText.SetText(to_string(pm->GetRemainHP()));
 		allHpText.SetText(to_string(pm->GetHP()));
 		if (pm->GetTakeItem() != -1) haveItem = true;
-		/*nameText.SetFontSize(12);
-		levelText.SetFontSize(12);
-		allHpText.SetFontSize(12);
-		remainHpText.SetFontSize(12);*/
 	}
 
 	void PokemonBar::LoadHpLen()

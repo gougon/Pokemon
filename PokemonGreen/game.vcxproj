@@ -268,12 +268,18 @@
     <ClCompile Include="Source\CDialog.cpp" />
     <ClCompile Include="Source\CEvent.cpp" />
     <ClCompile Include="Source\CFatguy.cpp" />
+    <ClCompile Include="Source\Characters.cpp" />
+    <ClCompile Include="Source\DouChiHouse1_Map.cpp" />
+    <ClCompile Include="Source\DouChiHouse2_Map.cpp" />
+    <ClCompile Include="Source\NpcFactory.cpp" />
+    <ClCompile Include="Source\TrainerMay.cpp" />
     <ClCompile Include="Source\CHero.cpp" />
     <ClCompile Include="Source\CItem.cpp" />
     <ClCompile Include="Source\CItemSystem.cpp" />
+    <ClCompile Include="Source\Citizen.cpp" />
     <ClCompile Include="Source\Clerk.cpp" />
     <ClCompile Include="Source\CMap.cpp" />
-    <ClCompile Include="Source\CMom.cpp" />
+    <ClCompile Include="Source\CitizenMom.cpp" />
     <ClCompile Include="Source\CObject.cpp" />
     <ClCompile Include="Source\CPickableObject.cpp" />
     <ClCompile Include="Source\CSelf.cpp" />
@@ -315,6 +321,7 @@
     <ClCompile Include="Source\Nurse.cpp" />
     <ClCompile Include="Source\PmHooh.cpp" />
     <ClCompile Include="Source\PmJirachi.cpp" />
+    <ClCompile Include="Source\PmList.cpp" />
     <ClCompile Include="Source\PmOprtView.cpp" />
     <ClCompile Include="Source\PmTreecko.cpp" />
     <ClCompile Include="Source\PmValue.cpp" />
@@ -353,6 +360,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="Source\Trainer.cpp" />
     <ClCompile Include="Source\WeiBaiHouse1_1F_Map.cpp" />
     <ClCompile Include="Source\WeiBaiHouse1_2F_Map.cpp" />
     <ClCompile Include="Source\WeiBaiHouse2_1F_Map.cpp" />
@@ -371,12 +379,18 @@
     <ClInclude Include="Source\CAlphabet.h" />
     <ClInclude Include="Source\CEvent.h" />
     <ClInclude Include="Source\CFatguy.h" />
+    <ClInclude Include="Source\Characters.h" />
+    <ClInclude Include="Source\DouChiHouse1_Map.h" />
+    <ClInclude Include="Source\DouChiHouse2_Map.h" />
+    <ClInclude Include="Source\NpcFactory.h" />
+    <ClInclude Include="Source\TrainerMay.h" />
     <ClInclude Include="Source\CHero.h" />
     <ClInclude Include="Source\CItem.h" />
     <ClInclude Include="Source\CItemSystem.h" />
+    <ClInclude Include="Source\Citizen.h" />
     <ClInclude Include="Source\Clerk.h" />
     <ClInclude Include="Source\CMap.h" />
-    <ClInclude Include="Source\CMom.h" />
+    <ClInclude Include="Source\CitizenMom.h" />
     <ClInclude Include="Source\CObject.h" />
     <ClInclude Include="Source\CPickableObject.h" />
     <ClInclude Include="Source\CSelf.h" />
@@ -398,9 +412,11 @@
     <ClInclude Include="Source\MainFrm.h" />
     <ClInclude Include="Source\MainMenu.h" />
     <ClInclude Include="Source\Menu.h" />
+    <ClInclude Include="Source\Npc.h" />
     <ClInclude Include="Source\Nurse.h" />
     <ClInclude Include="Source\PmHooh.h" />
     <ClInclude Include="Source\PmJirachi.h" />
+    <ClInclude Include="Source\PmList.h" />
     <ClInclude Include="Source\PmOprtView.h" />
     <ClInclude Include="Source\PmTreecko.h" />
     <ClInclude Include="Source\PmValue.h" />
@@ -423,6 +439,7 @@
     <ClInclude Include="Source\StdAfx.h" />
     <ClInclude Include="Source\gamelib.h" />
     <ClInclude Include="Source\mygame.h" />
+    <ClInclude Include="Source\Trainer.h" />
     <ClInclude Include="Source\WeiBaiHouse1_1F_Map.h" />
     <ClInclude Include="Source\WeiBaiHouse1_2F_Map.h" />
     <ClInclude Include="Source\WeiBaiHouse2_1F_Map.h" />
@@ -505,6 +522,8 @@
     <Image Include="RES\catch_ball2.bmp" />
     <Image Include="RES\catch_ball3.bmp" />
     <Image Include="RES\DIAG.bmp" />
+    <Image Include="RES\douchitown_house1.bmp" />
+    <Image Include="RES\douchitown_house2.bmp" />
     <Image Include="RES\enemy_bar.bmp" />
     <Image Include="RES\enemy_skill_ember1.bmp" />
     <Image Include="RES\enemy_skill_ember10.bmp" />
@@ -597,6 +616,11 @@
     <Image Include="RES\jump_land.bmp" />
     <Image Include="RES\LV_UP_FPANEL.bmp" />
     <Image Include="RES\LV_UP_PANEL.bmp" />
+    <Image Include="RES\may_atk.bmp" />
+    <Image Include="RES\may_back.bmp" />
+    <Image Include="RES\may_front.bmp" />
+    <Image Include="RES\may_left.bmp" />
+    <Image Include="RES\may_right.bmp" />
     <Image Include="RES\MenuBottom.bmp" />
     <Image Include="RES\MenuMiddle.bmp" />
     <Image Include="RES\MenuTop.bmp" />
@@ -609,6 +633,11 @@
     <Image Include="RES\NORMAL_HOUSE1.bmp" />
     <Image Include="RES\OPERATION_PANEL.bmp" />
     <Image Include="RES\pickable_object.bmp" />
+    <Image Include="RES\pmlist_deadball.bmp" />
+    <Image Include="RES\pmlist_left.bmp" />
+    <Image Include="RES\pmlist_live.bmp" />
+    <Image Include="RES\pmlist_noneball.bmp" />
+    <Image Include="RES\pmlist_right.bmp" />
     <Image Include="RES\PM_ABILITY.bmp" />
     <Image Include="RES\PM_SKILL_PANEL.bmp" />
     <Image Include="RES\POKEMON_BAR.bmp" />
@@ -618,6 +647,8 @@
     <Image Include="RES\POKEMON_BAR_SELECTED.bmp" />
     <Image Include="RES\SELECT_PANEL.bmp" />
     <Image Include="RES\self.bmp" />
+    <Image Include="RES\shine_grass1.bmp" />
+    <Image Include="RES\shine_grass2.bmp" />
     <Image Include="RES\SHOP.bmp" />
     <Image Include="RES\SHOP_BLANK_PANEL.bmp" />
     <Image Include="RES\SHOP_DESCRIPTION_PANEL.bmp" />

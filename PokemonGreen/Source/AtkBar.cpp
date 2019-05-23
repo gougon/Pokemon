@@ -13,6 +13,12 @@ namespace game_framework {
 		// empty body
 	}
 
+	AtkBar::~AtkBar()
+	{
+		pm = nullptr;
+		targetHpBar = nullptr;
+	}
+
 	void AtkBar::LoadBitmap()
 	{
 		nameText.LoadBitmap();

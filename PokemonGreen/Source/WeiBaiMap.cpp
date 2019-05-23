@@ -13,6 +13,8 @@
 #include "WeiBaiProHouse_Map.h"
 #include "Hospital_Map.h"
 #include "Shop_map.h"
+#include "DouChiHouse1_Map.h"
+#include "DouChiHouse2_Map.h"
 #include "AtkInterface.h"
 #include "Pokemon.h"
 #include "PokemonFactory.h"
@@ -43,6 +45,7 @@ namespace game_framework
 		SetMXY(48, 87);			// 設定地圖總長寬格數
 		SetXY(18 * SM, 24 * SM);		// 設定初始位置
 		SetMap("area1");
+		name = "weibai";
 		fatguy.Initialize();
 		fatguy.SetXY(25 * SM, 62 * SM + 40);
 		dialogBox.InitDialog('n');
@@ -57,7 +60,6 @@ namespace game_framework
 	{
 		scene[GREEN_GRASS].LoadBitmap(IDB_GREEN_GRASS);
 		scene[GREEN_TREE].LoadBitmap(IDB_GREEN_TREE, RGB(255, 0, 0));
-		// scene[GREEN_FLOWER].LoadBitmap(IDB_GREEN_FLOWER);
 		scene[GRASS_LAND].LoadBitmap(IDB_GRASS_LAND);
 		scene[BILLBOARD].LoadBitmap(IDB_BILLBOARD);
 		scene[WEIBAITOWN_HOUSE1].LoadBitmap(IDB_WEIBAITOWN_HOUSE1);
@@ -117,7 +119,6 @@ namespace game_framework
 						SetTopLeft(GREEN_TREE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM - 15);
 						break;
 					case GREEN_FLOWER:
-						// SetTopLeft(GREEN_FLOWER, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
 						flower.SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
 						flower.OnShow();
 						break;
@@ -149,6 +150,7 @@ namespace game_framework
 						ASSERT(0);
 						break;
 				}
+
 				fatguy.OnShow(GetSX(), GetSY());
 				if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
 					pickable_Antidote.OnShow(sx, sy);
@@ -156,6 +158,48 @@ namespace game_framework
 		}
 
 		if (inEvent) dialogBox.OnShow();
+	}
+
+	void WeiBaiMap::ReShow(CHero &hero)
+	{
+		int sx = GetSX();
+		int sy = GetSY();
+		int hy = hero.GetY1();
+
+		for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount)
+		{
+			for (int i = sx - EXPEND * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount)
+			{
+				if (HERO_Y + 20 <= (ycount - EXPEND)*SM - sy % SM) {
+					switch (map[j / SM][i / SM])
+					{
+					case HOSPITAL:
+						SetTopLeft(HOSPITAL, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case STORE:
+						SetTopLeft(STORE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case WEIBAITOWN_HOUSE1:
+						SetTopLeft(WEIBAITOWN_HOUSE1, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case WEIBAITOWN_HOUSE2:
+						SetTopLeft(WEIBAITOWN_HOUSE2, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case WEIBAITOWN_PRO_HOUSE:
+						SetTopLeft(WEIBAITOWN_PRO_HOUSE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case NORMAL_HOUSE1:
+						SetTopLeft(NORMAL_HOUSE1, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					default:
+						break;
+					}
+				}
+				if (HERO_Y + 20 + SM <= (ycount - EXPEND)*SM - sy % SM
+					&& map[j / SM][i / SM] == GREEN_TREE) 
+					SetTopLeft(GREEN_TREE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM - 15);
+			}
+		}
 	}
 
 	void WeiBaiMap::OnMove()
@@ -183,11 +227,11 @@ namespace game_framework
 		x /= SM;
 		y /= SM;
 
-		//TRACE("\nx = %d, y = %d\n", x, y);
 		for (auto i : warZone)
 		{
-			if (map[y][x] == i)
+			if (map[y][x] == i) {
 				return true;
+			}
 		}
 
 		return false;
@@ -234,6 +278,12 @@ namespace game_framework
 		else if (x == 28 && y == 18) {
 			newMap = new Shop_Map(mapGameEvent);
 		}
+		else if (x == 29 && y == 28) {
+			newMap = new DouChiHouse1_Map(mapGameEvent);
+		}
+		else if (x == 19 && y == 19) {
+			newMap = new DouChiHouse2_Map(mapGameEvent);
+		}
 
 		CAudio::Instance()->Stop(AUDIO_WEIBAITOWN);
 		newMap->LoadBitmap();
@@ -242,7 +292,7 @@ namespace game_framework
 
 	void WeiBaiMap::StartAtk(CHero* self, Pokemon* enemy, AtkInterface &atkInterface)
 	{
-		atkInterface.ReceiveData(self, enemy);
+		atkInterface.ReceiveEnemy(self, enemy);
 		atkInterface.Start();
 	}
 
@@ -266,7 +316,6 @@ namespace game_framework
 		y /= SM;
 
 		if (nChar == KEY_Z) {
-			TRACE("%d %d\n", x, y);
 			if (inEvent && dialogState == End)
 			{
 				inEvent = false;
