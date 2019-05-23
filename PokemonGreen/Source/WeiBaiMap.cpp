@@ -13,6 +13,8 @@
 #include "WeiBaiProHouse_Map.h"
 #include "Hospital_Map.h"
 #include "Shop_map.h"
+#include "DouChiHouse1_Map.h"
+#include "DouChiHouse2_Map.h"
 #include "AtkInterface.h"
 #include "Pokemon.h"
 #include "PokemonFactory.h"
@@ -233,6 +235,12 @@ namespace game_framework
 		}
 		else if (x == 28 && y == 18) {
 			newMap = new Shop_Map(mapGameEvent);
+		}
+		else if (x == 29 && y == 28) {
+			newMap = new DouChiHouse1_Map(mapGameEvent);
+		}
+		else if (x == 19 && y == 19) {
+			newMap = new DouChiHouse2_Map(mapGameEvent);
 		}
 
 		CAudio::Instance()->Stop(AUDIO_WEIBAITOWN);

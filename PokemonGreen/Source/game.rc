@@ -528,6 +528,10 @@ IDB_SHINE_GRASS1        BITMAP                  "E:\\Github\\Pokemon\\PokemonGre
 
 IDB_SHINE_GRASS2        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\shine_grass2.bmp"
 
+IDB_DOUCHITOWN_HOUSE1   BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\douchitown_house1.bmp"
+
+IDB_DOUCHITOWN_HOUSE2   BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\douchitown_house2.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
