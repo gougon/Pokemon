@@ -29,8 +29,9 @@ class Menu : public ActionObject
 		virtual void SetTopLeft() {}
 		void Start();
         void End();
-        void RecieveData(int itemID, int amount);
+        void RecieveItem(int itemID, int amount);
         void SetPokemons(vector<Pokemon*>* pms);
+		void SetMoney(int* money);
 		PokemonMenu *GetPokemonMenu();
 		Bag* GetBag();
 	private:
@@ -52,6 +53,7 @@ class Menu : public ActionObject
         };
         CText showingText;
         bool isItem;
+		int* money;
         int order;
         int itemCount;
         CHero* hero;

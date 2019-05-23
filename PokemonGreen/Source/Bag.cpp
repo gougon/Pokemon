@@ -7,12 +7,12 @@
 #include "gamelib.h"
 #include <stdlib.h>
 #include "Bag.h"
-#include "Pokeball.h"
 
 namespace game_framework
 {
 Bag::Bag() :
-    ActionObject(), inItemamount(false), inYesno(false), inPanel(false), yesnoChooser(false)
+    ActionObject(), inItemamount(false), inYesno(false), inPanel(false), 
+	yesnoChooser(false), successReceive(false), isSelectball(false)
 {
 }
 void Bag::Init()
@@ -44,12 +44,12 @@ void Bag::Init()
 	useOnAttack_Panel.SetTopLeft(YESNO_PANEL_LEFT, YESNO_PANEL_TOP);
 	currentMoney.SetTopLeft(CURRENTMONEY_LEFT, CURRENTMONEY_TOP);
     //PokemonMENU
-    pk_Menu = new PokemonMenu();
+	isReceivePokemon = false;
 }
 
 void Bag::OnShow()
 {
-    if (pk_Menu->IsWork()) pk_Menu->OnShow();
+    if (pk_Menu->IsWork() && dynamic_cast<PokemonMenu*>(pk_Menu)->IsItemReceive()) pk_Menu->OnShow();
 	else
 	{
 		background_image.ShowBitmap();
@@ -130,7 +130,7 @@ void Bag::OnShow()
 
 void Bag::OnMove()
 {
-    if (pk_Menu->IsWork())  pk_Menu->OnMove();
+    if (pk_Menu->IsWork() && dynamic_cast<PokemonMenu*>(pk_Menu)->IsItemReceive())  pk_Menu->OnMove();
     else
     {
 		cursor.OnMove();
@@ -261,7 +261,7 @@ void Bag::KeyDownListener(UINT nChar)
     const char KEY_Z = 0x5a;
     const char KEY_X = 0x58;
 
-    if (pk_Menu->IsWork())
+    if (pk_Menu->IsWork() && dynamic_cast<PokemonMenu*>(pk_Menu)->IsItemReceive())
     {
         pk_Menu->KeyDownListener(nChar);
     }
@@ -384,11 +384,10 @@ void Bag::KeyDownListener(UINT nChar)
 						if (yesnoChooser) {
 							if (SelectItem()->GetCategorie() == 2) {
 								isSelectball = true;
-								ballID = SelectItem()->GetID();
 								End();
 							}
 							else {
-								dynamic_cast<PokemonMenu*>(pk_Menu)->GetCurrentItemCommand(1, SelectItem()->GetID());
+								dynamic_cast<PokemonMenu*>(pk_Menu)->GetCurrentItemCommand(1, SelectItem());
 								pk_Menu->Start();
 							}
 						}
@@ -510,12 +509,12 @@ void Bag::KeyDownListener(UINT nChar)
 						switch (panel_flagIndex)
 						{
 							case 0:
-								dynamic_cast<PokemonMenu*>(pk_Menu)->GetCurrentItemCommand(1, SelectItem()->GetID());
-								pk_Menu->Start();
+								dynamic_cast<PokemonMenu*>(pk_Menu)->GetCurrentItemCommand(1, SelectItem());
+								dynamic_cast<PokemonMenu*>(pk_Menu)->Start();
 								break;
 							case 1:
-								dynamic_cast<PokemonMenu*>(pk_Menu)->GetCurrentItemCommand(2, SelectItem()->GetID());
-								pk_Menu->Start();
+								dynamic_cast<PokemonMenu*>(pk_Menu)->GetCurrentItemCommand(2, SelectItem());
+								dynamic_cast<PokemonMenu*>(pk_Menu)->Start();
 								break;
 							case 2:
 								inItemamount = true;
@@ -559,8 +558,24 @@ void Bag::KeyDownListener(UINT nChar)
 						}
 						break;
 					case KEY_Z:
-						if (chooser == Get_CurrentCategorie_Size()) End();
-						else inPanel = true; 
+						if (isReceivePokemon) {
+							if (chooser == Get_CurrentCategorie_Size()) End();
+							else {
+								if (receivePk->GetTakeItem() != -1) {	//have item originally
+									AddItem(receivePk->GetTakeItem(), 1);
+								}
+								SelectItem()->Take(receivePk , true);
+								TRACE("Take Item: %d\n", receivePk->GetTakeItem());
+								DropItem(SelectItem()->GetID(), 1);
+								successReceive = true;
+								isReceivePokemon = false;
+								End();
+							}
+						}
+						else {
+							if (chooser == Get_CurrentCategorie_Size()) End();
+							else inPanel = true;
+						}
 						break;
 					case KEY_X: End(); break;
 				}
@@ -572,17 +587,31 @@ void Bag::RecievePokemonMenu(ActionObject* inPk_Menu)
 {
     this->pk_Menu = inPk_Menu;
 }
+void Bag::ReceivePokemonCommend(Pokemon * in_pk, bool in_flag)
+{
+	this->receivePk = in_pk;
+	this->isReceivePokemon = in_flag;
+}
+bool Bag::PokemonSuccessTakeItem()
+{
+	bool tempSuccessIndex = successReceive;
+
+	if (tempSuccessIndex)
+	{
+		successReceive = false;
+		return tempSuccessIndex;
+	}
+
+	return false;
+}
+bool Bag::IsPokemonReceive()
+{
+	return this->isReceivePokemon;
+}
 void Bag::AddItem(int itemId, int amount)
 {
 	if (item_amount[itemId] == 0) {
-		CItem* new_Item;
-		if (itemId == 4) {
-			new_Item = new Pokeball();
-		}
-		else {
-			new_Item = new CItem(itemId);
-		}
-		items.push_back(new_Item);
+		items.push_back(itemFactory.CreateItem(itemId));
 		item_amount[itemId] += amount;
 	}
     else item_amount[itemId] += amount;
@@ -626,9 +655,10 @@ int Bag::GetItemAmount(int itemID)
 }
 int Bag::SelectPokeball()
 {
-	if (!isSelectball) return 0;	//no ball is select
+	if (!isSelectball) return -1;	//no ball is select
 	else {
-		return ballID;
+		isSelectball = false;
+		return 4;
 	}
 }
 void Bag::Start()

@@ -322,7 +322,7 @@ namespace game_framework {
 	}
 	void Clerk::InsertItem(int itemId)
 	{
-		CItem* new_goods = new CItem(itemId);
+		CItem* new_goods = shopItemFactory.CreateItem(itemId);
 		shopping_list.push_back(new_goods);
 	}
 	void Clerk::SetMoney(int * money)

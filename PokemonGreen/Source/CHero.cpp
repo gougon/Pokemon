@@ -234,52 +234,49 @@ void CHero::OnShow()
 {
 	if (!invisible) {
 		//���W��
-		if (isMovingUp)
+		if (isMovingUp || count != 0 && isForwardUp)
 		{
 			HeroMovingBack.SetTopLeft(HERO_X, HERO_Y);
 			HeroMovingBack.OnShow();
 		}
-
-		if (isForwardUp && !isMovingUp)
+		else if (isForwardUp)
 		{
 			HeroBack.SetTopLeft(HERO_X, HERO_Y);
 			HeroBack.ShowBitmap();
 		}
 
 		//���U��
-		if (isMovingDown)
+		if (isMovingDown || count != 0 && isForwardDown)
 		{
 			HeroMovingFront.SetTopLeft(HERO_X, HERO_Y);
 			HeroMovingFront.OnShow();
 		}
-
-		if (isForwardDown && !isMovingDown)
+		else if (isForwardDown)
 		{
 			HeroFront.SetTopLeft(HERO_X, HERO_Y);
 			HeroFront.ShowBitmap();
 		}
 
 		//������
-		if (isMovingLeft)
+		if (isMovingLeft || count != 0 && isForwardLeft)
 		{
 			HeroMovingLeft.SetTopLeft(HERO_X, HERO_Y);
 			HeroMovingLeft.OnShow();
 		}
-
-		if (isForwardLeft && !isMovingLeft)
+		if (isForwardLeft)
 		{
 			HeroLeft.SetTopLeft(HERO_X, HERO_Y);
 			HeroLeft.ShowBitmap();
 		}
 
 		//���S��
-		if (isMovingRight)
+		if (isMovingRight || count != 0 && isForwardRight)
 		{
 			HeroMovingRight.SetTopLeft(HERO_X, HERO_Y);
 			HeroMovingRight.OnShow();
 		}
 
-		if (isForwardRight && !isMovingRight)
+		if (isForwardRight)
 		{
 			HeroRight.SetTopLeft(HERO_X, HERO_Y);
 			HeroRight.ShowBitmap();
@@ -357,7 +354,7 @@ void CHero::ReceiveData(CMap* m, ActionObject* i)
 }
 void CHero::GetItem(int itemID, int amount)
 {
-	gameMenu->RecieveData(itemID, amount);
+	gameMenu->RecieveItem(itemID, amount);
 }
 int * CHero::GetMoney()
 {

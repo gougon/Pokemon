@@ -1,5 +1,4 @@
 #pragma once
-
 #include <string>
 #include <vector>
 #include <stack>
@@ -35,16 +34,18 @@ namespace game_framework {
 	};
 
 	enum State {
-		openAnime, 
-		heroAppear, 
-		heroLeave, 
+		openAnime,
+		heroAppear,
+		heroLeave,
 		pokemonAppear,
-		loadStartStatu, 
-		action, 
+		loadStartStatu,
+		action,
 		chooseSkill,
-		choosePokemon, 
+		choosePokemon,
 		chooseItem,
-		onSkill, 
+		usePokeBall,
+		enemyInStruggle,
+		onSkill,
 		loadProgressStatu,
 		loadEndStatu,
 		enemyLoadStartStatu, 
@@ -99,7 +100,7 @@ namespace game_framework {
 		void SetCursorPosition(int cursor, State state);
 		
 
-		int delayCount = 0, audioCounter = 0;
+		int delayCount = 0, audioCounter = 0, enemyStruggleCounter = 0;
 		int openCount = 0, cursor, enemySkill, textCount, lvupCount;
 		bool isAnime, isBattleEnd;
 		stack<State> states;
@@ -120,5 +121,7 @@ namespace game_framework {
 		PokemonMenu *pmMenu;
 		Bag *bag;
 		PmValue value;
+		CItem* pokeball;
+		ItemFactory itemFactory;
 	};
 }

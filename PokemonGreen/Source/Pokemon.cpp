@@ -8,7 +8,6 @@
 #include <stdlib.h>
 #include "Functions.cpp"
 #include "Pokemon.h"
-#include "CItem.h"
 
 namespace game_framework {
 	Pokemon::Pokemon() :
@@ -360,63 +359,15 @@ namespace game_framework {
 	{
 		canMove = flag;
 	}
-
-	bool Pokemon::UseItem(int itemID)
-    {
-        if (itemID == Item_SmallVulnerary)
-        {
-            if (GetRemainHP() < GetHP())
-            {
-				if (GetRemainHP() + 20 > GetHP()) SetRemainHP(GetHP());
-				else SetRemainHP(GetRemainHP() + 20);
-                return true;
-            }
-
-            return false;
-        }
-
-        if (itemID == Item_BigVulnerary)
-        {
-            if (GetRemainHP() < GetHP())
-            {
-				if (GetRemainHP() + 30 > GetHP()) SetRemainHP(GetHP());
-                else SetRemainHP(GetRemainHP() + 30);
-                return true;
-            }
-
-            return false;
-        }
-		if (itemID == Item_BurnMedicine) {
-			TRACE("use burn medicine\n");
-			if (GetStatus()->GetStatu() == statuBurn) {
-				SetStatus(none);
-				return true;
-			}
-			return false;
-		}
-        return false;
-    }
-
-    bool Pokemon::TakeItem(int itemID)
-    {
-		if (!haveItem) {
-			if (itemID == Item_FighterGlove)
-			{
-				TRACE("take glove\n");
-				mixValue.atk = GetAtk() + 15;
-			}
-			haveItem = true;
-			takeItemID = itemID;
-			return true;
-		}
-		else  return false;
-    }
+	void Pokemon::SetTakeItem(int itemID)
+	{
+		takeItemID = itemID;
+	}
 
     int Pokemon::GetTakeItem()
     {
-        if (!haveItem || takeItemID == -1) return -1;
-
-        return takeItemID;
+        if (takeItemID == -1) return -1;
+        else return takeItemID;
     }
 
 	void Pokemon::RoundStartStatuEffect()

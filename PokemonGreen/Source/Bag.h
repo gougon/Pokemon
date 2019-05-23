@@ -5,6 +5,7 @@
 #include "PokemonMenu.h"
 #include "CText.h"
 #include "CItem.h"
+#include "ItemFactory.h"
 #define MAXITEMAMOUNT 100
 using namespace std;
 namespace game_framework
@@ -20,6 +21,9 @@ class Bag : public ActionObject
         virtual void KeyDownListener(UINT nChar);
 		virtual void SetTopLeft() {}
         void RecievePokemonMenu(ActionObject*);
+		void ReceivePokemonCommend(Pokemon*, bool);
+		bool PokemonSuccessTakeItem();
+		bool IsPokemonReceive();
         void AddItem(int, int);
         void DropItem(int, int);
 		void SetBattleMode();
@@ -78,6 +82,10 @@ class Bag : public ActionObject
 		int ballID;
 		bool inBattle , isSelectball;
 		CMovingBitmap useOnAttack_Panel;
+		/*pk_menu mode*/
+		Pokemon* receivePk;
+		bool successReceive;
+		bool isReceivePokemon;
 
         bool inPokemonMenu, inPanel, inItemamount, inYesno, yesnoChooser;
 		vector<CItem*> items;
@@ -97,5 +105,6 @@ class Bag : public ActionObject
         CMovingBitmap background_image;
 		CMovingBitmap panel_selector;
         ActionObject* pk_Menu;
+		ItemFactory itemFactory;
 };
 }

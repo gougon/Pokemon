@@ -6,6 +6,8 @@
 #include "Pokemon.h"
 #include "PmOprtView.h"
 #include "PokemonBar.h"
+#include "Bag.h"
+#include "CItem.h"
 
 using namespace std;
 namespace game_framework {
@@ -23,8 +25,10 @@ namespace game_framework {
 		virtual void KeyDownListener(UINT nChar);
 		virtual void End();
 		void ReceiveData(vector<Pokemon*>* pms);
+		void ReceiveBag(ActionObject* bag);
+		bool IsItemReceive();
 		void ChangeOnAtk();
-		void GetCurrentItemCommand(int command, int itemID);
+		void GetCurrentItemCommand(int commend, CItem* recieveItem);
 		bool SuccessToUseItem();
 		bool SuccessToTakeItem();
 	private:
@@ -55,9 +59,11 @@ namespace game_framework {
 		int order, sltPm, swapPm;
 		bool isOprtPanel, isOprtSlt, isItem, isAtkChange;
 		//item
+		ActionObject* bag;
+		CItem* recieveItem;
 		CText description;
-		CMovingBitmap useItemPanel, giveItemPanel, blankPanel;
-		int itemCommand, currentItemID;
-		bool getItem, isUseItem, isTakeItem, inShowText;
+		CMovingBitmap useItemPanel, giveItemPanel, blankPanel , ItemSelectPanel;
+		int itemCommand, currentItemID , selectMethod;
+		bool getItem, isUseItem, isTakeItem, inShowText , showItemMethod;
 	};
 }

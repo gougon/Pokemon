@@ -9,6 +9,7 @@
 #include "Black.h"
 #include "Functions.cpp"
 #include "AtkInterface.h"
+#include "ItemPokeBall.h"
 
 namespace game_framework {
 	AtkInterface::AtkInterface()
@@ -73,6 +74,21 @@ namespace game_framework {
 			break;
 		case chooseItem:
 			bag->OnShow();
+			break;
+		case usePokeBall:
+			myPm->OnShow();
+			enemy->OnShow();
+			battleOption.ShowBitmap();
+			atkCursor.ShowBitmap();
+			myBar.OnShow();
+			enemyBar.OnShow();
+			dynamic_cast<ItemPokeBall*>(pokeball)->OnShow();
+			break;
+		case enemyInStruggle:
+			myPm->OnShow();
+			myBar.OnShow();
+			enemyBar.OnShow();
+			dynamic_cast<ItemPokeBall*>(pokeball)->OnShow();
 			break;
 		case onSkill:
 			myPm->OnShow();
@@ -261,17 +277,33 @@ namespace game_framework {
 				bag->OnMove();
 			}
 			else {
-				if (bag->SelectPokeball() != 0) {
-					// bag->SelectPokeball() return the ball id
-					// state = useItem;
-
-					/*¼È©w*/
-					myBar.ReceiveData(myPm);
-					state = action;
+				if (bag->SelectPokeball() == 4) {
+					pokeball = itemFactory.CreateItem(4);
+					dynamic_cast<ItemPokeBall*>(pokeball)->UsePokeBall(self, enemy);
+					state = usePokeBall;
 				}
 				else {
 					myBar.ReceiveData(myPm);
 					state = action;
+				}
+			}
+			break;
+		case usePokeBall:
+			dynamic_cast<ItemPokeBall*>(pokeball)->OnMove();
+			if (dynamic_cast<ItemPokeBall*>(pokeball)->animeEnd()) {
+				state = enemyInStruggle;
+			}
+			break;
+		case enemyInStruggle:
+			if (enemyStruggleCounter < 60) {
+				enemyStruggleCounter++;
+			}
+			else {
+				if (dynamic_cast<ItemPokeBall*>(pokeball)->IsCatch()) {
+					state = endDialog;
+				}
+				else {
+					state = endDialog;
 				}
 			}
 			break;
@@ -441,8 +473,13 @@ namespace game_framework {
 					CAudio::Instance()->Stop(AUDIO_BATTLE_PROCESS);
 					CAudio::Instance()->Play(AUDIO_BATTLE_END, true);
 				}
-				if (textCount == 0) 
-					outcomeText.SetText(enemy->GetName() + " was defeated");
+				if (textCount == 0)
+					if (dynamic_cast<ItemPokeBall*>(pokeball)->IsCatch()) {
+						outcomeText.SetText("capture " + enemy->GetName());
+					}
+					else {
+						outcomeText.SetText(enemy->GetName() + " was defeated");
+					}
 				else {
 					outcomeText.SetText(FindSetFromOrder(joinAtkPm, textCount - 1)->GetName() + " get " +
 						to_string(GetAddExp(enemy) / joinAtkPm.size()) + " exp");
@@ -544,6 +581,7 @@ namespace game_framework {
 	void AtkInterface::ReceivePmMenu(PokemonMenu *pmMenu)
 	{
 		this->pmMenu = pmMenu;
+		this->pmMenu->ReceiveBag(this->bag);
 	}
 
 	void AtkInterface::ReceiveBag(Bag * bag)

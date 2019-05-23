@@ -4,7 +4,6 @@
 #include "CMap.h"
 #include "Bag.h"
 #include "CDialog.h"
-#include "Pokemon.h"
 #include "AtkInterface.h"
 namespace game_framework
 {

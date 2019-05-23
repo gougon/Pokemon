@@ -11,7 +11,7 @@ namespace game_framework
 		public:
 			ActionObject();
 			virtual void KeyDownListener(UINT nChar) = 0;
-			virtual void RecieveData(int, int) {}
+			virtual void RecieveItem(int, int) {}
 			void Start();
 			void End();
 			bool IsWork();

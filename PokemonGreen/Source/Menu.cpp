@@ -168,15 +168,20 @@ namespace game_framework
 					isItem = true;
 					if (order != itemClose) {
 						items[order]->Start();
-						if (order == itemBag) {
-							dynamic_cast<PokemonMenu*>(items[itemPokemonMenu])->ReceiveData(pokemons);
-							dynamic_cast<Bag*>(items[itemBag])->RecievePokemonMenu(items[itemPokemonMenu]);
-						
-						}
 						if (order == itemPokemonMenu)
 						{
 							dynamic_cast<PokemonMenu*>(items[order])->ReceiveData(pokemons);
+							dynamic_cast<Bag*>(items[itemBag])->RecievePokemonMenu(items[order]);
+							dynamic_cast<PokemonMenu*>(items[order])->ReceiveBag(items[itemBag]);
 						}
+						if (order == itemBag) {
+							dynamic_cast<PokemonMenu*>(items[itemPokemonMenu])->ReceiveData(pokemons);
+							dynamic_cast<Bag*>(items[order])->RecievePokemonMenu(items[itemPokemonMenu]);
+						}
+						if (order == itemSelf) {
+							dynamic_cast<Self*>(items[order])->RecieveData(*money, 0);
+						}
+						
 					}
 					else 
 						End();
@@ -206,7 +211,7 @@ namespace game_framework
 		isItem = false;
 	}
 
-	void Menu::RecieveData(int itemID, int amount)
+	void Menu::RecieveItem(int itemID, int amount)
 	{
 		dynamic_cast<Bag*>(items[itemBag])->AddItem(itemID, amount);
 	}
@@ -216,6 +221,11 @@ namespace game_framework
 		pokemons = pms;
 		TRACE("\n\nmenu pokemons address = %d\n\n", pokemons);
 		dynamic_cast<PokemonMenu*>(items[itemPokemonMenu])->ReceiveData(pokemons);
+	}
+
+	void Menu::SetMoney(int * money)
+	{
+		this->money = money;
 	}
 
 	PokemonMenu *Menu::GetPokemonMenu()

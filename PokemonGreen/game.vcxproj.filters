@@ -170,11 +170,17 @@
     <ClCompile Include="Source\Status.cpp" />
     <ClCompile Include="Source\Clerk.cpp" />
     <ClCompile Include="Source\Shop_map.cpp" />
-    <ClCompile Include="Source\Pokeball.cpp" />
     <ClCompile Include="Source\Black.cpp" />
     <ClCompile Include="Source\CFatguy.cpp" />
     <ClCompile Include="Source\Functions.cpp" />
     <ClCompile Include="Source\CItemSystem.cpp" />
+    <ClCompile Include="Source\ItemAntidote.cpp" />
+    <ClCompile Include="Source\ItemFactory.cpp" />
+    <ClCompile Include="Source\ItemSmallVulnerary.cpp" />
+    <ClCompile Include="Source\ItemBigVulnerary.cpp" />
+    <ClCompile Include="Source\ItemFighterGlove.cpp" />
+    <ClCompile Include="Source\ItemPokeBall.cpp" />
+    <ClCompile Include="Source\ItemBurnMedicine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -253,10 +259,16 @@
     <ClInclude Include="Source\Status.h" />
     <ClInclude Include="Source\Clerk.h" />
     <ClInclude Include="Source\Shop_map.h" />
-    <ClInclude Include="Source\Pokeball.h" />
     <ClInclude Include="Source\Black.h" />
     <ClInclude Include="Source\CFatguy.h" />
     <ClInclude Include="Source\CItemSystem.h" />
+    <ClInclude Include="Source\ItemAntidote.h" />
+    <ClInclude Include="Source\ItemFactory.h" />
+    <ClInclude Include="Source\ItemSmallVulnerary.h" />
+    <ClInclude Include="Source\ItemBigVulnerary.h" />
+    <ClInclude Include="Source\ItemFighterGlove.h" />
+    <ClInclude Include="Source\ItemPokeBall.h" />
+    <ClInclude Include="Source\ItemBurnMedicine.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -920,6 +932,33 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\HAVEITEM_ICON.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HOME5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HOME1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HOME2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HOME3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HOME4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap18.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HOME6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\HOME7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\mdvv8\Desktop\tempimg\POKEMON_MENU_ITEMCHOOSE.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -504,6 +504,22 @@ ITEM_BURNMEDICINE       BITMAP                  "..\\RES\\ITEM_BURNMEDICINE.bmp"
 
 HAVEITEM_ICON           BITMAP                  "..\\RES\\HAVEITEM_ICON.bmp"
 
+HOME5                   BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\HOME5.bmp"
+
+HOME1                   BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\HOME1.bmp"
+
+HOME2                   BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\HOME2.bmp"
+
+HOME3                   BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\HOME3.bmp"
+
+HOME4                   BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\HOME4.bmp"
+
+HOME6                   BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\HOME6.bmp"
+
+HOME7                   BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\HOME7.bmp"
+
+POKEMON_MENU_ITEMCHOOSE BITMAP                  "C:\\Users\\mdvv8\\Desktop\\tempimg\\POKEMON_MENU_ITEMCHOOSE.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

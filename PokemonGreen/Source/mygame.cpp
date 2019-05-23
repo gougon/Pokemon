@@ -81,7 +81,21 @@ void CGameStateInit::OnInit()
     //
     // 開始載入資料
     //
-    menu.LoadBitmap(HOME);
+    menu.AddBitmap(HOME);
+	menu.AddBitmap(HOME1);
+	menu.AddBitmap(HOME2);
+	menu.AddBitmap(HOME3);
+	menu.AddBitmap(HOME4);
+	menu.AddBitmap(HOME5);
+	menu.AddBitmap(HOME6);
+	menu.AddBitmap(HOME7);
+	menu.AddBitmap(HOME6);
+	menu.AddBitmap(HOME5);
+	menu.AddBitmap(HOME4);
+	menu.AddBitmap(HOME3);
+	menu.AddBitmap(HOME2);
+	menu.AddBitmap(HOME1);
+	menu.SetDelayCount(4);
     log.AddBitmap(HOME_LOG, RGB(255, 0, 0));
     log.AddBitmap(HOME_LOG_BLANK, RGB(255, 0, 0));
     log.SetDelayCount(11);
@@ -89,27 +103,27 @@ void CGameStateInit::OnInit()
     //
     // 此OnInit動作會接到CGameStaterRun::OnInit()，所以進度還沒到100%
     //
-    CAudio::Instance()->Load(AUDIO_HOME, "sounds\\home.wav");
-    CAudio::Instance()->Load(AUDIO_WEIBAITOWN, "sounds\\weibaitown.wav");
-	CAudio::Instance()->Load(AUDIO_MART, "sounds\\PokeMart.mp3");
-	CAudio::Instance()->Load(AUDIO_BATTLE_START, "sounds\\battlestart.wav");
-	CAudio::Instance()->Load(AUDIO_BATTLE_PROCESS, "sounds\\battleprocess.wav");
-	CAudio::Instance()->Load(AUDIO_BATTLE_END, "sounds\\battleend.wav");
-	CAudio::Instance()->Load(AUDIO_SELECT, "sounds\\select.wav");
-	CAudio::Instance()->Load(AUDIO_START_MENU, "sounds\\startmenu.wav");
-	CAudio::Instance()->Load(AUDIO_EMBER, "sounds\\ember.wav");
-	CAudio::Instance()->Load(AUDIO_IMPACT, "sounds\\impact.wav");
-	CAudio::Instance()->Load(AUDIO_BURN, "sounds\\burn.wav");
-	CAudio::Instance()->Load(AUDIO_LOW_HP, "sounds\\lowhp.wav");
-	CAudio::Instance()->Load(AUDIO_LEER, "sounds\\leer.wav");
-	CAudio::Instance()->Load(AUDIO_LEERNE, "sounds\\leerne.wav");
-	CAudio::Instance()->Load(AUDIO_ESCAPE, "sounds\\escape.wav");
-	CAudio::Instance()->Load(AUDIO_GOTOBATTLE, "sounds\\gotobattle.wav");
-	CAudio::Instance()->Load(AUDIO_HOSPITAL_START, "sounds\\hospitalstart.wav");
-	CAudio::Instance()->Load(AUDIO_HOSPITAL_PROCESS, "sounds\\hospitalprocess.wav");
-	CAudio::Instance()->Load(AUDIO_COLLISION, "sounds\\collision.wav");
-	CAudio::Instance()->Load(AUDIO_PUT_HEALBALL, "sounds\\puthealball.wav");
-	CAudio::Instance()->Load(AUDIO_HEAL, "sounds\\heal.wav");
+	CAudio::Instance()->Load(AUDIO_MART, "Sounds//PokeMart.mp3");
+    CAudio::Instance()->Load(AUDIO_HOME, "Sounds//home.wav");
+    CAudio::Instance()->Load(AUDIO_WEIBAITOWN, "Sounds//weibaitown.wav");
+	CAudio::Instance()->Load(AUDIO_BATTLE_START, "Sounds//battlestart.wav");
+	CAudio::Instance()->Load(AUDIO_BATTLE_PROCESS, "Sounds//battleprocess.wav");
+	CAudio::Instance()->Load(AUDIO_BATTLE_END, "Sounds//battleend.wav");
+	CAudio::Instance()->Load(AUDIO_SELECT, "Sounds//select.wav");
+	CAudio::Instance()->Load(AUDIO_START_MENU, "Sounds//startmenu.wav");
+	CAudio::Instance()->Load(AUDIO_EMBER, "Sounds//ember.wav");
+	CAudio::Instance()->Load(AUDIO_IMPACT, "Sounds//impact.wav");
+	CAudio::Instance()->Load(AUDIO_BURN, "Sounds//burn.wav");
+	CAudio::Instance()->Load(AUDIO_LOW_HP, "Sounds//lowhp.wav");
+	CAudio::Instance()->Load(AUDIO_LEER, "Sounds//leer.wav");
+	CAudio::Instance()->Load(AUDIO_LEERNE, "Sounds//leerne.wav");
+	CAudio::Instance()->Load(AUDIO_ESCAPE, "Sounds//escape.wav");
+	CAudio::Instance()->Load(AUDIO_GOTOBATTLE, "Sounds//gotobattle.wav");
+	CAudio::Instance()->Load(AUDIO_HOSPITAL_START, "Sounds//hospitalstart.wav");
+	CAudio::Instance()->Load(AUDIO_HOSPITAL_PROCESS, "Sounds//hospitalprocess.wav");
+	CAudio::Instance()->Load(AUDIO_COLLISION, "Sounds//collision.wav");
+	CAudio::Instance()->Load(AUDIO_PUT_HEALBALL, "Sounds//puthealball.wav");
+	CAudio::Instance()->Load(AUDIO_HEAL, "Sounds//heal.wav");
 	CAudio::Instance()->Play(AUDIO_HOME);
 }
 
@@ -134,10 +148,11 @@ void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point)
 
 void CGameStateInit::OnShow()
 {
+	menu.OnMove();
     log.OnMove();	// 貼上logo
     menu.SetTopLeft(0, 0);
     log.SetTopLeft(120, 300);
-    menu.ShowBitmap();
+	menu.OnShow();
     log.OnShow();
 }
 
@@ -213,8 +228,8 @@ void CGameStateRun::OnBeginState()
     hero.Initialize();
     hero.SetXY(18 * SM + HERO_X, 24 * SM + HERO_Y + 20);
     myMenu.Init();
-	atkInterface.ReceivePmMenu(myMenu.GetPokemonMenu());
 	atkInterface.ReceiveBag(myMenu.GetBag());
+	atkInterface.ReceivePmMenu(myMenu.GetPokemonMenu());
 	atkInterface.Init();
 }
 
@@ -304,6 +319,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
     else if (nChar == KEY_ENTER)
     {
         myMenu.Start();
+		myMenu.SetMoney(hero.GetMoney());
         myMenu.SetPokemons(hero.GetPokemons());
     }
     else if (myMenu.IsWork())

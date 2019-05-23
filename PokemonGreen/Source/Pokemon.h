@@ -1,5 +1,4 @@
 #pragma once
-
 #include <string>
 #include <vector>
 #include <set>
@@ -88,8 +87,7 @@ namespace game_framework {
 		void SetHeight(int height);
 		void SetStatus(int rstatu);
 		void SetCanMove(bool flag);
-		bool UseItem(int itemID);
-        bool TakeItem(int itemID);
+		void SetTakeItem(int itemID);
         int GetTakeItem();
 		void RoundStartStatuEffect();
 		string RoundProgressStatuEffect();
@@ -113,8 +111,8 @@ namespace game_framework {
 		multimap<int, Skill*> skillTree;
 		set<Skill*> skills;
 		CMovingBitmap frontImg, backImg, icon;
-		bool haveItem, canMove;
-        int takeItemID;
+		bool haveItem = false, canMove;
+        int takeItemID = -1;
 	private:
 		void SetValueLevel(int &rvalue, int mvalue, int level);
 		int GetValueLevel(int rvalue, int mvalue);

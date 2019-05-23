@@ -52,5 +52,6 @@ namespace game_framework
 		bool inBuyMode, inSellMode, inSelectMode, inItemAmount, inShowText, firsttime;
 		int item_counter, selectModeOrder, itemChooser, currentID, itemAmount;
 		int* money;
+		ItemFactory shopItemFactory;
 	};
 }

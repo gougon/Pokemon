@@ -12,10 +12,10 @@
 
 namespace game_framework {
 	PokemonMenu::PokemonMenu() :
-		ActionObject(), order(0), sltPm(0), swapPm(0), 
-		isOprtPanel(false), isOprtSlt(false), isItem(false), 
-		isAtkChange(false), isUseItem(false), isTakeItem(false) , 
-		inShowText(false)
+		ActionObject(), order(0), sltPm(0), swapPm(0),
+		isOprtPanel(false), isOprtSlt(false), isItem(false),
+		isAtkChange(false), isUseItem(false), isTakeItem(false),
+		inShowText(false), showItemMethod(false)
 	{
 		// empty body
 	}
@@ -32,6 +32,7 @@ namespace game_framework {
 		order = 0;
 		sltPm = 0;
 		swapPm = 0;
+		selectMethod = 0;
 		selectPanel.SetTopLeft(0, 0);
 
 		// set item
@@ -49,76 +50,109 @@ namespace game_framework {
 		giveItemPanel.SetTopLeft(DESCRIPTIONPANEL_LEFT, DESCRIPTIONPANEL_TOP);
 		blankPanel.SetTopLeft(DESCRIPTIONPANEL_LEFT, DESCRIPTIONPANEL_TOP);
 		description.SetTopLeft(DESCRIPTIONPANEL_LEFT + 20, DESCRIPTIONPANEL_TOP + 20);
+		ItemSelectPanel.SetTopLeft(480, 300);
 		pmOprtView.Init();
 	}
 
 	void PokemonMenu::OnShow()
 	{
-		selectPanel.ShowBitmap();		// 顯示背景
+		if (bag->IsWork() && dynamic_cast<Bag*>(bag)->IsPokemonReceive()) bag->OnShow();
+		else {
+			selectPanel.ShowBitmap();		// 顯示背景
 
-		for (int i = 0; i < (int)pokemons->size(); ++i) {		// 顯示血條
-			pokemonBar[i].OnShow();
-		}
-
-		if (isOprtPanel) {
-			if (!isOprtSlt) {
-				operationPanel.ShowBitmap();
-				cursor.ShowBitmap();
+			for (int i = 0; i < (int)pokemons->size(); ++i) {		// 顯示血條
+				pokemonBar[i].OnShow();
 			}
-			else {
-				if (order == pmOprtPanelSltView) {
-					pmOprtView.OnShow();
+
+			if (isOprtPanel) {
+				if (!isOprtSlt) {
+					operationPanel.ShowBitmap();
+					cursor.ShowBitmap();
+				}
+				else {
+					if (order == pmOprtPanelSltView) {
+						pmOprtView.OnShow();
+					}
 				}
 			}
+			if (showItemMethod) {
+				ItemSelectPanel.ShowBitmap();
+				cursor.ShowBitmap();
+			}
+			if (itemCommand == 1)
+				useItemPanel.ShowBitmap();
+			if (itemCommand == 2)
+				giveItemPanel.ShowBitmap();
+
+			if (inShowText) {
+				blankPanel.ShowBitmap();
+				description.OnShow();
+			}
 		}
-		if (itemCommand == 1)
-			useItemPanel.ShowBitmap();
-		if (itemCommand == 2)
-			giveItemPanel.ShowBitmap();
-		if (inShowText) {
-			blankPanel.ShowBitmap();
-			description.OnShow();
-		}
+		
 	}
 
 	void PokemonMenu::OnMove()
 	{
-		for (int i = 0; i < (int)pokemons->size(); ++i) {
-			if (isItem && order == pmOprtPanelSltChange) {
-				if (i == swapPm) {
-					pokemonBar[i].SetIsSelect(true);
-				}
-				else if (i != sltPm) {
-					pokemonBar[i].SetIsSelect(false);
-				}
-			}
-			else {
-				if (i == sltPm) {
-					pokemonBar[i].SetIsSelect(true);
+		if (bag->IsWork() && dynamic_cast<Bag*>(bag)->IsPokemonReceive()) {
+			bag->OnMove();
+		}
+		else {
+			for (int i = 0; i < (int)pokemons->size(); ++i) {
+				if (isItem && order == pmOprtPanelSltChange) {
+					if (i == swapPm) {
+						pokemonBar[i].SetIsSelect(true);
+					}
+					else if (i != sltPm) {
+						pokemonBar[i].SetIsSelect(false);
+					}
 				}
 				else {
-					pokemonBar[i].SetIsSelect(false);
-				}
-			}
-		}
-		if (isOprtPanel) {
-			if (!isOprtSlt) {
-				cursor.SetTopLeft(CURSOR_LEFT, CURSOR_TOP + CURSOR_INTERVAL * order);
-			}
-			else {
-				switch (order) {
-				case pmOprtPanelSltView:
-					pmOprtView.OnMove();
-					if (!pmOprtView.IsWork()) {
-						isOprtSlt = false;
+					if (i == sltPm) {
+						pokemonBar[i].SetIsSelect(true);
 					}
-					break;
-				case pmOprtPanelSltItem:
-					break;
-				case pmOprtPanelSltClose:
-					End();
-					break;
+					else {
+						pokemonBar[i].SetIsSelect(false);
+					}
 				}
+			}
+			if (isOprtPanel) {
+				if (!isOprtSlt) {
+					cursor.SetTopLeft(CURSOR_LEFT, CURSOR_TOP + CURSOR_INTERVAL * order);
+				}
+				else {
+					if (showItemMethod) {
+						cursor.SetTopLeft(CURSOR_LEFT + 50, CURSOR_TOP + 60 + CURSOR_INTERVAL * selectMethod);
+					}
+					switch (order) {
+					case pmOprtPanelSltView:
+						pmOprtView.OnMove();
+						if (!pmOprtView.IsWork()) {
+							isOprtSlt = false;
+						}
+						break;
+					case pmOprtPanelSltItem:
+						break;
+					case pmOprtPanelSltClose:
+						End();
+						break;
+					}
+				}
+			}
+			if (dynamic_cast<Bag*>(bag)->PokemonSuccessTakeItem()) {
+				TRACE("currentItem in show text: %d\n", (*pokemons)[sltPm]->GetTakeItem());
+				ItemFactory itemFactory;
+				CItem* currentItem = itemFactory.CreateItem((*pokemons)[sltPm]->GetTakeItem());
+				if (currentItemID == -1) {
+					description.SetText((*pokemons)[sltPm]->GetName() + " take " + currentItem->GetName() + " success");
+				}
+				else {
+					CItem* oldItem = itemFactory.CreateItem(currentItemID);
+					description.SetText("replace " + oldItem->GetName() + " to " + currentItem->GetName());
+					delete oldItem;
+				}
+				delete currentItem;
+				inShowText = true;
 			}
 		}
 	}
@@ -133,6 +167,7 @@ namespace game_framework {
 		giveItemPanel.LoadBitmap(IDB_GIVEITEM_PANEL);
 		blankPanel.LoadBitmap(IDB_BLANK_PANEL);
 		description.LoadBitmap();
+		ItemSelectPanel.LoadBitmap(POKEMON_MENU_ITEMCHOOSE);
 
 		pmOprtView.LoadBitmap();
 	}
@@ -149,92 +184,112 @@ namespace game_framework {
 		if (pmOprtView.IsWork()) {
 			pmOprtView.KeyDownListener(nChar);
 		}
+		else if(bag->IsWork() && dynamic_cast<Bag*>(bag)->IsPokemonReceive()) bag->KeyDownListener(nChar);
 		else {
 			switch (nChar) {
 			case KEY_LEFT:
-				if (!isOprtPanel) {
-					if (sltPm != 0) {
-						CAudio::Instance()->Play(AUDIO_SELECT);
-						sltPm = 0;
+				if (!inShowText) {
+					if (!isOprtPanel) {
+						if (sltPm != 0) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							sltPm = 0;
+						}
 					}
-				}
-				else {
-					if (isItem && order == pmOprtPanelSltChange &&
-						swapPm != 0) {
-						CAudio::Instance()->Play(AUDIO_SELECT);
-						swapPm = 0;
+					else {
+						if (isItem && order == pmOprtPanelSltChange &&
+							swapPm != 0) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							swapPm = 0;
+						}
 					}
 				}
 				break;
 			case KEY_RIGHT:
-				if (!isOprtPanel) {
-					if (sltPm == 0 && (int)pokemons->size() > 1) {
-						CAudio::Instance()->Play(AUDIO_SELECT);
-						sltPm = 1;
+				if (!inShowText) {
+					if (!isOprtPanel) {
+						if (sltPm == 0 && (int)pokemons->size() > 1) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							sltPm = 1;
+						}
 					}
-				}
-				else {
-					if (isItem && order == pmOprtPanelSltChange &&
-						swapPm == 0 && (int)pokemons->size() > 1) {
-						CAudio::Instance()->Play(AUDIO_SELECT);
-						swapPm = 1;
+					else {
+						if (isItem && order == pmOprtPanelSltChange &&
+							swapPm == 0 && (int)pokemons->size() > 1) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							swapPm = 1;
+						}
 					}
 				}
 				break;
 			case KEY_UP:
-				if(!isOprtPanel) {
-					if (sltPm != 0 && sltPm != 1) {
-						CAudio::Instance()->Play(AUDIO_SELECT);
-						sltPm -= 1;
+				if (!inShowText) {
+					if (!isOprtPanel) {
+						if (sltPm != 0 && sltPm != 1) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							sltPm -= 1;
+						}
 					}
-				}
-				else {
-					if (!isItem && order > 0) {
-						CAudio::Instance()->Play(AUDIO_SELECT);
-						order -= 1;
-					}
-					else if (isItem && order == pmOprtPanelSltChange &&
-						swapPm != 0 && swapPm != 1) {
-						CAudio::Instance()->Play(AUDIO_SELECT);
-						swapPm -= 1;
+					else {
+						if (!isItem && order > 0) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							order -= 1;
+						}
+						if (isItem && showItemMethod && selectMethod > 0) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							selectMethod -= 1;
+						}
+						else if (isItem && order == pmOprtPanelSltChange &&
+							swapPm != 0 && swapPm != 1) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							swapPm -= 1;
+						}
 					}
 				}
 				break;
 			case KEY_DOWN:
-				if(!isOprtPanel) {
-					if (sltPm != 0 && sltPm < (int)pokemons->size()) {
-						CAudio::Instance()->Play(AUDIO_SELECT);
-						sltPm += 1;
+				if (!inShowText) {
+					if (!isOprtPanel) {
+						if (sltPm != 0 && sltPm < (int)pokemons->size()) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							sltPm += 1;
+						}
 					}
-				}
-				else {
-					if (!isItem && order < 3) {
-						CAudio::Instance()->Play(AUDIO_SELECT);
-						order += 1;
-					}
-					else if (isItem && order == pmOprtPanelSltChange &&
-						swapPm != 0 && swapPm < (int)pokemons->size()) {
-						CAudio::Instance()->Play(AUDIO_SELECT);
-						swapPm += 1;
+					else {
+						if (!isItem && order < 3) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							order += 1;
+						}
+						if (isItem && showItemMethod && selectMethod < 2) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							selectMethod += 1;
+						}
+						else if (isItem && order == pmOprtPanelSltChange &&
+							swapPm != 0 && swapPm < (int)pokemons->size()) {
+							CAudio::Instance()->Play(AUDIO_SELECT);
+							swapPm += 1;
+						}
 					}
 				}
 				break;
 			case KEY_Z:
-				if (itemCommand != 0) {
-					if (inShowText) {
+				if (inShowText) {
+					if (itemCommand != 0) {
 						itemCommand = 0;
-						inShowText = false;
+						recieveItem = NULL;
 						End();
 					}
+					else inShowText = false;
+				}
+				if (itemCommand != 0) {
 					if (itemCommand == 1) {
-						isUseItem = (*pokemons)[sltPm]->UseItem(currentItemID);
-						if (isUseItem) description.SetText("success to use item");
+						isUseItem = recieveItem->Use((*pokemons)[sltPm]);
+						if (isUseItem) description.SetText((*pokemons)[sltPm]->GetName() + " use " + recieveItem->GetName() + " success");
 						else description.SetText("fail to use item");
 						inShowText = true;
 					}
 					else if (itemCommand == 2) {
-						isTakeItem = (*pokemons)[sltPm]->TakeItem(currentItemID);
-						if (isTakeItem) description.SetText("success to take item");
+						isTakeItem = recieveItem->Take((*pokemons)[sltPm] , false);
+						if (isTakeItem) description.SetText((*pokemons)[sltPm]->GetName() + " take " + recieveItem->GetName() + " success");
 						else description.SetText("fail to take item");
 						inShowText = true;
 					}
@@ -267,6 +322,12 @@ namespace game_framework {
 									isItem = true;
 								}
 							}
+							else if (order == pmOprtPanelSltItem) {
+								CAudio::Instance()->Play(AUDIO_SELECT);
+								selectMethod = 0;
+								showItemMethod = true;
+								isItem = true;
+							}
 						}
 						else {
 							if (order == pmOprtPanelSltChange) {
@@ -280,20 +341,58 @@ namespace game_framework {
 								if (isAtkChange)
 									End();
 							}
+							if (order == pmOprtPanelSltItem) {
+								CAudio::Instance()->Play(AUDIO_SELECT);
+								TRACE("keydown in sltitem\n");
+								switch (selectMethod)
+								{
+								case 0:
+									dynamic_cast<Bag*>(bag)->ReceivePokemonCommend((*pokemons)[sltPm], true);
+									currentItemID = (*pokemons)[sltPm]->GetTakeItem();
+									TRACE("current ID: %d\n", currentItemID);
+									dynamic_cast<Bag*>(bag)->Start();
+									break;
+								case 1:
+									if ((*pokemons)[sltPm]->GetTakeItem() == -1) {
+										description.SetText("your pm doesn't have item");
+										inShowText = true;						
+									}
+									else {
+										dynamic_cast<Bag*>(bag)->AddItem((*pokemons)[sltPm]->GetTakeItem(), 1);
+										(*pokemons)[sltPm]->SetTakeItem(-1);
+										description.SetText("receive item from pm");
+										inShowText = true;
+									}
+									break;
+								case 2:
+									break;
+								}
+								selectMethod = 0;
+								showItemMethod = false;
+								isOprtPanel = false;
+								isItem = false;
+								order = 0;
+							}
 						}
 					}
 				}
 				break;
 			case KEY_X:
-				if (!isOprtPanel) {
-					CAudio::Instance()->Play(AUDIO_SELECT);
-					End();
+				if (inShowText) {
+					inShowText = false;
 				}
 				else {
-					if (isItem)
-						isItem = false;
-					CAudio::Instance()->Play(AUDIO_SELECT);
-					isOprtPanel = false;
+					if (!isOprtPanel) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
+						End();
+					}
+					else {
+						if (isItem)
+							isItem = false;
+						CAudio::Instance()->Play(AUDIO_SELECT);
+						isOprtPanel = false;
+						showItemMethod = false;
+					}
 				}
 				break;
 			default:
@@ -316,14 +415,26 @@ namespace game_framework {
 		SetPmBar();
 	}
 
+	void PokemonMenu::ReceiveBag(ActionObject * bag)
+	{
+		TRACE("receiveBAG");
+		this->bag = bag;
+	}
+
+	bool PokemonMenu::IsItemReceive()
+	{
+		if (itemCommand != 0) return true;
+		else return false;
+	}
+
 	void PokemonMenu::ChangeOnAtk()
 	{
 		isAtkChange = true;
 	}
-	void PokemonMenu::GetCurrentItemCommand(int command, int itemID)
+	void PokemonMenu::GetCurrentItemCommand(int commend, CItem* inItem)
 	{
-		this->itemCommand = command;
-		this->currentItemID = itemID;
+		this->itemCommand = commend;
+		this->recieveItem = inItem;
 	}
 
 	bool PokemonMenu::SuccessToUseItem()
