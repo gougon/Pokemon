@@ -5,7 +5,6 @@
 #include <ddraw.h>
 #include "audio.h"
 #include "gamelib.h"
-#include "AtkInterface.h"
 #include "CHero.h"
 #include "Pokemon.h"
 #include "PokemonFactory.h"
@@ -13,9 +12,10 @@
 #include "Skill.h"
 #include "SkillFactory.h"
 #include "SkillImpact.h"
-#include "CharMay.h"
+#include "Characters.h"
 #include <iostream>
 using namespace std;
+
 namespace game_framework
 {
 CHero::CHero()
@@ -79,6 +79,7 @@ void CHero::Initialize()
     HeroMovingRight.SetDelayCount(5);
 	isRunning = false;
 	invisible = false;
+	onGrass = false;
     PokemonFactory pmfactory;
     // SkillFactory skfactory;
     Pokemon* pm = pmfactory.CreatePokemon(treecko);
@@ -122,8 +123,11 @@ void CHero::LoadBitmap()
     HeroMovingLeft.AddBitmap(HERO_LEFT_TWO, RGB(255, 0, 0));
     HeroMovingLeft.AddBitmap(HERO_LEFT, RGB(255, 0, 0));
     //////////////////////////////////////////////
+	shineGrass.AddBitmap(IDB_SHINE_GRASS1, RGB(255, 0, 0));
+	shineGrass.AddBitmap(IDB_SHINE_GRASS2, RGB(255, 0, 0));
+	shineGrass.SetDelayCount(7);
 }
-void CHero::OnMove(CMap** m, AtkInterface &atkInterface, CharMay* may)
+void CHero::OnMove(CMap** m, AtkInterface &atkInterface, Characters *characters)
 {
 	MoveAnime();
 	int oneBlockTime = SM / speed;
@@ -135,11 +139,12 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface, CharMay* may)
             x -= speed;
             ChangeMap(m);
         }
-        else if (!(*m)->IsCollision(x - speed, y) && !may->IsCollision(x - speed, y))
+        else if (!(*m)->IsCollision(x - speed, y) && !characters->IsCollision(x - speed, y, **m))
         {
             if ((*m)->IsWarZone(x - speed, y) && count == oneBlockTime)
             {
 				x -= speed;
+				shineGrass.SetTopLeft(x - (*m)->GetSX(), y - (*m)->GetSY());
                 (*m)->SetXY((*m)->GetSX() - speed, (*m)->GetSY());
                 (*m)->ProduceEnemy(this, atkInterface);
             }
@@ -162,7 +167,7 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface, CharMay* may)
             x += speed;
             ChangeMap(m);
         }
-        else if (!(*m)->IsCollision(x + SM, y) && !may->IsCollision(x + SM, y))
+        else if (!(*m)->IsCollision(x + SM, y) && !characters->IsCollision(x + SM, y, **m))
         {
             if ((*m)->IsWarZone(x + SM, y) && count == oneBlockTime)
             {
@@ -189,7 +194,7 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface, CharMay* may)
             y -= speed;
             ChangeMap(m);
         }
-        else if (!(*m)->IsCollision(x, y - speed) && !may->IsCollision(x, y - speed))
+        else if (!(*m)->IsCollision(x, y - speed) && !characters->IsCollision(x, y - speed, **m))
         {
             if ((*m)->IsWarZone(x, y - speed) && count == oneBlockTime)
             {
@@ -216,7 +221,7 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface, CharMay* may)
             y += speed;
             ChangeMap(m);
         }
-        else if (!(*m)->IsCollision(x, y + SM) && !may->IsCollision(x, y + SM))
+        else if (!(*m)->IsCollision(x, y + SM) && !characters->IsCollision(x, y + SM, **m))
         {
             if ((*m)->IsWarZone(x, y + SM) && count == oneBlockTime)
             {
@@ -234,6 +239,14 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface, CharMay* may)
 			CAudio::Instance()->Play(AUDIO_COLLISION);
 		}
     }
+
+	onGrass = (*m)->IsWarZone(x, y);
+	if (onGrass) {
+		shineGrass.SetTopLeft(((x / SM) + 2) * SM - (*m)->GetSX(), ((y / SM) + 1) * SM - ((*m)->GetSY() / SM) * SM);
+		TRACE("\nx = %d\nsgx = %d\n", x, ((x / SM) + 2) * SM - (*m)->GetSX());
+		shineGrass.OnMove();
+	}
+		
 }
 void CHero::OnShow()
 {
@@ -285,6 +298,12 @@ void CHero::OnShow()
 			HeroRight.SetTopLeft(HERO_X, HERO_Y);
 			HeroRight.ShowBitmap();
 		}
+	}
+	if (count == 0) 
+		shineGrass.Reset();
+	if (onGrass && count != 0) {
+		shineGrass.SetTopLeft(HERO_X + (HERO_X / SM) * SM - HERO_X, HERO_Y + 20);
+		shineGrass.OnShow();
 	}
 }
 
@@ -374,7 +393,7 @@ void CHero::SetXY(int nx, int ny)
     y = ny;
 }
 
-void CHero::KeyIn(UINT nChar, CharMay* may)
+void CHero::KeyIn(UINT nChar, Characters* characters, CMap &map)
 {
     const char KEY_LEFT = 0x25; // keyboard左箭頭
     const char KEY_UP = 0x26; // keyboard上箭頭
@@ -427,7 +446,7 @@ void CHero::KeyIn(UINT nChar, CharMay* may)
 
     if (nChar == KEY_Z)
     {
-		may->KeyDownListener(nChar, *this);
+		characters->KeyDownListener(nChar, *this, map);
         SetCanMove(false);
     }
 

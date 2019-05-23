@@ -43,7 +43,7 @@
 #include "Menu.h"
 #include "AtkInterface.h"
 #include "CDialog.h"
-#include "CharMay.h"
+#include "Characters.h"
 #include "WeiBaiMap.h"
 #include "WeiBaiHouse1_1F_Map.h"
 #include "WeiBaiHouse2_1F_Map.h"
@@ -105,7 +105,7 @@ class CGameStateRun : public CGameState
         CHero           hero;
         CDialog         testDialog;
         AtkInterface	atkInterface;
-		CharMay*		may;
+		Characters*		characters;
 };
 
 /////////////////////////////////////////////////////////////////////////////

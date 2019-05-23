@@ -5,18 +5,23 @@
 #include "audio.h"
 #include "gamelib.h"
 #include <stdlib.h>
+#include "AtkInterface.h"
+#include "CHero.h"
+#include "CDialog.h"
+#include "Pokemon.h"
 #include "Trainer.h"
+
 namespace game_framework
 {
 	Trainer::Trainer(AtkInterface *atkInterface) :
-		isTalk(false), isLose(false), atkInterface(atkInterface)
+		type(trainer), isTalk(false), isEvent(false), atkInterface(atkInterface)
 	{
 		// empty body
 	}
 
-	void Trainer::SetIsLose(bool flag)
+	void Trainer::SetIsEvent(bool flag)
 	{
-		isLose = flag;
+		isEvent = flag;
 	}
 
 	int Trainer::GetPmNum()
@@ -33,6 +38,11 @@ namespace game_framework
 		}
 
 		return remainPmNum;
+	}
+
+	string Trainer::GetMap()
+	{
+		return map;
 	}
 
 	string Trainer::GetName()
@@ -72,7 +82,7 @@ namespace game_framework
 
 	void Trainer::StopTalk()
 	{
-		loseDialog.Reset();
+		eventDialog.Reset();
 		isTalk = false;
 	}
 
@@ -86,25 +96,19 @@ namespace game_framework
 	{
 		int hx = hero.GetX1() / SM;
 		int hy = hero.GetY1() / SM;
-		TRACE("\nhero y = %d\n", hy);
 		if (hero.GetDirection() == up &&
-			x == hx && y == hy - 1) {
+			x == hx && y == hy - 1) 
 			return true;
-		}
 		else if (hero.GetDirection() == left &&
-			x == hx - 1 && y == hy) {
+			x == hx - 1 && y == hy) 
 			return true;
-		}
 		else if (hero.GetDirection() == down &&
-			x == hx && y == hy + 1) {
+			x == hx && y == hy + 1) 
 			return true;
-		}
 		else if (hero.GetDirection() == right &&
-			x == hx + 1 && y == hy) {
+			x == hx + 1 && y == hy) 
 			return true;
-		}
-		else {
+		else 
 			return false;
-		}
 	}
 }

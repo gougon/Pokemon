@@ -9,6 +9,8 @@
 #include "Black.h"
 #include "Functions.cpp"
 #include "AtkInterface.h"
+#include "CHero.h"
+#include "Trainer.h"
 
 namespace game_framework {
 	AtkInterface::AtkInterface()
@@ -888,7 +890,7 @@ namespace game_framework {
 		while (!states.empty()) 
 			states.pop();
 		if (trainer != nullptr)
-			trainer->SetIsLose(true);
+			trainer->SetIsEvent(true);
 		trainer = nullptr;
 		isWork = false;
 		isAnime = false;

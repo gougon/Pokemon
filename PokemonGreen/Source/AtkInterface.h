@@ -4,15 +4,13 @@
 #include <vector>
 #include <stack>
 #include <set>
-#include "CHero.h"
 #include "PokemonMenu.h"
 #include "Bag.h"
 #include "Pokemon.h"
 #include "PmValue.h"
 #include "AtkBar.h"
-#include "ActionObject.h"
-#include "Trainer.h"
 #include "PmList.h"
+#include "ActionObject.h"
 
 using namespace std;
 namespace game_framework {

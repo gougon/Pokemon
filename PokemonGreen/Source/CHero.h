@@ -6,11 +6,12 @@
 #include "CDialog.h"
 #include "Pokemon.h"
 #include "AtkInterface.h"
+
 namespace game_framework
 {
 class AtkInterface;
 class CMap;
-class CharMay;
+class Characters;
 
 constexpr int HERO_X = 300;
 constexpr int HERO_Y = 220;
@@ -30,7 +31,7 @@ class CHero
         void SetCount(int count);
         void Initialize();				// 設定小智為初始值
         void LoadBitmap();				// 載入圖形
-        void OnMove(CMap** m, AtkInterface &atkInterface, CharMay* may);			// 移動
+        void OnMove(CMap** m, AtkInterface &atkInterface, Characters *characters);			// 移動
         void OnShow();					// 將圖形貼到畫面
         bool IsMoving();
         bool IsCanMove();
@@ -50,7 +51,7 @@ class CHero
 		int* GetMoney();
 		ActionObject* GetBag();
         void SetXY(int nx, int ny);		// 設定座標
-        void KeyIn(UINT nChar, CharMay* may);
+        void KeyIn(UINT nChar, Characters* characters, CMap &map);
         int GetAtkProb();
         Pokemon* GetPokemon(int order);
 		vector<Pokemon*>* GetPokemons();
@@ -68,6 +69,7 @@ class CHero
         CAnimation HeroMovingFront;
         CAnimation HeroMovingRight;
         CAnimation HeroMovingLeft;
+		CAnimation shineGrass;
         int x, y;					// 擦子左上角座標
         bool isMovingDown;			// 是否正在往下移動
         bool isMovingLeft;			// 是否正在往左移動
@@ -80,6 +82,7 @@ class CHero
         bool isDialog;
 		bool isRunning;
 		bool invisible;
+		bool onGrass;
         //bool inMenu;
 		int speed;
         bool inBag;

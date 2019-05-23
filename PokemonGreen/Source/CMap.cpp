@@ -71,6 +71,11 @@ int CMap::GetSY()
     return sy;
 }
 
+string CMap::GetName()
+{
+	return name;
+}
+
 bool CMap::IsEntrance(int x, int y)
 {
     return (map[y / SM][x / SM] == ENTRANCE);

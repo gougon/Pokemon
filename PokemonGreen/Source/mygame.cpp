@@ -221,8 +221,8 @@ void CGameStateRun::OnBeginState()
 	atkInterface.ReceivePmMenu(myMenu.GetPokemonMenu());
 	atkInterface.ReceiveBag(myMenu.GetBag());
 	atkInterface.Init();
-	may = new CharMay(&atkInterface);
-	may->LoadBitmap();
+	characters = new Characters(&atkInterface);
+	characters->InitNpcs();
 }
 
 void CGameStateRun::OnMove()							// 移動遊戲元素
@@ -244,7 +244,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
     {
         testDialog.OnMove();
 		gameMap->OnMove();
-		may->OnMove();
+		characters->OnMove(hero, *gameMap);
         int count = hero.GetCount();
 
         //TRACE("x = %d\ny = %d\n", hero.GetX1(), hero.GetY1());
@@ -265,7 +265,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
             else
             {
                 hero.SetCount(++count);
-                hero.OnMove(&gameMap, atkInterface, may);
+                hero.OnMove(&gameMap, atkInterface, characters);
             }
         }
     }
@@ -319,8 +319,8 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
     {
         myMenu.KeyDownListener(nChar);
     }
-	else if (may->IsTalk()) {
-		may->KeyDownListener(nChar, hero);
+	else if (characters->IsTalk()) {
+		characters->KeyDownListener(nChar, hero, *gameMap);
 	}
     else
     {
@@ -329,7 +329,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
         if (!hero.IsMoving() && hero.GetCount() == 0)
         {
             hero.ReceiveData(gameMap, &myMenu);
-            hero.KeyIn(nChar, may);
+            hero.KeyIn(nChar, characters, *gameMap);
         }
 		gameMap->KeyDownListener(nChar, hero);
     }
@@ -392,7 +392,7 @@ void CGameStateRun::OnShow()
     else
     {
         gameMap->OnShow();
-		may->OnShow(hero);
+		characters->OnShow(hero, *gameMap);
         hero.OnShow();
 
         if (myMenu.IsWork())

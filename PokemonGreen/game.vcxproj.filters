@@ -131,7 +131,6 @@
     <ClCompile Include="Source\WeiBaiHouse2_2F_Map.cpp" />
     <ClCompile Include="Source\CCharacter.cpp" />
     <ClCompile Include="Source\CDialog.cpp" />
-    <ClCompile Include="Source\CMom.cpp" />
     <ClCompile Include="Source\CObject.cpp" />
     <ClCompile Include="Source\CAlphabet.cpp" />
     <ClCompile Include="Source\AtkBar.cpp" />
@@ -175,9 +174,13 @@
     <ClCompile Include="Source\Functions.cpp" />
     <ClCompile Include="Source\Record.cpp" />
     <ClCompile Include="Source\Trainer.cpp" />
-    <ClCompile Include="Source\CharMay.cpp" />
     <ClCompile Include="Source\PmList.cpp" />
     <ClCompile Include="Source\CItemSystem.cpp" />
+    <ClCompile Include="Source\Characters.cpp" />
+    <ClCompile Include="Source\Citizen.cpp" />
+    <ClCompile Include="Source\TrainerMay.cpp" />
+    <ClCompile Include="Source\CitizenMom.cpp" />
+    <ClCompile Include="Source\NpcFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -217,7 +220,6 @@
     <ClInclude Include="Source\WeiBaiHouse2_2F_Map.h" />
     <ClInclude Include="Source\CCharacter.h" />
     <ClInclude Include="Source\CDialog.h" />
-    <ClInclude Include="Source\CMom.h" />
     <ClInclude Include="Source\CObject.h" />
     <ClInclude Include="Source\CAlphabet.h" />
     <ClInclude Include="Source\AtkBar.h" />
@@ -260,9 +262,14 @@
     <ClInclude Include="Source\Black.h" />
     <ClInclude Include="Source\CFatguy.h" />
     <ClInclude Include="Source\Trainer.h" />
-    <ClInclude Include="Source\CharMay.h" />
     <ClInclude Include="Source\PmList.h" />
     <ClInclude Include="Source\CItemSystem.h" />
+    <ClInclude Include="Source\Characters.h" />
+    <ClInclude Include="Source\Citizen.h" />
+    <ClInclude Include="Source\Npc.h" />
+    <ClInclude Include="Source\TrainerMay.h" />
+    <ClInclude Include="Source\CitizenMom.h" />
+    <ClInclude Include="Source\NpcFactory.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -956,6 +963,12 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\pmlist_noneball.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\shine_grass1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\shine_grass2.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

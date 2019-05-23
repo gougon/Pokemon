@@ -1,12 +1,10 @@
 #pragma once
-
 #include "Trainer.h"
 namespace game_framework
 {
-	class Trainer;
-	class CharMay : public Trainer {
+	class TrainerMay : public Trainer {
 	public:
-		CharMay(AtkInterface *atkInterface);
+		TrainerMay(AtkInterface *atkInterface);
 		virtual void KeyDownListener(UINT nChar, CHero &hero);
 		virtual void LoadBitmap();
 		virtual void OnShow(CHero &hero);

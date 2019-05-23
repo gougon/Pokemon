@@ -11,7 +11,7 @@
 
 namespace game_framework
 {
-	Menu::Menu():
+	Menu::Menu() :
 		ActionObject(), isItem(false), order(0), itemCount(7)
 	{
 		items.push_back(new Illustration());
@@ -21,6 +21,7 @@ namespace game_framework
 		items.push_back(new Self());
 		items.push_back(new Record());
 	}
+
 	void Menu::Init()
 	{
 		menuTop.SetTopLeft(MENU_LEFT, MENU_TOP);
@@ -214,7 +215,6 @@ namespace game_framework
 	void Menu::SetPokemons(vector<Pokemon*>* pms)
 	{    
 		pokemons = pms;
-		TRACE("\n\nmenu pokemons address = %d\n\n", pokemons);
 		dynamic_cast<PokemonMenu*>(items[itemPokemonMenu])->ReceiveData(pokemons);
 	}
 

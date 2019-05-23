@@ -5,7 +5,6 @@
 #include "CMap.h"
 #include "CHero.h"
 #include "CObject.h"
-#include "CMom.h"
 #include "CEvent.h"
 
 // initial SX = 1020
@@ -30,7 +29,6 @@ class WeiBaiHouse1_1F_Map : public CMap
         bool inEvent;
 		int dialogState;
         CDialog dialogBox;
-        CMom mom;
         CObject book;
         vector<int> hitImg = { 0, 2 };
 };

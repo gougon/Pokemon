@@ -22,8 +22,7 @@ namespace game_framework {
 
 	PmList::~PmList()
 	{
-		for (auto i : targetBall)
-			delete i;
+		vector<CMovingBitmap*>().swap(targetBall);
 	}
 
 	void PmList::LoadBitmap()

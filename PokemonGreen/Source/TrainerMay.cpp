@@ -7,12 +7,12 @@
 #include <stdlib.h>
 #include "Trainer.h"
 #include "CHero.h"
-#include "CharMay.h"
+#include "TrainerMay.h"
 #include "PokemonFactory.h"
 
 namespace game_framework
 {
-	CharMay::CharMay(AtkInterface *atkInterface) :
+	TrainerMay::TrainerMay(AtkInterface *atkInterface) :
 		Trainer(atkInterface)
 	{
 		// set position
@@ -24,28 +24,29 @@ namespace game_framework
 		pokemons.push_back(pmf.CreateEnemy(treecko, 6));
 		pokemons.push_back(pmf.CreateEnemy(hooh, 7));
 
-		// set name
+		// set name and map
 		name = "may";
+		map = "weibai";
 
 		// set direction
 		direction = up;
 
 		// set dialog
-		unLoseDialog.InitDialog('n');
-		unLoseDialog.AddText("hey boy");
-		unLoseDialog.AddText("my name is may");
-		unLoseDialog.AddText("lets battle");
+		normalDialog.InitDialog('n');
+		normalDialog.AddText("hey boy");
+		normalDialog.AddText("my name is may");
+		normalDialog.AddText("lets battle");
 		atkDialogCounter = 2;
-		unLoseDialog.AddText("damn it");
+		normalDialog.AddText("damn it");
 
-		loseDialog.InitDialog('n');
-		loseDialog.AddText("you are pretty strong");
+		eventDialog.InitDialog('n');
+		eventDialog.AddText("you are pretty strong");
 
 		// set prize
 		prize = 69;
 	}
 
-	void CharMay::KeyDownListener(UINT nChar, CHero &hero)
+	void TrainerMay::KeyDownListener(UINT nChar, CHero &hero)
 	{
 		const char KEY_Z = 0x5a;
 
@@ -58,29 +59,29 @@ namespace game_framework
 
 		switch (nChar) {
 		case KEY_Z:
-			if (!isLose) {
+			if (!isEvent) {
 				// set dialog order trigger event
-				if (unLoseDialog.GetCurrentTextNumber() < atkDialogCounter)
-					unLoseDialog.Next();
-				else if (unLoseDialog.GetCurrentTextNumber() == atkDialogCounter)
+				if (normalDialog.GetCurrentTextNumber() < atkDialogCounter)
+					normalDialog.Next();
+				else if (normalDialog.GetCurrentTextNumber() == atkDialogCounter)
 					StartAtk(&hero, this, *atkInterface);
 				else
-					unLoseDialog.Next();
+					normalDialog.Next();
 
 				// assessment whether dialog is end
-				if (unLoseDialog.IsEnd())
+				if (normalDialog.IsEnd())
 					StopTalk();
 			}
 			else {
-				loseDialog.Next();
+				eventDialog.Next();
 
-				if (loseDialog.IsEnd())
+				if (eventDialog.IsEnd())
 					StopTalk();
 			}
 		}
 	}
 
-	void CharMay::LoadBitmap()
+	void TrainerMay::LoadBitmap()
 	{
 		normalImg[down].LoadBitmap(IDB_MAY_FRONT, RGB(255, 0, 0));
 		normalImg[left].LoadBitmap(IDB_MAY_LEFT, RGB(255, 0, 0));
@@ -89,7 +90,7 @@ namespace game_framework
 		atkImg.LoadBitmap(IDB_MAY_ATK, RGB(255, 0, 0));
 	}
 
-	void CharMay::OnShow(CHero &hero)
+	void TrainerMay::OnShow(CHero &hero)
 	{
 		int hx = hero.GetX1() / SM;
 		int hy = hero.GetY1() / SM;
@@ -98,21 +99,21 @@ namespace game_framework
 			normalImg[direction].ShowBitmap();
 		}
 		if (IsTalk()) {
-			if (!isLose)
-				unLoseDialog.OnShow();
+			if (!isEvent)
+				normalDialog.OnShow();
 			else
-				loseDialog.OnShow();
+				eventDialog.OnShow();
 		}
 	}
 
-	void CharMay::OnMove()
+	void TrainerMay::OnMove()
 	{
 		// empty body
 	}
 
 	// private
 
-	void CharMay::Talk(CHero &hero)
+	void TrainerMay::Talk(CHero &hero)
 	{
 		isTalk = true;
 		direction = (hero.GetDirection() % 2 == 0) ? 
@@ -121,7 +122,7 @@ namespace game_framework
 		// atkinterface receive data
 	}
 
-	void CharMay::SetTopLeft(int hx, int hy)
+	void TrainerMay::SetTopLeft(int hx, int hy)
 	{
 		int dx = x * SM - hx;
 		int dy = y * SM - hy;

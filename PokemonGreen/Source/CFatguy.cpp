@@ -149,7 +149,6 @@ namespace game_framework
 	}
 	void CFatguy::SetDirection(int herodirection)
 	{
-		TRACE("herodirection = %d\n", herodirection);
 		isForwardDown = (herodirection == 0) ? true : false;
 		isForwardUp = (herodirection == 1) ? true : false;
 		isForwardRight = (herodirection == 2) ? true : false;
