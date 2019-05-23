@@ -160,6 +160,48 @@ namespace game_framework
 		if (inEvent) dialogBox.OnShow();
 	}
 
+	void WeiBaiMap::ReShow(CHero &hero)
+	{
+		int sx = GetSX();
+		int sy = GetSY();
+		int hy = hero.GetY1();
+
+		for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount)
+		{
+			for (int i = sx - EXPEND * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount)
+			{
+				if (HERO_Y + 20 <= (ycount - EXPEND)*SM - sy % SM) {
+					switch (map[j / SM][i / SM])
+					{
+					case HOSPITAL:
+						SetTopLeft(HOSPITAL, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case STORE:
+						SetTopLeft(STORE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case WEIBAITOWN_HOUSE1:
+						SetTopLeft(WEIBAITOWN_HOUSE1, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case WEIBAITOWN_HOUSE2:
+						SetTopLeft(WEIBAITOWN_HOUSE2, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case WEIBAITOWN_PRO_HOUSE:
+						SetTopLeft(WEIBAITOWN_PRO_HOUSE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case NORMAL_HOUSE1:
+						SetTopLeft(NORMAL_HOUSE1, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					default:
+						break;
+					}
+				}
+				if (HERO_Y + 20 + SM <= (ycount - EXPEND)*SM - sy % SM
+					&& map[j / SM][i / SM] == GREEN_TREE) 
+					SetTopLeft(GREEN_TREE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM - 15);
+			}
+		}
+	}
+
 	void WeiBaiMap::OnMove()
 	{
 		flower.OnMove();

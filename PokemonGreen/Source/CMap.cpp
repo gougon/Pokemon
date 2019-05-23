@@ -6,11 +6,9 @@
 #include "gamelib.h"
 #include "CHero.h"
 #include "CMap.h"
-#include "Black.h"
 
 using namespace std;
-namespace game_framework
-{
+namespace game_framework {
 CMap::CMap() :
 	audioCounter(0)
 {

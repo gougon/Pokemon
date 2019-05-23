@@ -16,6 +16,7 @@ namespace game_framework {
 		void InitNpcs();
 		void KeyDownListener(UINT nChar, CHero &hero, CMap &map);
 		void OnShow(CHero &hero, CMap &map);
+		void ReShow(CHero &hero, CMap &map);
 		void OnMove(CHero &hero, CMap &map);
 		bool IsCollision(int x, int y, CMap &map);
 		bool IsTalk();

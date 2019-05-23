@@ -51,6 +51,14 @@ namespace game_framework {
 		}
 	}
 
+	void Characters::ReShow(CHero &hero, CMap &map)
+	{
+		for (auto i : npcs) {
+			if (i->GetMap() == map.GetName())
+				i->ReShow(hero);
+		}
+	}
+
 	void Characters::OnMove(CHero &hero, CMap &map)
 	{
 		for (auto i : npcs) {

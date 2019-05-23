@@ -388,12 +388,12 @@ void CGameStateRun::OnShow()
     //  貼上背景圖、撞擊數、球、擦子、彈跳的球
     if (atkInterface.IsWork())
         atkInterface.OnShow();
-    //
-    else
-    {
+    else {
         gameMap->OnShow();
 		characters->OnShow(hero, *gameMap);
         hero.OnShow();
+		characters->ReShow(hero, *gameMap);
+		gameMap->ReShow(hero);
 
         if (myMenu.IsWork())
             myMenu.OnShow();

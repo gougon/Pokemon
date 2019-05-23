@@ -18,6 +18,7 @@ namespace game_framework {
 		virtual void KeyDownListener(UINT nChar, CHero &hero) = 0;
 		virtual void LoadBitmap() = 0;
 		virtual void OnShow(CHero &hero) = 0;
+		virtual void ReShow(CHero &hero) = 0;
 		virtual void OnMove() { }; // for don't move
 		virtual void OnMove(CHero &hero) { }; // for need to move
 		virtual void SetIsEvent(bool flag) = 0;

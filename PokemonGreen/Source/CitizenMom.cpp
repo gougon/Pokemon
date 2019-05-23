@@ -90,6 +90,16 @@ namespace game_framework
 		}
 	}
 
+	void CitizenMom::ReShow(CHero &hero)
+	{
+		int hx = hero.GetX1() / SM;
+		int hy = (hero.GetY1() + 20) / SM;
+		if (abs(hx - x) <= 9 && abs(hy - y) <= 9 && hy <= y) {
+			SetTopLeft(hero.GetX1(), hero.GetY1());
+			normalImg[direction].ShowBitmap();
+		}
+	}
+
 	void CitizenMom::OnMove() // for don't move
 	{
 		// empty body

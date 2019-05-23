@@ -9,6 +9,7 @@ namespace game_framework {
 		virtual void KeyDownListener(UINT nChar, CHero &hero);
 		virtual void LoadBitmap();
 		virtual void OnShow(CHero &hero);
+		virtual void ReShow(CHero &hero);
 		virtual void OnMove(); // for don't move
 	private:
 		virtual void Talk(CHero &hero);

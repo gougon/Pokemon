@@ -27,6 +27,7 @@ namespace game_framework {
         virtual void InitMap();
         virtual void LoadBitmap();
         virtual void OnShow();
+		virtual void ReShow(CHero &hero);
 		virtual void OnMove();
         virtual bool IsCollision(int x, int y);
         virtual bool IsWarZone(int x, int y);

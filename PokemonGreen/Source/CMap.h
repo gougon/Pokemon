@@ -49,6 +49,7 @@ class CMap
 		string GetName();
         virtual void OnMove() {}
         virtual void OnShow() {}
+		virtual void ReShow(CHero &hero) {}
         virtual bool IsCollision(int x, int y) { return true; }
         bool IsEntrance(int x, int y);
 		virtual void KeyDownListener(UINT nChar, CHero &hero) {}
