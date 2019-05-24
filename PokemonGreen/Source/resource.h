@@ -278,13 +278,43 @@
 #define IDB_PMLIST_LIVEBALL             406
 #define IDB_PMLIST_RIGHT                407
 #define IDB_PMLIST_NONEBALL             408
-#define IDB_BITMAP16                    409
+#define IDB_PM_DEOXYS_FRONT             409
 #define HAVEITEM_ICON                   410
 #define IDB_SHINE_GRASS1                411
 #define IDB_SHINE_GRASS2                412
 #define IDB_DOUCHITOWN_HOUSE1           413
 #define IDB_DOUCHITOWNI_HOUSE2          414
+#define IDB_PM_VULPIX_FRONT             414
 #define IDB_DOUCHITOWN_HOUSE2           415
+#define IDB_PM_VAPOREON_FRONT           416
+#define IDB_PM_SMOOCHUM_FRONT           417
+#define IDB_PM_PIKACHU_FRONT            418
+#define IDB_PM_METANG_FRONT             419
+#define IDB_PM_GROVYLE_FRONT            420
+#define IDB_PM_GRIMER_FRONT             421
+#define IDB_PM_GARDEVOIR_FRONT          422
+#define IDB_PM_RAYQUAZA_FRONT           423
+#define IDB_PM_DEOXYS_BACK              424
+#define IDB_PM_VULPIX_BACK              425
+#define IDB_PM_VAPOREON_BACK            426
+#define IDB_PM_SMOOCHUM_BACK            427
+#define IDB_PM_PIKACHU_BACK             428
+#define IDB_PM_METANG_BACK              429
+#define IDB_PM_GROVYLE_BACK             430
+#define IDB_PM_GRIMER_BACK              431
+#define IDB_PM_GARDEVOIR_BACK           432
+#define IDB_PM_RAYQUAZA_BACK            433
+#define IDB_ICON_PM_VAPOREON            434
+#define IDB_ICON_PM_PIKACHU             435
+#define IDB_ICON_PM_METANG              436
+#define IDB_ICON_PM_GROVYLE             437
+#define IDB_ICON_PM_GRIMER              438
+#define IDB_ICON_PM_GARDEVOIR           439
+#define IDB_ICON_PM_DEOXYS              440
+#define IDB_ICON_PM_RAYQUAZA            441
+#define IDB_ICON_PM_VULPIX              442
+#define IDB_BITMAP49                    443
+#define IDB_ICON_PM_SMOOCHUM            443
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -297,11 +327,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-<<<<<<< HEAD
-#define _APS_NEXT_RESOURCE_VALUE        399
-=======
-#define _APS_NEXT_RESOURCE_VALUE        404
->>>>>>> 613c326d0af75a60f602aab99a3f9c58fb825464
+#define _APS_NEXT_RESOURCE_VALUE        444
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

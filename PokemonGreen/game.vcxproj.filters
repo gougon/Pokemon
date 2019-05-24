@@ -189,6 +189,15 @@
     <ClCompile Include="Source\NpcFactory.cpp" />
     <ClCompile Include="Source\DouChiHouse1_Map.cpp" />
     <ClCompile Include="Source\DouChiHouse2_Map.cpp" />
+    <ClCompile Include="Source\PmRayquaza.cpp" />
+    <ClCompile Include="Source\PmGardevoir.cpp" />
+    <ClCompile Include="Source\PmGrimer.cpp" />
+    <ClCompile Include="Source\PmGrovyle.cpp" />
+    <ClCompile Include="Source\PmMetang.cpp" />
+    <ClCompile Include="Source\PmPikachu.cpp" />
+    <ClCompile Include="Source\PmSmoochum.cpp" />
+    <ClCompile Include="Source\PmVaporeon.cpp" />
+    <ClCompile Include="Source\PmVulpix.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -286,6 +295,15 @@
     <ClInclude Include="Source\NpcFactory.h" />
     <ClInclude Include="Source\DouChiHouse1_Map.h" />
     <ClInclude Include="Source\DouChiHouse2_Map.h" />
+    <ClInclude Include="Source\PmRayquaza.h" />
+    <ClInclude Include="Source\PmGardevoir.h" />
+    <ClInclude Include="Source\PmGrimer.h" />
+    <ClInclude Include="Source\PmGrovyle.h" />
+    <ClInclude Include="Source\PmMetang.h" />
+    <ClInclude Include="Source\PmPikachu.h" />
+    <ClInclude Include="Source\PmSmoochum.h" />
+    <ClInclude Include="Source\PmVaporeon.h" />
+    <ClInclude Include="Source\PmVulpix.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -1015,6 +1033,102 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\douchitown_house2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\mdvv8\Desktop\tempimg\POKEMON_MENU_ITEMCHOOSE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\deoxys_front.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Vulpix_front.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\vaporeon_front.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\smoochum_front.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pikachu_front.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\metang_front.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\grovyle_front.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\grimer_front.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\gardevoir_front.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\rayquaza_front.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\deoxys_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Vulpix_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\vaporeon_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\smoochum_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pikachu_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\metang_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\grovyle_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\grimer_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\gardevoir_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\rayquaza_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\POKEMON_MENU_ITEMCHOOSE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon_pm_vaporeon.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon_pm_pikachu.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon_pm_metang.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon_pm_grovyle.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon_pm_grimer.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon_pm_gardevoir.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon_pm_deoxys.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon_pm_rayquaza.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon_pm_vulpix.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon_pm_smoochum.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

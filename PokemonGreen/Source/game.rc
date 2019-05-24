@@ -548,6 +548,66 @@ IDB_DOUCHITOWN_HOUSE1   BITMAP                  "..\\RES\\douchitown_house1.bmp"
 
 IDB_DOUCHITOWN_HOUSE2   BITMAP                  "..\\RES\\douchitown_house2.bmp"
 
+IDB_PM_DEOXYS_FRONT     BITMAP                  "..\\RES\\deoxys_front.bmp"
+
+IDB_PM_VULPIX_FRONT     BITMAP                  "..\\RES\\Vulpix_front.bmp"
+
+IDB_PM_VAPOREON_FRONT   BITMAP                  "..\\RES\\vaporeon_front.bmp"
+
+IDB_PM_SMOOCHUM_FRONT   BITMAP                  "..\\RES\\smoochum_front.bmp"
+
+IDB_PM_PIKACHU_FRONT    BITMAP                  "..\\RES\\pikachu_front.bmp"
+
+IDB_PM_METANG_FRONT     BITMAP                  "..\\RES\\metang_front.bmp"
+
+IDB_PM_GROVYLE_FRONT    BITMAP                  "..\\RES\\grovyle_front.bmp"
+
+IDB_PM_GRIMER_FRONT     BITMAP                  "..\\RES\\grimer_front.bmp"
+
+IDB_PM_GARDEVOIR_FRONT  BITMAP                  "..\\RES\\gardevoir_front.bmp"
+
+IDB_PM_RAYQUAZA_FRONT   BITMAP                  "..\\RES\\rayquaza_front.bmp"
+
+IDB_PM_DEOXYS_BACK      BITMAP                  "..\\ES\\deoxys_back.bmp"
+
+IDB_PM_VULPIX_BACK      BITMAP                  "..\\RES\\Vulpix_back.bmp"
+
+IDB_PM_VAPOREON_BACK    BITMAP                  "..\\RES\\vaporeon_back.bmp"
+
+IDB_PM_SMOOCHUM_BACK    BITMAP                  "..\\RES\\smoochum_back.bmp"
+
+IDB_PM_PIKACHU_BACK     BITMAP                  "..\\RES\\pikachu_back.bmp"
+
+IDB_PM_METANG_BACK      BITMAP                  "..\\RES\\metang_back.bmp"
+
+IDB_PM_GROVYLE_BACK     BITMAP                  "..\\RES\\grovyle_back.bmp"
+
+IDB_PM_GRIMER_BACK      BITMAP                  "..\\RES\\grimer_back.bmp"
+
+IDB_PM_GARDEVOIR_BACK   BITMAP                  "..\\RES\\gardevoir_back.bmp"
+
+IDB_PM_RAYQUAZA_BACK    BITMAP                  "..\\RES\\rayquaza_back.bmp"
+
+IDB_ICON_PM_VAPOREON    BITMAP                  "..\\RES\\icon_pm_vaporeon.bmp"
+
+IDB_ICON_PM_PIKACHU     BITMAP                  "..\\RES\\icon_pm_pikachu.bmp"
+
+IDB_ICON_PM_METANG      BITMAP                  "..\\RES\\icon_pm_metang.bmp"
+
+IDB_ICON_PM_GROVYLE     BITMAP                  "..\\RES\\icon_pm_grovyle.bmp"
+
+IDB_ICON_PM_GRIMER      BITMAP                  "..\\RES\\icon_pm_grimer.bmp"
+
+IDB_ICON_PM_GARDEVOIR   BITMAP                  "..\\RES\\icon_pm_gardevoir.bmp"
+
+IDB_ICON_PM_DEOXYS      BITMAP                  "..\\RES\\icon_pm_deoxys.bmp"
+
+IDB_ICON_PM_RAYQUAZA    BITMAP                  "..\\RES\\icon_pm_rayquaza.bmp"
+
+IDB_ICON_PM_VULPIX      BITMAP                  "..\\RES\\icon_pm_vulpix.bmp"
+
+IDB_ICON_PM_SMOOCHUM    BITMAP                  "..\\RES\\icon_pm_smoochum.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
