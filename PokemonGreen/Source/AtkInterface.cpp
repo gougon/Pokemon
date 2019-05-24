@@ -107,7 +107,17 @@ namespace game_framework {
 			myPm->OnShow();
 			myBar.OnShow();
 			enemyBar.OnShow();
+			battleOption.ShowBitmap();
+			atkCursor.ShowBitmap();
 			dynamic_cast<ItemPokeBall*>(pokeball)->OnShow();
+			break;
+		case unCatch:
+			myPm->OnShow();
+			enemy->OnShow();
+			battleDialog.ShowBitmap();
+			outcomeText.OnShow();
+			myBar.OnShow();
+			enemyBar.OnShow();
 			break;
 		case onSkill:
 			myPm->OnShow();
@@ -346,9 +356,12 @@ namespace game_framework {
 					state = endDialog;
 				}
 				else {
-					state = endDialog;
+					state = unCatch;
 				}
 			}
+			break;
+		case unCatch:
+			outcomeText.SetText("ah! the pokemon is escape!");
 			break;
 		case onSkill:
 			if (!myPm->IsCanMove()) {
@@ -829,16 +842,10 @@ namespace game_framework {
 				break;
 			}
 			break;
-		/*case atkStatu:
-			switch (nChar) {
-			case KEY_Z:
-				if (states.top() == onSkill) 
-					smylisttate = (enemy->GetRemainHP() == 0 || myPm->GetRemainHP() == 0) ? endAnime : loadEndStatu;
-				else 
-					state = (enemy->GetRemainHP() == 0 || myPm->GetRemainHP() == 0) ? endAnime : enemyLoadEndStatu;
-				break;
-			}
-			break;*/
+		case unCatch:
+			if (nChar == KEY_Z)
+				state = enemyLoadStartStatu;
+			break;
 		case endDialog:
 			switch (nChar) {
 			case KEY_UP:
