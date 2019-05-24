@@ -198,6 +198,7 @@
     <ClCompile Include="Source\PmSmoochum.cpp" />
     <ClCompile Include="Source\PmVaporeon.cpp" />
     <ClCompile Include="Source\PmVulpix.cpp" />
+    <ClCompile Include="Source\PmDeoxys.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -304,6 +305,7 @@
     <ClInclude Include="Source\PmSmoochum.h" />
     <ClInclude Include="Source\PmVaporeon.h" />
     <ClInclude Include="Source\PmVulpix.h" />
+    <ClInclude Include="Source\PmDeoxys.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">

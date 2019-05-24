@@ -568,7 +568,7 @@ IDB_PM_GARDEVOIR_FRONT  BITMAP                  "..\\RES\\gardevoir_front.bmp"
 
 IDB_PM_RAYQUAZA_FRONT   BITMAP                  "..\\RES\\rayquaza_front.bmp"
 
-IDB_PM_DEOXYS_BACK      BITMAP                  "..\\ES\\deoxys_back.bmp"
+IDB_PM_DEOXYS_BACK      BITMAP                  "..\\RES\\deoxys_back.bmp"
 
 IDB_PM_VULPIX_BACK      BITMAP                  "..\\RES\\Vulpix_back.bmp"
 

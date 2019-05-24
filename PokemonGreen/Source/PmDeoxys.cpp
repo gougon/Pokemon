@@ -21,8 +21,8 @@ namespace game_framework {
 	{
 		this->pmtype = pmtype;
 		SkillFactory skFactory;
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(impact, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(ember, pmtype)));
+		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(impact, pmtype)));
+		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(ember, pmtype)));
 		Init("deoxys");
 	}
 
