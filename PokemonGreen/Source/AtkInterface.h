@@ -49,6 +49,7 @@ namespace game_framework {
 		chooseItem,
 		usePokeBall,
 		enemyInStruggle,
+		unCatch,
 		onSkill,
 		loadProgressStatu,
 		loadEndStatu,

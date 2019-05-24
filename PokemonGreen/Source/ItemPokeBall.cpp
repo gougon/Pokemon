@@ -38,7 +38,7 @@ namespace game_framework {
 	void ItemPokeBall::UsePokeBall(CHero* self, Pokemon* enemy)
 	{
 		TRACE("throw\n");
-		isCatch = true;
+		isCatch = false;
 		ballopen = false;
 		isThrow = true;
 		counter = 0;
