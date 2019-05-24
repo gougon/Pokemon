@@ -71,37 +71,37 @@ namespace game_framework {
 	{
 		switch (pokemonName) {
 		case treecko:
-			return new PmTreecko(my);
+			return new PmTreecko(my , name);
 			break;
 		case jirachi:
-			return new PmJirachi(my);
+			return new PmJirachi(my, name);
 			break;
 		case hooh:
-			return new PmHooh(my);
+			return new PmHooh(my, name);
 			break;
 		case deoxys:
-			return new PmDeoxys(my);
+			return new PmDeoxys(my, name);
 			break;
 		case gardevoir:
-			return new PmGardevoir(my);
+			return new PmGardevoir(my, name);
 			break;
 		case grovyle:
-			return new PmGrovyle(my);
+			return new PmGrovyle(my, name);
 			break;
 		case metang:
-			return new PmMetang(my);
+			return new PmMetang(my, name);
 			break;
 		case pikachu:
-			return new PmPikachu(my);
+			return new PmPikachu(my, name);
 			break;
 		case rayquaza:
-			return new PmRayquaza(my);
+			return new PmRayquaza(my, name);
 			break;
 		case smoochum:
-			return new PmSmoochum(my);
+			return new PmSmoochum(my, name);
 			break;
 		default:
-			return new PmTreecko(my);
+			return new PmTreecko(my, name);
 			break;
 		}
 	}
@@ -110,37 +110,37 @@ namespace game_framework {
 	{
 		switch (pokemonName) {
 		case treecko:
-			return new PmTreecko(my);
+			return new PmTreecko(enemy);
 			break;
 		case jirachi:
-			return new PmJirachi(my);
+			return new PmJirachi(enemy);
 			break;
 		case hooh:
-			return new PmHooh(my);
+			return new PmHooh(enemy);
 			break;
 		case deoxys:
-			return new PmDeoxys(my);
+			return new PmDeoxys(enemy);
 			break;
 		case gardevoir:
-			return new PmGardevoir(my);
+			return new PmGardevoir(enemy);
 			break;
 		case grovyle:
-			return new PmGrovyle(my);
+			return new PmGrovyle(enemy);
 			break;
 		case metang:
-			return new PmMetang(my);
+			return new PmMetang(enemy);
 			break;
 		case pikachu:
-			return new PmPikachu(my);
+			return new PmPikachu(enemy);
 			break;
 		case rayquaza:
-			return new PmRayquaza(my);
+			return new PmRayquaza(enemy);
 			break;
 		case smoochum:
-			return new PmSmoochum(my);
+			return new PmSmoochum(enemy);
 			break;
 		default:
-			return new PmTreecko(my);
+			return new PmTreecko(enemy);
 			break;
 		}
 	}
