@@ -292,7 +292,6 @@
 #define IDB_BITMAP22                    448
 #define IDB_JUMP_SAND3                  448
 #define IDB_PM_VULPIX_FRONT             414
-#define IDB_DOUCHITOWN_HOUSE2           415
 #define IDB_PM_VAPOREON_FRONT           416
 #define IDB_PM_SMOOCHUM_FRONT           417
 #define IDB_PM_PIKACHU_FRONT            418
