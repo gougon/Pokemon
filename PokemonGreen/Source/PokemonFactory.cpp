@@ -11,6 +11,14 @@
 #include "PmTreecko.h"
 #include "PmJirachi.h"
 #include "PmHooh.h"
+#include "PmDeoxys.h"
+#include "PmGardevoir.h"
+#include "PmGrimer.h"
+#include "PmGrovyle.h"
+#include "PmMetang.h"
+#include "PmPikachu.h"
+#include "PmRayquaza.h"
+#include "PmSmoochum.h"
 
 namespace game_framework {
 	Pokemon* PokemonFactory::CreatePokemon(pokemonName pokemonName)
@@ -24,6 +32,27 @@ namespace game_framework {
 			break;
 		case hooh:
 			return new PmHooh(my);
+			break;
+		case deoxys:
+			return new PmDeoxys(my);
+			break;
+		case gardevoir:
+			return new PmGardevoir(my);
+			break;
+		case grovyle:
+			return new PmGrovyle(my);
+			break;
+		case metang:
+			return new PmMetang(my);
+			break;
+		case pikachu:
+			return new PmPikachu(my);
+			break;
+		case rayquaza:
+			return new PmRayquaza(my);
+			break;
+		case smoochum:
+			return new PmSmoochum(my);
 			break;
 		default:
 			return new PmTreecko(my);
@@ -42,13 +71,34 @@ namespace game_framework {
 	{
 		switch (pokemonName) {
 		case treecko:
-			return new PmTreecko(my, name);
+			return new PmTreecko(my , name);
 			break;
 		case jirachi:
 			return new PmJirachi(my, name);
 			break;
 		case hooh:
 			return new PmHooh(my, name);
+			break;
+		case deoxys:
+			return new PmDeoxys(my, name);
+			break;
+		case gardevoir:
+			return new PmGardevoir(my, name);
+			break;
+		case grovyle:
+			return new PmGrovyle(my, name);
+			break;
+		case metang:
+			return new PmMetang(my, name);
+			break;
+		case pikachu:
+			return new PmPikachu(my, name);
+			break;
+		case rayquaza:
+			return new PmRayquaza(my, name);
+			break;
+		case smoochum:
+			return new PmSmoochum(my, name);
 			break;
 		default:
 			return new PmTreecko(my, name);
@@ -67,6 +117,27 @@ namespace game_framework {
 			break;
 		case hooh:
 			return new PmHooh(enemy);
+			break;
+		case deoxys:
+			return new PmDeoxys(enemy);
+			break;
+		case gardevoir:
+			return new PmGardevoir(enemy);
+			break;
+		case grovyle:
+			return new PmGrovyle(enemy);
+			break;
+		case metang:
+			return new PmMetang(enemy);
+			break;
+		case pikachu:
+			return new PmPikachu(enemy);
+			break;
+		case rayquaza:
+			return new PmRayquaza(enemy);
+			break;
+		case smoochum:
+			return new PmSmoochum(enemy);
 			break;
 		default:
 			return new PmTreecko(enemy);

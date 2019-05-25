@@ -6,7 +6,7 @@
 using namespace std;
 namespace game_framework {
 	enum pokemonName {
-		treecko, jirachi, hooh
+		treecko, jirachi, hooh, deoxys, gardevoir, grimer, grovyle, metang, pikachu, rayquaza, smoochum
 	};
 
 	class PokemonFactory {
