@@ -208,18 +208,24 @@ namespace game_framework
 		fatguy.OnMove();
 	}
 
-	bool WeiBaiMap::IsCollision(int x, int y)
+	bool WeiBaiMap::IsCollision(int x, int y, CHero &hero)
 	{
 		x /= SM;
 		y /= SM;
+		bool flag = false;
 
 		for (auto i : hitImg)
 		{
 			if (map[y][x] == i)
-				return true;
+				flag =  true;
 		}
-		if (fatguy.GetX() / SM == x && fatguy.GetY() / SM + 1 == y) return true;
-		return false;
+		if (find(jumpLand.begin(), jumpLand.end(), map[y][x]) != jumpLand.end()) {
+			if (!IsJumpLand(x * SM, y * SM, hero))
+				flag = true;
+		}
+
+		if (fatguy.GetX() / SM == x && fatguy.GetY() / SM + 1 == y) flag =  true;
+		return flag;
 	}
 
 	bool WeiBaiMap::IsWarZone(int x, int y)
@@ -230,6 +236,21 @@ namespace game_framework
 		for (auto i : warZone)
 		{
 			if (map[y][x] == i) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	bool WeiBaiMap::IsJumpLand(int x, int y, CHero &hero)
+	{
+		x /= SM;
+		y /= SM;
+
+		for (auto i : jumpLand)
+		{
+			if (map[y][x] == i && hero.GetY1() / SM < y) {
 				return true;
 			}
 		}

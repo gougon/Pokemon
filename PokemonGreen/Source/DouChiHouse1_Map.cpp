@@ -66,7 +66,7 @@ namespace game_framework {
 		// empty body
 	}
 
-	bool DouChiHouse1_Map::IsCollision(int x, int y)
+	bool DouChiHouse1_Map::IsCollision(int x, int y, CHero &hero)
 	{
 		x /= SM;
 		y /= SM;

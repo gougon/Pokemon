@@ -33,6 +33,7 @@ class CHero
         void OnMove(CMap** m, AtkInterface &atkInterface, Characters *characters);			// 移動
         void OnShow();					// 將圖形貼到畫面
         bool IsMoving();
+		bool IsJumping();
         bool IsCanMove();
 		void IsInvisiable(bool inv);
         void StartDialog();
@@ -60,6 +61,7 @@ class CHero
 		void MoveAnime();
     protected:
         void ChangeMap(CMap** m);
+		int JumpAnime();
         CMovingBitmap HeroFront;		// 小智的動畫
         CMovingBitmap HeroBack;
         CMovingBitmap HeroRight;
@@ -68,6 +70,7 @@ class CHero
         CAnimation HeroMovingFront;
         CAnimation HeroMovingRight;
         CAnimation HeroMovingLeft;
+		CAnimation jumpDownEffect;
 		CAnimation shineGrass;
         int x, y;					// 擦子左上角座標
         bool isMovingDown;			// 是否正在往下移動
@@ -80,17 +83,17 @@ class CHero
         bool isForwardUp;			// 是否面朝上
         bool isDialog;
 		bool isRunning;
+		bool isJumping;
 		bool invisible;
 		bool onGrass;
         //bool inMenu;
 		int speed;
         bool inBag;
         bool canMove;
-        int count;
+        int count, jumpCount;
         int atkProb;		//遇怪機率
         vector<Pokemon*> pokemons;
     private:
-        //int menuFlag = 0;
         CMap* gameMap;
         ActionObject* gameMenu;
         int money;

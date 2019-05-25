@@ -279,12 +279,17 @@
 #define IDB_PMLIST_RIGHT                407
 #define IDB_PMLIST_NONEBALL             408
 #define IDB_BITMAP16                    409
+#define IDB_SHADOW                      409
 #define HAVEITEM_ICON                   410
 #define IDB_SHINE_GRASS1                411
 #define IDB_SHINE_GRASS2                412
 #define IDB_DOUCHITOWN_HOUSE1           413
 #define IDB_DOUCHITOWNI_HOUSE2          414
+#define IDB_JUMP_SAND1                  414
 #define IDB_DOUCHITOWN_HOUSE2           415
+#define IDB_JUMP_SAND2                  416
+#define IDB_BITMAP22                    417
+#define IDB_JUMP_SAND3                  417
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -297,11 +302,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-<<<<<<< HEAD
-#define _APS_NEXT_RESOURCE_VALUE        399
-=======
-#define _APS_NEXT_RESOURCE_VALUE        404
->>>>>>> 613c326d0af75a60f602aab99a3f9c58fb825464
+#define _APS_NEXT_RESOURCE_VALUE        418
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

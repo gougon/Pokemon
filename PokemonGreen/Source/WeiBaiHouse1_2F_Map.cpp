@@ -61,7 +61,7 @@ void WeiBaiHouse1_2F_Map::OnShow()
     }
 }
 
-bool WeiBaiHouse1_2F_Map::IsCollision(int x, int y)
+bool WeiBaiHouse1_2F_Map::IsCollision(int x, int y, CHero &hero)
 {
     x /= SM;
     y /= SM;

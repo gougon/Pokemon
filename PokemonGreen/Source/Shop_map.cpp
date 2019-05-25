@@ -67,7 +67,7 @@ namespace game_framework {
 		if (clerk.IsWork()) clerk.OnShow();
 	}
 
-	bool Shop_Map::IsCollision(int x, int y)
+	bool Shop_Map::IsCollision(int x, int y, CHero &hero)
 	{
 		x /= SM;
 		y /= SM;

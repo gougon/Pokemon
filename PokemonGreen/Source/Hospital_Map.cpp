@@ -97,7 +97,7 @@ namespace game_framework
 		}
 	}
 
-	bool Hospital_Map::IsCollision(int x, int y)
+	bool Hospital_Map::IsCollision(int x, int y, CHero &hero)
 	{
 		x /= SM;
 		y /= SM;

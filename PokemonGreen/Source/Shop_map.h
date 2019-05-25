@@ -15,7 +15,7 @@ class Shop_Map : public CMap
         virtual void InitMap();
         virtual void LoadBitmap();
         virtual void OnShow();
-        virtual bool IsCollision(int x, int y);
+        virtual bool IsCollision(int x, int y, CHero &hero);
         virtual CMap* ChangeMap(int x, int y, CHero* hero);
         virtual int checkID(int x, int y, int herodirection);
 		virtual void KeyDownListener(UINT nChar, CHero& hero);

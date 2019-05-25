@@ -267,13 +267,12 @@ void CGameStateRun::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
         if (hero.IsCanMove())
         {
 			int oneBlockTime = SM / hero.GetSpeed();
-            if (!hero.IsMoving() && count >= oneBlockTime)
+            if (!hero.IsMoving() && count >= oneBlockTime && !hero.IsJumping())
             {
                 hero.SetCanMove(false);
                 hero.SetCount(0);
-				// hero.MoveAnime();
             }
-            else if (count >= oneBlockTime)
+            else if (count >= oneBlockTime && !hero.IsJumping())
             {
                 hero.SetCount(0);
             }

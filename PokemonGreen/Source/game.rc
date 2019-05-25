@@ -548,6 +548,14 @@ IDB_DOUCHITOWN_HOUSE1   BITMAP                  "..\\RES\\douchitown_house1.bmp"
 
 IDB_DOUCHITOWN_HOUSE2   BITMAP                  "..\\RES\\douchitown_house2.bmp"
 
+IDB_SHADOW              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\shadow.bmp"
+
+IDB_JUMP_SAND1          BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\jump_sand1.bmp"
+
+IDB_JUMP_SAND2          BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\jump_sand2.bmp"
+
+IDB_JUMP_SAND3          BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\jump_sand3.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

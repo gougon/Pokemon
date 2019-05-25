@@ -29,8 +29,9 @@ namespace game_framework {
         virtual void OnShow();
 		virtual void ReShow(CHero &hero);
 		virtual void OnMove();
-        virtual bool IsCollision(int x, int y);
+        virtual bool IsCollision(int x, int y, CHero &hero);
         virtual bool IsWarZone(int x, int y);
+		virtual bool IsJumpLand(int x, int y, CHero &hero);
         virtual void ProduceEnemy(CHero* hero, AtkInterface &atkInterface);
         virtual CMap* ChangeMap(int x, int y, CHero* hero);
 		virtual void KeyDownListener(UINT nChar, CHero &hero);
@@ -43,7 +44,8 @@ namespace game_framework {
         CDialog dialogBox;
 		CAnimation flower;
         CPickableObject pickable_Antidote;
-        vector<int> hitImg = { 0, 3, 6, 11 };
+        vector<int> hitImg = { 0, 3, 6 };
         vector<int> warZone = { 10 };
+		vector<int> jumpLand = { 11 };
 	};
 }

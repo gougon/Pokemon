@@ -614,6 +614,9 @@
     <Image Include="RES\jirachi_back.bmp" />
     <Image Include="RES\jirachi_front.bmp" />
     <Image Include="RES\jump_land.bmp" />
+    <Image Include="RES\jump_sand1.bmp" />
+    <Image Include="RES\jump_sand2.bmp" />
+    <Image Include="RES\jump_sand3.bmp" />
     <Image Include="RES\LV_UP_FPANEL.bmp" />
     <Image Include="RES\LV_UP_PANEL.bmp" />
     <Image Include="RES\may_atk.bmp" />
@@ -645,8 +648,10 @@
     <Image Include="RES\POKEMON_BAR_FIRST_SELECTED.bmp" />
     <Image Include="RES\POKEMON_BAR_FIRST_UNSELECTED.bmp" />
     <Image Include="RES\POKEMON_BAR_SELECTED.bmp" />
+    <Image Include="RES\POKEMON_MENU_ITEMCHOOSE.bmp" />
     <Image Include="RES\SELECT_PANEL.bmp" />
     <Image Include="RES\self.bmp" />
+    <Image Include="RES\shadow.bmp" />
     <Image Include="RES\shine_grass1.bmp" />
     <Image Include="RES\shine_grass2.bmp" />
     <Image Include="RES\SHOP.bmp" />

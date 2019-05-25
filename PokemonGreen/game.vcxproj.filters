@@ -1017,6 +1017,24 @@
     <Image Include="RES\douchitown_house2.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="C:\Users\mdvv8\Desktop\tempimg\POKEMON_MENU_ITEMCHOOSE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\shadow.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\POKEMON_MENU_ITEMCHOOSE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\jump_sand1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\jump_sand2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\jump_sand3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="RES\weibaitown_scene.txt" />
