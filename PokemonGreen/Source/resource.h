@@ -315,6 +315,27 @@
 #define IDB_ICON_PM_VULPIX              442
 #define IDB_BITMAP49                    443
 #define IDB_ICON_PM_SMOOCHUM            443
+#define IDB_SKILL_CONFUSION7            445
+#define IDB_SKILL_CONFUSION3            446
+#define IDB_SKILL_CONFUSION4            447
+#define IDB_SKILL_CONFUSION5            448
+#define IDB_SKILL_CONFUSION2            449
+#define IDB_SKILL_CONFUSION6            450
+#define IDB_SKILL_CONFUSION1            451
+#define IDB_SKILL_METALCLAW9            452
+#define IDB_SKILL_METALCLAW10           453
+#define IDB_SKILL_METALCLAW8            454
+#define IDB_SKILL_METALCLAW7            455
+#define IDB_SKILL_METALCLAW6            456
+#define IDB_SKILL_METALCLAW3            457
+#define IDB_SKILL_METALCLAW4            458
+#define IDB_SKILL_METALCLAW5            459
+#define IDB_SKILL_METALCLAW2            460
+#define IDB_SKILL_METALCLAW1            461
+#define IDB_SKILL_SCARYFACE2            462
+#define IDB_SKILL_SCARYFACE3            463
+#define IDB_BITMAP20                    464
+#define IDB_SKILL_SCARYFACE1            464
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -327,7 +348,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        444
+#define _APS_NEXT_RESOURCE_VALUE        465
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

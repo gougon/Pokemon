@@ -608,6 +608,46 @@ IDB_ICON_PM_VULPIX      BITMAP                  "..\\RES\\icon_pm_vulpix.bmp"
 
 IDB_ICON_PM_SMOOCHUM    BITMAP                  "..\\RES\\icon_pm_smoochum.bmp"
 
+IDB_SKILL_CONFUSION7    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_confusion7.bmp"
+
+IDB_SKILL_CONFUSION3    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_confusion3.bmp"
+
+IDB_SKILL_CONFUSION4    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_confusion4.bmp"
+
+IDB_SKILL_CONFUSION5    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_confusion5.bmp"
+
+IDB_SKILL_CONFUSION2    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_confusion2.bmp"
+
+IDB_SKILL_CONFUSION6    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_confusion6.bmp"
+
+IDB_SKILL_CONFUSION1    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_confusion1.bmp"
+
+IDB_SKILL_METALCLAW9    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw9.bmp"
+
+IDB_SKILL_METALCLAW10   BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw10.bmp"
+
+IDB_SKILL_METALCLAW8    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw8.bmp"
+
+IDB_SKILL_METALCLAW7    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw7.bmp"
+
+IDB_SKILL_METALCLAW6    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw6.bmp"
+
+IDB_SKILL_METALCLAW3    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw3.bmp"
+
+IDB_SKILL_METALCLAW4    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw4.bmp"
+
+IDB_SKILL_METALCLAW5    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw5.bmp"
+
+IDB_SKILL_METALCLAW2    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw2.bmp"
+
+IDB_SKILL_METALCLAW1    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw1.bmp"
+
+IDB_SKILL_SCARYFACE2    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_scaryface2.bmp"
+
+IDB_SKILL_SCARYFACE3    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_scaryface3.bmp"
+
+IDB_SKILL_SCARYFACE1    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_scaryface1.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
