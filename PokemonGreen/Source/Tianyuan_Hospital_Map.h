@@ -5,15 +5,12 @@
 #include "CObject.h"
 #include "CEvent.h"
 
-constexpr auto HOSPITAL_INSIDE = 2;
-constexpr auto NURSE = 3;
-
 namespace game_framework
 {
-	class Hospital_Map : public CMap
+	class Tianyuan_Hospital_Map : public CMap
 	{
 	public:
-		Hospital_Map(CEvent*);
+		Tianyuan_Hospital_Map(CEvent*);
 		virtual void InitMap();
 		virtual void LoadBitmap();
 		virtual void OnShow();
@@ -32,4 +29,3 @@ namespace game_framework
 		vector<int> hitImg = { 0, 2, 3 };
 	};
 }
-

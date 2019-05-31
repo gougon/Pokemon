@@ -285,6 +285,8 @@
     <ClCompile Include="Source\PmSmoochum.cpp" />
     <ClCompile Include="Source\PmVaporeon.cpp" />
     <ClCompile Include="Source\PmVulpix.cpp" />
+    <ClCompile Include="Source\Tianyuan_Hospital_Map.cpp" />
+    <ClCompile Include="Source\Tianyuan_Shop_Map.cpp" />
     <ClCompile Include="Source\TrainerMay.cpp" />
     <ClCompile Include="Source\CHero.cpp" />
     <ClCompile Include="Source\CItem.cpp" />
@@ -315,7 +317,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="Source\Hospital_Map.cpp" />
+    <ClCompile Include="Source\Douchi_Hospital_Map.cpp" />
     <ClCompile Include="Source\Illustration.cpp" />
     <ClCompile Include="Source\ItemAntidote.cpp" />
     <ClCompile Include="Source\ItemBigVulnerary.cpp" />
@@ -344,7 +346,7 @@
     <ClCompile Include="Source\PokemonMenu.cpp" />
     <ClCompile Include="Source\Record.cpp" />
     <ClCompile Include="Source\Self.cpp" />
-    <ClCompile Include="Source\Shop_map.cpp" />
+    <ClCompile Include="Source\Douchi_Shop_Map.cpp" />
     <ClCompile Include="Source\Skill.cpp" />
     <ClCompile Include="Source\SkillEmber.cpp" />
     <ClCompile Include="Source\SkillFactory.cpp" />
@@ -406,6 +408,8 @@
     <ClInclude Include="Source\PmSmoochum.h" />
     <ClInclude Include="Source\PmVaporeon.h" />
     <ClInclude Include="Source\PmVulpix.h" />
+    <ClInclude Include="Source\Tianyuan_Hospital_Map.h" />
+    <ClInclude Include="Source\Tianyuan_Shop_Map.h" />
     <ClInclude Include="Source\TrainerMay.h" />
     <ClInclude Include="Source\CHero.h" />
     <ClInclude Include="Source\CItem.h" />
@@ -423,7 +427,7 @@
     <ClInclude Include="Source\gameDoc.h" />
     <ClInclude Include="Source\GameObject.h" />
     <ClInclude Include="Source\gameView.h" />
-    <ClInclude Include="Source\Hospital_Map.h" />
+    <ClInclude Include="Source\Douchi_Hospital_Map.h" />
     <ClInclude Include="Source\Illustration.h" />
     <ClInclude Include="Source\ItemAntidote.h" />
     <ClInclude Include="Source\ItemBigVulnerary.h" />
@@ -450,7 +454,7 @@
     <ClInclude Include="Source\Record.h" />
     <ClInclude Include="Source\Resource.h" />
     <ClInclude Include="Source\Self.h" />
-    <ClInclude Include="Source\Shop_map.h" />
+    <ClInclude Include="Source\Douchi_Shop_Map.h" />
     <ClInclude Include="Source\Skill.h" />
     <ClInclude Include="Source\SkillEmber.h" />
     <ClInclude Include="Source\SkillFactory.h" />

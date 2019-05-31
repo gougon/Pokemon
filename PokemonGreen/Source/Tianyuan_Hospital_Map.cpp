@@ -5,19 +5,19 @@
 #include <ddraw.h>
 #include "audio.h"
 #include "gamelib.h"
-#include "Hospital_Map.h"
+#include "Tianyuan_Hospital_Map.h"
 #include "WeiBaiMap.h"
 #include "CDialog.h"
 
 namespace game_framework
 {
-	Hospital_Map::Hospital_Map(CEvent* gameEvent) : CMap(4) // sceneNum
+	Tianyuan_Hospital_Map::Tianyuan_Hospital_Map(CEvent* gameEvent) : CMap(4) // sceneNum
 	{
 		mapGameEvent = gameEvent;
 		InitMap();
 	}
 
-	void Hospital_Map::InitMap()
+	void Tianyuan_Hospital_Map::InitMap()
 	{
 		CAudio::Instance()->Play(AUDIO_HOSPITAL_START);
 
@@ -26,14 +26,14 @@ namespace game_framework
 		SetMap("hospital");
 	}
 
-	void Hospital_Map::LoadBitmap()
+	void Tianyuan_Hospital_Map::LoadBitmap()
 	{
 		scene[HOSPITAL_INSIDE].LoadBitmap(IDB_HOSPITAL_INSIDE);
 		nurse.LoadBitmap();
 		nurse.Init();
 	}
 
-	void Hospital_Map::OnShow()
+	void Tianyuan_Hospital_Map::OnShow()
 	{
 		int sx = GetSX();
 		int sy = GetSY();
@@ -68,7 +68,7 @@ namespace game_framework
 		}
 	}
 
-	void Hospital_Map::OnMove()
+	void Tianyuan_Hospital_Map::OnMove()
 	{
 		if (++audioCounter == 100) {
 			CAudio::Instance()->Play(AUDIO_HOSPITAL_PROCESS, true);
@@ -78,7 +78,7 @@ namespace game_framework
 		}
 	}
 
-	void Hospital_Map::KeyDownListener(UINT nChar, CHero &hero)
+	void Tianyuan_Hospital_Map::KeyDownListener(UINT nChar, CHero &hero)
 	{
 		const char KEY_Z = 0x5a;
 
@@ -97,21 +97,21 @@ namespace game_framework
 		}
 	}
 
-	bool Hospital_Map::IsCollision(int x, int y, CHero &hero)
+	bool Tianyuan_Hospital_Map::IsCollision(int x, int y, CHero &hero)
 	{
 		x /= SM;
 		y /= SM;
 
 		for (auto i : hitImg)
 		{
-			if (map[y][x] == i) 
+			if (map[y][x] == i)
 				return true;
 		}
 
 		return false;
 	}
 
-	CMap* Hospital_Map::ChangeMap(int x, int y, CHero* hero)
+	CMap* Tianyuan_Hospital_Map::ChangeMap(int x, int y, CHero* hero)
 	{
 		x /= SM;
 		y /= SM;
@@ -120,7 +120,7 @@ namespace game_framework
 		if (x == 20 && y == 23 || x == 21 && y == 23)
 		{
 			newMap = new WeiBaiMap(mapGameEvent);
-			newMap->SetXY(93 * SM, 47 * SM);
+			newMap->SetXY(27 * SM, 37 * SM);
 		}
 
 		CAudio::Instance()->Stop(AUDIO_HOSPITAL_START);
@@ -129,7 +129,7 @@ namespace game_framework
 		return newMap;
 	}
 
-	bool Hospital_Map::IsItemBeChecked(int x, int y, CHero &hero)
+	bool Tianyuan_Hospital_Map::IsItemBeChecked(int x, int y, CHero &hero)
 	{
 		int herox = hero.GetX1() / SM;
 		int heroy = hero.GetY1() / SM;

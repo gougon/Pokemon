@@ -3,14 +3,13 @@
 #include "CHero.h"
 #include "CEvent.h"
 #include "Clerk.h"
-constexpr auto SHOP_MAP = 2;
 
 namespace game_framework
 {
-class Shop_Map : public CMap
+class Douchi_Shop_Map : public CMap
 {
     public:
-        Shop_Map(CEvent*);
+        Douchi_Shop_Map(CEvent*);
         virtual void OnMove();
         virtual void InitMap();
         virtual void LoadBitmap();

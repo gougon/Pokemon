@@ -157,7 +157,6 @@
     <ClCompile Include="Source\Self.cpp" />
     <ClCompile Include="Source\Bag.cpp" />
     <ClCompile Include="Source\PmValue.cpp" />
-    <ClCompile Include="Source\Hospital_Map.cpp" />
     <ClCompile Include="Source\Nurse.cpp" />
     <ClCompile Include="Source\PmJirachi.cpp" />
     <ClCompile Include="Source\SkillLeer.cpp" />
@@ -167,7 +166,6 @@
     <ClCompile Include="Source\SkillFire.cpp" />
     <ClCompile Include="Source\Status.cpp" />
     <ClCompile Include="Source\Clerk.cpp" />
-    <ClCompile Include="Source\Shop_map.cpp" />
     <ClCompile Include="Source\Black.cpp" />
     <ClCompile Include="Source\CFatguy.cpp" />
     <ClCompile Include="Source\Functions.cpp" />
@@ -199,6 +197,10 @@
     <ClCompile Include="Source\PmVaporeon.cpp" />
     <ClCompile Include="Source\PmVulpix.cpp" />
     <ClCompile Include="Source\PmDeoxys.cpp" />
+    <ClCompile Include="Source\Douchi_Shop_Map.cpp" />
+    <ClCompile Include="Source\Douchi_Hospital_Map.cpp" />
+    <ClCompile Include="Source\Tianyuan_Shop_Map.cpp" />
+    <ClCompile Include="Source\Tianyuan_Hospital_Map.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -265,7 +267,6 @@
     <ClInclude Include="Source\Self.h" />
     <ClInclude Include="Source\Bag.h" />
     <ClInclude Include="Source\PmValue.h" />
-    <ClInclude Include="Source\Hospital_Map.h" />
     <ClInclude Include="Source\Nurse.h" />
     <ClInclude Include="Source\PmJirachi.h" />
     <ClInclude Include="Source\SkillLeer.h" />
@@ -275,7 +276,6 @@
     <ClInclude Include="Source\SkillFire.h" />
     <ClInclude Include="Source\Status.h" />
     <ClInclude Include="Source\Clerk.h" />
-    <ClInclude Include="Source\Shop_map.h" />
     <ClInclude Include="Source\Black.h" />
     <ClInclude Include="Source\CFatguy.h" />
     <ClInclude Include="Source\Trainer.h" />
@@ -306,6 +306,10 @@
     <ClInclude Include="Source\PmVaporeon.h" />
     <ClInclude Include="Source\PmVulpix.h" />
     <ClInclude Include="Source\PmDeoxys.h" />
+    <ClInclude Include="Source\Douchi_Shop_Map.h" />
+    <ClInclude Include="Source\Douchi_Hospital_Map.h" />
+    <ClInclude Include="Source\Tianyuan_Shop_Map.h" />
+    <ClInclude Include="Source\Tianyuan_Hospital_Map.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">

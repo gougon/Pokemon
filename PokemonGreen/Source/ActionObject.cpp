@@ -15,6 +15,11 @@ namespace game_framework {
 		// empty body
 	}
 
+	ActionObject::~ActionObject()
+	{
+		// empty body
+	}
+
 	void ActionObject::Start()
 	{
 		isWork = true;

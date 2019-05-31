@@ -11,10 +11,12 @@
 #include "WeiBaiHouse1_1F_Map.h"
 #include "WeiBaiHouse2_1F_Map.h"
 #include "WeiBaiProHouse_Map.h"
-#include "Hospital_Map.h"
-#include "Shop_map.h"
+#include "Douchi_Hospital_Map.h"
+#include "Douchi_Shop_Map.h"
 #include "DouChiHouse1_Map.h"
 #include "DouChiHouse2_Map.h"
+#include "Tianyuan_Hospital_Map.h"
+#include "Tianyuan_Shop_Map.h"
 #include "AtkInterface.h"
 #include "Pokemon.h"
 #include "PokemonFactory.h"
@@ -35,8 +37,6 @@ namespace game_framework
 
 		InitMap();
 	}
-
-
 
 	void WeiBaiMap::InitMap()
 	{
@@ -400,16 +400,22 @@ namespace game_framework
 			newMap = new WeiBaiProHouse_Map(mapGameEvent);
 		}
 		else if (x == 98 && y == 50) {
-			newMap = new Hospital_Map(mapGameEvent);
+			newMap = new Douchi_Hospital_Map(mapGameEvent);
 		}
 		else if (x == 106 && y == 40) {
-			newMap = new Shop_Map(mapGameEvent);
+			newMap = new Douchi_Shop_Map(mapGameEvent);
 		}
 		else if (x == 107 && y == 50) {
 			newMap = new DouChiHouse1_Map(mapGameEvent);
 		}
 		else if (x == 97 && y == 41) {
 			newMap = new DouChiHouse2_Map(mapGameEvent);
+		}
+		else if (x == 32 && y == 40) {
+			newMap = new Tianyuan_Hospital_Map(mapGameEvent);
+		}
+		else if (x == 37 && y == 36) {
+			newMap = new Tianyuan_Shop_Map(mapGameEvent);
 		}
 
 		CAudio::Instance()->Stop(AUDIO_WEIBAITOWN);

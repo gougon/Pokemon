@@ -6,9 +6,9 @@
 #include "audio.h"
 #include "gamelib.h"
 #include "WeiBaiMap.h"
-#include "Shop_map.h"
+#include "Douchi_Shop_Map.h"
 namespace game_framework {
-	Shop_Map::Shop_Map(CEvent * gameEvent) : CMap(3)
+	Douchi_Shop_Map::Douchi_Shop_Map(CEvent * gameEvent) : CMap(3)
 	{
 		mapGameEvent = gameEvent;
 
@@ -16,13 +16,13 @@ namespace game_framework {
 			TRACE("Event%d : %d\n", i, mapGameEvent->CheckOccured(i));
 		InitMap();
 	}
-	void Shop_Map::OnMove()
+	void Douchi_Shop_Map::OnMove()
 	{
 		if (clerk.IsWork()) 
 			clerk.OnMove();
 	}
 
-	void Shop_Map::InitMap()
+	void Douchi_Shop_Map::InitMap()
 	{
 		CAudio::Instance()->Play(AUDIO_MART);
 		SetMXY(39, 36);
@@ -31,14 +31,14 @@ namespace game_framework {
 		inEvent = false;
 	}
 
-	void Shop_Map::LoadBitmap()
+	void Douchi_Shop_Map::LoadBitmap()
 	{
 		scene[SHOP_MAP].LoadBitmap(IDB_SHOP_MAP);
 		clerk.LoadBitmap();
 		clerk.Init();
 	}
 
-	void Shop_Map::OnShow()
+	void Douchi_Shop_Map::OnShow()
 	{
 		int sx = GetSX();
 		int sy = GetSY();
@@ -67,7 +67,7 @@ namespace game_framework {
 		if (clerk.IsWork()) clerk.OnShow();
 	}
 
-	bool Shop_Map::IsCollision(int x, int y, CHero &hero)
+	bool Douchi_Shop_Map::IsCollision(int x, int y, CHero &hero)
 	{
 		x /= SM;
 		y /= SM;
@@ -80,7 +80,7 @@ namespace game_framework {
 		return false;
 	}
 
-	CMap * Shop_Map::ChangeMap(int x, int y, CHero * hero)
+	CMap * Douchi_Shop_Map::ChangeMap(int x, int y, CHero * hero)
 	{
 		x /= SM;
 		y /= SM;
@@ -96,12 +96,12 @@ namespace game_framework {
 		return newMap;
 	}
 
-	int Shop_Map::checkID(int, int, int)
+	int Douchi_Shop_Map::checkID(int, int, int)
 	{
 		return 0;
 	}
 
-	void Shop_Map::KeyDownListener(UINT nChar, CHero& hero)
+	void Douchi_Shop_Map::KeyDownListener(UINT nChar, CHero& hero)
 	{
 		TRACE("in shop\n");
 		const char KEY_Z = 0x5a;

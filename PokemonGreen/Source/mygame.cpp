@@ -262,8 +262,6 @@ void CGameStateRun::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 		characters->OnMove(hero, *gameMap);
         int count = hero.GetCount();
 
-        //TRACE("x = %d\ny = %d\n", hero.GetX1(), hero.GetY1());
-        //TRACE("sx = %d\nsy = %d\n", gameMap->GetSX(), gameMap->GetSY());
         if (hero.IsCanMove())
         {
 			int oneBlockTime = SM / hero.GetSpeed();
