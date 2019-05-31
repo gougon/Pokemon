@@ -26,7 +26,7 @@
 
 namespace game_framework
 {
-	WeiBaiMap::WeiBaiMap(CEvent* gameEvent) : CMap(15) // sceneNum
+	WeiBaiMap::WeiBaiMap(CEvent* gameEvent) : CMap(36) // sceneNum
 	{
 		mapGameEvent = gameEvent;
 
@@ -42,15 +42,15 @@ namespace game_framework
 	{
 		CAudio::Instance()->Play(AUDIO_WEIBAITOWN);
 
-		SetMXY(48, 87);			// 設定地圖總長寬格數
-		SetXY(18 * SM, 24 * SM);		// 設定初始位置
+		SetMXY(126, 109);			// 設定地圖總長寬格數
+		SetXY(96 * SM, 44 * SM);		// 設定初始位置
 		SetMap("area1");
 		name = "weibai";
 		fatguy.Initialize();
-		fatguy.SetXY(25 * SM, 62 * SM + 40);
+		fatguy.SetXY(103 * SM, 84 * SM + 40);
 		dialogBox.InitDialog('n');
 
-		if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball)) pickable_Antidote.SetXY(1380, 1980);
+		if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball)) pickable_Antidote.SetXY(6060, 3300);
 
 		inEvent = false;
 		dialogState = Start;
@@ -70,10 +70,43 @@ namespace game_framework
 		scene[HOSPITAL].LoadBitmap(IDB_HOSPITAL, RGB(255, 0, 0));
 		scene[STORE].LoadBitmap(IDB_STORE, RGB(255, 0, 0));
 		scene[NORMAL_HOUSE1].LoadBitmap(IDB_NORMAL_HOUSE1, RGB(255, 0, 0));
+		scene[LAKE_102].LoadBitmap(IDB_LAKE_102);
+		scene[LAND_C].LoadBitmap(IDB_LAND_C);
+		scene[LAND_T].LoadBitmap(IDB_LAND_T);
+		scene[LAND_R].LoadBitmap(IDB_LAND_R);
+		scene[LAND_B].LoadBitmap(IDB_LAND_B);
+		scene[LAND_L].LoadBitmap(IDB_LAND_L);
+		scene[LAND_RT].LoadBitmap(IDB_LAND_RT);
+		scene[LAND_RB].LoadBitmap(IDB_LAND_RB);
+		scene[LAND_LT].LoadBitmap(IDB_LAND_LT);
+		scene[LAND_LB].LoadBitmap(IDB_LAND_LB);
+		scene[TIANYUAN_RTLAKE].LoadBitmap(IDB_TIANYUAN_RTLAKE);
+		scene[TIANYUAN_RBHOUSE].LoadBitmap(IDB_TIANYUAN_RBHOUSE, RGB(255, 0, 0));
+		scene[TIANYUAN_NHOUSE].LoadBitmap(IDB_TIANYUAN_NHOUSE);
+		scene[TIANYUAN_LTHOUSE].LoadBitmap(IDB_TIANYUAN_LTHOUSE);
+		scene[TIANYUAN_LLAKE1].LoadBitmap(IDB_TIANYUAN_LLAKE1);
+		scene[TIANYUAN_LLAKE2].LoadBitmap(IDB_TIANYUAN_LLAKE2);
+		scene[TIANYUAN_LLAKE3].LoadBitmap(IDB_TIANYUAN_LLAKE3);
+		scene[TIANYUAN_LLAKE4].LoadBitmap(IDB_TIANYUAN_LLAKE4);
+		scene[TIANYUAN_GYM].LoadBitmap(IDB_TIANYUAN_GYM);
 
 		flower.AddBitmap(IDB_GREEN_FLOWER);
 		flower.AddBitmap(IDB_GREEN_FLOWER2);
 		flower.AddBitmap(IDB_GREEN_FLOWER3);
+
+		rtsea1.AddBitmap(IDB_RTSEA1_1);
+		rtsea1.AddBitmap(IDB_RTSEA1_2);
+		rtsea1.AddBitmap(IDB_RTSEA1_3);
+		rtsea1.AddBitmap(IDB_RTSEA1_4);
+		rtsea1.AddBitmap(IDB_RTSEA1_5);
+		rtsea1.AddBitmap(IDB_RTSEA1_6);
+
+		rtsea2.AddBitmap(IDB_RTSEA2_1);
+		rtsea2.AddBitmap(IDB_RTSEA2_2);
+		rtsea2.AddBitmap(IDB_RTSEA2_3);
+		rtsea2.AddBitmap(IDB_RTSEA2_4);
+		rtsea2.AddBitmap(IDB_RTSEA2_5);
+		rtsea2.AddBitmap(IDB_RTSEA2_6);
 
 		fatguy.LoadBitmap();
 		/////////////////////////////
@@ -146,6 +179,71 @@ namespace game_framework
 					case NORMAL_HOUSE1:
 						SetTopLeft(NORMAL_HOUSE1, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
 						break;
+					case RT_SEA1:
+						rtsea1.SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						rtsea1.OnShow();
+						break;
+					case RT_SEA2:
+						rtsea2.SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						rtsea2.OnShow();
+						break;
+					case LAKE_102:
+						SetTopLeft(LAKE_102, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case LAND_C:
+						SetTopLeft(LAND_C, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case LAND_T:
+						SetTopLeft(LAND_T, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case LAND_R:
+						SetTopLeft(LAND_R, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case LAND_B:
+						SetTopLeft(LAND_B, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case LAND_L:
+						SetTopLeft(LAND_L, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case LAND_RT:
+						SetTopLeft(LAND_RT, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case LAND_RB:
+						SetTopLeft(LAND_RB, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case LAND_LT:
+						SetTopLeft(LAND_LT, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case LAND_LB:
+						SetTopLeft(LAND_LB, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case TIANYUAN_RTLAKE:
+						SetTopLeft(TIANYUAN_RTLAKE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case TIANYUAN_RBHOUSE:
+						SetTopLeft(TIANYUAN_RBHOUSE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM - 20);
+						break;
+					case TIANYUAN_NHOUSE:
+						SetTopLeft(TIANYUAN_NHOUSE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case TIANYUAN_LTHOUSE:
+						SetTopLeft(TIANYUAN_LTHOUSE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case TIANYUAN_LLAKE1:
+						SetTopLeft(TIANYUAN_LLAKE1, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case TIANYUAN_LLAKE2:
+						SetTopLeft(TIANYUAN_LLAKE2, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case TIANYUAN_LLAKE3:
+						SetTopLeft(TIANYUAN_LLAKE3, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case TIANYUAN_LLAKE4:
+						SetTopLeft(TIANYUAN_LLAKE4, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case TIANYUAN_GYM:
+						SetTopLeft(TIANYUAN_GYM, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
 					default:
 						ASSERT(0);
 						break;
@@ -191,6 +289,12 @@ namespace game_framework
 					case NORMAL_HOUSE1:
 						SetTopLeft(NORMAL_HOUSE1, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
 						break;
+					case TIANYUAN_NHOUSE:
+						SetTopLeft(TIANYUAN_NHOUSE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						break;
+					case TIANYUAN_RBHOUSE:
+						SetTopLeft(TIANYUAN_RBHOUSE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM - 20);
+						break;
 					default:
 						break;
 					}
@@ -205,21 +309,29 @@ namespace game_framework
 	void WeiBaiMap::OnMove()
 	{
 		flower.OnMove();
+		rtsea1.OnMove();
+		rtsea2.OnMove();
 		fatguy.OnMove();
 	}
 
-	bool WeiBaiMap::IsCollision(int x, int y)
+	bool WeiBaiMap::IsCollision(int x, int y, CHero &hero)
 	{
 		x /= SM;
 		y /= SM;
+		bool flag = false;
 
 		for (auto i : hitImg)
 		{
 			if (map[y][x] == i)
-				return true;
+				flag =  true;
 		}
-		if (fatguy.GetX() / SM == x && fatguy.GetY() / SM + 1 == y) return true;
-		return false;
+		if (find(jumpLand.begin(), jumpLand.end(), map[y][x]) != jumpLand.end()) {
+			if (!IsJumpLand(x * SM, y * SM, hero))
+				flag = true;
+		}
+
+		if (fatguy.GetX() / SM == x && fatguy.GetY() / SM + 1 == y) flag =  true;
+		return flag;
 	}
 
 	bool WeiBaiMap::IsWarZone(int x, int y)
@@ -230,6 +342,21 @@ namespace game_framework
 		for (auto i : warZone)
 		{
 			if (map[y][x] == i) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	bool WeiBaiMap::IsJumpLand(int x, int y, CHero &hero)
+	{
+		x /= SM;
+		y /= SM;
+
+		for (auto i : jumpLand)
+		{
+			if (map[y][x] == i && hero.GetY1() / SM < y) {
 				return true;
 			}
 		}
@@ -263,25 +390,25 @@ namespace game_framework
 		y /= SM;
 		CMap* newMap;
 	
-		if (x == 19 && y == 60) {
+		if (x == 97 && y == 82) {
 			newMap = new WeiBaiHouse1_1F_Map(mapGameEvent);
 		}
-		else if (x == 28 && y == 60) {
+		else if (x == 106 && y == 82) {
 			newMap = new WeiBaiHouse2_1F_Map(mapGameEvent);
 		}
-		else if (x == 21 && y == 68) {
+		else if (x == 99 && y == 90) {
 			newMap = new WeiBaiProHouse_Map(mapGameEvent);
 		}
-		else if (x == 20 && y == 28) {
+		else if (x == 98 && y == 50) {
 			newMap = new Hospital_Map(mapGameEvent);
 		}
-		else if (x == 28 && y == 18) {
+		else if (x == 106 && y == 40) {
 			newMap = new Shop_Map(mapGameEvent);
 		}
-		else if (x == 29 && y == 28) {
+		else if (x == 107 && y == 50) {
 			newMap = new DouChiHouse1_Map(mapGameEvent);
 		}
-		else if (x == 19 && y == 19) {
+		else if (x == 97 && y == 41) {
 			newMap = new DouChiHouse2_Map(mapGameEvent);
 		}
 
@@ -351,22 +478,22 @@ namespace game_framework
 						dialogState = End;
 					}
 				}
-				else if (x == 21 && y == 60) {
+				else if (x == 99 && y == 82) {
 					inEvent = true;
 					dialogState = End;
 					dialogBox.SetText("my sweet home");
 				}
-				else if (x == 26 && y == 60) {
+				else if (x == 104 && y == 82) {
 					inEvent = true;
 					dialogState = End;
 					dialogBox.SetText("competitor home");
 				}
-				else if (x == 29 && y == 65) {
+				else if (x == 107 && y == 87) {
 					inEvent = true;
 					dialogState = End;
 					dialogBox.SetText("the weibaitown             ;the town without anything");
 				}
-				else if (x == 20 && y == 69) {
+				else if (x == 98 && y == 91) {
 					inEvent = true;
 					dialogState = End;
 					dialogBox.SetText("professor house");

@@ -84,7 +84,7 @@ void WeiBaiHouse1_1F_Map::OnShow()
     if (inEvent) dialogBox.OnShow();
 }
 
-bool WeiBaiHouse1_1F_Map::IsCollision(int x, int y)
+bool WeiBaiHouse1_1F_Map::IsCollision(int x, int y, CHero &hero)
 {
     x /= SM;
     y /= SM;
@@ -109,12 +109,12 @@ CMap* WeiBaiHouse1_1F_Map::ChangeMap(int x, int y, CHero* hero)
     if (x == 22 && y == 23)
     {
         newMap = new WeiBaiMap(mapGameEvent);
-        newMap->SetXY(14 * SM, 57 * SM);
+        newMap->SetXY(92 * SM, 79 * SM);
     }
     else if (x == 23 && y == 23)
     {
         newMap = new WeiBaiMap(mapGameEvent);
-        newMap->SetXY(14 * SM, 57 * SM);
+        newMap->SetXY(92 * SM, 79 * SM);
     }
     else if (x == 22 && y == 16)
     {
@@ -156,26 +156,6 @@ void WeiBaiHouse1_1F_Map::KeyDownListener(UINT nChar, CHero & hero)
 		{
 			inEvent = false;
 		}
-		//else if (mom.GetX() / SM == x && mom.GetY() / SM + 1 == y) //represent mom
-		//{
-		//	mapGameEvent->Occur(WeibaiHouse1_1F_Talk_To_Mom);
-		//	mom.Talk(direction);
-		//	inEvent = true;
-
-		//	if (mom.GetVer() == 1) {
-		//		dialogBox.SetText("take this 100 dollars");
-		//		dialogState = Start;
-		//	}
-		//	if (mom.GetVer() == 2) {
-		//		dialogState = Continue;
-		//		dialogBox.SetText("012345/6789");
-		//	}
-		//	if (mom.GetVer() == 3) dialogBox.SetText("manipulate your clock");
-		//	if (mom.GetVer() == 4) {
-		//		dialogState = End;
-		//		inEvent = false;
-		//	}
-		//}
 		else if (book.GetX() / SM == x && book.GetY() / SM == y)
 		{
 			inEvent = true;

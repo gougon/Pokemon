@@ -14,7 +14,7 @@
 namespace game_framework
 {
 	Trainer::Trainer(AtkInterface *atkInterface) :
-		type(trainer), isTalk(false), isEvent(false), atkInterface(atkInterface)
+		Npc(trainer), isTalk(false), isEvent(false), atkInterface(atkInterface)
 	{
 		// empty body
 	}

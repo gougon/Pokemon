@@ -65,6 +65,7 @@ void CHero::Initialize()
     x = X_POS;
     y = Y_POS;
     count = 0;
+	jumpCount = 0;
     atkProb = 10;
 	speed = STEP_SIZE;
     money = 1000;
@@ -78,6 +79,7 @@ void CHero::Initialize()
     HeroMovingLeft.SetDelayCount(5);
     HeroMovingRight.SetDelayCount(5);
 	isRunning = false;
+	isJumping = false;
 	invisible = false;
 	onGrass = false;
     PokemonFactory pmfactory;
@@ -122,189 +124,129 @@ void CHero::LoadBitmap()
     HeroMovingLeft.AddBitmap(HERO_LEFT, RGB(255, 0, 0));
     HeroMovingLeft.AddBitmap(HERO_LEFT_TWO, RGB(255, 0, 0));
     HeroMovingLeft.AddBitmap(HERO_LEFT, RGB(255, 0, 0));
+	//////////////////////////////////////////////
+	jumpDownEffect.AddBitmap(IDB_SHADOW, RGB(255, 0, 0));
+	jumpDownEffect.AddBitmap(IDB_SHADOW, RGB(255, 0, 0));
+	jumpDownEffect.AddBitmap(IDB_SHADOW, RGB(255, 0, 0));
+	jumpDownEffect.AddBitmap(IDB_JUMP_SAND1, RGB(255, 0, 0));
+	jumpDownEffect.AddBitmap(IDB_JUMP_SAND2, RGB(255, 0, 0));
+	jumpDownEffect.AddBitmap(IDB_JUMP_SAND3, RGB(255, 0, 0));
+	jumpDownEffect.SetDelayCount(10);
     //////////////////////////////////////////////
 	shineGrass.AddBitmap(IDB_SHINE_GRASS1, RGB(255, 0, 0));
 	shineGrass.AddBitmap(IDB_SHINE_GRASS2, RGB(255, 0, 0));
-	shineGrass.SetDelayCount(7);
+	shineGrass.SetDelayCount(4);
 }
 void CHero::OnMove(CMap** m, AtkInterface &atkInterface, Characters *characters)
 {
 	MoveAnime();
 	int oneBlockTime = SM / speed;
-    if (isForwardLeft)
-    {
-        if ((*m)->IsEntrance(x - speed, y) && count == oneBlockTime)
-        {
-			CAudio::Instance()->Play(AUDIO_ESCAPE);
-            x -= speed;
-            ChangeMap(m);
-        }
-        else if (!(*m)->IsCollision(x - speed, y) && !characters->IsCollision(x - speed, y, **m))
-        {
-            if ((*m)->IsWarZone(x - speed, y) && count == oneBlockTime)
-            {
-				x -= speed;
-				shineGrass.SetTopLeft(x - (*m)->GetSX(), y - (*m)->GetSY());
-                (*m)->SetXY((*m)->GetSX() - speed, (*m)->GetSY());
-                (*m)->ProduceEnemy(this, atkInterface);
-            }
-            else
-            {
-                (*m)->SetXY((*m)->GetSX() - speed, (*m)->GetSY());
-                x -= speed;
-            }
-        }
-		else if (count == 1) {
-			CAudio::Instance()->Play(AUDIO_COLLISION);
-		}
-    }
 
-    if (isForwardRight)
-    {
-        if ((*m)->IsEntrance(x + SM, y) && count == oneBlockTime)
-        {
-			CAudio::Instance()->Play(AUDIO_ESCAPE);
-            x += speed;
-            ChangeMap(m);
-        }
-        else if (!(*m)->IsCollision(x + SM, y) && !characters->IsCollision(x + SM, y, **m))
-        {
-            if ((*m)->IsWarZone(x + SM, y) && count == oneBlockTime)
-            {
-                x += speed;
-                (*m)->SetXY((*m)->GetSX() + speed, (*m)->GetSY());
-                (*m)->ProduceEnemy(this, atkInterface);
-            }
-            else
-            {
-                (*m)->SetXY((*m)->GetSX() + speed, (*m)->GetSY());
-                x += speed;
-            }
-        }
-		else if (count == 1) {
-			CAudio::Instance()->Play(AUDIO_COLLISION);
-		}
-    }
+	// 設定移動後的座標和碰撞的座標
+	int targetx = x, targety = y;
+	if (isForwardUp)
+		targety = y - speed;
+	else if (isForwardRight)
+		targetx = x + speed;
+	else if (isForwardDown)
+		targety = y + speed;
+	else if (isForwardLeft)
+		targetx = x - speed;
 
-    if (isForwardUp)
-    {
-        if ((*m)->IsEntrance(x, y - speed) && count == oneBlockTime)
-        {
-			CAudio::Instance()->Play(AUDIO_ESCAPE);
-            y -= speed;
-            ChangeMap(m);
-        }
-        else if (!(*m)->IsCollision(x, y - speed) && !characters->IsCollision(x, y - speed, **m))
-        {
-            if ((*m)->IsWarZone(x, y - speed) && count == oneBlockTime)
-            {
-                y -= speed;
-                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() - speed);
-                (*m)->ProduceEnemy(this, atkInterface);
-            }
-            else
-            {
-                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() - speed);
-                y -= speed;
-            }
-        }
-		else if (count == 1) {
-			CAudio::Instance()->Play(AUDIO_COLLISION);
-		}
-    }
+	int collisionx = targetx, collisiony = targety;
+	if (targetx - x > 0)
+		collisionx = x + SM;
+	if (targety - y > 0)
+		collisiony = y + SM;
 
-    if (isForwardDown)
-    {
-        if ((*m)->IsEntrance(x, y + SM) && count == oneBlockTime)
-        {
-			CAudio::Instance()->Play(AUDIO_ESCAPE);
-            y += speed;
-            ChangeMap(m);
-        }
-        else if (!(*m)->IsCollision(x, y + SM) && !characters->IsCollision(x, y + SM, **m))
-        {
-            if ((*m)->IsWarZone(x, y + SM) && count == oneBlockTime)
-            {
-                y += speed;
-                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() + speed);
-                (*m)->ProduceEnemy(this, atkInterface);
-            }
-            else
-            {
-                (*m)->SetXY((*m)->GetSX(), (*m)->GetSY() + speed);
-                y += speed;
-            }
-        }
-		else if(count == 1){
-			CAudio::Instance()->Play(AUDIO_COLLISION);
-		}
-    }
+	// 移動碰撞判斷
+	if ((*m)->IsEntrance(collisionx, collisiony) && count == oneBlockTime) {
+		CAudio::Instance()->Play(AUDIO_ESCAPE);
+		x = targetx;
+		y = targety;
+		ChangeMap(m);
+	}
+	else if (!(*m)->IsCollision(collisionx, collisiony, *this) && !characters->IsCollision(collisionx, collisiony, **m)) {
+		if ((*m)->IsWarZone(collisionx, collisiony) && count == oneBlockTime)
+			(*m)->ProduceEnemy(this, atkInterface);
+		else if ((*m)->IsJumpLand(collisionx, collisiony, *this))
+			isJumping = true;
 
-	onGrass = (*m)->IsWarZone(x, y);
+		(*m)->SetXY((*m)->GetSX() - (x - targetx), (*m)->GetSY() - (y - targety));
+		x = targetx;
+		y = targety;
+	}
+	else if (count == 1)
+		CAudio::Instance()->Play(AUDIO_COLLISION);
+
+	// 進入草叢變色
+	onGrass = (*m)->IsWarZone(collisionx, collisiony);
 	if (onGrass) {
-		shineGrass.SetTopLeft(((x / SM) + 2) * SM - (*m)->GetSX(), ((y / SM) + 1) * SM - ((*m)->GetSY() / SM) * SM);
-		TRACE("\nx = %d\nsgx = %d\n", x, ((x / SM) + 2) * SM - (*m)->GetSX());
+		int targetx = (!isForwardRight) ?
+			(x / SM) * SM : ((x + SM) / SM) * SM;
+		int targety = (!isForwardDown) ?
+			(y / SM) * SM : ((y + SM) / SM) * SM;
+		shineGrass.SetTopLeft(targetx - (*m)->GetSX(), targety - (*m)->GetSY());
 		shineGrass.OnMove();
 	}
-		
+
+	TRACE("\nhero x = %d\nhero y = %d\n", x, y);
 }
 void CHero::OnShow()
 {
+	int targety = isJumping ? HERO_Y + JumpAnime() : HERO_Y;
 	if (!invisible) {
-		//���W��
-		if (isMovingUp || count != 0 && isForwardUp)
-		{
-			HeroMovingBack.SetTopLeft(HERO_X, HERO_Y);
-			HeroMovingBack.OnShow();
+		// 設定hero目標圖片和動畫
+		CMovingBitmap *targetBitmap;
+		CAnimation *targetAnimetion;
+		if (isForwardUp) {
+			targetBitmap = &HeroBack;
+			targetAnimetion = &HeroMovingBack;
 		}
-		else if (isForwardUp)
-		{
-			HeroBack.SetTopLeft(HERO_X, HERO_Y);
-			HeroBack.ShowBitmap();
+		else if (isForwardRight) {
+			targetBitmap = &HeroRight;
+			targetAnimetion = &HeroMovingRight;
 		}
-		if (isMovingDown || count != 0 && isForwardDown)
-		{
-			HeroMovingFront.SetTopLeft(HERO_X, HERO_Y);
-			HeroMovingFront.OnShow();
+		else if (isForwardDown) {
+			targetBitmap = &HeroFront;
+			targetAnimetion = &HeroMovingFront;
 		}
-		else if (isForwardDown)
-		{
-			HeroFront.SetTopLeft(HERO_X, HERO_Y);
-			HeroFront.ShowBitmap();
-		}
-		if (isMovingLeft || count != 0 && isForwardLeft)
-		{
-			HeroMovingLeft.SetTopLeft(HERO_X, HERO_Y);
-			HeroMovingLeft.OnShow();
-		}
-		else if (isForwardLeft)
-		{
-			HeroLeft.SetTopLeft(HERO_X, HERO_Y);
-			HeroLeft.ShowBitmap();
+		else if (isForwardLeft) {
+			targetBitmap = &HeroLeft;
+			targetAnimetion = &HeroMovingLeft;
 		}
 
-		if (isMovingRight || count != 0 && isForwardRight)
-		{
-			HeroMovingRight.SetTopLeft(HERO_X, HERO_Y);
-			HeroMovingRight.OnShow();
+		// 目標圖像開始動作
+		if (IsMoving() || count != 0) {
+			if (isJumping) {
+				jumpDownEffect.SetTopLeft(HERO_X, HERO_Y + 63);
+				jumpDownEffect.OnMove();
+				jumpDownEffect.OnShow();
+			}
+			targetAnimetion->SetTopLeft(HERO_X, targety);
+			targetAnimetion->OnShow();
 		}
-		else if (isForwardRight)
-		{
-			HeroRight.SetTopLeft(HERO_X, HERO_Y);
-			HeroRight.ShowBitmap();
+		else {
+			targetBitmap->SetTopLeft(HERO_X, targety);
+			targetBitmap->ShowBitmap();
 		}
 	}
+
+	// 設定草地閃爍
 	if (count == 0) 
 		shineGrass.Reset();
-	if (onGrass && count != 0) {
-		shineGrass.SetTopLeft(HERO_X + (HERO_X / SM) * SM - HERO_X, HERO_Y + 20);
+	if (onGrass && count != 0 && count != 6 && count != 12)
 		shineGrass.OnShow();
-	}
 }
 
 bool CHero::IsMoving()
 {
     return (isMovingUp || isMovingLeft || isMovingDown || isMovingRight);
+}
+
+bool CHero::IsJumping()
+{
+	return isJumping;
 }
 
 bool CHero::IsCanMove()
@@ -405,10 +347,12 @@ void CHero::KeyIn(UINT nChar, Characters* characters, CMap &map)
     {
 		if (nChar == KEY_X) {
 			if (!isRunning) {
+				jumpDownEffect.SetDelayCount(2);
 				speed = 2 * STEP_SIZE;
 				isRunning = true;
 			}
 			else {
+				jumpDownEffect.SetDelayCount(4);
 				speed = STEP_SIZE;
 				isRunning = false;
 			}
@@ -453,6 +397,40 @@ void CHero::ChangeMap(CMap** m)
     (*m) = (*m)->ChangeMap(x, y, this);
     delete delMap;
     this->SetXY((*m)->GetSX() + HERO_X, (*m)->GetSY() + HERO_Y + 20);
+}
+
+int CHero::JumpAnime()
+{
+	if (jumpCount + 1 == 24 && speed == 5 || jumpCount + 1 == 12 && speed == 10) {
+		jumpCount = 0;
+		jumpDownEffect.Reset();
+		isJumping = false;
+		return 0;
+	}
+	jumpCount++;
+	if (jumpCount <= 2 && speed == 5 || jumpCount <= 1 && speed == 10)
+		return -15;
+	else if (jumpCount <= 4 && speed == 5 || jumpCount <= 2 && speed == 10)
+		return -22;
+	else if (jumpCount <= 6 && speed == 5 || jumpCount <= 3 && speed == 10)
+		return -37;
+	else if (jumpCount <= 8 && speed == 5 || jumpCount <= 4 && speed == 10)
+		return -44;
+	else if (jumpCount <= 10 && speed == 5 || jumpCount <= 5 && speed == 10)
+		return -47;
+	else if (jumpCount <= 12 && speed == 5 || jumpCount <= 6 && speed == 10)
+		return -37;
+	else if (jumpCount <= 14 && speed == 5 || jumpCount <= 7 && speed == 10)
+		return -33;
+	else if (jumpCount <= 16 && speed == 5 || jumpCount <= 8 && speed == 10)
+		return -26;
+	else if (jumpCount <= 18 && speed == 5 || jumpCount <= 9 && speed == 10)
+		return -18;
+	else if (jumpCount <= 20 && speed == 5 || jumpCount <= 10 && speed == 10)
+		return -3;
+	else if (jumpCount <= 22 && speed == 5 || jumpCount <= 11 && speed == 10)
+		return 0;
+	else return 0;
 }
 
 int CHero::GetAtkProb()

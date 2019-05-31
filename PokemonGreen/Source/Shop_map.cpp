@@ -67,7 +67,7 @@ namespace game_framework {
 		if (clerk.IsWork()) clerk.OnShow();
 	}
 
-	bool Shop_Map::IsCollision(int x, int y)
+	bool Shop_Map::IsCollision(int x, int y, CHero &hero)
 	{
 		x /= SM;
 		y /= SM;
@@ -89,7 +89,7 @@ namespace game_framework {
 		if ((x == 17 && y == 23 )|| (x == 18 && y == 23))
 		{
 			newMap = new WeiBaiMap(mapGameEvent);
-			newMap->SetXY(23 * SM, 15 * SM);
+			newMap->SetXY(101 * SM, 37 * SM);
 		}
 		CAudio::Instance()->Stop(AUDIO_MART);
 		newMap->LoadBitmap();

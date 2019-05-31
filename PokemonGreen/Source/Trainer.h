@@ -30,9 +30,9 @@ namespace game_framework {
 		void StartAtk(CHero* self, Trainer* trainer, AtkInterface &atkInterface);
 		bool IsBeTalked(CHero &hero);
 
-		NpcType type;
+		//NpcType type;
 		AtkInterface *atkInterface;
-		CMovingBitmap normalImg[4], atkImg;
+		//CMovingBitmap normalImg[4], atkImg;
 		CDialog eventDialog, normalDialog;
 		vector<Pokemon*> pokemons;
 		string name, map;

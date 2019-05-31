@@ -66,7 +66,7 @@ namespace game_framework {
 		// empty body
 	}
 
-	bool DouChiHouse2_Map::IsCollision(int x, int y)
+	bool DouChiHouse2_Map::IsCollision(int x, int y, CHero &hero)
 	{
 		x /= SM;
 		y /= SM;
@@ -89,7 +89,7 @@ namespace game_framework {
 		if (x == 17 && y == 23 || x == 18 && y == 23)
 		{
 			newMap = new WeiBaiMap(mapGameEvent);
-			newMap->SetXY(14 * SM, 16 * SM);
+			newMap->SetXY(92 * SM, 38 * SM);
 		}
 
 		newMap->LoadBitmap();

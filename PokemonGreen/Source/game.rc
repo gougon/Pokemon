@@ -548,6 +548,14 @@ IDB_DOUCHITOWN_HOUSE1   BITMAP                  "..\\RES\\douchitown_house1.bmp"
 
 IDB_DOUCHITOWN_HOUSE2   BITMAP                  "..\\RES\\douchitown_house2.bmp"
 
+IDB_SHADOW              BITMAP                  "..\\RES\\shadow.bmp"
+
+IDB_JUMP_SAND1          BITMAP                  "..\\RES\\jump_sand1.bmp"
+
+IDB_JUMP_SAND2          BITMAP                  "..\\RES\\jump_sand2.bmp"
+
+IDB_JUMP_SAND3          BITMAP                  "..\\RES\\jump_sand3.bmp"
+
 IDB_PM_DEOXYS_FRONT     BITMAP                  "..\\RES\\deoxys_front.bmp"
 
 IDB_PM_VULPIX_FRONT     BITMAP                  "..\\RES\\Vulpix_front.bmp"
@@ -608,45 +616,107 @@ IDB_ICON_PM_VULPIX      BITMAP                  "..\\RES\\icon_pm_vulpix.bmp"
 
 IDB_ICON_PM_SMOOCHUM    BITMAP                  "..\\RES\\icon_pm_smoochum.bmp"
 
-IDB_SKILL_CONFUSION7    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_confusion7.bmp"
+IDB_SKILL_CONFUSION7    BITMAP                  "..\\RES\\skill_confusion7.bmp"
 
-IDB_SKILL_CONFUSION3    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_confusion3.bmp"
+IDB_SKILL_CONFUSION3    BITMAP                  "..\\RES\\skill_confusion3.bmp"
 
-IDB_SKILL_CONFUSION4    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_confusion4.bmp"
+IDB_SKILL_CONFUSION4    BITMAP                  "..\\RES\\skill_confusion4.bmp"
 
-IDB_SKILL_CONFUSION5    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_confusion5.bmp"
+IDB_SKILL_CONFUSION5    BITMAP                  "..\\RES\\skill_confusion5.bmp"
 
-IDB_SKILL_CONFUSION2    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_confusion2.bmp"
+IDB_SKILL_CONFUSION2    BITMAP                  "..\\RES\\skill_confusion2.bmp"
 
-IDB_SKILL_CONFUSION6    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_confusion6.bmp"
+IDB_SKILL_CONFUSION6    BITMAP                  "..\\RES\\skill_confusion6.bmp"
 
-IDB_SKILL_CONFUSION1    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_confusion1.bmp"
+IDB_SKILL_CONFUSION1    BITMAP                  "..\\RES\\skill_confusion1.bmp"
 
-IDB_SKILL_METALCLAW9    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw9.bmp"
+IDB_SKILL_METALCLAW9    BITMAP                  "..\\RES\\skill_metalclaw9.bmp"
 
-IDB_SKILL_METALCLAW10   BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw10.bmp"
+IDB_SKILL_METALCLAW10   BITMAP                  "..\\RES\\skill_metalclaw10.bmp"
 
-IDB_SKILL_METALCLAW8    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw8.bmp"
+IDB_SKILL_METALCLAW8    BITMAP                  "..\\RES\\skill_metalclaw8.bmp"
 
-IDB_SKILL_METALCLAW7    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw7.bmp"
+IDB_SKILL_METALCLAW7    BITMAP                  "..\\RES\\skill_metalclaw7.bmp"
 
-IDB_SKILL_METALCLAW6    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw6.bmp"
+IDB_SKILL_METALCLAW6    BITMAP                  "..\\RES\\skill_metalclaw6.bmp"
 
-IDB_SKILL_METALCLAW3    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw3.bmp"
+IDB_SKILL_METALCLAW3    BITMAP                  "..\\RES\\skill_metalclaw3.bmp"
 
-IDB_SKILL_METALCLAW4    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw4.bmp"
+IDB_SKILL_METALCLAW4    BITMAP                  "..\\RES\\skill_metalclaw4.bmp"
 
-IDB_SKILL_METALCLAW5    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw5.bmp"
+IDB_SKILL_METALCLAW5    BITMAP                  "..\\RES\\skill_metalclaw5.bmp"
 
-IDB_SKILL_METALCLAW2    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw2.bmp"
+IDB_SKILL_METALCLAW2    BITMAP                  "..\\RES\\skill_metalclaw2.bmp"
 
-IDB_SKILL_METALCLAW1    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_metalclaw1.bmp"
+IDB_SKILL_METALCLAW1    BITMAP                  "..\\RES\\skill_metalclaw1.bmp"
 
-IDB_SKILL_SCARYFACE2    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_scaryface2.bmp"
+IDB_SKILL_SCARYFACE2    BITMAP                  "..\\RES\\skill_scaryface2.bmp"
 
-IDB_SKILL_SCARYFACE3    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_scaryface3.bmp"
+IDB_SKILL_SCARYFACE3    BITMAP                  "..\\RES\\skill_scaryface3.bmp"
 
-IDB_SKILL_SCARYFACE1    BITMAP                  "E:\\GitPokemon\\PokemonGreen\\RES\\skill_scaryface1.bmp"
+IDB_SKILL_SCARYFACE1    BITMAP                  "..\\RES\\skill_scaryface1.bmp"
+
+IDB_RTSEA1_1            BITMAP                  "..\\RES\\weibaitown_rtsea1.bmp"
+
+IDB_RTSEA1_2            BITMAP                  "..\\RES\\weibaitown_rtsea2.bmp"
+
+IDB_RTSEA2_1            BITMAP                  "..\\RES\\weibaitown_rtsea2-1.bmp"
+
+IDB_RTSEA2_2            BITMAP                  "..\\RES\\weibaitown_rtsea2-2.bmp"
+
+IDB_RTSEA2_3            BITMAP                  "..\\RES\\weibaitown_rtsea2-3.bmp"
+
+IDB_RTSEA2_4            BITMAP                  "..\\RES\\weibaitown_rtsea2-4.bmp"
+
+IDB_RTSEA2_5            BITMAP                  "..\\RES\\weibaitown_rtsea2-5.bmp"
+
+IDB_RTSEA2_6            BITMAP                  "..\\RES\\weibaitown_rtsea2-6.bmp"
+
+IDB_RTSEA1_3            BITMAP                  "..\\RES\\weibaitown_rtsea3.bmp"
+
+IDB_RTSEA1_4            BITMAP                  "..\\RES\\weibaitown_rtsea4.bmp"
+
+IDB_RTSEA1_5            BITMAP                  "..\\RES\\weibaitown_rtsea5.bmp"
+
+IDB_RTSEA1_6            BITMAP                  "..\\RES\\weibaitown_rtsea6.bmp"
+
+IDB_LAKE_102            BITMAP                  "..\\RES\\lake_102.bmp"
+
+IDB_LAND_C              BITMAP                  "..\\RES\\land_c.bmp"
+
+IDB_LAND_T              BITMAP                  "..\\RES\\land_road_top.bmp"
+
+IDB_LAND_R              BITMAP                  "..\\RES\\land_road_right.bmp"
+
+IDB_LAND_L              BITMAP                  "..\\RES\\land_road_left.bmp"
+
+IDB_LAND_B              BITMAP                  "..\\RES\\land_road_bottom.bmp"
+
+IDB_LAND_RT             BITMAP                  "..\\RES\\lan_road_rt.bmp"
+
+IDB_LAND_RB             BITMAP                  "..\\RES\\lan_road_rb.bmp"
+
+IDB_LAND_LT             BITMAP                  "..\\RES\\lan_road_lt.bmp"
+
+IDB_LAND_LB             BITMAP                  "..\\RES\\lan_road_lb.bmp"
+
+IDB_TIANYUAN_GYM        BITMAP                  "..\\RES\\tianyuan_gym.bmp"
+
+IDB_TIANYUAN_LLAKE4     BITMAP                  "..\\RES\\tianyuan_llake4.bmp"
+
+IDB_TIANYUAN_LLAKE3     BITMAP                  "..\\RES\\tianyuan_llake3.bmp"
+
+IDB_TIANYUAN_LLAKE2     BITMAP                  "..\\RES\\tianyuan_llake2.bmp"
+
+IDB_TIANYUAN_LLAKE1     BITMAP                  "..\\RES\\tianyuan_llake1.bmp"
+
+IDB_TIANYUAN_LTHOUSE    BITMAP                  "..\\RES\\tianyuan_lthouse.bmp"
+
+IDB_TIANYUAN_NHOUSE     BITMAP                  "..\\RES\\tianyuan_nhouse.bmp"
+
+IDB_TIANYUAN_RBHOUSE    BITMAP                  "..\\RES\\tianyuan_rbhouse.bmp"
+
+IDB_TIANYUAN_RTLAKE     BITMAP                  "..\\RES\\tianyuan_rtlake.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

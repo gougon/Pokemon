@@ -24,8 +24,8 @@ namespace game_framework {
 		void StopTalk();
 		bool IsBeTalked(CHero &hero);
 
-		NpcType type;
-		CMovingBitmap normalImg[4];
+		//NpcType type;
+		//CMovingBitmap normalImg[4];
 		CDialog eventDialog, normalDialog;
 		string name, map;
 		int direction;

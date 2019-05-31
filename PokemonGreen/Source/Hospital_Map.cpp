@@ -97,7 +97,7 @@ namespace game_framework
 		}
 	}
 
-	bool Hospital_Map::IsCollision(int x, int y)
+	bool Hospital_Map::IsCollision(int x, int y, CHero &hero)
 	{
 		x /= SM;
 		y /= SM;
@@ -120,7 +120,7 @@ namespace game_framework
 		if (x == 20 && y == 23 || x == 21 && y == 23)
 		{
 			newMap = new WeiBaiMap(mapGameEvent);
-			newMap->SetXY(15 * SM, 25 * SM);
+			newMap->SetXY(93 * SM, 47 * SM);
 		}
 
 		CAudio::Instance()->Stop(AUDIO_HOSPITAL_START);

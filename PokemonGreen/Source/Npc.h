@@ -15,6 +15,7 @@ namespace game_framework {
 
 	class Npc {
 	public:
+		Npc(NpcType type) { this->type = type; }
 		virtual void KeyDownListener(UINT nChar, CHero &hero) = 0;
 		virtual void LoadBitmap() = 0;
 		virtual void OnShow(CHero &hero) = 0;
@@ -25,5 +26,8 @@ namespace game_framework {
 		virtual bool IsTalk() = 0;
 		virtual bool IsCollision(int x, int y) = 0;
 		virtual string GetMap() = 0;
+	protected:
+		NpcType type;
+		CMovingBitmap normalImg[4], atkImg;
 	};
 }

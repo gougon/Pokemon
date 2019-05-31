@@ -19,7 +19,7 @@ namespace game_framework
 		virtual void OnShow();
 		virtual void OnMove();
 		virtual void KeyDownListener(UINT nChar, CHero &hero);
-		virtual bool IsCollision(int x, int y);
+		virtual bool IsCollision(int x, int y, CHero &hero);
 		virtual CMap* ChangeMap(int x, int y, CHero* hero);
 	private:
 		const int NURSE_X = 21;

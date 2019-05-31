@@ -62,7 +62,7 @@ void WeiBaiHouse2_1F_Map::OnShow()
     }
 }
 
-bool WeiBaiHouse2_1F_Map::IsCollision(int x, int y)
+bool WeiBaiHouse2_1F_Map::IsCollision(int x, int y, CHero &hero)
 {
     x /= SM;
     y /= SM;
@@ -85,12 +85,12 @@ CMap* WeiBaiHouse2_1F_Map::ChangeMap(int x, int y, CHero* hero)
     if (x == 15 && y == 23)
     {
         newMap = new WeiBaiMap(mapGameEvent);
-        newMap->SetXY(23 * SM, 57 * SM);
+        newMap->SetXY(101 * SM, 79 * SM);
     }
     else if (x == 16 && y == 23)
     {
         newMap = new WeiBaiMap(mapGameEvent);
-        newMap->SetXY(23 * SM, 57 * SM);
+        newMap->SetXY(101 * SM, 79 * SM);
     }
     else if (x == 16 && y == 16)
     {

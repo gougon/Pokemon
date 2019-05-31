@@ -82,10 +82,13 @@
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'" />
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files\Microsoft DirectX SDK %28February 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files\Microsoft DirectX SDK %28February 2010%29\Lib\x86;C:\Program Files %28x86%29\Visual Leak Detector\lib\Win64;$(LibraryPath)</LibraryPath>
     <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Program Files\Microsoft DirectX SDK %28February 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Program Files %28x86%29\Visual Leak Detector\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -721,6 +724,19 @@
     <Image Include="RES\jirachi_back.bmp" />
     <Image Include="RES\jirachi_front.bmp" />
     <Image Include="RES\jump_land.bmp" />
+    <Image Include="RES\jump_sand1.bmp" />
+    <Image Include="RES\jump_sand2.bmp" />
+    <Image Include="RES\jump_sand3.bmp" />
+    <Image Include="RES\lake_102.bmp" />
+    <Image Include="RES\land_c.bmp" />
+    <Image Include="RES\land_road_bottom.bmp" />
+    <Image Include="RES\land_road_left.bmp" />
+    <Image Include="RES\land_road_right.bmp" />
+    <Image Include="RES\land_road_top.bmp" />
+    <Image Include="RES\lan_road_lb.bmp" />
+    <Image Include="RES\lan_road_lt.bmp" />
+    <Image Include="RES\lan_road_rb.bmp" />
+    <Image Include="RES\lan_road_rt.bmp" />
     <Image Include="RES\LV_UP_FPANEL.bmp" />
     <Image Include="RES\LV_UP_PANEL.bmp" />
     <Image Include="RES\may_atk.bmp" />
@@ -761,6 +777,7 @@
     <Image Include="RES\rayquaza_front.bmp" />
     <Image Include="RES\SELECT_PANEL.bmp" />
     <Image Include="RES\self.bmp" />
+    <Image Include="RES\shadow.bmp" />
     <Image Include="RES\shine_grass1.bmp" />
     <Image Include="RES\shine_grass2.bmp" />
     <Image Include="RES\SHOP.bmp" />
@@ -821,6 +838,15 @@
     <Image Include="RES\smoochum_back.bmp" />
     <Image Include="RES\smoochum_front.bmp" />
     <Image Include="RES\STORE.bmp" />
+    <Image Include="RES\tianyuan_gym.bmp" />
+    <Image Include="RES\tianyuan_llake1.bmp" />
+    <Image Include="RES\tianyuan_llake2.bmp" />
+    <Image Include="RES\tianyuan_llake3.bmp" />
+    <Image Include="RES\tianyuan_llake4.bmp" />
+    <Image Include="RES\tianyuan_lthouse.bmp" />
+    <Image Include="RES\tianyuan_nhouse.bmp" />
+    <Image Include="RES\tianyuan_rbhouse.bmp" />
+    <Image Include="RES\tianyuan_rtlake.bmp" />
     <Image Include="RES\TRADEMODE_SELECT_PANEL.bmp" />
     <Image Include="RES\treecko_back.bmp" />
     <Image Include="RES\treecko_front.bmp" />
@@ -838,6 +864,18 @@
     <Image Include="RES\weibaitown_house2_2f.bmp" />
     <Image Include="RES\weibaitown_pro_house.bmp" />
     <Image Include="RES\weibaitown_pro_house_inside.bmp" />
+    <Image Include="RES\weibaitown_rtsea1.bmp" />
+    <Image Include="RES\weibaitown_rtsea2-1.bmp" />
+    <Image Include="RES\weibaitown_rtsea2-2.bmp" />
+    <Image Include="RES\weibaitown_rtsea2-3.bmp" />
+    <Image Include="RES\weibaitown_rtsea2-4.bmp" />
+    <Image Include="RES\weibaitown_rtsea2-5.bmp" />
+    <Image Include="RES\weibaitown_rtsea2-6.bmp" />
+    <Image Include="RES\weibaitown_rtsea2.bmp" />
+    <Image Include="RES\weibaitown_rtsea3.bmp" />
+    <Image Include="RES\weibaitown_rtsea4.bmp" />
+    <Image Include="RES\weibaitown_rtsea5.bmp" />
+    <Image Include="RES\weibaitown_rtsea6.bmp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="RES\weibaitown.txt" />

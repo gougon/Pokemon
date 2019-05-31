@@ -50,12 +50,13 @@ class CMap
         virtual void OnMove() {}
         virtual void OnShow() {}
 		virtual void ReShow(CHero &hero) {}
-        virtual bool IsCollision(int x, int y) { return true; }
+        virtual bool IsCollision(int x, int y, CHero &hero) { return true; }
         bool IsEntrance(int x, int y);
 		virtual void KeyDownListener(UINT nChar, CHero &hero) {}
         virtual int ReturnMapID() { return 0; }
         virtual bool IsWarZone(int x, int y) { return false; }		// for derive class
-        virtual void ProduceEnemy(CHero* hero, AtkInterface &atkInterface) { /* empty body */ }
+		virtual bool IsJumpLand(int x, int y, CHero &hero) { return false; }
+		virtual void ProduceEnemy(CHero* hero, AtkInterface &atkInterface) { /* empty body */ }
         virtual CMap* ChangeMap(int x, int y, CHero* hero) { return new CMap(); }     // for derive class 
         virtual void StartAtk(CHero* self, Pokemon* enemy, AtkInterface &atkInterface) { /* empty body */ }
         virtual void StartAtk(CHero* self, CCharacter* enemy, AtkInterface &atkInterface) { /* empty body */ }

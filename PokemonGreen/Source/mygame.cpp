@@ -231,7 +231,7 @@ void CGameStateRun::OnBeginState()
 	gameMap = new WeiBaiMap(&gameEvent);
 	gameMap->LoadBitmap();					// 載入背景的圖形
     hero.Initialize();
-    hero.SetXY(18 * SM + HERO_X, 24 * SM + HERO_Y + 20);
+    hero.SetXY(96 * SM + HERO_X, 44 * SM + HERO_Y + 20);
     myMenu.Init();
 	atkInterface.ReceiveBag(myMenu.GetBag());
 	atkInterface.ReceivePmMenu(myMenu.GetPokemonMenu());
@@ -267,13 +267,12 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
         if (hero.IsCanMove())
         {
 			int oneBlockTime = SM / hero.GetSpeed();
-            if (!hero.IsMoving() && count >= oneBlockTime)
+            if (!hero.IsMoving() && count >= oneBlockTime && !hero.IsJumping())
             {
                 hero.SetCanMove(false);
                 hero.SetCount(0);
-				// hero.MoveAnime();
             }
-            else if (count >= oneBlockTime)
+            else if (count >= oneBlockTime && !hero.IsJumping())
             {
                 hero.SetCount(0);
             }
