@@ -313,7 +313,6 @@
 #define IDB_ICON_PM_DEOXYS              440
 #define IDB_ICON_PM_RAYQUAZA            441
 #define IDB_ICON_PM_VULPIX              442
-#define IDB_BITMAP49                    443
 #define IDB_ICON_PM_SMOOCHUM            443
 #define IDB_PM_DEOXYS_FRONT             444
 #define IDB_JUMP_SAND1                  445
@@ -351,8 +350,27 @@
 #define IDB_TIANYUAN_LTHOUSE            476
 #define IDB_TIANYUAN_NHOUSE             477
 #define IDB_TIANYUAN_RBHOUSE            478
-#define IDB_BITMAP29                    479
 #define IDB_TIANYUAN_RTLAKE             479
+#define IDB_SKILL_CONFUSION7            480
+#define IDB_SKILL_CONFUSION3            481
+#define IDB_SKILL_CONFUSION4            482
+#define IDB_SKILL_CONFUSION5            483
+#define IDB_SKILL_CONFUSION2            484
+#define IDB_SKILL_CONFUSION6            485
+#define IDB_SKILL_CONFUSION1            486
+#define IDB_SKILL_METALCLAW9            487
+#define IDB_SKILL_METALCLAW10           488
+#define IDB_SKILL_METALCLAW8            489
+#define IDB_SKILL_METALCLAW7            490
+#define IDB_SKILL_METALCLAW6            491
+#define IDB_SKILL_METALCLAW3            492
+#define IDB_SKILL_METALCLAW4            493
+#define IDB_SKILL_METALCLAW5            494
+#define IDB_SKILL_METALCLAW2            495
+#define IDB_SKILL_METALCLAW1            496
+#define IDB_SKILL_SCARYFACE2            497
+#define IDB_SKILL_SCARYFACE3            498
+#define IDB_SKILL_SCARYFACE1            499
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -365,7 +383,11 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
+<<<<<<< HEAD
+#define _APS_NEXT_RESOURCE_VALUE        465
+=======
 #define _APS_NEXT_RESOURCE_VALUE        480
+>>>>>>> db1d9eac3cb1efe49c7dc94304b49103b472f9c8
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

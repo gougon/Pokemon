@@ -201,6 +201,40 @@
     <ClCompile Include="Source\Douchi_Hospital_Map.cpp" />
     <ClCompile Include="Source\Tianyuan_Shop_Map.cpp" />
     <ClCompile Include="Source\Tianyuan_Hospital_Map.cpp" />
+    <ClCompile Include="Source\SkillConfusion.cpp" />
+    <ClCompile Include="Source\SkillPhychoBoost.cpp" />
+    <ClCompile Include="Source\SkillSteel.cpp" />
+    <ClCompile Include="Source\SkillMetalClaw.cpp" />
+    <ClCompile Include="Source\SkillPhychoKinesis.cpp" />
+    <ClCompile Include="Source\SkillPsychic.cpp" />
+    <ClCompile Include="Source\SkillScaryFace.cpp" />
+    <ClCompile Include="Source\SkillGhost.cpp" />
+    <ClCompile Include="Source\SkillLick.cpp" />
+    <ClCompile Include="Source\SkillIce.cpp" />
+    <ClCompile Include="Source\SkillPowderSnow.cpp" />
+    <ClCompile Include="Source\SkillHarden.cpp" />
+    <ClCompile Include="Source\SkillPoison.cpp" />
+    <ClCompile Include="Source\SkillElectric.cpp" />
+    <ClCompile Include="Source\SkillWater.cpp" />
+    <ClCompile Include="Source\SkillDragon.cpp" />
+    <ClCompile Include="Source\SkillGrass.cpp" />
+    <ClCompile Include="Source\SkillPoisonGas.cpp" />
+    <ClCompile Include="Source\SkillSludge.cpp" />
+    <ClCompile Include="Source\SkillWillOwisp.cpp" />
+    <ClCompile Include="Source\SkillFlameThrower.cpp" />
+    <ClCompile Include="Source\SkillThunderShock.cpp" />
+    <ClCompile Include="Source\SkillThunderBolt.cpp" />
+    <ClCompile Include="Source\SkillBubbleBeam.cpp" />
+    <ClCompile Include="Source\SkillWaterGun.cpp" />
+    <ClCompile Include="Source\SkillAuroraBeam.cpp" />
+    <ClCompile Include="Source\SkillCrunch.cpp" />
+    <ClCompile Include="Source\SkillDragonClaw.cpp" />
+    <ClCompile Include="Source\SkillLeafBlade.cpp" />
+    <ClCompile Include="Source\SkillLeafStorm.cpp" />
+    <ClCompile Include="Source\SkillSacredFire.cpp" />
+    <ClCompile Include="Source\SkillHyperBeam.cpp" />
+    <ClCompile Include="Source\SkillSwift.cpp" />
+    <ClCompile Include="Source\SkillNightShade.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -310,6 +344,40 @@
     <ClInclude Include="Source\Douchi_Hospital_Map.h" />
     <ClInclude Include="Source\Tianyuan_Shop_Map.h" />
     <ClInclude Include="Source\Tianyuan_Hospital_Map.h" />
+    <ClInclude Include="Source\SkillConfusion.h" />
+    <ClInclude Include="Source\SkillPhychoBoost.h" />
+    <ClInclude Include="Source\SkillSteel.h" />
+    <ClInclude Include="Source\SkillMetalClaw.h" />
+    <ClInclude Include="Source\SkillPhychoKinesis.h" />
+    <ClInclude Include="Source\SkillPsychic.h" />
+    <ClInclude Include="Source\SkillScaryFace.h" />
+    <ClInclude Include="Source\SkillLick.h" />
+    <ClInclude Include="Source\SkillGhost.h" />
+    <ClInclude Include="Source\SkillIce.h" />
+    <ClInclude Include="Source\SkillPowderSnow.h" />
+    <ClInclude Include="Source\SkillHarden.h" />
+    <ClInclude Include="Source\SkillPoisonGas.h" />
+    <ClInclude Include="Source\SkillPoison.h" />
+    <ClInclude Include="Source\SkillElectric.h" />
+    <ClInclude Include="Source\SkillWaterGun.h" />
+    <ClInclude Include="Source\SkillWater.h" />
+    <ClInclude Include="Source\SkillDragon.h" />
+    <ClInclude Include="Source\SkillGrass.h" />
+    <ClInclude Include="Source\SkillSludge.h" />
+    <ClInclude Include="Source\SkillWillOwisp.h" />
+    <ClInclude Include="Source\SkillFlameThrower.h" />
+    <ClInclude Include="Source\SkillThunderShock.h" />
+    <ClInclude Include="Source\SkillThunderBolt.h" />
+    <ClInclude Include="Source\SkillBubbleBeam.h" />
+    <ClInclude Include="Source\SkillAuroraBeam.h" />
+    <ClInclude Include="Source\SkillCrunch.h" />
+    <ClInclude Include="Source\SkillDragonClaw.h" />
+    <ClInclude Include="Source\SkillLeafBlade.h" />
+    <ClInclude Include="Source\SkillLeafStorm.h" />
+    <ClInclude Include="Source\SkillSacredFire.h" />
+    <ClInclude Include="Source\SkillHyperBeam.h" />
+    <ClInclude Include="Source\SkillSwift.h" />
+    <ClInclude Include="Source\SkillNightShade.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -1149,6 +1217,67 @@
     <Image Include="RES\icon_pm_smoochum.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\bitmap16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_confusion7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_confusion3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_confusion4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_confusion5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_confusion2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_confusion6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_confusion1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_metalclaw9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_metalclaw10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_metalclaw8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_metalclaw7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_metalclaw6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_metalclaw3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_metalclaw4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_metalclaw5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_metalclaw2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_metalclaw1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_scaryface2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_scaryface3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\skill_scaryface1.bmp">
     <Image Include="RES\weibaitown_rtsea1.bmp">
       <Filter>Resource Files</Filter>
     </Image>
