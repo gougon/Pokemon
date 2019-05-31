@@ -109,12 +109,12 @@ CMap* WeiBaiHouse1_1F_Map::ChangeMap(int x, int y, CHero* hero)
     if (x == 22 && y == 23)
     {
         newMap = new WeiBaiMap(mapGameEvent);
-        newMap->SetXY(14 * SM, 57 * SM);
+        newMap->SetXY(92 * SM, 79 * SM);
     }
     else if (x == 23 && y == 23)
     {
         newMap = new WeiBaiMap(mapGameEvent);
-        newMap->SetXY(14 * SM, 57 * SM);
+        newMap->SetXY(92 * SM, 79 * SM);
     }
     else if (x == 22 && y == 16)
     {

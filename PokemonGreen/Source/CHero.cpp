@@ -189,6 +189,8 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface, Characters *characters)
 		shineGrass.SetTopLeft(targetx - (*m)->GetSX(), targety - (*m)->GetSY());
 		shineGrass.OnMove();
 	}
+
+	TRACE("\nhero x = %d\nhero y = %d\n", x, y);
 }
 void CHero::OnShow()
 {
@@ -399,7 +401,7 @@ void CHero::ChangeMap(CMap** m)
 
 int CHero::JumpAnime()
 {
-	if (jumpCount + 1 == 23 && speed == 5 || jumpCount + 1 == 12 && speed == 10) {
+	if (jumpCount + 1 == 24 && speed == 5 || jumpCount + 1 == 12 && speed == 10) {
 		jumpCount = 0;
 		jumpDownEffect.Reset();
 		isJumping = false;

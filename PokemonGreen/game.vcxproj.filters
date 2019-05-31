@@ -1145,6 +1145,99 @@
     <Image Include="RES\icon_pm_smoochum.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\weibaitown_rtsea1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_rtsea2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_rtsea2-1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_rtsea2-2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_rtsea2-3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_rtsea2-4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_rtsea2-5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_rtsea2-6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_rtsea3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_rtsea4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_rtsea5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\weibaitown_rtsea6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\lake_102.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\land_c.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\land_road_top.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\land_road_right.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\land_road_left.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\land_road_bottom.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\lan_road_rt.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\lan_road_rb.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\lan_road_lt.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\lan_road_lb.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tianyuan_gym.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tianyuan_llake4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tianyuan_llake3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tianyuan_llake2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tianyuan_llake1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tianyuan_lthouse.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tianyuan_nhouse.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tianyuan_rbhouse.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tianyuan_rtlake.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="RES\weibaitown_scene.txt" />

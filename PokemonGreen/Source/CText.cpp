@@ -6,9 +6,6 @@
 #include "CText.h"
 namespace game_framework
 {
-CText::CText()
-{
-}
 void CText::LoadBitmap()
 {
     alphabet.LoadBitmap();

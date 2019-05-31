@@ -6,7 +6,7 @@ namespace game_framework
 class CText
 {
     public:
-        CText();
+		CText() { };
         void LoadBitmap();
         void SetDelayTime();
         void SetDelayTime(int);

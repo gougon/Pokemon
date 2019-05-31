@@ -16,8 +16,8 @@ namespace game_framework
 		Trainer(atkInterface)
 	{
 		// set position
-		x = 27;
-		y = 65;
+		x = 105;
+		y = 87;
 
 		// set pokemons
 		PokemonFactory pmf;

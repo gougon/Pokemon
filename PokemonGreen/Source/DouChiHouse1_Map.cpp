@@ -89,7 +89,7 @@ namespace game_framework {
 		if (x == 17 && y == 22 || x == 18 && y == 22)
 		{
 			newMap = new WeiBaiMap(mapGameEvent);
-			newMap->SetXY(24 * SM, 25 * SM);
+			newMap->SetXY(102 * SM, 47 * SM);
 		}
 
 		newMap->LoadBitmap();

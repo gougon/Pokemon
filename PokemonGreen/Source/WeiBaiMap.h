@@ -19,6 +19,27 @@ constexpr auto WEIBAITOWN_PRO_HOUSE = 9;
 constexpr auto M_GREEN_GRASS = 10;
 constexpr auto JUMP_LAND = 11;
 constexpr auto NORMAL_HOUSE1 = 12;
+constexpr auto RT_SEA1 = 15;
+constexpr auto RT_SEA2 = 16;
+constexpr auto LAKE_102 = 17;
+constexpr auto LAND_C = 18;
+constexpr auto LAND_T = 19;
+constexpr auto LAND_R = 20;
+constexpr auto LAND_B = 21;
+constexpr auto LAND_L = 22;
+constexpr auto LAND_RT = 23;
+constexpr auto LAND_RB = 24;
+constexpr auto LAND_LT = 25;
+constexpr auto LAND_LB = 26;
+constexpr auto TIANYUAN_RTLAKE = 27;
+constexpr auto TIANYUAN_RBHOUSE = 28; // def = 20
+constexpr auto TIANYUAN_NHOUSE = 29;
+constexpr auto TIANYUAN_LTHOUSE = 30;
+constexpr auto TIANYUAN_LLAKE1 = 31;
+constexpr auto TIANYUAN_LLAKE2 = 32;
+constexpr auto TIANYUAN_LLAKE3 = 33;
+constexpr auto TIANYUAN_LLAKE4 = 34;
+constexpr auto TIANYUAN_GYM = 35;
 
 namespace game_framework {
 	class WeiBaiMap : public CMap {
@@ -42,9 +63,9 @@ namespace game_framework {
 		int dialogState;
 		CFatguy fatguy;
         CDialog dialogBox;
-		CAnimation flower;
+		CAnimation flower, rtsea1, rtsea2;
         CPickableObject pickable_Antidote;
-        vector<int> hitImg = { 0, 3, 6 };
+        vector<int> hitImg = { 0, 3, 6, 15, 16, 17, 27, 28, 30, 31, 32, 33, 34, 35 };
         vector<int> warZone = { 10 };
 		vector<int> jumpLand = { 11 };
 	};
