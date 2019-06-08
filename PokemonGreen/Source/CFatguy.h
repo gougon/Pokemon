@@ -17,7 +17,7 @@ namespace game_framework
 		virtual int GetVer();
 	private:
 		void SetDirection(int);
-		CMovingBitmap* character_scene;
+		CMovingBitmap character_scene[4];
 		CDialog momdialog;
 		int cx, cy;
 		int step = 0;

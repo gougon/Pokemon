@@ -15,16 +15,17 @@ namespace game_framework {
 		ActionObject(), order(0), sltPm(0), swapPm(0),
 		isOprtPanel(false), isOprtSlt(false), isItem(false),
 		isAtkChange(false), isUseItem(false), isTakeItem(false),
-		inShowText(false), showItemMethod(false)
+		inShowText(false), showItemMethod(false), pokemonBar(nullptr)
 	{
 		// empty body
 	}
 
 	PokemonMenu::~PokemonMenu()
 	{
-		for (auto i : *pokemons) 
-			delete i;
-		delete[] pokemonBar;
+		// for (auto i : *pokemons) 
+		// 	delete i;
+		if(pokemonBar != nullptr)
+			delete[] pokemonBar;
 	}
 
 	void PokemonMenu::Init()

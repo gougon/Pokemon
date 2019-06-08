@@ -80,26 +80,20 @@ void CHero::Initialize()
     HeroMovingRight.SetDelayCount(5);
 	isRunning = false;
 	isJumping = false;
+	isMoveOneBlock = false;
 	invisible = false;
 	onGrass = false;
     PokemonFactory pmfactory;
-    // SkillFactory skfactory;
-    Pokemon* pm = pmfactory.CreatePokemon(treecko);
-    pm->SetLevel(6);
-	pm->SetNowExp(120);
-    // pm->AddSkill(skfactory.CreateSkill(impact, styleSelf));
-	Pokemon* pm2 = pmfactory.CreatePokemon(jirachi);
-	pm2->SetLevel(20);
-	// pm2->AddSkill(skfactory.CreateSkill(impact, styleSelf));
-	// pm2->AddSkill(skfactory.CreateSkill(leer, styleSelf));
-	Pokemon* pm3 = pmfactory.CreatePokemon(hooh);
-	pm3->SetLevel(5);
-	pm3->SetRemainHP(15);
-	// pm3->AddSkill(skfactory.CreateSkill(impact, styleSelf));
-	// pm3->AddSkill(skfactory.CreateSkill(ember, styleSelf));
-    AddPokemon(pm);
-	AddPokemon(pm2);
-	AddPokemon(pm3);
+    AddPokemon(pmfactory.CreatePokemon(treecko));
+	pokemons[0]->SetLevel(6);
+	pokemons[0]->SetNowExp(120);
+	AddPokemon(pmfactory.CreatePokemon(jirachi));
+	pokemons[0]->SetLevel(20);
+	AddPokemon(pmfactory.CreatePokemon(hooh));
+	pokemons[2]->SetLevel(5);
+	pokemons[2]->SetRemainHP(15);
+	for(int i = 0; i < 4; ++i)
+		gameEvent[i] = false;
 }
 void CHero::LoadBitmap()
 {
@@ -190,7 +184,16 @@ void CHero::OnMove(CMap** m, AtkInterface &atkInterface, Characters *characters)
 		shineGrass.OnMove();
 	}
 
-	TRACE("\nhero x = %d\nhero y = %d\n", x, y);
+	if (isMoveOneBlock) {
+		if (count == 1) {
+			isMoveOneBlock = false;
+			SetMovingUp(false);
+			SetMovingDown(false);
+			SetMovingLeft(false);
+			SetMovingRight(false);
+			return;
+		}
+	}
 }
 void CHero::OnShow()
 {
@@ -300,12 +303,45 @@ void CHero::SetDirection(int flag)
     isForwardDown = (flag == 3) ? true : false;
     isForwardRight = (flag == 4) ? true : false;
 }
+void CHero::SetGameEvent(int gameEvent, bool flag)
+{
+	this->gameEvent[gameEvent] = flag;
+}
+bool CHero::GetGameEvent(int gameEvent)
+{
+	return this->gameEvent[gameEvent];
+}
 int CHero::GetDirection()
 {
     if (isForwardUp) return 0;
     else if (isForwardDown) return 1;
     else if (isForwardLeft) return 2;
     else return 3;
+}
+void CHero::MoveOneBlock(int direction)
+{
+	if (direction == 1)
+	{
+		SetDirection(1);
+		SetMovingUp(true);
+	}
+	else if (direction == 2)
+	{
+		SetDirection(2);
+		SetMovingLeft(true);
+	}
+	else if (direction == 3)
+	{
+		SetDirection(3);
+		SetMovingDown(true);
+	}
+	else
+	{
+		SetDirection(4);
+		SetMovingRight(true);
+	}
+
+	isMoveOneBlock = true;
 }
 void CHero::ReceiveData(CMap* m, ActionObject* i)
 {
@@ -394,7 +430,9 @@ void CHero::KeyIn(UINT nChar, Characters* characters, CMap &map)
 void CHero::ChangeMap(CMap** m)
 {
     CMap* delMap = (*m);
+	TRACE("\nold map address = %d\n", delMap);
     (*m) = (*m)->ChangeMap(x, y, this);
+	TRACE("\ndel map address = %d\n", delMap);
     delete delMap;
     this->SetXY((*m)->GetSX() + HERO_X, (*m)->GetSY() + HERO_Y + 20);
 }

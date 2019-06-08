@@ -9,6 +9,7 @@
 #include "Characters.h"
 #include "CMap.h"
 #include "NpcFactory.h"
+#include "PokemonFactory.h"
 
 namespace game_framework {
 	Characters::Characters(AtkInterface *atkInterface) :
@@ -19,9 +20,9 @@ namespace game_framework {
 
 	Characters::~Characters()
 	{
-		for (auto i : npcs) {
+		for (auto i : npcs) 
 			delete i;
-		}
+		atkInterface = nullptr;
 	}
 
 	void Characters::InitNpcs()
@@ -29,7 +30,12 @@ namespace game_framework {
 		// add all npcs
 		NpcFactory factory;
 		npcs.push_back(factory.CreateNpc(trainerMay, *atkInterface));
+		npcs.push_back(factory.CreateNpc(trainerYoungster, *atkInterface));
+		npcs.push_back(factory.CreateNpc(trainerGymYoungster, *atkInterface));
+		npcs.push_back(factory.CreateNpc(trainerGymYamao, *atkInterface));
+		npcs.push_back(factory.CreateNpc(trainerGymMaster, *atkInterface));
 		npcs.push_back(factory.CreateNpc(citizenMom, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenSister, *atkInterface));
 
 		// load bitmap for all npcs
 		LoadBitmap();
@@ -62,8 +68,12 @@ namespace game_framework {
 	void Characters::OnMove(CHero &hero, CMap &map)
 	{
 		for (auto i : npcs) {
-			if (i->GetMap() == map.GetName())
-				i->OnMove();
+			if (i->GetMap() == map.GetName()) {
+				if (i->GetType() == walker)
+					i->OnMove(hero);
+				else
+					i->OnMove();
+			}
 		}
 	}
 

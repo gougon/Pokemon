@@ -21,6 +21,6 @@ namespace game_framework
 	private:
 		Clerk clerk;
 		bool inEvent;
-		vector<int> hitImg = { 0, 2 };
+		int hitImg[2] = { 0, 2 };
 	};
 }

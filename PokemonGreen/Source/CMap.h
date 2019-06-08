@@ -42,6 +42,7 @@ class CMap
 {
     public:
         CMap();
+		~CMap();
         CMap(int sceneNum);
         virtual void InitMap() {}
         virtual void LoadBitmap() {}

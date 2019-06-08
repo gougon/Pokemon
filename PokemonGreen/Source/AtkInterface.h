@@ -67,6 +67,7 @@ namespace game_framework {
 	class AtkInterface : public ActionObject {
 	public:
 		AtkInterface();
+		virtual ~AtkInterface();
 		virtual void Init();
 		virtual void OnMove();
 		virtual void OnShow();

@@ -718,6 +718,70 @@ IDB_TIANYUAN_RBHOUSE    BITMAP                  "..\\RES\\tianyuan_rbhouse.bmp"
 
 IDB_TIANYUAN_RTLAKE     BITMAP                  "..\\RES\\tianyuan_rtlake.bmp"
 
+IDB_TIANYUAN_LTHOUSE_INSIDE BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\tianyuan_lthouse_inside.bmp"
+
+IDB_TIANYUAN_NHOUSE_INSIDE BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\tianyuan_nhouse_inside.bmp"
+
+IDB_TIANYUAN_RBHOUSE_INSIDE BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\tianyuan_rbhouse_inside.bmp"
+
+IDB_POTTED              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\potted.bmp"
+
+IDB_GYM_WALL4           BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\gym_wall4.bmp"
+
+IDB_GYM_WALL3           BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\gym_wall3.bmp"
+
+IDB_GYM_WALL2           BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\gym_wall2.bmp"
+
+IDB_GYM_WALL1           BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\gym_wall1.bmp"
+
+IDB_GYM                 BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\gym.bmp"
+
+IDB_GYM_STATU           BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\gym_statu.bmp"
+
+IDB_SISTER_DOWN         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\sister_down.bmp"
+
+IDB_SISTER_UP           BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\sister_up.bmp"
+
+IDB_SISTER_LEFT         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\sister_left.bmp"
+
+IDB_SISTER_RIGHT        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\sister_right.bmp"
+
+IDB_YOUNGSTER_DOWN      BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\boy_down.bmp"
+
+IDB_YOUNGSTER_RIGHT     BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\boy_right.bmp"
+
+IDB_YOUNGSTER_UP        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\boy_up.bmp"
+
+IDB_YOUNGSTER_LEFT      BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\boy_left.bmp"
+
+IDB_YOUNGSTER_ATK       BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\boy_atk.bmp"
+
+IDB_YAMAO_ATK           BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\yamao_atk.bmp"
+
+IDB_YAMAO_LEFT          BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\yamao_left.bmp"
+
+IDB_YAMAO_DOWN          BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\yamao_down.bmp"
+
+IDB_YAMAO_RIGHT         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\yamao_right.bmp"
+
+IDB_YAMAO_UP            BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\yamao_up.bmp"
+
+IDB_MASTER_RIGHT        BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\master_right.bmp"
+
+IDB_MASTER_DOWN         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\master_down.bmp"
+
+IDB_MASTER_LEFT         BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\master_left.bmp"
+
+IDB_MASTER_ATK          BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\master_atk.bmp"
+
+HOME_CHEAT              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\home_cheat.bmp"
+
+HOME_ABOUT              BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\home_about.bmp"
+
+IDB_OPERATION_PAGE      BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\operation_page.bmp"
+
+IDB_ABOUT_PAGE          BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\about_page.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

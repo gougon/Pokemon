@@ -10,7 +10,7 @@ namespace game_framework
 {
 	CFatguy::CFatguy()
 	{
-		character_scene = setCharacter(1);
+		// character_scene = setCharacter(1);
 	}
 	void CFatguy::SetXY(int cx, int cy)
 	{

@@ -1,1380 +1,671 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{1a913106-0be0-4476-b0ce-2aa855072614}</UniqueIdentifier>
-      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
-    </Filter>
-    <Filter Include="MFC">
-      <UniqueIdentifier>{da904ee8-7f59-4a6c-b3ff-b91b6fb6d0ea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameLibrary">
-      <UniqueIdentifier>{df7aa532-3fdf-46a0-b3fc-8f5922e8d9e4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="MyGame">
-      <UniqueIdentifier>{0c798913-b7d2-4e26-8241-0f83266cd626}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Res\ball.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\bmp0.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\bmp1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\bmp10.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\bmp2.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\bmp3.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\bmp4.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\bmp5.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\bmp6.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\bmp7.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\bmp8.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\bmp9.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\center.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\continue.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Res\corner.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\eraser1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\eraser2.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\eraser3.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\game.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\game.rc2">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\gamecurs.cur">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\gameDoc.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\help.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\loading.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\ntutcsie.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\Toolbar.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Source\game.aps" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Source\audio.cpp">
-      <Filter>GameLibrary</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\game.cpp">
-      <Filter>MFC</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\gameDoc.cpp">
-      <Filter>MFC</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\gamelib.cpp">
-      <Filter>GameLibrary</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\gameView.cpp">
-      <Filter>MFC</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\MainFrm.cpp">
-      <Filter>MFC</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\StdAfx.cpp">
-      <Filter>MFC</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\mygame.cpp">
-      <Filter>MyGame</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CMap.cpp" />
-    <ClCompile Include="Source\CHero.cpp" />
-    <ClCompile Include="Source\WeiBaiMap.cpp" />
-    <ClCompile Include="Source\WeiBaiHouse2_1F_Map.cpp" />
-    <ClCompile Include="Source\WeiBaiHouse1_1F_Map.cpp" />
-    <ClCompile Include="Source\WeiBaiProHouse_Map.cpp" />
-    <ClCompile Include="Source\WeiBaiHouse1_2F_Map.cpp" />
-    <ClCompile Include="Source\WeiBaiHouse2_2F_Map.cpp" />
-    <ClCompile Include="Source\CCharacter.cpp" />
-    <ClCompile Include="Source\CDialog.cpp" />
-    <ClCompile Include="Source\CObject.cpp" />
-    <ClCompile Include="Source\CAlphabet.cpp" />
+    <ClCompile Include="Source\ActionObject.cpp" />
     <ClCompile Include="Source\AtkBar.cpp" />
     <ClCompile Include="Source\AtkInterface.cpp" />
-    <ClCompile Include="Source\PmTreecko.cpp" />
-    <ClCompile Include="Source\Pokemon.cpp" />
-    <ClCompile Include="Source\PokemonFactory.cpp" />
-    <ClCompile Include="Source\Skill.cpp" />
-    <ClCompile Include="Source\SkillFactory.cpp" />
-    <ClCompile Include="Source\SkillImpact.cpp" />
-    <ClCompile Include="Source\SkillNormal.cpp" />
-    <ClCompile Include="Source\CText.cpp" />
-    <ClCompile Include="Source\CEvent.cpp" />
-    <ClCompile Include="Source\CSelf.cpp" />
-    <ClCompile Include="Source\CPickableObject.cpp" />
-    <ClCompile Include="Source\CItem.cpp" />
-    <ClCompile Include="Source\ActionObject.cpp" />
-    <ClCompile Include="Source\Menu.cpp" />
-    <ClCompile Include="Source\Illustration.cpp" />
-    <ClCompile Include="Source\MainMenu.cpp" />
-    <ClCompile Include="Source\PmOprtView.cpp" />
-    <ClCompile Include="Source\PokemonBar.cpp" />
-    <ClCompile Include="Source\PokemonMenu.cpp" />
-    <ClCompile Include="Source\Self.cpp" />
+    <ClCompile Include="Source\audio.cpp" />
     <ClCompile Include="Source\Bag.cpp" />
-    <ClCompile Include="Source\PmValue.cpp" />
-    <ClCompile Include="Source\Nurse.cpp" />
-    <ClCompile Include="Source\PmJirachi.cpp" />
-    <ClCompile Include="Source\SkillLeer.cpp" />
-    <ClCompile Include="Source\GameObject.cpp" />
-    <ClCompile Include="Source\PmHooh.cpp" />
-    <ClCompile Include="Source\SkillEmber.cpp" />
-    <ClCompile Include="Source\SkillFire.cpp" />
-    <ClCompile Include="Source\Status.cpp" />
-    <ClCompile Include="Source\Clerk.cpp" />
-    <ClCompile Include="Source\Black.cpp" />
+    <ClCompile Include="Source\CAlphabet.cpp" />
+    <ClCompile Include="Source\CCharacter.cpp" />
+    <ClCompile Include="Source\CDialog.cpp" />
+    <ClCompile Include="Source\CEvent.cpp" />
     <ClCompile Include="Source\CFatguy.cpp" />
-    <ClCompile Include="Source\Functions.cpp" />
-    <ClCompile Include="Source\Record.cpp" />
-    <ClCompile Include="Source\Trainer.cpp" />
-    <ClCompile Include="Source\PmList.cpp" />
-    <ClCompile Include="Source\CItemSystem.cpp" />
-    <ClCompile Include="Source\ItemAntidote.cpp" />
-    <ClCompile Include="Source\ItemFactory.cpp" />
-    <ClCompile Include="Source\ItemSmallVulnerary.cpp" />
-    <ClCompile Include="Source\ItemBigVulnerary.cpp" />
-    <ClCompile Include="Source\ItemFighterGlove.cpp" />
-    <ClCompile Include="Source\ItemPokeBall.cpp" />
-    <ClCompile Include="Source\ItemBurnMedicine.cpp" />
     <ClCompile Include="Source\Characters.cpp" />
-    <ClCompile Include="Source\Citizen.cpp" />
-    <ClCompile Include="Source\TrainerMay.cpp" />
-    <ClCompile Include="Source\CitizenMom.cpp" />
-    <ClCompile Include="Source\NpcFactory.cpp" />
     <ClCompile Include="Source\DouChiHouse1_Map.cpp" />
     <ClCompile Include="Source\DouChiHouse2_Map.cpp" />
-    <ClCompile Include="Source\PmRayquaza.cpp" />
+    <ClCompile Include="Source\NpcFactory.cpp" />
+    <ClCompile Include="Source\PmDeoxys.cpp" />
     <ClCompile Include="Source\PmGardevoir.cpp" />
     <ClCompile Include="Source\PmGrimer.cpp" />
     <ClCompile Include="Source\PmGrovyle.cpp" />
     <ClCompile Include="Source\PmMetang.cpp" />
     <ClCompile Include="Source\PmPikachu.cpp" />
+    <ClCompile Include="Source\PmRayquaza.cpp" />
     <ClCompile Include="Source\PmSmoochum.cpp" />
     <ClCompile Include="Source\PmVaporeon.cpp" />
     <ClCompile Include="Source\PmVulpix.cpp" />
-    <ClCompile Include="Source\PmDeoxys.cpp" />
-    <ClCompile Include="Source\Douchi_Shop_Map.cpp" />
-    <ClCompile Include="Source\Douchi_Hospital_Map.cpp" />
-    <ClCompile Include="Source\Tianyuan_Shop_Map.cpp" />
     <ClCompile Include="Source\Tianyuan_Hospital_Map.cpp" />
-    <ClCompile Include="Source\SkillConfusion.cpp" />
-    <ClCompile Include="Source\SkillPhychoBoost.cpp" />
-    <ClCompile Include="Source\SkillSteel.cpp" />
-    <ClCompile Include="Source\SkillMetalClaw.cpp" />
-    <ClCompile Include="Source\SkillPhychoKinesis.cpp" />
-    <ClCompile Include="Source\SkillPsychic.cpp" />
-    <ClCompile Include="Source\SkillScaryFace.cpp" />
-    <ClCompile Include="Source\SkillGhost.cpp" />
-    <ClCompile Include="Source\SkillLick.cpp" />
-    <ClCompile Include="Source\SkillIce.cpp" />
-    <ClCompile Include="Source\SkillPowderSnow.cpp" />
-    <ClCompile Include="Source\SkillHarden.cpp" />
-    <ClCompile Include="Source\SkillPoison.cpp" />
-    <ClCompile Include="Source\SkillElectric.cpp" />
-    <ClCompile Include="Source\SkillWater.cpp" />
-    <ClCompile Include="Source\SkillDragon.cpp" />
-    <ClCompile Include="Source\SkillGrass.cpp" />
-    <ClCompile Include="Source\SkillPoisonGas.cpp" />
-    <ClCompile Include="Source\SkillSludge.cpp" />
-    <ClCompile Include="Source\SkillWillOwisp.cpp" />
-    <ClCompile Include="Source\SkillFlameThrower.cpp" />
-    <ClCompile Include="Source\SkillThunderShock.cpp" />
-    <ClCompile Include="Source\SkillThunderBolt.cpp" />
-    <ClCompile Include="Source\SkillBubbleBeam.cpp" />
-    <ClCompile Include="Source\SkillWaterGun.cpp" />
+    <ClCompile Include="Source\Tianyuan_Shop_Map.cpp" />
     <ClCompile Include="Source\SkillAuroraBeam.cpp" />
+    <ClCompile Include="Source\SkillBubbleBeam.cpp" />
+    <ClCompile Include="Source\SkillConfusion.cpp" />
     <ClCompile Include="Source\SkillCrunch.cpp" />
+    <ClCompile Include="Source\SkillDragon.cpp" />
     <ClCompile Include="Source\SkillDragonClaw.cpp" />
+    <ClCompile Include="Source\SkillElectric.cpp" />
+    <ClCompile Include="Source\SkillFlameThrower.cpp" />
+    <ClCompile Include="Source\SkillGhost.cpp" />
+    <ClCompile Include="Source\SkillGrass.cpp" />
+    <ClCompile Include="Source\SkillHarden.cpp" />
+    <ClCompile Include="Source\SkillHyperBeam.cpp" />
+    <ClCompile Include="Source\SkillIce.cpp" />
     <ClCompile Include="Source\SkillLeafBlade.cpp" />
     <ClCompile Include="Source\SkillLeafStorm.cpp" />
-    <ClCompile Include="Source\SkillSacredFire.cpp" />
-    <ClCompile Include="Source\SkillHyperBeam.cpp" />
-    <ClCompile Include="Source\SkillSwift.cpp" />
+    <ClCompile Include="Source\SkillLick.cpp" />
+    <ClCompile Include="Source\SkillMetalClaw.cpp" />
     <ClCompile Include="Source\SkillNightShade.cpp" />
+    <ClCompile Include="Source\SkillPhychoBoost.cpp" />
+    <ClCompile Include="Source\SkillPoison.cpp" />
+    <ClCompile Include="Source\SkillPoisonGas.cpp" />
+    <ClCompile Include="Source\SkillPowderSnow.cpp" />
+    <ClCompile Include="Source\SkillPsychic.cpp" />
+    <ClCompile Include="Source\SkillPhychoKinesis.cpp" />
+    <ClCompile Include="Source\SkillSacredFire.cpp" />
+    <ClCompile Include="Source\SkillScaryFace.cpp" />
+    <ClCompile Include="Source\SkillSludge.cpp" />
+    <ClCompile Include="Source\SkillSteel.cpp" />
+    <ClCompile Include="Source\SkillSwift.cpp" />
+    <ClCompile Include="Source\SkillThunderBolt.cpp" />
+    <ClCompile Include="Source\SkillThunderShock.cpp" />
+    <ClCompile Include="Source\SkillWater.cpp" />
+    <ClCompile Include="Source\SkillWaterGun.cpp" />
+    <ClCompile Include="Source\SkillWillOwisp.cpp" />
+    <ClCompile Include="Source\TrainerMay.cpp" />
+    <ClCompile Include="Source\CHero.cpp" />
+    <ClCompile Include="Source\CItem.cpp" />
+    <ClCompile Include="Source\CItemSystem.cpp" />
+    <ClCompile Include="Source\Citizen.cpp" />
+    <ClCompile Include="Source\Clerk.cpp" />
+    <ClCompile Include="Source\CMap.cpp" />
+    <ClCompile Include="Source\CitizenMom.cpp" />
+    <ClCompile Include="Source\CObject.cpp" />
+    <ClCompile Include="Source\CPickableObject.cpp" />
+    <ClCompile Include="Source\CSelf.cpp" />
+    <ClCompile Include="Source\CText.cpp" />
+    <ClCompile Include="Source\Black.cpp" />
+    <ClCompile Include="Source\Functions.cpp" />
+    <ClCompile Include="Source\game.cpp" />
+    <ClCompile Include="Source\gameDoc.cpp" />
+    <ClCompile Include="Source\GameObject.cpp" />
+    <ClCompile Include="Source\gameView.cpp" />
+    <ClCompile Include="Source\Douchi_Hospital_Map.cpp" />
+    <ClCompile Include="Source\Illustration.cpp" />
+    <ClCompile Include="Source\ItemAntidote.cpp" />
+    <ClCompile Include="Source\ItemBigVulnerary.cpp" />
+    <ClCompile Include="Source\ItemBurnMedicine.cpp" />
+    <ClCompile Include="Source\ItemFactory.cpp" />
+    <ClCompile Include="Source\ItemFighterGlove.cpp" />
+    <ClCompile Include="Source\ItemPokeBall.cpp" />
+    <ClCompile Include="Source\ItemSmallVulnerary.cpp" />
+    <ClCompile Include="Source\MainFrm.cpp" />
+    <ClCompile Include="Source\MainMenu.cpp" />
+    <ClCompile Include="Source\Menu.cpp" />
+    <ClCompile Include="Source\Nurse.cpp" />
+    <ClCompile Include="Source\PmHooh.cpp" />
+    <ClCompile Include="Source\PmJirachi.cpp" />
+    <ClCompile Include="Source\PmList.cpp" />
+    <ClCompile Include="Source\PmOprtView.cpp" />
+    <ClCompile Include="Source\PmTreecko.cpp" />
+    <ClCompile Include="Source\PmValue.cpp" />
+    <ClCompile Include="Source\Pokemon.cpp" />
+    <ClCompile Include="Source\PokemonBar.cpp" />
+    <ClCompile Include="Source\PokemonFactory.cpp" />
+    <ClCompile Include="Source\PokemonMenu.cpp" />
+    <ClCompile Include="Source\Record.cpp" />
+    <ClCompile Include="Source\Self.cpp" />
+    <ClCompile Include="Source\Douchi_Shop_Map.cpp" />
+    <ClCompile Include="Source\Skill.cpp" />
+    <ClCompile Include="Source\SkillEmber.cpp" />
+    <ClCompile Include="Source\SkillFactory.cpp" />
+    <ClCompile Include="Source\SkillFire.cpp" />
+    <ClCompile Include="Source\SkillImpact.cpp" />
+    <ClCompile Include="Source\SkillLeer.cpp" />
+    <ClCompile Include="Source\SkillNormal.cpp" />
+    <ClCompile Include="Source\Status.cpp" />
+    <ClCompile Include="Source\StdAfx.cpp" />
+    <ClCompile Include="Source\gamelib.cpp" />
+    <ClCompile Include="Source\mygame.cpp" />
+    <ClCompile Include="Source\Trainer.cpp" />
+    <ClCompile Include="Source\WeiBaiHouse1_1F_Map.cpp" />
+    <ClCompile Include="Source\WeiBaiHouse1_2F_Map.cpp" />
+    <ClCompile Include="Source\WeiBaiHouse2_1F_Map.cpp" />
+    <ClCompile Include="Source\WeiBaiHouse2_2F_Map.cpp" />
+    <ClCompile Include="Source\WeiBaiMap.cpp" />
+    <ClCompile Include="Source\WeiBaiProHouse_Map.cpp" />
+    <ClCompile Include="Source\Tianyuan_Lthouse_Map.cpp" />
+    <ClCompile Include="Source\Tianyuan_Rbhouse_Map.cpp" />
+    <ClCompile Include="Source\Tianyuan_Nhouse_Map.cpp" />
+    <ClCompile Include="Source\Tianyuan_Gym_Map.cpp" />
+    <ClCompile Include="Source\CitizenSister.cpp" />
+    <ClCompile Include="Source\TrainerYoungster.cpp" />
+    <ClCompile Include="Source\TrainerGymYoungster.cpp" />
+    <ClCompile Include="Source\TrainerGymYamao.cpp" />
+    <ClCompile Include="Source\TrainerGymMaster.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\audio.h">
-      <Filter>GameLibrary</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\game.h">
-      <Filter>MFC</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\gameDoc.h">
-      <Filter>MFC</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\gamelib.h">
-      <Filter>GameLibrary</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\gameView.h">
-      <Filter>MFC</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\MainFrm.h">
-      <Filter>MFC</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Resource.h">
-      <Filter>MFC</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\StdAfx.h">
-      <Filter>MFC</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\mygame.h">
-      <Filter>MyGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CMap.h" />
-    <ClInclude Include="Source\CHero.h" />
-    <ClInclude Include="Source\WeiBaiMap.h" />
-    <ClInclude Include="Source\WeiBaiHouse2_1F_Map.h" />
-    <ClInclude Include="Source\WeiBaiHouse1_1F_Map.h" />
-    <ClInclude Include="Source\WeiBaiProHouse_Map.h" />
-    <ClInclude Include="Source\WeiBaiHouse1_2F_Map.h" />
-    <ClInclude Include="Source\WeiBaiHouse2_2F_Map.h" />
-    <ClInclude Include="Source\CCharacter.h" />
-    <ClInclude Include="Source\CDialog.h" />
-    <ClInclude Include="Source\CObject.h" />
-    <ClInclude Include="Source\CAlphabet.h" />
+    <ClInclude Include="Source\ActionObject.h" />
     <ClInclude Include="Source\AtkBar.h" />
     <ClInclude Include="Source\AtkInterface.h" />
-    <ClInclude Include="Source\PmTreecko.h" />
-    <ClInclude Include="Source\Pokemon.h" />
-    <ClInclude Include="Source\PokemonFactory.h" />
-    <ClInclude Include="Source\Skill.h" />
-    <ClInclude Include="Source\SkillFactory.h" />
-    <ClInclude Include="Source\SkillImpact.h" />
-    <ClInclude Include="Source\SkillNormal.h" />
-    <ClInclude Include="Source\CText.h" />
-    <ClInclude Include="Source\CEvent.h" />
-    <ClInclude Include="Source\CSelf.h" />
-    <ClInclude Include="Source\CPickableObject.h" />
-    <ClInclude Include="Source\CItem.h" />
-    <ClInclude Include="Source\Menu.h" />
-    <ClInclude Include="Source\ActionObject.h" />
-    <ClInclude Include="Source\Illustration.h" />
-    <ClInclude Include="Source\MainMenu.h" />
-    <ClInclude Include="Source\PmOprtView.h" />
-    <ClInclude Include="Source\PokemonBar.h" />
-    <ClInclude Include="Source\PokemonMenu.h" />
-    <ClInclude Include="Source\Record.h" />
-    <ClInclude Include="Source\Self.h" />
+    <ClInclude Include="Source\audio.h" />
     <ClInclude Include="Source\Bag.h" />
-    <ClInclude Include="Source\PmValue.h" />
-    <ClInclude Include="Source\Nurse.h" />
-    <ClInclude Include="Source\PmJirachi.h" />
-    <ClInclude Include="Source\SkillLeer.h" />
-    <ClInclude Include="Source\GameObject.h" />
-    <ClInclude Include="Source\PmHooh.h" />
-    <ClInclude Include="Source\SkillEmber.h" />
-    <ClInclude Include="Source\SkillFire.h" />
-    <ClInclude Include="Source\Status.h" />
-    <ClInclude Include="Source\Clerk.h" />
-    <ClInclude Include="Source\Black.h" />
+    <ClInclude Include="Source\CCharacter.h" />
+    <ClInclude Include="Source\CDialog.h" />
+    <ClInclude Include="Source\CAlphabet.h" />
+    <ClInclude Include="Source\CEvent.h" />
     <ClInclude Include="Source\CFatguy.h" />
-    <ClInclude Include="Source\Trainer.h" />
-    <ClInclude Include="Source\PmList.h" />
-    <ClInclude Include="Source\CItemSystem.h" />
-    <ClInclude Include="Source\ItemAntidote.h" />
-    <ClInclude Include="Source\ItemFactory.h" />
-    <ClInclude Include="Source\ItemSmallVulnerary.h" />
-    <ClInclude Include="Source\ItemBigVulnerary.h" />
-    <ClInclude Include="Source\ItemFighterGlove.h" />
-    <ClInclude Include="Source\ItemPokeBall.h" />
-    <ClInclude Include="Source\ItemBurnMedicine.h" />
     <ClInclude Include="Source\Characters.h" />
-    <ClInclude Include="Source\Citizen.h" />
-    <ClInclude Include="Source\Npc.h" />
-    <ClInclude Include="Source\TrainerMay.h" />
-    <ClInclude Include="Source\CitizenMom.h" />
-    <ClInclude Include="Source\NpcFactory.h" />
     <ClInclude Include="Source\DouChiHouse1_Map.h" />
     <ClInclude Include="Source\DouChiHouse2_Map.h" />
-    <ClInclude Include="Source\PmRayquaza.h" />
+    <ClInclude Include="Source\NpcFactory.h" />
+    <ClInclude Include="Source\PmDeoxys.h" />
     <ClInclude Include="Source\PmGardevoir.h" />
     <ClInclude Include="Source\PmGrimer.h" />
     <ClInclude Include="Source\PmGrovyle.h" />
     <ClInclude Include="Source\PmMetang.h" />
     <ClInclude Include="Source\PmPikachu.h" />
+    <ClInclude Include="Source\PmRayquaza.h" />
     <ClInclude Include="Source\PmSmoochum.h" />
     <ClInclude Include="Source\PmVaporeon.h" />
     <ClInclude Include="Source\PmVulpix.h" />
-    <ClInclude Include="Source\PmDeoxys.h" />
-    <ClInclude Include="Source\Douchi_Shop_Map.h" />
-    <ClInclude Include="Source\Douchi_Hospital_Map.h" />
-    <ClInclude Include="Source\Tianyuan_Shop_Map.h" />
     <ClInclude Include="Source\Tianyuan_Hospital_Map.h" />
-    <ClInclude Include="Source\SkillConfusion.h" />
-    <ClInclude Include="Source\SkillPhychoBoost.h" />
-    <ClInclude Include="Source\SkillSteel.h" />
-    <ClInclude Include="Source\SkillMetalClaw.h" />
-    <ClInclude Include="Source\SkillPhychoKinesis.h" />
-    <ClInclude Include="Source\SkillPsychic.h" />
-    <ClInclude Include="Source\SkillScaryFace.h" />
-    <ClInclude Include="Source\SkillLick.h" />
-    <ClInclude Include="Source\SkillGhost.h" />
-    <ClInclude Include="Source\SkillIce.h" />
-    <ClInclude Include="Source\SkillPowderSnow.h" />
-    <ClInclude Include="Source\SkillHarden.h" />
-    <ClInclude Include="Source\SkillPoisonGas.h" />
-    <ClInclude Include="Source\SkillPoison.h" />
-    <ClInclude Include="Source\SkillElectric.h" />
-    <ClInclude Include="Source\SkillWaterGun.h" />
-    <ClInclude Include="Source\SkillWater.h" />
-    <ClInclude Include="Source\SkillDragon.h" />
-    <ClInclude Include="Source\SkillGrass.h" />
-    <ClInclude Include="Source\SkillSludge.h" />
-    <ClInclude Include="Source\SkillWillOwisp.h" />
-    <ClInclude Include="Source\SkillFlameThrower.h" />
-    <ClInclude Include="Source\SkillThunderShock.h" />
-    <ClInclude Include="Source\SkillThunderBolt.h" />
-    <ClInclude Include="Source\SkillBubbleBeam.h" />
+    <ClInclude Include="Source\Tianyuan_Shop_Map.h" />
     <ClInclude Include="Source\SkillAuroraBeam.h" />
+    <ClInclude Include="Source\SkillBubbleBeam.h" />
+    <ClInclude Include="Source\SkillConfusion.h" />
     <ClInclude Include="Source\SkillCrunch.h" />
+    <ClInclude Include="Source\SkillDragon.h" />
     <ClInclude Include="Source\SkillDragonClaw.h" />
+    <ClInclude Include="Source\SkillElectric.h" />
+    <ClInclude Include="Source\SkillFlameThrower.h" />
+    <ClInclude Include="Source\SkillGhost.h" />
+    <ClInclude Include="Source\SkillGrass.h" />
+    <ClInclude Include="Source\SkillHarden.h" />
+    <ClInclude Include="Source\SkillHyperBeam.h" />
+    <ClInclude Include="Source\SkillIce.h" />
     <ClInclude Include="Source\SkillLeafBlade.h" />
     <ClInclude Include="Source\SkillLeafStorm.h" />
-    <ClInclude Include="Source\SkillSacredFire.h" />
-    <ClInclude Include="Source\SkillHyperBeam.h" />
-    <ClInclude Include="Source\SkillSwift.h" />
+    <ClInclude Include="Source\SkillLick.h" />
+    <ClInclude Include="Source\SkillMetalClaw.h" />
     <ClInclude Include="Source\SkillNightShade.h" />
+    <ClInclude Include="Source\SkillPhychoBoost.h" />
+    <ClInclude Include="Source\SkillPoison.h" />
+    <ClInclude Include="Source\SkillPoisonGas.h" />
+    <ClInclude Include="Source\SkillPowderSnow.h" />
+    <ClInclude Include="Source\SkillPsychic.h" />
+    <ClInclude Include="Source\SkillPhychoKinesis.h" />
+    <ClInclude Include="Source\SkillSacredFire.h" />
+    <ClInclude Include="Source\SkillScaryFace.h" />
+    <ClInclude Include="Source\SkillSludge.h" />
+    <ClInclude Include="Source\SkillSteel.h" />
+    <ClInclude Include="Source\SkillSwift.h" />
+    <ClInclude Include="Source\SkillThunderBolt.h" />
+    <ClInclude Include="Source\SkillThunderShock.h" />
+    <ClInclude Include="Source\SkillWater.h" />
+    <ClInclude Include="Source\SkillWaterGun.h" />
+    <ClInclude Include="Source\SkillWillOwisp.h" />
+    <ClInclude Include="Source\TrainerMay.h" />
+    <ClInclude Include="Source\CHero.h" />
+    <ClInclude Include="Source\CItem.h" />
+    <ClInclude Include="Source\CItemSystem.h" />
+    <ClInclude Include="Source\Citizen.h" />
+    <ClInclude Include="Source\Clerk.h" />
+    <ClInclude Include="Source\CMap.h" />
+    <ClInclude Include="Source\CitizenMom.h" />
+    <ClInclude Include="Source\CObject.h" />
+    <ClInclude Include="Source\CPickableObject.h" />
+    <ClInclude Include="Source\CSelf.h" />
+    <ClInclude Include="Source\CText.h" />
+    <ClInclude Include="Source\Black.h" />
+    <ClInclude Include="Source\game.h" />
+    <ClInclude Include="Source\gameDoc.h" />
+    <ClInclude Include="Source\GameObject.h" />
+    <ClInclude Include="Source\gameView.h" />
+    <ClInclude Include="Source\Douchi_Hospital_Map.h" />
+    <ClInclude Include="Source\Illustration.h" />
+    <ClInclude Include="Source\ItemAntidote.h" />
+    <ClInclude Include="Source\ItemBigVulnerary.h" />
+    <ClInclude Include="Source\ItemBurnMedicine.h" />
+    <ClInclude Include="Source\ItemFactory.h" />
+    <ClInclude Include="Source\ItemFighterGlove.h" />
+    <ClInclude Include="Source\ItemPokeBall.h" />
+    <ClInclude Include="Source\ItemSmallVulnerary.h" />
+    <ClInclude Include="Source\MainFrm.h" />
+    <ClInclude Include="Source\MainMenu.h" />
+    <ClInclude Include="Source\Menu.h" />
+    <ClInclude Include="Source\Npc.h" />
+    <ClInclude Include="Source\Nurse.h" />
+    <ClInclude Include="Source\PmHooh.h" />
+    <ClInclude Include="Source\PmJirachi.h" />
+    <ClInclude Include="Source\PmList.h" />
+    <ClInclude Include="Source\PmOprtView.h" />
+    <ClInclude Include="Source\PmTreecko.h" />
+    <ClInclude Include="Source\PmValue.h" />
+    <ClInclude Include="Source\Pokemon.h" />
+    <ClInclude Include="Source\PokemonBar.h" />
+    <ClInclude Include="Source\PokemonFactory.h" />
+    <ClInclude Include="Source\PokemonMenu.h" />
+    <ClInclude Include="Source\Record.h" />
+    <ClInclude Include="Source\Resource.h" />
+    <ClInclude Include="Source\Self.h" />
+    <ClInclude Include="Source\Douchi_Shop_Map.h" />
+    <ClInclude Include="Source\Skill.h" />
+    <ClInclude Include="Source\SkillEmber.h" />
+    <ClInclude Include="Source\SkillFactory.h" />
+    <ClInclude Include="Source\SkillFire.h" />
+    <ClInclude Include="Source\SkillImpact.h" />
+    <ClInclude Include="Source\SkillLeer.h" />
+    <ClInclude Include="Source\SkillNormal.h" />
+    <ClInclude Include="Source\Status.h" />
+    <ClInclude Include="Source\StdAfx.h" />
+    <ClInclude Include="Source\gamelib.h" />
+    <ClInclude Include="Source\mygame.h" />
+    <ClInclude Include="Source\Trainer.h" />
+    <ClInclude Include="Source\WeiBaiHouse1_1F_Map.h" />
+    <ClInclude Include="Source\WeiBaiHouse1_2F_Map.h" />
+    <ClInclude Include="Source\WeiBaiHouse2_1F_Map.h" />
+    <ClInclude Include="Source\WeiBaiHouse2_2F_Map.h" />
+    <ClInclude Include="Source\WeiBaiMap.h" />
+    <ClInclude Include="Source\WeiBaiProHouse_Map.h" />
+    <ClInclude Include="Source\Tianyuan_Lthouse_Map.h" />
+    <ClInclude Include="Source\Tianyuan_Rbhouse_Map.h" />
+    <ClInclude Include="Source\Tianyuan_Nhouse_Map.h" />
+    <ClInclude Include="Source\Tianyuan_Gym_Map.h" />
+    <ClInclude Include="Source\CitizenSister.h" />
+    <ClInclude Include="Source\TrainerYoungster.h" />
+    <ClInclude Include="Source\TrainerGymYoungster.h" />
+    <ClInclude Include="Source\TrainerGymYamao.h" />
+    <ClInclude Include="Source\TrainerGymMaster.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Source\game.rc">
-      <Filter>MFC</Filter>
-    </ResourceCompile>
+    <ResourceCompile Include="Source\game.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\WeiBaiTown.bmp" />
     <Image Include="..\WeiBaiTown.png" />
-    <Image Include="..\WeiBaiTown.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bitmap3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\WeiBaiTown.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\billboard.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\grass_land.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\green_flower.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\green_grass.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_house1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_house2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_pro_house.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\GREEN_TREE.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HERO_BACK.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HERO_BACK_ONE.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HERO_BACK_TWO.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HERO_FRONT.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HERO_FRONT_ONE.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HERO_FRONT_TWO.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HERO_LEFT.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HERO_LEFT_ONE.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HERO_LEFT_TWO.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HERO_RIGHT_TWO.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HERO_RIGHT_ONE.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HERO_RIGHT.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_house1_1f.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_house2_1f.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_pro_house_inside.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_house1_2f.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_house2_2f.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\MOM_UP.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\MON_LEFT.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\MON_RIGHT.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HOME.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HOME_LOG.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\MOM_DOWN.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\GREEN_DIAG.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\bitmap4.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\bmp00001.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\bmp00002.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\DIAG.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bitmap5.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bitmap6.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00003.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00004.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00005.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00006.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bitmap7.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00007.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00008.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00009.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00010.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00011.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00012.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\alphabet.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00013.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00014.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00015.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00016.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00017.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00018.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00019.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00020.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00021.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00022.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00023.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00024.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00025.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00026.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00027.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\jump_land.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\hero_lef.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\FATGUY_LEFT.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\FATGUY_RIGHT.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\GIRL_FRONT.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\FATGUY_BACK.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\FATGUY_FRONT.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\battle_background.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\battle_ground.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\battle_hero.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\battle_option.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\Black.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_bar.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\hp_green.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\hp_red.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\hp_yellow.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\my_bar.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_impact1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_impact2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_option.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\treecko_back.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\treecko_front.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\atk_cursor.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\battle_dialog.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\m_green_grass.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00028.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\bg_backpack.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\pickable_object.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00029.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\self.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bitmap8.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bitmap12.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00030.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00031.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\antidote.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\backtoworld.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\MenuBottom.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\MenuMiddle.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\MenuTop.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\OPERATION_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\POKEMON_BAR.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\POKEMON_BAR_FIRST_SELECT.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\POKEMON_BAR_FIRST_UNSELECTED.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\POKEMON_BAR_SELECTED.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\SELECT_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\expBar.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\PM_ABILITY.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\PM_SKILL_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\BG_YESNO.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\BG_ITEMAMOUNT.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\BAG_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bmp00032.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="D:\GitPokemon\PokemonGreen\RES\BG_YESNO.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="D:\GitPokemon\PokemonGreen\RES\BG_ITEMAMOUNT.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="D:\GitPokemon\PokemonGreen\RES\BAG_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\SKILL_SELECT.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_sidebar.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_list.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\POKEMON_BAR_FIRST_SELECTED.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\icon_pm_treecko.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HOSPITAL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\NORMAL_HOUSE1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\STORE.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\LV_UP_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\LV_UP_FPANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\hospital_inside.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\heal_ball1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\heal_ball2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\heal_ball3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\heal_ball4.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\heal_ball5.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\heal_ball6.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\heal_ball7.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\heal_ball8.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\heal_ball9.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\heal_ball10.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\heal_ball11.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\heal_ball12.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\icon_pm_jirachi.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\jirachi_back.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\jirachi_front.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_leer1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_leer2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_leer3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_leer4.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_leer5.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\green_flower2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\green_flower3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\hooh_back.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\hooh_front.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\icon_pm_hooh.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember4.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember5.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember6.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember7.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember8.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember9.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember10.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember11.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember12.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember13.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember14.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember15.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember16.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember17.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_ember18.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\BURN_ICON.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\item_cursor.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\SHOP.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\SHOP_BLANK_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\SHOP_DESCRIPTION_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\SHOP_IMAGE_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\SHOP_ITEMLIST_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\SHOP_MONEY_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\TRADEMODE_SELECT_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\USEITEM_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\BLANK_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\GIVETEM_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\IDB_FIGHTERGLOVE.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\IDB_VULNERARY.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\IDB_USEONATK_PANEL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\ITEM_POKEBALL.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\catch_ball.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\catch_ball2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\catch_ball3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember4.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember5.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember6.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember7.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember8.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember9.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember10.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember11.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember12.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember14.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember15.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember16.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember17.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember18.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\ITEM_BURNMEDICINE.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\ITEM_ANTIDOTE.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\ITEM_FIGHTERGLOVE.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\ITEM_VULNERARY.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\enemy_skill_ember13.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HAVEITEM_ICON.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HOME5.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HOME1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HOME2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HOME3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HOME4.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bitmap18.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HOME6.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HOME7.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\may_atk.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\may_back.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\may_front.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\may_left.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\may_right.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\pmlist_deadball.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\pmlist_left.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\pmlist_live.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\pmlist_right.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\pmlist_noneball.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\shine_grass1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\shine_grass2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\douchitown_house1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\douchitown_house2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="C:\Users\mdvv8\Desktop\tempimg\POKEMON_MENU_ITEMCHOOSE.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\shadow.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\deoxys_front.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\Vulpix_front.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\vaporeon_front.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\smoochum_front.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\pikachu_front.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\metang_front.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\grovyle_front.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\grimer_front.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\gardevoir_front.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\rayquaza_front.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\deoxys_back.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\Vulpix_back.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\vaporeon_back.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\smoochum_back.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\pikachu_back.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\metang_back.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\grovyle_back.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\grimer_back.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\gardevoir_back.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\rayquaza_back.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\POKEMON_MENU_ITEMCHOOSE.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\jump_sand1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\jump_sand2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\jump_sand3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\icon_pm_vaporeon.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\icon_pm_pikachu.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\icon_pm_metang.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\icon_pm_grovyle.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\icon_pm_grimer.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\icon_pm_gardevoir.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\icon_pm_deoxys.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\icon_pm_rayquaza.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\icon_pm_vulpix.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\icon_pm_smoochum.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bitmap16.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_confusion7.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_confusion3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_confusion4.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_confusion5.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_confusion2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_confusion6.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_confusion1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_metalclaw9.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_metalclaw10.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_metalclaw8.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_metalclaw7.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_metalclaw6.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_metalclaw3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_metalclaw4.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_metalclaw5.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_metalclaw2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_metalclaw1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_scaryface2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_scaryface3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\skill_scaryface1.bmp">
-    <Image Include="RES\weibaitown_rtsea1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_rtsea2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_rtsea2-1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_rtsea2-2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_rtsea2-3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_rtsea2-4.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_rtsea2-5.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_rtsea2-6.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_rtsea3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_rtsea4.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_rtsea5.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\weibaitown_rtsea6.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\lake_102.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\land_c.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\land_road_top.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\land_road_right.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\land_road_left.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\land_road_bottom.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\lan_road_rt.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\lan_road_rb.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\lan_road_lt.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\lan_road_lb.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\tianyuan_gym.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\tianyuan_llake4.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\tianyuan_llake3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\tianyuan_llake2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\tianyuan_llake1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\tianyuan_lthouse.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\tianyuan_nhouse.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\tianyuan_rbhouse.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\tianyuan_rtlake.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
+    <Image Include="C:\Users\mdvv8\Desktop\tempimg\POKEMON_MENU_ITEMCHOOSE.bmp" />
+    <Image Include="D:\GitPokemon\PokemonGreen\RES\BAG_PANEL.bmp" />
+    <Image Include="D:\GitPokemon\PokemonGreen\RES\BG_ITEMAMOUNT.bmp" />
+    <Image Include="D:\GitPokemon\PokemonGreen\RES\BG_YESNO.bmp" />
+    <Image Include="res\alphabet.bmp" />
+    <Image Include="RES\antidote.bmp" />
+    <Image Include="RES\atk_cursor.bmp" />
+    <Image Include="RES\backtoworld.bmp" />
+    <Image Include="RES\BAG_PANEL.bmp" />
+    <Image Include="RES\battle_background.bmp" />
+    <Image Include="RES\battle_dialog.bmp" />
+    <Image Include="RES\battle_ground.bmp" />
+    <Image Include="RES\battle_hero.bmp" />
+    <Image Include="RES\battle_option.bmp" />
+    <Image Include="RES\bg_backpack.bmp" />
+    <Image Include="RES\BG_ITEMAMOUNT.bmp" />
+    <Image Include="RES\BG_YESNO.bmp" />
+    <Image Include="RES\billboard.bmp" />
+    <Image Include="res\bitmap12.bmp" />
+    <Image Include="res\bitmap16.bmp" />
+    <Image Include="res\bitmap18.bmp" />
+    <Image Include="res\bitmap3.bmp" />
+    <Image Include="RES\bitmap4.bmp" />
+    <Image Include="res\bitmap5.bmp" />
+    <Image Include="res\bitmap6.bmp" />
+    <Image Include="res\bitmap7.bmp" />
+    <Image Include="res\bitmap8.bmp" />
+    <Image Include="RES\Black.bmp" />
+    <Image Include="RES\BLANK_PANEL.bmp" />
+    <Image Include="RES\bmp00001.bmp" />
+    <Image Include="RES\bmp00002.bmp" />
+    <Image Include="res\bmp00003.bmp" />
+    <Image Include="res\bmp00004.bmp" />
+    <Image Include="res\bmp00005.bmp" />
+    <Image Include="res\bmp00006.bmp" />
+    <Image Include="res\bmp00007.bmp" />
+    <Image Include="res\bmp00008.bmp" />
+    <Image Include="res\bmp00009.bmp" />
+    <Image Include="res\bmp00010.bmp" />
+    <Image Include="res\bmp00011.bmp" />
+    <Image Include="res\bmp00012.bmp" />
+    <Image Include="res\bmp00013.bmp" />
+    <Image Include="res\bmp00014.bmp" />
+    <Image Include="res\bmp00015.bmp" />
+    <Image Include="res\bmp00016.bmp" />
+    <Image Include="res\bmp00017.bmp" />
+    <Image Include="res\bmp00018.bmp" />
+    <Image Include="res\bmp00019.bmp" />
+    <Image Include="res\bmp00020.bmp" />
+    <Image Include="res\bmp00021.bmp" />
+    <Image Include="res\bmp00022.bmp" />
+    <Image Include="res\bmp00023.bmp" />
+    <Image Include="res\bmp00024.bmp" />
+    <Image Include="res\bmp00025.bmp" />
+    <Image Include="res\bmp00026.bmp" />
+    <Image Include="res\bmp00027.bmp" />
+    <Image Include="res\bmp00028.bmp" />
+    <Image Include="res\bmp00029.bmp" />
+    <Image Include="res\bmp00030.bmp" />
+    <Image Include="res\bmp00031.bmp" />
+    <Image Include="res\bmp00032.bmp" />
+    <Image Include="RES\BURN_ICON.bmp" />
+    <Image Include="RES\catch_ball.bmp" />
+    <Image Include="RES\catch_ball2.bmp" />
+    <Image Include="RES\catch_ball3.bmp" />
+    <Image Include="RES\deoxys_back.bmp" />
+    <Image Include="RES\deoxys_front.bmp" />
+    <Image Include="RES\DIAG.bmp" />
+    <Image Include="RES\douchitown_house1.bmp" />
+    <Image Include="RES\douchitown_house2.bmp" />
+    <Image Include="RES\enemy_bar.bmp" />
+    <Image Include="RES\enemy_skill_ember1.bmp" />
+    <Image Include="RES\enemy_skill_ember10.bmp" />
+    <Image Include="RES\enemy_skill_ember11.bmp" />
+    <Image Include="RES\enemy_skill_ember12.bmp" />
+    <Image Include="RES\enemy_skill_ember13.bmp" />
+    <Image Include="RES\enemy_skill_ember14.bmp" />
+    <Image Include="RES\enemy_skill_ember15.bmp" />
+    <Image Include="RES\enemy_skill_ember16.bmp" />
+    <Image Include="RES\enemy_skill_ember17.bmp" />
+    <Image Include="RES\enemy_skill_ember18.bmp" />
+    <Image Include="RES\enemy_skill_ember2.bmp" />
+    <Image Include="RES\enemy_skill_ember3.bmp" />
+    <Image Include="RES\enemy_skill_ember4.bmp" />
+    <Image Include="RES\enemy_skill_ember5.bmp" />
+    <Image Include="RES\enemy_skill_ember6.bmp" />
+    <Image Include="RES\enemy_skill_ember7.bmp" />
+    <Image Include="RES\enemy_skill_ember8.bmp" />
+    <Image Include="RES\enemy_skill_ember9.bmp" />
+    <Image Include="RES\expBar.bmp" />
+    <Image Include="RES\FATGUY_BACK.bmp" />
+    <Image Include="RES\FATGUY_FRONT.bmp" />
+    <Image Include="RES\FATGUY_LEFT.bmp" />
+    <Image Include="RES\FATGUY_RIGHT.bmp" />
+    <Image Include="RES\gardevoir_back.bmp" />
+    <Image Include="RES\gardevoir_front.bmp" />
+    <Image Include="RES\GIRL_FRONT.bmp" />
+    <Image Include="RES\GIVETEM_PANEL.bmp" />
+    <Image Include="RES\grass_land.bmp" />
+    <Image Include="RES\GREEN_DIAG.bmp" />
+    <Image Include="RES\green_flower.bmp" />
+    <Image Include="RES\green_flower2.bmp" />
+    <Image Include="RES\green_flower3.bmp" />
+    <Image Include="RES\green_grass.bmp" />
+    <Image Include="RES\GREEN_TREE.bmp" />
+    <Image Include="RES\grimer_back.bmp" />
+    <Image Include="RES\grimer_front.bmp" />
+    <Image Include="RES\grovyle_back.bmp" />
+    <Image Include="RES\grovyle_front.bmp" />
+    <Image Include="RES\HAVEITEM_ICON.bmp" />
+    <Image Include="RES\heal_ball1.bmp" />
+    <Image Include="RES\heal_ball10.bmp" />
+    <Image Include="RES\heal_ball11.bmp" />
+    <Image Include="RES\heal_ball12.bmp" />
+    <Image Include="RES\heal_ball2.bmp" />
+    <Image Include="RES\heal_ball3.bmp" />
+    <Image Include="RES\heal_ball4.bmp" />
+    <Image Include="RES\heal_ball5.bmp" />
+    <Image Include="RES\heal_ball6.bmp" />
+    <Image Include="RES\heal_ball7.bmp" />
+    <Image Include="RES\heal_ball8.bmp" />
+    <Image Include="RES\heal_ball9.bmp" />
+    <Image Include="RES\HERO_BACK.bmp" />
+    <Image Include="RES\HERO_BACK_ONE.bmp" />
+    <Image Include="RES\HERO_BACK_TWO.bmp" />
+    <Image Include="RES\HERO_FRONT.bmp" />
+    <Image Include="RES\HERO_FRONT_ONE.bmp" />
+    <Image Include="RES\HERO_FRONT_TWO.bmp" />
+    <Image Include="res\hero_lef.bmp" />
+    <Image Include="RES\HERO_LEFT.bmp" />
+    <Image Include="RES\HERO_LEFT_ONE.bmp" />
+    <Image Include="RES\HERO_LEFT_TWO.bmp" />
+    <Image Include="RES\HERO_RIGHT.bmp" />
+    <Image Include="RES\HERO_RIGHT_ONE.bmp" />
+    <Image Include="RES\HERO_RIGHT_TWO.bmp" />
+    <Image Include="RES\HOME.bmp" />
+    <Image Include="RES\HOME1.bmp" />
+    <Image Include="RES\HOME2.bmp" />
+    <Image Include="RES\HOME3.bmp" />
+    <Image Include="RES\HOME4.bmp" />
+    <Image Include="RES\HOME5.bmp" />
+    <Image Include="RES\HOME6.bmp" />
+    <Image Include="RES\HOME7.bmp" />
+    <Image Include="RES\HOME_LOG.bmp" />
+    <Image Include="RES\hooh_back.bmp" />
+    <Image Include="RES\hooh_front.bmp" />
+    <Image Include="RES\HOSPITAL.bmp" />
+    <Image Include="RES\hospital_inside.bmp" />
+    <Image Include="RES\hp_green.bmp" />
+    <Image Include="RES\hp_red.bmp" />
+    <Image Include="RES\hp_yellow.bmp" />
+    <Image Include="RES\icon_pm_deoxys.bmp" />
+    <Image Include="RES\icon_pm_gardevoir.bmp" />
+    <Image Include="RES\icon_pm_grimer.bmp" />
+    <Image Include="RES\icon_pm_grovyle.bmp" />
+    <Image Include="RES\icon_pm_hooh.bmp" />
+    <Image Include="RES\icon_pm_jirachi.bmp" />
+    <Image Include="RES\icon_pm_metang.bmp" />
+    <Image Include="RES\icon_pm_pikachu.bmp" />
+    <Image Include="RES\icon_pm_rayquaza.bmp" />
+    <Image Include="RES\icon_pm_smoochum.bmp" />
+    <Image Include="RES\icon_pm_treecko.bmp" />
+    <Image Include="RES\icon_pm_vaporeon.bmp" />
+    <Image Include="RES\icon_pm_vulpix.bmp" />
+    <Image Include="RES\IDB_FIGHTERGLOVE.bmp" />
+    <Image Include="RES\IDB_USEONATK_PANEL.bmp" />
+    <Image Include="RES\IDB_VULNERARY.bmp" />
+    <Image Include="RES\ITEM_ANTIDOTE.bmp" />
+    <Image Include="RES\ITEM_BURNMEDICINE.bmp" />
+    <Image Include="RES\item_cursor.bmp" />
+    <Image Include="RES\ITEM_FIGHTERGLOVE.bmp" />
+    <Image Include="RES\ITEM_POKEBALL.bmp" />
+    <Image Include="RES\ITEM_VULNERARY.bmp" />
+    <Image Include="RES\jirachi_back.bmp" />
+    <Image Include="RES\jirachi_front.bmp" />
+    <Image Include="RES\jump_land.bmp" />
+    <Image Include="RES\jump_sand1.bmp" />
+    <Image Include="RES\jump_sand2.bmp" />
+    <Image Include="RES\jump_sand3.bmp" />
+    <Image Include="RES\lake_102.bmp" />
+    <Image Include="RES\land_c.bmp" />
+    <Image Include="RES\land_road_bottom.bmp" />
+    <Image Include="RES\land_road_left.bmp" />
+    <Image Include="RES\land_road_right.bmp" />
+    <Image Include="RES\land_road_top.bmp" />
+    <Image Include="RES\lan_road_lb.bmp" />
+    <Image Include="RES\lan_road_lt.bmp" />
+    <Image Include="RES\lan_road_rb.bmp" />
+    <Image Include="RES\lan_road_rt.bmp" />
+    <Image Include="RES\LV_UP_FPANEL.bmp" />
+    <Image Include="RES\LV_UP_PANEL.bmp" />
+    <Image Include="RES\may_atk.bmp" />
+    <Image Include="RES\may_back.bmp" />
+    <Image Include="RES\may_front.bmp" />
+    <Image Include="RES\may_left.bmp" />
+    <Image Include="RES\may_right.bmp" />
+    <Image Include="RES\MenuBottom.bmp" />
+    <Image Include="RES\MenuMiddle.bmp" />
+    <Image Include="RES\MenuTop.bmp" />
+    <Image Include="RES\metang_back.bmp" />
+    <Image Include="RES\metang_front.bmp" />
+    <Image Include="RES\MOM_DOWN.bmp" />
+    <Image Include="RES\MOM_UP.bmp" />
+    <Image Include="RES\MON_LEFT.bmp" />
+    <Image Include="RES\MON_RIGHT.bmp" />
+    <Image Include="RES\my_bar.bmp" />
+    <Image Include="RES\m_green_grass.bmp" />
+    <Image Include="RES\NORMAL_HOUSE1.bmp" />
+    <Image Include="RES\OPERATION_PANEL.bmp" />
+    <Image Include="RES\pickable_object.bmp" />
+    <Image Include="RES\pikachu_back.bmp" />
+    <Image Include="RES\pikachu_front.bmp" />
+    <Image Include="RES\pmlist_deadball.bmp" />
+    <Image Include="RES\pmlist_left.bmp" />
+    <Image Include="RES\pmlist_live.bmp" />
+    <Image Include="RES\pmlist_noneball.bmp" />
+    <Image Include="RES\pmlist_right.bmp" />
+    <Image Include="RES\PM_ABILITY.bmp" />
+    <Image Include="RES\PM_SKILL_PANEL.bmp" />
+    <Image Include="RES\POKEMON_BAR.bmp" />
+    <Image Include="RES\POKEMON_BAR_FIRST_SELECT.bmp" />
+    <Image Include="RES\POKEMON_BAR_FIRST_SELECTED.bmp" />
+    <Image Include="RES\POKEMON_BAR_FIRST_UNSELECTED.bmp" />
+    <Image Include="RES\POKEMON_BAR_SELECTED.bmp" />
+    <Image Include="RES\POKEMON_MENU_ITEMCHOOSE.bmp" />
+    <Image Include="RES\rayquaza_back.bmp" />
+    <Image Include="RES\rayquaza_front.bmp" />
+    <Image Include="RES\SELECT_PANEL.bmp" />
+    <Image Include="RES\self.bmp" />
+    <Image Include="RES\shadow.bmp" />
+    <Image Include="RES\shine_grass1.bmp" />
+    <Image Include="RES\shine_grass2.bmp" />
+    <Image Include="RES\SHOP.bmp" />
+    <Image Include="RES\SHOP_BLANK_PANEL.bmp" />
+    <Image Include="RES\SHOP_DESCRIPTION_PANEL.bmp" />
+    <Image Include="RES\SHOP_IMAGE_PANEL.bmp" />
+    <Image Include="RES\SHOP_ITEMLIST_PANEL.bmp" />
+    <Image Include="RES\SHOP_MONEY_PANEL.bmp" />
+    <Image Include="RES\skill_confusion1.bmp" />
+    <Image Include="RES\skill_confusion2.bmp" />
+    <Image Include="RES\skill_confusion3.bmp" />
+    <Image Include="RES\skill_confusion4.bmp" />
+    <Image Include="RES\skill_confusion5.bmp" />
+    <Image Include="RES\skill_confusion6.bmp" />
+    <Image Include="RES\skill_confusion7.bmp" />
+    <Image Include="RES\skill_ember1.bmp" />
+    <Image Include="RES\skill_ember10.bmp" />
+    <Image Include="RES\skill_ember11.bmp" />
+    <Image Include="RES\skill_ember12.bmp" />
+    <Image Include="RES\skill_ember13.bmp" />
+    <Image Include="RES\skill_ember14.bmp" />
+    <Image Include="RES\skill_ember15.bmp" />
+    <Image Include="RES\skill_ember16.bmp" />
+    <Image Include="RES\skill_ember17.bmp" />
+    <Image Include="RES\skill_ember18.bmp" />
+    <Image Include="RES\skill_ember2.bmp" />
+    <Image Include="RES\skill_ember3.bmp" />
+    <Image Include="RES\skill_ember4.bmp" />
+    <Image Include="RES\skill_ember5.bmp" />
+    <Image Include="RES\skill_ember6.bmp" />
+    <Image Include="RES\skill_ember7.bmp" />
+    <Image Include="RES\skill_ember8.bmp" />
+    <Image Include="RES\skill_ember9.bmp" />
+    <Image Include="RES\skill_impact1.bmp" />
+    <Image Include="RES\skill_impact2.bmp" />
+    <Image Include="RES\skill_leer1.bmp" />
+    <Image Include="RES\skill_leer2.bmp" />
+    <Image Include="RES\skill_leer3.bmp" />
+    <Image Include="RES\skill_leer4.bmp" />
+    <Image Include="RES\skill_leer5.bmp" />
+    <Image Include="RES\skill_list.bmp" />
+    <Image Include="RES\skill_metalclaw1.bmp" />
+    <Image Include="RES\skill_metalclaw10.bmp" />
+    <Image Include="RES\skill_metalclaw2.bmp" />
+    <Image Include="RES\skill_metalclaw3.bmp" />
+    <Image Include="RES\skill_metalclaw4.bmp" />
+    <Image Include="RES\skill_metalclaw5.bmp" />
+    <Image Include="RES\skill_metalclaw6.bmp" />
+    <Image Include="RES\skill_metalclaw7.bmp" />
+    <Image Include="RES\skill_metalclaw8.bmp" />
+    <Image Include="RES\skill_metalclaw9.bmp" />
+    <Image Include="RES\skill_option.bmp" />
+    <Image Include="RES\skill_scaryface1.bmp" />
+    <Image Include="RES\skill_scaryface2.bmp" />
+    <Image Include="RES\skill_scaryface3.bmp" />
+    <Image Include="RES\SKILL_SELECT.bmp" />
+    <Image Include="RES\skill_sidebar.bmp" />
+    <Image Include="RES\smoochum_back.bmp" />
+    <Image Include="RES\smoochum_front.bmp" />
+    <Image Include="RES\STORE.bmp" />
+    <Image Include="RES\tianyuan_gym.bmp" />
+    <Image Include="RES\tianyuan_llake1.bmp" />
+    <Image Include="RES\tianyuan_llake2.bmp" />
+    <Image Include="RES\tianyuan_llake3.bmp" />
+    <Image Include="RES\tianyuan_llake4.bmp" />
+    <Image Include="RES\tianyuan_lthouse.bmp" />
+    <Image Include="RES\tianyuan_nhouse.bmp" />
+    <Image Include="RES\tianyuan_rbhouse.bmp" />
+    <Image Include="RES\tianyuan_rtlake.bmp" />
+    <Image Include="RES\TRADEMODE_SELECT_PANEL.bmp" />
+    <Image Include="RES\treecko_back.bmp" />
+    <Image Include="RES\treecko_front.bmp" />
+    <Image Include="RES\USEITEM_PANEL.bmp" />
+    <Image Include="RES\vaporeon_back.bmp" />
+    <Image Include="RES\vaporeon_front.bmp" />
+    <Image Include="RES\Vulpix_back.bmp" />
+    <Image Include="RES\Vulpix_front.bmp" />
+    <Image Include="RES\WeiBaiTown.bmp" />
+    <Image Include="RES\weibaitown_house1.bmp" />
+    <Image Include="RES\weibaitown_house1_1f.bmp" />
+    <Image Include="RES\weibaitown_house1_2f.bmp" />
+    <Image Include="RES\weibaitown_house2.bmp" />
+    <Image Include="RES\weibaitown_house2_1f.bmp" />
+    <Image Include="RES\weibaitown_house2_2f.bmp" />
+    <Image Include="RES\weibaitown_pro_house.bmp" />
+    <Image Include="RES\weibaitown_pro_house_inside.bmp" />
+    <Image Include="RES\weibaitown_rtsea1.bmp" />
+    <Image Include="RES\weibaitown_rtsea2-1.bmp" />
+    <Image Include="RES\weibaitown_rtsea2-2.bmp" />
+    <Image Include="RES\weibaitown_rtsea2-3.bmp" />
+    <Image Include="RES\weibaitown_rtsea2-4.bmp" />
+    <Image Include="RES\weibaitown_rtsea2-5.bmp" />
+    <Image Include="RES\weibaitown_rtsea2-6.bmp" />
+    <Image Include="RES\weibaitown_rtsea2.bmp" />
+    <Image Include="RES\weibaitown_rtsea3.bmp" />
+    <Image Include="RES\weibaitown_rtsea4.bmp" />
+    <Image Include="RES\weibaitown_rtsea5.bmp" />
+    <Image Include="RES\weibaitown_rtsea6.bmp" />
+    <Image Include="RES\tianyuan_lthouse_inside.bmp" />
+    <Image Include="RES\tianyuan_nhouse_inside.bmp" />
+    <Image Include="RES\tianyuan_rbhouse_inside.bmp" />
+    <Image Include="RES\potted.bmp" />
+    <Image Include="RES\gym_wall4.bmp" />
+    <Image Include="RES\gym_wall3.bmp" />
+    <Image Include="RES\gym_wall2.bmp" />
+    <Image Include="RES\gym_wall1.bmp" />
+    <Image Include="RES\gym.bmp" />
+    <Image Include="RES\gym_statu.bmp" />
+    <Image Include="RES\sister_down.bmp" />
+    <Image Include="RES\sister_up.bmp" />
+    <Image Include="RES\sister_left.bmp" />
+    <Image Include="RES\sister_right.bmp" />
+    <Image Include="RES\boy_right.bmp" />
+    <Image Include="RES\boy_up.bmp" />
+    <Image Include="RES\boy_left.bmp" />
+    <Image Include="RES\boy_down.bmp" />
+    <Image Include="RES\boy_atk.bmp" />
+    <Image Include="RES\yamao_atk.bmp" />
+    <Image Include="RES\yamao_left.bmp" />
+    <Image Include="RES\yamao_down.bmp" />
+    <Image Include="RES\yamao_right.bmp" />
+    <Image Include="RES\yamao_up.bmp" />
+    <Image Include="RES\master_right.bmp" />
+    <Image Include="RES\master_down.bmp" />
+    <Image Include="RES\master_left.bmp" />
+    <Image Include="RES\master_atk.bmp" />
+    <Image Include="RES\home_cheat.bmp" />
+    <Image Include="RES\home_about.bmp" />
+    <Image Include="RES\operation_page.bmp" />
+    <Image Include="RES\about_page.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="RES\weibaitown_scene.txt" />
+    <None Include="Res\ball.bmp" />
+    <None Include="RES\bmp0.bmp" />
+    <None Include="RES\bmp1.bmp" />
+    <None Include="RES\bmp10.bmp" />
+    <None Include="RES\bmp2.bmp" />
+    <None Include="RES\bmp3.bmp" />
+    <None Include="RES\bmp4.bmp" />
+    <None Include="RES\bmp5.bmp" />
+    <None Include="RES\bmp6.bmp" />
+    <None Include="RES\bmp7.bmp" />
+    <None Include="RES\bmp8.bmp" />
+    <None Include="RES\bmp9.bmp" />
+    <None Include="RES\center.bmp" />
+    <None Include="RES\continue.bmp" />
+    <None Include="Res\corner.bmp" />
+    <None Include="RES\eraser1.bmp" />
+    <None Include="RES\eraser2.bmp" />
+    <None Include="RES\eraser3.bmp" />
+    <None Include="res\game.ico" />
+    <None Include="res\game.rc2" />
+    <None Include="RES\gamecurs.cur" />
+    <None Include="res\gameDoc.ico" />
+    <None Include="RES\help.bmp" />
+    <None Include="RES\loading.bmp" />
+    <None Include="RES\ntutcsie.bmp" />
+    <None Include="res\Toolbar.bmp" />
+    <None Include="Source\game.aps" />
+  </ItemGroup>
+  <ItemGroup>
     <Text Include="RES\weibaitown.txt" />
     <Text Include="RES\weibaitown_house2_2f.txt" />
+    <Text Include="RES\weibaitown_scene.txt" />
   </ItemGroup>
 </Project>

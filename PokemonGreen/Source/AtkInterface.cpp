@@ -15,9 +15,26 @@
 
 namespace game_framework {
 	AtkInterface::AtkInterface()
-		: ActionObject(), self(nullptr), enemy(nullptr), textCount(0), lvupCount(0)
+		: ActionObject(), self(nullptr), enemy(nullptr), pokeball(nullptr), textCount(0), lvupCount(0)
 	{
 		/* empty body */
+	}
+
+	AtkInterface::~AtkInterface()
+	{
+		self = nullptr;
+		trainer = nullptr;
+		enemy = nullptr;
+		myPm = nullptr;
+		pmMenu = nullptr;
+		bag = nullptr;
+		battleTrainer = nullptr;
+		for (auto i : joinAtkPm)
+			i = nullptr;
+		for (auto i : lvupPm)
+			i = nullptr;
+		if (pokeball != nullptr)
+			delete pokeball;
 	}
 
 	void AtkInterface::OnShow()
@@ -530,7 +547,7 @@ namespace game_framework {
 				if (trainer != nullptr && textCount == 0 && trainerList.Left() < PMLIST_LEFT_LEFT)
 					trainerList.SetTopLeft(trainerList.Left() + V, trainerList.Top());
 				if (textCount == 0) 
-					if (dynamic_cast<ItemPokeBall*>(pokeball)->IsCatch()) {
+					if (pokeball != nullptr && dynamic_cast<ItemPokeBall*>(pokeball)->IsCatch()) {
 						outcomeText.SetText("capture " + enemy->GetName());
 					}
 					else {
@@ -936,9 +953,12 @@ namespace game_framework {
 			states.pop();
 		if (trainer != nullptr)
 			trainer->SetIsEvent(true);
+		else
+			delete enemy;
 		trainer = nullptr;
 		isWork = false;
 		isAnime = false;
+		pokeball = nullptr;
 		textCount = 0;
 		lvupCount = 0;
 		joinAtkPm.clear();

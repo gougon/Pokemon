@@ -371,6 +371,39 @@
 #define IDB_SKILL_SCARYFACE2            497
 #define IDB_SKILL_SCARYFACE3            498
 #define IDB_SKILL_SCARYFACE1            499
+#define IDB_TIANYUAN_LTHOUSE_INSIDE     500
+#define IDB_TIANYUAN_NHOUSE_INSIDE      501
+#define IDB_TIANYUAN_RBHOUSE_INSIDE     502
+#define IDB_POTTED                      503
+#define IDB_GYM_WALL4                   504
+#define IDB_GYM_WALL3                   505
+#define IDB_GYM_WALL2                   506
+#define IDB_GYM_WALL1                   507
+#define IDB_GYM                         508
+#define IDB_GYM_STATU                   509
+#define IDB_SISTER_DOWN                 510
+#define IDB_SISTER_UP                   511
+#define IDB_SISTER_LEFT                 512
+#define IDB_SISTER_RIGHT                513
+#define IDB_YOUNGSTER_DOWN              517
+#define IDB_YOUNGSTER_RIGHT             518
+#define IDB_YOUNGSTER_UP                519
+#define IDB_YOUNGSTER_LEFT              520
+#define IDB_YOUNGSTER_ATK               523
+#define IDB_YAMAO_ATK                   524
+#define IDB_YAMAO_LEFT                  525
+#define IDB_YAMAO_DOWN                  526
+#define IDB_YAMAO_RIGHT                 527
+#define IDB_YAMAO_UP                    528
+#define IDB_MASTER_RIGHT                529
+#define IDB_MASTER_DOWN                 530
+#define IDB_MASTER_LEFT                 531
+#define IDB_MASTER_ATK                  532
+#define HOME_CHEAT                      533
+#define HOME_ABOUT                      534
+#define IDB_OPERATION_PAGE              535
+#define IDB_BITMAP20                    536
+#define IDB_ABOUT_PAGE                  536
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -383,11 +416,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-<<<<<<< HEAD
-#define _APS_NEXT_RESOURCE_VALUE        465
-=======
-#define _APS_NEXT_RESOURCE_VALUE        480
->>>>>>> db1d9eac3cb1efe49c7dc94304b49103b472f9c8
+#define _APS_NEXT_RESOURCE_VALUE        537
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

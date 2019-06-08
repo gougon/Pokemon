@@ -30,7 +30,7 @@ class WeiBaiHouse1_1F_Map : public CMap
 		int dialogState;
         CDialog dialogBox;
         CObject book;
-        vector<int> hitImg = { 0, 2 };
+        int hitImg[2] = { 0, 2 };
 };
 }
 

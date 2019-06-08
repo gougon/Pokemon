@@ -41,10 +41,11 @@ namespace game_framework {
 
 	// protected
 
-	void Citizen::StopTalk()
+	void Citizen::StopTalk(CHero &hero)
 	{
 		eventDialog.Reset();
 		isTalk = false;
+		hero.SetCanMove(true);
 	}
 
 	bool Citizen::IsBeTalked(CHero &hero)

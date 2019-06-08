@@ -17,7 +17,7 @@ namespace game_framework {
 
 	PmOprtView::~PmOprtView()
 	{
-		delete pm;
+		pm = nullptr;
 		for (auto i : skills) {
 			delete i;
 		}

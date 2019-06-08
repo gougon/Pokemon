@@ -63,10 +63,10 @@ namespace game_framework {
 		int dialogState;
 		CFatguy fatguy;
         CDialog dialogBox;
-		CAnimation flower, rtsea1, rtsea2;
+		// CAnimation flower, rtsea1, rtsea2;
         CPickableObject pickable_Antidote;
-        vector<int> hitImg = { 0, 3, 6, 15, 16, 17, 27, 28, 30, 31, 32, 33, 34, 35 };
-        vector<int> warZone = { 10 };
-		vector<int> jumpLand = { 11 };
+        int hitImg[14] = { 0, 3, 6, 15, 16, 17, 27, 28, 30, 31, 32, 33, 34, 35 };
+        int warZone = 10;
+		int jumpLand = 11;
 	};
 }

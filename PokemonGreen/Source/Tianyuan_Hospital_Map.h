@@ -26,6 +26,6 @@ namespace game_framework
 		Nurse nurse;
 		CDialog dialogBox;
 		CObject book;
-		vector<int> hitImg = { 0, 2, 3 };
+		int hitImg[3] = { 0, 2, 3 };
 	};
 }

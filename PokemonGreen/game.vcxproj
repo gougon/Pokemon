@@ -272,6 +272,7 @@
     <ClCompile Include="Source\CEvent.cpp" />
     <ClCompile Include="Source\CFatguy.cpp" />
     <ClCompile Include="Source\Characters.cpp" />
+    <ClCompile Include="Source\CitizenSister.cpp" />
     <ClCompile Include="Source\DouChiHouse1_Map.cpp" />
     <ClCompile Include="Source\DouChiHouse2_Map.cpp" />
     <ClCompile Include="Source\NpcFactory.cpp" />
@@ -285,7 +286,11 @@
     <ClCompile Include="Source\PmSmoochum.cpp" />
     <ClCompile Include="Source\PmVaporeon.cpp" />
     <ClCompile Include="Source\PmVulpix.cpp" />
+    <ClCompile Include="Source\Tianyuan_Gym_Map.cpp" />
     <ClCompile Include="Source\Tianyuan_Hospital_Map.cpp" />
+    <ClCompile Include="Source\Tianyuan_Lthouse_Map.cpp" />
+    <ClCompile Include="Source\Tianyuan_Nhouse_Map.cpp" />
+    <ClCompile Include="Source\Tianyuan_Rbhouse_Map.cpp" />
     <ClCompile Include="Source\Tianyuan_Shop_Map.cpp" />
     <ClCompile Include="Source\SkillAuroraBeam.cpp" />
     <ClCompile Include="Source\SkillBubbleBeam.cpp" />
@@ -321,6 +326,9 @@
     <ClCompile Include="Source\SkillWater.cpp" />
     <ClCompile Include="Source\SkillWaterGun.cpp" />
     <ClCompile Include="Source\SkillWillOwisp.cpp" />
+    <ClCompile Include="Source\TrainerGymMaster.cpp" />
+    <ClCompile Include="Source\TrainerGymYamao.cpp" />
+    <ClCompile Include="Source\TrainerGymYoungster.cpp" />
     <ClCompile Include="Source\TrainerMay.cpp" />
     <ClCompile Include="Source\CHero.cpp" />
     <ClCompile Include="Source\CItem.cpp" />
@@ -410,6 +418,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="Source\Trainer.cpp" />
+    <ClCompile Include="Source\TrainerYoungster.cpp" />
     <ClCompile Include="Source\WeiBaiHouse1_1F_Map.cpp" />
     <ClCompile Include="Source\WeiBaiHouse1_2F_Map.cpp" />
     <ClCompile Include="Source\WeiBaiHouse2_1F_Map.cpp" />
@@ -429,6 +438,7 @@
     <ClInclude Include="Source\CEvent.h" />
     <ClInclude Include="Source\CFatguy.h" />
     <ClInclude Include="Source\Characters.h" />
+    <ClInclude Include="Source\CitizenSister.h" />
     <ClInclude Include="Source\DouChiHouse1_Map.h" />
     <ClInclude Include="Source\DouChiHouse2_Map.h" />
     <ClInclude Include="Source\NpcFactory.h" />
@@ -442,7 +452,11 @@
     <ClInclude Include="Source\PmSmoochum.h" />
     <ClInclude Include="Source\PmVaporeon.h" />
     <ClInclude Include="Source\PmVulpix.h" />
+    <ClInclude Include="Source\Tianyuan_Gym_Map.h" />
     <ClInclude Include="Source\Tianyuan_Hospital_Map.h" />
+    <ClInclude Include="Source\Tianyuan_Lthouse_Map.h" />
+    <ClInclude Include="Source\Tianyuan_Nhouse_Map.h" />
+    <ClInclude Include="Source\Tianyuan_Rbhouse_Map.h" />
     <ClInclude Include="Source\Tianyuan_Shop_Map.h" />
     <ClInclude Include="Source\SkillAuroraBeam.h" />
     <ClInclude Include="Source\SkillBubbleBeam.h" />
@@ -478,6 +492,9 @@
     <ClInclude Include="Source\SkillWater.h" />
     <ClInclude Include="Source\SkillWaterGun.h" />
     <ClInclude Include="Source\SkillWillOwisp.h" />
+    <ClInclude Include="Source\TrainerGymMaster.h" />
+    <ClInclude Include="Source\TrainerGymYamao.h" />
+    <ClInclude Include="Source\TrainerGymYoungster.h" />
     <ClInclude Include="Source\TrainerMay.h" />
     <ClInclude Include="Source\CHero.h" />
     <ClInclude Include="Source\CItem.h" />
@@ -535,6 +552,7 @@
     <ClInclude Include="Source\gamelib.h" />
     <ClInclude Include="Source\mygame.h" />
     <ClInclude Include="Source\Trainer.h" />
+    <ClInclude Include="Source\TrainerYoungster.h" />
     <ClInclude Include="Source\WeiBaiHouse1_1F_Map.h" />
     <ClInclude Include="Source\WeiBaiHouse1_2F_Map.h" />
     <ClInclude Include="Source\WeiBaiHouse2_1F_Map.h" />
@@ -556,6 +574,7 @@
     <Image Include="D:\GitPokemon\PokemonGreen\RES\BAG_PANEL.bmp" />
     <Image Include="D:\GitPokemon\PokemonGreen\RES\BG_ITEMAMOUNT.bmp" />
     <Image Include="D:\GitPokemon\PokemonGreen\RES\BG_YESNO.bmp" />
+    <Image Include="RES\about_page.bmp" />
     <Image Include="res\alphabet.bmp" />
     <Image Include="RES\antidote.bmp" />
     <Image Include="RES\atk_cursor.bmp" />
@@ -613,6 +632,11 @@
     <Image Include="res\bmp00030.bmp" />
     <Image Include="res\bmp00031.bmp" />
     <Image Include="res\bmp00032.bmp" />
+    <Image Include="RES\boy_atk.bmp" />
+    <Image Include="RES\boy_down.bmp" />
+    <Image Include="RES\boy_left.bmp" />
+    <Image Include="RES\boy_right.bmp" />
+    <Image Include="RES\boy_up.bmp" />
     <Image Include="RES\BURN_ICON.bmp" />
     <Image Include="RES\catch_ball.bmp" />
     <Image Include="RES\catch_ball2.bmp" />
@@ -661,6 +685,12 @@
     <Image Include="RES\grimer_front.bmp" />
     <Image Include="RES\grovyle_back.bmp" />
     <Image Include="RES\grovyle_front.bmp" />
+    <Image Include="RES\gym.bmp" />
+    <Image Include="RES\gym_statu.bmp" />
+    <Image Include="RES\gym_wall1.bmp" />
+    <Image Include="RES\gym_wall2.bmp" />
+    <Image Include="RES\gym_wall3.bmp" />
+    <Image Include="RES\gym_wall4.bmp" />
     <Image Include="RES\HAVEITEM_ICON.bmp" />
     <Image Include="RES\heal_ball1.bmp" />
     <Image Include="RES\heal_ball10.bmp" />
@@ -695,6 +725,8 @@
     <Image Include="RES\HOME5.bmp" />
     <Image Include="RES\HOME6.bmp" />
     <Image Include="RES\HOME7.bmp" />
+    <Image Include="RES\home_about.bmp" />
+    <Image Include="RES\home_cheat.bmp" />
     <Image Include="RES\HOME_LOG.bmp" />
     <Image Include="RES\hooh_back.bmp" />
     <Image Include="RES\hooh_front.bmp" />
@@ -743,6 +775,10 @@
     <Image Include="RES\lan_road_rt.bmp" />
     <Image Include="RES\LV_UP_FPANEL.bmp" />
     <Image Include="RES\LV_UP_PANEL.bmp" />
+    <Image Include="RES\master_atk.bmp" />
+    <Image Include="RES\master_down.bmp" />
+    <Image Include="RES\master_left.bmp" />
+    <Image Include="RES\master_right.bmp" />
     <Image Include="RES\may_atk.bmp" />
     <Image Include="RES\may_back.bmp" />
     <Image Include="RES\may_front.bmp" />
@@ -760,6 +796,7 @@
     <Image Include="RES\my_bar.bmp" />
     <Image Include="RES\m_green_grass.bmp" />
     <Image Include="RES\NORMAL_HOUSE1.bmp" />
+    <Image Include="RES\operation_page.bmp" />
     <Image Include="RES\OPERATION_PANEL.bmp" />
     <Image Include="RES\pickable_object.bmp" />
     <Image Include="RES\pikachu_back.bmp" />
@@ -777,6 +814,7 @@
     <Image Include="RES\POKEMON_BAR_FIRST_UNSELECTED.bmp" />
     <Image Include="RES\POKEMON_BAR_SELECTED.bmp" />
     <Image Include="RES\POKEMON_MENU_ITEMCHOOSE.bmp" />
+    <Image Include="RES\potted.bmp" />
     <Image Include="RES\rayquaza_back.bmp" />
     <Image Include="RES\rayquaza_front.bmp" />
     <Image Include="RES\SELECT_PANEL.bmp" />
@@ -790,6 +828,10 @@
     <Image Include="RES\SHOP_IMAGE_PANEL.bmp" />
     <Image Include="RES\SHOP_ITEMLIST_PANEL.bmp" />
     <Image Include="RES\SHOP_MONEY_PANEL.bmp" />
+    <Image Include="RES\sister_down.bmp" />
+    <Image Include="RES\sister_left.bmp" />
+    <Image Include="RES\sister_right.bmp" />
+    <Image Include="RES\sister_up.bmp" />
     <Image Include="RES\skill_confusion1.bmp" />
     <Image Include="RES\skill_confusion2.bmp" />
     <Image Include="RES\skill_confusion3.bmp" />
@@ -848,8 +890,11 @@
     <Image Include="RES\tianyuan_llake3.bmp" />
     <Image Include="RES\tianyuan_llake4.bmp" />
     <Image Include="RES\tianyuan_lthouse.bmp" />
+    <Image Include="RES\tianyuan_lthouse_inside.bmp" />
     <Image Include="RES\tianyuan_nhouse.bmp" />
+    <Image Include="RES\tianyuan_nhouse_inside.bmp" />
     <Image Include="RES\tianyuan_rbhouse.bmp" />
+    <Image Include="RES\tianyuan_rbhouse_inside.bmp" />
     <Image Include="RES\tianyuan_rtlake.bmp" />
     <Image Include="RES\TRADEMODE_SELECT_PANEL.bmp" />
     <Image Include="RES\treecko_back.bmp" />
@@ -880,6 +925,11 @@
     <Image Include="RES\weibaitown_rtsea4.bmp" />
     <Image Include="RES\weibaitown_rtsea5.bmp" />
     <Image Include="RES\weibaitown_rtsea6.bmp" />
+    <Image Include="RES\yamao_atk.bmp" />
+    <Image Include="RES\yamao_down.bmp" />
+    <Image Include="RES\yamao_left.bmp" />
+    <Image Include="RES\yamao_right.bmp" />
+    <Image Include="RES\yamao_up.bmp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="RES\weibaitown.txt" />

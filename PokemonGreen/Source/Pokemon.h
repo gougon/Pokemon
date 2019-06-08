@@ -10,7 +10,7 @@
 
 using namespace std;
 namespace game_framework {
-	constexpr auto ALL_PM_NUM = 3;
+	constexpr auto ALL_PM_NUM = 11;
 	constexpr auto V = 32;
 	
 	enum PmType {

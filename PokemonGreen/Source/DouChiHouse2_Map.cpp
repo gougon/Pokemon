@@ -71,9 +71,9 @@ namespace game_framework {
 		x /= SM;
 		y /= SM;
 
-		for (auto i : hitImg)
+		for (int i = 0; i < 3; ++i)
 		{
-			if (map[y][x] == i)
+			if (map[y][x] == hitImg[i])
 				return true;
 		}
 

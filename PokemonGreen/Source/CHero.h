@@ -15,6 +15,10 @@ class Characters;
 constexpr int HERO_X = 300;
 constexpr int HERO_Y = 220;
 
+enum Event {
+	winMay, winYoungster, winYamao, winMaster
+};
+
 const int STEP_SIZE = 5;
 class CHero
 {
@@ -45,7 +49,10 @@ class CHero
         void SetMovingRight(bool flag); // 設定是否正在往右移動
         void SetMovingUp(bool flag);	// 設定是否正在往上移動
         void SetDirection(int flag);    // 設定目前朝向哪裡
+		void SetGameEvent(int gameEvent, bool flag);
+		bool GetGameEvent(int gameEvent);
         int GetDirection();
+		void MoveOneBlock(int direction);
 		void ReceiveData(CMap* m, ActionObject* i);
 		void GetItem(int itemID, int amount);
 		int* GetMoney();
@@ -90,8 +97,10 @@ class CHero
 		int speed;
         bool inBag;
         bool canMove;
+		bool isMoveOneBlock;
         int count, jumpCount;
         int atkProb;		//遇怪機率
+		bool gameEvent[4];
         vector<Pokemon*> pokemons;
     private:
         CMap* gameMap;

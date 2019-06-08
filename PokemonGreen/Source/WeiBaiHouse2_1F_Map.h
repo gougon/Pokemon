@@ -20,7 +20,7 @@ class WeiBaiHouse2_1F_Map : public CMap
         virtual bool IsCollision(int x, int y, CHero &hero);
         virtual CMap* ChangeMap(int x, int y, CHero* hero);
     private:
-        vector<int> hitImg = { 0, 2 };
+        int hitImg[2] = { 0, 2 };
 };
 }
 

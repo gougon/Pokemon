@@ -7,7 +7,13 @@
 using namespace std;
 namespace game_framework {
 	enum npcName {
-		trainerMay, citizenMom
+		trainerMay, 
+		trainerYoungster,
+		trainerGymYoungster, 
+		trainerGymYamao, 
+		trainerGymMaster, 
+		citizenMom, 
+		citizenSister
 	};
 
 	class NpcFactory {

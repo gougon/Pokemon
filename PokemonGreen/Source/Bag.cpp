@@ -15,6 +15,13 @@ Bag::Bag() :
 	yesnoChooser(false), successReceive(false), isSelectball(false)
 {
 }
+
+Bag::~Bag()
+{
+	for (auto i : items)
+		delete i;
+}
+
 void Bag::Init()
 {
     for (int i = 0; i < 100; i++)

@@ -21,6 +21,6 @@ class Douchi_Shop_Map : public CMap
     private:
 		Clerk clerk;
         bool inEvent;
-        vector<int> hitImg = { 0, 2 };
+        int hitImg[2] = { 0, 2 };
 };
 }
