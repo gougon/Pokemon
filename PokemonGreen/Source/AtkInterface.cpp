@@ -530,12 +530,15 @@ namespace game_framework {
 				if (trainer != nullptr && textCount == 0 && trainerList.Left() < PMLIST_LEFT_LEFT)
 					trainerList.SetTopLeft(trainerList.Left() + V, trainerList.Top());
 				if (textCount == 0) 
-					if (dynamic_cast<ItemPokeBall*>(pokeball)->IsCatch()) {
+					outcomeText.SetText(enemy->GetName() + " was defeated");
+					/*
+					if (pokeball != nullptr && dynamic_cast<ItemPokeBall*>(pokeball)->IsCatch()) {
 						outcomeText.SetText("capture " + enemy->GetName());
 					}
 					else {
 						outcomeText.SetText(enemy->GetName() + " was defeated");
 					}
+					*/
 				else if (textCount <= (int)joinAtkPm.size()) {
 					outcomeText.SetText(FindSetFromOrder(joinAtkPm, textCount - 1)->GetName() + " get " +
 						to_string(GetAddExp(enemy) / joinAtkPm.size()) + " exp");
@@ -944,6 +947,7 @@ namespace game_framework {
 		joinAtkPm.clear();
 		lvupPm.clear();
 		skillText.clear();
+		pokeball = nullptr;
 		CAudio::Instance()->Stop(AUDIO_BATTLE_START);
 		CAudio::Instance()->Stop(AUDIO_BATTLE_PROCESS);
 		CAudio::Instance()->Stop(AUDIO_BATTLE_END);

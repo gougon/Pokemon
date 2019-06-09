@@ -27,18 +27,31 @@ namespace game_framework {
 		hitRate = 1.0f;
 
 		animeCount = 0;
-		//add anime
+		atkAnime.AddBitmap(IDB_SKILL_LEAFSTORM1, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_LEAFSTORM2, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_LEAFSTORM3, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_LEAFSTORM4, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_LEAFSTORM5, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_LEAFSTORM6, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_LEAFSTORM7, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_LEAFSTORM8, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_LEAFSTORM9, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_LEAFSTORM10, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_LEAFSTORM11, RGB(255, 0, 0));
 		atkAnime.SetDelayCount(2);
-		//add enemy anime
+		atkEnemyAnime.AddBitmap(IDB_SKILL_LEAFSTORM1, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_LEAFSTORM2, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_LEAFSTORM3, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_LEAFSTORM4, RGB(255, 0, 0));
 		atkEnemyAnime.SetDelayCount(2);
 
 		switch (pmstyle)
 		{
 		case my:
-			atkAnime.SetTopLeft(205, 195);
+			atkAnime.SetTopLeft(140, 80);
 			break;
 		case enemy:
-			atkEnemyAnime.SetTopLeft(405, 120);
+			atkAnime.SetTopLeft(420, 240);
 			break;
 		default:
 			ASSERT(0);
@@ -53,7 +66,7 @@ namespace game_framework {
 			float realHitRate = hitRate * self->GetHitRate() / enemy->GetEvasionRate();
 			int rnd = rand() % 100 + 1;
 			if ((int)(realHitRate * 100) > rnd) { // ©R¤¤
-				CAudio::Instance()->Play(AUDIO_EMBER);
+				CAudio::Instance()->Play(AUDIO_LEAFSTORM);
 				isSuccess = true;
 				int enehp = enemy->GetRemainHP();
 				enehp = (enehp - Damage(self, enemy) < 0) ? 0 : enehp - Damage(self, enemy);

@@ -27,18 +27,30 @@ namespace game_framework {
 		hitRate = 1.0f;
 
 		animeCount = 0;
-		//add anime
+		atkAnime.AddBitmap(IDB_SKILL_NIGHTSHADE1, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_NIGHTSHADE2, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_NIGHTSHADE3, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_NIGHTSHADE4, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_NIGHTSHADE5, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_NIGHTSHADE6, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_NIGHTSHADE7, RGB(255, 0, 0));
 		atkAnime.SetDelayCount(2);
-		//add enemy anime
+		atkEnemyAnime.AddBitmap(IDB_SKILL_NIGHTSHADE1, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_NIGHTSHADE2, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_NIGHTSHADE3, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_NIGHTSHADE4, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_NIGHTSHADE5, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_NIGHTSHADE6, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_NIGHTSHADE7, RGB(255, 0, 0));
 		atkEnemyAnime.SetDelayCount(2);
 
 		switch (pmstyle)
 		{
 		case my:
-			atkAnime.SetTopLeft(205, 195);
+			atkAnime.SetTopLeft(410, 25);
 			break;
 		case enemy:
-			atkEnemyAnime.SetTopLeft(405, 120);
+			atkEnemyAnime.SetTopLeft(110, 205);
 			break;
 		default:
 			ASSERT(0);
@@ -53,7 +65,7 @@ namespace game_framework {
 			float realHitRate = hitRate * self->GetHitRate() / enemy->GetEvasionRate();
 			int rnd = rand() % 100 + 1;
 			if ((int)(realHitRate * 100) > rnd) { // ©R¤¤
-				CAudio::Instance()->Play(AUDIO_EMBER);
+				CAudio::Instance()->Play(AUDIO_NIGHTSHADE);
 				isSuccess = true;
 				int enehp = enemy->GetRemainHP();
 				enehp -= self->GetLevel();

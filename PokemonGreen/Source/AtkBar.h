@@ -63,6 +63,6 @@ namespace game_framework {
 		barType type;
 		CText nameText, lvText, remainHpText, allHpText;
 		CMovingBitmap myBar, enemyBar, greenHP, yellowHP, redHP, *targetHpBar, expBar;
-		CMovingBitmap burnIcon, *statuIcon;
+		CMovingBitmap burnIcon, poisonIcon, freezeIcon, paralysisIcon, *statuIcon;
 	};
 }

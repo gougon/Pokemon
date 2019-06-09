@@ -28,18 +28,46 @@ namespace game_framework {
 		poisonRate = 0.5f;
 
 		animeCount = 0;
-		//add anime
+		atkAnime.AddBitmap(IDB_SKILL_SLUDGE1, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_SLUDGE2, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_SLUDGE3, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_SLUDGE4, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_SLUDGE5, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_SLUDGE6, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_SLUDGE7, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_SLUDGE8, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_SLUDGE9, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_SLUDGE10, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_SLUDGE11, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_SLUDGE12, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_SLUDGE13, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_SLUDGE14, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_SLUDGE15, RGB(255, 0, 0));
 		atkAnime.SetDelayCount(2);
-		//add enemy anime
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_SLUDGE1, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_SLUDGE2, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_SLUDGE3, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_SLUDGE4, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_SLUDGE5, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_SLUDGE6, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_SLUDGE7, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_SLUDGE8, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_SLUDGE9, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_SLUDGE10, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_SLUDGE11, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_SLUDGE12, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_SLUDGE13, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_SLUDGE14, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_SLUDGE15, RGB(255, 0, 0));
 		atkEnemyAnime.SetDelayCount(2);
 
 		switch (pmstyle)
 		{
 		case my:
-			atkAnime.SetTopLeft(205, 195);
+			atkAnime.SetTopLeft(145, 85);
 			break;
 		case enemy:
-			atkEnemyAnime.SetTopLeft(405, 120);
+			atkEnemyAnime.SetTopLeft(145, 85);
 			break;
 		default:
 			ASSERT(0);
@@ -54,7 +82,7 @@ namespace game_framework {
 			float realHitRate = hitRate * self->GetHitRate() / enemy->GetEvasionRate();
 			int rnd = rand() % 100 + 1;
 			if ((int)(realHitRate * 100) > rnd) { // ©R¤¤
-				CAudio::Instance()->Play(AUDIO_EMBER);
+				CAudio::Instance()->Play(AUDIO_SLUDGE);
 				isSuccess = true;
 				int enehp = enemy->GetRemainHP();
 				enehp = (enehp - Damage(self, enemy) < 0) ? 0 : enehp - Damage(self, enemy);
@@ -65,7 +93,7 @@ namespace game_framework {
 						enemy->GetStatus()->SetTopLeft(140, 180);
 					else
 						enemy->GetStatus()->SetTopLeft(250, 120);
-					return enemy->GetName() + "is in poison";
+					return enemy->GetName() + " is cover by sludeg";
 				}
 				return EffectText(enemy);
 			}

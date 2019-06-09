@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// ¤¤¤å (ÁcÅé¡A¥xÆW) resources
+// ï¿½ï¿½ï¿½ï¿½ (ï¿½cï¿½ï¿½Aï¿½xï¿½W) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
@@ -718,6 +718,592 @@ IDB_TIANYUAN_RBHOUSE    BITMAP                  "..\\RES\\tianyuan_rbhouse.bmp"
 
 IDB_TIANYUAN_RTLAKE     BITMAP                  "..\\RES\\tianyuan_rtlake.bmp"
 
+IDB_SKILL_LICK3         BITMAP                  "..\\RES\\skill_lick3.bmp"
+
+IDB_SKILL_LICK4         BITMAP                  "..\\RES\\skill_lick4.bmp"
+
+IDB_SKILL_LICK2         BITMAP                  "..\\RES\\skill_lick2.bmp"
+
+IDB_SKILL_LICK1         BITMAP                  "..\\RES\\skill_lick1.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW21 BITMAP             "..\\RES\\enemy_skill_powdersnow21.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW18 BITMAP             "..\\RES\\enemy_skill_powdersnow18.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW19 BITMAP             "..\\RES\\enemy_skill_powdersnow19.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW20 BITMAP             "..\\RES\\enemy_skill_powdersnow20.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW17 BITMAP             "..\\RES\\enemy_skill_powdersnow17.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW22 BITMAP             "..\\RES\\enemy_skill_powdersnow22.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW16 BITMAP             "..\\RES\\enemy_skill_powdersnow16.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW15 BITMAP             "..\\RES\\enemy_skill_powdersnow15.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW14 BITMAP             "..\\RES\\enemy_skill_powdersnow14.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW13 BITMAP             "..\\RES\\enemy_skill_powdersnow13.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW12 BITMAP             "..\\RES\\enemy_skill_powdersnow12.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW11 BITMAP             "..\\RES\\enemy_skill_powdersnow11.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW10 BITMAP             "..\\RES\\enemy_skill_powdersnow10.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW9 BITMAP              "..\\RES\\enemy_skill_powdersnow9.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW8 BITMAP              "..\\RES\\enemy_skill_powdersnow8.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW7 BITMAP              "..\\RES\\enemy_skill_powdersnow7.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW6 BITMAP              "..\\RES\\enemy_skill_powdersnow6.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW5 BITMAP              "..\\RES\\enemy_skill_powdersnow5.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW4 BITMAP              "..\\RES\\enemy_skill_powdersnow4.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW3 BITMAP              "..\\RES\\enemy_skill_powdersnow3.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW2 BITMAP              "..\\RES\\enemy_skill_powdersnow2.bmp"
+
+IDB_ENEMY_SKILL_POWDERSNOW1 BITMAP              "..\\RES\\enemy_skill_powdersnow1.bmp"
+
+IDB_SKILL_POWDERSNOW21  BITMAP                  "..\\RES\\skill_powdersnow21.bmp"
+
+IDB_SKILL_POWDERSNOW20  BITMAP                  "..\\RES\\skill_powdersnow20.bmp"
+
+IDB_SKILL_POWDERSNOW19  BITMAP                  "..\\RES\\skill_powdersnow19.bmp"
+
+IDB_SKILL_POWDERSNOW18  BITMAP                  "..\\RES\\skill_powdersnow18.bmp"
+
+IDB_SKILL_POWDERSNOW17  BITMAP                  "..\\RES\\skill_powdersnow17.bmp"
+
+IDB_SKILL_POWDERSNOW16  BITMAP                  "..\\RES\\skill_powdersnow16.bmp"
+
+IDB_SKILL_POWDERSNOW15  BITMAP                  "..\\RES\\skill_powdersnow15.bmp"
+
+IDB_SKILL_POWDERSNOW14  BITMAP                  "..\\RES\\skill_powdersnow14.bmp"
+
+IDB_SKILL_POWDERSNOW13  BITMAP                  "..\\RES\\skill_powdersnow13.bmp"
+
+IDB_SKILL_POWDERSNOW12  BITMAP                  "..\\RES\\skill_powdersnow12.bmp"
+
+IDB_SKILL_POWDERSNOW11  BITMAP                  "..\\RES\\skill_powdersnow11.bmp"
+
+IDB_SKILL_POWDERSNOW10  BITMAP                  "..\\RES\\skill_powdersnow10.bmp"
+
+IDB_SKILL_POWDERSNOW9   BITMAP                  "..\\RES\\skill_powdersnow9.bmp"
+
+IDB_SKILL_POWDERSNOW8   BITMAP                  "..\\RES\\skill_powdersnow8.bmp"
+
+IDB_SKILL_POWDERSNOW7   BITMAP                  "..\\RES\\skill_powdersnow7.bmp"
+
+IDB_SKILL_POWDERSNOW6   BITMAP                  "..\\RES\\skill_powdersnow6.bmp"
+
+IDB_SKILL_POWDERSNOW5   BITMAP                  "..\\RES\\skill_powdersnow5.bmp"
+
+IDB_SKILL_POWDERSNOW4   BITMAP                  "..\\RES\\skill_powdersnow4.bmp"
+
+IDB_SKILL_POWDERSNOW3   BITMAP                  "..\\RES\\skill_powdersnow3.bmp"
+
+IDB_SKILL_POWDERSNOW2   BITMAP                  "..\\RES\\skill_powdersnow2.bmp"
+
+IDB_SKILL_POWDERSNOW1   BITMAP                  "..\\RES\\skill_powdersnow1.bmp"
+
+IDB_SKILL_POISONGAS5    BITMAP                  "..\\RES\\skill_poisongas5.bmp"
+
+IDB_SKILL_POISONGAS4    BITMAP                  "..\\RES\\skill_poisongas4.bmp"
+
+IDB_SKILL_POISONGAS3    BITMAP                  "..\\RES\\skill_poisongas3.bmp"
+
+IDB_SKILL_POISONGAS2    BITMAP                  "..\\RES\\skill_poisongas2.bmp"
+
+IDB_SKILL_POISONGAS1    BITMAP                  "..\\RES\\skill_poisongas1.bmp"
+
+IDB_ENEMY_SKILL_SLUDGE15 BITMAP                  "..\\RES\\enemy_skill_sludge15.bmp"
+
+IDB_ENEMY_SKILL_SLUDGE14 BITMAP                  "..\\RES\\enemy_skill_sludge14.bmp"
+
+IDB_ENEMY_SKILL_SLUDGE13 BITMAP                  "..\\RES\\enemy_skill_sludge13.bmp"
+
+IDB_ENEMY_SKILL_SLUDGE12 BITMAP                  "..\\RES\\enemy_skill_sludge12.bmp"
+
+IDB_ENEMY_SKILL_SLUDGE11 BITMAP                  "..\\RES\\enemy_skill_sludge11.bmp"
+
+IDB_SKILL_SLUDGE15      BITMAP                  "..\\RES\\skill_sludge15.bmp"
+
+IDB_SKILL_SLUDGE14      BITMAP                  "..\\RES\\skill_sludge14.bmp"
+
+IDB_SKILL_SLUDGE13      BITMAP                  "..\\RES\\skill_sludge13.bmp"
+
+IDB_SKILL_SLUDGE12      BITMAP                  "..\\RES\\skill_sludge12.bmp"
+
+IDB_SKILL_SLUDGE11      BITMAP                  "..\\RES\\skill_sludge11.bmp"
+
+IDB_ENEMY_SKILL_SLUDGE1 BITMAP                  "..\\RES\\enemy_skill_sludge1.bmp"
+
+IDB_SKILL_SLUDGE10      BITMAP                  "..\\RES\\skill_sludge10.bmp"
+
+IDB_ENEMY_SKILL_SLUDGE2 BITMAP                  "..\\RES\\enemy_skill_sludge2.bmp"
+
+IDB_SKILL_SLUDGE9       BITMAP                  "..\\RES\\skill_sludge9.bmp"
+
+IDB_ENEMY_SKILL_SLUDGE3 BITMAP                  "..\\RES\\enemy_skill_sludge3.bmp"
+
+IDB_SKILL_SLUDGE8       BITMAP                  "..\\RES\\skill_sludge8.bmp"
+
+IDB_ENEMY_SKILL_SLUDGE4 BITMAP                  "..\\RES\\enemy_skill_sludge4.bmp"
+
+IDB_SKILL_SLUDGE7       BITMAP                  "..\\RES\\skill_sludge7.bmp"
+
+IDB_ENEMY_SKILL_SLUDGE5 BITMAP                  "..\\RES\\enemy_skill_sludge5.bmp"
+
+IDB_SKILL_SLUDGE6       BITMAP                  "..\\RES\\skill_sludge6.bmp"
+
+IDB_ENEMY_SKILL_SLUDGE6 BITMAP                  "..\\RES\\enemy_skill_sludge6.bmp"
+
+IDB_SKILL_SLUDGE5       BITMAP                  "..\\RES\\skill_sludge5.bmp"
+
+IDB_ENEMY_SKILL_SLUDGE7 BITMAP                  "..\\RES\\enemy_skill_sludge7.bmp"
+
+IDB_SKILL_SLUDGE4       BITMAP                  "..\\RES\\skill_sludge4.bmp"
+
+IDB_ENEMY_SKILL_SLUDGE8 BITMAP                  "..\\RES\\enemy_skill_sludge8.bmp"
+
+IDB_SKILL_SLUDGE3       BITMAP                  "..\\RES\\skill_sludge3.bmp"
+
+IDB_ENEMY_SKILL_SLUDGE9 BITMAP                  "..\\RES\\enemy_skill_sludge9.bmp"
+
+IDB_SKILL_SLUDGE2       BITMAP                  "..\\RES\\skill_sludge2.bmp"
+
+IDB_ENEMY_SKILL_SLUDGE10 BITMAP                  "..\\RES\\enemy_skill_sludge10.bmp"
+
+IDB_SKILL_SLUDGE1       BITMAP                  "..\\RES\\skill_sludge1.bmp"
+
+IDB_ENEMY_SKILL_FLAMETHROWER8 BITMAP                  "..\\RES\\enemy_skill_flamethrower8.bmp"
+
+IDB_ENEMY_SKILL_FLAMETHROWER7 BITMAP                  "..\\RES\\enemy_skill_flamethrower7.bmp"
+
+IDB_ENEMY_SKILL_FLAMETHROWER6 BITMAP                  "..\\RES\\enemy_skill_flamethrower6.bmp"
+
+IDB_ENEMY_SKILL_FLAMETHROWER5 BITMAP                  "..\\RES\\enemy_skill_flamethrower5.bmp"
+
+IDB_ENEMY_SKILL_FLAMETHROWER4 BITMAP                  "..\\RES\\enemy_skill_flamethrower4.bmp"
+
+IDB_ENEMY_SKILL_FLAMETHROWER3 BITMAP                  "..\\RES\\enemy_skill_flamethrower3.bmp"
+
+IDB_ENEMY_SKILL_FLAMETHROWER2 BITMAP                  "..\\RES\\enemy_skill_flamethrower2.bmp"
+
+IDB_ENEMY_SKILL_FLAMETHROWER1 BITMAP                  "..\\RES\\enemy_skill_flamethrower1.bmp"
+
+IDB_SKILL_FLAMETHROWER6 BITMAP                  "..\\RES\\skill_flamethrower6.bmp"
+
+IDB_SKILL_FLAMETHROWER10 BITMAP                  "..\\RES\\skill_flamethrower10.bmp"
+
+IDB_SKILL_FLAMETHROWER9 BITMAP                  "..\\RES\\skill_flamethrower9.bmp"
+
+IDB_SKILL_FLAMETHROWER8 BITMAP                  "..\\RES\\skill_flamethrower8.bmp"
+
+IDB_SKILL_FLAMETHROWER7 BITMAP                  "..\\RES\\skill_flamethrower7.bmp"
+
+IDB_SKILL_FLAMETHROWER4 BITMAP                  "..\\RES\\skill_flamethrower4.bmp"
+
+IDB_SKILL_FLAMETHROWER2 BITMAP                  "..\\RES\\skill_flamethrower2.bmp"
+
+IDB_SKILL_FLAMETHROWER5 BITMAP                  "..\\RES\\skill_flamethrower5.bmp"
+
+IDB_SKILL_FLAMETHROWER11 BITMAP                  "..\\RES\\skill_flamethrower11.bmp"
+
+IDB_SKILL_FLAMETHROWER3 BITMAP                  "..\\RES\\skill_flamethrower3.bmp"
+
+IDB_SKILL_FLAMETHROWER1 BITMAP                  "..\\RES\\skill_flamethrower1.bmp"
+
+IDB_SKILL_THUNDERSHOCK3 BITMAP                  "..\\RES\\skill_thundershock3.bmp"
+
+IDB_SKILL_THUNDERSHOCK8 BITMAP                  "..\\RES\\skill_thundershock8.bmp"
+
+IDB_SKILL_THUNDERSHOCK7 BITMAP                  "..\\RES\\skill_thundershock7.bmp"
+
+IDB_SKILL_THUNDERSHOCK6 BITMAP                  "..\\RES\\skill_thundershock6.bmp"
+
+IDB_SKILL_THUNDERSHOCK5 BITMAP                  "..\\RES\\skill_thundershock5.bmp"
+
+IDB_SKILL_THUNDERSHOCK4 BITMAP                  "..\\RES\\skill_thundershock4.bmp"
+
+IDB_SKILL_THUNDERSHOCK2 BITMAP                  "..\\RES\\skill_thundershock2.bmp"
+
+IDB_SKILL_THUNDERSHOCK1 BITMAP                  "..\\RES\\skill_thundershock1.bmp"
+
+IDB_SKILL_THUNDERBOLT1  BITMAP                  "..\\RES\\skill_thunderbolt1.bmp"
+
+IDB_SKILL_THUNDERBOLT2  BITMAP                  "..\\RES\\skill_thunderbolt2.bmp"
+
+IDB_SKILL_THUNDERBOLT3  BITMAP                  "..\\RES\\skill_thunderbolt3.bmp"
+
+IDB_SKILL_THUNDERBOLT4  BITMAP                  "..\\RES\\skill_thunderbolt4.bmp"
+
+IDB_SKILL_THUNDERBOLT5  BITMAP                  "..\\RES\\skill_thunderbolt5.bmp"
+
+IDB_SKILL_THUNDERBOLT6  BITMAP                  "..\\RES\\skill_thunderbolt6.bmp"
+
+IDB_SKILL_THUNDERBOLT7  BITMAP                  "..\\RES\\skill_thunderbolt7.bmp"
+
+IDB_SKILL_THUNDERBOLT8  BITMAP                  "..\\RES\\skill_thunderbolt8.bmp"
+
+IDB_SKILL_THUNDERBOLT9  BITMAP                  "..\\RES\\skill_thunderbolt9.bmp"
+
+IDB_ENEMY_SKILL_BUBBLEBEAM2 BITMAP                  "..\\RES\\enemy_skill_bubblebeam2.bmp"
+
+IDB_ENEMY_SKILL_BUBBLEBEAM3 BITMAP                  "..\\RES\\enemy_skill_bubblebeam3.bmp"
+
+IDB_ENEMY_SKILL_BUBBLEBEAM4 BITMAP                  "..\\RES\\enemy_skill_bubblebeam4.bmp"
+
+IDB_ENEMY_SKILL_BUBBLEBEAM5 BITMAP                  "..\\RES\\enemy_skill_bubblebeam5.bmp"
+
+IDB_ENEMY_SKILL_BUBBLEBEAM6 BITMAP                  "..\\RES\\enemy_skill_bubblebeam6.bmp"
+
+IDB_ENEMY_SKILL_BUBBLEBEAM7 BITMAP                  "..\\RES\\enemy_skill_bubblebeam7.bmp"
+
+IDB_ENEMY_SKILL_BUBBLEBEAM8 BITMAP                  "..\\RES\\enemy_skill_bubblebeam8.bmp"
+
+IDB_ENEMY_SKILL_BUBBLEBEAM9 BITMAP                  "..\\RES\\enemy_skill_bubblebeam9.bmp"
+
+IDB_ENEMY_SKILL_BUBBLEBEAM10 BITMAP                  "..\\RES\\enemy_skill_bubblebeam10.bmp"
+
+IDB_SKILL_BUBBLEBEAM1   BITMAP                  "..\\RES\\skill_bubblebeam1.bmp"
+
+IDB_SKILL_BUBBLEBEAM2   BITMAP                  "..\\RES\\skill_bubblebeam2.bmp"
+
+IDB_SKILL_BUBBLEBEAM3   BITMAP                  "..\\RES\\skill_bubblebeam3.bmp"
+
+IDB_SKILL_BUBBLEBEAM4   BITMAP                  "..\\RES\\skill_bubblebeam4.bmp"
+
+IDB_SKILL_BUBBLEBEAM5   BITMAP                  "..\\RES\\skill_bubblebeam5.bmp"
+
+IDB_SKILL_BUBBLEBEAM6   BITMAP                  "..\\RES\\skill_bubblebeam6.bmp"
+
+IDB_SKILL_BUBBLEBEAM7   BITMAP                  "..\\RES\\skill_bubblebeam7.bmp"
+
+IDB_SKILL_BUBBLEBEAM8   BITMAP                  "..\\RES\\skill_bubblebeam8.bmp"
+
+IDB_SKILL_BUBBLEBEAM9   BITMAP                  "..\\RES\\skill_bubblebeam9.bmp"
+
+IDB_SKILL_BUBBLEBEAM10  BITMAP                  "..\\RES\\skill_bubblebeam10.bmp"
+
+IDB_ENEMY_SKILL_BUBBLEBEAM1 BITMAP                  "..\\RES\\enemy_skill_bubblebeam1.bmp"
+
+IDB_ENEMY_SKILL_WATERGUN1 BITMAP                  "..\\RES\\enemy_skill_watergun1.bmp"
+
+IDB_ENEMY_SKILL_WATERGUN2 BITMAP                  "..\\RES\\enemy_skill_watergun2.bmp"
+
+IDB_ENEMY_SKILL_WATERGUN3 BITMAP                  "..\\RES\\enemy_skill_watergun3.bmp"
+
+IDB_ENEMY_SKILL_WATERGUN4 BITMAP                  "..\\RES\\enemy_skill_watergun4.bmp"
+
+IDB_ENEMY_SKILL_WATERGUN5 BITMAP                  "..\\RES\\enemy_skill_watergun5.bmp"
+
+IDB_ENEMY_SKILL_WATERGUN6 BITMAP                  "..\\RES\\enemy_skill_watergun6.bmp"
+
+IDB_ENEMY_SKILL_WATERGUN7 BITMAP                  "..\\RES\\enemy_skill_watergun7.bmp"
+
+IDB_ENEMY_SKILL_WATERGUN8 BITMAP                  "..\\RES\\enemy_skill_watergun8.bmp"
+
+IDB_ENEMY_SKILL_WATERGUN9 BITMAP                  "..\\RES\\enemy_skill_watergun9.bmp"
+
+IDB_ENEMY_SKILL_WATERGUN10 BITMAP                  "..\\RES\\enemy_skill_watergun10.bmp"
+
+IDB_SKILL_WATERGUN1     BITMAP                  "..\\RES\\skill_watergun1.bmp"
+
+IDB_SKILL_WATERGUN2     BITMAP                  "..\\RES\\skill_watergun2.bmp"
+
+IDB_SKILL_WATERGUN3     BITMAP                  "..\\RES\\skill_watergun3.bmp"
+
+IDB_SKILL_WATERGUN4     BITMAP                  "..\\RES\\skill_watergun4.bmp"
+
+IDB_SKILL_WATERGUN5     BITMAP                  "..\\RES\\skill_watergun5.bmp"
+
+IDB_SKILL_WATERGUN6     BITMAP                  "..\\RES\\skill_watergun6.bmp"
+
+IDB_SKILL_WATERGUN7     BITMAP                  "..\\RES\\skill_watergun7.bmp"
+
+IDB_SKILL_WATERGUN8     BITMAP                  "..\\RES\\skill_watergun8.bmp"
+
+IDB_SKILL_WATERGUN9     BITMAP                  "..\\RES\\skill_watergun9.bmp"
+
+IDB_SKILL_WATERGUN10    BITMAP                  "..\\RES\\skill_watergun10.bmp"
+
+IDB_SKILL_CRUNCH1       BITMAP                  "..\\RES\\skill_crunch1.bmp"
+
+IDB_SKILL_CRUNCH2       BITMAP                  "..\\RES\\skill_crunch2.bmp"
+
+IDB_SKILL_CRUNCH3       BITMAP                  "..\\RES\\skill_crunch3.bmp"
+
+IDB_SKILL_CRUNCH4       BITMAP                  "..\\RES\\skill_crunch4.bmp"
+
+IDB_SKILL_CRUNCH5       BITMAP                  "..\\RES\\skill_crunch5.bmp"
+
+IDB_SKILL_CRUNCH6       BITMAP                  "..\\RES\\skill_crunch6.bmp"
+
+IDB_SKILL_CRUNCH7       BITMAP                  "..\\RES\\skill_crunch7.bmp"
+
+IDB_SKILL_LEAFBLADE1    BITMAP                  "..\\RES\\skill_leafblade1.bmp"
+
+IDB_SKILL_LEAFBLADE2    BITMAP                  "..\\RES\\skill_leafblade2.bmp"
+
+IDB_SKILL_LEAFBLADE3    BITMAP                  "..\\RES\\skill_leafblade3.bmp"
+
+IDB_SKILL_LEAFBLADE4    BITMAP                  "..\\RES\\skill_leafblade4.bmp"
+
+IDB_SKILL_LEAFBLADE5    BITMAP                  "..\\RES\\skill_leafblade5.bmp"
+
+IDB_SKILL_LEAFBLADE6    BITMAP                  "..\\RES\\skill_leafblade6.bmp"
+
+IDB_SKILL_AURORABEAM6   BITMAP                  "..\\RES\\skill_aurouabeam6.bmp"
+
+IDB_SKILL_AURORABEAM5   BITMAP                  "..\\RES\\skill_aurouabeam5.bmp"
+
+IDB_SKILL_AURORABEAM9   BITMAP                  "..\\RES\\skill_aurouabeam9.bmp"
+
+IDB_SKILL_AURORABEAM8   BITMAP                  "..\\RES\\skill_aurouabeam8.bmp"
+
+IDB_SKILL_AURORABEAM7   BITMAP                  "..\\RES\\skill_aurouabeam7.bmp"
+
+IDB_SKILL_AURORABEAM4   BITMAP                  "..\\RES\\skill_aurouabeam4.bmp"
+
+IDB_SKILL_AURORABEAM3   BITMAP                  "..\\RES\\skill_aurouabeam3.bmp"
+
+IDB_SKILL_AURORABEAM2   BITMAP                  "..\\RES\\skill_aurouabeam2.bmp"
+
+IDB_SKILL_AURORABEAM1   BITMAP                  "..\\RES\\skill_aurouabeam1.bmp"
+
+IDB_SKILL_LEAFSTORM11   BITMAP                  "..\\RES\\skill_leafstorm11.bmp"
+
+IDB_SKILL_LEAFSTORM10   BITMAP                  "..\\RES\\skill_leafstorm10.bmp"
+
+IDB_SKILL_LEAFSTORM9    BITMAP                  "..\\RES\\skill_leafstorm9.bmp"
+
+IDB_SKILL_LEAFSTORM8    BITMAP                  "..\\RES\\skill_leafstorm8.bmp"
+
+IDB_SKILL_LEAFSTORM7    BITMAP                  "..\\RES\\skill_leafstorm7.bmp"
+
+IDB_SKILL_LEAFSTORM6    BITMAP                  "..\\RES\\skill_leafstorm6.bmp"
+
+IDB_SKILL_LEAFSTORM5    BITMAP                  "..\\RES\\skill_leafstorm5.bmp"
+
+IDB_SKILL_LEAFSTORM4    BITMAP                  "..\\RES\\skill_leafstorm4.bmp"
+
+IDB_SKILL_LEAFSTORM3    BITMAP                  "..\\RES\\skill_leafstorm3.bmp"
+
+IDB_SKILL_LEAFSTORM2    BITMAP                  "..\\RES\\skill_leafstorm2.bmp"
+
+IDB_SKILL_LEAFSTORM1    BITMAP                  "..\\RES\\skill_leafstorm1.bmp"
+
+IDB_SKILL_NIGHTSHADE4   BITMAP                  "..\\RES\\skill_nightshade4.bmp"
+
+IDB_SKILL_NIGHTSHADE5   BITMAP                  "..\\RES\\skill_nightshade5.bmp"
+
+IDB_SKILL_NIGHTSHADE3   BITMAP                  "..\\RES\\skill_nightshade3.bmp"
+
+IDB_SKILL_NIGHTSHADE6   BITMAP                  "..\\RES\\skill_nightshade6.bmp"
+
+IDB_SKILL_NIGHTSHADE2   BITMAP                  "..\\RES\\skill_nightshade2.bmp"
+
+IDB_SKILL_NIGHTSHADE7   BITMAP                  "..\\RES\\skill_nightshade7.bmp"
+
+IDB_SKILL_NIGHTSHADE1   BITMAP                  "..\\RES\\skill_nightshade1.bmp"
+
+IDB_SKILL_PHYCHOBOOST27 BITMAP                  "..\\RES\\skill_phychoboost27.bmp"
+
+IDB_SKILL_PHYCHOBOOST26 BITMAP                  "..\\RES\\skill_phychoboost26.bmp"
+
+IDB_SKILL_PHYCHOBOOST25 BITMAP                  "..\\RES\\skill_phychoboost25.bmp"
+
+IDB_SKILL_PHYCHOBOOST24 BITMAP                  "..\\RES\\skill_phychoboost24.bmp"
+
+IDB_SKILL_PHYCHOBOOST23 BITMAP                  "..\\RES\\skill_phychoboost23.bmp"
+
+IDB_SKILL_PHYCHOBOOST22 BITMAP                  "..\\RES\\skill_phychoboost22.bmp"
+
+IDB_SKILL_PHYCHOBOOST21 BITMAP                  "..\\RES\\skill_phychoboost21.bmp"
+
+IDB_SKILL_PHYCHOBOOST20 BITMAP                  "..\\RES\\skill_phychoboost20.bmp"
+
+IDB_SKILL_PHYCHOBOOST19 BITMAP                  "..\\RES\\skill_phychoboost19.bmp"
+
+IDB_SKILL_PHYCHOBOOST18 BITMAP                  "..\\RES\\skill_phychoboost18.bmp"
+
+IDB_SKILL_PHYCHOBOOST17 BITMAP                  "..\\RES\\skill_phychoboost17.bmp"
+
+IDB_SKILL_PHYCHOBOOST16 BITMAP                  "..\\RES\\skill_phychoboost16.bmp"
+
+IDB_SKILL_PHYCHOBOOST15 BITMAP                  "..\\RES\\skill_phychoboost15.bmp"
+
+IDB_SKILL_PHYCHOBOOST14 BITMAP                  "..\\RES\\skill_phychoboost14.bmp"
+
+IDB_SKILL_PHYCHOBOOST13 BITMAP                  "..\\RES\\skill_phychoboost13.bmp"
+
+IDB_SKILL_PHYCHOBOOST12 BITMAP                  "..\\RES\\skill_phychoboost12.bmp"
+
+IDB_SKILL_PHYCHOBOOST11 BITMAP                  "..\\RES\\skill_phychoboost11.bmp"
+
+IDB_SKILL_PHYCHOBOOST10 BITMAP                  "..\\RES\\skill_phychoboost10.bmp"
+
+IDB_SKILL_PHYCHOBOOST9  BITMAP                  "..\\RES\\skill_phychoboost9.bmp"
+
+IDB_SKILL_PHYCHOBOOST8  BITMAP                  "..\\RES\\skill_phychoboost8.bmp"
+
+IDB_SKILL_PHYCHOBOOST7  BITMAP                  "..\\RES\\skill_phychoboost7.bmp"
+
+IDB_SKILL_PHYCHOBOOST6  BITMAP                  "..\\RES\\skill_phychoboost6.bmp"
+
+IDB_SKILL_PHYCHOBOOST5  BITMAP                  "..\\RES\\skill_phychoboost5.bmp"
+
+IDB_SKILL_PHYCHOBOOST4  BITMAP                  "..\\RES\\skill_phychoboost4.bmp"
+
+IDB_SKILL_PHYCHOBOOST3  BITMAP                  "..\\RES\\skill_phychoboost3.bmp"
+
+IDB_SKILL_PHYCHOBOOST2  BITMAP                  "..\\RES\\skill_phychoboost2.bmp"
+
+IDB_SKILL_PHYCHOBOOST1  BITMAP                  "..\\RES\\skill_phychoboost1.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST19 BITMAP                  "..\\RES\\skill_enemy_phychoboost19.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST15 BITMAP                  "..\\RES\\skill_enemy_phychoboost15.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST14 BITMAP                  "..\\RES\\skill_enemy_phychoboost14.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST17 BITMAP                  "..\\RES\\skill_enemy_phychoboost17.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST18 BITMAP                  "..\\RES\\skill_enemy_phychoboost18.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST26 BITMAP                  "..\\RES\\skill_enemy_phychoboost26.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST20 BITMAP                  "..\\RES\\skill_enemy_phychoboost20.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST25 BITMAP                  "..\\RES\\skill_enemy_phychoboost25.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST27 BITMAP                  "..\\RES\\skill_enemy_phychoboost27.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST23 BITMAP                  "..\\RES\\skill_enemy_phychoboost23.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST22 BITMAP                  "..\\RES\\skill_enemy_phychoboostt22.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST16 BITMAP                  "..\\RES\\skill_enemy_phychoboost16.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST24 BITMAP                  "..\\RES\\skill_enemy_phychoboost24.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST21 BITMAP                  "..\\RES\\skill_enemy_phychoboost21.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST13 BITMAP                  "..\\RES\\skill_enemy_phychoboost13.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST3 BITMAP                  "..\\RES\\skill_enemy_phychoboost3.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST11 BITMAP                  "..\\RES\\skill_enemy_phychoboost11.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST7 BITMAP                  "..\\RES\\skill_enemy_phychoboost7.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST8 BITMAP                  "..\\RES\\skill_enemy_phychoboost8.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST10 BITMAP                  "..\\RES\\skill_enemy_phychoboost10.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST9 BITMAP                  "..\\RES\\skill_enemy_phychoboost9.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST5 BITMAP                  "..\\RES\\skill_enemy_phychoboost5.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST2 BITMAP                  "..\\RES\\skill_enemy_phychoboost2.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST1 BITMAP                  "..\\RES\\skill_enemy_phychoboost1.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST4 BITMAP                  "..\\RES\\skill_enemy_phychoboost4.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST12 BITMAP                  "..\\RES\\skill_enemy_phychoboost12.bmp"
+
+IDB_ENEMY_SKILL_PHYCHOBOOST6 BITMAP                  "..\\RES\\skill_enemy_phychoboost6.bmp"
+
+IDB_SKILL_SWIFT8        BITMAP                  "..\\RES\\skill_swift8.bmp"
+
+IDB_SKILL_SWIFT7        BITMAP                  "..\\RES\\skill_swift7.bmp"
+
+IDB_SKILL_SWIFT6        BITMAP                  "..\\RES\\skill_swift6.bmp"
+
+IDB_SKILL_SWIFT5        BITMAP                  "..\\RES\\skill_swift5.bmp"
+
+IDB_SKILL_SWIFT4        BITMAP                  "..\\RES\\skill_swift4.bmp"
+
+IDB_SKILL_SWIFT3        BITMAP                  "..\\RES\\skill_swift3.bmp"
+
+IDB_SKILL_SWIFT2        BITMAP                  "..\\RES\\skill_swift2.bmp"
+
+IDB_SKILL_SWIFT1        BITMAP                  "..\\RES\\skill_swift1.bmp"
+
+IDB_ENEMY_SKILL_HYPERBEAM3 BITMAP                  "..\\RES\\enemy_skill_hyperbeam3.bmp"
+
+IDB_ENEMY_SKILL_HYPERBEAM15 BITMAP                  "..\\RES\\enemy_skill_hyperbeam15.bmp"
+
+IDB_ENEMY_SKILL_HYPERBEAM1 BITMAP                  "..\\RES\\enemy_skill_hyperbeam1.bmp"
+
+IDB_ENEMY_SKILL_HYPERBEAM5 BITMAP                  "..\\RES\\enemy_skill_hyperbeam5.bmp"
+
+IDB_ENEMY_SKILL_HYPERBEAM6 BITMAP                  "..\\RES\\enemy_skill_hyperbeam6.bmp"
+
+IDB_ENEMY_SKILL_HYPERBEAM9 BITMAP                  "..\\RES\\enemy_skill_hyperbeam9.bmp"
+
+IDB_ENEMY_SKILL_HYPERBEAM14 BITMAP                  "..\\RES\\enemy_skill_hyperbeam14.bmp"
+
+IDB_ENEMY_SKILL_HYPERBEAM10 BITMAP                  "..\\RES\\enemy_skill_hyperbeam10.bmp"
+
+IDB_ENEMY_SKILL_HYPERBEAM13 BITMAP                  "..\\RES\\enemy_skill_hyperbeam13.bmp"
+
+IDB_ENEMY_SKILL_HYPERBEAM4 BITMAP                  "..\\RES\\enemy_skill_hyperbeam4.bmp"
+
+IDB_ENEMY_SKILL_HYPERBEAM7 BITMAP                  "..\\RES\\enemy_skill_hyperbeam7.bmp"
+
+IDB_ENEMY_SKILL_HYPERBEAM12 BITMAP                  "..\\RES\\enemy_skill_hyperbeam12.bmp"
+
+IDB_ENEMY_SKILL_HYPERBEAM8 BITMAP                  "..\\RES\\enemy_skill_hyperbeam8.bmp"
+
+IDB_ENEMY_SKILL_HYPERBEAM2 BITMAP                  "..\\RES\\enemy_skill_hyperbeam2.bmp"
+
+IDB_ENEMY_SKILL_HYPERBEAM11 BITMAP                  "..\\RES\\enemy_skill_hyperbeam11.bmp"
+
+IDB_SKILL_HYPERBEAM15   BITMAP                  "..\\RES\\skill_hyperbeam15.bmp"
+
+IDB_SKILL_HYPERBEAM14   BITMAP                  "..\\RES\\skill_hyperbeam14.bmp"
+
+IDB_SKILL_HYPERBEAM13   BITMAP                  "..\\RES\\skill_hyperbeam13.bmp"
+
+IDB_SKILL_HYPERBEAM12   BITMAP                  "..\\RES\\skill_hyperbeam12.bmp"
+
+IDB_SKILL_HYPERBEAM11   BITMAP                  "..\\RES\\skill_hyperbeam11.bmp"
+
+IDB_SKILL_HYPERBEAM10   BITMAP                  "..\\RES\\skill_hyperbeam10.bmp"
+
+IDB_SKILL_HYPERBEAM9    BITMAP                  "..\\RES\\skill_hyperbeam9.bmp"
+
+IDB_SKILL_HYPERBEAM8    BITMAP                  "..\\RES\\skill_hyperbeam8.bmp"
+
+IDB_SKILL_HYPERBEAM7    BITMAP                  "..\\RES\\skill_hyperbeam7.bmp"
+
+IDB_SKILL_HYPERBEAM6    BITMAP                  "..\\RES\\skill_hyperbeam6.bmp"
+
+IDB_SKILL_HYPERBEAM5    BITMAP                  "..\\RES\\skill_hyperbeam5.bmp"
+
+IDB_SKILL_HYPERBEAM4    BITMAP                  "..\\RES\\skill_hyperbeam4.bmp"
+
+IDB_SKILL_HYPERBEAM3    BITMAP                  "..\\RES\\skill_hyperbeam3.bmp"
+
+IDB_SKILL_HYPERBEAM2    BITMAP                  "..\\RES\\skill_hyperbeam2.bmp"
+
+IDB_SKILL_HYPERBEAM1    BITMAP                  "..\\RES\\skill_hyperbeam1.bmp"
+
+IDB_FREEZE_ICON         BITMAP                  "..\\RES\\FREEZE_ICON.bmp"
+
+IDB_PARALYSIS_ICON      BITMAP                  "..\\RES\\PARALYSIS_ICON.bmp"
+
+IDB_POISON_ICON         BITMAP                  "..\\RES\\POISON_ICON.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -726,12 +1312,12 @@ IDB_TIANYUAN_RTLAKE     BITMAP                  "..\\RES\\tianyuan_rtlake.bmp"
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
 
-#endif    // ¤¤¤å (ÁcÅé¡A¥xÆW) resources
+#endif    // ï¿½ï¿½ï¿½ï¿½ (ï¿½cï¿½ï¿½Aï¿½xï¿½W) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// ­^¤å (¬ü°ê) resources
+// ï¿½^ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -1029,7 +1615,7 @@ BEGIN
     ID_BUTTON_UNITTEST      "Perform Unit Test"
 END
 
-#endif    // ­^¤å (¬ü°ê) resources
+#endif    // ï¿½^ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

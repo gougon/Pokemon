@@ -98,6 +98,29 @@ namespace game_framework {
 	constexpr int AUDIO_PUT_HEALBALL = 18;
 	constexpr int AUDIO_HEAL = 19;
 	constexpr int AUDIO_MART = 20;
+	constexpr int AUDIO_POISON = 21;
+	constexpr int AUDIO_FREEZE = 22;
+	constexpr int AUDIO_PARALYSIS = 23;
+	constexpr int AUDIO_CONFUSION = 24;
+	constexpr int AUDIO_CLAW = 25;
+	constexpr int AUDIO_SCARYFACE = 26;
+	constexpr int AUDIO_LICK = 27;
+	constexpr int AUDIO_POISONGAS = 28;
+	constexpr int AUDIO_POWDERSNOW = 29;
+	constexpr int AUDIO_SLUDGE = 30;
+	constexpr int AUDIO_FLAMETHROWER = 31;
+	constexpr int AUDIO_THUNDERBOLT = 32;
+	constexpr int AUDIO_BUBBLEBEAM = 33;
+	constexpr int AUDIO_WATERGUN = 34;
+	constexpr int AUDIO_CRUNCH = 35;
+	constexpr int AUDIO_LEAFBLADE = 36;
+	constexpr int AUDIO_AURORABEAM = 37;
+	constexpr int AUDIO_CHARGE = 38;
+	constexpr int AUDIO_HYPERBEAM = 39;
+	constexpr int AUDIO_PSYCHOBOOST = 40;
+	constexpr int AUDIO_SWIFT = 41;
+	constexpr int AUDIO_LEAFSTORM = 42;
+	constexpr int AUDIO_NIGHTSHADE = 43;
 
 class CAudio {
 public:

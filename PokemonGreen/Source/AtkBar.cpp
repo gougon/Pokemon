@@ -32,6 +32,9 @@ namespace game_framework {
 		redHP.LoadBitmap(IDB_HP_RED);
 		expBar.LoadBitmap(IDB_EXPBAR);
 		burnIcon.LoadBitmap(IDB_BURN_ICON, RGB(255, 0, 0));
+		freezeIcon.LoadBitmap(IDB_FREEZE_ICON, RGB(255, 0, 0));
+		poisonIcon.LoadBitmap(IDB_POISON_ICON, RGB(255, 0, 0));
+		paralysisIcon.LoadBitmap(IDB_PARALYSIS_ICON, RGB(255, 0, 0));
 	}
 
 	void AtkBar::Init()
@@ -152,7 +155,20 @@ namespace game_framework {
 	{
 		// set statu icon
 		if (pm->GetStatus()->GetStatu() != none) {
-			statuIcon = &burnIcon;
+			switch (statu) {
+			case statuBurn:
+				statuIcon = &burnIcon;
+				break;
+			case statuPoison:
+				statuIcon = &poisonIcon;
+				break;
+			case statuFreeze:
+				statuIcon = &freezeIcon;
+				break;
+			case statuParalysis:
+				statuIcon = &paralysisIcon;
+				break;
+			}
 			switch (type) {
 			case barTypeMy:
 				statuIcon->SetTopLeft(380, 280);

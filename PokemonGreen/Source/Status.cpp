@@ -22,11 +22,33 @@ namespace game_framework {
 		burnAnime.AddBitmap(IDB_SKILL_EMBER17, RGB(255, 0, 0));
 		burnAnime.AddBitmap(IDB_SKILL_EMBER18, RGB(255, 0, 0));
 		burnAnime.SetDelayCount(1);
+		poisonAnime.AddBitmap(IDB_SKILL_SLUDGE11, RGB(255, 0, 0));
+		poisonAnime.AddBitmap(IDB_SKILL_SLUDGE12, RGB(255, 0, 0));
+		poisonAnime.AddBitmap(IDB_SKILL_SLUDGE13, RGB(255, 0, 0));
+		poisonAnime.AddBitmap(IDB_SKILL_SLUDGE14, RGB(255, 0, 0));
+		poisonAnime.AddBitmap(IDB_SKILL_SLUDGE15, RGB(255, 0, 0));
+		poisonAnime.SetDelayCount(2);
+		freezeAnime.AddBitmap(IDB_SKILL_POWDERSNOW16, RGB(255, 0, 0));
+		freezeAnime.AddBitmap(IDB_SKILL_POWDERSNOW17, RGB(255, 0, 0));
+		freezeAnime.AddBitmap(IDB_SKILL_POWDERSNOW18, RGB(255, 0, 0));
+		freezeAnime.AddBitmap(IDB_SKILL_POWDERSNOW19, RGB(255, 0, 0));
+		freezeAnime.AddBitmap(IDB_SKILL_POWDERSNOW20, RGB(255, 0, 0));
+		freezeAnime.AddBitmap(IDB_SKILL_POWDERSNOW21, RGB(255, 0, 0));
+		freezeAnime.SetDelayCount(2);
+		paralysisAnime.AddBitmap(IDB_SKILL_THUNDERBOLT5, RGB(255, 0, 0));
+		paralysisAnime.AddBitmap(IDB_SKILL_THUNDERBOLT6, RGB(255, 0, 0));
+		paralysisAnime.AddBitmap(IDB_SKILL_THUNDERBOLT7, RGB(255, 0, 0));
+		paralysisAnime.AddBitmap(IDB_SKILL_THUNDERBOLT8, RGB(255, 0, 0));
+		paralysisAnime.AddBitmap(IDB_SKILL_THUNDERBOLT9, RGB(255, 0, 0));
+		paralysisAnime.SetDelayCount(2);
 	}
 	
 	void Status::SetTopLeft(int left, int top)
 	{
 		burnAnime.SetTopLeft(left, top);
+		poisonAnime.SetTopLeft(left, top);
+		freezeAnime.SetTopLeft(left, top);
+		paralysisAnime.SetTopLeft(left, top);
 	}
 
 	void Status::SetStatu(int rstatu)
@@ -41,6 +63,15 @@ namespace game_framework {
 		case statuBurn:
 			burnAnime.OnShow();
 			break;
+		case statuFreeze:
+			freezeAnime.OnShow();
+			break;
+		case statuParalysis:
+			paralysisAnime.OnShow();
+			break;
+		case statuPoison:
+			poisonAnime.OnShow();
+			break;
 		default:
 			break;
 		}
@@ -49,6 +80,9 @@ namespace game_framework {
 	void Status::OnMove()
 	{
 		burnAnime.OnMove();
+		poisonAnime.OnMove();
+		freezeAnime.OnMove();
+		paralysisAnime.OnMove();
 	}
 
 	void Status::RoundStartStatuEffect(Pokemon &pm)
@@ -79,12 +113,14 @@ namespace game_framework {
 			return "none";
 		switch (statu) {
 		case statuFreeze:
+			CAudio::Instance()->Play(AUDIO_FREEZE);
 			return pm.GetName() + " is freezing";
 			break;
 		case statuSleep:
 			return pm.GetName() + " is sleeping";
 			break;
 		case statuParalysis:
+			CAudio::Instance()->Play(AUDIO_PARALYSIS);
 			return pm.GetName() + " is paralysising";
 			break;
 		default:
@@ -102,6 +138,7 @@ namespace game_framework {
 			BurnEffect(pm);
 			break;
 		case statuPoison:
+			CAudio::Instance()->Play(AUDIO_POISON);
 			PoisonEffect(pm);
 			break;
 		}
@@ -116,6 +153,18 @@ namespace game_framework {
 	{
 		if (burnAnime.IsFinalBitmap()) {
 			burnAnime.Reset();
+			return false;
+		}
+		if (poisonAnime.IsFinalBitmap()) {
+			poisonAnime.Reset();
+			return false;
+		}
+		if (freezeAnime.IsFinalBitmap()) {
+			freezeAnime.Reset();
+			return false;
+		}
+		if (poisonAnime.IsFinalBitmap()) {
+			poisonAnime.Reset();
 			return false;
 		}
 		return true;

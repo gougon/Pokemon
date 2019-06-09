@@ -54,10 +54,10 @@ namespace game_framework {
 		switch (pmstyle)
 		{
 		case my:
-			atkAnime.SetTopLeft(405, 120);
+			atkAnime.SetTopLeft(405, 35);
 			break;
 		case enemy:
-			atkEnemyAnime.SetTopLeft(205, 195);
+			atkEnemyAnime.SetTopLeft(105, 215);
 			break;
 		default:
 			ASSERT(0);
@@ -72,13 +72,23 @@ namespace game_framework {
 			float realHitRate = hitRate * self->GetHitRate() / enemy->GetEvasionRate();
 			int rnd = rand() % 100 + 1;
 			if ((int)(realHitRate * 100) > rnd) { // 命中
-				CAudio::Instance()->Play(AUDIO_EMBER);
+				CAudio::Instance()->Play(AUDIO_CLAW);
 				isSuccess = true;
 				int enehp = enemy->GetRemainHP();
 				enehp = (enehp - Damage(self, enemy) < 0) ? 0 : enehp - Damage(self, enemy);
 				enemy->SetRemainHP(enehp);
-				if ((int)(attachRate * 100) > rnd)
-					return self->GetName() + "increase atk";
+				if ((int)(attachRate * 100) > rnd) {
+					int enedeflv = enemy->GetAtkLevel();
+					if (enedeflv < 6) {
+						CAudio::Instance()->Play(AUDIO_LEER);
+						enemy->SetRemainAtk(enedeflv + 1);
+						return self->GetName() + " increase atk";
+					}
+					else {	// 跑對話說已經降到最低了
+						CAudio::Instance()->Play(AUDIO_LEERNE);
+						return self->GetName() + "'s atk cannot be decreased";
+					}
+				}
 				return EffectText(enemy);
 			}
 			else {

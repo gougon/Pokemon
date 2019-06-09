@@ -35,7 +35,7 @@ namespace game_framework {
 		atkAnime.AddBitmap(IDB_SKILL_CONFUSION5, RGB(255, 0, 0));
 		atkAnime.AddBitmap(IDB_SKILL_CONFUSION6, RGB(255, 0, 0));
 		atkAnime.AddBitmap(IDB_SKILL_CONFUSION7, RGB(255, 0, 0));
-		atkAnime.SetDelayCount(2);
+		atkAnime.SetDelayCount(1);
 		atkEnemyAnime.AddBitmap(IDB_SKILL_CONFUSION1, RGB(255, 0, 0));
 		atkEnemyAnime.AddBitmap(IDB_SKILL_CONFUSION2, RGB(255, 0, 0));
 		atkEnemyAnime.AddBitmap(IDB_SKILL_CONFUSION3, RGB(255, 0, 0));
@@ -43,15 +43,15 @@ namespace game_framework {
 		atkEnemyAnime.AddBitmap(IDB_SKILL_CONFUSION5, RGB(255, 0, 0));
 		atkEnemyAnime.AddBitmap(IDB_SKILL_CONFUSION6, RGB(255, 0, 0));
 		atkEnemyAnime.AddBitmap(IDB_SKILL_CONFUSION7, RGB(255, 0, 0));
-		atkEnemyAnime.SetDelayCount(2);
+		atkEnemyAnime.SetDelayCount(1);
 
 		switch (pmstyle)
 		{
 		case my:
-			atkAnime.SetTopLeft(405, 120);
+			atkAnime.SetTopLeft(430, 60);
 			break;
 		case enemy:
-			atkEnemyAnime.SetTopLeft(205, 195);
+			atkEnemyAnime.SetTopLeft(135, 230);
 			break;
 		default:
 			ASSERT(0);
@@ -67,7 +67,7 @@ namespace game_framework {
 			int rnd = rand() % 100 + 1;
 			if ((int)(realHitRate * 100) > rnd) { // ©R¤¤
 				isSuccess = true;
-				CAudio::Instance()->Play(AUDIO_LEER);
+				CAudio::Instance()->Play(AUDIO_CONFUSION);
 				int enehp = enemy->GetRemainHP();
 				enehp = (enehp - Damage(self, enemy) < 0) ? 0 : enehp - Damage(self, enemy);
 				enemy->SetRemainHP(enehp);
@@ -77,7 +77,6 @@ namespace game_framework {
 						enemy->GetStatus()->SetTopLeft(140, 180);
 					else
 						enemy->GetStatus()->SetTopLeft(250, 120);
-					return enemy->GetName() + "is in paralysis";
 				}
 				return EffectText(enemy);
 			}

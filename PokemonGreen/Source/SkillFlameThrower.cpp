@@ -28,18 +28,48 @@ namespace game_framework {
 		burnRate = 0.5f;
 
 		animeCount = 0;
-		//add anime
+		atkAnime.AddBitmap(IDB_SKILL_FLAMETHROWER1, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_FLAMETHROWER2, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_FLAMETHROWER3, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_FLAMETHROWER4, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_FLAMETHROWER5, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_FLAMETHROWER6, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_FLAMETHROWER7, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_FLAMETHROWER8, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_FLAMETHROWER9, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_FLAMETHROWER10, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_FLAMETHROWER11, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_FLAMETHROWER10, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_FLAMETHROWER9, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_FLAMETHROWER8, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_FLAMETHROWER7, RGB(255, 0, 0));
 		atkAnime.SetDelayCount(2);
-		//add enemy anime
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_FLAMETHROWER1, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_FLAMETHROWER2, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_FLAMETHROWER3, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_FLAMETHROWER4, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_FLAMETHROWER5, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_FLAMETHROWER6, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_FLAMETHROWER7, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_ENEMY_SKILL_FLAMETHROWER8, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_FLAMETHROWER7, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_FLAMETHROWER8, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_FLAMETHROWER9, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_FLAMETHROWER10, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_FLAMETHROWER11, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_FLAMETHROWER10, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_FLAMETHROWER9, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_FLAMETHROWER8, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_FLAMETHROWER7, RGB(255, 0, 0));
 		atkEnemyAnime.SetDelayCount(2);
 
 		switch (pmstyle)
 		{
 		case my:
-			atkAnime.SetTopLeft(205, 195);
+			atkAnime.SetTopLeft(150, 100);
 			break;
 		case enemy:
-			atkEnemyAnime.SetTopLeft(405, 120);
+			atkEnemyAnime.SetTopLeft(140, 100);
 			break;
 		default:
 			ASSERT(0);
@@ -54,7 +84,7 @@ namespace game_framework {
 			float realHitRate = hitRate * self->GetHitRate() / enemy->GetEvasionRate();
 			int rnd = rand() % 100 + 1;
 			if ((int)(realHitRate * 100) > rnd) { // ©R¤¤
-				CAudio::Instance()->Play(AUDIO_EMBER);
+				CAudio::Instance()->Play(AUDIO_FLAMETHROWER);
 				isSuccess = true;
 				int enehp = enemy->GetRemainHP();
 				enehp = (enehp - Damage(self, enemy) < 0) ? 0 : enehp - Damage(self, enemy);
@@ -65,7 +95,7 @@ namespace game_framework {
 						enemy->GetStatus()->SetTopLeft(140, 180);
 					else
 						enemy->GetStatus()->SetTopLeft(250, 120);
-					return enemy->GetName() + "is in burn";
+					return enemy->GetName() + "'s full body on fire";
 				}
 				return EffectText(enemy);
 			}
