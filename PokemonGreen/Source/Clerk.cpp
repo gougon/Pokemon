@@ -15,6 +15,8 @@ namespace game_framework {
 	}
 	Clerk::~Clerk()
 	{
+		for (auto i : shopping_list)
+			delete i;
 	}
 	void Clerk::Init()
 	{

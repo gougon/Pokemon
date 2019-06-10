@@ -5,7 +5,7 @@ class CAlphabet
 {
     public:
         CAlphabet();
-        ~CAlphabet();
+		~CAlphabet() {};
         void LoadBitmap();
         CMovingBitmap* GetAlphabet(char alphaID);
     private:

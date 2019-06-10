@@ -21,6 +21,7 @@ class Menu : public ActionObject
 {
     public:
         Menu();
+		~Menu();
         virtual void Init();
         virtual void OnShow();
         virtual void OnMove();

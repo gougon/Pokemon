@@ -97,8 +97,32 @@ void CGameStateInit::OnInit()
 	menu.AddBitmap(HOME1);
 	menu.SetDelayCount(4);
     log.AddBitmap(HOME_LOG, RGB(255, 0, 0));
+    log.AddBitmap(HOME_LOG, RGB(255, 0, 0));
     log.AddBitmap(HOME_LOG_BLANK, RGB(255, 0, 0));
-    log.SetDelayCount(11);
+    log.SetDelayCount(6);
+	about.AddBitmap(HOME_ABOUT, RGB(255, 0, 0));
+	about.AddBitmap(HOME_ABOUT, RGB(255, 0, 0));
+	about.AddBitmap(HOME_LOG_BLANK, RGB(255, 0, 0));
+	about.SetDelayCount(6);
+	operation.AddBitmap(HOME_CHEAT, RGB(255, 0, 0));
+	operation.AddBitmap(HOME_CHEAT, RGB(255, 0, 0));
+	operation.AddBitmap(HOME_LOG_BLANK, RGB(255, 0, 0));
+	operation.SetDelayCount(6);
+	cursor.LoadBitmap(IDB_CURSOR, RGB(255, 0, 0));
+	aboutPage.LoadBitmap(IDB_ABOUT_PAGE);
+	operationPage.LoadBitmap(IDB_OPERATION_PAGE);
+
+	menu.SetTopLeft(0, 0);
+	log.SetTopLeft(120, 250);
+	about.SetTopLeft(120, 300);
+	operation.SetTopLeft(120, 350);
+	aboutPage.SetTopLeft(0, 0);
+	operationPage.SetTopLeft(0, 0);
+	cursor.SetTopLeft(95, 250);
+
+	cursorPosition = 0;
+	isSelected = false;
+
     Sleep(300);				// 放慢，以便看清楚進度，實際遊戲請刪除此Sleep
     //
     // 此OnInit動作會接到CGameStaterRun::OnInit()，所以進度還沒到100%
@@ -158,9 +182,30 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
     const char KEY_ESC = 27;
     const char KEY_Z = 0x5a;
+	const char KEY_X = 0x58;
+	const char KEY_UP = 0x26;
+	const char KEY_DOWN = 0x28;
 
-    if (nChar == KEY_Z)
-        GotoGameState(GAME_STATE_RUN);						// 切換至GAME_STATE_RUN
+	if (nChar == KEY_Z) {
+		CAudio::Instance()->Play(AUDIO_SELECT);
+		isSelected = true;
+		if (cursorPosition == 0)
+			GotoGameState(GAME_STATE_RUN);						// 切換至GAME_STATE_RUN
+	}
+	else if (nChar == KEY_X) {
+		CAudio::Instance()->Play(AUDIO_SELECT);
+		isSelected = false;
+	}
+	else if (nChar == KEY_DOWN && cursorPosition < 2) {
+		CAudio::Instance()->Play(AUDIO_SELECT);
+		cursorPosition++;
+		cursor.SetTopLeft(95, cursor.Top() + 50);
+	}
+	else if (nChar == KEY_UP && cursorPosition > 0) {
+		CAudio::Instance()->Play(AUDIO_SELECT);
+		cursorPosition--;
+		cursor.SetTopLeft(95, cursor.Top() - 50);
+	}
     else if (nChar == KEY_ESC)								// Demo 關閉遊戲的方法
         PostMessage(AfxGetMainWnd()->m_hWnd, WM_CLOSE, 0, 0);	// 關閉遊戲
 }
@@ -171,12 +216,23 @@ void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point)
 
 void CGameStateInit::OnShow()
 {
-	menu.OnMove();
-    log.OnMove();	// 貼上logo
-    menu.SetTopLeft(0, 0);
-    log.SetTopLeft(120, 300);
-	menu.OnShow();
-    log.OnShow();
+	if (isSelected) {
+		if (cursorPosition == 1)
+			aboutPage.ShowBitmap();
+		else if (cursorPosition == 2)
+			operationPage.ShowBitmap();
+	}
+	else {
+		menu.OnMove();
+		log.OnMove();	// 貼上logo
+		about.OnMove();
+		operation.OnMove();
+		menu.OnShow();
+		log.OnShow();
+		about.OnShow();
+		operation.OnShow();
+		cursor.ShowBitmap();
+	}
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -240,12 +296,13 @@ void CGameStateOver::OnShow()
 CGameStateRun::CGameStateRun(CGame* g)
     : CGameState(g)
 {
-    //ball = new CBall [NUMBALLS];
+	gameMap = nullptr;
 }
 
 CGameStateRun::~CGameStateRun()
 {
-	// delete gameMap;
+	delete gameMap;
+	delete characters;
 }
 
 void CGameStateRun::OnBeginState()
@@ -254,7 +311,7 @@ void CGameStateRun::OnBeginState()
 	gameMap = new WeiBaiMap(&gameEvent);
 	gameMap->LoadBitmap();					// 載入背景的圖形
     hero.Initialize();
-    hero.SetXY(96 * SM + HERO_X, 44 * SM + HERO_Y + 20);
+    hero.SetXY(97 * SM + HERO_X, 80 * SM + HERO_Y + 20);
     myMenu.Init();
 	atkInterface.ReceiveBag(myMenu.GetBag());
 	atkInterface.ReceivePmMenu(myMenu.GetPokemonMenu());
@@ -282,11 +339,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
     {
         testDialog.OnMove();
 		gameMap->OnMove();
-		characters->OnMove(hero, *gameMap);
         int count = hero.GetCount();
-
-        //TRACE("x = %d\ny = %d\n", hero.GetX1(), hero.GetY1());
-        //TRACE("sx = %d\nsy = %d\n", gameMap->GetSX(), gameMap->GetSY());
         if (hero.IsCanMove())
         {
 			int oneBlockTime = SM / hero.GetSpeed();
@@ -305,7 +358,11 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
                 hero.OnMove(&gameMap, atkInterface, characters);
             }
         }
+		characters->OnMove(hero, *gameMap);
     }
+	if (hero.GetGameEvent(winMaster)) {
+		GotoGameState(GAME_STATE_OVER);
+	}
 }
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
@@ -430,9 +487,8 @@ void CGameStateRun::OnShow()
         gameMap->OnShow();
 		characters->OnShow(hero, *gameMap);
         hero.OnShow();
-		characters->ReShow(hero, *gameMap);
 		gameMap->ReShow(hero);
-
+		characters->ReShow(hero, *gameMap);
         if (myMenu.IsWork())
             myMenu.OnShow();
     }

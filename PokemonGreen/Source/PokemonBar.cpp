@@ -11,7 +11,7 @@
 
 namespace game_framework {
 	PokemonBar::PokemonBar() :
-		isSelect(false), delay(0), haveItem(false)
+		isSelect(false), delay(0), haveItem(false), name("")
 	{
 		// empty body
 	}

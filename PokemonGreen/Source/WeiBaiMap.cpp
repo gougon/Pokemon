@@ -11,10 +11,16 @@
 #include "WeiBaiHouse1_1F_Map.h"
 #include "WeiBaiHouse2_1F_Map.h"
 #include "WeiBaiProHouse_Map.h"
-#include "Hospital_Map.h"
-#include "Shop_map.h"
+#include "Douchi_Hospital_Map.h"
+#include "Douchi_Shop_Map.h"
 #include "DouChiHouse1_Map.h"
 #include "DouChiHouse2_Map.h"
+#include "Tianyuan_Hospital_Map.h"
+#include "Tianyuan_Shop_Map.h"
+#include "Tianyuan_Nhouse_Map.h"
+#include "Tianyuan_Lthouse_Map.h"
+#include "Tianyuan_Rbhouse_Map.h"
+#include "Tianyuan_Gym_Map.h"
 #include "AtkInterface.h"
 #include "Pokemon.h"
 #include "PokemonFactory.h"
@@ -29,28 +35,21 @@ namespace game_framework
 	WeiBaiMap::WeiBaiMap(CEvent* gameEvent) : CMap(36) // sceneNum
 	{
 		mapGameEvent = gameEvent;
-
-		for (int i = 0; i < 10; i++)
-			TRACE("Event%d : %d\n", i, mapGameEvent->CheckOccured(i));
-
 		InitMap();
 	}
-
-
 
 	void WeiBaiMap::InitMap()
 	{
 		CAudio::Instance()->Play(AUDIO_WEIBAITOWN);
 
 		SetMXY(126, 109);			// 設定地圖總長寬格數
-		SetXY(96 * SM, 44 * SM);		// 設定初始位置
+		SetXY(97 * SM, 80 * SM);		// 設定初始位置
 		SetMap("area1");
 		name = "weibai";
-		fatguy.Initialize();
-		fatguy.SetXY(103 * SM, 84 * SM + 40);
 		dialogBox.InitDialog('n');
 
-		if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball)) pickable_Antidote.SetXY(6060, 3300);
+		if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
+			pickable_Antidote.SetXY(6060, 3300);
 
 		inEvent = false;
 		dialogState = Start;
@@ -90,25 +89,23 @@ namespace game_framework
 		scene[TIANYUAN_LLAKE4].LoadBitmap(IDB_TIANYUAN_LLAKE4);
 		scene[TIANYUAN_GYM].LoadBitmap(IDB_TIANYUAN_GYM);
 
-		flower.AddBitmap(IDB_GREEN_FLOWER);
-		flower.AddBitmap(IDB_GREEN_FLOWER2);
-		flower.AddBitmap(IDB_GREEN_FLOWER3);
-
-		rtsea1.AddBitmap(IDB_RTSEA1_1);
-		rtsea1.AddBitmap(IDB_RTSEA1_2);
-		rtsea1.AddBitmap(IDB_RTSEA1_3);
-		rtsea1.AddBitmap(IDB_RTSEA1_4);
-		rtsea1.AddBitmap(IDB_RTSEA1_5);
-		rtsea1.AddBitmap(IDB_RTSEA1_6);
-
-		rtsea2.AddBitmap(IDB_RTSEA2_1);
-		rtsea2.AddBitmap(IDB_RTSEA2_2);
-		rtsea2.AddBitmap(IDB_RTSEA2_3);
-		rtsea2.AddBitmap(IDB_RTSEA2_4);
-		rtsea2.AddBitmap(IDB_RTSEA2_5);
-		rtsea2.AddBitmap(IDB_RTSEA2_6);
-
-		fatguy.LoadBitmap();
+		// flower.AddBitmap(IDB_GREEN_FLOWER);
+		// flower.AddBitmap(IDB_GREEN_FLOWER2);
+		// flower.AddBitmap(IDB_GREEN_FLOWER3);
+		// 
+		// rtsea1.AddBitmap(IDB_RTSEA1_1);
+		// rtsea1.AddBitmap(IDB_RTSEA1_2);
+		// rtsea1.AddBitmap(IDB_RTSEA1_3);
+		// rtsea1.AddBitmap(IDB_RTSEA1_4);
+		// rtsea1.AddBitmap(IDB_RTSEA1_5);
+		// rtsea1.AddBitmap(IDB_RTSEA1_6);
+		// 
+		//rtsea2.AddBitmap(IDB_RTSEA2_1);
+		//rtsea2.AddBitmap(IDB_RTSEA2_2);
+		//rtsea2.AddBitmap(IDB_RTSEA2_3);
+		//rtsea2.AddBitmap(IDB_RTSEA2_4);
+		//rtsea2.AddBitmap(IDB_RTSEA2_5);
+		//rtsea2.AddBitmap(IDB_RTSEA2_6);
 		/////////////////////////////
 		if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
 			pickable_Antidote.LoadBitmap();
@@ -152,8 +149,8 @@ namespace game_framework
 						SetTopLeft(GREEN_TREE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM - 15);
 						break;
 					case GREEN_FLOWER:
-						flower.SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-						flower.OnShow();
+						// flower.SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						// flower.OnShow();
 						break;
 					case GRASS_LAND:
 						SetTopLeft(GRASS_LAND, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
@@ -180,12 +177,12 @@ namespace game_framework
 						SetTopLeft(NORMAL_HOUSE1, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
 						break;
 					case RT_SEA1:
-						rtsea1.SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-						rtsea1.OnShow();
+						// rtsea1.SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						// rtsea1.OnShow();
 						break;
 					case RT_SEA2:
-						rtsea2.SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-						rtsea2.OnShow();
+						// rtsea2.SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						// rtsea2.OnShow();
 						break;
 					case LAKE_102:
 						SetTopLeft(LAKE_102, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
@@ -249,7 +246,6 @@ namespace game_framework
 						break;
 				}
 
-				fatguy.OnShow(GetSX(), GetSY());
 				if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
 					pickable_Antidote.OnShow(sx, sy);
 			}
@@ -300,18 +296,18 @@ namespace game_framework
 					}
 				}
 				if (HERO_Y + 20 + SM <= (ycount - EXPEND)*SM - sy % SM
-					&& map[j / SM][i / SM] == GREEN_TREE) 
+					&& map[j / SM][i / SM] == GREEN_TREE)
 					SetTopLeft(GREEN_TREE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM - 15);
 			}
 		}
+		if (inEvent) dialogBox.OnShow();
 	}
 
 	void WeiBaiMap::OnMove()
 	{
-		flower.OnMove();
-		rtsea1.OnMove();
-		rtsea2.OnMove();
-		fatguy.OnMove();
+		// flower.OnMove();
+		// rtsea1.OnMove();
+		// rtsea2.OnMove();
 	}
 
 	bool WeiBaiMap::IsCollision(int x, int y, CHero &hero)
@@ -320,17 +316,16 @@ namespace game_framework
 		y /= SM;
 		bool flag = false;
 
-		for (auto i : hitImg)
+		for (int i = 0; i < 14; ++i)
 		{
-			if (map[y][x] == i)
+			if (map[y][x] == hitImg[i])
 				flag =  true;
 		}
-		if (find(jumpLand.begin(), jumpLand.end(), map[y][x]) != jumpLand.end()) {
+		if (map[y][x] == jumpLand) {
 			if (!IsJumpLand(x * SM, y * SM, hero))
 				flag = true;
 		}
 
-		if (fatguy.GetX() / SM == x && fatguy.GetY() / SM + 1 == y) flag =  true;
 		return flag;
 	}
 
@@ -339,11 +334,8 @@ namespace game_framework
 		x /= SM;
 		y /= SM;
 
-		for (auto i : warZone)
-		{
-			if (map[y][x] == i) {
-				return true;
-			}
+		if (map[y][x] == warZone) {
+			return true;
 		}
 
 		return false;
@@ -354,11 +346,8 @@ namespace game_framework
 		x /= SM;
 		y /= SM;
 
-		for (auto i : jumpLand)
-		{
-			if (map[y][x] == i && hero.GetY1() / SM < y) {
-				return true;
-			}
+		if (map[y][x] == jumpLand && hero.GetY1() / SM < y) {
+			return true;
 		}
 
 		return false;
@@ -400,16 +389,34 @@ namespace game_framework
 			newMap = new WeiBaiProHouse_Map(mapGameEvent);
 		}
 		else if (x == 98 && y == 50) {
-			newMap = new Hospital_Map(mapGameEvent);
+			newMap = new Douchi_Hospital_Map(mapGameEvent);
 		}
 		else if (x == 106 && y == 40) {
-			newMap = new Shop_Map(mapGameEvent);
+			newMap = new Douchi_Shop_Map(mapGameEvent);
 		}
 		else if (x == 107 && y == 50) {
 			newMap = new DouChiHouse1_Map(mapGameEvent);
 		}
 		else if (x == 97 && y == 41) {
 			newMap = new DouChiHouse2_Map(mapGameEvent);
+		}
+		else if (x == 32 && y == 40) {
+			newMap = new Tianyuan_Hospital_Map(mapGameEvent);
+		}
+		else if (x == 37 && y == 36) {
+			newMap = new Tianyuan_Shop_Map(mapGameEvent);
+		}
+		else if (x == 22 && y == 43) {
+			newMap = new Tianyuan_Nhouse_Map(mapGameEvent);
+		}
+		else if (x == 19 && y == 29) {
+			newMap = new Tianyuan_Lthouse_Map(mapGameEvent);
+		}
+		else if (x == 32 && y == 48) {
+			newMap = new Tianyuan_Rbhouse_Map(mapGameEvent);
+		}
+		else if (x == 27 && y == 32) {
+			newMap = new Tianyuan_Gym_Map(mapGameEvent);
 		}
 
 		CAudio::Instance()->Stop(AUDIO_WEIBAITOWN);
@@ -459,23 +466,6 @@ namespace game_framework
 						hero.GetItem(Item_PokeBall, 2);
 						dialogState = End;
 						inEvent = true;
-					}
-				}
-				else if (fatguy.GetX() / SM == x && fatguy.GetY() / SM + 1 == y)
-				{
-					fatguy.Talk(direction);
-					inEvent = true;
-					hero.StartDialog();
-					if (fatguy.GetVer() == 1) {
-						dialogBox.SetText("do you have some;delicious foods");
-					}
-					if (fatguy.GetVer() == 2) {
-						dialogState = Continue;
-						dialogBox.SetText("you call me fatguy!!");
-					}
-					if (fatguy.GetVer() == 3) dialogBox.SetText("get out of my way!!");
-					if (fatguy.GetVer() == 4) {
-						dialogState = End;
 					}
 				}
 				else if (x == 99 && y == 82) {

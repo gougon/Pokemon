@@ -51,7 +51,6 @@
 
 namespace game_framework
 {
-	class CharMay;
 /////////////////////////////////////////////////////////////////////////////
 // Constants
 /////////////////////////////////////////////////////////////////////////////
@@ -60,6 +59,8 @@ namespace game_framework
 // 這個class為遊戲的遊戲開頭畫面物件
 // 每個Member function的Implementation都要弄懂
 /////////////////////////////////////////////////////////////////////////////
+
+// static int score = 0;
 
 class CGameStateInit : public CGameState
 {
@@ -73,7 +74,10 @@ class CGameStateInit : public CGameState
         void OnShow();									// 顯示這個狀態的遊戲畫面
     private:
         CAnimation menu;
-        CAnimation log;
+        CAnimation log, about, operation;
+		CMovingBitmap cursor, aboutPage, operationPage;
+		int cursorPosition;
+		bool isSelected;
 };
 
 /////////////////////////////////////////////////////////////////////////////

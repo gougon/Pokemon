@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// ï¿½ï¿½ï¿½ï¿½ (ï¿½cï¿½ï¿½Aï¿½xï¿½W) resources
+// ¤¤¤å (ÁcÅé¡A¥xÆW) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
@@ -216,13 +216,11 @@ IDB_ALPHABET_SMALL_Z    BITMAP                  "..\\res\\bmp00025.bmp"
 
 IDB_JUMP_LAND           BITMAP                  "..\\\\RES\\jump_land.bmp"
 
-HERO_LEFT_TWO           BITMAP                  "..\\res\\hero_lef.bmp"
+HERO_LEFT_TWO           BITMAP                  "..\\res\\HERO_LEFT_TWO.bmp"
 
 FATGUY_LEFT             BITMAP                  "..\\res\\FATGUY_LEFT.bmp"
 
 FATGUY_RIGHT            BITMAP                  "..\\res\\FATGUY_RIGHT.bmp"
-
-LITTLE_GIRL_FRONT       BITMAP                  "..\\res\\GIRL_FRONT.bmp"
 
 FATGUY_UP               BITMAP                  "..\\res\\FATGUY_BACK.bmp"
 
@@ -726,49 +724,49 @@ IDB_SKILL_LICK2         BITMAP                  "..\\RES\\skill_lick2.bmp"
 
 IDB_SKILL_LICK1         BITMAP                  "..\\RES\\skill_lick1.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW21 BITMAP             "..\\RES\\enemy_skill_powdersnow21.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW21 BITMAP                  "..\\RES\\enemy_skill_powdersnow21.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW18 BITMAP             "..\\RES\\enemy_skill_powdersnow18.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW18 BITMAP                  "..\\RES\\enemy_skill_powdersnow18.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW19 BITMAP             "..\\RES\\enemy_skill_powdersnow19.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW19 BITMAP                  "..\\RES\\enemy_skill_powdersnow19.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW20 BITMAP             "..\\RES\\enemy_skill_powdersnow20.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW20 BITMAP                  "..\\RES\\enemy_skill_powdersnow20.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW17 BITMAP             "..\\RES\\enemy_skill_powdersnow17.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW17 BITMAP                  "..\\RES\\enemy_skill_powdersnow17.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW22 BITMAP             "..\\RES\\enemy_skill_powdersnow22.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW22 BITMAP                  "..\\RES\\enemy_skill_powdersnow22.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW16 BITMAP             "..\\RES\\enemy_skill_powdersnow16.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW16 BITMAP                  "..\\RES\\enemy_skill_powdersnow16.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW15 BITMAP             "..\\RES\\enemy_skill_powdersnow15.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW15 BITMAP                  "..\\RES\\enemy_skill_powdersnow15.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW14 BITMAP             "..\\RES\\enemy_skill_powdersnow14.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW14 BITMAP                  "..\\RES\\enemy_skill_powdersnow14.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW13 BITMAP             "..\\RES\\enemy_skill_powdersnow13.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW13 BITMAP                  "..\\RES\\enemy_skill_powdersnow13.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW12 BITMAP             "..\\RES\\enemy_skill_powdersnow12.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW12 BITMAP                  "..\\RES\\enemy_skill_powdersnow12.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW11 BITMAP             "..\\RES\\enemy_skill_powdersnow11.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW11 BITMAP                  "..\\RES\\enemy_skill_powdersnow11.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW10 BITMAP             "..\\RES\\enemy_skill_powdersnow10.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW10 BITMAP                  "..\\RES\\enemy_skill_powdersnow10.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW9 BITMAP              "..\\RES\\enemy_skill_powdersnow9.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW9 BITMAP                  "..\\RES\\enemy_skill_powdersnow9.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW8 BITMAP              "..\\RES\\enemy_skill_powdersnow8.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW8 BITMAP                  "..\\RES\\enemy_skill_powdersnow8.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW7 BITMAP              "..\\RES\\enemy_skill_powdersnow7.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW7 BITMAP                  "..\\RES\\enemy_skill_powdersnow7.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW6 BITMAP              "..\\RES\\enemy_skill_powdersnow6.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW6 BITMAP                  "..\\RES\\enemy_skill_powdersnow6.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW5 BITMAP              "..\\RES\\enemy_skill_powdersnow5.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW5 BITMAP                  "..\\RES\\enemy_skill_powdersnow5.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW4 BITMAP              "..\\RES\\enemy_skill_powdersnow4.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW4 BITMAP                  "..\\RES\\enemy_skill_powdersnow4.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW3 BITMAP              "..\\RES\\enemy_skill_powdersnow3.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW3 BITMAP                  "..\\RES\\enemy_skill_powdersnow3.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW2 BITMAP              "..\\RES\\enemy_skill_powdersnow2.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW2 BITMAP                  "..\\RES\\enemy_skill_powdersnow2.bmp"
 
-IDB_ENEMY_SKILL_POWDERSNOW1 BITMAP              "..\\RES\\enemy_skill_powdersnow1.bmp"
+IDB_ENEMY_SKILL_POWDERSNOW1 BITMAP                  "..\\RES\\enemy_skill_powdersnow1.bmp"
 
 IDB_SKILL_POWDERSNOW21  BITMAP                  "..\\RES\\skill_powdersnow21.bmp"
 
@@ -1304,6 +1302,218 @@ IDB_PARALYSIS_ICON      BITMAP                  "..\\RES\\PARALYSIS_ICON.bmp"
 
 IDB_POISON_ICON         BITMAP                  "..\\RES\\POISON_ICON.bmp"
 
+IDB_TIANYUAN_LTHOUSE_INSIDE BITMAP                  "..\\RES\\tianyuan_lthouse_inside.bmp"
+
+IDB_TIANYUAN_NHOUSE_INSIDE BITMAP                  "..\\RES\\tianyuan_nhouse_inside.bmp"
+
+IDB_TIANYUAN_RBHOUSE_INSIDE BITMAP                  "..\\RES\\tianyuan_rbhouse_inside.bmp"
+
+IDB_POTTED              BITMAP                  "..\\RES\\potted.bmp"
+
+IDB_GYM_WALL4           BITMAP                  "..\\RES\\gym_wall4.bmp"
+
+IDB_GYM_WALL3           BITMAP                  "..\\RES\\gym_wall3.bmp"
+
+IDB_GYM_WALL2           BITMAP                  "..\\RES\\gym_wall2.bmp"
+
+IDB_GYM_WALL1           BITMAP                  "..\\RES\\gym_wall1.bmp"
+
+IDB_GYM                 BITMAP                  "..\\RES\\gym.bmp"
+
+IDB_GYM_STATU           BITMAP                  "..\\RES\\gym_statu.bmp"
+
+IDB_SISTER_DOWN         BITMAP                  "..\\RES\\sister_down.bmp"
+
+IDB_SISTER_UP           BITMAP                  "..\\RES\\sister_up.bmp"
+
+IDB_SISTER_LEFT         BITMAP                  "..\\RES\\sister_left.bmp"
+
+IDB_SISTER_RIGHT        BITMAP                  "..\\RES\\sister_right.bmp"
+
+IDB_YOUNGSTER_DOWN      BITMAP                  "..\\RES\\boy_down.bmp"
+
+IDB_YOUNGSTER_RIGHT     BITMAP                  "..\\RES\\boy_right.bmp"
+
+IDB_YOUNGSTER_UP        BITMAP                  "..\\RES\\boy_up.bmp"
+
+IDB_YOUNGSTER_LEFT      BITMAP                  "..\\RES\\boy_left.bmp"
+
+IDB_YOUNGSTER_ATK       BITMAP                  "..\\RES\\boy_atk.bmp"
+
+IDB_YAMAO_ATK           BITMAP                  "..\\RES\\yamao_atk.bmp"
+
+IDB_YAMAO_LEFT          BITMAP                  "..\\RES\\yamao_left.bmp"
+
+IDB_YAMAO_DOWN          BITMAP                  "..\\RES\\yamao_down.bmp"
+
+IDB_YAMAO_RIGHT         BITMAP                  "..\\RES\\yamao_right.bmp"
+
+IDB_YAMAO_UP            BITMAP                  "..\\RES\\yamao_up.bmp"
+
+IDB_MASTER_RIGHT        BITMAP                  "..\\RES\\master_right.bmp"
+
+IDB_MASTER_DOWN         BITMAP                  "..\\RES\\master_down.bmp"
+
+IDB_MASTER_LEFT         BITMAP                  "..\\RES\\master_left.bmp"
+
+IDB_MASTER_ATK          BITMAP                  "..\\RES\\master_atk.bmp"
+
+HOME_CHEAT              BITMAP                  "..\\RES\\home_cheat.bmp"
+
+HOME_ABOUT              BITMAP                  "..\\RES\\home_about.bmp"
+
+IDB_OPERATION_PAGE      BITMAP                  "..\\RES\\operation_page.bmp"
+
+IDB_ABOUT_PAGE          BITMAP                  "..\\RES\\about_page.bmp"
+
+IDB_GIRL2_LEFT          BITMAP                  "..\\RES\\citizen_girl2_left.bmp"
+
+IDB_GIRL2_RIGHT         BITMAP                  "..\\RES\\citizen_girl2_right.bmp"
+
+IDB_GIRL2_UP            BITMAP                  "..\\RES\\citizen_girl2_up.bmp"
+
+IDB_GIRL2_DOWN          BITMAP                  "..\\RES\\citizen_girl2_down.bmp"
+
+IDB_GIRL1_LEFT          BITMAP                  "..\\RES\\citizen_girl1_left.bmp"
+
+IDB_GIRL1_RIGHT         BITMAP                  "..\\RES\\citizen_girl1_right.bmp"
+
+IDB_GIRL1_UP            BITMAP                  "..\\RES\\citizen_girl1_up.bmp"
+
+IDB_GIRL1_DOWN          BITMAP                  "..\\RES\\citizen_girl1_down.bmp"
+
+IDB_WOMAN1_LEFT         BITMAP                  "..\\RES\\citizen_woman1_left.bmp"
+
+IDB_WOMAN1_RIGHT        BITMAP                  "..\\RES\\citizen_woman1_right.bmp"
+
+IDB_WOMAN1_UP           BITMAP                  "..\\RES\\citizen_woman1_up.bmp"
+
+IDB_WOMAN1_DOWN         BITMAP                  "..\\RES\\citizen_woman1_down.bmp"
+
+IDB_ODD_LEFT            BITMAP                  "..\\RES\\citizen_odd_left.bmp"
+
+IDB_ODD_RIGHT           BITMAP                  "..\\RES\\citizen_odd_right.bmp"
+
+IDB_ODD_UP              BITMAP                  "..\\RES\\citizen_odd_up.bmp"
+
+IDB_ODD_DOWN            BITMAP                  "..\\RES\\citizen_odd_down.bmp"
+
+IDB_RESEARCHER_LEFT     BITMAP                  "..\\RES\\citizen_researcher_left.bmp"
+
+IDB_RESEARCHER_RIGHT    BITMAP                  "..\\RES\\citizen_researcher_right.bmp"
+
+IDB_RESEARCHER_UP       BITMAP                  "..\\RES\\citizen_researcher_up.bmp"
+
+IDB_RESEARCHER_DOWN     BITMAP                  "..\\RES\\citizen_researcher_down.bmp"
+
+IDB_MAN1_LEFT           BITMAP                  "..\\RES\\citizen_man1_left.bmp"
+
+IDB_MAN1_RIGHT          BITMAP                  "..\\RES\\citizen_man1_right.bmp"
+
+IDB_MAN1_UP             BITMAP                  "..\\RES\\citizen_man1_up.bmp"
+
+IDB_MAN1_DOWN           BITMAP                  "..\\RES\\citizen_man1_down.bmp"
+
+IDB_BADGUY_RIGHT        BITMAP                  "..\\RES\\trainer_badguy_right.bmp"
+
+IDB_BADGUY_LEFT         BITMAP                  "..\\RES\\trainer_badguy_left.bmp"
+
+IDB_BADGUY_UP           BITMAP                  "..\\RES\\trainer_badguy_up.bmp"
+
+IDB_BADGUY_DOWN         BITMAP                  "..\\RES\\trainer_badguy_down.bmp"
+
+IDB_BADGUY_ATK          BITMAP                  "..\\RES\\trainer_badguy_atk.bmp"
+
+IDB_JK_RIGHT            BITMAP                  "..\\RES\\trainer_jk_right.bmp"
+
+IDB_JK_LEFT             BITMAP                  "..\\RES\\trainer_jk_left.bmp"
+
+IDB_JK_UP               BITMAP                  "..\\RES\\trainer_jk_up.bmp"
+
+IDB_JK_DOWN             BITMAP                  "..\\RES\\trainer_jk_down.bmp"
+
+IDB_JK_ATK              BITMAP                  "..\\RES\\trainer_jk_atk.bmp"
+
+IDB_WOMAN2_DOWN         BITMAP                  "..\\RES\\citizen_woman2_down.bmp"
+
+IDB_GIRL3_RIGHT         BITMAP                  "..\\RES\\citizen_girl_right.bmp"
+
+IDB_GIRL3_LEFT          BITMAP                  "..\\RES\\citizen_girl_left.bmp"
+
+IDB_GIRL3_UP            BITMAP                  "..\\RES\\citizen_girl_up.bmp"
+
+IDB_GIRL3_DOWN          BITMAP                  "..\\RES\\citizen_girl_down.bmp"
+
+IDB_BOY_RIGHT           BITMAP                  "..\\RES\\citizen_boy_right.bmp"
+
+IDB_BOY_LEFT            BITMAP                  "..\\RES\\citizen_boy_left.bmp"
+
+IDB_BOY_UP              BITMAP                  "..\\RES\\citizen_boy_up.bmp"
+
+IDB_BOY_DOWN            BITMAP                  "..\\RES\\citizen_boy_down.bmp"
+
+IDB_WOMAN4_RIGHT        BITMAP                  "..\\RES\\citizen_woman4_right.bmp"
+
+IDB_WOMAN4_LEFT         BITMAP                  "..\\RES\\citizen_woman4_left.bmp"
+
+IDB_WOMAN4_UP           BITMAP                  "..\\RES\\citizen_woman4_up.bmp"
+
+IDB_WOMAN4_DOWN         BITMAP                  "..\\RES\\citizen_woman4_down.bmp"
+
+IDB_MAN5_RIGHT          BITMAP                  "..\\RES\\citizen_man5_right.bmp"
+
+IDB_MAN5_LEFT           BITMAP                  "..\\RES\\citizen_man5_left.bmp"
+
+IDB_MAN5_UP             BITMAP                  "..\\RES\\citizen_man5_up.bmp"
+
+IDB_MAN5_DOWN           BITMAP                  "..\\RES\\citizen_man5_down.bmp"
+
+IDB_MAN4_RIGHT          BITMAP                  "..\\RES\\citizen_man4_right.bmp"
+
+IDB_MAN4_LEFT           BITMAP                  "..\\RES\\citizen_man4_left.bmp"
+
+IDB_MAN4_UP             BITMAP                  "..\\RES\\citizen_man4_up.bmp"
+
+IDB_MAN4_DOWN           BITMAP                  "..\\RES\\citizen_man4_down.bmp"
+
+IDB_MAN3_RIGHT          BITMAP                  "..\\RES\\citizen_man3_right.bmp"
+
+IDB_MAN3_LEFT           BITMAP                  "..\\RES\\citizen_man3_left.bmp"
+
+IDB_MAN3_UP             BITMAP                  "..\\RES\\citizen_man3_up.bmp"
+
+IDB_MAN3_DOWN           BITMAP                  "..\\RES\\citizen_man3_down.bmp"
+
+IDB_MAN2_LEFT           BITMAP                  "..\\RES\\citizen_man2_left.bmp"
+
+IDB_MAN2_UP             BITMAP                  "..\\RES\\citizen_man2_up.bmp"
+
+IDB_MAN2_DOWN           BITMAP                  "..\\RES\\citizen_man2_down.bmp"
+
+IDB_MAN2_RIGHT          BITMAP                  "..\\RES\\citizen_man2_right.bmp"
+
+IDB_WOMAN5_RIGHT        BITMAP                  "..\\RES\\citizen_woman5_right.bmp"
+
+IDB_WOMAN5_LEFT         BITMAP                  "..\\RES\\citizen_woman5_left.bmp"
+
+IDB_WOMAN5_UP           BITMAP                  "..\\RES\\citizen_woman5_up.bmp"
+
+IDB_WOMAN5_DOWN         BITMAP                  "..\\RES\\citizen_woman5_down.bmp"
+
+IDB_WOMAN2_RIGHT        BITMAP                  "..\\RES\\citizen_woman2_right.bmp"
+
+IDB_WOMAN2_LEFT         BITMAP                  "..\\RES\\citizen_woman2_left.bmp"
+
+IDB_WOMAN2_UP           BITMAP                  "..\\RES\\citizen_woman2_up.bmp"
+
+IDB_WOMAN3_RIGHT        BITMAP                  "..\\RES\\citizen_woman3_right.bmp"
+
+IDB_WOMAN3_LEFT         BITMAP                  "..\\RES\\citizen_woman3_left.bmp"
+
+IDB_WOMAN3_UP           BITMAP                  "..\\RES\\citizen_woman3_up.bmp"
+
+IDB_WOMAN3_DOWN         BITMAP                  "..\\RES\\citizen_woman3_down.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -1312,12 +1522,12 @@ IDB_POISON_ICON         BITMAP                  "..\\RES\\POISON_ICON.bmp"
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
 
-#endif    // ï¿½ï¿½ï¿½ï¿½ (ï¿½cï¿½ï¿½Aï¿½xï¿½W) resources
+#endif    // ¤¤¤å (ÁcÅé¡A¥xÆW) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// ï¿½^ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½) resources
+// ­^¤å (¬ü°ê) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -1615,7 +1825,7 @@ BEGIN
     ID_BUTTON_UNITTEST      "Perform Unit Test"
 END
 
-#endif    // ï¿½^ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½) resources
+#endif    // ­^¤å (¬ü°ê) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

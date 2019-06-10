@@ -10,6 +10,7 @@ namespace game_framework
 	{
 		public:
 			ActionObject();
+			virtual ~ActionObject() {};
 			virtual void KeyDownListener(UINT nChar) = 0;
 			virtual void RecieveItem(int, int) {}
 			void Start();

@@ -53,7 +53,7 @@ namespace game_framework
 
 				// assessment whether dialog is end
 				if (normalDialog.IsEnd()) {
-					StopTalk();
+					StopTalk(hero);
 					isEvent = true;
 				}
 			}
@@ -61,7 +61,7 @@ namespace game_framework
 				eventDialog.Next();
 
 				if (eventDialog.IsEnd())
-					StopTalk();
+					StopTalk(hero);
 			}
 		}
 	}

@@ -20,6 +20,10 @@ constexpr auto ENTRANCE = -1;
 constexpr auto HOSPITAL = 13;
 constexpr auto STORE = 14;
 
+constexpr auto SHOP_MAP = 2;
+constexpr auto HOSPITAL_INSIDE = 2;
+constexpr auto NURSE = 3;
+
 enum mapID
 {
     weibaitown, // 0
@@ -38,6 +42,7 @@ class CMap
 {
     public:
         CMap();
+		~CMap();
         CMap(int sceneNum);
         virtual void InitMap() {}
         virtual void LoadBitmap() {}

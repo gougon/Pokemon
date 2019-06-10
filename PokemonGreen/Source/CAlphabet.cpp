@@ -12,10 +12,6 @@ CAlphabet::CAlphabet()
 {
 }
 
-CAlphabet::~CAlphabet()
-{
-}
-
 void CAlphabet::LoadBitmap()
 {
     alphabet_list[0].LoadBitmap(IDB_ALPHABET_SMALL_A, RGB(255, 0, 0));

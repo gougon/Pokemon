@@ -21,6 +21,7 @@ void WeiBaiHouse2_2F_Map::InitMap()
     SetMXY(37, 36);
     SetXY(10 * SM, 12 * SM);
     SetMap("weibaitown_house2_2f");
+	name = "weibaitown_house2_2f";
 }
 
 void WeiBaiHouse2_2F_Map::LoadBitmap()
@@ -66,11 +67,11 @@ bool WeiBaiHouse2_2F_Map::IsCollision(int x, int y, CHero &hero)
     x /= SM;
     y /= SM;
 
-    for (auto i : hitImg)
-    {
-		if (map[y][x] == i)
+	for (int i = 0; i < 2; ++i)
+	{
+		if (map[y][x] == hitImg[i])
 			return true;
-    }
+	}
 
     return false;
 }

@@ -19,9 +19,32 @@ namespace game_framework
 		// empty body
 	}
 
+	Trainer::~Trainer()
+	{
+		for (auto i : pokemons)
+			delete i;
+		atkInterface = nullptr;
+	}
+
+	void Trainer::InsertPokemon(Pokemon *pokemon)
+	{
+		pokemons.push_back(pokemon);
+	}
+
+	void Trainer::SetXY(int x, int y)
+	{
+		this->x = x;
+		this->y = y;
+	}
+
 	void Trainer::SetIsEvent(bool flag)
 	{
 		isEvent = flag;
+	}
+
+	string Trainer::GetName()
+	{
+		return name;
 	}
 
 	int Trainer::GetPmNum()
@@ -43,11 +66,6 @@ namespace game_framework
 	string Trainer::GetMap()
 	{
 		return map;
-	}
-
-	string Trainer::GetName()
-	{
-		return name;
 	}
 
 	CMovingBitmap *Trainer::GetAtkImg()
@@ -80,10 +98,11 @@ namespace game_framework
 
 	// protected
 
-	void Trainer::StopTalk()
+	void Trainer::StopTalk(CHero &hero)
 	{
 		eventDialog.Reset();
 		isTalk = false;
+		hero.SetCanMove(true);
 	}
 
 	void Trainer::StartAtk(CHero* self, Trainer* trainer, AtkInterface &atkInterface)
@@ -109,6 +128,25 @@ namespace game_framework
 			x == hx + 1 && y == hy) 
 			return true;
 		else 
+			return false;
+	}
+
+	bool Trainer::IsDiscoverHero(CHero &hero) {
+		int hx = hero.GetX1() / SM;
+		int hy = hero.GetY1() / SM;
+		if (direction == up &&
+			hx == x && hy >= y - 3 && hy <= y - 1)
+			return true;
+		else if (direction == left &&
+			hx >= x - 3 && hx <= x - 1 && hy == y)
+			return true;
+		else if (direction == down &&
+			hx == x && hy <= y + 3 && hy >= y + 1)
+			return true;
+		else if (direction == right &&
+			hx <= x + 3 && hx >= x + 1 && hy == y)
+			return true;
+		else
 			return false;
 	}
 }

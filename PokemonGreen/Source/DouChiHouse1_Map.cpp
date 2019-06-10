@@ -21,6 +21,7 @@ namespace game_framework {
 		SetMXY(39, 36);
 		SetXY(12 * SM, 17 * SM);
 		SetMap("douchitown_house1");
+		name = "douchitown_house1";
 	}
 
 	void DouChiHouse1_Map::LoadBitmap()
@@ -71,9 +72,9 @@ namespace game_framework {
 		x /= SM;
 		y /= SM;
 
-		for (auto i : hitImg)
+		for (int i = 0; i < 2; ++i)
 		{
-			if (map[y][x] == i)
+			if (map[y][x] == hitImg[i])
 				return true;
 		}
 

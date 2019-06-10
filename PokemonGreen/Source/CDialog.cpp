@@ -10,12 +10,20 @@ using namespace std;
 namespace game_framework
 {
 CDialog::CDialog() :
-	textCounter(0), textNum(0)
+	textCounter(0), textNum(0), showString("")
 {
+}
+
+CDialog::~CDialog()
+{
+	texts.clear();
+ 	vector<string>(texts).swap(texts);
 }
 
 void CDialog::SetText(string inputstr)
 {
+	// const char* del = showString.c_str();
+	// delete del;
     showString = inputstr;
 }
 
@@ -43,17 +51,17 @@ void CDialog::InitDialog(char type)
 
     //加載游標
     
-	cursor.AddBitmap(TEXT_CURSOR1, RGB(255, 0, 0));
-    cursor.AddBitmap(TEXT_CURSOR2, RGB(255, 0, 0));
-    cursor.AddBitmap(TEXT_CURSOR3, RGB(255, 0, 0));
-    cursor.SetDelayCount(5);
+	// cursor.AddBitmap(TEXT_CURSOR1, RGB(255, 0, 0));
+    // cursor.AddBitmap(TEXT_CURSOR2, RGB(255, 0, 0));
+    // cursor.AddBitmap(TEXT_CURSOR3, RGB(255, 0, 0));
+    // cursor.SetDelayCount(5);
     //加載文字
     showAlphabet.LoadBitmap();
 }
 
 void CDialog::OnMove()
 {
-    cursor.OnMove();
+    // cursor.OnMove();
     //sequential showing text
 }
 

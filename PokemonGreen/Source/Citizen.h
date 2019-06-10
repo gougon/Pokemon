@@ -21,11 +21,9 @@ namespace game_framework {
 		bool IsCollision(int x, int y);
 	protected:
 		virtual void Talk(CHero &hero) = 0;
-		void StopTalk();
+		void StopTalk(CHero &hero);
 		bool IsBeTalked(CHero &hero);
 
-		//NpcType type;
-		//CMovingBitmap normalImg[4];
 		CDialog eventDialog, normalDialog;
 		string name, map;
 		int direction;

@@ -16,8 +16,8 @@ namespace game_framework
 		Trainer(atkInterface)
 	{
 		// set position
-		x = 105;
-		y = 87;
+		x = 102;
+		y = 15;
 
 		// set pokemons
 		PokemonFactory pmf;
@@ -27,9 +27,10 @@ namespace game_framework
 		// set name and map
 		name = "may";
 		map = "weibai";
+		type = walker;
 
 		// set direction
-		direction = up;
+		direction = right;
 
 		// set dialog
 		normalDialog.InitDialog('n');
@@ -63,20 +64,22 @@ namespace game_framework
 				// set dialog order trigger event
 				if (normalDialog.GetCurrentTextNumber() < atkDialogCounter)
 					normalDialog.Next();
-				else if (normalDialog.GetCurrentTextNumber() == atkDialogCounter)
+				else if (normalDialog.GetCurrentTextNumber() == atkDialogCounter) {
 					StartAtk(&hero, this, *atkInterface);
-				else
-					normalDialog.Next();
+				}
 
 				// assessment whether dialog is end
-				if (normalDialog.IsEnd())
-					StopTalk();
+				if (normalDialog.IsEnd()){
+					StopTalk(hero);
+				}
 			}
 			else {
 				eventDialog.Next();
 
-				if (eventDialog.IsEnd())
-					StopTalk();
+				if (eventDialog.IsEnd()) {
+					StopTalk(hero);
+					hero.SetGameEvent(winMay, true);
+				}
 			}
 		}
 	}
@@ -114,11 +117,21 @@ namespace game_framework
 			SetTopLeft(hero.GetX1(), hero.GetY1());
 			normalImg[direction].ShowBitmap();
 		}
+		if (IsTalk()) {
+			if (!isEvent)
+				normalDialog.OnShow();
+			else
+				eventDialog.OnShow();
+		}
 	}
 
-	void TrainerMay::OnMove()
+	void TrainerMay::OnMove(CHero &hero)
 	{
-		// empty body
+		if (!IsTalk() && !isEvent && IsDiscoverHero(hero) &&
+			(hero.GetSpeed() == STEP_SIZE && hero.GetCount() == 12 ||
+			hero.GetSpeed() == STEP_SIZE * 2 && hero.GetCount() == 6)) {
+			Talk(hero);
+		}
 	}
 
 	// private
@@ -126,10 +139,14 @@ namespace game_framework
 	void TrainerMay::Talk(CHero &hero)
 	{
 		isTalk = true;
-		direction = (hero.GetDirection() % 2 == 0) ? 
-			hero.GetDirection() + 1 : hero.GetDirection() - 1;
-		
-		// atkinterface receive data
+		hero.SetCanMove(false);
+
+		int hx = hero.GetX1() / SM;
+		int hy = (hero.GetY1() + 20) / SM;
+		if (hx != x)
+			direction = (hx < x) ? left : right;
+		else if (hy != y)
+			direction = (hy < y) ? up : down;
 	}
 
 	void TrainerMay::SetTopLeft(int hx, int hy)

@@ -11,14 +11,18 @@
 
 namespace game_framework {
 	Pokemon::Pokemon() :
-		statu(new Status()), canMove(true)
+		statu(nullptr), canMove(true)
 	{
-		/* empty body */
+		statu = new Status();
 	}
 
 	Pokemon::~Pokemon()
 	{
 		delete statu;
+		for (auto i : skillTree)
+			delete i.second;
+		for (auto i : skills)
+			i = nullptr;
 	}
 
 	void Pokemon::OnShow()

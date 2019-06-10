@@ -22,6 +22,12 @@ namespace game_framework
 		items.push_back(new Record());
 	}
 
+	Menu::~Menu()
+	{
+		for (auto i : items)
+			delete i;
+	}
+
 	void Menu::Init()
 	{
 		menuTop.SetTopLeft(MENU_LEFT, MENU_TOP);

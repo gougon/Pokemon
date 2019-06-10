@@ -15,9 +15,26 @@
 
 namespace game_framework {
 	AtkInterface::AtkInterface()
-		: ActionObject(), self(nullptr), enemy(nullptr), textCount(0), lvupCount(0)
+		: ActionObject(), self(nullptr), enemy(nullptr), pokeball(nullptr), textCount(0), lvupCount(0)
 	{
 		/* empty body */
+	}
+
+	AtkInterface::~AtkInterface()
+	{
+		self = nullptr;
+		trainer = nullptr;
+		enemy = nullptr;
+		myPm = nullptr;
+		pmMenu = nullptr;
+		bag = nullptr;
+		battleTrainer = nullptr;
+		for (auto i : joinAtkPm)
+			i = nullptr;
+		for (auto i : lvupPm)
+			i = nullptr;
+		if (pokeball != nullptr)
+			delete pokeball;
 	}
 
 	void AtkInterface::OnShow()
@@ -530,15 +547,12 @@ namespace game_framework {
 				if (trainer != nullptr && textCount == 0 && trainerList.Left() < PMLIST_LEFT_LEFT)
 					trainerList.SetTopLeft(trainerList.Left() + V, trainerList.Top());
 				if (textCount == 0) 
-					outcomeText.SetText(enemy->GetName() + " was defeated");
-					/*
 					if (pokeball != nullptr && dynamic_cast<ItemPokeBall*>(pokeball)->IsCatch()) {
 						outcomeText.SetText("capture " + enemy->GetName());
 					}
 					else {
 						outcomeText.SetText(enemy->GetName() + " was defeated");
 					}
-					*/
 				else if (textCount <= (int)joinAtkPm.size()) {
 					outcomeText.SetText(FindSetFromOrder(joinAtkPm, textCount - 1)->GetName() + " get " +
 						to_string(GetAddExp(enemy) / joinAtkPm.size()) + " exp");
@@ -563,17 +577,17 @@ namespace game_framework {
 				switch (lvupCount) {
 				case 0:
 					AddExp(order);
-					if (!myBar.IsAddExp()) {		// ¸gÅç­È°Êµeµ²§ô
-						if (FindSetFromOrder(joinAtkPm, order) !=			// ¤£»Ý­n¤Éµ¥
+					if (!myBar.IsAddExp()) {		// ï¿½gï¿½ï¿½È°Êµeï¿½ï¿½ï¿½ï¿½
+						if (FindSetFromOrder(joinAtkPm, order) !=			// ï¿½ï¿½ï¿½Ý­nï¿½Éµï¿½
 							((lvupPm.empty()) ? nullptr : *(lvupPm.rbegin()))) {
 							if (trainer == nullptr) {
-								if ((int)joinAtkPm.size() == order + 1) 		// ³Ì«á¤@°¦
+								if ((int)joinAtkPm.size() == order + 1) 		// ï¿½Ì«ï¿½@ï¿½ï¿½
 									End();
 								else
 									state = endDialog;
 							}
 							else {
-								if ((int)joinAtkPm.size() == order + 1 && trainer->GetAliveNum() == 0) {		// ³Ì«á¤@°¦
+								if ((int)joinAtkPm.size() == order + 1 && trainer->GetAliveNum() == 0) {		// ï¿½Ì«ï¿½@ï¿½ï¿½
 									if (trainer != nullptr && trainer->GetAliveNum() > 0)
 										state = loadStartStatu;
 									else
@@ -583,21 +597,21 @@ namespace game_framework {
 									state = endDialog;
 							}
 						}
-						else		// »Ý­n¤Éµ¥
+						else		// ï¿½Ý­nï¿½Éµï¿½
 							lvupCount = 1;
 					}
 					break;
-				case 1:			// ¤w½T©w­n¤Éµ¥¡AÅã¥Ü¤Éµ¥¤å¦r
+				case 1:			// ï¿½wï¿½Tï¿½wï¿½nï¿½Éµï¿½ï¿½Aï¿½ï¿½Ü¤Éµï¿½ï¿½ï¿½r
 					outcomeText.SetText(FindSetFromOrder(joinAtkPm, order)->GetName() + " level up to "
 						 + to_string(FindSetFromOrder(joinAtkPm, order)->GetLevel()));
 					break;
-				case 2:			// ³]©w¤Éµ¥ÄÝ©Ê´£¤É­±ªO
+				case 2:			// ï¿½]ï¿½wï¿½Éµï¿½ï¿½Ý©Ê´ï¿½ï¿½É­ï¿½ï¿½O
 					SetValue(order);
 					break;
-				case 4:			// ¤Éµ¥­±ªOµ²§ô
-					if ((int)joinAtkPm.size() == order + 1) 		// ³Ì«á¤@°¦
+				case 4:			// ï¿½Éµï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½
+					if ((int)joinAtkPm.size() == order + 1) 		// ï¿½Ì«ï¿½@ï¿½ï¿½
 						End();
-					else {			// ¤£¬O³Ì«á¤@°¦­n¦^dialog
+					else {			// ï¿½ï¿½ï¿½Oï¿½Ì«ï¿½@ï¿½ï¿½ï¿½nï¿½^dialog
 						lvupCount = 0;
 						state = endDialog;
 					}
@@ -719,10 +733,10 @@ namespace game_framework {
 
 	void AtkInterface::KeyDownListener(UINT nChar)
 	{
-		const char KEY_LEFT = 0x25; // keyboard¥ª½bÀY
-		const char KEY_UP = 0x26; // keyboard¤W½bÀY
-		const char KEY_RIGHT = 0x27; // keyboard¥k½bÀY
-		const char KEY_DOWN = 0x28; // keyboard¤U½bÀY
+		const char KEY_LEFT = 0x25; // keyboardï¿½ï¿½ï¿½bï¿½Y
+		const char KEY_UP = 0x26; // keyboardï¿½Wï¿½bï¿½Y
+		const char KEY_RIGHT = 0x27; // keyboardï¿½kï¿½bï¿½Y
+		const char KEY_DOWN = 0x28; // keyboardï¿½Uï¿½bï¿½Y
 		const char KEY_Z = 0x5a;
 		const char KEY_X = 0x58;
 
@@ -939,9 +953,12 @@ namespace game_framework {
 			states.pop();
 		if (trainer != nullptr)
 			trainer->SetIsEvent(true);
+		else
+			delete enemy;
 		trainer = nullptr;
 		isWork = false;
 		isAnime = false;
+		pokeball = nullptr;
 		textCount = 0;
 		lvupCount = 0;
 		joinAtkPm.clear();

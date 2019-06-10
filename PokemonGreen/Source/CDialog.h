@@ -38,6 +38,7 @@ class CDialog
 {
     public:
         CDialog();
+		~CDialog();
         void SetText(string inputstr);
 		void AddText(string text);
 		void Next();
@@ -49,7 +50,7 @@ class CDialog
 		int GetCurrentTextNumber();
     private:
         CMovingBitmap screen;
-        CAnimation cursor;
+        // CAnimation cursor;
         string showString;
         CAlphabet showAlphabet;
 		vector<string> texts;

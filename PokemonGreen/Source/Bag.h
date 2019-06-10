@@ -5,6 +5,7 @@
 #include "PokemonMenu.h"
 #include "CText.h"
 #include "CItem.h"
+#include "CDialog.h"
 #include "ItemFactory.h"
 #define MAXITEMAMOUNT 100
 using namespace std;
@@ -14,6 +15,7 @@ class Bag : public ActionObject
 {
     public:
         Bag();
+		virtual ~Bag();
         virtual void Init();
         virtual void OnShow();
         virtual void OnMove();

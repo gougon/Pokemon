@@ -19,6 +19,6 @@ namespace game_framework {
 		virtual CMap* ChangeMap(int x, int y, CHero* hero);
 	private:
 		bool inEvent;
-		vector<int> hitImg = { 0, 2 };
+		int hitImg[2] = { 0, 2 };
 	};
 }

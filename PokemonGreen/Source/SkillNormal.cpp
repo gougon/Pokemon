@@ -91,7 +91,6 @@ namespace game_framework {
 			ASSERT(0);
 			break;
 		}
-		TRACE("\ndamege = %d\n", (int)damage);
 		return ((int)damage <= 0) ? 1 : (int)damage;
 	}
 

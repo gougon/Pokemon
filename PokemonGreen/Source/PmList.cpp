@@ -22,6 +22,8 @@ namespace game_framework {
 
 	PmList::~PmList()
 	{
+		for (auto i : targetBall)
+			delete i;
 		vector<CMovingBitmap*>().swap(targetBall);
 	}
 
@@ -71,6 +73,8 @@ namespace game_framework {
 	{
 		this->type = type;
 
+		for (auto i : targetBall)
+			delete i;
 		vector<CMovingBitmap*>().swap(targetBall);
 
 		for (int i = 0; i < 6; ++i) {

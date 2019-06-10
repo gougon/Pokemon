@@ -13,7 +13,7 @@ class CCharacter
     public:
         CCharacter();
         CCharacter(int chaID);
-        CMovingBitmap* setCharacter(int chaNum);
+        // CMovingBitmap* setCharacter(int chaNum);
         virtual int GetX()
         {
             return 0;
@@ -32,8 +32,8 @@ class CCharacter
         virtual void OnShow(int, int) {}
         virtual void Talk(int) {}
     protected:
-        CMovingBitmap* character_scene_pointer;
-        CMovingBitmap  scene[4];
+        // CMovingBitmap* character_scene_pointer;
+        // CMovingBitmap  scene[4];
         int stepcounter = 0;
 };
 }
