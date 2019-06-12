@@ -21,8 +21,8 @@ namespace game_framework
 
 		// set pokemons
 		PokemonFactory pmf;
-		pokemons.push_back(pmf.CreateEnemy(grimer, 11));
-		pokemons.push_back(pmf.CreateEnemy(metang, 13));
+		pokemons.push_back(pmf.CreateEnemy(hooh, 12));
+		pokemons.push_back(pmf.CreateEnemy(pikachu, 13));
 
 		// set name and map
 		name = "gymYoungster";
@@ -34,7 +34,7 @@ namespace game_framework
 
 		// set dialog
 		normalDialog.InitDialog('n');
-		normalDialog.AddText("this road does not work");
+		normalDialog.AddText("this road does not work too");
 		atkDialogCounter = 0;
 		normalDialog.AddText("damn it");
 

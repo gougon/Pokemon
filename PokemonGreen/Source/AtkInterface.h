@@ -22,34 +22,22 @@ namespace game_framework {
 	constexpr auto ENEMYPM_Y = 35;
 
 	enum Cursor {
-		fight,
-		openbag,
-		pokemon,
-		escape,
+		fight, openbag, pokemon, escape,
 
 		skill1 = 0, // 左上
 		skill2 = 1, // 右上
 		skill3 = 2, // 左下
 		skill4 = 3, // 右下
 
-		yes = 0,
-		no = 1
+		yes = 0, no = 1
 	};
 
 	enum State {
-		openAnime, 
-		heroAppear, 
-		heroStay, 
-		heroLeave, 
-		pokemonAppear,
+		openAnime, heroAppear, heroStay, heroLeave, pokemonAppear,
 		loadStartStatu,
 		action,
-		chooseSkill,
-		choosePokemon,
-		chooseItem,
-		usePokeBall,
-		enemyInStruggle,
-		unCatch,
+		chooseSkill, choosePokemon, chooseItem,
+		usePokeBall, enemyInStruggle, unCatch,
 		onSkill,
 		loadProgressStatu,
 		loadEndStatu,
@@ -59,9 +47,7 @@ namespace game_framework {
 		enemyLoadEndStatu,
 		atkStatu, 
 		hpAnime, 
-		endAnime, 
-		endDialog, 
-		end
+		endAnime, endDialog, end
 	};
 
 	class AtkInterface : public ActionObject {

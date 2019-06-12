@@ -39,6 +39,7 @@ namespace game_framework {
 
 		srand((unsigned)time(NULL));
 		this->name = name;
+		pmID = jirachi;
 		attribute = psychic;
 		level = 5;			// 需要改，此處先設定level全定為5
 		speciesStrength.SetAll(100, 100, 100, 100, 100, 100);

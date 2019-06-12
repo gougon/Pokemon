@@ -157,9 +157,8 @@ namespace game_framework {
 		this->pm = pm;
 		pmImage = pm->GetFrontImage();
 		pmImage.SetTopLeft(IMG_LEFT, IMG_TOP);
-		for (int i = 0; i < pm->GetSkillNum(); ++i) {
+		for (int i = 0; i < pm->GetSkillNum(); ++i) 
 			skills.push_back(pm->GetSkill(i));
-		}
 		SetCommon();
 		SetInfo();
 		SetSkillText();
@@ -228,32 +227,26 @@ namespace game_framework {
 	void PmOprtView::SelectSkillAnime()
 	{
 		if (delay++ < 20) {
-			if (delay <= 10) {
+			if (delay <= 10) 
 				skillSelect.ShowBitmap();
-			}
 		}
-		else {
+		else 
 			delay = 0;
-		}
 	}
 
 	void PmOprtView::OpenSkillSidebar()
 	{
-		if (skillSidebar.Left() - 60 < SK_SB_LEFT) {
+		if (skillSidebar.Left() - 60 < SK_SB_LEFT) 
 			skillSidebar.SetTopLeft(SK_SB_LEFT, SK_SB_TOP);
-		}
-		else {
+		else 
 			skillSidebar.SetTopLeft(skillSidebar.Left() - 60, SK_SB_TOP);
-		}
 	}
 
 	void PmOprtView::CloseSkillSidebar()
 	{
-		if (skillSidebar.Left() + 30 > SK_LIST_LEFT) {
+		if (skillSidebar.Left() + 30 > SK_LIST_LEFT) 
 			skillSidebar.SetTopLeft(SK_LIST_LEFT, SK_SB_TOP);
-		}
-		else {
+		else 
 			skillSidebar.SetTopLeft(skillSidebar.Left() + 30, SK_SB_TOP);
-		}
 	}
 }

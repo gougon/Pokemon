@@ -267,7 +267,6 @@
     <ClCompile Include="Source\audio.cpp" />
     <ClCompile Include="Source\Bag.cpp" />
     <ClCompile Include="Source\CAlphabet.cpp" />
-    <ClCompile Include="Source\CCharacter.cpp" />
     <ClCompile Include="Source\CDialog.cpp" />
     <ClCompile Include="Source\CEvent.cpp" />
     <ClCompile Include="Source\Characters.cpp" />
@@ -355,11 +354,9 @@
     <ClCompile Include="Source\Clerk.cpp" />
     <ClCompile Include="Source\CMap.cpp" />
     <ClCompile Include="Source\CitizenMom.cpp" />
-    <ClCompile Include="Source\CObject.cpp" />
     <ClCompile Include="Source\CPickableObject.cpp" />
     <ClCompile Include="Source\CSelf.cpp" />
     <ClCompile Include="Source\CText.cpp" />
-    <ClCompile Include="Source\Black.cpp" />
     <ClCompile Include="Source\Functions.cpp" />
     <ClCompile Include="Source\game.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -371,7 +368,6 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="Source\GameObject.cpp" />
     <ClCompile Include="Source\gameView.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -450,7 +446,6 @@
     <ClInclude Include="Source\AtkInterface.h" />
     <ClInclude Include="Source\audio.h" />
     <ClInclude Include="Source\Bag.h" />
-    <ClInclude Include="Source\CCharacter.h" />
     <ClInclude Include="Source\CDialog.h" />
     <ClInclude Include="Source\CAlphabet.h" />
     <ClInclude Include="Source\CEvent.h" />
@@ -539,14 +534,11 @@
     <ClInclude Include="Source\Clerk.h" />
     <ClInclude Include="Source\CMap.h" />
     <ClInclude Include="Source\CitizenMom.h" />
-    <ClInclude Include="Source\CObject.h" />
     <ClInclude Include="Source\CPickableObject.h" />
     <ClInclude Include="Source\CSelf.h" />
     <ClInclude Include="Source\CText.h" />
-    <ClInclude Include="Source\Black.h" />
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
-    <ClInclude Include="Source\GameObject.h" />
     <ClInclude Include="Source\gameView.h" />
     <ClInclude Include="Source\Douchi_Hospital_Map.h" />
     <ClInclude Include="Source\Illustration.h" />
@@ -746,6 +738,7 @@
     <Image Include="RES\DIAG.bmp" />
     <Image Include="RES\douchitown_house1.bmp" />
     <Image Include="RES\douchitown_house2.bmp" />
+    <Image Include="RES\end.bmp" />
     <Image Include="RES\enemy_bar.bmp" />
     <Image Include="RES\enemy_skill_bubblebeam1.bmp" />
     <Image Include="RES\enemy_skill_bubblebeam10.bmp" />

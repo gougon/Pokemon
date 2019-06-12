@@ -44,12 +44,12 @@ class Menu : public ActionObject
 
         enum MenuItem
         {
-            itemIllustration,
+            //itemIllustration,
             itemPokemonMenu,
             itemBag,
-            itemMainMenu,
+            //itemMainMenu,
             itemSelf,
-            itemRecord,
+            //itemRecord,
             itemClose
         };
         CText showingText;

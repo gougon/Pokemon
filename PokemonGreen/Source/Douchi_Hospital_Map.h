@@ -2,13 +2,11 @@
 #include "CMap.h"
 #include "CHero.h"
 #include "Nurse.h"
-#include "CObject.h"
 #include "CEvent.h"
 
 namespace game_framework
 {
-	class Douchi_Hospital_Map : public CMap
-	{
+	class Douchi_Hospital_Map : public CMap {
 	public:
 		Douchi_Hospital_Map(CEvent*);
 		virtual void InitMap();
@@ -25,7 +23,6 @@ namespace game_framework
 		bool inEvent;
 		Nurse nurse;
 		CDialog dialogBox;
-		CObject book;
 		int hitImg[3] = { 0, 2, 3 };
 	};
 }

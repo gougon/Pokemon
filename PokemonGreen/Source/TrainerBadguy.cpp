@@ -69,6 +69,7 @@ namespace game_framework
 
 				// assessment whether dialog is end
 				if (normalDialog.IsEnd()) {
+					hero.SetGameEvent(winBadGuy, true);
 					StopTalk(hero);
 				}
 			}

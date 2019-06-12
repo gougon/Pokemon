@@ -15,6 +15,7 @@ namespace game_framework {
 		cost = 10;
 		itemImage.LoadBitmap(ITEM_BURNMEDICINE);
 	}
+
 	bool ItemBurnMedicine::Use(Pokemon * pm)
 	{
 		if (pm->GetStatus()->GetStatu() == statuBurn) {
@@ -23,6 +24,7 @@ namespace game_framework {
 		}
 		return false;
 	}
+
 	bool ItemBurnMedicine::Take(Pokemon* pm, bool replacement)
 	{
 		if (!replacement) {

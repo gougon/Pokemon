@@ -3,7 +3,6 @@
 #include "CMap.h"
 #include "CHero.h"
 #include "AtkInterface.h"
-#include "CObject.h"
 #include "CPickableObject.h"
 #include "CEvent.h"
 
@@ -41,12 +40,6 @@ constexpr auto TIANYUAN_LLAKE4 = 34;
 constexpr auto TIANYUAN_GYM = 35;
 
 namespace game_framework {
-	class Test {
-	public:
-		void LoadBitmap() { test.AddBitmap(IDB_GREEN_FLOWER2); }
-	private:
-		CAnimation test;
-	};
 	class WeiBaiMap : public CMap {
     public:
         WeiBaiMap(CEvent*);

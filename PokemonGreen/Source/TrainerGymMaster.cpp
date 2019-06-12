@@ -41,7 +41,7 @@ namespace game_framework
 		normalDialog.AddText("damn it");
 
 		eventDialog.InitDialog('n');
-		eventDialog.AddText("you kicked my ass");
+		eventDialog.AddText("you are so damn strong");
 
 		// set prize
 		prize = 69;
@@ -127,11 +127,7 @@ namespace game_framework
 
 	void TrainerGymMaster::OnMove(CHero &hero)
 	{
-		if (!IsTalk() && !isEvent && IsDiscoverHero(hero) &&
-			(hero.GetSpeed() == STEP_SIZE && hero.GetCount() == 12 ||
-				hero.GetSpeed() == STEP_SIZE * 2 && hero.GetCount() == 6)) {
-			Talk(hero);
-		}
+		// empty body
 	}
 
 	// private

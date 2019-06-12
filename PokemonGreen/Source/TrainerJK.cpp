@@ -76,6 +76,7 @@ namespace game_framework
 				eventDialog.Next();
 
 				if (eventDialog.IsEnd()) {
+					hero.SetGameEvent(winJK, true);
 					StopTalk(hero);
 				}
 			}

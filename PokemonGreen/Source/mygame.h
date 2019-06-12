@@ -60,7 +60,7 @@ namespace game_framework
 // 每個Member function的Implementation都要弄懂
 /////////////////////////////////////////////////////////////////////////////
 
-// static int score = 0;
+static int score = 0;
 
 class CGameStateInit : public CGameState
 {
@@ -105,12 +105,11 @@ class CGameStateRun : public CGameState
     private:
         Menu			myMenu;
         CEvent			gameEvent;
-        CMap*			gameMap;	// 地圖
-		Test*			test;
+        CMap*			gameMap = nullptr;	// 地圖
         CHero           hero;
         CDialog         testDialog;
         AtkInterface	atkInterface;
-		Characters*		characters;
+		Characters*		characters = nullptr;
 };
 
 /////////////////////////////////////////////////////////////////////////////
@@ -128,7 +127,8 @@ class CGameStateOver : public CGameState
         void OnMove();									// 移動遊戲元素
         void OnShow();									// 顯示這個狀態的遊戲畫面
     private:
-        int counter;	// 倒數之計數器
+		CMovingBitmap bg;
+		int counter;	// 倒數之計數器
 };
 
 }

@@ -28,7 +28,6 @@
 #include "Skill.h"
 #include "SkillFactory.h"
 #include "SkillImpact.h"
-#include "Black.h"
 
 namespace game_framework
 {
@@ -94,24 +93,24 @@ namespace game_framework
 		scene[TIANYUAN_LLAKE4].LoadBitmap(IDB_TIANYUAN_LLAKE4);
 		scene[TIANYUAN_GYM].LoadBitmap(IDB_TIANYUAN_GYM);
 
-		// flower.AddBitmap(IDB_GREEN_FLOWER);
-		// flower.AddBitmap(IDB_GREEN_FLOWER2);
-		// flower.AddBitmap(IDB_GREEN_FLOWER3);
+		flower.AddBitmap(IDB_GREEN_FLOWER);
+		flower.AddBitmap(IDB_GREEN_FLOWER2);
+		flower.AddBitmap(IDB_GREEN_FLOWER3);
 		
-		// rtsea1.AddBitmap(IDB_RTSEA1_1);
-		// rtsea1.AddBitmap(IDB_RTSEA1_2);
-		// rtsea1.AddBitmap(IDB_RTSEA1_3);
-		// rtsea1.AddBitmap(IDB_RTSEA1_4);
-		// rtsea1.AddBitmap(IDB_RTSEA1_5);
-		// rtsea1.AddBitmap(IDB_RTSEA1_6);
-		// 
-		//rtsea2.AddBitmap(IDB_RTSEA2_1);
-		//rtsea2.AddBitmap(IDB_RTSEA2_2);
-		//rtsea2.AddBitmap(IDB_RTSEA2_3);
-		//rtsea2.AddBitmap(IDB_RTSEA2_4);
-		//rtsea2.AddBitmap(IDB_RTSEA2_5);
-		//rtsea2.AddBitmap(IDB_RTSEA2_6);
-		/////////////////////////////
+		rtsea1.AddBitmap(IDB_RTSEA1_1);
+		rtsea1.AddBitmap(IDB_RTSEA1_2);
+		rtsea1.AddBitmap(IDB_RTSEA1_3);
+		rtsea1.AddBitmap(IDB_RTSEA1_4);
+		rtsea1.AddBitmap(IDB_RTSEA1_5);
+		rtsea1.AddBitmap(IDB_RTSEA1_6);
+		
+		rtsea2.AddBitmap(IDB_RTSEA2_1);
+		rtsea2.AddBitmap(IDB_RTSEA2_2);
+		rtsea2.AddBitmap(IDB_RTSEA2_3);
+		rtsea2.AddBitmap(IDB_RTSEA2_4);
+		rtsea2.AddBitmap(IDB_RTSEA2_5);
+		rtsea2.AddBitmap(IDB_RTSEA2_6);
+
 		if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
 			pickable_Antidote.LoadBitmap();
 	}
@@ -135,12 +134,6 @@ namespace game_framework
 			{
 				switch (map[j / SM][i / SM])
 				{
-					case NONE_HIT:
-						break;
-					case NONE_EMPTY:
-						break;
-					case ENTRANCE:
-						break;
 					case HOSPITAL:
 						SetTopLeft(HOSPITAL, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
 						break;
@@ -154,8 +147,8 @@ namespace game_framework
 						SetTopLeft(GREEN_TREE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM - 15);
 						break;
 					case GREEN_FLOWER:
-						// flower.SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-						// flower.OnShow();
+						flower.SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						flower.OnShow();
 						break;
 					case GRASS_LAND:
 						SetTopLeft(GRASS_LAND, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
@@ -182,12 +175,12 @@ namespace game_framework
 						SetTopLeft(NORMAL_HOUSE1, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
 						break;
 					case RT_SEA1:
-						// rtsea1.SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-						// rtsea1.OnShow();
+						rtsea1.SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						rtsea1.OnShow();
 						break;
 					case RT_SEA2:
-						// rtsea2.SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-						// rtsea2.OnShow();
+						rtsea2.SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+						rtsea2.OnShow();
 						break;
 					case LAKE_102:
 						SetTopLeft(LAKE_102, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
@@ -247,7 +240,6 @@ namespace game_framework
 						SetTopLeft(TIANYUAN_GYM, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
 						break;
 					default:
-						ASSERT(0);
 						break;
 				}
 
@@ -310,9 +302,9 @@ namespace game_framework
 
 	void WeiBaiMap::OnMove()
 	{
-		// flower.OnMove();
-		// rtsea1.OnMove();
-		// rtsea2.OnMove();
+		flower.OnMove();
+		rtsea1.OnMove();
+		rtsea2.OnMove();
 	}
 
 	bool WeiBaiMap::IsCollision(int x, int y, CHero &hero)
@@ -363,7 +355,11 @@ namespace game_framework
 		int x = hero->GetX1() / SM;
 		int y = hero->GetY1() / SM;
 		// 利用atkProb判斷有沒有遇到怪
-		int rnd = rand() % hero->GetAtkProb() + 1;
+		int rnd = 0;
+		if (hero->GetAtkProb() == 0) 
+			rnd = 1;
+		else
+			rnd = rand() % hero->GetAtkProb() + 1;
 
 		if (rnd == hero->GetAtkProb())  	// 遇到怪
 		{
@@ -371,9 +367,7 @@ namespace game_framework
 			CAudio::Instance()->Play(AUDIO_GOTOBATTLE);
 
 			PokemonFactory pmfactory;
-			// SkillFactory skfactory;
 			Pokemon* enemy = pmfactory.CreateEnemyRandom();
-			// enemy->AddSkill(skfactory.CreateSkill(ember, styleEnemy));
 			StartAtk(hero, enemy, atkInterface);
 		}
 	}
@@ -384,45 +378,32 @@ namespace game_framework
 		y /= SM;
 		CMap* newMap;
 	
-		if (x == 97 && y == 82) {
+		if (x == 97 && y == 82) 
 			newMap = new WeiBaiHouse1_1F_Map(mapGameEvent);
-		}
-		else if (x == 106 && y == 82) {
+		else if (x == 106 && y == 82) 
 			newMap = new WeiBaiHouse2_1F_Map(mapGameEvent);
-		}
-		else if (x == 99 && y == 90) {
+		else if (x == 99 && y == 90) 
 			newMap = new WeiBaiProHouse_Map(mapGameEvent);
-		}
-		else if (x == 98 && y == 50) {
+		else if (x == 98 && y == 50) 
 			newMap = new Douchi_Hospital_Map(mapGameEvent);
-		}
-		else if (x == 106 && y == 40) {
+		else if (x == 106 && y == 40) 
 			newMap = new Douchi_Shop_Map(mapGameEvent);
-		}
-		else if (x == 107 && y == 50) {
+		else if (x == 107 && y == 50) 
 			newMap = new DouChiHouse1_Map(mapGameEvent);
-		}
-		else if (x == 97 && y == 41) {
+		else if (x == 97 && y == 41) 
 			newMap = new DouChiHouse2_Map(mapGameEvent);
-		}
-		else if (x == 32 && y == 40) {
+		else if (x == 32 && y == 40) 
 			newMap = new Tianyuan_Hospital_Map(mapGameEvent);
-		}
-		else if (x == 37 && y == 36) {
+		else if (x == 37 && y == 36) 
 			newMap = new Tianyuan_Shop_Map(mapGameEvent);
-		}
-		else if (x == 22 && y == 43) {
+		else if (x == 22 && y == 43) 
 			newMap = new Tianyuan_Nhouse_Map(mapGameEvent);
-		}
-		else if (x == 19 && y == 29) {
+		else if (x == 19 && y == 29) 
 			newMap = new Tianyuan_Lthouse_Map(mapGameEvent);
-		}
-		else if (x == 32 && y == 48) {
+		else if (x == 32 && y == 48) 
 			newMap = new Tianyuan_Rbhouse_Map(mapGameEvent);
-		}
-		else if (x == 27 && y == 32) {
+		else if (x == 27 && y == 32) 
 			newMap = new Tianyuan_Gym_Map(mapGameEvent);
-		}
 
 		CAudio::Instance()->Stop(AUDIO_WEIBAITOWN);
 		newMap->LoadBitmap();
@@ -492,10 +473,6 @@ namespace game_framework
 					inEvent = true;
 					dialogState = End;
 					dialogBox.SetText("professor house");
-				}
-				else
-				{
-					//
 				}
 				if (inEvent) hero.StartDialog();
 			}

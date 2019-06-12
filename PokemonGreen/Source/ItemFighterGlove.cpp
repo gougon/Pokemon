@@ -15,10 +15,12 @@ namespace game_framework {
 		cost = 100;
 		itemImage.LoadBitmap(ITEM_FIGHTERGLOVE);
 	}
+
 	bool ItemFighterGlove::Use(Pokemon * pm)
 	{
 		return false;
 	}
+
 	bool ItemFighterGlove::Take(Pokemon* pm, bool replacement)
 	{
 		if (!replacement) {

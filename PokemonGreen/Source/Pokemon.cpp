@@ -14,6 +14,7 @@ namespace game_framework {
 		statu(nullptr), canMove(true)
 	{
 		statu = new Status();
+		catchRate = 60;
 	}
 
 	Pokemon::~Pokemon()
@@ -71,13 +72,8 @@ namespace game_framework {
 
 	void Pokemon::AddSkill(Skill *skill)
 	{
-		if(skills.size() < 4){
+		if(skills.size() < 4)
 			skills.insert(skill);
-			// 跑對話說學習技能
-		}
-		else {
-			// 詢問是否要覆蓋技能
-		}
 	}
 
 	bool Pokemon::AddExp(int addExp)
@@ -100,6 +96,11 @@ namespace game_framework {
 	string Pokemon::GetName()
 	{
 		return name;
+	}
+
+	pokemonName Pokemon::GetPmID()
+	{
+		return pmID;
 	}
 
 	int Pokemon::GetLevel()
@@ -449,44 +450,18 @@ namespace game_framework {
 	int Pokemon::GetValueLevel(int rvalue, int mvalue)
 	{
 		float rate = rvalue / (float)mvalue;
-		if (rate <= 0.33) {
-			return -6;
-		}
-		else if (rate <= 0.38) {
-			return -5;
-		}
-		else if (rate <= 0.43) {
-			return -4;
-		}
-		else if (rate <= 0.50) {
-			return -3;
-		}
-		else if (rate <= 0.60) {
-			return -2;
-		}
-		else if (rate <= 0.75) {
-			return -1;
-		}
-		else if (rate <= 1.00) {
-			return 0;
-		}
-		else if (rate <= 1.33) {
-			return 1;
-		}
-		else if (rate <= 1.67) {
-			return 2;
-		}
-		else if (rate <= 2.00) {
-			return 3;
-		}
-		else if (rate <= 2.33) {
-			return 4;
-		}
-		else if (rate <= 2.67) {
-			return 5;
-		}
-		else {
-			return 6;
-		}
+		if (rate <= 0.33) return -6;
+		else if (rate <= 0.38) return -5;
+		else if (rate <= 0.43) return -4;
+		else if (rate <= 0.50) return -3;
+		else if (rate <= 0.60) return -2;
+		else if (rate <= 0.75) return -1;
+		else if (rate <= 1.00) return 0;
+		else if (rate <= 1.33) return 1;
+		else if (rate <= 1.67) return 2;
+		else if (rate <= 2.00) return 3;
+		else if (rate <= 2.33) return 4;
+		else if (rate <= 2.67) return 5;
+		else return 6;
 	}
 }

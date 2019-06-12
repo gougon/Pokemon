@@ -11,9 +11,6 @@ namespace game_framework {
 	Douchi_Shop_Map::Douchi_Shop_Map(CEvent * gameEvent) : CMap(3)
 	{
 		mapGameEvent = gameEvent;
-
-		for (int i = 0; i < 10; i++)
-			TRACE("Event%d : %d\n", i, mapGameEvent->CheckOccured(i));
 		InitMap();
 	}
 	void Douchi_Shop_Map::OnMove()
@@ -43,29 +40,20 @@ namespace game_framework {
 	{
 		int sx = GetSX();
 		int sy = GetSY();
-		for (int i = sx - EXPEND * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount)
-		{
-			for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount)
-			{
-				switch (map[j / SM][i / SM])
-				{
-				case NONE_HIT:
-					break;
-				case NONE_EMPTY:
-					break;
-				case ENTRANCE:
-					break;
+		for (int i = sx - EXPEND * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount) {
+			for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount) {
+				switch (map[j / SM][i / SM]) {
 				case SHOP_MAP:
 					scene[SHOP_MAP].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
 					scene[SHOP_MAP].ShowBitmap();
 					break;
 				default:
-					ASSERT(0);
 					break;
 				}
 			}
 		}
-		if (clerk.IsWork()) clerk.OnShow();
+		if (clerk.IsWork()) 
+			clerk.OnShow();
 	}
 
 	bool Douchi_Shop_Map::IsCollision(int x, int y, CHero &hero)
@@ -73,8 +61,7 @@ namespace game_framework {
 		x /= SM;
 		y /= SM;
 
-		for (int i = 0; i < 2; ++i)
-		{
+		for (int i = 0; i < 2; ++i) {
 			if (map[y][x] == hitImg[i])
 				return true;
 		}
@@ -87,8 +74,7 @@ namespace game_framework {
 		y /= SM;
 		CMap* newMap;
 		
-		if ((x == 17 && y == 23 )|| (x == 18 && y == 23))
-		{
+		if ((x == 17 && y == 23 )|| (x == 18 && y == 23)) {
 			newMap = new WeiBaiMap(mapGameEvent);
 			newMap->SetXY(101 * SM, 37 * SM);
 		}
@@ -104,35 +90,28 @@ namespace game_framework {
 
 	void Douchi_Shop_Map::KeyDownListener(UINT nChar, CHero& hero)
 	{
-		TRACE("in shop\n");
 		const char KEY_Z = 0x5a;
-		if (clerk.IsWork()) {
+		if (clerk.IsWork()) 
 			clerk.KeyDownListener(nChar);
-		}
 		else {
 			int x = hero.GetX1();
 			int y = hero.GetY1();
 			int direction = hero.GetDirection(); // ¤W¥ª¤U¥k
-			if (direction == 0) {
+			if (direction == 0) 
 				y -= SM;
-			}
-			else if (direction == 1) {
+			else if (direction == 1) 
 				y += SM;
-			}
-			else if (direction == 2) {
+			else if (direction == 2) 
 				x -= SM;
-			}
-			else if (direction == 3) {
+			else if (direction == 3) 
 				x += SM;
-			}
 			x /= SM;
 			y /= SM;
 			if (nChar == KEY_Z) {
-					if (x == 16 && y == 18) {
-						clerk.ReceiveData(&hero, hero.GetBag());
-						clerk.SetMoney(hero.GetMoney());
-						TRACE("receive bag\n");
-						clerk.Start();	
+				if (x == 16 && y == 18) {
+					clerk.ReceiveData(&hero, hero.GetBag());
+					clerk.SetMoney(hero.GetMoney());
+					clerk.Start();	
 				}
 			}
 		}

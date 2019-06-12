@@ -41,6 +41,7 @@ namespace game_framework {
 
 		srand((unsigned)time(NULL));
 		this->name = name;
+		pmID = metang;
 		attribute = steel;
 		level = 5;			// 需要改，此處先設定level全定為5
 		speciesStrength.SetAll(60, 75, 100, 55, 80, 50);

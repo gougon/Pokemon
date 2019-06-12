@@ -129,15 +129,12 @@ namespace game_framework {
 	void PokemonBar::LoadHpLen()
 	{
 		double rate = (double)pm->GetRemainHP() / (double)pm->GetHP();
-		if (rate > 0.5) {
+		if (rate > 0.5) 
 			targetHp = &greenHp;
-		}
-		else if (rate > 0.2) {
+		else if (rate > 0.2) 
 			targetHp = &yellowHp;
-		}
-		else {
+		else 
 			targetHp = &redHp;
-		}
 		hpLen = (int)(rate * HP_LEN);
 		targetHp->SetWidth(hpLen);
 	}
@@ -145,15 +142,12 @@ namespace game_framework {
 	void PokemonBar::IconAnime()
 	{
 		if (delay++ < 10) {
-			if (delay == 5) {
+			if (delay == 5) 
 				pmIcon.SetTopLeft(pmIcon.Left(), pmIcon.Top() - 10);
-			}
-			else if (delay == 9) {
+			else if (delay == 9) 
 				pmIcon.SetTopLeft(pmIcon.Left(), pmIcon.Top() + 10);
-			}
 		}
-		else {
+		else 
 			delay = 0;
-		}
 	}
 }

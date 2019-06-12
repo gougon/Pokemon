@@ -2,7 +2,7 @@
 #include "CItem.h"
 namespace game_framework {
 	class ItemFactory {
-		public:
-			CItem* CreateItem(int itemID);
+	public:
+		CItem* CreateItem(int itemID);
 	};
 }

@@ -40,6 +40,7 @@ namespace game_framework {
 
 		srand((unsigned)time(NULL));
 		this->name = name;
+		pmID = vaporeon;
 		attribute = water;
 		level = 5;			// 需要改，此處先設定level全定為5
 		speciesStrength.SetAll(130, 65, 60, 110, 95, 65);

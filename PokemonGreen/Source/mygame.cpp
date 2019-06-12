@@ -171,7 +171,7 @@ void CGameStateInit::OnInit()
 	CAudio::Instance()->Load(AUDIO_COLLISION, "Sounds//collision.wav");
 	CAudio::Instance()->Load(AUDIO_PUT_HEALBALL, "Sounds//puthealball.wav");
 	CAudio::Instance()->Load(AUDIO_HEAL, "Sounds//heal.wav");
-	CAudio::Instance()->Play(AUDIO_HOME);
+	CAudio::Instance()->Play(0);
 }
 
 void CGameStateInit::OnBeginState()
@@ -189,8 +189,10 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	if (nChar == KEY_Z) {
 		CAudio::Instance()->Play(AUDIO_SELECT);
 		isSelected = true;
-		if (cursorPosition == 0)
-			GotoGameState(GAME_STATE_RUN);						// 切換至GAME_STATE_RUN
+		if (cursorPosition == 0) {
+			isSelected = false;
+			GotoGameState(GAME_STATE_RUN);					// 切換至GAME_STATE_RUN
+		}
 	}
 	else if (nChar == KEY_X) {
 		CAudio::Instance()->Play(AUDIO_SELECT);
@@ -248,8 +250,10 @@ void CGameStateOver::OnMove()
 {
     counter--;
 
-    if (counter < 0)
-        GotoGameState(GAME_STATE_INIT);
+	if (counter < 0) {
+		GotoGameState(GAME_STATE_INIT);
+		CAudio::Instance()->Play(0);
+	}
 }
 
 void CGameStateOver::OnBeginState()
@@ -267,7 +271,8 @@ void CGameStateOver::OnInit()
     //
     // 開始載入資料
     //
-    Sleep(300);				// 放慢，以便看清楚進度，實際遊戲請刪除此Sleep
+	bg.LoadBitmap(IDB_END);
+	bg.SetTopLeft(0, 0);
     //
     // 最終進度為100%
     //
@@ -276,15 +281,18 @@ void CGameStateOver::OnInit()
 
 void CGameStateOver::OnShow()
 {
+	bg.ShowBitmap();
     CDC* pDC = CDDraw::GetBackCDC();			// 取得 Back Plain 的 CDC
     CFont f, *fp;
     f.CreatePointFont(160, "Times New Roman");	// 產生 font f; 160表示16 point的字
     fp = pDC->SelectObject(&f);					// 選用 font f
     pDC->SetBkColor(RGB(0, 0, 0));
     pDC->SetTextColor(RGB(255, 255, 0));
-    char str[80];								// Demo 數字對字串的轉換
-    sprintf(str, "Game Over ! (%d)", counter / 30);
-    pDC->TextOut(240, 210, str);
+	char str[80], scoreStr[80];								// Demo 數字對字串的轉換
+	sprintf(str, "Restart... %d", counter / 30);
+	pDC->TextOut(240, 210, str);							// Demo 數字對字串的轉換
+	sprintf(scoreStr, "Congratulation! you got %d points!", score);
+	pDC->TextOut(200, 60, scoreStr);
     pDC->SelectObject(fp);						// 放掉 font f (千萬不要漏了放掉)
     CDDraw::ReleaseBackCDC();					// 放掉 Back Plain 的 CDC
 }
@@ -301,17 +309,18 @@ CGameStateRun::CGameStateRun(CGame* g)
 
 CGameStateRun::~CGameStateRun()
 {
-	delete test;
 	delete gameMap;
+	gameMap = nullptr;
 	delete characters;
+	characters = nullptr;
 }
 
 void CGameStateRun::OnBeginState()
 {
     CAudio::Instance()->Stop(AUDIO_HOME);
+	if (gameMap != nullptr)
+		delete gameMap;
 	gameMap = new WeiBaiMap(&gameEvent);
-	test = new Test();
-	test->LoadBitmap();
 	gameMap->LoadBitmap();					// 載入背景的圖形
     hero.Initialize();
     hero.SetXY(97 * SM + HERO_X, 80 * SM + HERO_Y + 20);
@@ -319,6 +328,8 @@ void CGameStateRun::OnBeginState()
 	atkInterface.ReceiveBag(myMenu.GetBag());
 	atkInterface.ReceivePmMenu(myMenu.GetPokemonMenu());
 	atkInterface.Init();
+	if (characters != nullptr)
+		delete characters;
 	characters = new Characters(&atkInterface);
 	characters->InitNpcs();
 }
@@ -331,32 +342,21 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
     // SetCursor(AfxGetApp()->LoadCursor(IDC_GAMECURSOR));
     //
     if (atkInterface.IsWork())
-    {
         atkInterface.OnMove();
-    }
     else if (myMenu.IsWork())
-    {
         myMenu.OnMove();
-    }
-    else
-    {
-        testDialog.OnMove();
+    else {
 		gameMap->OnMove();
         int count = hero.GetCount();
-        if (hero.IsCanMove())
-        {
+        if (hero.IsCanMove()) {
 			int oneBlockTime = SM / hero.GetSpeed();
-            if (!hero.IsMoving() && count >= oneBlockTime && !hero.IsJumping())
-            {
+            if (!hero.IsMoving() && count >= oneBlockTime && !hero.IsJumping()) {
                 hero.SetCanMove(false);
                 hero.SetCount(0);
             }
             else if (count >= oneBlockTime && !hero.IsJumping())
-            {
                 hero.SetCount(0);
-            }
-            else
-            {
+            else {
                 hero.SetCount(++count);
                 hero.OnMove(&gameMap, atkInterface, characters);
             }
@@ -364,6 +364,16 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 		characters->OnMove(hero, *gameMap);
     }
 	if (hero.GetGameEvent(winMaster)) {
+		CAudio::Instance()->Stop(AUDIO_WEIBAITOWN);
+		for (int i = 0; i < 5; ++i) {
+			if (hero.GetGameEvent(i)) {
+				score += 100;
+				if (i == 1 || i == 2)
+					score += 50;
+			}
+			hero.SetGameEvent(i, false);
+		}
+		hero.SetGameEvent(winMaster, false);
 		GotoGameState(GAME_STATE_OVER);
 	}
 }
@@ -402,30 +412,44 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
     const char KEY_DOWN = 0x28; // keyboard下箭頭
     const char KEY_ENTER = 0x0d;
     const char KEY_Z = 0x5a;
+	const char KEY_T = 0x54;
+	const char KEY_Y = 0x59;
+	const char KEY_U = 0x55;
 
     if (atkInterface.IsWork())
-    {
         atkInterface.KeyDownListener(nChar);
-    }
-    else if (nChar == KEY_ENTER)
-    {
+    else if (nChar == KEY_ENTER) {
         myMenu.Start();
 		myMenu.SetMoney(hero.GetMoney());
         myMenu.SetPokemons(hero.GetPokemons());
     }
     else if (myMenu.IsWork())
-    {
         myMenu.KeyDownListener(nChar);
-    }
-	else if (characters->IsTalk()) {
+	else if (characters->IsTalk()) 
 		characters->KeyDownListener(nChar, hero, *gameMap);
-	}
-    else
-    {
+    else {
+		// cheat list
+		if (nChar == KEY_T) {
+			if (hero.GetCatchRate() == 60)
+				hero.SetCatchRate(100);
+			else
+				hero.SetCatchRate(60);
+		}
+		else if (nChar == KEY_Y) {
+			vector<Pokemon*>* hpms = hero.GetPokemons();
+			for (auto pm : *hpms)
+				pm->SetLevel(25);
+		}
+		else if (nChar == KEY_U) {
+			if (hero.GetAtkProb() == 10)
+				hero.SetAtkProb(0);
+			else
+				hero.SetAtkProb(10);
+		}
+
         hero.SetCanMove(true);
 
-        if (!hero.IsMoving() && hero.GetCount() == 0)
-        {
+        if (!hero.IsMoving() && hero.GetCount() == 0) {
             hero.ReceiveData(gameMap, &myMenu);
             hero.KeyIn(nChar, characters, *gameMap);
         }

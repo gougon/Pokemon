@@ -22,10 +22,10 @@ namespace game_framework {
 
 	PokemonMenu::~PokemonMenu()
 	{
-		// for (auto i : *pokemons) 
-		// 	delete i;
-		if(pokemonBar != nullptr)
+		if (pokemonBar != nullptr) {
 			delete[] pokemonBar;
+			pokemonBar = nullptr;
+		}
 	}
 
 	void PokemonMenu::Init()
@@ -61,9 +61,8 @@ namespace game_framework {
 		else {
 			selectPanel.ShowBitmap();		// 顯示背景
 
-			for (int i = 0; i < (int)pokemons->size(); ++i) {		// 顯示血條
+			for (int i = 0; i < (int)pokemons->size(); ++i) 		// 顯示血條
 				pokemonBar[i].OnShow();
-			}
 
 			if (isOprtPanel) {
 				if (!isOprtSlt) {
@@ -71,9 +70,8 @@ namespace game_framework {
 					cursor.ShowBitmap();
 				}
 				else {
-					if (order == pmOprtPanelSltView) {
+					if (order == pmOprtPanelSltView) 
 						pmOprtView.OnShow();
-					}
 				}
 			}
 			if (showItemMethod) {
@@ -95,36 +93,29 @@ namespace game_framework {
 
 	void PokemonMenu::OnMove()
 	{
-		if (bag->IsWork() && dynamic_cast<Bag*>(bag)->IsPokemonReceive()) {
+		if (bag->IsWork() && dynamic_cast<Bag*>(bag)->IsPokemonReceive()) 
 			bag->OnMove();
-		}
 		else {
 			for (int i = 0; i < (int)pokemons->size(); ++i) {
 				if (isItem && order == pmOprtPanelSltChange) {
-					if (i == swapPm) {
+					if (i == swapPm) 
 						pokemonBar[i].SetIsSelect(true);
-					}
-					else if (i != sltPm) {
+					else if (i != sltPm) 
 						pokemonBar[i].SetIsSelect(false);
-					}
 				}
 				else {
-					if (i == sltPm) {
+					if (i == sltPm)
 						pokemonBar[i].SetIsSelect(true);
-					}
-					else {
+					else 
 						pokemonBar[i].SetIsSelect(false);
-					}
 				}
 			}
 			if (isOprtPanel) {
-				if (!isOprtSlt) {
+				if (!isOprtSlt) 
 					cursor.SetTopLeft(CURSOR_LEFT, CURSOR_TOP + CURSOR_INTERVAL * order);
-				}
 				else {
-					if (showItemMethod) {
+					if (showItemMethod) 
 						cursor.SetTopLeft(CURSOR_LEFT + 50, CURSOR_TOP + 60 + CURSOR_INTERVAL * selectMethod);
-					}
 					switch (order) {
 					case pmOprtPanelSltView:
 						pmOprtView.OnMove();
@@ -141,12 +132,10 @@ namespace game_framework {
 				}
 			}
 			if (dynamic_cast<Bag*>(bag)->PokemonSuccessTakeItem()) {
-				TRACE("currentItem in show text: %d\n", (*pokemons)[sltPm]->GetTakeItem());
 				ItemFactory itemFactory;
 				CItem* currentItem = itemFactory.CreateItem((*pokemons)[sltPm]->GetTakeItem());
-				if (currentItemID == -1) {
+				if (currentItemID == -1) 
 					description.SetText((*pokemons)[sltPm]->GetName() + " take " + currentItem->GetName() + " success");
-				}
 				else {
 					CItem* oldItem = itemFactory.CreateItem(currentItemID);
 					description.SetText("replace " + oldItem->GetName() + " to " + currentItem->GetName());
@@ -313,7 +302,9 @@ namespace game_framework {
 								if (isAtkChange) {
 									CAudio::Instance()->Play(AUDIO_SELECT);
 									Swap((*pokemons)[0], (*pokemons)[sltPm]);
+									TRACE("\nin pmmenu destructor, pmsize = %d\n", pokemons->size());
 									delete[] pokemonBar;
+									pokemonBar = nullptr;
 									ReceiveData(pokemons);
 									End();
 								}
@@ -335,6 +326,7 @@ namespace game_framework {
 								CAudio::Instance()->Play(AUDIO_SELECT);
 								Swap((*pokemons)[sltPm], (*pokemons)[swapPm]);
 								delete[] pokemonBar;
+								pokemonBar = nullptr;
 								ReceiveData(pokemons);
 								isOprtPanel = false;
 								isItem = false;
@@ -344,13 +336,11 @@ namespace game_framework {
 							}
 							if (order == pmOprtPanelSltItem) {
 								CAudio::Instance()->Play(AUDIO_SELECT);
-								TRACE("keydown in sltitem\n");
 								switch (selectMethod)
 								{
 								case 0:
 									dynamic_cast<Bag*>(bag)->ReceivePokemonCommend((*pokemons)[sltPm], true);
 									currentItemID = (*pokemons)[sltPm]->GetTakeItem();
-									TRACE("current ID: %d\n", currentItemID);
 									dynamic_cast<Bag*>(bag)->Start();
 									break;
 								case 1:
@@ -412,13 +402,16 @@ namespace game_framework {
 	void PokemonMenu::ReceiveData(vector<Pokemon*>* pms)
 	{
 		pokemons = pms;
+		if (pokemonBar != nullptr) {
+			delete[] pokemonBar;
+			pokemonBar = nullptr;
+		}
 		pokemonBar = new PokemonBar[pokemons->size()];
 		SetPmBar();
 	}
 
 	void PokemonMenu::ReceiveBag(ActionObject * bag)
 	{
-		TRACE("receiveBAG");
 		this->bag = bag;
 	}
 
@@ -442,8 +435,7 @@ namespace game_framework {
 	{
 		bool tempSuccessIndex = isUseItem;
 
-		if (tempSuccessIndex)
-		{
+		if (tempSuccessIndex) {
 			isUseItem = false;
 			return tempSuccessIndex;
 		}
@@ -455,8 +447,7 @@ namespace game_framework {
 	{
 		bool tempSuccessIndex = isTakeItem;
 
-		if (tempSuccessIndex)
-		{
+		if (tempSuccessIndex) {
 			isTakeItem = false;
 			return tempSuccessIndex;
 		}

@@ -19,6 +19,8 @@
 #include "PmPikachu.h"
 #include "PmRayquaza.h"
 #include "PmSmoochum.h"
+#include "PmVaporeon.h"
+#include "PmVulpix.h"
 
 namespace game_framework {
 	Pokemon* PokemonFactory::CreatePokemon(pokemonName pokemonName)
@@ -53,6 +55,12 @@ namespace game_framework {
 			break;
 		case smoochum:
 			return new PmSmoochum(my);
+			break;
+		case vaporeon:
+			return new PmVaporeon(my);
+			break;
+		case vulpix:
+			return new PmVulpix(my);
 			break;
 		default:
 			return new PmTreecko(my);
@@ -100,6 +108,12 @@ namespace game_framework {
 		case smoochum:
 			return new PmSmoochum(my, name);
 			break;
+		case vaporeon:
+			return new PmVaporeon(my, name);
+			break;
+		case vulpix:
+			return new PmVulpix(my, name);
+			break;
 		default:
 			return new PmTreecko(my, name);
 			break;
@@ -138,6 +152,12 @@ namespace game_framework {
 			break;
 		case smoochum:
 			return new PmSmoochum(enemy);
+			break;
+		case vaporeon:
+			return new PmVaporeon(enemy);
+			break;
+		case vulpix:
+			return new PmVulpix(enemy);
 			break;
 		default:
 			return new PmTreecko(enemy);

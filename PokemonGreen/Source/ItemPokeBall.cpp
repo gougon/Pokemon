@@ -5,6 +5,7 @@
 #include "gamelib.h"
 #include <string>
 #include "ItemPokeBall.h"
+#include "PokemonFactory.h"
 namespace game_framework {
 	ItemPokeBall::ItemPokeBall()
 	{
@@ -16,48 +17,61 @@ namespace game_framework {
 		itemImage.LoadBitmap(ITEM_POKEBALL);
 		LoadBitmap();
 	}
+
+	ItemPokeBall::~ItemPokeBall()
+	{
+		// empty body
+	}
+
 	void ItemPokeBall::OnMove()
 	{
 		if (!isThrow)
 			return;
 		if (ballopen) {
-			TRACE("Ballopen\n");
 			ballAnime.OnMove();
 		}
 		SetPos();
 	}
+
 	void ItemPokeBall::OnShow()
 	{
 		if (isThrow)
 			ballAnime.OnShow();
 	}
+
 	bool ItemPokeBall::Use(Pokemon * pm)
 	{
 		return false;
 	}
+
 	void ItemPokeBall::UsePokeBall(CHero* self, Pokemon* enemy)
 	{
-		TRACE("throw\n");
 		isCatch = false;
 		ballopen = false;
+		endFlag = false;
 		isThrow = true;
 		counter = 0;
 		x = 0;
 		y = 0;
-		self->AddPokemon(enemy);
-		/*
-		int catchRate = enemy->GetCatchRate();
-		if (rand() % 100 + 1 < catchRate) isCatch = true;
-		*/
+		
+		int catchRate = self->GetCatchRate();
+		if (rand() % 100 + 1 < catchRate) {
+			PokemonFactory pmfc;
+			self->AddPokemon(pmfc.CreatePokemon(enemy->GetPmID()));
+			isCatch = true;
+		}
 	}
+
 	bool ItemPokeBall::IsCatch()
 	{
 		return isCatch;
 	}
+
 	bool ItemPokeBall::animeEnd()
 	{
 		return endFlag;
 	}
+
 	bool ItemPokeBall::Take(Pokemon* pm, bool replacement)
 	{
 		if (!replacement) {
@@ -95,10 +109,8 @@ namespace game_framework {
 			ballopen = true;
 			counter++;
 		}
-		else {
-			TRACE("end flag launch\n");
+		else 
 			endFlag = true;
-		}
 		ballAnime.SetTopLeft(x, y);
 	}
 }

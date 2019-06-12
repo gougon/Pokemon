@@ -2,8 +2,7 @@
 
 #include "Citizen.h"
 namespace game_framework {
-	class CitizenFatguy : public Citizen
-	{
+	class CitizenFatguy : public Citizen {
 	public:
 		CitizenFatguy();
 		virtual void KeyDownListener(UINT nChar, CHero &hero);

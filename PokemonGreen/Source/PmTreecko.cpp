@@ -38,6 +38,7 @@ namespace game_framework
         LoadBitmap();
         srand((unsigned)time(NULL));
         this->name = name;
+		pmID = treecko;
         attribute = grass;
         level = 5;			// 需要改，此處先設定level全定為5
         speciesStrength.SetAll(40, 45, 35, 65, 55, 70);

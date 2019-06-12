@@ -11,30 +11,29 @@
 using namespace std;
 namespace game_framework
 {
-class Bag : public ActionObject
-{
-    public:
-        Bag();
+	class Bag : public ActionObject {
+	public:
+		Bag();
 		virtual ~Bag();
-        virtual void Init();
-        virtual void OnShow();
-        virtual void OnMove();
-        virtual void LoadBitmap();
-        virtual void KeyDownListener(UINT nChar);
+		virtual void Init();
+		virtual void OnShow();
+		virtual void OnMove();
+		virtual void LoadBitmap();
+		virtual void KeyDownListener(UINT nChar);
 		virtual void SetTopLeft() {}
-        void RecievePokemonMenu(ActionObject*);
+		void RecievePokemonMenu(ActionObject*);
 		void ReceivePokemonCommend(Pokemon*, bool);
 		bool PokemonSuccessTakeItem();
 		bool IsPokemonReceive();
-        void AddItem(int, int);
-        void DropItem(int, int);
+		void AddItem(int, int);
+		void DropItem(int, int);
 		void SetBattleMode();
-        void SetSellMode(int* money);
-        int GetItemAmount(int itemID);
+		void SetSellMode(int* money);
+		int GetItemAmount(int itemID);
 		int SelectPokeball();
 		void Start();
-        void End();
-    private:
+		void End();
+	private:
 		const int CAT_LOC_LEFT = 105;
 		const int CAT_LOC_TOP = 27;
 		const int CAT_FLAG_LEFT1 = 113;
@@ -68,12 +67,12 @@ class Bag : public ActionObject
 		const int MONEY_PANEL_TOP = 5;
 		const int CURRENTMONEY_LEFT = 122;
 		const int CURRENTMONEY_TOP = 31;
-		////////////////////////////
+
 		unsigned int Get_CurrentCategorie_Size();
 		CItem* SelectItem();
-        int categorie_flagIndex, panel_flagIndex;
-        unsigned int chooser, dropAmount, currentID;
-        unsigned int item_amount[MAXITEMAMOUNT];
+		int categorie_flagIndex, panel_flagIndex;
+		unsigned int chooser, dropAmount, currentID;
+		unsigned int item_amount[MAXITEMAMOUNT];
 		/*Sell mode*/
 		CMovingBitmap money_panel;
 		CDialog clerkDialog;
@@ -89,24 +88,24 @@ class Bag : public ActionObject
 		bool successReceive;
 		bool isReceivePokemon;
 
-        bool inPokemonMenu, inPanel, inItemamount, inYesno, yesnoChooser;
+		bool inPokemonMenu, inPanel, inItemamount, inYesno, yesnoChooser;
 		vector<CItem*> items;
 		CText categorie_text;
 		CText item_name;
-        CText item_cost;	//inSellMode
+		CText item_cost;	//inSellMode
 		CText drop_amount;
-        CText description;
-        CText item_left_amount;
-        CAnimation cursor;
-        CMovingBitmap backpack_panel;
+		CText description;
+		CText item_left_amount;
+		CAnimation cursor;
+		CMovingBitmap backpack_panel;
 		CMovingBitmap amountSelect_panel;
-        CMovingBitmap yesno_panel;
-        CMovingBitmap categorie_flag;
-        CMovingBitmap item_selector;
-        CMovingBitmap item_image;
-        CMovingBitmap background_image;
+		CMovingBitmap yesno_panel;
+		CMovingBitmap categorie_flag;
+		CMovingBitmap item_selector;
+		CMovingBitmap item_image;
+		CMovingBitmap background_image;
 		CMovingBitmap panel_selector;
-        ActionObject* pk_Menu;
+		ActionObject* pk_Menu;
 		ItemFactory itemFactory;
-};
+	};
 }

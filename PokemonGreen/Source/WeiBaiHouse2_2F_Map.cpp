@@ -40,22 +40,12 @@ void WeiBaiHouse2_2F_Map::OnShow()
         {
             switch (map[j / SM][i / SM])
             {
-                case NONE_HIT:
-                    break;
-
-                case NONE_EMPTY:
-                    break;
-
-                case ENTRANCE:
-                    break;
-
                 case WEIBAITOWN_HOUSE2_2F:
                     scene[WEIBAITOWN_HOUSE2_2F].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
                     scene[WEIBAITOWN_HOUSE2_2F].ShowBitmap();
                     break;
 
                 default:
-                    ASSERT(0);
                     break;
             }
         }

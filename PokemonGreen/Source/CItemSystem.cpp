@@ -27,9 +27,6 @@ namespace game_framework
 		else if (name == "glove") return 3;
 		else if (name == "pokeball") return 4;
 		else if (name == "burnmedicine") return 5;
-		else {
-			//
-		}
 		return -1;
 	}
 }

@@ -85,9 +85,9 @@ namespace game_framework
 
 	void TrainerYoungster::LoadBitmap()
 	{
-		normalImg[down].LoadBitmap(IDB_YOUNGSTER_UP, RGB(255, 0, 0));
+		normalImg[down].LoadBitmap(IDB_YOUNGSTER_DOWN, RGB(255, 0, 0));
 		normalImg[left].LoadBitmap(IDB_YOUNGSTER_LEFT, RGB(255, 0, 0));
-		normalImg[up].LoadBitmap(IDB_YOUNGSTER_DOWN, RGB(255, 0, 0));
+		normalImg[up].LoadBitmap(IDB_YOUNGSTER_UP, RGB(255, 0, 0));
 		normalImg[right].LoadBitmap(IDB_YOUNGSTER_RIGHT, RGB(255, 0, 0));
 		atkImg.LoadBitmap(IDB_YOUNGSTER_ATK, RGB(255, 0, 0));
 	}

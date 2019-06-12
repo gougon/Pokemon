@@ -4,11 +4,8 @@
 
 #include "CMap.h"
 #include "CHero.h"
-#include "CObject.h"
 #include "CEvent.h"
 
-// initial SX = 1020
-// initial SY = 1080
 constexpr auto WEIBAITOWN_HOUSE1_1F = 2;
 
 namespace game_framework
@@ -29,7 +26,6 @@ class WeiBaiHouse1_1F_Map : public CMap
         bool inEvent;
 		int dialogState;
         CDialog dialogBox;
-        CObject book;
         int hitImg[2] = { 0, 2 };
 };
 }

@@ -24,8 +24,7 @@ WeiBaiHouse1_1F_Map::WeiBaiHouse1_1F_Map(CEvent* gameEvent) : CMap(3) // sceneNu
 
 void WeiBaiHouse1_1F_Map::OnMove()
 {
-    dialogBox.OnMove();
-    // mom.OnMove();
+    // empty body
 }
 
 void WeiBaiHouse1_1F_Map::InitMap()
@@ -36,7 +35,6 @@ void WeiBaiHouse1_1F_Map::InitMap()
 	name = "weibaihouse1_1";
     /*mom.Initialize();
     mom.SetXY(1320, 1060);*/
-    book.SetXY(1020, 960);
     dialogBox.InitDialog('n');
     inEvent = false;
 	dialogState = Start;
@@ -155,15 +153,6 @@ void WeiBaiHouse1_1F_Map::KeyDownListener(UINT nChar, CHero & hero)
 		if (inEvent && dialogState == End)
 		{
 			inEvent = false;
-		}
-		else if (book.GetX() / SM == x && book.GetY() / SM == y)
-		{
-			inEvent = true;
-			dialogState = End; 
-			dialogBox.SetText("nothing inside");
-		}
-		else {
-			//
 		}
 	}
 }

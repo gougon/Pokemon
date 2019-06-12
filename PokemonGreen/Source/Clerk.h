@@ -10,8 +10,7 @@
 using namespace std;
 namespace game_framework
 {
-	class Clerk : public ActionObject
-	{
+	class Clerk : public ActionObject {
 	public:
 		Clerk();
 		~Clerk();

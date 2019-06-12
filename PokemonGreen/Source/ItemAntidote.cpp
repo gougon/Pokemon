@@ -15,6 +15,7 @@ namespace game_framework {
 		cost = 10;
 		itemImage.LoadBitmap(ITEM_ANTIDOTE);
 	}
+
 	bool ItemAntidote::Use(Pokemon * pm)
 	{
 		if (pm->GetStatus()->GetStatu() == statuPoison) {
@@ -23,6 +24,7 @@ namespace game_framework {
 		}
 		return false;
 	}
+
 	bool ItemAntidote::Take(Pokemon * pm , bool replacement)
 	{
 		if (!replacement) {

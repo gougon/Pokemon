@@ -12,14 +12,14 @@
 namespace game_framework
 {
 	Menu::Menu() :
-		ActionObject(), isItem(false), order(0), itemCount(7)
+		ActionObject(), isItem(false), order(0), itemCount(4)
 	{
-		items.push_back(new Illustration());
+		// items.push_back(new Illustration());
 		items.push_back(new PokemonMenu());
 		items.push_back(new Bag());
-		items.push_back(new MainMenu());
+		// items.push_back(new MainMenu());
 		items.push_back(new Self());
-		items.push_back(new Record());
+		// items.push_back(new Record());
 	}
 
 	Menu::~Menu()
@@ -35,59 +35,51 @@ namespace game_framework
 		cursor.SetTopLeft(CURSOR_LEFT, CURSOR_TOP);
 
 		for (int i = 0; i < (int)items.size(); ++i)
-		{
 			items[i]->Init();
-		}
 	}
 
 	void Menu::OnShow()
 	{
 		if (!isWork)
-		{
 			return;
-		}
 
-		if (!isItem)
-		{
+		if (!isItem) {
 			menuTop.ShowBitmap();
 
-			for (int i = 0; i < itemCount; ++i)
-			{
+			for (int i = 0; i < itemCount; ++i) {
 				menuMiddle.SetTopLeft(MENU_LEFT, MENU_TOP + MENU_INTERVAL * (i + 1));
 				menuMiddle.ShowBitmap();
 			}
 
-			for (int i = 0; i < 7; i++)
-			{
-				switch (i)
-				{
-					case itemIllustration:
-						showingText.SetText("illu.");
-						break;
+			for (int i = 0; i < itemCount; i++) {
+				switch (i) {
+				// case itemIllustration:
+				// 	showingText.SetText("illu.");
+				// 	break;
+				// 
+				case itemPokemonMenu:
+					showingText.SetText("pokemon");
+					break;
 
-					case itemPokemonMenu:
-						showingText.SetText("pokemon");
-						break;
+				case itemBag:
+					showingText.SetText("bag");
+					break;
 
-					case itemBag:
-						showingText.SetText("bag");
-						break;
+				// case itemMainMenu:
+				// 	showingText.SetText("menu");
+				// 	break;
+				// 
+				case itemSelf:
+					showingText.SetText("self");
+					break;
 
-					case itemMainMenu:
-						showingText.SetText("menu");
-						break;
-
-					case itemSelf:
-						showingText.SetText("self");
-						break;
-
-					case itemRecord:
-						showingText.SetText("record");
-						break;
-
-					case itemClose:
-						showingText.SetText("close");
-						break;
+				// case itemRecord:
+				// 	showingText.SetText("record");
+				// 	break;
+				// 
+				case itemClose:
+					showingText.SetText("close");
+					break;
 				}
 
 				showingText.SetTopLeft(CURSOR_LEFT + 20, CURSOR_TOP + MENU_INTERVAL * i - 5);
@@ -98,32 +90,23 @@ namespace game_framework
 			cursor.ShowBitmap();
 		}
 		else if (order != itemClose)
-		{
 			items[order]->OnShow();
-		}
 	}
 
 	void Menu::OnMove()
 	{
-		if (!isItem)
-		{
+		if (!isItem) {
 			menuBottom.SetTopLeft(MENU_LEFT, MENU_TOP + (itemCount + 1) * MENU_INTERVAL);
 			cursor.SetTopLeft(CURSOR_LEFT, CURSOR_TOP + MENU_INTERVAL * order);
 		}
-		else
-		{
+		else {
 			if (order == itemClose)
-			{
 				End();
-			}
-			else
-			{
+			else {
 				items[order]->OnMove();
 
 				if (!items[order]->IsWork())
-				{
 					isItem = false;
-				}
 			}
 		}
 	}
@@ -138,9 +121,7 @@ namespace game_framework
 		showingText.SetFontSize(16);
 
 		for (int i = 0; i < (int)items.size(); ++i)
-		{
 			items[i]->LoadBitmap();
-		}
 	}
 
 	void Menu::KeyDownListener(UINT nChar)
@@ -151,15 +132,13 @@ namespace game_framework
 		const char KEY_X = 0x58;
 
 		if (isItem)
-		{
 			items[order]->KeyDownListener(nChar);
-		}
 		else
 		{
 			switch (nChar)
 			{
 				case KEY_UP:
-					if (order > itemIllustration) { 		// 選項向上移
+					if (order > itemPokemonMenu) { 		// 選項向上移
 						CAudio::Instance()->Play(AUDIO_SELECT);
 						order -= 1;
 					}
@@ -175,8 +154,7 @@ namespace game_framework
 					isItem = true;
 					if (order != itemClose) {
 						items[order]->Start();
-						if (order == itemPokemonMenu)
-						{
+						if (order == itemPokemonMenu) {
 							dynamic_cast<PokemonMenu*>(items[order])->ReceiveData(pokemons);
 							dynamic_cast<Bag*>(items[itemBag])->RecievePokemonMenu(items[order]);
 							dynamic_cast<PokemonMenu*>(items[order])->ReceiveBag(items[itemBag]);
@@ -185,20 +163,15 @@ namespace game_framework
 							dynamic_cast<PokemonMenu*>(items[itemPokemonMenu])->ReceiveData(pokemons);
 							dynamic_cast<Bag*>(items[order])->RecievePokemonMenu(items[itemPokemonMenu]);
 						}
-						if (order == itemSelf) {
+						if (order == itemSelf)
 							dynamic_cast<Self*>(items[order])->RecieveData(*money, 0);
-						}
-						
 					}
-					else 
-						End();
+					else  End();
 					break;
-
 				case KEY_X:
 					CAudio::Instance()->Play(AUDIO_SELECT);
 					End();		// 結束選單
 					break;
-
 				default:
 					break;
 			}
@@ -213,7 +186,7 @@ namespace game_framework
 
 	void Menu::End()
 	{
-		order = itemIllustration;
+		order = itemPokemonMenu;
 		isWork = false;
 		isItem = false;
 	}

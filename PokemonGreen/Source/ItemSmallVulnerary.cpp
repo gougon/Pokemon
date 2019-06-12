@@ -15,9 +15,9 @@ namespace game_framework {
 		cost = 20;
 		itemImage.LoadBitmap(ITEM_VULNERARY);
 	}
+
 	bool ItemSmallVulnerary::Use(Pokemon * pm)
 	{
-		TRACE("IN\n");
 		if (pm->GetRemainHP() < pm->GetHP())
 		{
 			if (pm->GetRemainHP() + 20 > pm->GetHP()) pm->SetRemainHP(pm->GetHP());
@@ -27,6 +27,7 @@ namespace game_framework {
 
 		return false;
 	}
+
 	bool ItemSmallVulnerary::Take(Pokemon * pm , bool replacement)
 	{
 		if (!replacement) {
@@ -37,7 +38,6 @@ namespace game_framework {
 			return false;
 		}
 		else {
-			TRACE("with replacement\n");
 			pm->SetTakeItem(this->ID);
 			return true;
 		}

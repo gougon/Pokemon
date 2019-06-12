@@ -10,7 +10,7 @@
 
 using namespace std;
 namespace game_framework {
-	constexpr auto ALL_PM_NUM = 11;
+	constexpr auto ALL_PM_NUM = 13;
 	constexpr auto V = 32;
 	
 	enum PmType {
@@ -22,6 +22,22 @@ namespace game_framework {
 		ground, rock, bug, ghost, steel,
 		fire, water, grass, electric,
 		psychic, ice, dragon, dark
+	};
+
+	enum pokemonName {
+		treecko, 
+		jirachi, 
+		hooh, 
+		deoxys,
+		gardevoir, 
+		grimer, 
+		grovyle,
+		metang, 
+		pikachu, 
+		rayquaza, 
+		smoochum, 
+		vaporeon, 
+		vulpix
 	};
 
 	class Skill;
@@ -39,6 +55,7 @@ namespace game_framework {
 		void AddSkill(Skill *skill);
 		bool AddExp(int addExp);
 		string GetName();
+		pokemonName GetPmID();
 		int GetLevel();
 		int GetCatchRate();
 		int GetHP();
@@ -102,6 +119,7 @@ namespace game_framework {
 		void LearnSkill();
 		PmType pmtype;
 		string name;
+		pokemonName pmID;
 		Attribute attribute;
 		Status *statu;
 		int level, catchRate;

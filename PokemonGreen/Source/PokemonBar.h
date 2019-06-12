@@ -56,7 +56,6 @@ namespace game_framework {
 		CMovingBitmap greenHp, yellowHp, redHp, burnIcon;
 		CMovingBitmap haveItemIcon;
 		bool haveItem;
-		// CMovingBitmap pmImg;
 		Pokemon *pm;
 		int delay;
 		int order;

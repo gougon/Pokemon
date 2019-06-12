@@ -5,6 +5,7 @@ namespace game_framework {
 	class ItemPokeBall : public CItem {
 	public:
 		ItemPokeBall();
+		virtual ~ItemPokeBall();
 		void OnMove();
 		void OnShow();
 		void UsePokeBall(CHero* , Pokemon*);

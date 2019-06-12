@@ -38,53 +38,36 @@ namespace game_framework
 		int sx = GetSX();
 		int sy = GetSY();
 
-		for (int i = sx - EXPEND * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount)
-		{
-			for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount)
-			{
-				switch (map[j / SM][i / SM])
-				{
-				case NONE_HIT:
-					break;
-				case NONE_EMPTY:
-					break;
-				case NURSE:
-					break;
-				case ENTRANCE:
-					break;
+		for (int i = sx - EXPEND * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount) {
+			for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount) {
+				switch (map[j / SM][i / SM]) {
 				case HOSPITAL_INSIDE:
 					SetTopLeft(HOSPITAL_INSIDE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
 					break;
 				default:
-					TRACE("\nHospital error!\n");
-					ASSERT(0);
 					break;
 				}
 			}
 		}
 
-		if (nurse.IsWork()) {
+		if (nurse.IsWork()) 
 			nurse.OnShow();
-		}
 	}
 
 	void Douchi_Hospital_Map::OnMove()
 	{
-		if (++audioCounter == 100) {
+		if (++audioCounter == 100) 
 			CAudio::Instance()->Play(AUDIO_HOSPITAL_PROCESS, true);
-		}
-		if (nurse.IsWork()) {
+		if (nurse.IsWork()) 
 			nurse.OnMove();
-		}
 	}
 
 	void Douchi_Hospital_Map::KeyDownListener(UINT nChar, CHero &hero)
 	{
 		const char KEY_Z = 0x5a;
 
-		if (nurse.IsWork()) {
+		if (nurse.IsWork()) 
 			nurse.KeyDownListener(nChar);
-		}
 		else {
 			switch (nChar) {
 			case KEY_Z:
@@ -102,8 +85,7 @@ namespace game_framework
 		x /= SM;
 		y /= SM;
 
-		for (int i = 0; i < 3; ++i)
-		{
+		for (int i = 0; i < 3; ++i) {
 			if (map[y][x] == hitImg[i]) 
 				return true;
 		}
@@ -117,8 +99,7 @@ namespace game_framework
 		y /= SM;
 		CMap* newMap;
 
-		if (x == 20 && y == 23 || x == 21 && y == 23)
-		{
+		if (x == 20 && y == 23 || x == 21 && y == 23) {
 			newMap = new WeiBaiMap(mapGameEvent);
 			newMap->SetXY(93 * SM, 47 * SM);
 		}
@@ -149,8 +130,7 @@ namespace game_framework
 			x == herox + 1 && y == heroy) {
 			return true;
 		}
-		else {
+		else 
 			return false;
-		}
 	}
 }

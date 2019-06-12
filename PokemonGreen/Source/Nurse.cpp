@@ -9,14 +9,18 @@
 #include "Nurse.h"
 
 namespace game_framework {
-	Nurse::Nurse()
+	Nurse::Nurse() :
+		hero(nullptr), pokemons(nullptr), ball(nullptr)
 	{
 		// empty body
 	}
 
 	Nurse::~Nurse()
 	{
-		delete[] ball;
+		if (ball != nullptr) {
+			delete[] ball;
+			ball = nullptr;
+		}
 	}
 
 	void Nurse::Init()
@@ -102,7 +106,6 @@ namespace game_framework {
 			dialogBox.SetText("welcome again!");
 			break;
 		}
-		dialogBox.OnMove();
 	}
 
 	void Nurse::LoadBitmap()
@@ -160,9 +163,7 @@ namespace game_framework {
 		for (int i = 0; i < pmNum; ++i) {
 			int row = i / 2;
 			int col = i % 2;
-			TRACE("\nball[%d] address = %d\n", i, &ball[i]);
 			SetBall(&ball[i], row, col);
-			TRACE("\nball top = %d, left = %d\n", ball[i].Top(), ball[i].Left());
 		}
 	}
 
@@ -172,7 +173,10 @@ namespace game_framework {
 		hero->EndDialog();
 		isAnime = false;
 		count = audioCount = choice = pmNum = 0;
-		delete[] ball;
+		if (ball != nullptr) {
+			delete[] ball;
+			ball = nullptr;
+		}
 	}
 
 	void Nurse::Start()
@@ -212,7 +216,6 @@ namespace game_framework {
 		int left = (col == 0) ? 225 : 225 + ball->Width();
 		int top = 90 + HEAL_BALL_INTERVAL * row;
 		ball->SetTopLeft(left, top);
-		TRACE("\nball top = %d, left = %d\n", ball->Top(), ball->Left());
 		ball->SetDelayCount(3);
 	}
 
@@ -220,6 +223,7 @@ namespace game_framework {
 	{
 		for (auto i : *pokemons) {
 			i->SetRemainHP(i->GetHP());
+			i->SetStatus(none);
 		}
 	}
 }

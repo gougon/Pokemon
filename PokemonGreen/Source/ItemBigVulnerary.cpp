@@ -15,17 +15,17 @@ namespace game_framework {
 		cost = 50;
 		itemImage.LoadBitmap(ITEM_VULNERARY);
 	}
+
 	bool ItemBigVulnerary::Use(Pokemon * pm)
 	{
-		if (pm->GetRemainHP() < pm->GetHP())
-		{
+		if (pm->GetRemainHP() < pm->GetHP()) {
 			if (pm->GetRemainHP() + 50 > pm->GetHP()) pm->SetRemainHP(pm->GetHP());
 			else pm->SetRemainHP(pm->GetRemainHP() + 50);
 			return true;
 		}
-
 		return false;
 	}
+
 	bool ItemBigVulnerary::Take(Pokemon* pm, bool replacement)
 	{
 		if (!replacement) {

@@ -1,7 +1,6 @@
 #pragma once
 
 #include <string>
-#include "GameObject.h"
 #include "Pokemon.h"
 #include "CText.h"
 
@@ -28,15 +27,15 @@ namespace game_framework {
 		barTypeMy, barTypeEnemy
 	};
 
-	class AtkBar : public GameObject {
+	class AtkBar {
 	public:
 		AtkBar(barType rtype = barTypeMy);
 		~AtkBar();
-		virtual void LoadBitmap();
-		virtual void Init();
-		virtual void OnMove();
-		virtual void OnShow();
-		virtual void SetTopLeft();
+		void LoadBitmap();
+		void Init();
+		void OnMove();
+		void OnShow();
+		void SetTopLeft();
 		void ReceiveType(barType rtype);
 		void ReceiveStatu(int statu);
 		void ReceiveData(Pokemon *rpm);

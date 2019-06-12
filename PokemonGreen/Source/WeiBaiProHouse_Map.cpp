@@ -39,24 +39,12 @@ void WeiBaiProHouse_Map::OnShow()
     {
         for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount)
         {
-            switch (map[j / SM][i / SM])
-            {
-                case NONE_HIT:
-                    break;
-
-                case NONE_EMPTY:
-                    break;
-
-                case ENTRANCE:
-                    break;
-
+            switch (map[j / SM][i / SM]) {
                 case WEIBAITOWN_PRO_HOUSE_INSIDE:
                     scene[WEIBAITOWN_PRO_HOUSE_INSIDE].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
                     scene[WEIBAITOWN_PRO_HOUSE_INSIDE].ShowBitmap();
                     break;
-
                 default:
-                    ASSERT(0);
                     break;
             }
         }

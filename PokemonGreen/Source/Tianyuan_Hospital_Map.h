@@ -2,7 +2,6 @@
 #include "CMap.h"
 #include "CHero.h"
 #include "Nurse.h"
-#include "CObject.h"
 #include "CEvent.h"
 
 namespace game_framework
@@ -25,7 +24,6 @@ namespace game_framework
 		bool inEvent;
 		Nurse nurse;
 		CDialog dialogBox;
-		CObject book;
 		int hitImg[3] = { 0, 2, 3 };
 	};
 }

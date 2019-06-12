@@ -1,20 +1,21 @@
 #pragma once
 #include "Pokemon.h"
-enum Item_ID
-{
-	Item_Antidote, //0
-	Item_SmallVulnerary, //1
-	Item_BigVulnerary,	 //2
-	Item_FighterGlove,	 //3
-	Item_PokeBall,		//4
-	Item_BurnMedicine	//5
-};
+
 namespace game_framework
 {
-	class CItem
+	enum Item_ID
 	{
+		Item_Antidote, 
+		Item_SmallVulnerary,
+		Item_BigVulnerary,	
+		Item_FighterGlove,	
+		Item_PokeBall,		
+		Item_BurnMedicine	
+	};
+
+	class CItem {
 	public:
-		CItem();
+		virtual ~CItem();
 		int GetID();
 		int GetCost();
 		int GetCategorie();

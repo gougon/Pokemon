@@ -39,6 +39,7 @@ namespace game_framework {
 
 		srand((unsigned)time(NULL));
 		this->name = name;
+		pmID = pikachu;
 		attribute = electric;
 		level = 5;			// 需要改，此處先設定level全定為5
 		speciesStrength.SetAll(35, 55, 40, 50, 50, 90);

@@ -40,6 +40,7 @@ namespace game_framework {
 
 		srand((unsigned)time(NULL));
 		this->name = name;
+		pmID = smoochum;
 		attribute = ice;
 		level = 5;			// 需要改，此處先設定level全定為5
 		speciesStrength.SetAll(45, 30, 15, 85, 65, 65);

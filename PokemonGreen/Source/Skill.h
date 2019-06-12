@@ -30,7 +30,6 @@ namespace game_framework {
 		int GetAllPP();
 		int GetPower();
 		int GetHitRate();
-		//virtual void Use(Pokemon *self, Pokemon *enemy1, Pokemon *enemy2) = 0;
 	protected:
 		int pmstyle;
 		CAnimation atkAnime;

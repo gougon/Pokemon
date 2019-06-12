@@ -84,9 +84,9 @@ namespace game_framework
 
 	void TrainerGymYamao::LoadBitmap()
 	{
-		normalImg[down].LoadBitmap(IDB_YAMAO_UP, RGB(255, 0, 0));
+		normalImg[down].LoadBitmap(IDB_YAMAO_DOWN, RGB(255, 0, 0));
 		normalImg[left].LoadBitmap(IDB_YAMAO_LEFT, RGB(255, 0, 0));
-		normalImg[up].LoadBitmap(IDB_YAMAO_DOWN, RGB(255, 0, 0));
+		normalImg[up].LoadBitmap(IDB_YAMAO_UP, RGB(255, 0, 0));
 		normalImg[right].LoadBitmap(IDB_YAMAO_RIGHT, RGB(255, 0, 0));
 		atkImg.LoadBitmap(IDB_YAMAO_ATK, RGB(255, 0, 0));
 	}

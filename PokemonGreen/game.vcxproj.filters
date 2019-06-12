@@ -7,7 +7,6 @@
     <ClCompile Include="Source\audio.cpp" />
     <ClCompile Include="Source\Bag.cpp" />
     <ClCompile Include="Source\CAlphabet.cpp" />
-    <ClCompile Include="Source\CCharacter.cpp" />
     <ClCompile Include="Source\CDialog.cpp" />
     <ClCompile Include="Source\CEvent.cpp" />
     <ClCompile Include="Source\Characters.cpp" />
@@ -68,15 +67,12 @@
     <ClCompile Include="Source\Clerk.cpp" />
     <ClCompile Include="Source\CMap.cpp" />
     <ClCompile Include="Source\CitizenMom.cpp" />
-    <ClCompile Include="Source\CObject.cpp" />
     <ClCompile Include="Source\CPickableObject.cpp" />
     <ClCompile Include="Source\CSelf.cpp" />
     <ClCompile Include="Source\CText.cpp" />
-    <ClCompile Include="Source\Black.cpp" />
     <ClCompile Include="Source\Functions.cpp" />
     <ClCompile Include="Source\game.cpp" />
     <ClCompile Include="Source\gameDoc.cpp" />
-    <ClCompile Include="Source\GameObject.cpp" />
     <ClCompile Include="Source\gameView.cpp" />
     <ClCompile Include="Source\Douchi_Hospital_Map.cpp" />
     <ClCompile Include="Source\Illustration.cpp" />
@@ -157,7 +153,6 @@
     <ClInclude Include="Source\AtkInterface.h" />
     <ClInclude Include="Source\audio.h" />
     <ClInclude Include="Source\Bag.h" />
-    <ClInclude Include="Source\CCharacter.h" />
     <ClInclude Include="Source\CDialog.h" />
     <ClInclude Include="Source\CAlphabet.h" />
     <ClInclude Include="Source\CEvent.h" />
@@ -219,14 +214,11 @@
     <ClInclude Include="Source\Clerk.h" />
     <ClInclude Include="Source\CMap.h" />
     <ClInclude Include="Source\CitizenMom.h" />
-    <ClInclude Include="Source\CObject.h" />
     <ClInclude Include="Source\CPickableObject.h" />
     <ClInclude Include="Source\CSelf.h" />
     <ClInclude Include="Source\CText.h" />
-    <ClInclude Include="Source\Black.h" />
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
-    <ClInclude Include="Source\GameObject.h" />
     <ClInclude Include="Source\gameView.h" />
     <ClInclude Include="Source\Douchi_Hospital_Map.h" />
     <ClInclude Include="Source\Illustration.h" />
@@ -1038,6 +1030,7 @@
     <Image Include="RES\citizen_woman3_left.bmp" />
     <Image Include="RES\citizen_woman3_up.bmp" />
     <Image Include="RES\citizen_woman3_down.bmp" />
+    <Image Include="RES\end.bmp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Res\ball.bmp" />

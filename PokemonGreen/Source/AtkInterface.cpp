@@ -6,7 +6,6 @@
 #include "audio.h"
 #include "gamelib.h"
 #include <stdlib.h>
-#include "Black.h"
 #include "Functions.cpp"
 #include "AtkInterface.h"
 #include "ItemPokeBall.h"
@@ -29,12 +28,12 @@ namespace game_framework {
 		pmMenu = nullptr;
 		bag = nullptr;
 		battleTrainer = nullptr;
-		for (auto i : joinAtkPm)
-			i = nullptr;
-		for (auto i : lvupPm)
-			i = nullptr;
-		if (pokeball != nullptr)
+		for (auto i : joinAtkPm) i = nullptr;
+		for (auto i : lvupPm) i = nullptr;
+		if (pokeball != nullptr) {
 			delete pokeball;
+			pokeball = nullptr;
+		}
 	}
 
 	void AtkInterface::OnShow()
@@ -101,15 +100,15 @@ namespace game_framework {
 			remainPPText.OnShow();
 			allPPText.OnShow();
 			skTypeText.OnShow();
-			for (auto i : skillText) {
-				i.OnShow();
-			}
+			for (auto i : skillText) i.OnShow();
 			break;
 		case choosePokemon:
 			pmMenu->OnShow();
 			break;
 		case chooseItem:
 			bag->OnShow();
+			if(bag->SelectPokeball() == 4 && trainer != nullptr)
+				outcomeText.OnShow();
 			break;
 		case usePokeBall:
 			myPm->OnShow();
@@ -190,7 +189,6 @@ namespace game_framework {
 			enemyBar.OnShow();
 			myBar.OnShow();
 			battleDialog.ShowBitmap();
-			// atkStatuText.OnShow();
 			break;
 		case endAnime:
 			myPm->OnShow("atk");
@@ -201,9 +199,8 @@ namespace game_framework {
 			atkText.OnShow();
 			break;
 		case endDialog:
-			if (pmMenu->IsWork()) {
+			if (pmMenu->IsWork())
 				pmMenu->OnShow();
-			}
 			else {
 				if (myPm->GetRemainHP() > 0) {
 					myPm->OnShow("atk");
@@ -229,9 +226,7 @@ namespace game_framework {
 				myPm->OnShow();
 				trainerList.OnShow();
 			}
-			else {
-				enemy->OnShow();
-			}
+			else enemy->OnShow();
 			battleDialog.ShowBitmap();
 			outcomeText.OnShow();
 			myBar.OnShow();
@@ -242,19 +237,16 @@ namespace game_framework {
 				switch (lvupCount) {
 				case 2:
 					lvupPanel.ShowBitmap();
-					for (int i = 0; i < 6; ++i) {
+					for (int i = 0; i < 6; ++i) 
 						valueUpText[i].OnShow();
-					}
 					break;
 				case 3:
 					lvupFpanel.ShowBitmap();
-					for (int i = 0; i < 6; ++i) {
+					for (int i = 0; i < 6; ++i) 
 						valueFinalText[i].OnShow();
-					}
 					break;
 				}
 			}
-			// enemyBar.OnShow();
 			break;
 		}
 
@@ -267,11 +259,6 @@ namespace game_framework {
 			CAudio::Instance()->Play(AUDIO_BATTLE_PROCESS, true);
 		switch (state)
 		{
-		/*case openAnime:
-			if (++openCount == 2)
-				state = heroAppear;
-			black.SetTopLeft(0, 0);
-			break;*/
 		case heroAppear:
 			battleGround[0].SetTopLeft(battleGround[0].Left() - V, battleGround[0].Top());
 			battleGround[1].SetTopLeft(battleGround[1].Left() + V, battleGround[1].Top());
@@ -284,9 +271,8 @@ namespace game_framework {
 		case heroStay:
 			if (trainer == nullptr)
 				outcomeText.SetText(enemy->GetName() + "is appear");
-			else {
+			else 
 				outcomeText.SetText(trainer->GetName() + " come to challenge");
-			}
 			if (myList.Left() > PMLIST_RIGHT_LEFT) {
 				if(trainer != nullptr)
 					trainerList.SetTopLeft(trainerList.Left() + V, trainerList.Top());
@@ -327,14 +313,12 @@ namespace game_framework {
 			remainPPText.SetText(to_string(myPm->GetSkill(cursor)->GetRemainPP()));
 			allPPText.SetText(to_string(myPm->GetSkill(cursor)->GetAllPP()));
 			skTypeText.SetText(myPm->GetSkill(cursor)->GetAttributeText());
-			remainPPText.SetTopLeft(REMAINPP_RIGHT - remainPPText.GetLength() * (int)remainPPText.GetFontSize(), 
-				SKILL_TOP);
+			remainPPText.SetTopLeft(REMAINPP_RIGHT - remainPPText.GetLength() * (int)remainPPText.GetFontSize(), SKILL_TOP);
 			SetCursorPosition(cursor, state);
 			break;
 		case choosePokemon:
-			if (pmMenu->IsWork()) {
+			if (pmMenu->IsWork())
 				pmMenu->OnMove();
-			}
 			else {
 				Pokemon *oldPm = myPm;
 				SetMyAtkPm();
@@ -343,13 +327,17 @@ namespace game_framework {
 			}
 			break;
 		case chooseItem:
-			if (bag->IsWork()) {
+			if (bag->IsWork())
 				bag->OnMove();
-			}
 			else {
-				if (bag->SelectPokeball() == 4) {
+				if (bag->SelectPokeball() == 4 && trainer == nullptr) {
+					if (pokeball != nullptr) {
+						delete pokeball;
+						pokeball = nullptr;
+					}
 					pokeball = itemFactory.CreateItem(4);
 					dynamic_cast<ItemPokeBall*>(pokeball)->UsePokeBall(self, enemy);
+					bag->DropItem(4, 1);
 					state = usePokeBall;
 				}
 				else {
@@ -359,23 +347,16 @@ namespace game_framework {
 			}
 			break;
 		case usePokeBall:
+			enemyStruggleCounter = 0;
 			dynamic_cast<ItemPokeBall*>(pokeball)->OnMove();
-			if (dynamic_cast<ItemPokeBall*>(pokeball)->animeEnd()) {
+			if (dynamic_cast<ItemPokeBall*>(pokeball)->animeEnd())
 				state = enemyInStruggle;
-			}
 			break;
 		case enemyInStruggle:
-			if (enemyStruggleCounter < 60) {
+			if (enemyStruggleCounter < 60)
 				enemyStruggleCounter++;
-			}
-			else {
-				if (dynamic_cast<ItemPokeBall*>(pokeball)->IsCatch()) {
-					state = endDialog;
-				}
-				else {
-					state = unCatch;
-				}
-			}
+			else 
+				state = dynamic_cast<ItemPokeBall*>(pokeball)->IsCatch() ? endDialog : unCatch;
 			break;
 		case unCatch:
 			outcomeText.SetText("ah! the pokemon is escape!");
@@ -501,25 +482,22 @@ namespace game_framework {
 			if (enemy->GetRemainHP() <= 0) {
 				enemy->SetTopLeft(enemy->Left(), enemy->Top() + V);
 				enemy->SetHeight(enemy->GetHeight() - V);
-				if (enemy->Top() >= ENEMYPM_Y + 130) {
+				if (enemy->Top() >= ENEMYPM_Y + 130)
 					state = endDialog;
-				}
 			}
 			else {
 				myPm->SetTopLeft(myPm->Left(), myPm->Top() + V);
 				myPm->SetHeight(myPm->GetHeight() - V);
-				if (myPm->Top() >= SELFPM_Y + 130) {
+				if (myPm->Top() >= SELFPM_Y + 130)
 					state = endDialog;
-				}
 			}
 			textCount = 0;
 			break;
 		case endDialog:
 			isAnime = false;
 			if (myPm->GetRemainHP() <= 0) {
-				if (textCount == 0) {
+				if (textCount == 0)
 					outcomeText.SetText(myPm->GetName() + " was defeated");
-				}
 				else {
 					if (self->GetAliveNum() > 0) {
 						if (textCount == 1) {
@@ -532,27 +510,22 @@ namespace game_framework {
 						else {
 							if (cursor == yes) 
 								pmMenu->OnMove();
-							else 
-								End();
+							else  End();
 						}
 					}
-					else 
-						End();
+					else  End();
 				}
 			}
 			else {
-				if (trainer != nullptr) {
+				if (trainer != nullptr) 
 					trainerList.LoadPokemonData(PmType::enemy, trainer->GetPokemons());
-				}
 				if (trainer != nullptr && textCount == 0 && trainerList.Left() < PMLIST_LEFT_LEFT)
 					trainerList.SetTopLeft(trainerList.Left() + V, trainerList.Top());
 				if (textCount == 0) 
-					if (pokeball != nullptr && dynamic_cast<ItemPokeBall*>(pokeball)->IsCatch()) {
+					if (pokeball != nullptr && dynamic_cast<ItemPokeBall*>(pokeball)->IsCatch()) 
 						outcomeText.SetText("capture " + enemy->GetName());
-					}
-					else {
+					else 
 						outcomeText.SetText(enemy->GetName() + " was defeated");
-					}
 				else if (textCount <= (int)joinAtkPm.size()) {
 					outcomeText.SetText(FindSetFromOrder(joinAtkPm, textCount - 1)->GetName() + " get " +
 						to_string(GetAddExp(enemy) / joinAtkPm.size()) + " exp");
@@ -577,11 +550,11 @@ namespace game_framework {
 				switch (lvupCount) {
 				case 0:
 					AddExp(order);
-					if (!myBar.IsAddExp()) {		// �g��Ȱʵe����
-						if (FindSetFromOrder(joinAtkPm, order) !=			// ���ݭn�ɵ�
+					if (!myBar.IsAddExp()) {
+						if (FindSetFromOrder(joinAtkPm, order) !=
 							((lvupPm.empty()) ? nullptr : *(lvupPm.rbegin()))) {
 							if (trainer == nullptr) {
-								if ((int)joinAtkPm.size() == order + 1) 		// �̫�@��
+								if ((int)joinAtkPm.size() == order + 1)
 									End();
 								else
 									state = endDialog;
@@ -590,38 +563,32 @@ namespace game_framework {
 								if ((int)joinAtkPm.size() == order + 1 && trainer->GetAliveNum() == 0) {		// �̫�@��
 									if (trainer != nullptr && trainer->GetAliveNum() > 0)
 										state = loadStartStatu;
-									else
-										End();
+									else End();
 								}
-								else
-									state = endDialog;
+								else state = endDialog;
 							}
 						}
-						else		// �ݭn�ɵ�
+						else	
 							lvupCount = 1;
 					}
 					break;
-				case 1:			// �w�T�w�n�ɵ��A��ܤɵ���r
+				case 1:	
 					outcomeText.SetText(FindSetFromOrder(joinAtkPm, order)->GetName() + " level up to "
 						 + to_string(FindSetFromOrder(joinAtkPm, order)->GetLevel()));
 					break;
-				case 2:			// �]�w�ɵ��ݩʴ��ɭ��O
+				case 2:	
 					SetValue(order);
 					break;
-				case 4:			// �ɵ����O����
-					if ((int)joinAtkPm.size() == order + 1) 		// �̫�@��
-						End();
-					else {			// ���O�̫�@���n�^dialog
+				case 4:	
+					if ((int)joinAtkPm.size() == order + 1) End();
+					else {
 						lvupCount = 0;
 						state = endDialog;
 					}
 					break;
 				}
 			}
-			else {
-				End();
-			}
-				
+			else End();
 			break;
 		}
 	}
@@ -740,78 +707,63 @@ namespace game_framework {
 		const char KEY_Z = 0x5a;
 		const char KEY_X = 0x58;
 
-		if (pmMenu->IsWork()) {
+		if (pmMenu->IsWork()) 
 			pmMenu->KeyDownListener(nChar);
-		}
-		else if (bag->IsWork()) {
+		else if (bag->IsWork()) 
 			bag->KeyDownListener(nChar);
-		}
 		switch (state)
 		{
 		case heroStay:
-			switch (nChar) {
-			case KEY_Z:
+			if (nChar == KEY_Z)
 				state = heroLeave;
-			}
 			break;
 		case pokemonAppear:
-			switch (nChar) {
-			case KEY_Z:
-				if (myPm->Left() >= 110 && nChar == KEY_Z) {
-					CAudio::Instance()->Play(AUDIO_SELECT);
-					state = loadStartStatu;
-				}
-				break;
+			if (nChar == KEY_Z && myPm->Left() >= 110) {
+				CAudio::Instance()->Play(AUDIO_SELECT);
+				state = loadStartStatu;
 			}
 			break;
 		case action:
+			if(nChar == KEY_LEFT || nChar == KEY_RIGHT || nChar == KEY_UP || nChar == KEY_DOWN || nChar == KEY_Z || nChar == KEY_X)
+				CAudio::Instance()->Play(AUDIO_SELECT);
 			switch (nChar)
 			{
 			case KEY_LEFT:
-				if (cursor == openbag || cursor == escape) {
-					CAudio::Instance()->Play(AUDIO_SELECT);
+				if (cursor == openbag || cursor == escape) 
 					cursor -= 1;
-				}
 				break;
 			case KEY_RIGHT:
-				if (cursor == fight || cursor == pokemon) {
-					CAudio::Instance()->Play(AUDIO_SELECT);
+				if (cursor == fight || cursor == pokemon) 
 					cursor += 1;
-				}
 				break;
 			case KEY_UP:
-				if (cursor == pokemon || cursor == escape) {
-					CAudio::Instance()->Play(AUDIO_SELECT);
+				if (cursor == pokemon || cursor == escape) 
 					cursor -= 2;
-				}
 				break;
 			case KEY_DOWN:
-				if (cursor == fight || cursor == openbag) {
-					CAudio::Instance()->Play(AUDIO_SELECT);
+				if (cursor == fight || cursor == openbag) 
 					cursor += 2;
-				}
 				break;
 			case KEY_Z:
 				switch (cursor) {
 				case fight:
-					CAudio::Instance()->Play(AUDIO_SELECT);
 					state = chooseSkill;
 					break;
 				case openbag:
-					CAudio::Instance()->Play(AUDIO_SELECT);
 					UseItem();
 					break;
 				case pokemon:
-					CAudio::Instance()->Play(AUDIO_SELECT);
 					SltPm();
 					break;
 				case escape:
-					CAudio::Instance()->Play(AUDIO_SELECT);
-					CAudio::Instance()->Play(AUDIO_ESCAPE);
-					End();
+					if (trainer == nullptr) {
+						CAudio::Instance()->Play(AUDIO_SELECT);
+						CAudio::Instance()->Play(AUDIO_ESCAPE);
+						End();
+					}
+					else  cursor = 0;
 					break;
 				default:
-					ASSERT(0);
 					break;
 				}
 				cursor = skill1;
@@ -821,38 +773,30 @@ namespace game_framework {
 			}
 			break;
 		case chooseSkill:
+			if (nChar == KEY_LEFT || nChar == KEY_RIGHT || nChar == KEY_UP || nChar == KEY_DOWN || nChar == KEY_Z || nChar == KEY_X)
+				CAudio::Instance()->Play(AUDIO_SELECT);
 			switch (nChar)
 			{
 			case KEY_LEFT:
-				if (cursor == skill2 || cursor == skill4) {
-					CAudio::Instance()->Play(AUDIO_SELECT);
+				if (cursor == skill2 || cursor == skill4) 
 					cursor -= 1;
-				}
 				break;
 			case KEY_RIGHT:
-				if (cursor == skill1 || cursor == skill3) {
-					CAudio::Instance()->Play(AUDIO_SELECT);
+				if (cursor == skill1 || cursor == skill3) 
 					cursor = (myPm->GetSkillNum() <= (cursor + 1)) ? cursor : (cursor + 1);
-				}
 				break;
 			case KEY_UP:
-				if (cursor == skill3 || cursor == skill4) {
-					CAudio::Instance()->Play(AUDIO_SELECT);
+				if (cursor == skill3 || cursor == skill4) 
 					cursor -= 2;
-				}
 				break;
 			case KEY_DOWN:
-				if (cursor == skill1 || cursor == skill2) {
-					CAudio::Instance()->Play(AUDIO_SELECT);
+				if (cursor == skill1 || cursor == skill2) 
 					cursor = (myPm->GetSkillNum() <= (cursor + 2)) ? cursor : (cursor + 2);
-				}
 				break;
 			case KEY_Z:
-				CAudio::Instance()->Play(AUDIO_SELECT);
 				state = onSkill;
 				break;
 			case KEY_X:
-				CAudio::Instance()->Play(AUDIO_SELECT);
 				state = action;
 				break;
 			default:
@@ -860,79 +804,61 @@ namespace game_framework {
 			}
 			break;
 		case unCatch:
-			if (nChar == KEY_Z)
+			if (nChar == KEY_Z) {
+				CAudio::Instance()->Play(AUDIO_SELECT);
 				state = enemyLoadStartStatu;
+			}
 			break;
 		case endDialog:
+			if (nChar == KEY_UP || nChar == KEY_DOWN || nChar == KEY_Z)
+				CAudio::Instance()->Play(AUDIO_SELECT);
 			switch (nChar) {
 			case KEY_UP:
-				if (myPm->GetRemainHP() <= 0 && textCount == 1) {
-					CAudio::Instance()->Play(AUDIO_SELECT);
+				if (myPm->GetRemainHP() <= 0 && textCount == 1) 
 					cursor = yes;
-				}
 				break;
 			case KEY_DOWN:
-				if (myPm->GetRemainHP() <= 0 && textCount == 1) {
-					CAudio::Instance()->Play(AUDIO_SELECT);
+				if (myPm->GetRemainHP() <= 0 && textCount == 1) 
 					cursor = no;
-				}
 				break;
 			case KEY_Z:
 				if (myPm->GetRemainHP() <= 0) {
-					if (textCount == 1 && cursor == yes) {
-						CAudio::Instance()->Play(AUDIO_SELECT);
+					if (textCount == 1 && cursor == yes) 
 						SltPm();
-					}
-					else if (textCount == 1 && cursor == no) {
-						CAudio::Instance()->Play(AUDIO_SELECT);
+					else if (textCount == 1 && cursor == no) 
 						End();
-					}
 				}
 				else if (trainer == nullptr) {
 					if (myPm->GetRemainHP() > 0 || textCount != 1) {
-						if (textCount > 0) {
-							CAudio::Instance()->Play(AUDIO_SELECT);
+						if (textCount > 0) 
 							state = end;
-						}
 						++textCount;
 					}
 				}
 				else {
 					if (trainer != nullptr && textCount == 0 && trainerList.Left() < PMLIST_LEFT_LEFT)
 						return;
-					if (trainer->GetAliveNum() > 0 && textCount > ((int)joinAtkPm.size()) && trainer->GetAliveNum() > 0) {
+					if (trainer->GetAliveNum() > 0 && textCount > ((int)joinAtkPm.size()) && trainer->GetAliveNum() > 0) 
 						state = (trainer->GetAliveNum() > 0) ? loadStartStatu : end;
-					}
-					else if (trainer->GetAliveNum() > 0 && textCount >= ((int)joinAtkPm.size()) && trainer->GetAliveNum() == 0) {
+					else if (trainer->GetAliveNum() > 0 && textCount >= ((int)joinAtkPm.size()) && trainer->GetAliveNum() == 0) 
 						state = (trainer->GetAliveNum() > 0) ? loadStartStatu : end;
-					}
-					else if (trainer->GetAliveNum() <= 0 && textCount > ((int)joinAtkPm.size())) {
+					else if (trainer->GetAliveNum() <= 0 && textCount > ((int)joinAtkPm.size())) 
 						state = (trainer->GetAliveNum() > 0) ? loadStartStatu : end;
-					}
 					else if ((enemy->GetRemainHP() <= 0 || textCount != 1) && textCount < (int)joinAtkPm.size()) {
-						if (textCount > 0) {
-							CAudio::Instance()->Play(AUDIO_SELECT);
+						if (textCount > 0) 
 							state = end;
-						}
 						++textCount;
 					}
-					else {
+					else 
 						textCount++;
-					}
 				}
 				break;
 			}
 			break;
 		case end:
-			switch (nChar) {
-			case KEY_Z:
+			if (nChar == KEY_Z) {
 				CAudio::Instance()->Play(AUDIO_SELECT);
 				++lvupCount;
-				/*if (lvupCount == 3 && textCount <= (int)joinAtkPm.size()) {
-					lvupCount = 0;
-					state = endDialog;
-				}*/
-				break;
 			}
 			break;
 		}
@@ -951,20 +877,26 @@ namespace game_framework {
 	{
 		while (!states.empty()) 
 			states.pop();
-		if (trainer != nullptr)
+		if (trainer != nullptr) {
 			trainer->SetIsEvent(true);
-		else
+			trainer = nullptr;
+		}
+		else {
 			delete enemy;
+			enemy = nullptr;
+		}
 		trainer = nullptr;
 		isWork = false;
 		isAnime = false;
-		pokeball = nullptr;
+		if (pokeball != nullptr) {
+			delete pokeball;
+			pokeball = nullptr;
+		}
 		textCount = 0;
 		lvupCount = 0;
 		joinAtkPm.clear();
 		lvupPm.clear();
 		skillText.clear();
-		pokeball = nullptr;
 		CAudio::Instance()->Stop(AUDIO_BATTLE_START);
 		CAudio::Instance()->Stop(AUDIO_BATTLE_PROCESS);
 		CAudio::Instance()->Stop(AUDIO_BATTLE_END);

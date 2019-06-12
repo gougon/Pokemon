@@ -40,6 +40,7 @@ namespace game_framework {
 
 		srand((unsigned)time(NULL));
 		this->name = name;
+		pmID = vulpix;
 		attribute = fire;
 		level = 5;			// 需要改，此處先設定level全定為5
 		speciesStrength.SetAll(38, 41, 40, 50, 65, 65);
