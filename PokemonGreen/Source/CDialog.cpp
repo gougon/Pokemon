@@ -9,9 +9,11 @@
 using namespace std;
 namespace game_framework
 {
-CDialog::CDialog() :
-	textCounter(0), textNum(0), showString("")
+CDialog::CDialog()
 {
+	textCounter = 0;
+	textNum = 0;
+	showString = "";
 }
 
 CDialog::~CDialog()

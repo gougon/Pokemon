@@ -106,6 +106,7 @@ class CGameStateRun : public CGameState
         Menu			myMenu;
         CEvent			gameEvent;
         CMap*			gameMap;	// ¦a¹Ï
+		Test*			test;
         CHero           hero;
         CDialog         testDialog;
         AtkInterface	atkInterface;

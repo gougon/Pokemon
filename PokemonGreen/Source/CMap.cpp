@@ -21,10 +21,10 @@ CMap::CMap(int sceneNum) :
     scene = new CMovingBitmap[sceneNum];
 }
 
-CMap::~CMap()
-{
-	delete[] scene;
-}
+// CMap::~CMap()
+// {
+// 	delete[] scene;
+// }
 
 void CMap::SetMXY(int mx, int my)
 {

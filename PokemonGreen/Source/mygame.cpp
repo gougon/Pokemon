@@ -278,6 +278,7 @@ CGameStateRun::CGameStateRun(CGame* g)
 
 CGameStateRun::~CGameStateRun()
 {
+	delete test;
 	delete gameMap;
 	delete characters;
 }
@@ -286,6 +287,8 @@ void CGameStateRun::OnBeginState()
 {
     CAudio::Instance()->Stop(AUDIO_HOME);
 	gameMap = new WeiBaiMap(&gameEvent);
+	test = new Test();
+	test->LoadBitmap();
 	gameMap->LoadBitmap();					// 載入背景的圖形
     hero.Initialize();
     hero.SetXY(97 * SM + HERO_X, 80 * SM + HERO_Y + 20);

@@ -42,7 +42,7 @@ class CMap
 {
     public:
         CMap();
-		~CMap();
+		virtual ~CMap() { delete[] scene; };
         CMap(int sceneNum);
         virtual void InitMap() {}
         virtual void LoadBitmap() {}

@@ -42,9 +42,16 @@ constexpr auto TIANYUAN_LLAKE4 = 34;
 constexpr auto TIANYUAN_GYM = 35;
 
 namespace game_framework {
+	class Test {
+	public:
+		void LoadBitmap() { test.AddBitmap(IDB_GREEN_FLOWER2); }
+	private:
+		CAnimation test;
+	};
 	class WeiBaiMap : public CMap {
     public:
         WeiBaiMap(CEvent*);
+		~WeiBaiMap();
         virtual void InitMap();
         virtual void LoadBitmap();
         virtual void OnShow();
@@ -63,7 +70,7 @@ namespace game_framework {
 		int dialogState;
 		CFatguy fatguy;
         CDialog dialogBox;
-		// CAnimation flower, rtsea1, rtsea2;
+		CAnimation flower, rtsea1, rtsea2, test;
         CPickableObject pickable_Antidote;
         int hitImg[14] = { 0, 3, 6, 15, 16, 17, 27, 28, 30, 31, 32, 33, 34, 35 };
         int warZone = 10;

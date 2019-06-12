@@ -38,6 +38,11 @@ namespace game_framework
 		InitMap();
 	}
 
+	WeiBaiMap::~WeiBaiMap()
+	{
+
+	}
+
 	void WeiBaiMap::InitMap()
 	{
 		CAudio::Instance()->Play(AUDIO_WEIBAITOWN);
@@ -94,7 +99,7 @@ namespace game_framework
 		// flower.AddBitmap(IDB_GREEN_FLOWER);
 		// flower.AddBitmap(IDB_GREEN_FLOWER2);
 		// flower.AddBitmap(IDB_GREEN_FLOWER3);
-		// 
+		
 		// rtsea1.AddBitmap(IDB_RTSEA1_1);
 		// rtsea1.AddBitmap(IDB_RTSEA1_2);
 		// rtsea1.AddBitmap(IDB_RTSEA1_3);
