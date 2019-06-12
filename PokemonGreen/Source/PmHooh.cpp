@@ -23,6 +23,8 @@ namespace game_framework {
 		SkillFactory skFactory;
 		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(impact, pmtype)));
 		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(ember, pmtype)));
+		skillTree.insert(pair<int, Skill*>(15, skFactory.CreateSkill(flamethrower, pmtype)));
+		skillTree.insert(pair<int, Skill*>(18, skFactory.CreateSkill(phychoboost, pmtype)));
 		Init("hooh");
 	}
 

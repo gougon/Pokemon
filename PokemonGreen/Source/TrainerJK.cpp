@@ -16,21 +16,21 @@ namespace game_framework
 		Trainer(atkInterface)
 	{
 		// set position
-		x = 102;
-		y = 70;
+		x = 80;
+		y = 38;
 
 		// set pokemons
 		PokemonFactory pmf;
-		pokemons.push_back(pmf.CreateEnemy(treecko, 6));
-		pokemons.push_back(pmf.CreateEnemy(hooh, 7));
+		pokemons.push_back(pmf.CreateEnemy(smoochum, 8));
+		pokemons.push_back(pmf.CreateEnemy(jirachi , 8));
 
 		// set name and map
 		name = "jk";
 		map = "weibai";
-		type = trainer;
+		type = walker;
 
 		// set direction
-		direction = right;
+		direction = down;
 
 		// set dialog
 		normalDialog.InitDialog('n');

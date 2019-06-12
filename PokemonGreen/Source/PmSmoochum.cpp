@@ -22,7 +22,9 @@ namespace game_framework {
 		this->pmtype = pmtype;
 		SkillFactory skFactory;
 		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(impact, pmtype)));
-		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(ember, pmtype)));
+		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(lick, pmtype)));
+		skillTree.insert(pair<int, Skill*>(8, skFactory.CreateSkill(powdersnow, pmtype)));
+		skillTree.insert(pair<int, Skill*>(15, skFactory.CreateSkill(aurorabeam, pmtype)));
 		Init("smoochum");
 	}
 

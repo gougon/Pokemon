@@ -21,30 +21,9 @@ namespace game_framework
     {
         this->pmtype = pmtype;
 		SkillFactory skFactory;
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(impact, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(7, skFactory.CreateSkill(leer, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(ember, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(confusion, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(metalclaw, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(scaryface, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(lick, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(poisongas, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(powdersnow, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(sludge, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(flamethrower, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(thundershock, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(thunderbolt, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(bubblebeam, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(watergun, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(crunch, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(dragonclaw , pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(leafblade, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(aurorabeam, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(leafstorm, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(nightshade, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(phychoboost, pmtype)));
-		//skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(swift, pmtype)));
-		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(hyperbeam, pmtype)));
+		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(impact, pmtype)));
+		skillTree.insert(pair<int, Skill*>(7, skFactory.CreateSkill(leer, pmtype)));
+		skillTree.insert(pair<int, Skill*>(12, skFactory.CreateSkill(leafblade, pmtype)));
 		Init("treecko");
 	}
 

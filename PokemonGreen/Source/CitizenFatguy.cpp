@@ -9,7 +9,7 @@
 namespace game_framework
 {
 
-	CitizenFatguy::CitizenFatguy() :
+	CitizenFatguy::CitizenFatguy():
 		Citizen()
 	{
 		// set position
@@ -26,7 +26,7 @@ namespace game_framework
 
 		// set dialog
 		normalDialog.InitDialog('n');
-		normalDialog.AddText("do you have some;delicious foods");
+		normalDialog.AddText("do you have some;delicious foods?");
 		normalDialog.AddText("you call me fatguy!!");
 		normalDialog.AddText("get out of my way!!");
 	}

@@ -22,7 +22,9 @@ namespace game_framework {
 		this->pmtype = pmtype;
 		SkillFactory skFactory;
 		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(impact, pmtype)));
-		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(ember, pmtype)));
+		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(leer, pmtype)));
+		skillTree.insert(pair<int, Skill*>(10, skFactory.CreateSkill(leafblade, pmtype)));
+		skillTree.insert(pair<int, Skill*>(40, skFactory.CreateSkill(leafstorm, pmtype)));
 		Init("grovyle");
 	}
 

@@ -22,6 +22,8 @@ namespace game_framework {
 		SkillFactory skFactory;
 		skillTree.insert(pair<int, Skill*>(5, skFactory.CreateSkill(impact, pmtype)));
 		skillTree.insert(pair<int, Skill*>(7, skFactory.CreateSkill(leer, pmtype)));
+		skillTree.insert(pair<int, Skill*>(8, skFactory.CreateSkill(confusion, pmtype)));
+		skillTree.insert(pair<int, Skill*>(12, skFactory.CreateSkill(swift, pmtype)));
 		Init("jirachi");
 	}
 
