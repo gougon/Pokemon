@@ -24,6 +24,7 @@ namespace game_framework
 		SetMXY(42, 37);
 		SetXY(16 * SM, 18 * SM);
 		SetMap("hospital");
+		name = "tianyuan_hospital";
 	}
 
 	void Tianyuan_Hospital_Map::LoadBitmap()

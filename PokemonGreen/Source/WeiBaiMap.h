@@ -6,7 +6,6 @@
 #include "CObject.h"
 #include "CPickableObject.h"
 #include "CEvent.h"
-#include "CFatguy.h"
 
 constexpr auto GREEN_GRASS = 2;
 constexpr auto GREEN_TREE = 3;
@@ -68,7 +67,6 @@ namespace game_framework {
     private:
         bool inEvent;
 		int dialogState;
-		CFatguy fatguy;
         CDialog dialogBox;
 		CAnimation flower, rtsea1, rtsea2, test;
         CPickableObject pickable_Antidote;

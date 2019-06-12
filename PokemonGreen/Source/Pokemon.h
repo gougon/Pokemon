@@ -93,7 +93,7 @@ namespace game_framework {
 		string RoundProgressStatuEffect();
 		void RoundEndStatuEffect();
 
-		int exp[30] = {														// ³]©w¸gÅç­È¹D30µ¥
+		int exp[30] = {														// ï¿½]ï¿½wï¿½gï¿½ï¿½È¹D30ï¿½ï¿½
 			6, 15, 30, 49, 72, 102, 135, 174, 217, 264,
 			318, 374, 438, 505, 576, 654, 735, 822, 913, 1008,
 			1110, 1215, 1326, 1441, 1560, 1686, 1815, 1950, 2089, 2232

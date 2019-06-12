@@ -34,9 +34,27 @@ namespace game_framework {
 		npcs.push_back(factory.CreateNpc(trainerGymYoungster, *atkInterface));
 		npcs.push_back(factory.CreateNpc(trainerGymYamao, *atkInterface));
 		npcs.push_back(factory.CreateNpc(trainerGymMaster, *atkInterface));
+		npcs.push_back(factory.CreateNpc(trainerJK, *atkInterface));
+		npcs.push_back(factory.CreateNpc(trainerBadguy, *atkInterface));
 		npcs.push_back(factory.CreateNpc(citizenMom, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenFatguy, *atkInterface));
 		npcs.push_back(factory.CreateNpc(citizenSister, *atkInterface));
-
+		npcs.push_back(factory.CreateNpc(citizenBoy, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenGirl1, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenGirl2, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenGirl3, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenMan1, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenMan2, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenMan3, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenMan4, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenMan5, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenWoman1, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenWoman2, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenWoman3, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenWoman4, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenWoman5, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenResearcher, *atkInterface));
+		npcs.push_back(factory.CreateNpc(citizenOdd, *atkInterface));
 		// load bitmap for all npcs
 		LoadBitmap();
 	}

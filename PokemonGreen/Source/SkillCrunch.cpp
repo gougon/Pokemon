@@ -28,18 +28,34 @@ namespace game_framework {
 		attachRate = 0.5f;
 
 		animeCount = 0;
-		//add anime
-		atkAnime.SetDelayCount(2);
-		//add enemy anime
-		atkEnemyAnime.SetDelayCount(2);
+		atkAnime.AddBitmap(IDB_SKILL_CRUNCH1, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_CRUNCH2, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_CRUNCH3, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_CRUNCH4, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_CRUNCH5, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_CRUNCH6, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_CRUNCH6, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_CRUNCH7, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_CRUNCH7, RGB(255, 0, 0));
+		atkAnime.SetDelayCount(1);
+		atkEnemyAnime.AddBitmap(IDB_SKILL_CRUNCH1, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_CRUNCH2, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_CRUNCH3, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_CRUNCH4, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_CRUNCH5, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_CRUNCH6, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_CRUNCH6, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_CRUNCH7, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_CRUNCH7, RGB(255, 0, 0));
+		atkEnemyAnime.SetDelayCount(1);
 
 		switch (pmstyle)
 		{
 		case my:
-			atkAnime.SetTopLeft(205, 195);
+			atkAnime.SetTopLeft(385, 0);
 			break;
 		case enemy:
-			atkEnemyAnime.SetTopLeft(405, 120);
+			atkEnemyAnime.SetTopLeft(85, 180);
 			break;
 		default:
 			ASSERT(0);
@@ -54,7 +70,7 @@ namespace game_framework {
 			float realHitRate = hitRate * self->GetHitRate() / enemy->GetEvasionRate();
 			int rnd = rand() % 100 + 1;
 			if ((int)(realHitRate * 100) > rnd) { // ©R¤¤
-				CAudio::Instance()->Play(AUDIO_EMBER);
+				CAudio::Instance()->Play(AUDIO_CRUNCH);
 				isSuccess = true;
 				int enehp = enemy->GetRemainHP();
 				enehp = (enehp - Damage(self, enemy) < 0) ? 0 : enehp - Damage(self, enemy);

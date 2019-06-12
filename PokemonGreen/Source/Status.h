@@ -34,5 +34,8 @@ namespace game_framework
 		int statu;
 		int counter;
 		CAnimation burnAnime;	// À³§ï¬°vector
+		CAnimation poisonAnime;
+		CAnimation freezeAnime;
+		CAnimation paralysisAnime;
 	};
 }

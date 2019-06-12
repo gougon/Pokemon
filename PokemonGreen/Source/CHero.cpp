@@ -421,6 +421,7 @@ void CHero::KeyIn(UINT nChar, Characters* characters, CMap &map)
 
     if (nChar == KEY_Z)
     {
+		TRACE("current position = %d %d\n", GetX1() / SM , GetY1() / SM);
 		characters->KeyDownListener(nChar, *this, map);
         SetCanMove(false);
     }

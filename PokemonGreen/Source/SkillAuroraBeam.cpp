@@ -28,18 +28,34 @@ namespace game_framework {
 		attachRate = 0.5f;
 
 		animeCount = 0;
-		//add anime
+		atkAnime.AddBitmap(IDB_SKILL_AURORABEAM1, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_AURORABEAM2, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_AURORABEAM3, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_AURORABEAM4, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_AURORABEAM5, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_AURORABEAM6, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_AURORABEAM7, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_AURORABEAM8, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_AURORABEAM9, RGB(255, 0, 0));
 		atkAnime.SetDelayCount(2);
-		//add enemy anime
+		atkEnemyAnime.AddBitmap(IDB_SKILL_AURORABEAM3, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_AURORABEAM2, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_AURORABEAM1, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_AURORABEAM6, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_AURORABEAM5, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_AURORABEAM4, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_AURORABEAM9, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_AURORABEAM8, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_AURORABEAM7, RGB(255, 0, 0));
 		atkEnemyAnime.SetDelayCount(2);
 
 		switch (pmstyle)
 		{
 		case my:
-			atkAnime.SetTopLeft(205, 195);
+			atkAnime.SetTopLeft(150, 100);
 			break;
 		case enemy:
-			atkEnemyAnime.SetTopLeft(405, 120);
+			atkEnemyAnime.SetTopLeft(140, 100);
 			break;
 		default:
 			ASSERT(0);
@@ -54,7 +70,7 @@ namespace game_framework {
 			float realHitRate = hitRate * self->GetHitRate() / enemy->GetEvasionRate();
 			int rnd = rand() % 100 + 1;
 			if ((int)(realHitRate * 100) > rnd) { // 命中
-				CAudio::Instance()->Play(AUDIO_EMBER);
+				CAudio::Instance()->Play(AUDIO_AURORABEAM);
 				isSuccess = true;
 				int enehp = enemy->GetRemainHP();
 				enehp = (enehp - Damage(self, enemy) < 0) ? 0 : enehp - Damage(self, enemy);
@@ -62,12 +78,11 @@ namespace game_framework {
 				if ((int)(attachRate * 100) > rnd) {
 					int enedeflv = enemy->GetAtkLevel();
 					if (enedeflv > -6) {
-						CAudio::Instance()->Play(AUDIO_LEER);
 						enemy->SetRemainAtk(enedeflv - 1);
 						return enemy->GetName() + "'s atk be decreased";
 					}
 					else {	// 跑對話說已經降到最低了
-						CAudio::Instance()->Play(AUDIO_LEERNE);
+						
 						return enemy->GetName() + "'s atk cannot be decreased";
 					}
 				}

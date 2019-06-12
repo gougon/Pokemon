@@ -56,7 +56,7 @@ namespace game_framework
 
 				// assessment whether dialog is end
 				if (normalDialog.IsEnd()) {
-					hero.MoveOneBlock(4);
+					//hero.MoveOneBlock(4);
 					normalDialog.Reset();
 					StopTalk(hero);
 				}

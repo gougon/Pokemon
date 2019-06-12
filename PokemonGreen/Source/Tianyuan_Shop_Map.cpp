@@ -28,6 +28,7 @@ namespace game_framework {
 		SetMXY(39, 36);
 		SetXY(12 * SM, 18 * SM);
 		SetMap("shop");
+		name = "tianyuan_shop";
 		inEvent = false;
 	}
 

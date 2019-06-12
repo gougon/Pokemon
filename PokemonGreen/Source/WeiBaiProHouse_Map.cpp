@@ -22,6 +22,7 @@ void WeiBaiProHouse_Map::InitMap()
     SetMXY(41, 41);
     SetXY(15 * SM, 22 * SM);
     SetMap("weibaitown_pro_house");
+	name = "weibaitown_pro_house";
 }
 
 void WeiBaiProHouse_Map::LoadBitmap()

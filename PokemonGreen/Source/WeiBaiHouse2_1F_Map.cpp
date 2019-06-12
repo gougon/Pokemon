@@ -22,6 +22,7 @@ void WeiBaiHouse2_1F_Map::InitMap()
     SetMXY(39, 37);
     SetXY(11 * SM, 18 * SM);
     SetMap("weibaitown_house2_1f");
+	name = "weibaitown_house2_1f";
 }
 
 void WeiBaiHouse2_1F_Map::LoadBitmap()

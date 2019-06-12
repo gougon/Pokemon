@@ -31,19 +31,19 @@ namespace game_framework {
 		atkAnime.AddBitmap(IDB_SKILL_SCARYFACE1, RGB(255, 0, 0));
 		atkAnime.AddBitmap(IDB_SKILL_SCARYFACE2, RGB(255, 0, 0));
 		atkAnime.AddBitmap(IDB_SKILL_SCARYFACE3, RGB(255, 0, 0));
-		atkAnime.SetDelayCount(2);
-		atkAnime.AddBitmap(IDB_SKILL_SCARYFACE1, RGB(255, 0, 0));
-		atkAnime.AddBitmap(IDB_SKILL_SCARYFACE2, RGB(255, 0, 0));
-		atkAnime.AddBitmap(IDB_SKILL_SCARYFACE3, RGB(255, 0, 0));
-		atkEnemyAnime.SetDelayCount(2);
+		atkAnime.SetDelayCount(4);
+		atkEnemyAnime.AddBitmap(IDB_SKILL_SCARYFACE1, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_SCARYFACE2, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_SCARYFACE3, RGB(255, 0, 0));
+		atkEnemyAnime.SetDelayCount(4);
 
 		switch (pmstyle)
 		{
 		case my:
-			atkAnime.SetTopLeft(405, 120);
+			atkAnime.SetTopLeft(400, 10);
 			break;
 		case enemy:
-			atkEnemyAnime.SetTopLeft(205, 195);
+			atkEnemyAnime.SetTopLeft(105, 180);
 			break;
 		default:
 			ASSERT(0);
@@ -58,10 +58,12 @@ namespace game_framework {
 			float realHitRate = hitRate * self->GetHitRate() / enemy->GetEvasionRate();
 			int rnd = rand() % 100 + 1;
 			if ((int)(realHitRate * 100) > rnd) { // ©R¤¤
-				CAudio::Instance()->Play(AUDIO_LEER);
-				if ((int)(attachRate * 100) > rnd)
-					isSuccess = true;
-					return enemy->GetName() + "is in paralysis";
+				isSuccess = true;
+				CAudio::Instance()->Play(AUDIO_SCARYFACE);
+				if ((int)(attachRate * 100) > rnd) {
+					enemy->SetStatus(statuParalysis);
+					return enemy->GetName() + "is scared";
+				}
 				return "no effect";
 			}
 			else {

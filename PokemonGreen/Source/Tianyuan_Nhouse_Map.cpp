@@ -22,6 +22,7 @@ namespace game_framework
 		SetMXY(38, 37);
 		SetXY(13 * SM, 18 * SM);
 		SetMap("tianyuantown_nhouse");
+		name = "tianyuantown_nhouse";
 	}
 
 	void Tianyuan_Nhouse_Map::LoadBitmap()

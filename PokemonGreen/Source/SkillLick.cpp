@@ -28,18 +28,24 @@ namespace game_framework {
 		attachRate = 0.5f;
 
 		animeCount = 0;
-		//add anime
+		atkAnime.AddBitmap(IDB_SKILL_LICK1, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_LICK2, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_LICK3, RGB(255, 0, 0));
+		atkAnime.AddBitmap(IDB_SKILL_LICK4, RGB(255, 0, 0));
 		atkAnime.SetDelayCount(2);
-		//add enemy anime
+		atkEnemyAnime.AddBitmap(IDB_SKILL_LICK1, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_LICK2, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_LICK3, RGB(255, 0, 0));
+		atkEnemyAnime.AddBitmap(IDB_SKILL_LICK4, RGB(255, 0, 0));
 		atkEnemyAnime.SetDelayCount(2);
 
 		switch (pmstyle)
 		{
 		case my:
-			atkAnime.SetTopLeft(205, 195);
+			atkAnime.SetTopLeft(430, 60);
 			break;
 		case enemy:
-			atkEnemyAnime.SetTopLeft(405, 120);
+			atkEnemyAnime.SetTopLeft(130, 240);
 			break;
 		default:
 			ASSERT(0);
@@ -54,13 +60,14 @@ namespace game_framework {
 			float realHitRate = hitRate * self->GetHitRate() / enemy->GetEvasionRate();
 			int rnd = rand() % 100 + 1;
 			if ((int)(realHitRate * 100) > rnd) { // ©R¤¤
-				CAudio::Instance()->Play(AUDIO_LEER);
+				CAudio::Instance()->Play(AUDIO_LICK);
 				isSuccess = true;
 				int enehp = enemy->GetRemainHP();
 				enehp = (enehp - Damage(self, enemy) < 0) ? 0 : enehp - Damage(self, enemy);
 				enemy->SetRemainHP(enehp);
 				if ((int)(attachRate * 100) > rnd)
-					return enemy->GetName() + "is in paralysis";
+					enemy->SetStatus(statuParalysis);
+					return enemy->GetName() + "be captived";
 				return EffectText(enemy);
 			}
 			else {

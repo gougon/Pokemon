@@ -51,8 +51,6 @@ namespace game_framework
 		SetXY(97 * SM, 80 * SM);		// 設定初始位置
 		SetMap("area1");
 		name = "weibai";
-		fatguy.Initialize();
-		fatguy.SetXY(103 * SM, 84 * SM + 40);
 		dialogBox.InitDialog('n');
 
 		if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
@@ -107,14 +105,12 @@ namespace game_framework
 		// rtsea1.AddBitmap(IDB_RTSEA1_5);
 		// rtsea1.AddBitmap(IDB_RTSEA1_6);
 		// 
-		// rtsea2.AddBitmap(IDB_RTSEA2_1);
-		// rtsea2.AddBitmap(IDB_RTSEA2_2);
-		// rtsea2.AddBitmap(IDB_RTSEA2_3);
-		// rtsea2.AddBitmap(IDB_RTSEA2_4);
-		// rtsea2.AddBitmap(IDB_RTSEA2_5);
-		// rtsea2.AddBitmap(IDB_RTSEA2_6);
-
-		fatguy.LoadBitmap();
+		//rtsea2.AddBitmap(IDB_RTSEA2_1);
+		//rtsea2.AddBitmap(IDB_RTSEA2_2);
+		//rtsea2.AddBitmap(IDB_RTSEA2_3);
+		//rtsea2.AddBitmap(IDB_RTSEA2_4);
+		//rtsea2.AddBitmap(IDB_RTSEA2_5);
+		//rtsea2.AddBitmap(IDB_RTSEA2_6);
 		/////////////////////////////
 		if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
 			pickable_Antidote.LoadBitmap();
@@ -255,7 +251,6 @@ namespace game_framework
 						break;
 				}
 
-				fatguy.OnShow(GetSX(), GetSY());
 				if (!mapGameEvent->CheckOccured(WeibaiTown_pick_Pokemomball))
 					pickable_Antidote.OnShow(sx, sy);
 			}
@@ -306,10 +301,11 @@ namespace game_framework
 					}
 				}
 				if (HERO_Y + 20 + SM <= (ycount - EXPEND)*SM - sy % SM
-					&& map[j / SM][i / SM] == GREEN_TREE) 
+					&& map[j / SM][i / SM] == GREEN_TREE)
 					SetTopLeft(GREEN_TREE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM - 15);
 			}
 		}
+		if (inEvent) dialogBox.OnShow();
 	}
 
 	void WeiBaiMap::OnMove()
@@ -317,7 +313,6 @@ namespace game_framework
 		// flower.OnMove();
 		// rtsea1.OnMove();
 		// rtsea2.OnMove();
-		fatguy.OnMove();
 	}
 
 	bool WeiBaiMap::IsCollision(int x, int y, CHero &hero)
@@ -336,7 +331,6 @@ namespace game_framework
 				flag = true;
 		}
 
-		if (fatguy.GetX() / SM == x && fatguy.GetY() / SM + 1 == y) flag =  true;
 		return flag;
 	}
 
@@ -477,23 +471,6 @@ namespace game_framework
 						hero.GetItem(Item_PokeBall, 2);
 						dialogState = End;
 						inEvent = true;
-					}
-				}
-				else if (fatguy.GetX() / SM == x && fatguy.GetY() / SM + 1 == y)
-				{
-					fatguy.Talk(direction);
-					inEvent = true;
-					hero.StartDialog();
-					if (fatguy.GetVer() == 1) {
-						dialogBox.SetText("do you have some;delicious foods");
-					}
-					if (fatguy.GetVer() == 2) {
-						dialogState = Continue;
-						dialogBox.SetText("you call me fatguy!!");
-					}
-					if (fatguy.GetVer() == 3) dialogBox.SetText("get out of my way!!");
-					if (fatguy.GetVer() == 4) {
-						dialogState = End;
 					}
 				}
 				else if (x == 99 && y == 82) {

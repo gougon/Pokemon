@@ -21,6 +21,7 @@ namespace game_framework {
 		SetMXY(38, 37);
 		SetXY(12 * SM, 18 * SM);
 		SetMap("douchitown_house2");
+		name = "douchitown_house2";
 	}
 
 	void DouChiHouse2_Map::LoadBitmap()

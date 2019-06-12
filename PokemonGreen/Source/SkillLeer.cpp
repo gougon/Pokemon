@@ -43,10 +43,10 @@ namespace game_framework {
 		switch (pmstyle)
 		{
 		case my:
-			atkAnime.SetTopLeft(205, 195);
+			atkAnime.SetTopLeft(195, 205);
 			break;
 		case enemy:
-			atkEnemyAnime.SetTopLeft(405, 120);
+			atkEnemyAnime.SetTopLeft(405, 90);
 			break;
 		default:
 			ASSERT(0);

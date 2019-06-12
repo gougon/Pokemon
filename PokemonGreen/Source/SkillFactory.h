@@ -6,7 +6,10 @@
 using namespace std;
 namespace game_framework {
 	enum skillName {
-		impact, leer, ember
+		impact, leer, ember , confusion , metalclaw , scaryface , lick , powdersnow , poisongas,
+		sludge, willowisp, flamethrower, thundershock, thunderbolt, bubblebeam, watergun, aurorabeam,
+		dragonclaw, crunch, leafblade, leafstorm, nightshade, phychokinesis, phychoboost,
+		scaredfire, hyperbeam, swift
 	};
 
 	class SkillFactory {
