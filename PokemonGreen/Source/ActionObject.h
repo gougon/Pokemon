@@ -21,4 +21,3 @@ namespace game_framework {
 		bool isWork = false;
 	};
 }
-

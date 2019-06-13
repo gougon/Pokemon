@@ -189,12 +189,18 @@ namespace game_framework {
 
 	void Status::SleepEffect(Pokemon &pm)
 	{
-		pm.SetCanMove(false);
+		int rnd = rand() % 2;
+		if (rnd == 0)
+			pm.SetCanMove(false);
+		else pm.SetCanMove(true);
 	}
 
 	void Status::ParalysisEffect(Pokemon &pm)
 	{
-		pm.SetCanMove(false);
+		int rnd = rand() % 2;
+		if (rnd == 0)
+			pm.SetCanMove(false);
+		else pm.SetCanMove(true);
 	}
 
 	bool Status::IsRelieveStatu(int start, int end)

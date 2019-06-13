@@ -27,7 +27,7 @@ namespace game_framework
 		// set dialog
 		normalDialog.InitDialog('n');
 		normalDialog.AddText("vulnerary can heal your;pokemon anytime");
-		normalDialog.AddText("but you still go to;hospital instead");
+		normalDialog.AddText("but you still can go to;hospital instead.");
 	}
 
 	void CitizenWoman3::KeyDownListener(UINT nChar, CHero &hero)
