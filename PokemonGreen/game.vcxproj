@@ -291,6 +291,7 @@
     <ClCompile Include="Source\CitizenWoman5.cpp" />
     <ClCompile Include="Source\DouChiHouse1_Map.cpp" />
     <ClCompile Include="Source\DouChiHouse2_Map.cpp" />
+    <ClCompile Include="Source\Npc.cpp" />
     <ClCompile Include="Source\NpcFactory.cpp" />
     <ClCompile Include="Source\PmDeoxys.cpp" />
     <ClCompile Include="Source\PmGardevoir.cpp" />

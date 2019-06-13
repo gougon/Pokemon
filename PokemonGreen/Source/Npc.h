@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CHero.h"
+#include <string>
 
 using namespace std;
 namespace game_framework {
@@ -15,7 +16,7 @@ namespace game_framework {
 
 	class Npc {
 	public:
-		Npc(NpcType type) { this->type = type; }
+		Npc(NpcType type);
 		virtual ~Npc() {}
 		virtual void KeyDownListener(UINT nChar, CHero &hero) = 0;
 		virtual void LoadBitmap() = 0;
@@ -28,8 +29,14 @@ namespace game_framework {
 		virtual bool IsCollision(int x, int y) = 0;
 		virtual string GetMap() = 0;
 		NpcType GetType() { return type; }
+		CDialog* GetDialog();
 	protected:
 		NpcType type;
 		CMovingBitmap normalImg[4], atkImg;
+		CDialog eventDialog, normalDialog;
+		bool isTalk, isEvent;
+		string name, map;
+		int direction;
+		int x, y;	// 現在所在位置，不用算sm
 	};
 }

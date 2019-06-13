@@ -1514,7 +1514,7 @@ IDB_WOMAN3_UP           BITMAP                  "..\\RES\\citizen_woman3_up.bmp"
 
 IDB_WOMAN3_DOWN         BITMAP                  "..\\RES\\citizen_woman3_down.bmp"
 
-IDB_END                 BITMAP                  "E:\\Github\\Pokemon\\PokemonGreen\\RES\\end.bmp"
+IDB_END                 BITMAP                  "..\\RES\\end.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

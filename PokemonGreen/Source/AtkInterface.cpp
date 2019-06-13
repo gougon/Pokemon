@@ -823,7 +823,9 @@ namespace game_framework {
 				break;
 			case KEY_Z:
 				if (myPm->GetRemainHP() <= 0) {
-					if (textCount == 1 && cursor == yes) 
+					if (textCount == 0)
+						textCount++;
+					else if (textCount == 1 && cursor == yes)
 						SltPm();
 					else if (textCount == 1 && cursor == no) 
 						End();

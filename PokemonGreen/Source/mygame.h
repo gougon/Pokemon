@@ -108,6 +108,7 @@ class CGameStateRun : public CGameState
         CMap*			gameMap = nullptr;	// ¦a¹Ï
         CHero           hero;
         CDialog         testDialog;
+		CDialog*		npcDialog;
         AtkInterface	atkInterface;
 		Characters*		characters = nullptr;
 };

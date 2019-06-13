@@ -35,12 +35,7 @@ namespace game_framework {
 		bool IsDiscoverHero(CHero &hero);
 
 		AtkInterface *atkInterface;
-		CDialog eventDialog, normalDialog;
 		vector<Pokemon*> pokemons;
-		string name, map;
-		int direction;
-		int x, y;	// 現在所在位置，不用算sm
-		bool isTalk, isEvent;
 		int prize;
 		int atkDialogCounter;
 	};

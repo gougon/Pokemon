@@ -20,6 +20,7 @@ namespace game_framework {
 		void OnMove(CHero &hero, CMap &map);
 		bool IsCollision(int x, int y, CMap &map);
 		bool IsTalk();
+		CDialog* GetDialog(CMap &map);
 	private:
 		void LoadBitmap();
 

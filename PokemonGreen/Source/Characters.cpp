@@ -117,6 +117,15 @@ namespace game_framework {
 		return false;
 	}
 
+	CDialog* Characters::GetDialog(CMap &map)
+	{
+		for (auto i : npcs) {
+			if (i->GetMap() == map.GetName() && i->GetDialog() != nullptr)
+				return i->GetDialog();
+		}
+		return nullptr;
+	}
+
 	// private
 
 	void Characters::LoadBitmap()

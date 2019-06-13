@@ -11,7 +11,7 @@
 
 namespace game_framework {
 	Citizen::Citizen() :
-		Npc(citizen), isTalk(false), isEvent(false)
+		Npc(citizen)
 	{
 		// empty body
 	}

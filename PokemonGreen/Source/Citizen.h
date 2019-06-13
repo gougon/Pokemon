@@ -23,11 +23,5 @@ namespace game_framework {
 		virtual void Talk(CHero &hero) = 0;
 		void StopTalk(CHero &hero);
 		bool IsBeTalked(CHero &hero);
-
-		CDialog eventDialog, normalDialog;
-		string name, map;
-		int direction;
-		int x, y;	// 現在所在位置，不用算sm
-		bool isTalk, isEvent;
 	};
 }

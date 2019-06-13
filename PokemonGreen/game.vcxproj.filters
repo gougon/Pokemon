@@ -143,6 +143,7 @@
     <ClCompile Include="Source\CitizenWoman4.cpp" />
     <ClCompile Include="Source\CitizenWoman5.cpp" />
     <ClCompile Include="Source\CitizenFatguy.cpp" />
+    <ClCompile Include="Source\Npc.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\ActionObject.h" />
