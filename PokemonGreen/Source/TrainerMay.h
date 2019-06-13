@@ -1,7 +1,6 @@
 #pragma once
 #include "Trainer.h"
-namespace game_framework
-{
+namespace game_framework {
 	class TrainerMay : public Trainer {
 	public:
 		TrainerMay(AtkInterface *atkInterface);

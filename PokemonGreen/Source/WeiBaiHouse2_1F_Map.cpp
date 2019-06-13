@@ -35,29 +35,15 @@ void WeiBaiHouse2_1F_Map::OnShow()
     int sx = GetSX();
     int sy = GetSY();
 
-    for (int i = sx - EXPEND * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount)
-    {
-        for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount)
-        {
-            switch (map[j / SM][i / SM])
-            {
-                case NONE_HIT:
-                    break;
-
-                case NONE_EMPTY:
-                    break;
-
-                case ENTRANCE:
-                    break;
-
-                case WEIBAITOWN_HOUSE2_1F:
-                    scene[WEIBAITOWN_HOUSE2_1F].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
-                    scene[WEIBAITOWN_HOUSE2_1F].ShowBitmap();
-                    break;
-
-                default:
-                    ASSERT(0);
-                    break;
+    for (int i = sx - EXPEND * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount) {
+        for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount) {
+            switch (map[j / SM][i / SM]) {
+            case WEIBAITOWN_HOUSE2_1F:
+                scene[WEIBAITOWN_HOUSE2_1F].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
+                scene[WEIBAITOWN_HOUSE2_1F].ShowBitmap();
+                break;
+            default:
+                break;
             }
         }
     }
@@ -68,8 +54,7 @@ bool WeiBaiHouse2_1F_Map::IsCollision(int x, int y, CHero &hero)
     x /= SM;
     y /= SM;
 
-	for (int i = 0; i < 2; ++i)
-	{
+	for (int i = 0; i < 2; ++i) {
 		if (map[y][x] == hitImg[i])
 			return true;
 	}
@@ -83,18 +68,15 @@ CMap* WeiBaiHouse2_1F_Map::ChangeMap(int x, int y, CHero* hero)
     y /= SM;
     CMap* newMap;
 
-    if (x == 15 && y == 23)
-    {
+    if (x == 15 && y == 23) {
         newMap = new WeiBaiMap(mapGameEvent);
         newMap->SetXY(101 * SM, 79 * SM);
     }
-    else if (x == 16 && y == 23)
-    {
+    else if (x == 16 && y == 23) {
         newMap = new WeiBaiMap(mapGameEvent);
         newMap->SetXY(101 * SM, 79 * SM);
     }
-    else if (x == 16 && y == 16)
-    {
+    else if (x == 16 && y == 16) {
         newMap = new WeiBaiHouse2_2F_Map(mapGameEvent);
         newMap->SetXY(10 * SM, 12 * SM);
     }

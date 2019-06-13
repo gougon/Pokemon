@@ -54,45 +54,43 @@ namespace game_framework {
 			hero->IsInvisiable(true);
 			game_bag->OnShow();
 		}
-		else {
-			if (inBuyMode) {
-				hero->IsInvisiable(true);
-				inSelectMode = false;
-				itemImagePanel.ShowBitmap();
-				shoppingPanel.ShowBitmap();
-				moneyPanel.ShowBitmap();
-				currentMoney.OnShow();
-				itemDescriptionPanel.ShowBitmap();
-				item_counter = 0;
+		else if(inBuyMode) {
+			hero->IsInvisiable(true);
+			inSelectMode = false;
+			itemImagePanel.ShowBitmap();
+			shoppingPanel.ShowBitmap();
+			moneyPanel.ShowBitmap();
+			currentMoney.OnShow();
+			itemDescriptionPanel.ShowBitmap();
+			item_counter = 0;
 
-				for (vector<CItem*>::iterator item_itr = shopping_list.begin(); item_itr != shopping_list.end(); ++item_itr) {
-					itemName.SetText((*item_itr)->GetName());
-					itemName.SetTopLeft(330, 45 + 50 * item_counter);
-					itemName.OnShow();
-					itemCost.SetText(to_string((*item_itr)->GetCost()));
-					itemCost.SetTopLeft(565, 45 + 50 * item_counter);
-					itemCost.OnShow();
-					item_counter++;
-				}
-
-				shopping_list[itemChooser]->GetImage()->ShowBitmap();
-				itemSelecter.ShowBitmap();
-				itemDescription.OnShow();
-
-				if (inItemAmount) {
-					clerkTalk.OnShow();
-					blankPanel1.ShowBitmap();
-					blankPanel2.ShowBitmap();
-					stillHave.OnShow();
-					itemAmountText.OnShow();
-				}
+			for (vector<CItem*>::iterator item_itr = shopping_list.begin(); item_itr != shopping_list.end(); ++item_itr) {
+				itemName.SetText((*item_itr)->GetName());
+				itemName.SetTopLeft(330, 45 + 50 * item_counter);
+				itemName.OnShow();
+				itemCost.SetText(to_string((*item_itr)->GetCost()));
+				itemCost.SetTopLeft(565, 45 + 50 * item_counter);
+				itemCost.OnShow();
+				item_counter++;
 			}
-			if (inSelectMode) {
-				hero->IsInvisiable(false);
-				tradeModeSelectPanel.ShowBitmap();
-				itemSelecter.ShowBitmap();
+
+			shopping_list[itemChooser]->GetImage()->ShowBitmap();
+			itemSelecter.ShowBitmap();
+			itemDescription.OnShow();
+
+			if (inItemAmount) {
 				clerkTalk.OnShow();
+				blankPanel1.ShowBitmap();
+				blankPanel2.ShowBitmap();
+				stillHave.OnShow();
+				itemAmountText.OnShow();
 			}
+		}
+		else if (inSelectMode) {
+			hero->IsInvisiable(false);
+			tradeModeSelectPanel.ShowBitmap();
+			itemSelecter.ShowBitmap();
+			clerkTalk.OnShow();
 		}
 	}
 
@@ -100,30 +98,27 @@ namespace game_framework {
 	{
 		if (game_bag->IsWork())
 			game_bag->OnMove(); 
-		else {
-			if (inBuyMode) {
-				itemSelecter.SetTopLeft(308, 53 + 50 * itemChooser);
-				shopping_list[itemChooser]->GetImage()->SetTopLeft(17, 210);
-				itemDescription.SetText(shopping_list[itemChooser]->GetDescription());
+		else if(inBuyMode){
+			itemSelecter.SetTopLeft(308, 53 + 50 * itemChooser);
+			shopping_list[itemChooser]->GetImage()->SetTopLeft(17, 210);
+			itemDescription.SetText(shopping_list[itemChooser]->GetDescription());
 
-				if (inItemAmount) 
-					itemAmountText.SetText("x" + to_string(itemAmount) + "  " + to_string(itemAmount * shopping_list[itemChooser]->GetCost()));
+			if (inItemAmount)
+				itemAmountText.SetText("x" + to_string(itemAmount) + "  " + to_string(itemAmount * shopping_list[itemChooser]->GetCost()));
+		}
+		else if (inSelectMode) {
+			clerkTalk.SetText("welcome");
+			switch (selectModeOrder) {
+			case 1:
+				itemSelecter.SetTopLeft(MODE_SELECT_CURSOR_LEFT, MODE_SELECT_CURSOR_TOP);
+				break;
+			case 2:
+				itemSelecter.SetTopLeft(MODE_SELECT_CURSOR_LEFT, MODE_SELECT_CURSOR_TOP + 50);
+				break;
+			case 3:
+				itemSelecter.SetTopLeft(MODE_SELECT_CURSOR_LEFT, MODE_SELECT_CURSOR_TOP + 100);
+				break;
 			}
-			if (inSelectMode) {
-				clerkTalk.SetText("welcome");
-				switch (selectModeOrder) {
-				case 1:
-					itemSelecter.SetTopLeft(MODE_SELECT_CURSOR_LEFT, MODE_SELECT_CURSOR_TOP);
-					break;
-				case 2:
-					itemSelecter.SetTopLeft(MODE_SELECT_CURSOR_LEFT, MODE_SELECT_CURSOR_TOP + 50);
-					break;
-				case 3:
-					itemSelecter.SetTopLeft(MODE_SELECT_CURSOR_LEFT, MODE_SELECT_CURSOR_TOP + 100);
-					break;
-				}
-			}
-
 		}
 	}
 
@@ -147,8 +142,8 @@ namespace game_framework {
 
 	void Clerk::KeyDownListener(UINT nChar)
 	{
-		const char KEY_DOWN = 0x28;; // keyboard down�b�Y
-		const char KEY_UP = 0x26; // keyboard�W�b�Y
+		const char KEY_DOWN = 0x28;; // key down
+		const char KEY_UP = 0x26; // key up
 		const char KEY_Z = 0x5a;
 		const char KEY_X = 0x58;
 		if (game_bag->IsWork())
@@ -156,6 +151,7 @@ namespace game_framework {
 		else {
 			hero->StartDialog();
 			if (inSelectMode) {
+				// 上下選擇以及確定、返回
 				switch (nChar) {
 				case KEY_UP:
 					CAudio::Instance()->Play(AUDIO_SELECT);

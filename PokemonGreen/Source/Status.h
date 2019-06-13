@@ -4,8 +4,7 @@
 #include "Pokemon.h"
 
 using namespace std;
-namespace game_framework
-{
+namespace game_framework {
 	enum StatuName {
 		none, statuBurn, statuFreeze, statuParalysis, statuPoison, statuSleep
 	};

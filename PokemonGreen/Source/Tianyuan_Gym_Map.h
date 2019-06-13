@@ -11,10 +11,8 @@ constexpr auto TIANYUAN_GYM_WALL3 = 6;
 constexpr auto TIANYUAN_GYM_WALL4 = 3;
 constexpr auto TIANYUAN_GYM_STATU = 7;
 
-namespace game_framework
-{
-	class Tianyuan_Gym_Map : public CMap
-	{
+namespace game_framework {
+	class Tianyuan_Gym_Map : public CMap {
 	public:
 		Tianyuan_Gym_Map(CEvent*);
 		virtual void InitMap();

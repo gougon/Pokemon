@@ -7,10 +7,8 @@
 constexpr auto TIANYUAN_LTHOUSE_INSIDE = 2;
 constexpr auto TIANYUAN_LTHOUSE_POTTED = 3;
 
-namespace game_framework
-{
-	class Tianyuan_Lthouse_Map : public CMap
-	{
+namespace game_framework {
+	class Tianyuan_Lthouse_Map : public CMap {
 	public:
 		Tianyuan_Lthouse_Map(CEvent*);
 		virtual void InitMap();

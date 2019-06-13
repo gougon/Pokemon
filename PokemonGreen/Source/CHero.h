@@ -6,8 +6,7 @@
 #include "CDialog.h"
 #include "AtkInterface.h"
 
-namespace game_framework
-{
+namespace game_framework {
 	class AtkInterface;
 	class CMap;
 	class Characters;

@@ -8,7 +8,6 @@ using namespace std;
 namespace game_framework {
 	class Pokemon;
 
-
 	class PmOprtView : public ActionObject {
 	public:
 		PmOprtView();

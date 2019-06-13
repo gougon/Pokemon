@@ -4,10 +4,8 @@
 #include "Nurse.h"
 #include "CEvent.h"
 
-namespace game_framework
-{
-	class Tianyuan_Hospital_Map : public CMap
-	{
+namespace game_framework {
+	class Tianyuan_Hospital_Map : public CMap {
 	public:
 		Tianyuan_Hospital_Map(CEvent*);
 		virtual void InitMap();

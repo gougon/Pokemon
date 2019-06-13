@@ -32,6 +32,7 @@ namespace game_framework {
 		yes = 0, no = 1
 	};
 
+	// ©w¸q¾Ô°«ª¬ºA
 	enum State {
 		openAnime, heroAppear, heroStay, heroLeave, pokemonAppear,
 		loadStartStatu,

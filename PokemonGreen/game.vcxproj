@@ -232,6 +232,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="Res\ball.bmp" />
     <None Include="RES\bmp0.bmp" />
     <None Include="RES\bmp1.bmp" />
@@ -374,7 +375,6 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="Source\Douchi_Hospital_Map.cpp" />
-    <ClCompile Include="Source\Illustration.cpp" />
     <ClCompile Include="Source\ItemAntidote.cpp" />
     <ClCompile Include="Source\ItemBigVulnerary.cpp" />
     <ClCompile Include="Source\ItemBurnMedicine.cpp" />
@@ -387,7 +387,6 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="Source\MainMenu.cpp" />
     <ClCompile Include="Source\Menu.cpp" />
     <ClCompile Include="Source\Nurse.cpp" />
     <ClCompile Include="Source\PmHooh.cpp" />
@@ -400,7 +399,6 @@
     <ClCompile Include="Source\PokemonBar.cpp" />
     <ClCompile Include="Source\PokemonFactory.cpp" />
     <ClCompile Include="Source\PokemonMenu.cpp" />
-    <ClCompile Include="Source\Record.cpp" />
     <ClCompile Include="Source\Self.cpp" />
     <ClCompile Include="Source\Douchi_Shop_Map.cpp" />
     <ClCompile Include="Source\Skill.cpp" />
@@ -541,7 +539,6 @@
     <ClInclude Include="Source\gameDoc.h" />
     <ClInclude Include="Source\gameView.h" />
     <ClInclude Include="Source\Douchi_Hospital_Map.h" />
-    <ClInclude Include="Source\Illustration.h" />
     <ClInclude Include="Source\ItemAntidote.h" />
     <ClInclude Include="Source\ItemBigVulnerary.h" />
     <ClInclude Include="Source\ItemBurnMedicine.h" />
@@ -550,7 +547,6 @@
     <ClInclude Include="Source\ItemPokeBall.h" />
     <ClInclude Include="Source\ItemSmallVulnerary.h" />
     <ClInclude Include="Source\MainFrm.h" />
-    <ClInclude Include="Source\MainMenu.h" />
     <ClInclude Include="Source\Menu.h" />
     <ClInclude Include="Source\Npc.h" />
     <ClInclude Include="Source\Nurse.h" />
@@ -564,7 +560,6 @@
     <ClInclude Include="Source\PokemonBar.h" />
     <ClInclude Include="Source\PokemonFactory.h" />
     <ClInclude Include="Source\PokemonMenu.h" />
-    <ClInclude Include="Source\Record.h" />
     <ClInclude Include="Source\Resource.h" />
     <ClInclude Include="Source\Self.h" />
     <ClInclude Include="Source\Douchi_Shop_Map.h" />

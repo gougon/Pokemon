@@ -36,11 +36,11 @@ namespace game_framework {
 		void OnMove();
 		void OnShow();
 		void SetTopLeft();
-		void ReceiveType(barType rtype);
-		void ReceiveStatu(int statu);
-		void ReceiveData(Pokemon *rpm);
-		bool IsAddExp();
-		bool IsAnime();
+		void ReceiveType(barType rtype);	// 取得bar的type
+		void ReceiveStatu(int statu);		// 取得statu
+		void ReceiveData(Pokemon *rpm);		// 取得pokemon
+		bool IsAddExp();	// 是否正在增加經驗值
+		bool IsAnime();		// 是否正在播放動畫
 	private:
 		const int V = 5;
 		const int MY_FIRST_ROW = 225;
@@ -54,8 +54,8 @@ namespace game_framework {
 		const int MY_HP_LEFT = 530;
 		void InitBarByType();
 		void InitHp();
-		void SetHpBarWidth(int width);
-		int x; // right
+		void SetHpBarWidth(int width);		// 設定hp的寬度
+		int x;		 // 從右邊算
 		double hpWidthRate;
 		bool isAddExp, isSetLowHpAudio;
 		Pokemon *pm;

@@ -9,8 +9,7 @@
 #include "ItemFactory.h"
 #define MAXITEMAMOUNT 100
 using namespace std;
-namespace game_framework
-{
+namespace game_framework {
 	class Bag : public ActionObject {
 	public:
 		Bag();

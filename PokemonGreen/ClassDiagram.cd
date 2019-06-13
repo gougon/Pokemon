@@ -1,0 +1,1178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="game_framework::ActionObject">
+    <Position X="48.25" Y="29.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAaAIAQAACAAAAgAAAACAAQAAAAAAAAAAAACAAAEgAA=</HashCode>
+      <FileName>Source\ActionObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::AtkBar" Collapsed="true">
+    <Position X="89.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggRAAAACIpAaABAGAAAMBQVYQAABABCAhIBiKgkVRAA=</HashCode>
+      <FileName>Source\AtkBar.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CHero" Collapsed="true">
+    <Position X="92.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BgQEmkCCBlIoEVBJDAEIEASIBXOIASkYSYPwAGAcM2I=</HashCode>
+      <FileName>Source\CHero.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Trainer">
+    <Position X="11" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABSLEQAARAAAMAgCAAACAAQAAAKEgCAAAOBgAgDEBmA=</HashCode>
+      <FileName>Source\Trainer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::AtkInterface">
+    <Position X="49.25" Y="33.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QEYhSi0oACmAQ7lFEINKQY3SAgBEATAEKqgWCAIUBxs=</HashCode>
+      <FileName>Source\AtkInterface.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CAudio" Collapsed="true">
+    <Position X="94.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgoAAAAAAQIAAQIAAAAAQRAAACAIAA4AIAAAiAAAA=</HashCode>
+      <FileName>Source\audio.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Bag">
+    <Position X="52" Y="33.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QVYCANwQCCgQmhsgohtAiA4RpIBHgTqEEiS2JIBUVFc=</HashCode>
+      <FileName>Source\Bag.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CAlphabet" Collapsed="true">
+    <Position X="91" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAQAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\CAlphabet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CDialog" Collapsed="true">
+    <Position X="98" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgEAABAAAICABAAFAIAAEAQAAAAAAAUgACAAAAAEAAA=</HashCode>
+      <FileName>Source\CDialog.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CEvent" Collapsed="true">
+    <Position X="99.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAABAAAAAAAAAAAAAIAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Source\CEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Characters" Collapsed="true">
+    <Position X="91" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAQAAQAAAAAgAAgAAAAQAAAAAgAAAAQBAAAAEgAA=</HashCode>
+      <FileName>Source\Characters.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CMap" Collapsed="true">
+    <Position X="98" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gCQAUQAARAEAABhAABAAEIUAgABEADAACgAAAAAMBAI=</HashCode>
+      <FileName>Source\CMap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CItem">
+    <Position X="7" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAACAAAAAAAgAAAIAAAoAAQAAAUAAAABAEAAAAABIA=</HashCode>
+      <FileName>Source\CItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CItemSystem" Collapsed="true">
+    <Position X="96.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\CItemSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Citizen">
+    <Position X="43.5" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABQJEQAAQAAAIAgAAAACAAQAAAAEgCAAAOBgAABEAgA=</HashCode>
+      <FileName>Source\Citizen.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenMom">
+    <Position X="53.5" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAABgAAAAAAAQAAAAAIAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenMom.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Clerk">
+    <Position X="55" Y="33.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>JhYAAABhBGB4BjuAAiABAC6AhAAAAFCAIgArIAREFQI=</HashCode>
+      <FileName>Source\Clerk.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Pokemon">
+    <Position X="17.5" Y="17.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>gBSgEBIh5UgmGVAaKx0YyEZFYAcMDyIIyQEWEaAMBgE=</HashCode>
+      <FileName>Source\Pokemon.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CPickableObject" Collapsed="true">
+    <Position X="89.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAQAAAQAAAAAACAAYAAQAAAEAAg=</HashCode>
+      <FileName>Source\CPickableObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CSelf" Collapsed="true">
+    <Position X="91" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEBAAEAAA=</HashCode>
+      <FileName>Source\CSelf.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CText" Collapsed="true">
+    <Position X="94.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAACAgBAAjIAAAAwAAAAAAIACAAgAAAAEAAg=</HashCode>
+      <FileName>Source\CText.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::DouChiHouse1_Map" Collapsed="true">
+    <Position X="99.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQCAAAAAAAgAAAAAEAQAAABAAAAAAACQAAAEAAA=</HashCode>
+      <FileName>Source\DouChiHouse1_Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::DouChiHouse2_Map" Collapsed="true">
+    <Position X="89.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQCAAAAAAAgAAAAAEAQAAABAAAAAAACQAAAEAAA=</HashCode>
+      <FileName>Source\DouChiHouse2_Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CSpecialEffect" Collapsed="true">
+    <Position X="92.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAACAAgAAAAAAAAACAIAAIAAAAAAAAIAAA=</HashCode>
+      <FileName>Source\gamelib.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CDDraw" Collapsed="true">
+    <Position X="96.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAIkAAQABkEB1ICAAEAATQAAAACEAQABBKCACaJQA=</HashCode>
+      <FileName>Source\gamelib.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CMovingBitmap" Collapsed="true">
+    <Position X="99.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAABACAABAAEYCQAQIIIAACACAAACAAAQ=</HashCode>
+      <FileName>Source\gamelib.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CAnimation" Collapsed="true">
+    <Position X="92.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABAAABBIAAAiAAUAIAAAIAAAIOABgAAEEgAA=</HashCode>
+      <FileName>Source\gamelib.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CInteger" Collapsed="true">
+    <Position X="94.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAACAAJBAAAAAAEQAAAABAAAAEABgAACIAAA=</HashCode>
+      <FileName>Source\gamelib.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CGame" Collapsed="true">
+    <Position X="89.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACgBACEQAgBAABAwADAABpAgAQAQAIgAAAwAAA=</HashCode>
+      <FileName>Source\gamelib.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CGameStateInit">
+    <Position X="3" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAACAAAEAAAABCAgAAAAAEiQAQAAABAAVAAA=</HashCode>
+      <FileName>Source\mygame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CGameStateRun">
+    <Position X="5.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQCAQAAAFCAACAAAAAQAABAABIBAgwAAAAAAAAUAAA=</HashCode>
+      <FileName>Source\mygame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CGameStateOver">
+    <Position X="0.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAIAAAAAAAAAAABAAgUAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\mygame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CGameState">
+    <Position X="3" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAgAAECAAAAAAABAAABAABIAAgQIAAAAAAIUAEA=</HashCode>
+      <FileName>Source\gamelib.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::ItemAntidote">
+    <Position X="0.75" Y="22.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAEAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Source\ItemAntidote.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::ItemBigVulnerary">
+    <Position X="3" Y="22.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAEAAAAgAAA=</HashCode>
+      <FileName>Source\ItemBigVulnerary.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::ItemBurnMedicine">
+    <Position X="5.5" Y="22.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAEAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Source\ItemBurnMedicine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::ItemFactory" Collapsed="true">
+    <Position X="91" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\ItemFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::ItemFighterGlove">
+    <Position X="8" Y="22.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAEAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Source\ItemFighterGlove.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::ItemPokeBall">
+    <Position X="10.5" Y="22.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIRCAAAAAgAAAAAAAAAAAAQAAACEIAEAgAFgEAAEAAI=</HashCode>
+      <FileName>Source\ItemPokeBall.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::ItemSmallVulnerary">
+    <Position X="12.75" Y="22.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAEAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Source\ItemSmallVulnerary.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Menu">
+    <Position X="58.25" Y="33.5" Width="1.75" />
+    <NestedTypes>
+      <Enum Name="game_framework::Menu::MenuItem" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\Menu.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AEYCKAABAGBJABkAAAgAAgSAAgAMADBAAAACAABGkEA=</HashCode>
+      <FileName>Source\Menu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Npc">
+    <Position X="34.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AJQAAQAAQAAAAAgAgAAAAAQAAAABgCEAACAAAAAEEAA=</HashCode>
+      <FileName>Source\Npc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::NpcFactory" Collapsed="true">
+    <Position X="92.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\NpcFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Nurse">
+    <Position X="44" Y="33.5" Width="2" />
+    <NestedTypes>
+      <Enum Name="game_framework::Nurse::yn" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\Nurse.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AgYLgAAAAWACABmADAAgAASIAIAEAAAACEICAIEFAEA=</HashCode>
+      <FileName>Source\Nurse.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PmDeoxys">
+    <Position X="12.75" Y="36.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAACACAAAAAAA=</HashCode>
+      <FileName>Source\PmDeoxys.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PmGardevoir">
+    <Position X="15.25" Y="36.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\PmGardevoir.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PmGrimer">
+    <Position X="20.75" Y="36.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAACAAAACAAAAAAA=</HashCode>
+      <FileName>Source\PmGrimer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PmGrovyle">
+    <Position X="25.75" Y="36.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQIAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\PmGrovyle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PmHooh">
+    <Position X="28.5" Y="36.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAACIAAAAAA=</HashCode>
+      <FileName>Source\PmHooh.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PmJirachi">
+    <Position X="31" Y="36.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\PmJirachi.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PmList" Collapsed="true">
+    <Position X="94.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAEAAACAAxABAEpAAAACAAAgAAEAFA=</HashCode>
+      <FileName>Source\PmList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PmMetang">
+    <Position X="33.5" Y="36.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\PmMetang.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PmOprtView">
+    <Position X="38.25" Y="33.5" Width="2" />
+    <NestedTypes>
+      <Enum Name="game_framework::PmOprtView::pmOprtViewPage" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\PmOprtView.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="game_framework::PmOprtView::viewInfo" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\PmOprtView.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AgZBABAEBACJAhgAEBEATBxQikCDVQAxQJECIYKMQQo=</HashCode>
+      <FileName>Source\PmOprtView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PmPikachu">
+    <Position X="1.75" Y="36.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAQAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\PmPikachu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PmRayquaza">
+    <Position X="4.5" Y="36.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAEAAAACAAAAAAA=</HashCode>
+      <FileName>Source\PmRayquaza.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PmSmoochum">
+    <Position X="7.25" Y="36.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAQAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\PmSmoochum.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PmTreecko">
+    <Position X="10" Y="36.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\PmTreecko.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PmValue" Collapsed="true">
+    <Position X="96.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAgAAAAAAIAAAAAgAAAAAAAAQAAoABgAAAAAAA=</HashCode>
+      <FileName>Source\PmValue.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PmVaporeon">
+    <Position X="18" Y="36.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAQAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\PmVaporeon.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PmVulpix">
+    <Position X="23.25" Y="36.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAQAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\PmVulpix.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Skill">
+    <Position X="55.5" Y="17.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EAAAAgAAAAgAAABAIkBAgAEAAgEEAQAAACAKAKgARIQ=</HashCode>
+      <FileName>Source\Skill.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Status" Collapsed="true">
+    <Position X="91" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQQAAAEAABAABELCAAEAAAMQAgAIhEABAAAAAAEAAA=</HashCode>
+      <FileName>Source\Status.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PokemonBar" Collapsed="true">
+    <Position X="98" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EADCKEQhIAAIBBIKEIAJAj0AAAAMgAgxAAASKAAkhSI=</HashCode>
+      <FileName>Source\PokemonBar.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PokemonFactory" Collapsed="true">
+    <Position X="99.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAAgAAAAAA=</HashCode>
+      <FileName>Source\PokemonFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PokemonMenu">
+    <Position X="41" Y="33.5" Width="2.25" />
+    <NestedTypes>
+      <Enum Name="game_framework::PokemonMenu::pmOprtPanelSlt" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\PokemonMenu.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AmZyCkCRQAQEAlnAMAYYIASAFBAACBBKAQADIgAGIWA=</HashCode>
+      <FileName>Source\PokemonMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Self">
+    <Position X="46.75" Y="33.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAACQBgIAAEAAAQAAIAEABoQAAAGAAAEEAI=</HashCode>
+      <FileName>Source\Self.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillEmber">
+    <Position X="67.5" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAUAAAAEAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillEmber.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillFactory" Collapsed="true">
+    <Position X="89.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SkillFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillFire">
+    <Position X="70" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SkillFire.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillImpact">
+    <Position X="28.75" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillImpact.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillLeer">
+    <Position X="33.25" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillLeer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillNormal">
+    <Position X="30" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Source\SkillNormal.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::TrainerMay">
+    <Position X="8.5" Y="14" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAwAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\TrainerMay.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::WeiBaiHouse1_1F_Map" Collapsed="true">
+    <Position X="91" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAAQAABAAAAAgAAAAgEBQAAABAAAAAAACQAAAEAAA=</HashCode>
+      <FileName>Source\WeiBaiHouse1_1F_Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::WeiBaiHouse1_2F_Map" Collapsed="true">
+    <Position X="92.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAkAQAAABAAAAAAACAAAAEAAA=</HashCode>
+      <FileName>Source\WeiBaiHouse1_2F_Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::WeiBaiHouse2_1F_Map" Collapsed="true">
+    <Position X="94.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAABAAAAAAAAAAAEAQAAABAAAAAAACAAAAEAAA=</HashCode>
+      <FileName>Source\WeiBaiHouse2_1F_Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::WeiBaiHouse2_2F_Map" Collapsed="true">
+    <Position X="96.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAkAQAAABAAAAAAACAAAAEAAA=</HashCode>
+      <FileName>Source\WeiBaiHouse2_2F_Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::WeiBaiProHouse_Map" Collapsed="true">
+    <Position X="99.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAEAAEAQAAABAAAAAAACAAAAEAAA=</HashCode>
+      <FileName>Source\WeiBaiProHouse_Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::WeiBaiMap" Collapsed="true">
+    <Position X="98" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAARAAQAAAAAgAAAAhEBQAAABMABAIGACSAAAEAAA=</HashCode>
+      <FileName>Source\WeiBaiMap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Douchi_Shop_Map" Collapsed="true">
+    <Position X="98" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgQIAAAAAAAgAAAAAEAQAAABAAAAABACQAAAEAAA=</HashCode>
+      <FileName>Source\Douchi_Shop_Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Douchi_Hospital_Map" Collapsed="true">
+    <Position X="96.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQAAAIAIAAgAAAAgEIQAAABABgAAAACQAAAEAAA=</HashCode>
+      <FileName>Source\Douchi_Hospital_Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Tianyuan_Shop_Map" Collapsed="true">
+    <Position X="89.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgQAAAAAAAAgAAAAAEAQAAABAAQAABACQAAAEAAA=</HashCode>
+      <FileName>Source\Tianyuan_Shop_Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Tianyuan_Hospital_Map" Collapsed="true">
+    <Position X="94.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABQAAAIAAAAgAAAAgEIQAAABABgAAAACQAAAEAAA=</HashCode>
+      <FileName>Source\Tianyuan_Hospital_Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillAuroraBeam">
+    <Position X="81.75" Y="26.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAQIAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillAuroraBeam.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillBubbleBeam">
+    <Position X="44.5" Y="26.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAQEAAIAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillBubbleBeam.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillConfusion">
+    <Position X="74.5" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAQAAAAEAAAAACACAAAAAAA=</HashCode>
+      <FileName>Source\SkillConfusion.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillCrunch">
+    <Position X="40" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAQAAAAEAAIAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillCrunch.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillDragon">
+    <Position X="41.25" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQCAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SkillDragon.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillDragonClaw">
+    <Position X="42.25" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillDragonClaw.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillElectric">
+    <Position X="50.5" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAABAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SkillElectric.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillFlameThrower">
+    <Position X="69.75" Y="26.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAQCAAAAAAA=</HashCode>
+      <FileName>Source\SkillFlameThrower.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillGhost">
+    <Position X="59.75" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Source\SkillGhost.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillGrass">
+    <Position X="64.25" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAABAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SkillGrass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillHarden">
+    <Position X="26.5" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAEAAIAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillHarden.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillHyperBeam">
+    <Position X="31" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAQAAAAEAACAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillHyperBeam.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillIce">
+    <Position X="84.25" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAABAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SkillIce.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillLeafBlade">
+    <Position X="63" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillLeafBlade.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillLeafStorm">
+    <Position X="65.25" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillLeafStorm.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillLick">
+    <Position X="58.5" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAIAAAACAAABAAA=</HashCode>
+      <FileName>Source\SkillLick.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillMetalClaw">
+    <Position X="37.75" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAIAEAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillMetalClaw.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillNightShade">
+    <Position X="60.75" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillNightShade.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillPhychoBoost">
+    <Position X="76.75" Y="26.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillPhychoBoost.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillPhychoKinesis">
+    <Position X="79.25" Y="26.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAIAAAACAAIAAAA=</HashCode>
+      <FileName>Source\SkillPhychoKinesis.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillPoison">
+    <Position X="55.25" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACACAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SkillPoison.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillPoisonGas">
+    <Position X="56.25" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAEAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillPoisonGas.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillPowderSnow">
+    <Position X="86.5" Y="26.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAACAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillPowderSnow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillPsychic">
+    <Position X="77" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAgAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SkillPsychic.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillSacredFire">
+    <Position X="72.25" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAACAAAEAAA=</HashCode>
+      <FileName>Source\SkillSacredFire.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillScaryFace">
+    <Position X="35.5" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAEAAIAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillScaryFace.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillSludge">
+    <Position X="54" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAACAAAAAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillSludge.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillSteel">
+    <Position X="37.75" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAABAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SkillSteel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillSwift">
+    <Position X="24.25" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAACAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillSwift.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillThunderBolt">
+    <Position X="49.25" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAQAAAAEAAIAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillThunderBolt.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillThunderShock">
+    <Position X="51.5" Y="26.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAIAAAACAAAAAAg=</HashCode>
+      <FileName>Source\SkillThunderShock.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillWater">
+    <Position X="45.75" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAABAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SkillWater.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillWaterGun">
+    <Position X="47" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAABAEAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillWaterGun.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SkillWillOwisp">
+    <Position X="84.25" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\SkillWillOwisp.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Tianyuan_Nhouse_Map" Collapsed="true">
+    <Position X="98" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAQAAAAAAAAAAAEAQIAABAAAAAAACAAAAEAAA=</HashCode>
+      <FileName>Source\Tianyuan_Nhouse_Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Tianyuan_Lthouse_Map" Collapsed="true">
+    <Position X="96.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAQAAAAABAAAAAEAQAAABAAAAAAACAAAAEAAA=</HashCode>
+      <FileName>Source\Tianyuan_Lthouse_Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Tianyuan_Rbhouse_Map" Collapsed="true">
+    <Position X="99.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAEAQEAABAAAAAAACAAAAEAAA=</HashCode>
+      <FileName>Source\Tianyuan_Rbhouse_Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Tianyuan_Gym_Map" Collapsed="true">
+    <Position X="92.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAQAAAAAAAAAAAEAYAAABAAAAAAACAAAAEAAA=</HashCode>
+      <FileName>Source\Tianyuan_Gym_Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenSister">
+    <Position X="63.5" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEIAA=</HashCode>
+      <FileName>Source\CitizenSister.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::TrainerYoungster">
+    <Position X="3.25" Y="14" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAABABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\TrainerYoungster.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::TrainerGymYoungster">
+    <Position X="5.75" Y="14" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAABgAEAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\TrainerGymYoungster.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::TrainerGymYamao">
+    <Position X="11" Y="14" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAABgBAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\TrainerGymYamao.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::TrainerGymMaster">
+    <Position X="13.5" Y="14" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAAJgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\TrainerGymMaster.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenBoy">
+    <Position X="31" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAABgAAAAAAAQAABAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenBoy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenFatguy">
+    <Position X="36" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAQAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenFatguy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenGirl1">
+    <Position X="41" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAABAAQAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenGirl1.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenGirl2">
+    <Position X="46" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAABAAQAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenGirl2.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenGirl3">
+    <Position X="51" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAABAAQAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenGirl3.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenMan1">
+    <Position X="56" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAIAQAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenMan1.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenMan2">
+    <Position X="58.5" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAQABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenMan2.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenMan3">
+    <Position X="61" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAABgAAAAAAAQAAAAAAgAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenMan3.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenMan4">
+    <Position X="66" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAAQAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenMan4.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenMan5">
+    <Position X="21" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAACBgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenMan5.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenOdd">
+    <Position X="23.5" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenOdd.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenResearcher">
+    <Position X="26" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAACBgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenResearcher.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenWoman1">
+    <Position X="28.5" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAABggAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenWoman1.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenWoman2">
+    <Position X="33.5" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAABhAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenWoman2.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenWoman3">
+    <Position X="38.5" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAABiAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenWoman3.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenWoman4">
+    <Position X="43.5" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAABgBAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenWoman4.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CitizenWoman5">
+    <Position X="48.5" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAABgCAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\CitizenWoman5.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::TrainerBadguy">
+    <Position X="16" Y="14" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAABgAAAAAAAwAAAAAAAAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\TrainerBadguy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::TrainerJK">
+    <Position X="18.5" Y="14" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAABgAAAAAAAQAAAAAAgAAAEAAAAAEAAA=</HashCode>
+      <FileName>Source\TrainerJK.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="game_framework::barType" Collapsed="true">
+    <Position X="94.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Source\AtkBar.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::Cursor" Collapsed="true">
+    <Position X="98" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABIAAAAAAACAGAQAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\AtkInterface.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::State" Collapsed="true">
+    <Position X="92.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIMRBAaMAAgAAAAAAgIIAACAAAAEBEQAlBAAAACAAA=</HashCode>
+      <FileName>Source\AtkInterface.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::alphaID" Collapsed="true">
+    <Position X="89.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC+//9hAQAAAAA=</HashCode>
+      <FileName>Source\CDialog.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::DialogState" Collapsed="true">
+    <Position X="99.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\CEvent.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::Event" Collapsed="true">
+    <Position X="91" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAEAAAAAAAAAAABAAAAACAAAgBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\CHero.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::Item_ID" Collapsed="true">
+    <Position X="92.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAEAAAAAAAAAIAAAAIACAAAAAAAAEAA=</HashCode>
+      <FileName>Source\CItem.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::mapID" Collapsed="true">
+    <Position X="94.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\CMap.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::direction" Collapsed="true">
+    <Position X="89.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAIAAAAAAAAAgAAgAA=</HashCode>
+      <FileName>Source\Npc.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::NpcType" Collapsed="true">
+    <Position X="98" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAIQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Npc.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::npcName" Collapsed="true">
+    <Position X="96.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAIgOcSAIAACAAAAQAiAAAFAAAQAAAgAAAAAIA=</HashCode>
+      <FileName>Source\NpcFactory.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::PmType" Collapsed="true">
+    <Position X="99.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Source\Pokemon.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::Attribute" Collapsed="true">
+    <Position X="92.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABwAAICAAgFAAAAAAAIAAlAAAAAAAQAJAAAQBAAAAA=</HashCode>
+      <FileName>Source\Pokemon.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::pokemonName" Collapsed="true">
+    <Position X="89.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAEAAABQEAAAAAAAACIIAAACAAAKQAAA=</HashCode>
+      <FileName>Source\Pokemon.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::CSkill" Collapsed="true">
+    <Position X="96.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Source\Skill.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::AttrDamage" Collapsed="true">
+    <Position X="91" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAKAAAAA=</HashCode>
+      <FileName>Source\Skill.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::skillName" Collapsed="true">
+    <Position X="91" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAAgBABBAgCAAAASAAAQAgAAIACgAEAYAAEABAAQAOE=</HashCode>
+      <FileName>Source\SkillFactory.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::StatuName" Collapsed="true">
+    <Position X="94.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAAAAAAAAAAAAAgAAAAAAAAAAACRAAAA=</HashCode>
+      <FileName>Source\Status.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft JhengHei UI" Size="9" />
+</ClassDiagram>

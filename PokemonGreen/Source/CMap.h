@@ -9,8 +9,7 @@
 #include "CEvent.h"
 using namespace std;
 
-namespace game_framework
-{
+namespace game_framework {
 	constexpr auto X = 11;
 	constexpr auto Y = 8;
 	constexpr auto EXPEND = 9;
@@ -26,8 +25,7 @@ namespace game_framework
 	constexpr auto HOSPITAL_INSIDE = 2;
 	constexpr auto NURSE = 3;
 
-	enum mapID
-	{
+	enum mapID {
 		weibaitown, // 0
 		weibai_1_1f // 1
 	};

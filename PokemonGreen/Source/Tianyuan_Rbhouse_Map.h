@@ -6,10 +6,8 @@
 
 constexpr auto TIANYUAN_RBHOUSE_INSIDE = 2;
 
-namespace game_framework
-{
-	class Tianyuan_Rbhouse_Map : public CMap
-	{
+namespace game_framework {
+	class Tianyuan_Rbhouse_Map : public CMap {
 	public:
 		Tianyuan_Rbhouse_Map(CEvent*);
 		virtual void InitMap();

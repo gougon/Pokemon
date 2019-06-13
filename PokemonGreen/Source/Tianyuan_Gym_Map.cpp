@@ -63,16 +63,22 @@ namespace game_framework
 		for (int j = sy - (EXPEND + 6) * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount) {
 			for (int i = sx - (EXPEND + 6) * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount) {
 				if (HERO_Y + 20 + SM <= (ycount - (EXPEND + 6))*SM - sy % SM) {
-					if(map[j / SM][i / SM] == TIANYUAN_GYM_WALL1)
+					switch (map[j / SM][i / SM]) {
+					case TIANYUAN_GYM_WALL1:
 						SetTopLeft(TIANYUAN_GYM_WALL1, (xcount - (EXPEND + 6))*SM - sx % SM, (ycount - (EXPEND + 6))*SM - sy % SM - 32);
-					else if (map[j / SM][i / SM] == TIANYUAN_GYM_WALL2)
+						break;
+					case TIANYUAN_GYM_WALL2:
 						SetTopLeft(TIANYUAN_GYM_WALL2, (xcount - (EXPEND + 6))*SM - sx % SM, (ycount - (EXPEND + 6))*SM - sy % SM - 32);
-					else if (map[j / SM][i / SM] == TIANYUAN_GYM_WALL3)
-						SetTopLeft(TIANYUAN_GYM_WALL3, (xcount - (EXPEND + 6))*SM - sx % SM, (ycount - (EXPEND + 6))*SM - sy % SM - 32);
-					else if (map[j / SM][i / SM] == TIANYUAN_GYM_WALL4)
+						break;
+					case TIANYUAN_GYM_WALL3:
 						SetTopLeft(TIANYUAN_GYM_WALL4, (xcount - (EXPEND + 6))*SM - sx % SM, (ycount - (EXPEND + 6))*SM - sy % SM - 32);
-					else if (map[j / SM][i / SM] == TIANYUAN_GYM_STATU)
+						break;
+					case TIANYUAN_GYM_WALL4:
 						SetTopLeft(TIANYUAN_GYM_STATU, (xcount - (EXPEND + 6))*SM - sx % SM, (ycount - (EXPEND + 6))*SM - sy % SM - 60);
+						break;
+					default:
+						break;
+					}
 				}
 			}
 		}

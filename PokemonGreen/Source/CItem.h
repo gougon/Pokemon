@@ -1,10 +1,8 @@
 #pragma once
 #include "Pokemon.h"
 
-namespace game_framework
-{
-	enum Item_ID
-	{
+namespace game_framework {
+	enum Item_ID {
 		Item_Antidote, 
 		Item_SmallVulnerary,
 		Item_BigVulnerary,	

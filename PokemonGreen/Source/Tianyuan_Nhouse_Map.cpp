@@ -36,33 +36,18 @@ namespace game_framework
 		int sx = GetSX();
 		int sy = GetSY();
 
-		for (int i = sx - EXPEND * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount)
-		{
-			for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount)
-			{
-				switch (map[j / SM][i / SM])
-				{
-				case NONE_HIT:
-					break;
-
-				case NONE_EMPTY:
-					break;
-
-				case ENTRANCE:
-					break;
-
+		for (int i = sx - EXPEND * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount) {
+			for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount) {
+				switch (map[j / SM][i / SM]) {
 				case TIANYUAN_NHOUSE_INSIDE:
 					scene[TIANYUAN_NHOUSE_INSIDE].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
 					scene[TIANYUAN_NHOUSE_INSIDE].ShowBitmap();
 					break;
-
 				case TIANYUAN_NHOUSE_POTTED:
 					scene[TIANYUAN_NHOUSE_POTTED].SetTopLeft((xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM - 55);
 					scene[TIANYUAN_NHOUSE_POTTED].ShowBitmap();
 					break;
-
 				default:
-					ASSERT(0);
 					break;
 				}
 			}
@@ -75,10 +60,8 @@ namespace game_framework
 		int sy = GetSY();
 		int hy = hero.GetY1();
 
-		for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount)
-		{
-			for (int i = sx - EXPEND * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount)
-			{
+		for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount) {
+			for (int i = sx - EXPEND * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount) {
 				if (HERO_Y + 20 + SM <= (ycount - EXPEND)*SM - sy % SM
 					&& map[j / SM][i / SM] == TIANYUAN_NHOUSE_POTTED)
 					SetTopLeft(TIANYUAN_NHOUSE_POTTED, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM - 55);
@@ -91,8 +74,7 @@ namespace game_framework
 		x /= SM;
 		y /= SM;
 
-		for (int i = 0; i < 3; ++i)
-		{
+		for (int i = 0; i < 3; ++i) {
 			if (map[y][x] == hitImg[i])
 				return true;
 		}
@@ -106,13 +88,11 @@ namespace game_framework
 		y /= SM;
 		CMap* newMap;
 
-		if (x == 17 && y == 23)
-		{
+		if (x == 17 && y == 23) {
 			newMap = new WeiBaiMap(mapGameEvent);
 			newMap->SetXY(17 * SM, 40 * SM);
 		}
-		else if (x == 18 && y == 23)
-		{
+		else if (x == 18 && y == 23) {
 			newMap = new WeiBaiMap(mapGameEvent);
 			newMap->SetXY(17 * SM, 40 * SM);
 		}

@@ -1,8 +1,7 @@
 #pragma once
 #define EVENT_SIZE 10
 
-namespace game_framework
-{
+namespace game_framework {
 	enum DialogState {
 		Start,
 		Continue,

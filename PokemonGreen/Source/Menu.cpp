@@ -14,12 +14,9 @@ namespace game_framework
 	Menu::Menu() :
 		ActionObject(), isItem(false), order(0), itemCount(4)
 	{
-		// items.push_back(new Illustration());
 		items.push_back(new PokemonMenu());
 		items.push_back(new Bag());
-		// items.push_back(new MainMenu());
 		items.push_back(new Self());
-		// items.push_back(new Record());
 	}
 
 	Menu::~Menu()
@@ -53,30 +50,15 @@ namespace game_framework
 
 			for (int i = 0; i < itemCount; i++) {
 				switch (i) {
-				// case itemIllustration:
-				// 	showingText.SetText("illu.");
-				// 	break;
-				// 
 				case itemPokemonMenu:
 					showingText.SetText("pokemon");
 					break;
-
 				case itemBag:
 					showingText.SetText("bag");
 					break;
-
-				// case itemMainMenu:
-				// 	showingText.SetText("menu");
-				// 	break;
-				// 
 				case itemSelf:
 					showingText.SetText("self");
 					break;
-
-				// case itemRecord:
-				// 	showingText.SetText("record");
-				// 	break;
-				// 
 				case itemClose:
 					showingText.SetText("close");
 					break;

@@ -1,9 +1,7 @@
 #pragma once
 #include "CText.h"
-namespace game_framework
-{
-	class CSelf
-	{
+namespace game_framework {
+	class CSelf {
 	public:
 		CSelf();
 		void LoadBitmap();

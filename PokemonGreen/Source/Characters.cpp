@@ -27,7 +27,7 @@ namespace game_framework {
 
 	void Characters::InitNpcs()
 	{
-		// add all npcs
+		// 加入所有NPC
 		NpcFactory factory;
 		npcs.push_back(factory.CreateNpc(trainerMay, *atkInterface));
 		npcs.push_back(factory.CreateNpc(trainerYoungster, *atkInterface));
@@ -102,7 +102,7 @@ namespace game_framework {
 				return true;
 		}
 
-		// none collision
+		// 沒有碰撞
 		return false;
 	}
 
@@ -113,7 +113,7 @@ namespace game_framework {
 				return true;
 		}
 
-		// nobody talk
+		// 沒有人說話
 		return false;
 	}
 

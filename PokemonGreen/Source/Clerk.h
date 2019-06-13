@@ -8,8 +8,7 @@
 #include "CDialog.h"
 
 using namespace std;
-namespace game_framework
-{
+namespace game_framework {
 	class Clerk : public ActionObject {
 	public:
 		Clerk();
@@ -48,7 +47,8 @@ namespace game_framework
 		CMovingBitmap itemSelecter;
 		CText currentMoney, itemName, itemCost, itemDescription, itemAmountText, stillHave;
 		vector<CItem*> shopping_list;
-		bool inBuyMode, inSellMode, inSelectMode, inItemAmount, inShowText, firsttime;
+		bool firsttime;		// 第一次開啟買物品頁面
+		bool inBuyMode, inSellMode, inSelectMode, inItemAmount, inShowText;
 		int item_counter, selectModeOrder, itemChooser, currentID, itemAmount;
 		int* money;
 		ItemFactory shopItemFactory;

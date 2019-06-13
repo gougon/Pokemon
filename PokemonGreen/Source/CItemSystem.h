@@ -1,6 +1,5 @@
 #pragma once
-namespace game_framework
-{
+namespace game_framework {
 	class CItemSystem {
 	public:
 		string GetNameByID(int ID);

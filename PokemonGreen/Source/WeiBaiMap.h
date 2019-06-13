@@ -30,7 +30,7 @@ constexpr auto LAND_RB = 24;
 constexpr auto LAND_LT = 25;
 constexpr auto LAND_LB = 26;
 constexpr auto TIANYUAN_RTLAKE = 27;
-constexpr auto TIANYUAN_RBHOUSE = 28; // def = 20
+constexpr auto TIANYUAN_RBHOUSE = 28;
 constexpr auto TIANYUAN_NHOUSE = 29;
 constexpr auto TIANYUAN_LTHOUSE = 30;
 constexpr auto TIANYUAN_LLAKE1 = 31;

@@ -42,19 +42,10 @@ namespace game_framework
 		for (int i = sx - EXPEND * SM, xcount = 0; i <= sx + SM * X; i += SM, ++xcount) {
 			for (int j = sy - EXPEND * SM, ycount = 0; j <= sy + SM * Y; j += SM, ++ycount) {
 				switch (map[j / SM][i / SM]) {
-				case NONE_HIT:
-					break;
-				case NONE_EMPTY:
-					break;
-				case NURSE:
-					break;
-				case ENTRANCE:
-					break;
 				case HOSPITAL_INSIDE:
 					SetTopLeft(HOSPITAL_INSIDE, (xcount - EXPEND)*SM - sx % SM, (ycount - EXPEND)*SM - sy % SM);
 					break;
 				default:
-					ASSERT(0);
 					break;
 				}
 			}
@@ -140,8 +131,7 @@ namespace game_framework
 			x == herox + 1 && y == heroy) {
 			return true;
 		}
-		else {
+		else
 			return false;
-		}
 	}
 }

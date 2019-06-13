@@ -4,10 +4,8 @@
 #include "CEvent.h"
 #include "Clerk.h"
 
-namespace game_framework
-{
-	class Tianyuan_Shop_Map : public CMap
-	{
+namespace game_framework {
+	class Tianyuan_Shop_Map : public CMap {
 	public:
 		Tianyuan_Shop_Map(CEvent*);
 		virtual void OnMove();

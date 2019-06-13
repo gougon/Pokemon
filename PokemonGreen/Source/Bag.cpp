@@ -37,7 +37,7 @@ namespace game_framework
 		inBattle = false;
 		inItemamount, inYesno, inPanel, yesnoChooser = false;
 		items.clear();
-		//POSITON SET
+		// 設定位置
 		background_image.SetTopLeft(0, 0);
 		categorie_text.SetTopLeft(CAT_LOC_LEFT, CAT_LOC_TOP);
 		backpack_panel.SetTopLeft(CONSOLE_PANEL_LEFT, CONSOLE_PANEL_TOP);
@@ -49,7 +49,7 @@ namespace game_framework
 		money_panel.SetTopLeft(MONEY_PANEL_LEFT, MONEY_PANEL_TOP);
 		useOnAttack_Panel.SetTopLeft(YESNO_PANEL_LEFT, YESNO_PANEL_TOP);
 		currentMoney.SetTopLeft(CURRENTMONEY_LEFT, CURRENTMONEY_TOP);
-		//PokemonMENU
+		//PokemonMenu
 		isReceivePokemon = false;
 	}
 
@@ -64,7 +64,7 @@ namespace game_framework
 			categorie_flag.ShowBitmap();
 			item_selector.ShowBitmap();
 			int itemscounter = 0;
-			//showItem
+			//show Item
 			for (vector<CItem*>::iterator item_itr = items.begin(); item_itr != items.end(); ++item_itr)
 			{
 				if ((*item_itr)->GetCategorie() == categorie_flagIndex) {
@@ -77,7 +77,7 @@ namespace game_framework
 					itemscounter++;
 				}
 			}
-			//showBackItem
+			//show Back Item
 			item_name.SetText("exit");
 			item_name.SetTopLeft(ITEM_NAME_LEFT, ITEM_TOP + 24 * itemscounter);
 			item_name.OnShow();
@@ -189,7 +189,6 @@ namespace game_framework
 				End();
 			}
 
-			// show everytime
 			switch (categorie_flagIndex) {
 			case 1:
 				categorie_text.SetText("item");
@@ -642,7 +641,7 @@ namespace game_framework
 
 	int Bag::SelectPokeball()
 	{
-		if (!isSelectball) return -1;	//no ball is select
+		if (!isSelectball) return -1;	// 沒有球被選到
 		else {
 			isSelectball = false;
 			return 4;

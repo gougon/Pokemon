@@ -198,12 +198,12 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 		CAudio::Instance()->Play(AUDIO_SELECT);
 		isSelected = false;
 	}
-	else if (nChar == KEY_DOWN && cursorPosition < 2) {
+	else if (nChar == KEY_DOWN && cursorPosition < 2 && !isSelected) {
 		CAudio::Instance()->Play(AUDIO_SELECT);
 		cursorPosition++;
 		cursor.SetTopLeft(95, cursor.Top() + 50);
 	}
-	else if (nChar == KEY_UP && cursorPosition > 0) {
+	else if (nChar == KEY_UP && cursorPosition > 0 && !isSelected) {
 		CAudio::Instance()->Play(AUDIO_SELECT);
 		cursorPosition--;
 		cursor.SetTopLeft(95, cursor.Top() - 50);

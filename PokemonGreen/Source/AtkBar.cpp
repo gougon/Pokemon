@@ -48,15 +48,15 @@ namespace game_framework {
 
 	void AtkBar::OnMove()
 	{
-		// setting hp bar and exp bar
+		// 設定血條位置
 		hpWidthRate = pm->GetRemainHP() / (double)pm->GetHP();
 		int hpWidth = (int)(hpWidthRate * HP_LEN);
 		int nextHpPos = (x - V >= hpWidth) ? x - V : hpWidth;
 
 		SetHpBarWidth(nextHpPos);
 
-		// set exp bar and hp text and low hp sound
-		if (type == barTypeMy) {	// 顯示exp條和血量
+		// 設定血條文字和經驗條和低血量音效
+		if (type == barTypeMy) {	// 顯示經驗條和血量
 			// set low hp sound
 			if (pm->GetRemainHP() / (double)pm->GetHP() <= 0.2 && !isSetLowHpAudio) {
 				CAudio::Instance()->Play(AUDIO_LOW_HP, true);
@@ -153,7 +153,7 @@ namespace game_framework {
 
 	void AtkBar::ReceiveStatu(int statu)
 	{
-		// set statu icon
+		// 設定statu icon
 		if (pm->GetStatus()->GetStatu() != none) {
 			switch (statu) {
 			case statuBurn:

@@ -7,8 +7,7 @@
 #include "CDialog.h"
 
 using namespace std;
-namespace game_framework
-{
+namespace game_framework {
 	class Nurse : public ActionObject {
 	public:
 		Nurse();

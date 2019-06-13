@@ -3,10 +3,8 @@
 #include <vector>
 
 using namespace std;
-namespace game_framework
-{
-	class ActionObject
-	{
+namespace game_framework {
+	class ActionObject {
 	public:
 		ActionObject();
 		virtual ~ActionObject() {};

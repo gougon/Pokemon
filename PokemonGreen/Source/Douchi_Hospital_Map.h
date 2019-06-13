@@ -4,8 +4,7 @@
 #include "Nurse.h"
 #include "CEvent.h"
 
-namespace game_framework
-{
+namespace game_framework {
 	class Douchi_Hospital_Map : public CMap {
 	public:
 		Douchi_Hospital_Map(CEvent*);
