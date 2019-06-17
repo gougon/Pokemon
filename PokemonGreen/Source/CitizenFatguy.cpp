@@ -69,7 +69,7 @@ namespace game_framework
 
 	void CitizenFatguy::LoadBitmap()
 	{
-		normalImg[up].LoadBitmap(FATGUY_FRONT, RGB(255, 0, 0));
+		normalImg[up].LoadBitmap(FATGUY_UP, RGB(255, 0, 0));
 		normalImg[down].LoadBitmap(FATGUY_DOWN, RGB(255, 0, 0));
 		normalImg[left].LoadBitmap(FATGUY_LEFT, RGB(255, 0, 0));
 		normalImg[right].LoadBitmap(FATGUY_RIGHT, RGB(255, 0, 0));

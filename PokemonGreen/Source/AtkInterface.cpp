@@ -270,7 +270,7 @@ namespace game_framework {
 			break;
 		case heroStay:
 			if (trainer == nullptr)
-				outcomeText.SetText(enemy->GetName() + "is appear");
+				outcomeText.SetText(enemy->GetName() + " is appear");
 			else 
 				outcomeText.SetText(trainer->GetName() + " come to challenge");
 			if (myList.Left() > PMLIST_RIGHT_LEFT) {
