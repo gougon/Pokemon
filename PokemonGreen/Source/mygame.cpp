@@ -517,10 +517,8 @@ void CGameStateRun::OnShow()
 		characters->ReShow(hero, *gameMap);
 		gameMap->ReShow(hero);
 		npcDialog = characters->GetDialog(*gameMap);
-		if (npcDialog != nullptr) {
-			TRACE("npcDialog\n");
+		if (npcDialog != nullptr)
 			npcDialog->OnShow();
-		}
         if (myMenu.IsWork())
             myMenu.OnShow();
     }

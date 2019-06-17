@@ -1,6 +1,4 @@
 #pragma once
-#ifndef WEIBAIPROHOUSE_MAP
-#define WEIBAIPROHOUSE_MAP
 
 #include "CMap.h"
 #include "CHero.h"
@@ -20,5 +18,3 @@ namespace game_framework {
 		int hitImg[2] = { 0, 2 };
 	};
 }
-
-#endif

@@ -1,287 +1,800 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="game_framework::ActionObject">
-    <Position X="48.25" Y="29.5" Width="1.75" />
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="~ActionObject" Hidden="true" />
+      <Method Name="ActionObject" Hidden="true" />
+      <Method Name="End" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Field Name="isWork" Hidden="true" />
+      <Method Name="IsWork" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="RecieveItem" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAaAIAQAACAAAAgAAAACAAQAAAAAAAAAAAACAAAEgAA=</HashCode>
       <FileName>Source\ActionObject.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::AtkBar" Collapsed="true">
-    <Position X="89.25" Y="0.5" Width="1.5" />
+    <Position X="41.25" Y="21.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ggRAAAACIpAaABAGAAAMBQVYQAABABCAhIBiKgkVRAA=</HashCode>
       <FileName>Source\AtkBar.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CHero" Collapsed="true">
-    <Position X="92.75" Y="1.5" Width="1.5" />
+    <Position X="44.75" Y="22.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BgQEmkCCBlIoEVBJDAEIEASIBXOIASkYSYPwAGAcM2I=</HashCode>
       <FileName>Source\CHero.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Trainer">
-    <Position X="11" Y="5.25" Width="1.75" />
+    <Position X="30.75" Y="2" Width="1.5" />
+    <Members>
+      <Method Name="~Trainer" Hidden="true" />
+      <Field Name="atkDialogCounter" Hidden="true" />
+      <Field Name="atkInterface" Hidden="true" />
+      <Method Name="GetAliveNum" Hidden="true" />
+      <Method Name="GetAtkImg" Hidden="true" />
+      <Method Name="GetMap" Hidden="true" />
+      <Method Name="GetName" Hidden="true" />
+      <Method Name="GetPmNum" Hidden="true" />
+      <Method Name="GetPokemon" Hidden="true" />
+      <Method Name="GetPokemons" Hidden="true" />
+      <Method Name="InsertPokemon" Hidden="true" />
+      <Method Name="IsBeTalked" Hidden="true" />
+      <Method Name="IsCollision" Hidden="true" />
+      <Method Name="IsDiscoverHero" Hidden="true" />
+      <Method Name="IsTalk" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Field Name="pokemons" Hidden="true" />
+      <Field Name="prize" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetIsEvent" Hidden="true" />
+      <Method Name="SetXY" Hidden="true" />
+      <Method Name="StartAtk" Hidden="true" />
+      <Method Name="StopTalk" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+      <Method Name="Trainer" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>ABSLEQAARAAAMAgCAAACAAQAAAKEgCAAAOBgAgDEBmA=</HashCode>
+      <HashCode>ABSDAQAARAAAEAgCAAAAAAQAAAKAgCAAAEAAAgDEBmA=</HashCode>
       <FileName>Source\Trainer.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::AtkInterface">
-    <Position X="49.25" Y="33.5" Width="2" />
+    <Position X="12.25" Y="3.5" Width="1.5" />
+    <Members>
+      <Method Name="~AtkInterface" Hidden="true" />
+      <Method Name="AddExp" Hidden="true" />
+      <Field Name="ALLPP_LEFT" Hidden="true" />
+      <Field Name="allPPText" Hidden="true" />
+      <Field Name="atkCursor" Hidden="true" />
+      <Method Name="AtkInterface" Hidden="true" />
+      <Field Name="atkStatuTemp" Hidden="true" />
+      <Field Name="atkStatuText" Hidden="true" />
+      <Field Name="atkText" Hidden="true" />
+      <Field Name="audioCounter" Hidden="true" />
+      <Field Name="bag" Hidden="true" />
+      <Field Name="battleBackground" Hidden="true" />
+      <Field Name="battleDialog" Hidden="true" />
+      <Field Name="battleGround" Hidden="true" />
+      <Field Name="battleHero" Hidden="true" />
+      <Field Name="battleOption" Hidden="true" />
+      <Field Name="battleTrainer" Hidden="true" />
+      <Field Name="black" Hidden="true" />
+      <Field Name="cursor" Hidden="true" />
+      <Field Name="delayCount" Hidden="true" />
+      <Method Name="End" Hidden="true" />
+      <Field Name="enemy" Hidden="true" />
+      <Field Name="enemyBar" Hidden="true" />
+      <Field Name="enemySkill" Hidden="true" />
+      <Field Name="enemyStruggleCounter" Hidden="true" />
+      <Method Name="GetAddExp" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Field Name="isAnime" Hidden="true" />
+      <Field Name="isBattleEnd" Hidden="true" />
+      <Field Name="itemFactory" Hidden="true" />
+      <Field Name="joinAtkPm" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Field Name="LVUP_PANEL_LEFT" Hidden="true" />
+      <Field Name="LVUP_PANEL_TOP" Hidden="true" />
+      <Field Name="LVUP_VALUE_INTERVAL" Hidden="true" />
+      <Field Name="LVUP_VALUE_LEFT" Hidden="true" />
+      <Field Name="LVUP_VALUE_RIGHT" Hidden="true" />
+      <Field Name="LVUP_VALUE_TOP" Hidden="true" />
+      <Field Name="lvupCount" Hidden="true" />
+      <Field Name="lvupFpanel" Hidden="true" />
+      <Field Name="lvupPanel" Hidden="true" />
+      <Field Name="lvupPm" Hidden="true" />
+      <Field Name="myBar" Hidden="true" />
+      <Field Name="myList" Hidden="true" />
+      <Field Name="myPm" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Field Name="openCount" Hidden="true" />
+      <Field Name="outcomeText" Hidden="true" />
+      <Field Name="PMLIST_LEFT_LEFT" Hidden="true" />
+      <Field Name="PMLIST_LEFT_TOP" Hidden="true" />
+      <Field Name="PMLIST_LEN" Hidden="true" />
+      <Field Name="PMLIST_RIGHT_LEFT" Hidden="true" />
+      <Field Name="PMLIST_RIGHT_TOP" Hidden="true" />
+      <Field Name="pmMenu" Hidden="true" />
+      <Field Name="pokeball" Hidden="true" />
+      <Method Name="ReceiveBag" Hidden="true" />
+      <Method Name="ReceiveEnemy" Hidden="true" />
+      <Method Name="ReceivePmMenu" Hidden="true" />
+      <Method Name="ReceiveTrainer" Hidden="true" />
+      <Field Name="REMAINPP_RIGHT" Hidden="true" />
+      <Field Name="remainPPText" Hidden="true" />
+      <Field Name="self" Hidden="true" />
+      <Method Name="SetCursorPosition" Hidden="true" />
+      <Method Name="SetMyAtkPm" Hidden="true" />
+      <Method Name="SetSkillText" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="SetTrainerAtkPm" Hidden="true" />
+      <Method Name="SetValue" Hidden="true" />
+      <Field Name="SKILL_DOWN" Hidden="true" />
+      <Field Name="SKILL_LEFT" Hidden="true" />
+      <Field Name="SKILL_RIGHT" Hidden="true" />
+      <Field Name="SKILL_TOP" Hidden="true" />
+      <Field Name="skillOption" Hidden="true" />
+      <Field Name="skillText" Hidden="true" />
+      <Field Name="SKTYPE_LEFT" Hidden="true" />
+      <Field Name="skTypeText" Hidden="true" />
+      <Method Name="SltPm" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+      <Field Name="state" Hidden="true" />
+      <Field Name="states" Hidden="true" />
+      <Field Name="textCount" Hidden="true" />
+      <Field Name="trainer" Hidden="true" />
+      <Field Name="trainerList" Hidden="true" />
+      <Method Name="UseItem" Hidden="true" />
+      <Field Name="value" Hidden="true" />
+      <Field Name="valueFinalText" Hidden="true" />
+      <Field Name="valueUpText" Hidden="true" />
+      <Field Name="ynPanel" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>QEYhSi0oACmAQ7lFEINKQY3SAgBEATAEKqgWCAIUBxs=</HashCode>
       <FileName>Source\AtkInterface.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CAudio" Collapsed="true">
-    <Position X="94.5" Y="0.5" Width="1.5" />
+    <Position X="46.5" Y="21.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgoAAAAAAQIAAQIAAAAAQRAAACAIAA4AIAAAiAAAA=</HashCode>
       <FileName>Source\audio.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Bag">
-    <Position X="52" Y="33.5" Width="2.25" />
+    <Position X="16.75" Y="2" Width="1.5" />
+    <Members>
+      <Method Name="~Bag" Hidden="true" />
+      <Method Name="AddItem" Hidden="true" />
+      <Field Name="amountSelect_panel" Hidden="true" />
+      <Field Name="background_image" Hidden="true" />
+      <Field Name="backpack_panel" Hidden="true" />
+      <Method Name="Bag" Hidden="true" />
+      <Field Name="ballID" Hidden="true" />
+      <Field Name="CAT_FLAG_LEFT1" Hidden="true" />
+      <Field Name="CAT_FLAG_LEFT2" Hidden="true" />
+      <Field Name="CAT_FLAG_LEFT3" Hidden="true" />
+      <Field Name="CAT_FLAG_LEFT4" Hidden="true" />
+      <Field Name="CAT_FLAG_LEFT5" Hidden="true" />
+      <Field Name="CAT_FLAG_TOP" Hidden="true" />
+      <Field Name="CAT_LOC_LEFT" Hidden="true" />
+      <Field Name="CAT_LOC_TOP" Hidden="true" />
+      <Field Name="categorie_flag" Hidden="true" />
+      <Field Name="categorie_flagIndex" Hidden="true" />
+      <Field Name="categorie_text" Hidden="true" />
+      <Field Name="chooser" Hidden="true" />
+      <Field Name="clerkDialog" Hidden="true" />
+      <Field Name="CONSOLE_PANEL_LEFT" Hidden="true" />
+      <Field Name="CONSOLE_PANEL_TOP" Hidden="true" />
+      <Field Name="currentID" Hidden="true" />
+      <Field Name="currentMoney" Hidden="true" />
+      <Field Name="CURRENTMONEY_LEFT" Hidden="true" />
+      <Field Name="CURRENTMONEY_TOP" Hidden="true" />
+      <Field Name="cursor" Hidden="true" />
+      <Field Name="description" Hidden="true" />
+      <Field Name="drop_amount" Hidden="true" />
+      <Field Name="dropAmount" Hidden="true" />
+      <Field Name="DROPAMOUNT_LEFT" Hidden="true" />
+      <Field Name="DROPAMOUNT_TOP" Hidden="true" />
+      <Method Name="DropItem" Hidden="true" />
+      <Method Name="End" Hidden="true" />
+      <Method Name="Get_CurrentCategorie_Size" Hidden="true" />
+      <Method Name="GetItemAmount" Hidden="true" />
+      <Field Name="inBattle" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Field Name="inItemamount" Hidden="true" />
+      <Field Name="inPanel" Hidden="true" />
+      <Field Name="inPokemonMenu" Hidden="true" />
+      <Field Name="inSellMode" Hidden="true" />
+      <Field Name="inShowText" Hidden="true" />
+      <Field Name="inYesno" Hidden="true" />
+      <Method Name="IsPokemonReceive" Hidden="true" />
+      <Field Name="isReceivePokemon" Hidden="true" />
+      <Field Name="isSelectball" Hidden="true" />
+      <Field Name="item_amount" Hidden="true" />
+      <Field Name="ITEM_CHOOSER_LEFT" Hidden="true" />
+      <Field Name="ITEM_CHOOSER_TOP" Hidden="true" />
+      <Field Name="item_cost" Hidden="true" />
+      <Field Name="ITEM_DESCRIPTION_LEFT" Hidden="true" />
+      <Field Name="ITEM_DESCRIPTION_TOP" Hidden="true" />
+      <Field Name="item_image" Hidden="true" />
+      <Field Name="ITEM_IMAGE_LEFT" Hidden="true" />
+      <Field Name="ITEM_IMAGE_TOP" Hidden="true" />
+      <Field Name="item_left_amount" Hidden="true" />
+      <Field Name="ITEM_LEFTAMOUNT_LEFT" Hidden="true" />
+      <Field Name="item_name" Hidden="true" />
+      <Field Name="ITEM_NAME_LEFT" Hidden="true" />
+      <Field Name="item_selector" Hidden="true" />
+      <Field Name="ITEM_TOP" Hidden="true" />
+      <Field Name="ITEMAMOUNT_PANEL_LEFT" Hidden="true" />
+      <Field Name="ITEMAMOUNT_PANEL_TOP" Hidden="true" />
+      <Field Name="itemFactory" Hidden="true" />
+      <Field Name="items" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Field Name="money" Hidden="true" />
+      <Field Name="money_panel" Hidden="true" />
+      <Field Name="MONEY_PANEL_LEFT" Hidden="true" />
+      <Field Name="MONEY_PANEL_TOP" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Field Name="panel_flagIndex" Hidden="true" />
+      <Field Name="panel_selector" Hidden="true" />
+      <Field Name="pk_Menu" Hidden="true" />
+      <Method Name="PokemonSuccessTakeItem" Hidden="true" />
+      <Field Name="receivePk" Hidden="true" />
+      <Method Name="ReceivePokemonCommend" Hidden="true" />
+      <Method Name="RecievePokemonMenu" Hidden="true" />
+      <Method Name="SelectItem" Hidden="true" />
+      <Method Name="SelectPokeball" Hidden="true" />
+      <Method Name="SetBattleMode" Hidden="true" />
+      <Method Name="SetSellMode" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+      <Field Name="successReceive" Hidden="true" />
+      <Field Name="useOnAttack_Panel" Hidden="true" />
+      <Field Name="yesno_panel" Hidden="true" />
+      <Field Name="YESNO_PANEL_LEFT" Hidden="true" />
+      <Field Name="YESNO_PANEL_TOP" Hidden="true" />
+      <Field Name="yesnoChooser" Hidden="true" />
+      <Field Name="YESNOCHOOSER_LEFT" Hidden="true" />
+      <Field Name="YESNOCHOOSER_TOP1" Hidden="true" />
+      <Field Name="YESNOCHOOSER_TOP2" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>QVYCANwQCCgQmhsgohtAiA4RpIBHgTqEEiS2JIBUVFc=</HashCode>
       <FileName>Source\Bag.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CAlphabet" Collapsed="true">
-    <Position X="91" Y="0.5" Width="1.5" />
+    <Position X="43" Y="21.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAQAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\CAlphabet.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CDialog" Collapsed="true">
-    <Position X="98" Y="0.5" Width="1.5" />
+    <Position X="50" Y="21.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgEAABAAAICABAAFAIAAEAQAAAAAAAUgACAAAAAEAAA=</HashCode>
       <FileName>Source\CDialog.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CEvent" Collapsed="true">
-    <Position X="99.75" Y="0.5" Width="1.5" />
+    <Position X="51.75" Y="21.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAAAABAAAAAAAAAAAAAIAAAAAAIAAAAAAAA=</HashCode>
       <FileName>Source\CEvent.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Characters" Collapsed="true">
-    <Position X="91" Y="1.5" Width="1.5" />
+    <Position X="43" Y="22.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQCAQAAQAAAAAgAAgAAAAQAAAAAgAAAAQBAAAAEgAA=</HashCode>
+      <HashCode>AAQCAQAAQAAAAAgAAgAAAAQAAAAAgAAAAQFAAAAEgAA=</HashCode>
       <FileName>Source\Characters.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CMap" Collapsed="true">
-    <Position X="98" Y="1.5" Width="1.5" />
+    <Position X="50" Y="22.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gCQAUQAARAEAABhAABAAEIUAgABEADAACgAAAAAMBAI=</HashCode>
       <FileName>Source\CMap.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CItem">
-    <Position X="7" Y="17.5" Width="1.5" />
+    <Position X="15" Y="5.5" Width="1.5" />
+    <Members>
+      <Method Name="~CItem" Hidden="true" />
+      <Field Name="categorie" Hidden="true" />
+      <Field Name="cost" Hidden="true" />
+      <Field Name="description" Hidden="true" />
+      <Method Name="GetCategorie" Hidden="true" />
+      <Method Name="GetCost" Hidden="true" />
+      <Method Name="GetDescription" Hidden="true" />
+      <Method Name="GetID" Hidden="true" />
+      <Method Name="GetImage" Hidden="true" />
+      <Method Name="GetName" Hidden="true" />
+      <Field Name="ID" Hidden="true" />
+      <Field Name="itemImage" Hidden="true" />
+      <Field Name="name" Hidden="true" />
+      <Method Name="Take" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AQAACAAAAAAAgAAAIAAAoAAQAAAUAAAABAEAAAAABIA=</HashCode>
       <FileName>Source\CItem.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CItemSystem" Collapsed="true">
-    <Position X="96.25" Y="1.5" Width="1.5" />
+    <Position X="48.25" Y="22.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Source\CItemSystem.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Citizen">
-    <Position X="43.5" Y="5.25" Width="1.75" />
+    <Position X="36" Y="2" Width="1.5" />
+    <Members>
+      <Method Name="Citizen" Hidden="true" />
+      <Method Name="GetMap" Hidden="true" />
+      <Method Name="IsBeTalked" Hidden="true" />
+      <Method Name="IsCollision" Hidden="true" />
+      <Method Name="IsTalk" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetIsEvent" Hidden="true" />
+      <Method Name="StopTalk" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>ABQJEQAAQAAAIAgAAAACAAQAAAAEgCAAAOBgAABEAgA=</HashCode>
+      <HashCode>ABQBAQAAQAAAAAgAAAAAAAQAAAAAgCAAAEAAAABEAgA=</HashCode>
       <FileName>Source\Citizen.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenMom">
-    <Position X="53.5" Y="11.25" Width="1.75" />
+    <Position X="38" Y="12.25" Width="1.5" />
+    <Members>
+      <Method Name="CitizenMom" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAAABgAAAAAAAQAAAAAIAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenMom.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Clerk">
-    <Position X="55" Y="33.5" Width="2.5" />
+    <Position X="16.75" Y="3.5" Width="1.5" />
+    <Members>
+      <Method Name="~Clerk" Hidden="true" />
+      <Field Name="blankPanel1" Hidden="true" />
+      <Field Name="blankPanel2" Hidden="true" />
+      <Method Name="Clerk" Hidden="true" />
+      <Field Name="clerkTalk" Hidden="true" />
+      <Field Name="currentID" Hidden="true" />
+      <Field Name="currentMoney" Hidden="true" />
+      <Field Name="CURRENTMONEY_LEFT" Hidden="true" />
+      <Field Name="CURRENTMONEY_TOP" Hidden="true" />
+      <Field Name="DESCRIPTION_PANEL_LEFT" Hidden="true" />
+      <Field Name="DESCRIPTION_PANEL_TOP" Hidden="true" />
+      <Method Name="End" Hidden="true" />
+      <Field Name="firsttime" Hidden="true" />
+      <Field Name="game_bag" Hidden="true" />
+      <Field Name="hero" Hidden="true" />
+      <Field Name="IMAGE_PANEL_LEFT" Hidden="true" />
+      <Field Name="IMAGE_PANEL_TOP" Hidden="true" />
+      <Field Name="inBuyMode" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Field Name="inItemAmount" Hidden="true" />
+      <Field Name="inSelectMode" Hidden="true" />
+      <Field Name="inSellMode" Hidden="true" />
+      <Method Name="InsertItem" Hidden="true" />
+      <Field Name="inShowText" Hidden="true" />
+      <Field Name="item_counter" Hidden="true" />
+      <Field Name="itemAmount" Hidden="true" />
+      <Field Name="itemAmountText" Hidden="true" />
+      <Field Name="itemChooser" Hidden="true" />
+      <Field Name="itemCost" Hidden="true" />
+      <Field Name="itemDescription" Hidden="true" />
+      <Field Name="itemDescriptionPanel" Hidden="true" />
+      <Field Name="itemImagePanel" Hidden="true" />
+      <Field Name="itemName" Hidden="true" />
+      <Field Name="itemSelecter" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Field Name="MODE_SELECT_CURSOR_LEFT" Hidden="true" />
+      <Field Name="MODE_SELECT_CURSOR_TOP" Hidden="true" />
+      <Field Name="MODE_SELECT_LEFT" Hidden="true" />
+      <Field Name="MODE_SELECT_TOP" Hidden="true" />
+      <Field Name="money" Hidden="true" />
+      <Field Name="MONEY_PANEL_LEFT" Hidden="true" />
+      <Field Name="MONEY_PANEL_TOP" Hidden="true" />
+      <Field Name="moneyPanel" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReceiveData" Hidden="true" />
+      <Field Name="selectModeOrder" Hidden="true" />
+      <Method Name="SetMoney" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Field Name="shopItemFactory" Hidden="true" />
+      <Field Name="shopping_list" Hidden="true" />
+      <Field Name="SHOPPINGLIST_LEFT" Hidden="true" />
+      <Field Name="SHOPPINGLIST_TOP" Hidden="true" />
+      <Field Name="shoppingPanel" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+      <Field Name="stillHave" Hidden="true" />
+      <Field Name="tradeModeSelectPanel" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>JhYAAABhBGB4BjuAAiABAC6AhAAAAFCAIgArIAREFQI=</HashCode>
       <FileName>Source\Clerk.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Pokemon">
-    <Position X="17.5" Y="17.5" Width="2.25" />
+    <Position X="15" Y="10.5" Width="1.5" />
+    <Members>
+      <Method Name="~Pokemon" Hidden="true" />
+      <Method Name="AddExp" Hidden="true" />
+      <Method Name="AddSkill" Hidden="true" />
+      <Field Name="attribute" Hidden="true" />
+      <Field Name="backImg" Hidden="true" />
+      <Field Name="basicExp" Hidden="true" />
+      <Field Name="canMove" Hidden="true" />
+      <Field Name="catchRate" Hidden="true" />
+      <Field Name="effortValue" Hidden="true" />
+      <Field Name="evasionRate" Hidden="true" />
+      <Field Name="exp" Hidden="true" />
+      <Field Name="frontImg" Hidden="true" />
+      <Method Name="GetAtk" Hidden="true" />
+      <Method Name="GetAtkLevel" Hidden="true" />
+      <Method Name="GetAttribute" Hidden="true" />
+      <Method Name="GetBasicExp" Hidden="true" />
+      <Method Name="GetCatchRate" Hidden="true" />
+      <Method Name="GetDef" Hidden="true" />
+      <Method Name="GetDefLevel" Hidden="true" />
+      <Method Name="GetEvasionRate" Hidden="true" />
+      <Method Name="GetFrontImage" Hidden="true" />
+      <Method Name="GetHeight" Hidden="true" />
+      <Method Name="GetHitRate" Hidden="true" />
+      <Method Name="GetHP" Hidden="true" />
+      <Method Name="GetIcon" Hidden="true" />
+      <Method Name="GetLevel" Hidden="true" />
+      <Method Name="GetName" Hidden="true" />
+      <Method Name="GetNeedExp" Hidden="true" />
+      <Method Name="GetNowExp" Hidden="true" />
+      <Method Name="GetPmID" Hidden="true" />
+      <Method Name="GetPmType" Hidden="true" />
+      <Method Name="GetRemainAtk" Hidden="true" />
+      <Method Name="GetRemainDef" Hidden="true" />
+      <Method Name="GetRemainHP" Hidden="true" />
+      <Method Name="GetRemainSatk" Hidden="true" />
+      <Method Name="GetRemainSdef" Hidden="true" />
+      <Method Name="GetRemainSpeed" Hidden="true" />
+      <Method Name="GetSatk" Hidden="true" />
+      <Method Name="GetSatkLevel" Hidden="true" />
+      <Method Name="GetSdef" Hidden="true" />
+      <Method Name="GetSdefLevel" Hidden="true" />
+      <Method Name="GetSkill" Hidden="true" />
+      <Method Name="GetSkillNum" Hidden="true" />
+      <Method Name="GetSpeed" Hidden="true" />
+      <Method Name="GetSpeedLevel" Hidden="true" />
+      <Method Name="GetStatus" Hidden="true" />
+      <Method Name="GetTakeItem" Hidden="true" />
+      <Method Name="GetValueLevel" Hidden="true" />
+      <Field Name="haveItem" Hidden="true" />
+      <Field Name="hitRate" Hidden="true" />
+      <Field Name="icon" Hidden="true" />
+      <Field Name="individualValue" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="IsCanMove" Hidden="true" />
+      <Method Name="LearnSkill" Hidden="true" />
+      <Method Name="Left" Hidden="true" />
+      <Field Name="level" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="LoadValue" Hidden="true" />
+      <Field Name="mixValue" Hidden="true" />
+      <Field Name="name" Hidden="true" />
+      <Field Name="needExp" Hidden="true" />
+      <Field Name="nowExp" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Field Name="pmID" Hidden="true" />
+      <Field Name="pmtype" Hidden="true" />
+      <Method Name="Pokemon" Hidden="true" />
+      <Field Name="remainValue" Hidden="true" />
+      <Method Name="RoundEndStatuEffect" Hidden="true" />
+      <Method Name="RoundProgressStatuEffect" Hidden="true" />
+      <Method Name="RoundStartStatuEffect" Hidden="true" />
+      <Method Name="SetCanMove" Hidden="true" />
+      <Method Name="SetHeight" Hidden="true" />
+      <Method Name="SetHP" Hidden="true" />
+      <Method Name="SetLevel" Hidden="true" />
+      <Method Name="SetNeedExp" Hidden="true" />
+      <Method Name="SetNowExp" Hidden="true" />
+      <Method Name="SetRemainAtk" Hidden="true" />
+      <Method Name="SetRemainDef" Hidden="true" />
+      <Method Name="SetRemainHP" Hidden="true" />
+      <Method Name="SetRemainSatk" Hidden="true" />
+      <Method Name="SetRemainSdef" Hidden="true" />
+      <Method Name="SetRemainSpeed" Hidden="true" />
+      <Method Name="SetStatus" Hidden="true" />
+      <Method Name="SetTakeItem" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="SetValueLevel" Hidden="true" />
+      <Field Name="skills" Hidden="true" />
+      <Field Name="skillTree" Hidden="true" />
+      <Field Name="speciesStrength" Hidden="true" />
+      <Field Name="statu" Hidden="true" />
+      <Field Name="takeItemID" Hidden="true" />
+      <Method Name="Top" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>gBSgEBIh5UgmGVAaKx0YyEZFYAcMDyIIyQEWEaAMBgE=</HashCode>
       <FileName>Source\Pokemon.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CPickableObject" Collapsed="true">
-    <Position X="89.25" Y="2.5" Width="1.5" />
+    <Position X="41.25" Y="23.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAAAAAAAQAAAQAAAAAACAAYAAQAAAEAAg=</HashCode>
       <FileName>Source\CPickableObject.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="game_framework::CSelf" Collapsed="true">
-    <Position X="91" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEBAAEAAA=</HashCode>
-      <FileName>Source\CSelf.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="game_framework::CText" Collapsed="true">
-    <Position X="94.5" Y="2.5" Width="1.5" />
+    <Position X="44.75" Y="23.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAAAAAACAgBAAjIAAAAwAAAAAAIACAAgAAAAEAAg=</HashCode>
       <FileName>Source\CText.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::DouChiHouse1_Map" Collapsed="true">
-    <Position X="99.75" Y="2.5" Width="1.5" />
+    <Position X="50" Y="23.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAQAAQCAAAAAAAgAAAAAEAQAAABAAAAAAACQAAAEAAA=</HashCode>
       <FileName>Source\DouChiHouse1_Map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::DouChiHouse2_Map" Collapsed="true">
-    <Position X="89.25" Y="3.5" Width="1.5" />
+    <Position X="51.75" Y="23.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAQAAQCAAAAAAAgAAAAAEAQAAABAAAAAAACQAAAEAAA=</HashCode>
       <FileName>Source\DouChiHouse2_Map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CSpecialEffect" Collapsed="true">
-    <Position X="92.75" Y="2.5" Width="1.5" />
+    <Position X="43" Y="23.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAAAAAAACAAgAAAAAAAAACAIAAIAAAAAAAAIAAA=</HashCode>
       <FileName>Source\gamelib.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CDDraw" Collapsed="true">
-    <Position X="96.25" Y="0.5" Width="1.5" />
+    <Position X="48.25" Y="21.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAIkAAQABkEB1ICAAEAATQAAAACEAQABBKCACaJQA=</HashCode>
       <FileName>Source\gamelib.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CMovingBitmap" Collapsed="true">
-    <Position X="99.75" Y="1.5" Width="1.5" />
+    <Position X="51.75" Y="22.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAAAABACAABAAEYCQAQIIIAACACAAACAAAQ=</HashCode>
       <FileName>Source\gamelib.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CAnimation" Collapsed="true">
-    <Position X="92.75" Y="0.5" Width="1.5" />
+    <Position X="44.75" Y="21.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAABAAABBIAAAiAAUAIAAAIAAAIOABgAAEEgAA=</HashCode>
       <FileName>Source\gamelib.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CInteger" Collapsed="true">
-    <Position X="94.5" Y="1.5" Width="1.5" />
+    <Position X="46.5" Y="22.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAACAAJBAAAAAAEQAAAABAAAAEABgAACIAAA=</HashCode>
       <FileName>Source\gamelib.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CGame" Collapsed="true">
-    <Position X="89.25" Y="1.5" Width="1.5" />
+    <Position X="41.25" Y="22.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACgBACEQAgBAABAwADAABpAgAQAQAIgAAAwAAA=</HashCode>
       <FileName>Source\gamelib.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="game_framework::CGameStateInit">
-    <Position X="3" Y="5.75" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAQAACAAAEAAAABCAgAAAAAEiQAQAAABAAVAAA=</HashCode>
-      <FileName>Source\mygame.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="game_framework::CGameStateRun">
-    <Position X="5.5" Y="5.75" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAQCAQAAAFCAACAAAAAQAABAABIBAgwAAAAAAAAUAAA=</HashCode>
-      <FileName>Source\mygame.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="game_framework::CGameStateOver">
-    <Position X="0.5" Y="5.75" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAIAAAAAAAAAAABAAgUAAAAAAAAEAAA=</HashCode>
-      <FileName>Source\mygame.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="game_framework::CGameState">
-    <Position X="3" Y="0.5" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAUAAAgAAECAAAAAAABAAABAABIAAgQIAAAAAAIUAEA=</HashCode>
-      <FileName>Source\gamelib.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="game_framework::ItemAntidote">
-    <Position X="0.75" Y="22.25" Width="1.5" />
+    <Position X="12.75" Y="7" Width="1.5" />
+    <Members>
+      <Method Name="ItemAntidote" Hidden="true" />
+      <Method Name="Take" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAEAAAAAAEAAAAAAAA=</HashCode>
       <FileName>Source\ItemAntidote.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::ItemBigVulnerary">
-    <Position X="3" Y="22.25" Width="1.75" />
+    <Position X="12.75" Y="8.5" Width="1.5" />
+    <Members>
+      <Method Name="ItemBigVulnerary" Hidden="true" />
+      <Method Name="Take" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAEAAAAgAAA=</HashCode>
       <FileName>Source\ItemBigVulnerary.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::ItemBurnMedicine">
-    <Position X="5.5" Y="22.25" Width="1.75" />
+    <Position X="17.25" Y="8.5" Width="1.75" />
+    <Members>
+      <Method Name="ItemBurnMedicine" Hidden="true" />
+      <Method Name="Take" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAEAAAAAAEAAAAAAAA=</HashCode>
       <FileName>Source\ItemBurnMedicine.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::ItemFactory" Collapsed="true">
-    <Position X="91" Y="3.5" Width="1.5" />
+    <Position X="41.25" Y="24.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\ItemFactory.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::ItemFighterGlove">
-    <Position X="8" Y="22.25" Width="1.75" />
+    <Position X="15" Y="7" Width="1.5" />
+    <Members>
+      <Method Name="ItemFighterGlove" Hidden="true" />
+      <Method Name="Take" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAEAAAAAAEAAAAAAAA=</HashCode>
       <FileName>Source\ItemFighterGlove.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::ItemPokeBall">
-    <Position X="10.5" Y="22.25" Width="1.5" />
+    <Position X="15" Y="8.5" Width="1.5" />
+    <Members>
+      <Method Name="~ItemPokeBall" Hidden="true" />
+      <Method Name="animeEnd" Hidden="true" />
+      <Field Name="ballAnime" Hidden="true" />
+      <Field Name="ballopen" Hidden="true" />
+      <Field Name="counter" Hidden="true" />
+      <Field Name="endFlag" Hidden="true" />
+      <Field Name="isCatch" Hidden="true" />
+      <Method Name="IsCatch" Hidden="true" />
+      <Field Name="isThrow" Hidden="true" />
+      <Method Name="ItemPokeBall" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="SetPos" Hidden="true" />
+      <Method Name="Take" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+      <Method Name="UsePokeBall" Hidden="true" />
+      <Field Name="x" Hidden="true" />
+      <Field Name="y" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AIRCAAAAAgAAAAAAAAAAAAQAAACEIAEAgAFgEAAEAAI=</HashCode>
       <FileName>Source\ItemPokeBall.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::ItemSmallVulnerary">
-    <Position X="12.75" Y="22.25" Width="1.75" />
+    <Position X="17.25" Y="7" Width="1.75" />
+    <Members>
+      <Method Name="ItemSmallVulnerary" Hidden="true" />
+      <Method Name="Take" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAEAAAAAAEAAAAAAAA=</HashCode>
       <FileName>Source\ItemSmallVulnerary.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Menu">
-    <Position X="58.25" Y="33.5" Width="1.75" />
+    <Position X="19" Y="2" Width="1.5" />
+    <Members>
+      <Method Name="~Menu" Hidden="true" />
+      <Field Name="cursor" Hidden="true" />
+      <Field Name="CURSOR_LEFT" Hidden="true" />
+      <Field Name="CURSOR_TOP" Hidden="true" />
+      <Method Name="End" Hidden="true" />
+      <Method Name="GetBag" Hidden="true" />
+      <Method Name="GetPokemonMenu" Hidden="true" />
+      <Field Name="hero" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Field Name="isItem" Hidden="true" />
+      <Field Name="itemCount" Hidden="true" />
+      <Field Name="items" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="Menu" Hidden="true" />
+      <Field Name="MENU_INTERVAL" Hidden="true" />
+      <Field Name="MENU_LEFT" Hidden="true" />
+      <Field Name="MENU_TOP" Hidden="true" />
+      <Field Name="menuBottom" Hidden="true" />
+      <Field Name="menuMiddle" Hidden="true" />
+      <Field Name="menuTop" Hidden="true" />
+      <Field Name="money" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Field Name="order" Hidden="true" />
+      <Field Name="pokemons" Hidden="true" />
+      <Method Name="RecieveItem" Hidden="true" />
+      <Method Name="SetMoney" Hidden="true" />
+      <Method Name="SetPokemons" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Field Name="showingText" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <NestedTypes>
       <Enum Name="game_framework::Menu::MenuItem" Collapsed="true">
         <TypeIdentifier>
@@ -295,21 +808,89 @@
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Npc">
-    <Position X="34.75" Y="0.5" Width="1.75" />
+    <Position X="33.75" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="~Npc" Hidden="true" />
+      <Field Name="atkImg" Hidden="true" />
+      <Field Name="direction" Hidden="true" />
+      <Field Name="eventDialog" Hidden="true" />
+      <Method Name="GetDialog" Hidden="true" />
+      <Method Name="GetMap" Hidden="true" />
+      <Method Name="GetType" Hidden="true" />
+      <Method Name="IsCollision" Hidden="true" />
+      <Field Name="isEvent" Hidden="true" />
+      <Field Name="isTalk" Hidden="true" />
+      <Method Name="IsTalk" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Field Name="map" Hidden="true" />
+      <Field Name="name" Hidden="true" />
+      <Field Name="normalDialog" Hidden="true" />
+      <Field Name="normalImg" Hidden="true" />
+      <Method Name="Npc" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetIsEvent" Hidden="true" />
+      <Field Name="type" Hidden="true" />
+      <Field Name="x" Hidden="true" />
+      <Field Name="y" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>AJQAAQAAQAAAAAgAgAAAAAQAAAABgCEAACAAAAAEEAA=</HashCode>
+      <HashCode>AJQIEQAAQAAAIAgAgAACAAQAAAAFgCEAAKFgAAAEEAA=</HashCode>
       <FileName>Source\Npc.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::NpcFactory" Collapsed="true">
-    <Position X="92.75" Y="3.5" Width="1.5" />
+    <Position X="43" Y="24.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\NpcFactory.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Nurse">
-    <Position X="44" Y="33.5" Width="2" />
+    <Position X="14.5" Y="3.5" Width="1.5" />
+    <Members>
+      <Method Name="~Nurse" Hidden="true" />
+      <Field Name="audioCount" Hidden="true" />
+      <Field Name="ball" Hidden="true" />
+      <Field Name="choice" Hidden="true" />
+      <Field Name="count" Hidden="true" />
+      <Field Name="cursor" Hidden="true" />
+      <Field Name="CURSOR_LEFT" Hidden="true" />
+      <Field Name="CURSOR_TOP" Hidden="true" />
+      <Field Name="CURSOR_TOP2" Hidden="true" />
+      <Field Name="dialogBox" Hidden="true" />
+      <Method Name="End" Hidden="true" />
+      <Method Name="Heal" Hidden="true" />
+      <Field Name="HEAL_ANIME_NUM" Hidden="true" />
+      <Field Name="HEAL_BALL_DELAY" Hidden="true" />
+      <Field Name="HEAL_BALL_INTERVAL" Hidden="true" />
+      <Field Name="HEAL_BALL_LEFT" Hidden="true" />
+      <Field Name="HEAL_BALL_TOP" Hidden="true" />
+      <Field Name="hero" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Field Name="isAnime" Hidden="true" />
+      <Method Name="IsHealing" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="Nurse" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Field Name="pmNum" Hidden="true" />
+      <Field Name="pokemons" Hidden="true" />
+      <Method Name="ReceiveData" Hidden="true" />
+      <Method Name="SetBall" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+      <Field Name="ynPanel" Hidden="true" />
+      <Field Name="YNPANEL_LEFT" Hidden="true" />
+      <Field Name="YNPANEL_TOP" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <NestedTypes>
       <Enum Name="game_framework::Nurse::yn" Collapsed="true">
         <TypeIdentifier>
@@ -323,63 +904,186 @@
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PmDeoxys">
-    <Position X="12.75" Y="36.5" Width="1.75" />
+    <Position X="12.75" Y="12" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="PmDeoxys" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAACACAAAAAAA=</HashCode>
       <FileName>Source\PmDeoxys.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PmGardevoir">
-    <Position X="15.25" Y="36.5" Width="2" />
+    <Position X="15" Y="16.5" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="PmGardevoir" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\PmGardevoir.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PmGrimer">
-    <Position X="20.75" Y="36.5" Width="1.75" />
+    <Position X="15" Y="12" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="PmGrimer" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAACAAAACAAAAAAA=</HashCode>
       <FileName>Source\PmGrimer.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PmGrovyle">
-    <Position X="25.75" Y="36.5" Width="2" />
+    <Position X="15" Y="13.5" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="PmGrovyle" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQIAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\PmGrovyle.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PmHooh">
-    <Position X="28.5" Y="36.5" Width="1.75" />
+    <Position X="17.25" Y="16.5" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="PmHooh" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAACIAAAAAA=</HashCode>
       <FileName>Source\PmHooh.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PmJirachi">
-    <Position X="31" Y="36.5" Width="1.75" />
+    <Position X="17.25" Y="15" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="PmJirachi" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\PmJirachi.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PmList" Collapsed="true">
-    <Position X="94.5" Y="3.5" Width="1.5" />
+    <Position X="44.75" Y="24.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAABAEAAACAAxABAEpAAAACAAAgAAEAFA=</HashCode>
       <FileName>Source\PmList.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PmMetang">
-    <Position X="33.5" Y="36.5" Width="2" />
+    <Position X="17.25" Y="13.5" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="PmMetang" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\PmMetang.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PmOprtView">
-    <Position X="38.25" Y="33.5" Width="2" />
+    <Position X="19" Y="3.5" Width="1.5" />
+    <Members>
+      <Method Name="~PmOprtView" Hidden="true" />
+      <Method Name="CloseSkillSidebar" Hidden="true" />
+      <Field Name="delay" Hidden="true" />
+      <Method Name="End" Hidden="true" />
+      <Field Name="IMG_LEFT" Hidden="true" />
+      <Field Name="IMG_TOP" Hidden="true" />
+      <Field Name="info" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Field Name="isSelectSkill" Hidden="true" />
+      <Field Name="ITEM_LEFT" Hidden="true" />
+      <Field Name="ITEM_TOP" Hidden="true" />
+      <Field Name="itemText" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Field Name="LV_LEFT" Hidden="true" />
+      <Field Name="LV_TOP" Hidden="true" />
+      <Field Name="lvText" Hidden="true" />
+      <Field Name="NAME_LEFT" Hidden="true" />
+      <Field Name="NAME_TOP" Hidden="true" />
+      <Field Name="nameText" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="OpenSkillSidebar" Hidden="true" />
+      <Field Name="page" Hidden="true" />
+      <Field Name="pm" Hidden="true" />
+      <Field Name="pmAbility" Hidden="true" />
+      <Field Name="pmImage" Hidden="true" />
+      <Method Name="PmOprtView" Hidden="true" />
+      <Field Name="pmSkillPanel" Hidden="true" />
+      <Field Name="POSITION" Hidden="true" />
+      <Method Name="PushText" Hidden="true" />
+      <Method Name="ReceiveData" Hidden="true" />
+      <Field Name="searchItem" Hidden="true" />
+      <Method Name="SelectSkillAnime" Hidden="true" />
+      <Method Name="SetCommon" Hidden="true" />
+      <Method Name="SetInfo" Hidden="true" />
+      <Method Name="SetSkillText" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Field Name="SK_ATTR_LEFT" Hidden="true" />
+      <Field Name="SK_DESC_TOP" Hidden="true" />
+      <Field Name="SK_INTERVAL" Hidden="true" />
+      <Field Name="SK_LIST_LEFT" Hidden="true" />
+      <Field Name="SK_LIST_TOP" Hidden="true" />
+      <Field Name="SK_NAME_LEFT" Hidden="true" />
+      <Field Name="SK_PP_LEFT" Hidden="true" />
+      <Field Name="SK_SB_CONTENT_LEFT" Hidden="true" />
+      <Field Name="SK_SB_CONTENT_TOP" Hidden="true" />
+      <Field Name="SK_SB_LEFT" Hidden="true" />
+      <Field Name="SK_SB_RIGHT" Hidden="true" />
+      <Field Name="SK_SB_TOP" Hidden="true" />
+      <Field Name="SK_SB_WIDTH" Hidden="true" />
+      <Field Name="SK_TOP" Hidden="true" />
+      <Field Name="skillDesc" Hidden="true" />
+      <Field Name="skillHitRate" Hidden="true" />
+      <Field Name="skillList" Hidden="true" />
+      <Field Name="skillOrder" Hidden="true" />
+      <Field Name="skillPower" Hidden="true" />
+      <Field Name="skills" Hidden="true" />
+      <Field Name="skillSelect" Hidden="true" />
+      <Field Name="skillSidebar" Hidden="true" />
+      <Field Name="skillText" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <NestedTypes>
       <Enum Name="game_framework::PmOprtView::pmOprtViewPage" Collapsed="true">
         <TypeIdentifier>
@@ -398,84 +1102,225 @@
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PmPikachu">
-    <Position X="1.75" Y="36.5" Width="2" />
+    <Position X="10.5" Y="12" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="PmPikachu" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEAAAAAAAAQAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\PmPikachu.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PmRayquaza">
-    <Position X="4.5" Y="36.5" Width="2" />
+    <Position X="12.75" Y="16.5" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="PmRayquaza" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAEAAAACAAAAAAA=</HashCode>
       <FileName>Source\PmRayquaza.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PmSmoochum">
-    <Position X="7.25" Y="36.5" Width="2" />
+    <Position X="12.75" Y="15" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="PmSmoochum" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAAAAAQAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\PmSmoochum.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PmTreecko">
-    <Position X="10" Y="36.5" Width="2" />
+    <Position X="12.75" Y="13.5" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="PmTreecko" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\PmTreecko.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PmValue" Collapsed="true">
-    <Position X="96.25" Y="3.5" Width="1.5" />
+    <Position X="46.5" Y="24.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAgAAAAAAIAAAAAgAAAAAAAAQAAoABgAAAAAAA=</HashCode>
       <FileName>Source\PmValue.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PmVaporeon">
-    <Position X="18" Y="36.5" Width="2" />
+    <Position X="15" Y="15" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="PmVaporeon" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAIAAAAAAAAAAAAAAAAQAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\PmVaporeon.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PmVulpix">
-    <Position X="23.25" Y="36.5" Width="1.75" />
+    <Position X="17.25" Y="12" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="PmVulpix" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAAAAAAAQAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\PmVulpix.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Skill">
-    <Position X="55.5" Y="17.5" Width="1.75" />
+    <Position X="15" Y="18.75" Width="1.5" />
+    <Members>
+      <Field Name="allpp" Hidden="true" />
+      <Field Name="animeCount" Hidden="true" />
+      <Field Name="atkAnime" Hidden="true" />
+      <Method Name="AtkAnimeOnMove" Hidden="true" />
+      <Method Name="AtkAnimeOnShow" Hidden="true" />
+      <Field Name="atkEnemyAnime" Hidden="true" />
+      <Field Name="attribute" Hidden="true" />
+      <Field Name="category" Hidden="true" />
+      <Method Name="DamageEffect" Hidden="true" />
+      <Field Name="description" Hidden="true" />
+      <Method Name="GetAllPP" Hidden="true" />
+      <Method Name="GetAttributeText" Hidden="true" />
+      <Method Name="GetDescription" Hidden="true" />
+      <Method Name="GetHitRate" Hidden="true" />
+      <Method Name="GetName" Hidden="true" />
+      <Method Name="GetPower" Hidden="true" />
+      <Method Name="GetRemainPP" Hidden="true" />
+      <Field Name="hitRate" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Field Name="isSuccess" Hidden="true" />
+      <Field Name="name" Hidden="true" />
+      <Field Name="pmstyle" Hidden="true" />
+      <Field Name="power" Hidden="true" />
+      <Field Name="remainpp" Hidden="true" />
+      <Method Name="Skill" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>EAAAAgAAAAgAAABAIkBAgAEAAgEEAQAAACAKAKgARIQ=</HashCode>
       <FileName>Source\Skill.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Status" Collapsed="true">
-    <Position X="91" Y="4.5" Width="1.5" />
+    <Position X="41.25" Y="25.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAQQAAAEAABAABELCAAEAAAMQAgAIhEABAAAAAAEAAA=</HashCode>
       <FileName>Source\Status.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PokemonBar" Collapsed="true">
-    <Position X="98" Y="3.5" Width="1.5" />
+    <Position X="48.25" Y="24.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EADCKEQhIAAIBBIKEIAJAj0AAAAMgAgxAAASKAAkhSI=</HashCode>
       <FileName>Source\PokemonBar.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PokemonFactory" Collapsed="true">
-    <Position X="99.75" Y="3.5" Width="1.5" />
+    <Position X="50" Y="24.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAAgAAAAAA=</HashCode>
       <FileName>Source\PokemonFactory.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::PokemonMenu">
-    <Position X="41" Y="33.5" Width="2.25" />
+    <Position X="14.5" Y="2" Width="1.5" />
+    <Members>
+      <Method Name="~PokemonMenu" Hidden="true" />
+      <Field Name="bag" Hidden="true" />
+      <Field Name="blankPanel" Hidden="true" />
+      <Method Name="ChangeOnAtk" Hidden="true" />
+      <Field Name="currentItemID" Hidden="true" />
+      <Field Name="cursor" Hidden="true" />
+      <Field Name="CURSOR_INTERVAL" Hidden="true" />
+      <Field Name="CURSOR_LEFT" Hidden="true" />
+      <Field Name="CURSOR_TOP" Hidden="true" />
+      <Field Name="description" Hidden="true" />
+      <Field Name="DESCRIPTIONPANEL_LEFT" Hidden="true" />
+      <Field Name="DESCRIPTIONPANEL_TOP" Hidden="true" />
+      <Method Name="End" Hidden="true" />
+      <Method Name="GetCurrentItemCommand" Hidden="true" />
+      <Field Name="getItem" Hidden="true" />
+      <Field Name="giveItemPanel" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Field Name="inShowText" Hidden="true" />
+      <Field Name="isAtkChange" Hidden="true" />
+      <Field Name="isItem" Hidden="true" />
+      <Method Name="IsItemReceive" Hidden="true" />
+      <Field Name="isOprtPanel" Hidden="true" />
+      <Field Name="isOprtSlt" Hidden="true" />
+      <Field Name="isTakeItem" Hidden="true" />
+      <Field Name="isUseItem" Hidden="true" />
+      <Field Name="itemCommand" Hidden="true" />
+      <Field Name="ItemSelectPanel" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Field Name="operationPanel" Hidden="true" />
+      <Field Name="order" Hidden="true" />
+      <Field Name="PANEL_LEFT" Hidden="true" />
+      <Field Name="PANEL_TOP" Hidden="true" />
+      <Field Name="pmOprtView" Hidden="true" />
+      <Field Name="POKEMON_BAR_FIRST_LEFT" Hidden="true" />
+      <Field Name="POKEMON_BAR_FIRST_TOP" Hidden="true" />
+      <Field Name="POKEMON_BAR_INTERVAL" Hidden="true" />
+      <Field Name="POKEMON_BAR_LEFT" Hidden="true" />
+      <Field Name="POKEMON_BAR_TOP" Hidden="true" />
+      <Field Name="pokemonBar" Hidden="true" />
+      <Method Name="PokemonMenu" Hidden="true" />
+      <Field Name="pokemons" Hidden="true" />
+      <Method Name="ReceiveBag" Hidden="true" />
+      <Method Name="ReceiveData" Hidden="true" />
+      <Field Name="recieveItem" Hidden="true" />
+      <Field Name="selectMethod" Hidden="true" />
+      <Field Name="selectPanel" Hidden="true" />
+      <Method Name="SetPmBar" Hidden="true" />
+      <Method Name="SetPmBarLeftTop" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Field Name="showItemMethod" Hidden="true" />
+      <Field Name="sltPm" Hidden="true" />
+      <Method Name="SuccessToTakeItem" Hidden="true" />
+      <Method Name="SuccessToUseItem" Hidden="true" />
+      <Field Name="swapPm" Hidden="true" />
+      <Field Name="useItemPanel" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <NestedTypes>
       <Enum Name="game_framework::PokemonMenu::pmOprtPanelSlt" Collapsed="true">
         <TypeIdentifier>
@@ -489,686 +1334,1252 @@
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Self">
-    <Position X="46.75" Y="33.5" Width="1.75" />
+    <Position X="12.25" Y="2" Width="1.5" />
+    <Members>
+      <Field Name="ILLU_TOP" Hidden="true" />
+      <Field Name="illuAmount" Hidden="true" />
+      <Field Name="illuText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Field Name="money" Hidden="true" />
+      <Field Name="MONEY_TOP" Hidden="true" />
+      <Field Name="moneyText" Hidden="true" />
+      <Field Name="name" Hidden="true" />
+      <Field Name="NAME_LEFT" Hidden="true" />
+      <Field Name="NAME_TOP" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="RecieveData" Hidden="true" />
+      <Field Name="self_image" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+      <Field Name="TITLE_LEFT" Hidden="true" />
+      <Field Name="TITLE_TOP" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAACQBgIAAEAAAQAAIAEABoQAAAGAAAEEAI=</HashCode>
       <FileName>Source\Self.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillEmber">
-    <Position X="67.5" Y="26.5" Width="1.5" />
+    <Position X="18.5" Y="24.5" Width="1.5" />
+    <Members>
+      <Field Name="burnRate" Hidden="true" />
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillEmber" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAIAAAAAUAAAAEAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillEmber.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillFactory" Collapsed="true">
-    <Position X="89.25" Y="4.5" Width="1.5" />
+    <Position X="51.75" Y="24.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\SkillFactory.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillFire">
-    <Position X="70" Y="24.25" Width="1.5" />
+    <Position X="16.25" Y="25" Width="1.5" />
+    <Members>
+      <Method Name="Damage" Hidden="true" />
+      <Method Name="DamageEffect" Hidden="true" />
+      <Method Name="SkillFire" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>CAAAAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\SkillFire.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillImpact">
-    <Position X="28.75" Y="26.5" Width="1.5" />
+    <Position X="13.5" Y="34.75" Width="1.5" />
+    <Members>
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillImpact" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillImpact.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillLeer">
-    <Position X="33.25" Y="26.5" Width="1.5" />
+    <Position X="11.75" Y="32" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillLeer" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillLeer.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillNormal">
-    <Position X="30" Y="24.25" Width="1.5" />
+    <Position X="14" Y="30.75" Width="1.5" />
+    <Members>
+      <Method Name="Damage" Hidden="true" />
+      <Method Name="DamageEffect" Hidden="true" />
+      <Method Name="SkillNormal" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Source\SkillNormal.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::TrainerMay">
-    <Position X="8.5" Y="14" Width="1.75" />
+    <Position X="29.75" Y="5.75" Width="1.5" />
+    <Members>
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+      <Method Name="TrainerMay" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAwAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\TrainerMay.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::WeiBaiHouse1_1F_Map" Collapsed="true">
-    <Position X="91" Y="5.5" Width="1.5" />
+    <Position X="41.25" Y="26.25" Width="2" />
     <TypeIdentifier>
       <HashCode>gAQAAQAABAAAAAgAAAAgEBQAAABAAAAAAACQAAAEAAA=</HashCode>
       <FileName>Source\WeiBaiHouse1_1F_Map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::WeiBaiHouse1_2F_Map" Collapsed="true">
-    <Position X="92.75" Y="5.5" Width="1.5" />
+    <Position X="43" Y="26.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAAAAAAAkAQAAABAAAAAAACAAAAEAAA=</HashCode>
       <FileName>Source\WeiBaiHouse1_2F_Map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::WeiBaiHouse2_1F_Map" Collapsed="true">
-    <Position X="94.5" Y="5.5" Width="1.5" />
+    <Position X="44.75" Y="26.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAQAABAAAAAAAAAAAEAQAAABAAAAAAACAAAAEAAA=</HashCode>
       <FileName>Source\WeiBaiHouse2_1F_Map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::WeiBaiHouse2_2F_Map" Collapsed="true">
-    <Position X="96.25" Y="5.5" Width="1.5" />
+    <Position X="46.5" Y="26.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAAAAAAAkAQAAABAAAAAAACAAAAEAAA=</HashCode>
       <FileName>Source\WeiBaiHouse2_2F_Map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::WeiBaiProHouse_Map" Collapsed="true">
-    <Position X="99.75" Y="5.5" Width="1.5" />
+    <Position X="50" Y="26.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAAAAEAAEAQAAABAAAAAAACAAAAEAAA=</HashCode>
       <FileName>Source\WeiBaiProHouse_Map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::WeiBaiMap" Collapsed="true">
-    <Position X="98" Y="5.5" Width="1.5" />
+    <Position X="48.25" Y="26.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAARAAQAAAAAgAAAAhEBQAAABMABAIGACSAAAEAAA=</HashCode>
       <FileName>Source\WeiBaiMap.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Douchi_Shop_Map" Collapsed="true">
-    <Position X="98" Y="2.5" Width="1.5" />
+    <Position X="48.25" Y="23.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAQAgQIAAAAAAAgAAAAAEAQAAABAAAAABACQAAAEAAA=</HashCode>
       <FileName>Source\Douchi_Shop_Map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Douchi_Hospital_Map" Collapsed="true">
-    <Position X="96.25" Y="2.5" Width="1.5" />
+    <Position X="46.5" Y="23.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAQAAQAAAIAIAAgAAAAgEIQAAABABgAAAACQAAAEAAA=</HashCode>
       <FileName>Source\Douchi_Hospital_Map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Tianyuan_Shop_Map" Collapsed="true">
-    <Position X="89.25" Y="5.5" Width="1.5" />
+    <Position X="51.75" Y="25.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAQAgQAAAAAAAAgAAAAAEAQAAABAAQAABACQAAAEAAA=</HashCode>
       <FileName>Source\Tianyuan_Shop_Map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Tianyuan_Hospital_Map" Collapsed="true">
-    <Position X="94.5" Y="4.5" Width="1.5" />
+    <Position X="44.75" Y="25.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAQABQAAAIAAAAgAAAAgEIQAAABABgAAAACQAAAEAAA=</HashCode>
       <FileName>Source\Tianyuan_Hospital_Map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillAuroraBeam">
-    <Position X="81.75" Y="26.5" Width="1.75" />
+    <Position X="18.5" Y="32" Width="1.5" />
+    <Members>
+      <Field Name="attachRate" Hidden="true" />
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillAuroraBeam" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAQIAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillAuroraBeam.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillBubbleBeam">
-    <Position X="44.5" Y="26.5" Width="1.75" />
+    <Position X="11.75" Y="25.75" Width="1.5" />
+    <Members>
+      <Field Name="attachRate" Hidden="true" />
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillBubbleBeam" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAQEAAIAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillBubbleBeam.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillConfusion">
-    <Position X="74.5" Y="26.5" Width="1.5" />
+    <Position X="18.5" Y="28.25" Width="1.5" />
+    <Members>
+      <Field Name="confusionRate" Hidden="true" />
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillConfusion" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAABAAAAAAAAAAAAAAAAQAAAAEAAAAACACAAAAAAA=</HashCode>
       <FileName>Source\SkillConfusion.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillCrunch">
-    <Position X="40" Y="26.5" Width="1.5" />
+    <Position X="11.75" Y="28.25" Width="1.5" />
+    <Members>
+      <Field Name="attachRate" Hidden="true" />
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillCrunch" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAABAQAAAAEAAIAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillCrunch.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillDragon">
-    <Position X="41.25" Y="24.25" Width="1.5" />
+    <Position X="14" Y="27.5" Width="1.5" />
+    <Members>
+      <Method Name="Damage" Hidden="true" />
+      <Method Name="DamageEffect" Hidden="true" />
+      <Method Name="SkillDragon" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAQCAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\SkillDragon.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillDragonClaw">
-    <Position X="42.25" Y="26.5" Width="1.5" />
+    <Position X="11.75" Y="27" Width="1.5" />
+    <Members>
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillDragonClaw" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillDragonClaw.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillElectric">
-    <Position X="50.5" Y="24.25" Width="1.5" />
+    <Position X="14" Y="22.5" Width="1.5" />
+    <Members>
+      <Method Name="Damage" Hidden="true" />
+      <Method Name="DamageEffect" Hidden="true" />
+      <Method Name="SkillElectric" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAABAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\SkillElectric.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillFlameThrower">
-    <Position X="69.75" Y="26.5" Width="1.75" />
+    <Position X="18.5" Y="25.75" Width="1.75" />
+    <Members>
+      <Field Name="burnRate" Hidden="true" />
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillFlameThrower" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAQCAAAAAAA=</HashCode>
       <FileName>Source\SkillFlameThrower.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillGhost">
-    <Position X="59.75" Y="24.25" Width="1.5" />
+    <Position X="16.25" Y="20.25" Width="1.5" />
+    <Members>
+      <Method Name="Damage" Hidden="true" />
+      <Method Name="DamageEffect" Hidden="true" />
+      <Method Name="SkillGhost" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>Source\SkillGhost.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillGrass">
-    <Position X="64.25" Y="24.25" Width="1.5" />
+    <Position X="16.25" Y="22.5" Width="1.5" />
+    <Members>
+      <Method Name="Damage" Hidden="true" />
+      <Method Name="DamageEffect" Hidden="true" />
+      <Method Name="SkillGrass" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAABAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\SkillGrass.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillHarden">
-    <Position X="26.5" Y="26.5" Width="1.5" />
+    <Position X="11.75" Y="30.75" Width="1.5" />
+    <Members>
+      <Field Name="attachRate" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillHarden" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAEAAIAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillHarden.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillHyperBeam">
-    <Position X="31" Y="26.5" Width="1.5" />
+    <Position X="11.75" Y="34.75" Width="1.5" />
+    <Members>
+      <Method Name="EffectText" Hidden="true" />
+      <Field Name="freezeRate" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillHyperBeam" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAACAAAAQAAAAEAACAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillHyperBeam.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillIce">
-    <Position X="84.25" Y="24.25" Width="1.5" />
+    <Position X="16" Y="32.5" Width="1.5" />
+    <Members>
+      <Method Name="Damage" Hidden="true" />
+      <Method Name="DamageEffect" Hidden="true" />
+      <Method Name="SkillIce" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAABAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\SkillIce.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillLeafBlade">
-    <Position X="63" Y="26.5" Width="1.5" />
+    <Position X="18.5" Y="22" Width="1.5" />
+    <Members>
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillLeafBlade" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAgAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillLeafBlade.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillLeafStorm">
-    <Position X="65.25" Y="26.5" Width="1.5" />
+    <Position X="18.5" Y="23.25" Width="1.5" />
+    <Members>
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillLeafStorm" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillLeafStorm.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillLick">
-    <Position X="58.5" Y="26.5" Width="1.5" />
+    <Position X="18.5" Y="19.5" Width="1.5" />
+    <Members>
+      <Field Name="attachRate" Hidden="true" />
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillLick" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAIAAAACAAABAAA=</HashCode>
       <FileName>Source\SkillLick.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillMetalClaw">
-    <Position X="37.75" Y="26.5" Width="1.5" />
+    <Position X="11.75" Y="29.5" Width="1.5" />
+    <Members>
+      <Field Name="attachRate" Hidden="true" />
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillMetalClaw" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAIAEAACAAAAAAA=</HashCode>
       <FileName>Source\SkillMetalClaw.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillNightShade">
-    <Position X="60.75" Y="26.5" Width="1.5" />
+    <Position X="18.5" Y="20.75" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillNightShade" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillNightShade.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillPhychoBoost">
-    <Position X="76.75" Y="26.5" Width="1.75" />
+    <Position X="18.5" Y="30.75" Width="1.5" />
+    <Members>
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillPhychoBoost" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAABAAAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillPhychoBoost.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillPhychoKinesis">
-    <Position X="79.25" Y="26.5" Width="1.75" />
+    <Position X="18.5" Y="29.5" Width="1.75" />
+    <Members>
+      <Field Name="attachRate" Hidden="true" />
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillPhychoKinesis" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAIAAAACAAIAAAA=</HashCode>
       <FileName>Source\SkillPhychoKinesis.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillPoison">
-    <Position X="55.25" Y="24.25" Width="1.5" />
+    <Position X="14" Y="20.25" Width="1.5" />
+    <Members>
+      <Method Name="Damage" Hidden="true" />
+      <Method Name="DamageEffect" Hidden="true" />
+      <Method Name="SkillPoison" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAACACAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\SkillPoison.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillPoisonGas">
-    <Position X="56.25" Y="26.5" Width="1.5" />
+    <Position X="11.75" Y="19.5" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillPoisonGas" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAEAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillPoisonGas.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillPowderSnow">
-    <Position X="86.5" Y="26.5" Width="1.75" />
+    <Position X="18.5" Y="34.5" Width="1.5" />
+    <Members>
+      <Method Name="EffectText" Hidden="true" />
+      <Field Name="freezeRate" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillPowderSnow" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABAAAAAACAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillPowderSnow.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillPsychic">
-    <Position X="77" Y="24.25" Width="1.5" />
+    <Position X="16" Y="29" Width="1.5" />
+    <Members>
+      <Method Name="Damage" Hidden="true" />
+      <Method Name="DamageEffect" Hidden="true" />
+      <Method Name="SkillPsychic" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAgAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\SkillPsychic.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillSacredFire">
-    <Position X="72.25" Y="26.5" Width="1.5" />
+    <Position X="18.5" Y="27" Width="1.5" />
+    <Members>
+      <Field Name="burnRate" Hidden="true" />
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillSacredFire" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAACAAAEAAA=</HashCode>
       <FileName>Source\SkillSacredFire.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillScaryFace">
-    <Position X="35.5" Y="26.5" Width="1.5" />
+    <Position X="11.75" Y="33.25" Width="1.5" />
+    <Members>
+      <Field Name="attachRate" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillScaryFace" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAEAAIAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillScaryFace.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillSludge">
-    <Position X="54" Y="26.5" Width="1.5" />
+    <Position X="11.75" Y="20.75" Width="1.5" />
+    <Members>
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Field Name="poisonRate" Hidden="true" />
+      <Method Name="SkillSludge" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAACAAAAAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillSludge.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillSteel">
-    <Position X="37.75" Y="24.25" Width="1.5" />
+    <Position X="14" Y="29.5" Width="1.5" />
+    <Members>
+      <Method Name="Damage" Hidden="true" />
+      <Method Name="DamageEffect" Hidden="true" />
+      <Method Name="SkillSteel" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAABAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Source\SkillSteel.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillSwift">
-    <Position X="24.25" Y="26.5" Width="1.5" />
+    <Position X="15.5" Y="34.75" Width="1.5" />
+    <Members>
+      <Method Name="EffectText" Hidden="true" />
+      <Field Name="freezeRate" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillSwift" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAAAAACAAAAQAAAAEAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillSwift.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillThunderBolt">
-    <Position X="49.25" Y="26.5" Width="1.5" />
+    <Position X="11.75" Y="23.25" Width="1.5" />
+    <Members>
+      <Field Name="attachRate" Hidden="true" />
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillThunderBolt" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAAAAQAAAAEAAIAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillThunderBolt.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillThunderShock">
-    <Position X="51.5" Y="26.5" Width="1.75" />
+    <Position X="11.75" Y="22" Width="1.75" />
+    <Members>
+      <Field Name="attachRate" Hidden="true" />
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillThunderShock" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAIAAAACAAAAAAg=</HashCode>
       <FileName>Source\SkillThunderShock.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillWater">
-    <Position X="45.75" Y="24.25" Width="1.5" />
+    <Position X="14" Y="25" Width="1.5" />
+    <Members>
+      <Method Name="Damage" Hidden="true" />
+      <Method Name="DamageEffect" Hidden="true" />
+      <Method Name="SkillWater" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAABAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\SkillWater.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillWaterGun">
-    <Position X="47" Y="26.5" Width="1.5" />
+    <Position X="11.75" Y="24.5" Width="1.5" />
+    <Members>
+      <Method Name="EffectText" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillWaterGun" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAABAEAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillWaterGun.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::SkillWillOwisp">
-    <Position X="84.25" Y="26.5" Width="1.5" />
+    <Position X="18.5" Y="33.25" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="SkillWillOwisp" Hidden="true" />
+      <Method Name="Use" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\SkillWillOwisp.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Tianyuan_Nhouse_Map" Collapsed="true">
-    <Position X="98" Y="4.5" Width="1.5" />
+    <Position X="48.25" Y="25.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAQAAAAAAAAAAAEAQIAABAAAAAAACAAAAEAAA=</HashCode>
       <FileName>Source\Tianyuan_Nhouse_Map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Tianyuan_Lthouse_Map" Collapsed="true">
-    <Position X="96.25" Y="4.5" Width="1.5" />
+    <Position X="46.5" Y="25.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAQAAAAABAAAAAEAQAAABAAAAAAACAAAAEAAA=</HashCode>
       <FileName>Source\Tianyuan_Lthouse_Map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Tianyuan_Rbhouse_Map" Collapsed="true">
-    <Position X="99.75" Y="4.5" Width="1.5" />
+    <Position X="50" Y="25.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAAAAAAAEAQEAABAAAAAAACAAAAEAAA=</HashCode>
       <FileName>Source\Tianyuan_Rbhouse_Map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::Tianyuan_Gym_Map" Collapsed="true">
-    <Position X="92.75" Y="4.5" Width="1.5" />
+    <Position X="43" Y="25.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAQAAAAAAAAAAAEAYAAABAAAAAAACAAAAEAAA=</HashCode>
       <FileName>Source\Tianyuan_Gym_Map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenSister">
-    <Position X="63.5" Y="11.25" Width="1.75" />
+    <Position X="38" Y="10.75" Width="1.5" />
+    <Members>
+      <Method Name="CitizenSister" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEIAA=</HashCode>
       <FileName>Source\CitizenSister.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::TrainerYoungster">
-    <Position X="3.25" Y="14" Width="1.75" />
+    <Position X="30.75" Y="9" Width="1.5" />
+    <Members>
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+      <Method Name="TrainerYoungster" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAABABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\TrainerYoungster.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::TrainerGymYoungster">
-    <Position X="5.75" Y="14" Width="2" />
+    <Position X="29.5" Y="7.5" Width="1.75" />
+    <Members>
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+      <Method Name="TrainerGymYoungster" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAAABgAEAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\TrainerGymYoungster.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::TrainerGymYamao">
-    <Position X="11" Y="14" Width="1.75" />
+    <Position X="29.5" Y="3.75" Width="1.75" />
+    <Members>
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+      <Method Name="TrainerGymYamao" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAAABgBAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\TrainerGymYamao.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::TrainerGymMaster">
-    <Position X="13.5" Y="14" Width="1.75" />
+    <Position X="31.75" Y="7.5" Width="1.75" />
+    <Members>
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+      <Method Name="TrainerGymMaster" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAAAJgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\TrainerGymMaster.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenBoy">
-    <Position X="31" Y="11.25" Width="1.75" />
+    <Position X="36" Y="7.5" Width="1.5" />
+    <Members>
+      <Method Name="CitizenBoy" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAAABgAAAAAAAQAABAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenBoy.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenFatguy">
-    <Position X="36" Y="11.25" Width="1.75" />
+    <Position X="36" Y="3.75" Width="1.5" />
+    <Members>
+      <Method Name="CitizenFatguy" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAgAAAQAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenFatguy.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenGirl1">
-    <Position X="41" Y="11.25" Width="1.75" />
+    <Position X="38" Y="3.75" Width="1.5" />
+    <Members>
+      <Method Name="CitizenGirl1" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAABAAQAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenGirl1.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenGirl2">
-    <Position X="46" Y="11.25" Width="1.75" />
+    <Position X="36" Y="10.75" Width="1.5" />
+    <Members>
+      <Method Name="CitizenGirl2" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAABAAQAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenGirl2.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenGirl3">
-    <Position X="51" Y="11.25" Width="1.75" />
+    <Position X="35" Y="13.75" Width="1.5" />
+    <Members>
+      <Method Name="CitizenGirl3" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAABAAQAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenGirl3.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenMan1">
-    <Position X="56" Y="11.25" Width="1.75" />
+    <Position X="36" Y="12.25" Width="1.5" />
+    <Members>
+      <Method Name="CitizenMan1" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAIAQAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenMan1.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenMan2">
-    <Position X="58.5" Y="11.25" Width="1.75" />
+    <Position X="38" Y="7.5" Width="1.5" />
+    <Members>
+      <Method Name="CitizenMan2" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAQABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenMan2.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenMan3">
-    <Position X="61" Y="11.25" Width="1.75" />
+    <Position X="38" Y="9.25" Width="1.5" />
+    <Members>
+      <Method Name="CitizenMan3" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAAABgAAAAAAAQAAAAAAgAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenMan3.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenMan4">
-    <Position X="66" Y="11.25" Width="1.75" />
+    <Position X="34" Y="12.25" Width="1.5" />
+    <Members>
+      <Method Name="CitizenMan4" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQABAAAQAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenMan4.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenMan5">
-    <Position X="21" Y="11.25" Width="1.75" />
+    <Position X="36" Y="9.25" Width="1.5" />
+    <Members>
+      <Method Name="CitizenMan5" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAACBgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenMan5.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenOdd">
-    <Position X="23.5" Y="11.25" Width="1.75" />
+    <Position X="34" Y="7.5" Width="1.5" />
+    <Members>
+      <Method Name="CitizenOdd" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAAABgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenOdd.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenResearcher">
-    <Position X="26" Y="11.25" Width="1.75" />
+    <Position X="34" Y="5.75" Width="1.5" />
+    <Members>
+      <Method Name="CitizenResearcher" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAACBgAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenResearcher.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenWoman1">
-    <Position X="28.5" Y="11.25" Width="1.75" />
+    <Position X="34" Y="3.75" Width="1.5" />
+    <Members>
+      <Method Name="CitizenWoman1" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAAABggAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenWoman1.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenWoman2">
-    <Position X="33.5" Y="11.25" Width="1.75" />
+    <Position X="36" Y="5.75" Width="1.5" />
+    <Members>
+      <Method Name="CitizenWoman2" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAAABhAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenWoman2.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenWoman3">
-    <Position X="38.5" Y="11.25" Width="1.75" />
+    <Position X="38" Y="5.75" Width="1.5" />
+    <Members>
+      <Method Name="CitizenWoman3" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAAABiAAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenWoman3.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenWoman4">
-    <Position X="43.5" Y="11.25" Width="1.75" />
+    <Position X="34" Y="9.25" Width="1.5" />
+    <Members>
+      <Method Name="CitizenWoman4" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAAABgBAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenWoman4.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::CitizenWoman5">
-    <Position X="48.5" Y="11.25" Width="1.75" />
+    <Position X="34" Y="10.75" Width="1.5" />
+    <Members>
+      <Method Name="CitizenWoman5" Hidden="true" />
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAAABgCAAAAAAQAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\CitizenWoman5.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::TrainerBadguy">
-    <Position X="16" Y="14" Width="1.75" />
+    <Position X="32" Y="5.75" Width="1.5" />
+    <Members>
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+      <Method Name="TrainerBadguy" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAAABgAAAAAAAwAAAAAAAAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\TrainerBadguy.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_framework::TrainerJK">
-    <Position X="18.5" Y="14" Width="1.75" />
+    <Position X="32" Y="3.75" Width="1.5" />
+    <Members>
+      <Method Name="KeyDownListener" Hidden="true" />
+      <Method Name="LoadBitmap" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Method Name="OnShow" Hidden="true" />
+      <Method Name="ReShow" Hidden="true" />
+      <Method Name="SetTopLeft" Hidden="true" />
+      <Method Name="Talk" Hidden="true" />
+      <Method Name="TrainerJK" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAAABgAAAAAAAQAAAAAAgAAAEAAAAAEAAA=</HashCode>
       <FileName>Source\TrainerJK.h</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="game_framework::barType" Collapsed="true">
-    <Position X="94.5" Y="6.75" Width="1.5" />
+    <Position X="39" Y="21" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Source\AtkBar.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::Cursor" Collapsed="true">
-    <Position X="98" Y="6.75" Width="1.5" />
+    <Position X="35.5" Y="23.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAABIAAAAAAACAGAQAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\AtkInterface.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::State" Collapsed="true">
-    <Position X="92.75" Y="8.25" Width="1.5" />
+    <Position X="37.25" Y="22.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIMRBAaMAAgAAAAAAgIIAACAAAAEBEQAlBAAAACAAA=</HashCode>
       <FileName>Source\AtkInterface.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::alphaID" Collapsed="true">
-    <Position X="89.25" Y="6.75" Width="1.5" />
+    <Position X="33.75" Y="21" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC+//9hAQAAAAA=</HashCode>
       <FileName>Source\CDialog.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::DialogState" Collapsed="true">
-    <Position X="99.75" Y="6.75" Width="1.5" />
+    <Position X="37.25" Y="23.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIACAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\CEvent.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::Event" Collapsed="true">
-    <Position X="91" Y="7.5" Width="1.5" />
+    <Position X="35.5" Y="21.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAEAAAAAAAAAAABAAAAACAAAgBAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\CHero.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::Item_ID" Collapsed="true">
-    <Position X="92.75" Y="7.5" Width="1.5" />
+    <Position X="37.25" Y="21.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAAEAAAAAAAAAIAAAAIACAAAAAAAAEAA=</HashCode>
       <FileName>Source\CItem.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::mapID" Collapsed="true">
-    <Position X="94.5" Y="7.5" Width="1.5" />
+    <Position X="39" Y="21.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\CMap.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::direction" Collapsed="true">
-    <Position X="89.25" Y="7.5" Width="1.5" />
+    <Position X="33.75" Y="21.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAIAAAAAAAAAgAAgAA=</HashCode>
       <FileName>Source\Npc.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::NpcType" Collapsed="true">
-    <Position X="98" Y="7.5" Width="1.5" />
+    <Position X="35.5" Y="24" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAIQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source\Npc.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::npcName" Collapsed="true">
-    <Position X="96.25" Y="7.5" Width="1.5" />
+    <Position X="33.75" Y="24" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAABAIgOcSAIAACAAAAQAiAAAFAAAQAAAgAAAAAIA=</HashCode>
       <FileName>Source\NpcFactory.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::PmType" Collapsed="true">
-    <Position X="99.75" Y="7.5" Width="1.5" />
+    <Position X="37.25" Y="24" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Source\Pokemon.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::Attribute" Collapsed="true">
-    <Position X="92.75" Y="6.75" Width="1.5" />
+    <Position X="37.25" Y="21" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABwAAICAAgFAAAAAAAIAAlAAAAAAAQAJAAAQBAAAAA=</HashCode>
       <FileName>Source\Pokemon.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::pokemonName" Collapsed="true">
-    <Position X="89.25" Y="8.25" Width="1.5" />
+    <Position X="33.75" Y="22.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAEAAABQEAAAAAAAACIIAAACAAAKQAAA=</HashCode>
       <FileName>Source\Pokemon.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::CSkill" Collapsed="true">
-    <Position X="96.25" Y="6.75" Width="1.5" />
+    <Position X="33.75" Y="23.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Source\Skill.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::AttrDamage" Collapsed="true">
-    <Position X="91" Y="6.75" Width="1.5" />
+    <Position X="35.5" Y="21" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAKAAAAA=</HashCode>
       <FileName>Source\Skill.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::skillName" Collapsed="true">
-    <Position X="91" Y="8.25" Width="1.5" />
+    <Position X="35.5" Y="22.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>wAAgBABBAgCAAAASAAAQAgAAIACgAEAYAAEABAAQAOE=</HashCode>
       <FileName>Source\SkillFactory.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="game_framework::StatuName" Collapsed="true">
-    <Position X="94.5" Y="8.25" Width="1.5" />
+    <Position X="39" Y="22.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAACAAAAAAAAAAAAAAAgAAAAAAAAAAACRAAAA=</HashCode>
       <FileName>Source\Status.h</FileName>
